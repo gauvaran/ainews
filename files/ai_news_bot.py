@@ -1,0 +1,289 @@
+#!/usr/bin/env python3
+"""
+ai_news_bot.py - Fetch AI news and send as HTML email via Gmail SMTP
+"""
+
+import smtplib
+import sys
+import os
+import re
+import time
+import logging
+import datetime
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from email.header import Header
+from email.utils import formataddr
+from html import escape as h
+
+# Load .env before importing fetch_news so env vars are available at module level
+_env_file = os.path.join(os.path.dirname(__file__), ".env")
+if os.path.exists(_env_file):
+    with open(_env_file) as f:
+        for line in f:
+            line = line.strip()
+            if line and not line.startswith("#") and "=" in line:
+                k, v = line.split("=", 1)
+                os.environ.setdefault(k.strip(), v.strip())
+
+from fetch_news import fetch_ai_news
+
+# ─── CONFIG ───────────────────────────────────────────────────────────────────
+EMAIL_FROM     = os.environ.get("EMAIL_FROM", "")
+EMAIL_TO       = os.environ.get("EMAIL_TO",   "")
+EMAIL_BCC      = os.environ.get("EMAIL_BCC",  "")
+EMAIL_PASSWORD = os.environ.get("EMAIL_PASSWORD", "")
+SMTP_HOST      = "smtp.gmail.com"
+SMTP_PORT      = 587
+MAX_RETRIES    = 3
+RETRY_DELAY    = 15
+LOG_FILE       = os.path.join(os.path.dirname(__file__), "bot.log")
+# ──────────────────────────────────────────────────────────────────────────────
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s",
+    handlers=[logging.FileHandler(LOG_FILE), logging.StreamHandler(sys.stdout)]
+)
+
+
+def build_html(data):
+    quote    = data["quote"]
+    articles = data["articles"]
+    date_str = data["date"]
+    source   = "Google News · Groq AI" if data.get("groq") else "Google News"
+
+    # ── Quote block ──────────────────────────────────────────────────────────
+    vi_line = ""
+    if quote.get("vi") and quote["vi"] != quote["foreign"]:
+        vi_line = f'<p style="margin:6px 0 0;font-size:13px;color:#444444;line-height:1.5;">&nbsp;&nbsp;&nbsp;&#8618;&nbsp;{h(quote["vi"])}</p>'
+
+    # ── Article rows ─────────────────────────────────────────────────────────
+    articles_html = ""
+    for i, art in enumerate(articles, 1):
+        title_display = h(art["title_vi"] or art["title_en"])
+        summary_block = ""
+        if art.get("summary"):
+            summary_block = f"""
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">{h(art["summary"])}</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>"""
+
+        publisher_html = f'<span style="color:#555555;">&#128240;&nbsp;{h(art["publisher"])}</span>&nbsp;&nbsp;&nbsp;' if art["publisher"] else ""
+        link_html = f'<a href="{h(art["link"], quote=True)}" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a>' if art["link"] else ""
+
+        articles_html += f"""
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">{i}</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">{title_display}</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;{h(art["title_en"])}</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;">{publisher_html}{link_html}</p>
+                  </td>
+                </tr>
+                {summary_block}
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>"""
+
+    return f"""<!DOCTYPE html>
+<html lang="vi" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--[if mso]>
+<noscript><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings></xml></noscript>
+<![endif]-->
+</head>
+<body style="margin:0;padding:0;background-color:#EEF2F7;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#EEF2F7" style="background-color:#EEF2F7;">
+<tr><td align="center" style="padding:24px 12px;">
+
+<!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0"><tr><td><![endif]-->
+<table role="presentation" width="600" cellpadding="0" cellspacing="0"
+       style="max-width:600px;width:100%;background-color:#FFFFFF;border-radius:10px;" bgcolor="#FFFFFF">
+
+  <!-- HEADER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:28px 30px 22px 30px;text-align:center;border-radius:10px 10px 0 0;">
+      <p style="margin:0 0 6px;font-size:11px;color:#7EB1E8;letter-spacing:2px;font-family:Arial,sans-serif;text-transform:uppercase;">
+        BIS &#8209; MT &nbsp;&#183;&nbsp; {date_str}
+      </p>
+      <h1 style="margin:0;font-size:26px;font-weight:bold;color:#FFFFFF;font-family:Arial,sans-serif;line-height:1.2;">
+        &#129302; B&#7843;n Tin AI H&#7857;ng Ng&#224;y
+      </h1>
+      <p style="margin:8px 0 0;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        C&#7853;p nh&#7853;t c&#244;ng ngh&#7879; AI m&#7899;i nh&#7845;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- QUOTE -->
+  <tr>
+    <td bgcolor="#EBF4FF" style="background-color:#EBF4FF;padding:16px 30px;border-top:3px solid #0066CC;">
+      <p style="margin:0;font-size:14px;color:#1A3A5C;font-style:italic;line-height:1.6;font-family:Georgia,serif;">
+        &#10024;&nbsp;&ldquo;{h(quote["foreign"])}&rdquo;
+      </p>
+      {vi_line}
+      <p style="margin:8px 0 0;font-size:12px;color:#888888;font-family:Arial,sans-serif;">&mdash;&nbsp;{h(quote["author"])}</p>
+    </td>
+  </tr>
+
+  <!-- SECTION LABEL -->
+  <tr>
+    <td bgcolor="#F5F7FA" style="background-color:#F5F7FA;padding:12px 30px;">
+      <p style="margin:0;font-size:11px;color:#999999;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128240;&nbsp;Tin t&#7913;c n&#7893;i b&#7853;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- ARTICLES -->
+  {articles_html}
+
+  <!-- FOOTER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:20px 30px;text-align:center;border-radius:0 0 10px 10px;">
+      <p style="margin:0 0 4px;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        &#128161;&nbsp;Lu&#244;n &#273;i &#273;&#7847;u trong th&#7871; gi&#7899;i AI!&nbsp;&#183;&nbsp;Stay ahead in AI!
+      </p>
+      <p style="margin:6px 0 0;font-size:11px;color:#4A7AAB;font-family:Arial,sans-serif;">
+        Ngu&#7891;n: {source}
+      </p>
+    </td>
+  </tr>
+
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+
+</td></tr>
+</table>
+</body>
+</html>"""
+
+
+def build_plain_text(data):
+    lines = []
+    q = data["quote"]
+    lines.append(f'"{q["foreign"]}"')
+    if q.get("vi") and q["vi"] != q["foreign"]:
+        lines.append(f'  → {q["vi"]}')
+    lines.append(f'  — {q["author"]}')
+    lines.append("\n" + "=" * 50)
+    lines.append(f'BẢN TIN AI HẰNG NGÀY | BIS-MT | {data["date"]}')
+    lines.append("=" * 50)
+    for i, art in enumerate(data["articles"], 1):
+        title = art["title_vi"] or art["title_en"]
+        lines.append(f"\n{i}. {title}")
+        lines.append(f"   🇬🇧 {art['title_en']}")
+        if art["publisher"]:
+            lines.append(f"   {art['publisher']}")
+        if art["link"]:
+            lines.append(f"   {art['link']}")
+        if art.get("summary"):
+            lines.append(f"\n   {art['summary']}")
+    lines.append("\n" + "=" * 50)
+    lines.append("Luôn đi đầu trong thế giới AI!")
+    return "\n".join(lines)
+
+
+def send_email(subject, html, plain_text):
+    if not EMAIL_PASSWORD:
+        logging.error("EMAIL_PASSWORD not set")
+        return False
+
+    match = re.match(r'^(.+?)\s*<(.+?)>$', EMAIL_FROM)
+    if match:
+        display_name, from_addr = match.group(1).strip(), match.group(2).strip()
+        from_header = formataddr((str(Header(display_name, "utf-8")), from_addr))
+    else:
+        from_addr = EMAIL_FROM
+        from_header = EMAIL_FROM
+
+    # All recipients go to BCC — TO shows "undisclosed-recipients" to hide the list
+    bcc_list = [b.strip() for b in f"{EMAIL_TO},{EMAIL_BCC}".split(",") if b.strip()]
+    all_recipients = bcc_list
+
+    msg = MIMEMultipart("alternative")
+    msg["Subject"] = Header(subject, "utf-8")
+    msg["From"]    = from_header
+    msg["To"]      = "undisclosed-recipients:;"
+    msg["Bcc"]     = ", ".join(bcc_list)
+
+    msg.attach(MIMEText(plain_text, "plain", "utf-8"))
+    msg.attach(MIMEText(html, "html", "utf-8"))
+
+    for attempt in range(1, MAX_RETRIES + 1):
+        logging.info(f"Send attempt {attempt}/{MAX_RETRIES}...")
+        try:
+            with smtplib.SMTP(SMTP_HOST, SMTP_PORT, timeout=30) as server:
+                server.starttls()
+                server.login(from_addr, EMAIL_PASSWORD)
+                server.sendmail(from_addr, all_recipients, msg.as_bytes())
+            logging.info("Email sent successfully!")
+            return True
+        except Exception as e:
+            logging.warning(f"Attempt {attempt} failed: {e}")
+        if attempt < MAX_RETRIES:
+            logging.info(f"Retrying in {RETRY_DELAY}s...")
+            time.sleep(RETRY_DELAY)
+
+    return False
+
+
+def main():
+    logging.info("=== AI News Bot started ===")
+
+    logging.info("Fetching AI news...")
+    data = fetch_ai_news(max_items=5)
+    if not data:
+        logging.error("Failed to fetch news. Aborting.")
+        sys.exit(1)
+    logging.info(f"Fetched {len(data['articles'])} articles")
+
+    html       = build_html(data)
+    plain_text = build_plain_text(data)
+    subject    = f"Bản tin AI - BIS-MT - {data['date']}"
+
+    bcc_info = f" | BCC: {EMAIL_BCC}" if EMAIL_BCC else ""
+    logging.info(f"Sending to {EMAIL_TO}{bcc_info}...")
+
+    if send_email(subject, html, plain_text):
+        logging.info("=== Bot finished successfully ===")
+    else:
+        logging.error(f"Failed after {MAX_RETRIES} attempts.")
+        sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()

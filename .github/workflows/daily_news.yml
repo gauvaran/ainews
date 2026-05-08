@@ -1,0 +1,30 @@
+name: Daily AI News
+
+on:
+  schedule:
+    - cron: '30 0 * * *'   # 07:30 GMT+7 (00:30 UTC)
+  workflow_dispatch:         # manual trigger for testing
+
+jobs:
+  send-news:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install feedparser --quiet
+
+      - name: Run AI News Bot
+        env:
+          EMAIL_FROM:     ${{ secrets.EMAIL_FROM }}
+          EMAIL_TO:       ${{ secrets.EMAIL_TO }}
+          EMAIL_BCC:      ${{ secrets.EMAIL_BCC }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+          GROQ_API_KEY:   ${{ secrets.GROQ_API_KEY }}
+        run: python files/ai_news_bot.py

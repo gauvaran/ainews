@@ -39,8 +39,28 @@ QUOTES = [
 
 
 def get_daily_quote():
-    idx = int(hashlib.md5(datetime.datetime.now().strftime("%Y%m%d").encode()).hexdigest(), 16) % len(QUOTES)
-    return QUOTES[idx]
+    """Fetch real Quote of the Day from ZenQuotes API. Falls back to local list."""
+    try:
+        req = urllib.request.Request(
+            "https://zenquotes.io/api/today",
+            headers={"User-Agent": "Mozilla/5.0 (compatible; NewsBot/1.0)"}
+        )
+        with urllib.request.urlopen(req, timeout=10) as r:
+            data = json.loads(r.read().decode())
+        quote_en = data[0]["q"].strip()
+        author   = data[0]["a"].strip()
+        # Translate to Vietnamese
+        quote_vi = _translate_vi(quote_en, max_len=500)
+        return {
+            "foreign": quote_en,
+            "vi":      quote_vi,
+            "author":  author,
+        }
+    except Exception as e:
+        print(f"ZenQuotes error: {e}", file=sys.stderr)
+        # Fallback to local list
+        idx = int(hashlib.md5(datetime.datetime.now().strftime("%Y%m%d").encode()).hexdigest(), 16) % len(QUOTES)
+        return QUOTES[idx]
 
 
 class _ParagraphParser(HTMLParser):

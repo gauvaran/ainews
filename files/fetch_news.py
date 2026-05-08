@@ -143,6 +143,87 @@ def _translate_vi(text, max_len=400):
     return ""
 
 
+DEV_TOPICS = [
+    "Dùng GitHub Copilot hiệu quả: tips & tricks cho dev hàng ngày",
+    "Viết prompt tốt để sinh code chính xác hơn",
+    "Tích hợp OpenAI API vào ứng dụng web trong 30 phút",
+    "Dùng AI để viết unit test tự động",
+    "Xây dựng chatbot hỏi-đáp tài liệu nội bộ với RAG",
+    "Dùng AI review code: tích hợp vào quy trình PR",
+    "Tự động sinh API documentation bằng LLM",
+    "Dùng AI để debug lỗi nhanh hơn: kỹ thuật và thói quen",
+    "Xây dựng CLI tool thông minh với LLM",
+    "Streaming response trong chat app: UX tốt hơn với AI",
+    "Dùng function calling để AI gọi API của bạn",
+    "Xử lý structured output từ LLM: JSON, schema validation",
+    "Tích hợp AI search vào ứng dụng với vector database",
+    "Dùng AI để refactor legacy code an toàn",
+    "Prompt engineering cho code generation: few-shot examples",
+    "Xây dựng AI assistant cho Slack/Teams nội bộ",
+    "Dùng AI để tự động hóa data pipeline và ETL",
+    "Bảo mật khi dùng AI: tránh prompt injection trong app",
+    "Giảm chi phí API: caching, batching, chọn đúng model",
+    "Dùng AI để sinh test data và mock data tự động",
+    "Tích hợp AI vào CI/CD: tự động check code quality",
+    "Xây dựng SQL query builder thông minh với LLM",
+    "Dùng AI để dịch và localize app nhanh hơn",
+    "Monitoring và logging cho LLM app trong production",
+    "Dùng AI để phân tích log và phát hiện lỗi sớm",
+    "Tạo README và tài liệu kỹ thuật tự động với AI",
+    "Xây dựng form tự động điền thông minh với LLM",
+    "Dùng AI để tối ưu SQL query và database performance",
+    "Tích hợp AI voice assistant vào ứng dụng",
+    "Dùng AI để sinh code migration script tự động",
+]
+
+
+def _groq_lesson(api_key):
+    """Generate a daily AI lesson for developers using Groq. Topic is chosen by Groq based on date seed."""
+    if not api_key:
+        return ""
+    today = datetime.datetime.now().strftime("%Y-%m-%d")
+    categories = ", ".join([
+        "tích hợp AI API vào ứng dụng", "GitHub Copilot & AI coding tools",
+        "prompt engineering cho dev", "RAG & semantic search",
+        "AI trong CI/CD & DevOps", "tự động hóa với LLM",
+        "bảo mật AI app", "tối ưu chi phí & hiệu năng LLM",
+        "AI cho testing & QA", "AI trong database & data pipeline",
+    ])
+    prompt = (
+        f"Hôm nay là {today}. Bạn là AI engineer senior dạy dev ứng dụng AI vào công việc lập trình hàng ngày.\n\n"
+        f"Dựa vào ngày hôm nay, hãy chọn MỘT chủ đề cụ thể, thực tiễn (không lặp lại chủ đề quá gần đây) "
+        f"trong các lĩnh vực: {categories}.\n\n"
+        f"Viết bài học theo cấu trúc:\n"
+        f"1. **Tên chủ đề** (1 dòng, súc tích)\n"
+        f"2. Giải thích ngắn gọn — tại sao dev cần biết (2-3 câu)\n"
+        f"3. Ví dụ thực tế hoặc code snippet minh họa\n"
+        f"4. 💡 Tip hoặc bước tiếp theo\n\n"
+        f"Yêu cầu: 120-160 từ, tiếng Việt, giữ thuật ngữ kỹ thuật tiếng Anh."
+    )
+    payload = json.dumps({
+        "model": GROQ_MODEL,
+        "messages": [{"role": "user", "content": prompt}],
+        "max_tokens": 600,
+        "temperature": 0.7,
+    }).encode()
+    req = urllib.request.Request(
+        GROQ_URL, data=payload,
+        headers={
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "User-Agent": "Mozilla/5.0 (compatible; NewsBot/1.0)",
+        },
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=30) as r:
+            data = json.loads(r.read().decode())
+        return data["choices"][0]["message"]["content"].strip()
+    except Exception as e:
+        print(f"Groq lesson error: {e}", file=sys.stderr)
+        return ""
+
+
 def fetch_ai_news(max_items=5):
     """Return structured dict: quote + list of articles."""
     groq_key = os.environ.get("GROQ_API_KEY", "")
@@ -186,9 +267,12 @@ def fetch_ai_news(max_items=5):
             "summary":   summary,
         })
 
+    lesson_content = _groq_lesson(groq_key)
+
     return {
         "quote":    get_daily_quote(),
         "articles": articles,
+        "lesson":   lesson_content,
         "date":     datetime.datetime.now().strftime("%d/%m/%Y"),
         "groq":     bool(groq_key),
     }

@@ -15,6 +15,7 @@ from email.mime.text import MIMEText
 from email.header import Header
 from email.utils import formataddr
 from html import escape as h
+import re as _re
 
 # Load .env before importing fetch_news so env vars are available at module level
 _env_file = os.path.join(os.path.dirname(__file__), ".env")
@@ -47,6 +48,35 @@ logging.basicConfig(
 )
 
 
+def md_to_html(text):
+    """Convert Groq Markdown output to safe inline HTML for email."""
+    # 1. Escape HTML special chars first
+    text = h(text)
+    # 2. Code blocks (```...```) → <pre><code>
+    text = _re.sub(
+        r'```(?:\w+)?\n?(.*?)```',
+        lambda m: f'<pre style="background:#F3F4F6;color:#1F2937;padding:10px 14px;border:1px solid #D1D5DB;border-radius:4px;font-size:12px;overflow-x:auto;margin:8px 0;font-family:Consolas,Courier New,monospace;">{m.group(1).strip()}</pre>',
+        text, flags=_re.DOTALL
+    )
+    # 3. Inline code → <code>
+    text = _re.sub(r'`([^`]+)`', r'<code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">\1</code>', text)
+    # 4. **bold**
+    text = _re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', text)
+    # 5. *italic*
+    text = _re.sub(r'\*(.+?)\*', r'<em>\1</em>', text)
+    # 6. ### / ## / # headings → bold line
+    text = _re.sub(r'^#{1,3}\s+(.+)$', r'<strong style="font-size:14px;">\1</strong>', text, flags=_re.MULTILINE)
+    # 7. Bullet points: - item or * item
+    text = _re.sub(r'^[\-\*]\s+(.+)$', r'&nbsp;&nbsp;&#8226;&nbsp;\1', text, flags=_re.MULTILINE)
+    # 8. Blank lines → paragraph break
+    text = _re.sub(r'\n{2,}', '</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;">', text)
+    # 9. Single newlines → <br>
+    text = text.replace('\n', '<br>')
+    # 10. Wrap in paragraph
+    text = f'<p style="margin:0;font-size:13px;color:#333;line-height:1.8;">{text}</p>'
+    return text
+
+
 def build_html(data):
     quote    = data["quote"]
     articles = data["articles"]
@@ -57,6 +87,19 @@ def build_html(data):
     vi_line = ""
     if quote.get("vi") and quote["vi"] != quote["foreign"]:
         vi_line = f'<p style="margin:6px 0 0;font-size:13px;color:#444444;line-height:1.5;">&nbsp;&nbsp;&nbsp;&#8618;&nbsp;{h(quote["vi"])}</p>'
+
+    # ── Lesson block ─────────────────────────────────────────────────────────
+    lesson_html = ""
+    if data.get("lesson"):
+        lesson_html = f"""
+  <tr>
+    <td bgcolor="#F0FFF4" style="background-color:#F0FFF4;padding:20px 30px;border-top:3px solid #2E7D32;">
+      <p style="margin:0 0 12px;font-size:11px;color:#2E7D32;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128218;&nbsp;B&#224;i h&#7885;c AI h&#244;m nay cho Dev
+      </p>
+      {md_to_html(data["lesson"])}
+    </td>
+  </tr>"""
 
     # ── Article rows ─────────────────────────────────────────────────────────
     articles_html = ""
@@ -170,6 +213,9 @@ def build_html(data):
 
   <!-- ARTICLES -->
   {articles_html}
+
+  <!-- LESSON SECTION -->
+  {lesson_html}
 
   <!-- FOOTER -->
   <tr>

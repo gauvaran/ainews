@@ -230,8 +230,9 @@ def send_email(subject, html, plain_text):
         from_addr = EMAIL_FROM
         from_header = EMAIL_FROM
 
-    # All recipients go to BCC — TO shows "undisclosed-recipients" to hide the list
-    bcc_list = [b.strip() for b in f"{EMAIL_TO},{EMAIL_BCC}".split(",") if b.strip()]
+    # All recipients go to BCC — TO is hidden
+    bcc_raw  = f"{EMAIL_TO},{EMAIL_BCC}" if EMAIL_TO else EMAIL_BCC
+    bcc_list = [b.strip() for b in bcc_raw.split(",") if b.strip()]
     all_recipients = bcc_list
 
     msg = MIMEMultipart("alternative")

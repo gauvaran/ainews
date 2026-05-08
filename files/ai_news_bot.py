@@ -334,6 +334,112 @@ def send_email(subject, html, plain_text):
     return False
 
 
+DOCS_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "docs")
+
+
+def _date_slug():
+    return datetime.datetime.now().strftime("%Y-%m-%d")
+
+
+def _all_dated_files():
+    """Return sorted list of date strings (YYYY-MM-DD) for existing web pages."""
+    if not os.path.isdir(DOCS_DIR):
+        return []
+    return sorted(
+        f[:-5] for f in os.listdir(DOCS_DIR)
+        if re.match(r'\d{4}-\d{2}-\d{2}\.html$', f)
+    )
+
+
+def build_web_html(data, prev_date=None, next_date=None):
+    """Wrap the email HTML with a sticky nav bar for web viewing."""
+    prev_btn = (
+        f'<a href="{prev_date}.html" style="color:#90C4F0;text-decoration:none;">&#8592; {prev_date}</a>'
+        if prev_date else '<span style="color:#4A6A8A;">&#8592;</span>'
+    )
+    next_btn = (
+        f'<a href="{next_date}.html" style="color:#90C4F0;text-decoration:none;">{next_date} &#8594;</a>'
+        if next_date else '<span style="color:#4A6A8A;">&#8594;</span>'
+    )
+    nav = f"""<div style="background:#001a4d;padding:10px 20px;text-align:center;font-family:Arial,sans-serif;font-size:13px;position:sticky;top:0;z-index:999;border-bottom:2px solid #0066CC;">
+  <span style="margin-right:24px;">{prev_btn}</span>
+  <a href="index.html" style="color:#FFD700;text-decoration:none;font-weight:bold;">&#128240; T&#7845;t c&#7843; b&#7843;n tin</a>
+  <span style="color:#FFFFFF;margin:0 24px;">{h(data['date'])}</span>
+  <span>{next_btn}</span>
+</div>
+"""
+    email_html = build_html(data)
+    return _re.sub(r'(<body[^>]*>)', r'\1\n' + nav, email_html, count=1)
+
+
+def update_web_index(all_dates):
+    """Regenerate docs/index.html — archive list + auto-redirect to today."""
+    os.makedirs(DOCS_DIR, exist_ok=True)
+
+    rows = ""
+    for d in reversed(all_dates):
+        dt = datetime.datetime.strptime(d, "%Y-%m-%d")
+        label = dt.strftime("%d/%m/%Y")
+        weekday = ["Thứ Hai","Thứ Ba","Thứ Tư","Thứ Năm","Thứ Sáu","Thứ Bảy","Chủ Nhật"][dt.weekday()]
+        rows += f'<tr><td style="padding:10px 16px;border-bottom:1px solid #E8ECF0;"><a href="{d}.html" style="color:#003087;text-decoration:none;font-size:15px;font-weight:bold;">{label}</a><span style="color:#999;font-size:13px;margin-left:10px;">{weekday}</span></td></tr>\n'
+
+    index_html = f"""<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>B&#7843;n Tin AI - BIS-MT</title>
+<script>
+  var today = new Date().toISOString().slice(0,10);
+  fetch(today + '.html', {{method:'HEAD'}}).then(function(r){{
+    if(r.ok) window.location.href = today + '.html';
+  }});
+</script>
+</head>
+<body style="margin:0;padding:0;background:#EEF2F7;font-family:Arial,sans-serif;">
+<div style="max-width:600px;margin:40px auto;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.1);">
+  <div style="background:#003087;padding:28px 30px;text-align:center;">
+    <h1 style="margin:0;color:#fff;font-size:24px;">&#129302; B&#7843;n Tin AI H&#7857;ng Ng&#224;y</h1>
+    <p style="margin:8px 0 0;color:#90C4F0;font-size:13px;">BIS &#8209; MT &nbsp;&#183;&nbsp; L&#432;u tr&#7919; b&#7843;n tin</p>
+  </div>
+  <table width="100%" cellpadding="0" cellspacing="0">
+    {rows}
+  </table>
+  <div style="padding:16px 30px;text-align:center;background:#F5F7FA;">
+    <p style="margin:0;font-size:12px;color:#999;">C&#7853;p nh&#7853;t m&#7895;i ng&#224;y l&#250;c 07:30 GMT+7</p>
+  </div>
+</div>
+</body>
+</html>"""
+
+    with open(os.path.join(DOCS_DIR, "index.html"), "w", encoding="utf-8") as f:
+        f.write(index_html)
+
+
+def save_web_pages(data):
+    """Save today's web page and refresh the index."""
+    os.makedirs(DOCS_DIR, exist_ok=True)
+
+    today = _date_slug()
+    existing = _all_dated_files()
+    all_dates = sorted(set(existing + [today]))
+    idx = all_dates.index(today)
+    prev_date = all_dates[idx - 1] if idx > 0 else None
+    next_date = all_dates[idx + 1] if idx < len(all_dates) - 1 else None
+
+    web_html = build_web_html(data, prev_date, next_date)
+    with open(os.path.join(DOCS_DIR, f"{today}.html"), "w", encoding="utf-8") as f:
+        f.write(web_html)
+
+    # Create .nojekyll so GitHub Pages doesn't skip files
+    nojekyll = os.path.join(DOCS_DIR, ".nojekyll")
+    if not os.path.exists(nojekyll):
+        open(nojekyll, "w").close()
+
+    update_web_index(all_dates)
+    logging.info(f"Web pages saved: docs/{today}.html + docs/index.html")
+
+
 def main():
     logging.info("=== AI News Bot started ===")
 
@@ -352,10 +458,13 @@ def main():
     logging.info(f"Sending to {EMAIL_TO}{bcc_info}...")
 
     if send_email(subject, html, plain_text):
-        logging.info("=== Bot finished successfully ===")
+        logging.info("Email sent successfully")
     else:
         logging.error(f"Failed after {MAX_RETRIES} attempts.")
         sys.exit(1)
+
+    save_web_pages(data)
+    logging.info("=== Bot finished successfully ===")
 
 
 if __name__ == "__main__":

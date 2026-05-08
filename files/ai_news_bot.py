@@ -351,8 +351,8 @@ def _all_dated_files():
     )
 
 
-def build_web_html(data, prev_date=None, next_date=None):
-    """Wrap the email HTML with a sticky nav bar, PDF and Share buttons."""
+def build_web_html(data, prev_date=None, next_date=None, date_slug=None):
+    """Wrap the email HTML with a sticky nav bar, PDF download and Share buttons."""
     prev_btn = (
         f'<a href="{prev_date}.html" style="color:#90C4F0;text-decoration:none;">&#8592; {prev_date}</a>'
         if prev_date else '<span style="color:#4A6A8A;">&#8592;</span>'
@@ -361,13 +361,14 @@ def build_web_html(data, prev_date=None, next_date=None):
         f'<a href="{next_date}.html" style="color:#90C4F0;text-decoration:none;">{next_date} &#8594;</a>'
         if next_date else '<span style="color:#4A6A8A;">&#8594;</span>'
     )
-    btn_style = "background:rgba(255,255,255,.15);color:#fff;border:none;padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;"
-    nav = f"""<div id="web-nav" style="background:#001a4d;padding:8px 16px;text-align:center;font-family:Arial,sans-serif;font-size:13px;position:sticky;top:0;z-index:999;border-bottom:2px solid #0066CC;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;">
+    btn_style = "background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;"
+    pdf_slug  = date_slug or _date_slug()
+    nav = f"""<div id="web-nav" style="background:#001a4d;padding:8px 16px;font-family:Arial,sans-serif;font-size:13px;position:sticky;top:0;z-index:999;border-bottom:2px solid #0066CC;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
   <span>{prev_btn}</span>
   <a href="all.html" style="color:#FFD700;text-decoration:none;font-weight:bold;">&#128240; T&#7845;t c&#7843; b&#7843;n tin</a>
   <span style="color:#FFFFFF;">{h(data['date'])}</span>
   <span>{next_btn}</span>
-  <button onclick="window.print()" style="{btn_style}">&#128196; PDF</button>
+  <a href="{pdf_slug}.pdf" download="{pdf_slug}.pdf" style="{btn_style}">&#128196; T&#7843;i PDF</a>
   <button onclick="sharePage()" style="{btn_style}">&#128279; Chia s&#7867;</button>
 </div>
 <script>
@@ -381,10 +382,26 @@ function sharePage(){{
 </script>
 """
     print_css = """<style>
+/* ── Responsive overrides for web (email HTML uses fixed 600px tables) ── */
+@media screen and (max-width:620px) {
+  table[width="600"] { width:100% !important; }
+  td { word-break:break-word; overflow-wrap:break-word; }
+  /* Reduce generous email padding on small screens */
+  td[style*="padding:28px 30px"],
+  td[style*="padding:24px 30px"],
+  td[style*="padding:22px 30px"],
+  td[style*="padding:20px 30px"],
+  td[style*="padding:16px 30px"],
+  td[style*="padding:12px 30px"] { padding-left:14px !important; padding-right:14px !important; }
+  /* Code blocks: scroll horizontally instead of breaking layout */
+  pre { overflow-x:auto !important; max-width:calc(100vw - 32px) !important; box-sizing:border-box; }
+  /* Shrink large heading text slightly */
+  h1[style*="26px"] { font-size:20px !important; }
+}
+/* ── Print: hide nav bar ── */
 @media print {
   #web-nav { display:none !important; }
   body { background:#fff !important; }
-  table { page-break-inside: avoid; }
 }
 </style>
 """
@@ -454,8 +471,21 @@ def update_web_index(all_dates):
         f.write(all_html)
 
 
+def _generate_pdf(data, pdf_path):
+    """Generate a clean PDF of the newsletter using WeasyPrint."""
+    try:
+        from weasyprint import HTML as WeasyprintHTML
+        pdf_html = build_html(data)
+        WeasyprintHTML(string=pdf_html, base_url=DOCS_DIR).write_pdf(pdf_path)
+        logging.info(f"PDF saved: {os.path.basename(pdf_path)}")
+    except ImportError:
+        logging.info("weasyprint not installed — skipping PDF")
+    except Exception as e:
+        logging.warning(f"PDF generation failed: {e}")
+
+
 def save_web_pages(data):
-    """Save today's web page and refresh the index."""
+    """Save today's web page, PDF and refresh the index."""
     os.makedirs(DOCS_DIR, exist_ok=True)
 
     today = _date_slug()
@@ -465,11 +495,12 @@ def save_web_pages(data):
     prev_date = all_dates[idx - 1] if idx > 0 else None
     next_date = all_dates[idx + 1] if idx < len(all_dates) - 1 else None
 
-    web_html = build_web_html(data, prev_date, next_date)
+    web_html = build_web_html(data, prev_date, next_date, date_slug=today)
     with open(os.path.join(DOCS_DIR, f"{today}.html"), "w", encoding="utf-8") as f:
         f.write(web_html)
 
-    # Create .nojekyll so GitHub Pages doesn't skip files
+    _generate_pdf(data, os.path.join(DOCS_DIR, f"{today}.pdf"))
+
     nojekyll = os.path.join(DOCS_DIR, ".nojekyll")
     if not os.path.exists(nojekyll):
         open(nojekyll, "w").close()

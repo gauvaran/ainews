@@ -22,7 +22,9 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install feedparser --quiet
+        run: |
+          pip install feedparser weasyprint --quiet
+          sudo apt-get install -y libpango-1.0-0 libpangoft2-1.0-0 libcairo2 --quiet 2>/dev/null || true
 
       - name: Run AI News Bot
         env:

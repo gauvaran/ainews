@@ -91,6 +91,19 @@ def build_html(data):
     if quote.get("explain"):
         explain_line = f'<p style="margin:8px 0 0;font-size:12px;color:#5A6A7A;font-style:italic;line-height:1.5;font-family:Arial,sans-serif;">&#128161;&nbsp;{h(quote["explain"])}</p>'
 
+    # ── Tips block ───────────────────────────────────────────────────────────
+    tips_html = ""
+    if data.get("tips"):
+        tips_html = f"""
+  <tr>
+    <td bgcolor="#FFFBEB" style="background-color:#FFFBEB;padding:20px 30px;border-top:3px solid #D97706;">
+      <p style="margin:0 0 12px;font-size:11px;color:#D97706;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#9889;&nbsp;Tips &amp; Tricks cho Dev
+      </p>
+      {md_to_html(data["tips"])}
+    </td>
+  </tr>"""
+
     # ── Lesson block ─────────────────────────────────────────────────────────
     lesson_html = ""
     if data.get("lesson"):
@@ -218,6 +231,9 @@ def build_html(data):
   <!-- ARTICLES -->
   {articles_html}
 
+  <!-- TIPS SECTION -->
+  {tips_html}
+
   <!-- LESSON SECTION -->
   {lesson_html}
 
@@ -264,6 +280,10 @@ def build_plain_text(data):
             lines.append(f"   {art['link']}")
         if art.get("summary"):
             lines.append(f"\n   {art['summary']}")
+    if data.get("tips"):
+        lines.append("\n" + "─" * 50)
+        lines.append("⚡ TIPS & TRICKS")
+        lines.append(data["tips"])
     lines.append("\n" + "=" * 50)
     lines.append("Luôn đi đầu trong thế giới AI!")
     return "\n".join(lines)

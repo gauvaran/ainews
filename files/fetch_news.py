@@ -129,7 +129,7 @@ def _groq_summarize(title, context_text, api_key):
 
 
 def _translate_vi(text, max_len=400):
-    """Translate EN→VI via MyMemory (fallback)."""
+    """Translate EN→VI via MyMemory (fallback only)."""
     try:
         params = urllib.parse.urlencode({"q": text[:max_len], "langpair": "en|vi"})
         with urllib.request.urlopen(f"https://api.mymemory.translated.net/get?{params}", timeout=10) as r:
@@ -140,6 +140,40 @@ def _translate_vi(text, max_len=400):
     except Exception:
         pass
     return ""
+
+
+def _groq_translate_title(title, api_key):
+    """Translate a news headline EN→VI using Groq, keeping technical terms in English."""
+    if not api_key:
+        return _translate_vi(title)
+    prompt = (
+        "Dịch tiêu đề tin tức sau sang tiếng Việt. "
+        "Người đọc là developer giàu kinh nghiệm. "
+        "Giữ nguyên thuật ngữ kỹ thuật tiếng Anh (AI, model, API, LLM, agent, token, fine-tune, v.v.). "
+        "Dịch sát nghĩa, tự nhiên, không giải thích. Chỉ trả về bản dịch, không có gì khác.\n\n"
+        f"{title}"
+    )
+    payload = json.dumps({
+        "model": GROQ_MODEL,
+        "messages": [{"role": "user", "content": prompt}],
+        "max_tokens": 120,
+        "temperature": 0.1,
+    }).encode()
+    req = urllib.request.Request(
+        GROQ_URL, data=payload,
+        headers={
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "User-Agent": "Mozilla/5.0 (compatible; NewsBot/1.0)",
+        },
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=15) as r:
+            data = json.loads(r.read().decode())
+        return data["choices"][0]["message"]["content"].strip()
+    except Exception:
+        return _translate_vi(title)
 
 
 DEV_TOPICS = [
@@ -223,6 +257,45 @@ def _groq_lesson(api_key):
         return ""
 
 
+def _groq_tips(api_key):
+    """Generate 2 trending AI tips & tricks for developers."""
+    if not api_key:
+        return ""
+    today = datetime.datetime.now().strftime("%Y-%m-%d")
+    prompt = (
+        f"Hôm nay là {today}. Bạn là senior dev chia sẻ tips thực chiến về AI tools.\n\n"
+        "Viết ĐÚNG 2 tip & trick ngắn gọn, trending về dùng AI trong công việc dev hàng ngày "
+        "(GitHub Copilot, ChatGPT, Claude, Cursor, Gemini, Windsurf, Codeium, v.v.). "
+        "Chọn tips đang hot hoặc ít người biết, cụ thể và áp dụng được ngay.\n\n"
+        "Format mỗi tip:\n"
+        "### ⚡ [Tên tip]\n"
+        "[2-3 câu: giải thích + ví dụ prompt mẫu hoặc lệnh cụ thể]\n\n"
+        "Yêu cầu: tiếng Việt, giữ thuật ngữ EN, mỗi tip ≤ 60 từ. Viết 2 tip liền nhau."
+    )
+    payload = json.dumps({
+        "model": GROQ_MODEL,
+        "messages": [{"role": "user", "content": prompt}],
+        "max_tokens": 450,
+        "temperature": 0.85,
+    }).encode()
+    req = urllib.request.Request(
+        GROQ_URL, data=payload,
+        headers={
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "User-Agent": "Mozilla/5.0 (compatible; NewsBot/1.0)",
+        },
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=30) as r:
+            data = json.loads(r.read().decode())
+        return data["choices"][0]["message"]["content"].strip()
+    except Exception as e:
+        print(f"Groq tips error: {e}", file=sys.stderr)
+        return ""
+
+
 def fetch_ai_news(max_items=5):
     """Return structured dict: quote + list of articles."""
     groq_key = os.environ.get("GROQ_API_KEY", "")
@@ -243,9 +316,9 @@ def fetch_ai_news(max_items=5):
             parts = title_en.rsplit(" - ", 1)
             title_en, publisher = parts[0].strip(), parts[1].strip()
 
-        # Translate title
-        title_vi = _translate_vi(title_en)
-        time.sleep(0.4)
+        # Translate title via Groq (falls back to MyMemory if no key)
+        title_vi = _groq_translate_title(title_en, groq_key)
+        time.sleep(0.3)
 
         # Get context for summary: try article page first, fall back to RSS description
         link = entry.get("link", "")
@@ -267,11 +340,13 @@ def fetch_ai_news(max_items=5):
         })
 
     lesson_content = _groq_lesson(groq_key)
+    tips_content   = _groq_tips(groq_key)
 
     return {
         "quote":    get_daily_quote(),
         "articles": articles,
         "lesson":   lesson_content,
+        "tips":     tips_content,
         "date":     datetime.datetime.now().strftime("%d/%m/%Y"),
         "groq":     bool(groq_key),
     }

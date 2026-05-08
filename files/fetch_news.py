@@ -157,21 +157,23 @@ def _translate_vi(text, max_len=400):
     return ""
 
 
-def _groq_translate_title(title, api_key):
-    """Translate a news headline EN→VI using Groq, keeping technical terms in English."""
-    if not api_key:
-        return _translate_vi(title)
+def _groq_translate_titles_batch(titles, api_key):
+    """Translate all headlines in ONE Groq call. Returns list aligned with input."""
+    if not api_key or not titles:
+        return [_translate_vi(t) for t in titles]
+    numbered = "\n".join(f"{i+1}. {t}" for i, t in enumerate(titles))
     prompt = (
-        "Dịch tiêu đề tin tức sau sang tiếng Việt. "
+        "Dịch các tiêu đề tin tức sau sang tiếng Việt. "
         "Người đọc là developer giàu kinh nghiệm. "
-        "Giữ nguyên thuật ngữ kỹ thuật tiếng Anh (AI, model, API, LLM, agent, token, fine-tune, v.v.). "
-        "Dịch sát nghĩa, tự nhiên, không giải thích. Chỉ trả về bản dịch, không có gì khác.\n\n"
-        f"{title}"
+        "Giữ nguyên thuật ngữ kỹ thuật EN (AI, model, API, LLM, agent, token, fine-tune, v.v.). "
+        "Dịch sát nghĩa, tự nhiên. "
+        "Chỉ trả về danh sách đánh số theo đúng thứ tự, không giải thích.\n\n"
+        f"{numbered}"
     )
     payload = json.dumps({
         "model": GROQ_MODEL,
         "messages": [{"role": "user", "content": prompt}],
-        "max_tokens": 120,
+        "max_tokens": 800,
         "temperature": 0.1,
     }).encode()
     req = urllib.request.Request(
@@ -184,11 +186,17 @@ def _groq_translate_title(title, api_key):
         },
     )
     try:
-        with urllib.request.urlopen(req, timeout=15) as r:
+        with urllib.request.urlopen(req, timeout=20) as r:
             data = json.loads(r.read().decode())
-        return data["choices"][0]["message"]["content"].strip()
+        raw = data["choices"][0]["message"]["content"].strip()
+        # Parse "1. ...\n2. ...\n" → list
+        lines = [re.sub(r'^\d+\.\s*', '', l).strip() for l in raw.splitlines() if l.strip()]
+        # Pad / trim to match input length
+        while len(lines) < len(titles):
+            lines.append("")
+        return lines[:len(titles)]
     except Exception:
-        return _translate_vi(title)
+        return [_translate_vi(t) for t in titles]
 
 
 DEV_TOPICS = [
@@ -311,54 +319,23 @@ def _groq_tips(api_key):
         return ""
 
 
-def _process_entry(entry, groq_key, fallback_publisher=""):
-    """Translate, fetch context, summarize one RSS entry. Returns article dict."""
-    title_en = entry.get("title", "").strip()
-    publisher = fallback_publisher
-    if " - " in title_en:
-        parts = title_en.rsplit(" - ", 1)
-        title_en, publisher = parts[0].strip(), parts[1].strip()
-    elif not publisher:
-        publisher = entry.get("source", {}).get("title", "")
-
-    title_vi = _groq_translate_title(title_en, groq_key)
-    time.sleep(2)
-
-    link = entry.get("link", "")
-    context = _fetch_article_text(link)
-    if not context:
-        context = _strip_html(entry.get("summary", entry.get("description", "")))
-
-    summary = _groq_summarize(title_en, context, groq_key)
-    time.sleep(4)
-
-    return {
-        "title_en":  title_en,
-        "title_vi":  title_vi,
-        "publisher": publisher,
-        "link":      link,
-        "summary":   summary,
-    }
-
-
 def fetch_ai_news(google_items=3, specialized_items=5):
     """Return structured dict: quote + 3 Google News + 5 specialized feed articles."""
     groq_key = os.environ.get("GROQ_API_KEY", "")
-    articles = []
 
     socket.setdefaulttimeout(12)
-
     _headers = {"User-Agent": "Mozilla/5.0 (compatible; NewsBot/1.0)"}
 
-    # ── 3 articles from Google News ──────────────────────────────────────────
+    # ── Phase 1: collect raw entries (no Groq yet) ────────────────────────────
+    raw = []  # list of (entry, publisher_hint)
+
     try:
         feed = feedparser.parse(NEWS_URL, request_headers=_headers)
         for entry in feed.entries[:google_items]:
-            articles.append(_process_entry(entry, groq_key))
+            raw.append((entry, ""))
     except Exception as e:
         print(f"Google News feed error: {e}", file=sys.stderr)
 
-    # ── 5 articles from specialized feeds, 10-feed pool as backup ────────────
     collected = 0
     for feed_url, feed_name in SPECIALIZED_FEEDS:
         if collected >= specialized_items:
@@ -366,18 +343,53 @@ def fetch_ai_news(google_items=3, specialized_items=5):
         try:
             feed = feedparser.parse(feed_url, request_headers=_headers)
             if feed.entries:
-                articles.append(_process_entry(feed.entries[0], groq_key, fallback_publisher=feed_name))
+                raw.append((feed.entries[0], feed_name))
                 collected += 1
                 print(f"OK: {feed_name}", file=sys.stderr)
             else:
-                print(f"Empty feed: {feed_name}", file=sys.stderr)
+                print(f"Empty: {feed_name}", file=sys.stderr)
         except Exception as e:
-            print(f"Specialized feed error ({feed_name}): {e}", file=sys.stderr)
+            print(f"Feed error ({feed_name}): {e}", file=sys.stderr)
 
-    if not articles:
+    if not raw:
         return None
 
+    # ── Phase 2: parse titles / publishers ────────────────────────────────────
+    parsed = []
+    for entry, pub_hint in raw:
+        title_en = entry.get("title", "").strip()
+        publisher = pub_hint
+        if " - " in title_en:
+            parts = title_en.rsplit(" - ", 1)
+            title_en, publisher = parts[0].strip(), parts[1].strip()
+        elif not publisher:
+            publisher = entry.get("source", {}).get("title", "")
+        link = entry.get("link", "")
+        context = _fetch_article_text(link)
+        if not context:
+            context = _strip_html(entry.get("summary", entry.get("description", "")))
+        parsed.append({"title_en": title_en, "publisher": publisher, "link": link, "context": context})
+
+    # ── Phase 3: batch-translate all titles in ONE Groq call ─────────────────
+    titles_vi = _groq_translate_titles_batch([p["title_en"] for p in parsed], groq_key)
+    time.sleep(5)  # let token bucket recover before summarize calls
+
+    # ── Phase 4: summarize each article (one Groq call each, with delay) ─────
+    articles = []
+    for i, p in enumerate(parsed):
+        summary = _groq_summarize(p["title_en"], p["context"], groq_key)
+        time.sleep(6)
+        articles.append({
+            "title_en":  p["title_en"],
+            "title_vi":  titles_vi[i] or p["title_en"],
+            "publisher": p["publisher"],
+            "link":      p["link"],
+            "summary":   summary,
+        })
+
+    # ── Phase 5: lesson + tips ────────────────────────────────────────────────
     lesson_content = _groq_lesson(groq_key)
+    time.sleep(4)
     tips_content   = _groq_tips(groq_key)
 
     return {

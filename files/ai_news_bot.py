@@ -87,6 +87,9 @@ def build_html(data):
     vi_line = ""
     if quote.get("vi") and quote["vi"] != quote["foreign"]:
         vi_line = f'<p style="margin:6px 0 0;font-size:13px;color:#444444;line-height:1.5;">&nbsp;&nbsp;&nbsp;&#8618;&nbsp;{h(quote["vi"])}</p>'
+    explain_line = ""
+    if quote.get("explain"):
+        explain_line = f'<p style="margin:8px 0 0;font-size:12px;color:#5A6A7A;font-style:italic;line-height:1.5;font-family:Arial,sans-serif;">&#128161;&nbsp;{h(quote["explain"])}</p>'
 
     # ── Lesson block ─────────────────────────────────────────────────────────
     lesson_html = ""
@@ -199,6 +202,7 @@ def build_html(data):
       </p>
       {vi_line}
       <p style="margin:8px 0 0;font-size:12px;color:#888888;font-family:Arial,sans-serif;">&mdash;&nbsp;{h(quote["author"])}</p>
+      {explain_line}
     </td>
   </tr>
 
@@ -245,6 +249,8 @@ def build_plain_text(data):
     if q.get("vi") and q["vi"] != q["foreign"]:
         lines.append(f'  → {q["vi"]}')
     lines.append(f'  — {q["author"]}')
+    if q.get("explain"):
+        lines.append(f'  💡 {q["explain"]}')
     lines.append("\n" + "=" * 50)
     lines.append(f'BẢN TIN AI HẰNG NGÀY | BIS-MT | {data["date"]}')
     lines.append("=" * 50)

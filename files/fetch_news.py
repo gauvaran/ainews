@@ -15,52 +15,31 @@ import time
 import hashlib
 from html.parser import HTMLParser
 
-NEWS_URL   = "https://news.google.com/rss/search?q=artificial+intelligence+AI&hl=en-US&gl=US&ceid=US:en"
+NEWS_URL   = "https://news.google.com/rss/search?q=AI+tools+software+developers+programming+productivity&hl=en-US&gl=US&ceid=US:en"
 GROQ_URL   = "https://api.groq.com/openai/v1/chat/completions"
 GROQ_MODEL = "llama-3.1-8b-instant"
 
-QUOTES = [
-    {"foreign": "The only way to do great work is to love what you do.",                    "author": "Steve Jobs",              "vi": "Cách duy nhất để làm việc vĩ đại là yêu thích điều bạn đang làm."},
-    {"foreign": "In the middle of every difficulty lies opportunity.",                       "author": "Albert Einstein",         "vi": "Giữa mọi khó khăn đều ẩn chứa một cơ hội."},
-    {"foreign": "The future belongs to those who believe in the beauty of their dreams.",    "author": "Eleanor Roosevelt",       "vi": "Tương lai thuộc về những người tin vào vẻ đẹp của ước mơ mình."},
-    {"foreign": "It does not matter how slowly you go as long as you do not stop.",          "author": "Khổng Tử",                "vi": "Không quan trọng bạn đi chậm đến đâu, miễn là bạn không dừng lại."},
-    {"foreign": "Người không học như ngọc không mài.",                                       "author": "Tục ngữ Việt Nam",        "vi": "Người không chịu học thì không thể tỏa sáng, như ngọc không mài giũa."},
-    {"foreign": "La vita è ciò che ti accade mentre fai altri progetti.",                     "author": "John Lennon (Ý)",         "vi": "Cuộc sống là những gì xảy ra khi bạn đang bận lên kế hoạch cho điều khác."},
-    {"foreign": "Einfachheit ist die höchste Stufe der Vollkommenheit.",                      "author": "Leonardo da Vinci (Đức)", "vi": "Sự đơn giản là đỉnh cao của sự hoàn hảo."},
-    {"foreign": "Chaque jour est une nouvelle chance de changer ta vie.",                     "author": "Tục ngữ Pháp",            "vi": "Mỗi ngày là một cơ hội mới để thay đổi cuộc đời bạn."},
-    {"foreign": "The best time to plant a tree was 20 years ago. The second best time is now.", "author": "Tục ngữ Trung Quốc",  "vi": "Thời điểm tốt nhất để trồng cây là 20 năm trước. Thời điểm tốt thứ hai là ngay bây giờ."},
-    {"foreign": "Có chí thì nên.",                                                            "author": "Tục ngữ Việt Nam",        "vi": "Nếu có ý chí và quyết tâm, ắt sẽ thành công."},
-    {"foreign": "知識は力なり。",                                                              "author": "Francis Bacon (Nhật)",    "vi": "Tri thức là sức mạnh."},
-    {"foreign": "The secret of getting ahead is getting started.",                            "author": "Mark Twain",              "vi": "Bí quyết để tiến về phía trước là bắt đầu."},
-    {"foreign": "Fall seven times, stand up eight.",                                          "author": "Tục ngữ Nhật Bản",        "vi": "Ngã bảy lần, đứng dậy tám lần."},
-    {"foreign": "Học, học nữa, học mãi.",                                                     "author": "Vladimir Lenin",          "vi": "Hãy không ngừng học tập — tri thức không có điểm dừng."},
-    {"foreign": "Innovation distinguishes between a leader and a follower.",                  "author": "Steve Jobs",              "vi": "Sáng tạo phân biệt người dẫn đầu với kẻ đi theo."},
-]
+try:
+    import sys as _sys, os as _os
+    _sys.path.insert(0, _os.path.dirname(__file__))
+    from quotes import QUOTES as _CURATED_QUOTES
+except Exception:
+    _CURATED_QUOTES = []
 
 
 def get_daily_quote():
-    """Fetch real Quote of the Day from ZenQuotes API. Falls back to local list."""
-    try:
-        req = urllib.request.Request(
-            "https://zenquotes.io/api/today",
-            headers={"User-Agent": "Mozilla/5.0 (compatible; NewsBot/1.0)"}
-        )
-        with urllib.request.urlopen(req, timeout=10) as r:
-            data = json.loads(r.read().decode())
-        quote_en = data[0]["q"].strip()
-        author   = data[0]["a"].strip()
-        # Translate to Vietnamese
-        quote_vi = _translate_vi(quote_en, max_len=500)
+    """Return today's quote from the curated 365-quote list, cycling by day-of-year."""
+    if _CURATED_QUOTES:
+        day_idx = (datetime.datetime.now().timetuple().tm_yday - 1) % len(_CURATED_QUOTES)
+        q = _CURATED_QUOTES[day_idx]
         return {
-            "foreign": quote_en,
-            "vi":      quote_vi,
-            "author":  author,
+            "foreign": q["text"],
+            "vi":      q.get("vi"),
+            "author":  q["author"],
+            "explain": q.get("explain", ""),
         }
-    except Exception as e:
-        print(f"ZenQuotes error: {e}", file=sys.stderr)
-        # Fallback to local list
-        idx = int(hashlib.md5(datetime.datetime.now().strftime("%Y%m%d").encode()).hexdigest(), 16) % len(QUOTES)
-        return QUOTES[idx]
+    # Emergency fallback
+    return {"foreign": "Có chí thì nên.", "vi": None, "author": "Tục ngữ Việt Nam", "explain": "Ý chí và quyết tâm là chìa khóa thành công."}
 
 
 class _ParagraphParser(HTMLParser):

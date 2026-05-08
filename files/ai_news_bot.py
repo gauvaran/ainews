@@ -383,24 +383,26 @@ def update_web_index(all_dates):
         weekday = ["Thứ Hai","Thứ Ba","Thứ Tư","Thứ Năm","Thứ Sáu","Thứ Bảy","Chủ Nhật"][dt.weekday()]
         rows += f'<tr><td style="padding:10px 16px;border-bottom:1px solid #E8ECF0;"><a href="{d}.html" style="color:#003087;text-decoration:none;font-size:15px;font-weight:bold;">{label}</a><span style="color:#999;font-size:13px;margin-left:10px;">{weekday}</span></td></tr>\n'
 
+    latest = all_dates[-1] if all_dates else ""
+    latest_dt = datetime.datetime.strptime(latest, "%Y-%m-%d") if latest else None
+    latest_label = latest_dt.strftime("%d/%m/%Y") if latest_dt else ""
+
     index_html = f"""<!DOCTYPE html>
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>B&#7843;n Tin AI - BIS-MT</title>
-<script>
-  var today = new Date().toISOString().slice(0,10);
-  fetch(today + '.html', {{method:'HEAD'}}).then(function(r){{
-    if(r.ok) window.location.href = today + '.html';
-  }});
-</script>
 </head>
 <body style="margin:0;padding:0;background:#EEF2F7;font-family:Arial,sans-serif;">
 <div style="max-width:600px;margin:40px auto;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.1);">
   <div style="background:#003087;padding:28px 30px;text-align:center;">
     <h1 style="margin:0;color:#fff;font-size:24px;">&#129302; B&#7843;n Tin AI H&#7857;ng Ng&#224;y</h1>
     <p style="margin:8px 0 0;color:#90C4F0;font-size:13px;">BIS &#8209; MT &nbsp;&#183;&nbsp; L&#432;u tr&#7919; b&#7843;n tin</p>
+  </div>
+  {f'<div style="padding:16px 30px;text-align:center;background:#EBF4FF;border-bottom:1px solid #C8DCF0;"><a href="{latest}.html" style="display:inline-block;background:#003087;color:#fff;padding:10px 24px;border-radius:6px;text-decoration:none;font-size:14px;font-weight:bold;">&#128240; Xem b&#7843;n tin m&#7899;i nh&#7845;t &mdash; {latest_label}</a></div>' if latest else ''}
+  <div style="padding:12px 30px 4px;background:#F5F7FA;">
+    <p style="margin:0;font-size:11px;color:#999;letter-spacing:1px;text-transform:uppercase;font-weight:bold;">T&#7845;t c&#7843; b&#7843;n tin</p>
   </div>
   <table width="100%" cellpadding="0" cellspacing="0">
     {rows}

@@ -7,6 +7,7 @@ import feedparser
 import datetime
 import sys
 import os
+import socket
 import urllib.request
 import urllib.parse
 import urllib.error
@@ -19,12 +20,18 @@ NEWS_URL   = "https://news.google.com/rss/search?q=AI+tools+software+developers+
 GROQ_URL   = "https://api.groq.com/openai/v1/chat/completions"
 GROQ_MODEL = "llama-3.1-8b-instant"
 
-# Specialized feeds — 1 article fetched from each, first 3 that succeed are used
+# Specialized feeds — 1 article per feed, need 5, list has 9 as backup pool
 SPECIALIZED_FEEDS = [
-    ("https://www.theverge.com/ai-artificial-intelligence/rss/index.xml", "The Verge AI"),
-    ("https://venturebeat.com/category/ai/feed/",                         "VentureBeat AI"),
-    ("https://github.blog/feed/",                                         "GitHub Blog"),
-    ("https://hnrss.org/newest?q=AI+LLM+developer&points=50",            "Hacker News"),
+    ("https://www.theverge.com/rss/ai-artificial-intelligence/index.xml", "The Verge AI"),
+    ("https://venturebeat.com/feed/",                                      "VentureBeat"),
+    ("https://github.blog/feed/",                                          "GitHub Blog"),
+    ("https://hnrss.org/newest?q=AI+LLM+developer&points=10",             "Hacker News"),
+    ("https://feeds.arstechnica.com/arstechnica/technology-lab",           "Ars Technica"),
+    ("https://dev.to/feed/tag/ai",                                         "Dev.to AI"),
+    ("https://www.theregister.com/emergent_tech/ai/headlines.atom",        "The Register AI"),
+    ("https://www.infoq.com/ai-ml-data-eng/articles.atom",                "InfoQ AI"),
+    ("https://spectrum.ieee.org/rss/blog/tech-talk/fulltext",              "IEEE Spectrum"),
+    ("https://techcrunch.com/category/artificial-intelligence/feed/",      "TechCrunch AI"),
 ]
 
 try:
@@ -315,7 +322,7 @@ def _process_entry(entry, groq_key, fallback_publisher=""):
         publisher = entry.get("source", {}).get("title", "")
 
     title_vi = _groq_translate_title(title_en, groq_key)
-    time.sleep(0.3)
+    time.sleep(2)
 
     link = entry.get("link", "")
     context = _fetch_article_text(link)
@@ -323,8 +330,7 @@ def _process_entry(entry, groq_key, fallback_publisher=""):
         context = _strip_html(entry.get("summary", entry.get("description", "")))
 
     summary = _groq_summarize(title_en, context, groq_key)
-    if summary:
-        time.sleep(0.3)
+    time.sleep(4)
 
     return {
         "title_en":  title_en,
@@ -335,29 +341,36 @@ def _process_entry(entry, groq_key, fallback_publisher=""):
     }
 
 
-def fetch_ai_news(google_items=2, specialized_items=3):
-    """Return structured dict: quote + articles from Google News + specialized feeds."""
+def fetch_ai_news(google_items=3, specialized_items=5):
+    """Return structured dict: quote + 3 Google News + 5 specialized feed articles."""
     groq_key = os.environ.get("GROQ_API_KEY", "")
     articles = []
 
-    # ── 2 articles from Google News ──────────────────────────────────────────
+    socket.setdefaulttimeout(12)
+
+    _headers = {"User-Agent": "Mozilla/5.0 (compatible; NewsBot/1.0)"}
+
+    # ── 3 articles from Google News ──────────────────────────────────────────
     try:
-        feed = feedparser.parse(NEWS_URL)
+        feed = feedparser.parse(NEWS_URL, request_headers=_headers)
         for entry in feed.entries[:google_items]:
             articles.append(_process_entry(entry, groq_key))
     except Exception as e:
         print(f"Google News feed error: {e}", file=sys.stderr)
 
-    # ── 3 articles from specialized feeds (1 each, 4th is backup) ────────────
+    # ── 5 articles from specialized feeds, 10-feed pool as backup ────────────
     collected = 0
     for feed_url, feed_name in SPECIALIZED_FEEDS:
         if collected >= specialized_items:
             break
         try:
-            feed = feedparser.parse(feed_url)
+            feed = feedparser.parse(feed_url, request_headers=_headers)
             if feed.entries:
                 articles.append(_process_entry(feed.entries[0], groq_key, fallback_publisher=feed_name))
                 collected += 1
+                print(f"OK: {feed_name}", file=sys.stderr)
+            else:
+                print(f"Empty feed: {feed_name}", file=sys.stderr)
         except Exception as e:
             print(f"Specialized feed error ({feed_name}): {e}", file=sys.stderr)
 

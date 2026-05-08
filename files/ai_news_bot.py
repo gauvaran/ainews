@@ -338,7 +338,7 @@ DOCS_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__
 
 
 def _date_slug():
-    return datetime.datetime.now().strftime("%Y-%m-%d")
+    return os.environ.get("WEB_DATE_OVERRIDE") or datetime.datetime.now().strftime("%Y-%m-%d")
 
 
 def _all_dated_files():
@@ -457,7 +457,9 @@ def main():
     bcc_info = f" | BCC: {EMAIL_BCC}" if EMAIL_BCC else ""
     logging.info(f"Sending to {EMAIL_TO}{bcc_info}...")
 
-    if send_email(subject, html, plain_text):
+    if os.environ.get("NO_EMAIL"):
+        logging.info("NO_EMAIL set — skipping email send")
+    elif send_email(subject, html, plain_text):
         logging.info("Email sent successfully")
     else:
         logging.error(f"Failed after {MAX_RETRIES} attempts.")

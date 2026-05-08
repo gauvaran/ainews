@@ -338,7 +338,7 @@ def main():
     logging.info("=== AI News Bot started ===")
 
     logging.info("Fetching AI news...")
-    data = fetch_ai_news(max_items=5)
+    data = fetch_ai_news()
     if not data:
         logging.error("Failed to fetch news. Aborting.")
         sys.exit(1)

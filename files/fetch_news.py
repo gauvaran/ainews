@@ -19,6 +19,14 @@ NEWS_URL   = "https://news.google.com/rss/search?q=AI+tools+software+developers+
 GROQ_URL   = "https://api.groq.com/openai/v1/chat/completions"
 GROQ_MODEL = "llama-3.1-8b-instant"
 
+# Specialized feeds — 1 article fetched from each, first 3 that succeed are used
+SPECIALIZED_FEEDS = [
+    ("https://www.theverge.com/ai-artificial-intelligence/rss/index.xml", "The Verge AI"),
+    ("https://venturebeat.com/category/ai/feed/",                         "VentureBeat AI"),
+    ("https://github.blog/feed/",                                         "GitHub Blog"),
+    ("https://hnrss.org/newest?q=AI+LLM+developer&points=50",            "Hacker News"),
+]
+
 try:
     import sys as _sys, os as _os
     _sys.path.insert(0, _os.path.dirname(__file__))
@@ -296,48 +304,65 @@ def _groq_tips(api_key):
         return ""
 
 
-def fetch_ai_news(max_items=5):
-    """Return structured dict: quote + list of articles."""
-    groq_key = os.environ.get("GROQ_API_KEY", "")
+def _process_entry(entry, groq_key, fallback_publisher=""):
+    """Translate, fetch context, summarize one RSS entry. Returns article dict."""
+    title_en = entry.get("title", "").strip()
+    publisher = fallback_publisher
+    if " - " in title_en:
+        parts = title_en.rsplit(" - ", 1)
+        title_en, publisher = parts[0].strip(), parts[1].strip()
+    elif not publisher:
+        publisher = entry.get("source", {}).get("title", "")
 
-    try:
-        feed = feedparser.parse(NEWS_URL)
-        if not feed.entries:
-            return None
-    except Exception as e:
-        print(f"Feed error: {e}", file=sys.stderr)
-        return None
+    title_vi = _groq_translate_title(title_en, groq_key)
+    time.sleep(0.3)
 
-    articles = []
-    for entry in feed.entries[:max_items]:
-        title_en = entry.get("title", "").strip()
-        publisher = ""
-        if " - " in title_en:
-            parts = title_en.rsplit(" - ", 1)
-            title_en, publisher = parts[0].strip(), parts[1].strip()
+    link = entry.get("link", "")
+    context = _fetch_article_text(link)
+    if not context:
+        context = _strip_html(entry.get("summary", entry.get("description", "")))
 
-        # Translate title via Groq (falls back to MyMemory if no key)
-        title_vi = _groq_translate_title(title_en, groq_key)
+    summary = _groq_summarize(title_en, context, groq_key)
+    if summary:
         time.sleep(0.3)
 
-        # Get context for summary: try article page first, fall back to RSS description
-        link = entry.get("link", "")
-        context = _fetch_article_text(link)
-        if not context:
-            context = _strip_html(entry.get("summary", entry.get("description", "")))
+    return {
+        "title_en":  title_en,
+        "title_vi":  title_vi,
+        "publisher": publisher,
+        "link":      link,
+        "summary":   summary,
+    }
 
-        # Summarize
-        summary = _groq_summarize(title_en, context, groq_key)
-        if summary:
-            time.sleep(0.3)
 
-        articles.append({
-            "title_en":  title_en,
-            "title_vi":  title_vi,
-            "publisher": publisher or entry.get("source", {}).get("title", ""),
-            "link":      link,
-            "summary":   summary,
-        })
+def fetch_ai_news(google_items=2, specialized_items=3):
+    """Return structured dict: quote + articles from Google News + specialized feeds."""
+    groq_key = os.environ.get("GROQ_API_KEY", "")
+    articles = []
+
+    # ── 2 articles from Google News ──────────────────────────────────────────
+    try:
+        feed = feedparser.parse(NEWS_URL)
+        for entry in feed.entries[:google_items]:
+            articles.append(_process_entry(entry, groq_key))
+    except Exception as e:
+        print(f"Google News feed error: {e}", file=sys.stderr)
+
+    # ── 3 articles from specialized feeds (1 each, 4th is backup) ────────────
+    collected = 0
+    for feed_url, feed_name in SPECIALIZED_FEEDS:
+        if collected >= specialized_items:
+            break
+        try:
+            feed = feedparser.parse(feed_url)
+            if feed.entries:
+                articles.append(_process_entry(feed.entries[0], groq_key, fallback_publisher=feed_name))
+                collected += 1
+        except Exception as e:
+            print(f"Specialized feed error ({feed_name}): {e}", file=sys.stderr)
+
+    if not articles:
+        return None
 
     lesson_content = _groq_lesson(groq_key)
     tips_content   = _groq_tips(groq_key)
@@ -354,4 +379,4 @@ def fetch_ai_news(max_items=5):
 
 if __name__ == "__main__":
     import pprint
-    pprint.pprint(fetch_ai_news(max_items=2))
+    pprint.pprint(fetch_ai_news())

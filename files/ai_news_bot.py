@@ -363,7 +363,7 @@ def build_web_html(data, prev_date=None, next_date=None):
     )
     nav = f"""<div style="background:#001a4d;padding:10px 20px;text-align:center;font-family:Arial,sans-serif;font-size:13px;position:sticky;top:0;z-index:999;border-bottom:2px solid #0066CC;">
   <span style="margin-right:24px;">{prev_btn}</span>
-  <a href="index.html" style="color:#FFD700;text-decoration:none;font-weight:bold;">&#128240; T&#7845;t c&#7843; b&#7843;n tin</a>
+  <a href="all.html" style="color:#FFD700;text-decoration:none;font-weight:bold;">&#128240; T&#7845;t c&#7843; b&#7843;n tin</a>
   <span style="color:#FFFFFF;margin:0 24px;">{h(data['date'])}</span>
   <span>{next_btn}</span>
 </div>
@@ -373,49 +373,64 @@ def build_web_html(data, prev_date=None, next_date=None):
 
 
 def update_web_index(all_dates):
-    """Regenerate docs/index.html — archive list + auto-redirect to today."""
+    """Regenerate docs/index.html (redirect to latest) and docs/all.html (archive)."""
     os.makedirs(DOCS_DIR, exist_ok=True)
+    latest = all_dates[-1] if all_dates else ""
 
+    # ── index.html: instant redirect to latest newsletter ────────────────────
+    index_html = f"""<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="refresh" content="0; url={latest}.html">
+<title>B&#7843;n Tin AI - BIS-MT</title>
+</head>
+<body>
+<p><a href="{latest}.html">Chuy&#7875;n h&#432;&#7899;ng...</a></p>
+</body>
+</html>"""
+    with open(os.path.join(DOCS_DIR, "index.html"), "w", encoding="utf-8") as f:
+        f.write(index_html)
+
+    # ── all.html: full archive listing ───────────────────────────────────────
     rows = ""
     for d in reversed(all_dates):
         dt = datetime.datetime.strptime(d, "%Y-%m-%d")
         label = dt.strftime("%d/%m/%Y")
         weekday = ["Thứ Hai","Thứ Ba","Thứ Tư","Thứ Năm","Thứ Sáu","Thứ Bảy","Chủ Nhật"][dt.weekday()]
-        rows += f'<tr><td style="padding:10px 16px;border-bottom:1px solid #E8ECF0;"><a href="{d}.html" style="color:#003087;text-decoration:none;font-size:15px;font-weight:bold;">{label}</a><span style="color:#999;font-size:13px;margin-left:10px;">{weekday}</span></td></tr>\n'
+        rows += f'<tr><td style="padding:12px 20px;border-bottom:1px solid #E8ECF0;"><a href="{d}.html" style="color:#003087;text-decoration:none;font-size:15px;font-weight:bold;">{label}</a><span style="color:#999;font-size:13px;margin-left:10px;">{weekday}</span></td></tr>\n'
 
-    latest = all_dates[-1] if all_dates else ""
     latest_dt = datetime.datetime.strptime(latest, "%Y-%m-%d") if latest else None
     latest_label = latest_dt.strftime("%d/%m/%Y") if latest_dt else ""
 
-    index_html = f"""<!DOCTYPE html>
+    all_html = f"""<!DOCTYPE html>
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>B&#7843;n Tin AI - BIS-MT</title>
+<title>T&#7845;t c&#7843; b&#7843;n tin - BIS-MT</title>
 </head>
 <body style="margin:0;padding:0;background:#EEF2F7;font-family:Arial,sans-serif;">
 <div style="max-width:600px;margin:40px auto;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.1);">
-  <div style="background:#003087;padding:28px 30px;text-align:center;">
-    <h1 style="margin:0;color:#fff;font-size:24px;">&#129302; B&#7843;n Tin AI H&#7857;ng Ng&#224;y</h1>
+  <div style="background:#003087;padding:24px 30px;text-align:center;">
+    <h1 style="margin:0;color:#fff;font-size:22px;">&#129302; B&#7843;n Tin AI H&#7857;ng Ng&#224;y</h1>
     <p style="margin:8px 0 0;color:#90C4F0;font-size:13px;">BIS &#8209; MT &nbsp;&#183;&nbsp; L&#432;u tr&#7919; b&#7843;n tin</p>
   </div>
-  {f'<div style="padding:16px 30px;text-align:center;background:#EBF4FF;border-bottom:1px solid #C8DCF0;"><a href="{latest}.html" style="display:inline-block;background:#003087;color:#fff;padding:10px 24px;border-radius:6px;text-decoration:none;font-size:14px;font-weight:bold;">&#128240; Xem b&#7843;n tin m&#7899;i nh&#7845;t &mdash; {latest_label}</a></div>' if latest else ''}
-  <div style="padding:12px 30px 4px;background:#F5F7FA;">
-    <p style="margin:0;font-size:11px;color:#999;letter-spacing:1px;text-transform:uppercase;font-weight:bold;">T&#7845;t c&#7843; b&#7843;n tin</p>
+  {f'<div style="padding:14px 20px;text-align:center;background:#EBF4FF;border-bottom:2px solid #0066CC;"><a href="{latest}.html" style="display:inline-block;background:#003087;color:#fff;padding:9px 22px;border-radius:6px;text-decoration:none;font-size:14px;font-weight:bold;">&#128240; B&#7843;n tin m&#7899;i nh&#7845;t &mdash; {latest_label}</a></div>' if latest else ''}
+  <div style="padding:10px 20px 4px;background:#F5F7FA;">
+    <p style="margin:0;font-size:11px;color:#999;letter-spacing:1px;text-transform:uppercase;font-weight:bold;">T&#7845;t c&#7843; b&#7843;n tin ({len(all_dates)})</p>
   </div>
   <table width="100%" cellpadding="0" cellspacing="0">
     {rows}
   </table>
-  <div style="padding:16px 30px;text-align:center;background:#F5F7FA;">
+  <div style="padding:14px 20px;text-align:center;background:#F5F7FA;">
     <p style="margin:0;font-size:12px;color:#999;">C&#7853;p nh&#7853;t m&#7895;i ng&#224;y l&#250;c 07:30 GMT+7</p>
   </div>
 </div>
 </body>
 </html>"""
-
-    with open(os.path.join(DOCS_DIR, "index.html"), "w", encoding="utf-8") as f:
-        f.write(index_html)
+    with open(os.path.join(DOCS_DIR, "all.html"), "w", encoding="utf-8") as f:
+        f.write(all_html)
 
 
 def save_web_pages(data):

@@ -352,7 +352,7 @@ def _all_dated_files():
 
 
 def build_web_html(data, prev_date=None, next_date=None):
-    """Wrap the email HTML with a sticky nav bar for web viewing."""
+    """Wrap the email HTML with a sticky nav bar, PDF and Share buttons."""
     prev_btn = (
         f'<a href="{prev_date}.html" style="color:#90C4F0;text-decoration:none;">&#8592; {prev_date}</a>'
         if prev_date else '<span style="color:#4A6A8A;">&#8592;</span>'
@@ -361,14 +361,35 @@ def build_web_html(data, prev_date=None, next_date=None):
         f'<a href="{next_date}.html" style="color:#90C4F0;text-decoration:none;">{next_date} &#8594;</a>'
         if next_date else '<span style="color:#4A6A8A;">&#8594;</span>'
     )
-    nav = f"""<div style="background:#001a4d;padding:10px 20px;text-align:center;font-family:Arial,sans-serif;font-size:13px;position:sticky;top:0;z-index:999;border-bottom:2px solid #0066CC;">
-  <span style="margin-right:24px;">{prev_btn}</span>
+    btn_style = "background:rgba(255,255,255,.15);color:#fff;border:none;padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;"
+    nav = f"""<div id="web-nav" style="background:#001a4d;padding:8px 16px;text-align:center;font-family:Arial,sans-serif;font-size:13px;position:sticky;top:0;z-index:999;border-bottom:2px solid #0066CC;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;">
+  <span>{prev_btn}</span>
   <a href="all.html" style="color:#FFD700;text-decoration:none;font-weight:bold;">&#128240; T&#7845;t c&#7843; b&#7843;n tin</a>
-  <span style="color:#FFFFFF;margin:0 24px;">{h(data['date'])}</span>
+  <span style="color:#FFFFFF;">{h(data['date'])}</span>
   <span>{next_btn}</span>
+  <button onclick="window.print()" style="{btn_style}">&#128196; PDF</button>
+  <button onclick="sharePage()" style="{btn_style}">&#128279; Chia s&#7867;</button>
 </div>
+<script>
+function sharePage(){{
+  var title='Bản tin AI BIS-MT – {h(data["date"])}';
+  if(navigator.share){{navigator.share({{title:title,url:location.href}});}}
+  else{{navigator.clipboard.writeText(location.href).then(function(){{
+    alert('Đã sao chép link!');
+  }});}}
+}}
+</script>
+"""
+    print_css = """<style>
+@media print {
+  #web-nav { display:none !important; }
+  body { background:#fff !important; }
+  table { page-break-inside: avoid; }
+}
+</style>
 """
     email_html = build_html(data)
+    email_html = _re.sub(r'(</head>)', print_css + r'\1', email_html, count=1)
     return _re.sub(r'(<body[^>]*>)', r'\1\n' + nav, email_html, count=1)
 
 

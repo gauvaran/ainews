@@ -472,16 +472,37 @@ def update_web_index(all_dates):
 
 
 def _generate_pdf(data, pdf_path):
-    """Generate a clean PDF of the newsletter using WeasyPrint."""
+    """Generate PDF: Chrome headless on macOS, WeasyPrint on Linux."""
+    import platform, subprocess, tempfile
+
+    # Save a clean HTML (no nav bar) to a temp file for rendering
+    pdf_html = build_html(data)
+    with tempfile.NamedTemporaryFile(suffix=".html", delete=False, mode="w", encoding="utf-8") as f:
+        f.write(pdf_html)
+        tmp_html = f.name
+
     try:
-        from weasyprint import HTML as WeasyprintHTML
-        pdf_html = build_html(data)
-        WeasyprintHTML(string=pdf_html, base_url=DOCS_DIR).write_pdf(pdf_path)
-        logging.info(f"PDF saved: {os.path.basename(pdf_path)}")
+        if platform.system() == "Darwin":
+            chrome = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+            result = subprocess.run(
+                [chrome, "--headless=new", "--disable-gpu", "--no-sandbox",
+                 f"--print-to-pdf={pdf_path}", f"file://{tmp_html}"],
+                capture_output=True, timeout=30
+            )
+            if result.returncode == 0:
+                logging.info(f"PDF saved (Chrome): {os.path.basename(pdf_path)}")
+            else:
+                logging.warning(f"Chrome PDF failed: {result.stderr.decode()[:200]}")
+        else:
+            from weasyprint import HTML as WeasyprintHTML
+            WeasyprintHTML(filename=tmp_html).write_pdf(pdf_path)
+            logging.info(f"PDF saved (WeasyPrint): {os.path.basename(pdf_path)}")
     except ImportError:
         logging.info("weasyprint not installed — skipping PDF")
     except Exception as e:
         logging.warning(f"PDF generation failed: {e}")
+    finally:
+        os.unlink(tmp_html)
 
 
 def save_web_pages(data):

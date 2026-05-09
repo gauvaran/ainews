@@ -5,6 +5,7 @@ fetch_news.py - Fetch AI news, translate, summarize via Groq, return structured 
 
 import feedparser
 import datetime
+import re
 import sys
 import os
 import socket
@@ -16,9 +17,10 @@ import time
 import hashlib
 from html.parser import HTMLParser
 
-NEWS_URL   = "https://news.google.com/rss/search?q=AI+tools+software+developers+programming+productivity&hl=en-US&gl=US&ceid=US:en"
-GROQ_URL   = "https://api.groq.com/openai/v1/chat/completions"
-GROQ_MODEL = "llama-3.1-8b-instant"
+NEWS_URL    = "https://news.google.com/rss/search?q=AI+tools+software+developers+programming+productivity&hl=en-US&gl=US&ceid=US:en"
+GROQ_URL    = "https://api.groq.com/openai/v1/chat/completions"
+GROQ_MODEL  = "llama-3.1-8b-instant"
+GEMINI_URL  = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent"
 
 # Specialized feeds — 1 article per feed, need 5, list has 9 as backup pool
 SPECIALIZED_FEEDS = [
@@ -155,6 +157,51 @@ def _translate_vi(text, max_len=400):
     except Exception:
         pass
     return ""
+
+
+def _gemini_translate_titles_batch(titles, api_key):
+    """Translate all headlines in ONE Gemini 2.5 Flash call. Returns list aligned with input."""
+    if not api_key or not titles:
+        return [""] * len(titles)
+    numbered = "\n".join(f"{i+1}. {t}" for i, t in enumerate(titles))
+    prompt = (
+        "Dịch các tiêu đề tin tức sau sang tiếng Việt. "
+        "Người đọc là developer Việt Nam giàu kinh nghiệm. "
+        "Giữ nguyên các từ kỹ thuật thông dụng viết bằng tiếng Anh: "
+        "AI, model, API, LLM, agent, token, fine-tune, developer, software, framework, v.v. "
+        "Dịch tự nhiên như người Việt viết, không dịch cứng nhắc (ví dụ: giữ 'developer', không dịch thành 'nhà phát triển'). "
+        "Chỉ trả về danh sách đánh số theo đúng thứ tự, không giải thích.\n\n"
+        f"{numbered}"
+    )
+    payload = json.dumps({
+        "contents": [{"parts": [{"text": prompt}]}],
+        "generationConfig": {"temperature": 0.1, "maxOutputTokens": 2048},
+    }).encode()
+    req = urllib.request.Request(
+        f"{GEMINI_URL}?key={api_key}",
+        data=payload,
+        headers={"Content-Type": "application/json"},
+    )
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(req, timeout=20) as r:
+                data = json.loads(r.read().decode())
+            raw = data["candidates"][0]["content"]["parts"][0]["text"].strip()
+            lines = [re.sub(r'^\d+\.\s*', '', l).strip() for l in raw.splitlines() if l.strip()]
+            while len(lines) < len(titles):
+                lines.append("")
+            return lines[:len(titles)]
+        except urllib.error.HTTPError as e:
+            if e.code == 429 and attempt < 2:
+                print(f"Gemini 429 — retry {attempt+1}/3 in 10s...", file=sys.stderr)
+                time.sleep(10)
+            else:
+                print(f"Gemini translate error: {e}", file=sys.stderr)
+                return [""] * len(titles)
+        except Exception as e:
+            print(f"Gemini translate error: {e}", file=sys.stderr)
+            return [""] * len(titles)
+    return [""] * len(titles)
 
 
 def _groq_translate_titles_batch(titles, api_key):
@@ -321,7 +368,8 @@ def _groq_tips(api_key):
 
 def fetch_ai_news(google_items=3, specialized_items=5):
     """Return structured dict: quote + 3 Google News + 5 specialized feed articles."""
-    groq_key = os.environ.get("GROQ_API_KEY", "")
+    groq_key   = os.environ.get("GROQ_API_KEY", "")
+    gemini_key = os.environ.get("GEMINI_API_KEY", "")
 
     socket.setdefaulttimeout(12)
     _headers = {"User-Agent": "Mozilla/5.0 (compatible; NewsBot/1.0)"}
@@ -370,8 +418,16 @@ def fetch_ai_news(google_items=3, specialized_items=5):
             context = _strip_html(entry.get("summary", entry.get("description", "")))
         parsed.append({"title_en": title_en, "publisher": publisher, "link": link, "context": context})
 
-    # ── Phase 3: batch-translate all titles in ONE Groq call ─────────────────
-    titles_vi = _groq_translate_titles_batch([p["title_en"] for p in parsed], groq_key)
+    # ── Phase 3: batch-translate all titles (Gemini preferred, Groq fallback) ──
+    title_inputs = [p["title_en"] for p in parsed]
+    if gemini_key:
+        print("Translating via Gemini Flash Lite...", file=sys.stderr)
+        titles_vi = _gemini_translate_titles_batch(title_inputs, gemini_key)
+        if not any(titles_vi):  # Gemini failed entirely, fall back
+            print("Gemini failed, falling back to Groq...", file=sys.stderr)
+            titles_vi = _groq_translate_titles_batch(title_inputs, groq_key)
+    else:
+        titles_vi = _groq_translate_titles_batch(title_inputs, groq_key)
     time.sleep(5)  # let token bucket recover before summarize calls
 
     # ── Phase 4: summarize each article (one Groq call each, with delay) ─────

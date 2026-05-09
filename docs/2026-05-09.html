@@ -37,20 +37,20 @@
   <span id="nav-prev" style="color:#4A6A8A;">&#8592;</span>
   <a href="all.html" style="color:#FFD700;text-decoration:none;font-weight:bold;">&#128240; T&#7845;t c&#7843; b&#7843;n tin</a>
   <span style="color:#FFFFFF;">09/05/2026</span>
-  <span><span id="nav-next" style="color:#4A6A8A;">&#8594;</span></span>
+  <span id="nav-next" style="color:#4A6A8A;">&#8594;</span>
   <a href="2026-05-09.pdf" download="2026-05-09.pdf" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128196; T&#7843;i PDF</a>
   <button onclick="sharePage()" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128279; Chia s&#7867;</button>
 </div>
 <script>
 function sharePage(){
-  var title=document.title;
+  var title='Bản tin AI BIS-MT – 09/05/2026';
   if(navigator.share){navigator.share({title:title,url:location.href});}
   else{navigator.clipboard.writeText(location.href).then(function(){
-    alert('Da sao chep link!');
+    alert('Đã sao chép link!');
   });}
 }
 (function(){
-  var m=location.pathname.match(/([0-9]{4}-[0-9]{2}-[0-9]{2})\.html/);
+  var m=location.pathname.match(/(\d{4}-\d{2}-\d{2})\.html/);
   if(!m)return;
   var slug=m[1];
   function fmt(s){var p=s.split('-');return p[2]+'/'+p[1];}
@@ -135,7 +135,7 @@ function sharePage(){
                     </table>
                   </td>
                   <td valign="top">
-                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">AI sẽ thay thế các nhà phát triển? Những điều bạn cần biết - Viện Tiêu chuẩn Quốc gia Hoa Kỳ</p>
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">AI có thay thế developer không? Những điều bạn cần biết – American National Standards Institute</p>
                     <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Will AI Replace Developers? What You Need to Know - American National Standards Institute</p>
                     <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;ANSI</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMiZEFVX3lxTE9EZzdOazR6YnQ0MWdScDlNOFRhQmJWMFdlanMyMDFzbVY2amdpZzRzRVhaRlU2X1RrUmZneWFtU0JRVS16cWU0V05UOFdoTVNFVTVhYjhpRWFCX2FyUlVpNTRkMEXSAWxBVV95cUxNNkREZU9qNjFnRVpZQzd6b1htRGY2U1kxeHhhN21OSzFFREVCVVJTZ3ZSYkVmcmREVmhnc2gxNVV5UDdTR2dtdmNmcGNwSFF1WVVuYVdWdW5NUDdPREF3bWIxMWg2d1gwbHZmOEo?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
                   </td>
@@ -146,15 +146,15 @@ function sharePage(){
                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
                   <tr>
                     <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
-                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Tiêu đề: Có Nên Lo Aptomat Sẽ Thay Thế Các Kỹ Sư Phát Triển?
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Tiêu đề: Có AI Sẽ Thay Thế Các Nhà Phát Triển? Những Điều Bạn Cần Biết
 
-Theo American National Standards Institute (ANSI), việc sử dụng trí tuệ nhân tạo (AI) trong lĩnh vực phát triển phần mềm đang trở nên phổ biến. Tuy nhiên, nhiều người lo ngại rằng AI sẽ thay thế các kỹ sư phát triển.
+Trong thời đại công nghệ đang phát triển nhanh chóng, câu hỏi liệu AI (Trí tuệ nhân tạo) sẽ thay thế các nhà phát triển hay không đã trở thành một chủ đề nóng. Theo American National Standards Institute (ANSI), AI có thể thay thế một số công việc của các nhà phát triển, nhưng không phải là tất cả.
 
-ANSI cho biết rằng AI có thể giúp tăng cường hiệu suất và giảm thiểu thời gian phát triển, nhưng nó không thể thay thế hoàn toàn các kỹ sư phát triển. AI có thể giúp tự động hóa các tác vụ đơn giản, nhưng nó vẫn cần sự giám sát và điều chỉnh của con người.
+AI có thể tự động hóa một số công việc như viết mã, kiểm tra lỗi và tối ưu hóa hiệu suất, giúp các nhà phát triển tập trung vào các công việc sáng tạo và phức tạp hơn. Tuy nhiên, AI không thể thay thế được sự sáng tạo, tư duy và khả năng giải quyết vấn đề của con người.
 
-Các kỹ sư phát triển vẫn cần phải có khả năng sáng tạo, phân tích và giải quyết vấn đề, những kỹ năng này không thể được AI thay thế. Ngoài ra, AI cũng cần được đào tạo và thiết lập bởi con người để nó có thể hoạt động hiệu quả.
+ANSI cho rằng, AI sẽ thay thế các công việc lặp đi lặp lại và có thể được tự động hóa, nhưng sẽ không thay thế được các công việc đòi hỏi sự sáng tạo và tư duy sáng tạo. Các nhà phát triển sẽ cần phải thích nghi với sự thay đổi và phát triển kỹ năng của mình để tận dụng được lợi thế của AI.
 
-ANSI khuyến nghị rằng các công ty nên xem AI như một công cụ hỗ trợ, chứ không phải là một thay thế cho các kỹ sư phát triển. Bằng cách kết hợp AI với các kỹ sư phát triển, các công ty có thể tăng cường hiệu suất và giảm thiểu thời gian phát triển, đồng thời vẫn duy trì được chất lượng và tính sáng tạo của sản phẩm.</p>
+Tóm lại, AI sẽ không thay thế hoàn toàn các nhà phát triển, nhưng sẽ thay thế một số công việc có thể được tự động hóa. Các nhà phát triển cần phải thích nghi và phát triển kỹ năng của mình để tận dụng được lợi thế của AI.</p>
                     </td>
                   </tr>
                 </table>
@@ -185,7 +185,7 @@ ANSI khuyến nghị rằng các công ty nên xem AI như một công cụ hỗ
                     </table>
                   </td>
                   <td valign="top">
-                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Các nhà phát triển phần mềm có kinh nghiệm cho rằng AI sẽ giúp họ tiết kiệm một khoảng thời gian. Nhưng trong một thí nghiệm, nhiệm vụ của họ mất nhiều thời gian hơn 20%</p>
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Các software developer giàu kinh nghiệm cho rằng AI sẽ giúp họ tiết kiệm đáng kể thời gian. Nhưng trong một thử nghiệm, các tác vụ của họ lại mất thêm 20% thời gian</p>
                     <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Experienced software developers assumed AI would save them a chunk of time. But in one experiment, their tasks took 20% longer</p>
                     <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Fortune</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMitwFBVV95cUxNWXdrZjRrdURKbEU1TG9JZnpQRE9OMTNKUXhPa1FXWElVSkhDTmpBbzVYUXBUYXFsbzNyLWdwWWVSSHp3RDJMSVNzemtGaGlKZjRNVkZlQ2lvSUFXT2VlX0tBc3NpY01hZU1mZ2d3OV9kZi1XUkJ2YmNYUW41ZFlyMDNvaDhFckpCTnlWUTJxNEd3LUJrXzc4b3FjUXhyWmx4dWdUQlJmX0pISndWblZLWHhrNGl5N0E?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
                   </td>
@@ -196,13 +196,13 @@ ANSI khuyến nghị rằng các công ty nên xem AI như một công cụ hỗ
                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
                   <tr>
                     <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
-                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Một nghiên cứu gần đây đã chỉ ra rằng các nhà phát triển phần mềm có kinh nghiệm đã không thể tận dụng được lợi ích của công nghệ trí tuệ nhân tạo (AI) như họ nghĩ. Trong một thí nghiệm, các nhà phát triển đã phải dành thêm 20% thời gian để hoàn thành các nhiệm vụ của mình.
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Một nghiên cứu mới đã chỉ ra rằng, những nhà phát triển phần mềm giàu kinh nghiệm đã nghĩ rằng AI sẽ giúp họ tiết kiệm thời gian. Tuy nhiên, trong một thí nghiệm, thời gian hoàn thành các nhiệm vụ của họ đã tăng lên 20%.
 
-Nghiên cứu này đã đánh giá hiệu suất làm việc của các nhà phát triển khi sử dụng công nghệ AI để hỗ trợ. Tuy nhiên, kết quả cho thấy rằng AI không thể giảm thiểu được thời gian cần thiết để hoàn thành các nhiệm vụ như các nhà phát triển đã dự đoán.
+Thí nghiệm này được thực hiện để đánh giá hiệu suất của AI trong việc hỗ trợ các nhà phát triển phần mềm. Kết quả cho thấy, mặc dù AI có thể giúp giảm thiểu một số công việc thủ công, nhưng nó cũng tạo ra một số thách thức mới và phức tạp hóa các nhiệm vụ.
 
-Thay vào đó, các nhà phát triển đã phải dành thêm thời gian để hiểu và sử dụng công nghệ AI một cách hiệu quả. Điều này cho thấy rằng việc áp dụng công nghệ AI không phải là một giải pháp dễ dàng và nhanh chóng, mà cần phải có sự chuẩn bị và đào tạo phù hợp.
+Các nhà phát triển phải dành nhiều thời gian hơn để giải quyết các vấn đề phát sinh từ việc sử dụng AI, điều này đã làm tăng thời gian hoàn thành các nhiệm vụ. Điều này cho thấy rằng, việc sử dụng AI không phải lúc nào cũng mang lại lợi ích về thời gian như người ta nghĩ.
 
-Kết quả này có thể giúp các tổ chức và cá nhân hiểu rõ hơn về lợi ích và hạn chế của công nghệ AI trong việc hỗ trợ công việc của các nhà phát triển phần mềm.</p>
+Thí nghiệm này cung cấp một cái nhìn mới về vai trò của AI trong công việc của các nhà phát triển phần mềm và cho thấy rằng, việc sử dụng AI cần được xem xét kỹ lưỡng để tránh các thách thức không mong muốn.</p>
                     </td>
                   </tr>
                 </table>
@@ -233,9 +233,9 @@ Kết quả này có thể giúp các tổ chức và cá nhân hiểu rõ hơn 
                     </table>
                   </td>
                   <td valign="top">
-                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Chúng tôi đang thay đổi thiết kế thử nghiệm năng suất của nhà phát triển</p>
-                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;We are Changing our Developer Productivity Experiment Design</p>
-                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;METR</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMiW0FVX3lxTFA0b25BaUN5Q3FySmgtWFBDd0hNWEhuc3hpMDlCaUpnRmlCMGRoSXk0ZXJlTnNjRTlOMjJSdkpDTXFBMXd0Ql9SMUxpaVFmc3g5VVl4Ukk5NENhbUE?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">6 cách để tăng năng suất cho developer với AI và hơn thế nữa</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;6 Ways to Enhance Developer Productivity with—and Beyond—AI</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;IBM</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMiaEFVX3lxTFB4ZFhoOTVVejZpRF9VZFR2Z2thRnpLUW5LMVRCMHh4MDN6cERvNG9rVTBYUy1acS1EN2FPTVdYM3NZRWVGT0tfMlN3dnFtTEZwRTJSdHNIM2hEcXZsMV9Hcm5abDdrNXls?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
                   </td>
                 </tr>
                 
@@ -244,20 +244,21 @@ Kết quả này có thể giúp các tổ chức và cá nhân hiểu rõ hơn 
                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
                   <tr>
                     <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
-                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Chúng tôi đang thay đổi thiết kế thí nghiệm hiệu suất phát triển của mình
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Các nhà phát triển có thể tăng cường hiệu suất làm việc bằng cách tận dụng công nghệ trí tuệ nhân tạo (AI). Dưới đây là 6 cách để họ làm điều đó:
 
-Sau khi xem xét kỹ lưỡng, chúng tôi quyết định thay đổi thiết kế thí nghiệm hiệu suất phát triển của mình. Thiết kế mới sẽ tập trung vào việc đo lường hiệu suất phát triển của các nhà phát triển trong môi trường làm việc thực tế.
+1. **Tối ưu hóa quy trình phát triển**: AI có thể tự động hóa các tác vụ lặp đi lặp lại, giúp giảm thiểu thời gian và tăng cường hiệu suất làm việc.
 
-Thí nghiệm hiệu suất phát triển ban đầu của chúng tôi đã thu hút được sự quan tâm lớn từ các nhà phát triển trên toàn thế giới. Tuy nhiên, chúng tôi nhận thấy rằng thiết kế ban đầu có thể không phản ánh đúng thực tế về hiệu suất phát triển của các nhà phát triển.
+2. **Phát triển ứng dụng nhanh chóng**: AI có thể giúp tạo ra các ứng dụng nhanh chóng và hiệu quả hơn bằng cách tự động hóa các quy trình phát triển và thử nghiệm.
 
-Thiết kế mới sẽ bao gồm các yếu tố như:
+3. **Giải quyết vấn đề phức tạp**: AI có thể giúp các nhà phát triển giải quyết các vấn đề phức tạp bằng cách cung cấp các giải pháp và hướng dẫn.
 
-- Thời gian để hoàn thành các nhiệm vụ
-- Số lượng mã được viết
-- Tỷ lệ lỗi
-- Sự hài lòng của các nhà phát triển
+4. **Tối ưu hóa code**: AI có thể giúp tối ưu hóa code bằng cách tự động hóa các tác vụ như kiểm tra và sửa lỗi.
 
-Chúng tôi hy vọng rằng thiết kế mới sẽ cung cấp thông tin chính xác hơn về hiệu suất phát triển của các nhà phát triển và giúp chúng tôi tạo ra các công cụ và giải pháp tốt hơn cho họ.</p>
+5. **Phát triển các ứng dụng sáng tạo**: AI có thể giúp các nhà phát triển tạo ra các ứng dụng sáng tạo và độc đáo bằng cách cung cấp các công cụ và công nghệ mới.
+
+6. **Tăng cường bảo mật**: AI có thể giúp tăng cường bảo mật cho các ứng dụng bằng cách tự động hóa các quy trình bảo mật và phát hiện các lỗ hổng bảo mật.
+
+Tóm lại, AI có thể giúp các nhà phát triển tăng cường hiệu suất làm việc và tạo ra các ứng dụng nhanh chóng, hiệu quả và an toàn hơn.</p>
                     </td>
                   </tr>
                 </table>
@@ -288,7 +289,7 @@ Chúng tôi hy vọng rằng thiết kế mới sẽ cung cấp thông tin chín
                     </table>
                   </td>
                   <td valign="top">
-                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Tất cả các bản cập nhật mới nhất về trung tâm dữ liệu AI</p>
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Tất cả các cập nhật mới nhất về các AI data center</p>
                     <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;All the latest updates on AI data centers</p>
                     <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;The Verge AI</span>&nbsp;&nbsp;&nbsp;<a href="https://www.theverge.com/ai-artificial-intelligence/902546/data-centers-ai-energy-power-grids-controversy" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
                   </td>
@@ -299,13 +300,21 @@ Chúng tôi hy vọng rằng thiết kế mới sẽ cung cấp thông tin chín
                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
                   <tr>
                     <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
-                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Các trung tâm dữ liệu mới đang trở thành nền tảng vật chất cho hy vọng và giấc mơ của các công ty công nghệ về trí tuệ nhân tạo (AI). Tuy nhiên, sự nỗ lực để mở rộng các kho chứa đầy máy chủ năng lượng cao đã gây ra các cuộc tranh cãi trên toàn thế giới về tác động của chúng lên lưới điện, hóa đơn điện, cộng đồng gần đó và môi trường. Một cuộc khảo sát mới của Trung tâm Nghiên cứu Pew cho thấy các trung tâm dữ liệu đang trở thành một vấn đề liên minh hai đảng, với số lượng tương đương các cử tri Cộng hòa và Dân chủ cho rằng các trung tâm dữ liệu đang gây ra chi phí cao.
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Các trung tâm dữ liệu mới đang trở thành nền tảng vật chất cho hy vọng và giấc mơ của các công ty công nghệ về trí tuệ nhân tạo (AI). Tuy nhiên, sự nỗ lực mở rộng các kho chứa đầy máy chủ năng lượng cao đã gây ra những cuộc tranh cãi trên toàn thế giới về tác động của chúng lên lưới điện, hóa đơn điện, cộng đồng gần đó và môi trường.
 
-Các dự án trung tâm dữ liệu lớn ở Georgia đang gây ra phản ứng hai đảng, với 47% cử tri địa phương phản đối các kế hoạch này. Dự án trung tâm dữ liệu lớn ở Box Elder County, khi hoàn thành, dự kiến sử dụng 9 gigawatt điện - gấp đôi số điện được sử dụng bởi bang này hiện nay. Dự án này được hỗ trợ một phần bởi nhà đầu tư Shark Tank Kevin O&#x27;Leary.
+Theo một khảo sát mới của Trung tâm Nghiên cứu Pew, 63% người Mỹ cho rằng các trung tâm dữ liệu đang làm tăng chi phí. Số liệu này tương tự cả giữa các đảng viên Cộng hòa và Dân chủ, khiến cho vấn đề này trở thành một vấn đề song phương.
 
-Các trung tâm dữ liệu đang trở thành một vấn đề lớn, với các công ty như OpenAI đang xây dựng các trung tâm dữ liệu lớn ở Abu Dhabi và Stargate. Tuy nhiên, các kế hoạch này cũng gây ra các cuộc tranh cãi về tác động của chúng lên môi trường và cộng đồng gần đó. Các tổ chức như NAACP đang kiện OpenAI để ngăn chặn dự án trung tâm dữ liệu Colossus 2 ở Memphis, Tennessee, vì dự án này đang vi phạm luật về không khí sạch.
+Một trung tâm dữ liệu hyperscale dự kiến được xây dựng ở Box Elder County, Utah, sẽ sử dụng 9 gigawatt năng lượng - gấp đôi số năng lượng hiện tại của tiểu bang. Dự án này được hỗ trợ một phần bởi Shark Tank investor Kevin O&#x27;Leary.
 
-Các chính trị gia như Thượng nghị sĩ Elizabeth Warren và Josh Hawley đang yêu cầu Cơ quan Thông tin Năng lượng (EIA) thu thập thông tin về sử dụng năng lượng của các trung tâm dữ liệu và công bố thông tin này công khai.</p>
+Các dự án trung tâm dữ liệu lớn ở Georgia đang gây ra phản ứng trái chiều từ cả hai đảng, với 47% cử tri địa phương phản đối kế hoạch. Điều này có thể định hình các cuộc bầu cử địa phương và tiểu bang trong tương lai.
+
+Một trang web theo dõi các dự án trung tâm dữ liệu mới được tạo ra để theo dõi các dự án trung tâm dữ liệu mới. Trang web này cung cấp thông tin chi tiết về các dự án trung tâm dữ liệu ở 18 tiểu bang.
+
+Cơ quan Thông tin Năng lượng (EIA) đang lên kế hoạch thực hiện các cuộc khảo sát trên toàn quốc về mức năng lượng mà các trung tâm dữ liệu tiêu thụ.
+
+NAACP đang kiện xAI để ngăn chặn dự án trung tâm dữ liệu Colossus 2 của Elon Musk ở Memphis, Tennessee, vì dự án này đang sử dụng 27 động cơ khí mà không có giấy phép và vi phạm Đạo luật Không khí sạch.
+
+IRGC của Iran đã công bố một video đe dọa trung tâm dữ liệu Abu Dhabi của OpenAI nếu Mỹ thực hiện các đe dọa tấn công các nhà máy điện của Iran.</p>
                     </td>
                   </tr>
                 </table>
@@ -336,9 +345,9 @@ Các chính trị gia như Thượng nghị sĩ Elizabeth Warren và Josh Hawley
                     </table>
                   </td>
                   <td valign="top">
-                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Anthropic cho biết họ đã đạt tốc độ doanh thu 30 tỷ $ sau khi tăng trưởng &#x27;điên rồ&#x27; 80x</p>
-                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Anthropic says it hit a $30 billion revenue run rate after &#x27;crazy&#x27; 80x growth</p>
-                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;VentureBeat</span>&nbsp;&nbsp;&nbsp;<a href="https://venturebeat.com/technology/anthropic-says-it-hit-a-30-billion-revenue-run-rate-after-crazy-80x-growth" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Tại sao các luật xác minh độ tuổi lại quan trọng đối với developer</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Why age assurance laws matter for developers</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;GitHub Blog</span>&nbsp;&nbsp;&nbsp;<a href="https://github.blog/news-insights/policy-news-and-insights/why-age-assurance-laws-matter-for-developers/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
                   </td>
                 </tr>
                 
@@ -347,17 +356,13 @@ Các chính trị gia như Thượng nghị sĩ Elizabeth Warren và Josh Hawley
                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
                   <tr>
                     <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
-                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Anthropic, một công ty công nghệ AI, đã đạt được mức doanh thu hàng năm ước tính 30 tỷ USD sau một năm tăng trưởng 80 lần. Điều này đã khiến công ty phải đối mặt với khó khăn về tài nguyên tính toán và buộc phải tìm kiếm sự hỗ trợ từ các đối tác như SpaceX.
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Tóm tắt:
 
-Dario Amodei, người sáng lập và CEO của Anthropic, đã nói rằng công ty đã dự kiến tăng trưởng 10 lần mỗi năm nhưng đã đạt được mức tăng trưởng 80 lần trong quý đầu tiên. Điều này đã khiến công ty phải đối mặt với khó khăn về tài nguyên tính toán và ảnh hưởng đến độ tin cậy và hiệu suất của sản phẩm Claude Code.
+Các quy định về xác minh tuổi tác đang trở thành một vấn đề quan trọng đối với các nhà phát triển phần mềm. Các chính sách này nhằm mục đích bảo vệ trẻ em và thanh thiếu niên khỏi các mối nguy hại trực tuyến, chẳng hạn như lạm dụng tình dục, tiếp xúc với nội dung bạo lực và trêu chọc trực tuyến.
 
-Claude Code, một công cụ lập trình AI, đã trở thành sản phẩm tăng trưởng nhanh nhất trong lịch sử phần mềm doanh nghiệp. Sản phẩm này đã đạt được mức doanh thu hàng năm ước tính 1 tỷ USD chỉ sau 6 tháng ra mắt và tiếp tục tăng trưởng mạnh mẽ.
+Các chính sách này đang được các chính phủ trên toàn thế giới thúc đẩy, bao gồm việc yêu cầu các thiết bị, hệ điều hành và cửa hàng ứng dụng thu thập thông tin về tuổi tác và truyền tín hiệu tuổi tác đến các ứng dụng và trang web. Tuy nhiên, nếu không được định nghĩa rõ ràng, các quy định này có thể gây ra các yêu cầu về quy trình phức tạp cho các phần mềm nguồn mở và dịch vụ cơ sở hạ tầng phát triển phần mềm.
 
-Anthropic đã ký kết một thỏa thuận với SpaceX để sử dụng tài nguyên tính toán của công ty này, bao gồm hơn 300 megawatt công suất và hơn 220.000 GPU Nvidia. Thỏa thuận này sẽ giúp Anthropic tăng cường khả năng tính toán và giảm thiểu các vấn đề về độ tin cậy và hiệu suất.
-
-Mức tăng trưởng của Anthropic đã khiến công ty trở thành một trong những công ty AI có giá trị nhất thế giới, với giá trị ước tính lên đến 900 tỷ USD. Công ty này đang chuẩn bị cho một đợt IPO và đã ký kết các thỏa thuận với các đối tác như Amazon và Google để tăng cường khả năng tính toán.
-
-Dario Amodei đã mô tả tương lai của AI như một thế giới trong đó các máy tính có thể thực hiện các nhiệm vụ phức tạp và được giám sát bởi con người. Ông đã dự đoán rằng năm 2026 sẽ thấy sự xuất hiện của công ty đầu tiên có doanh thu hàng tỷ USD được điều hành bởi một người duy nhất.</p>
+Các nhà phát triển cần hiểu rõ về các quy định này và cách thức tương tác. Mặc dù các mối nguy hại mà các quy định này nhằm mục đích giải quyết là nghiêm trọng, nhưng các quy định này cũng có thể gây ra các yêu cầu về quy trình phức tạp cho các phần mềm nguồn mở và dịch vụ cơ sở hạ tầng phát triển phần mềm.</p>
                     </td>
                   </tr>
                 </table>
@@ -388,9 +393,9 @@ Dario Amodei đã mô tả tương lai của AI như một thế giới trong đ
                     </table>
                   </td>
                   <td valign="top">
-                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Tại sao luật đảm bảo độ tuổi lại quan trọng đối với các nhà phát triển</p>
-                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Why age assurance laws matter for developers</p>
-                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;GitHub Blog</span>&nbsp;&nbsp;&nbsp;<a href="https://github.blog/news-insights/policy-news-and-insights/why-age-assurance-laws-matter-for-developers/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Hỗn loạn bùng nổ khi tấn công mạng làm gián đoạn nền tảng học tập Canvas trong lúc thi cuối kỳ</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Chaos erupts as cyberattack disrupts learning platform Canvas amid finals</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Ars Technica</span>&nbsp;&nbsp;&nbsp;<a href="https://arstechnica.com/security/2026/05/chaos-erupts-as-cyberattack-disrupts-learning-platform-canvas-amid-finals/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
                   </td>
                 </tr>
                 
@@ -399,13 +404,11 @@ Dario Amodei đã mô tả tương lai của AI như một thế giới trong đ
                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
                   <tr>
                     <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
-                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Các luật đảm bảo độ tuổi quan trọng đối với các nhà phát triển
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Một cuộc tấn công mạng bất ngờ đã xảy ra vào hệ thống học tập trực tuyến Canvas, khiến nhiều trường học và đại học phải hoãn các kỳ thi cuối học kỳ.
 
-Các nhà phát triển đang đối mặt với thách thức mới khi các luật đảm bảo độ tuổi được đưa ra để bảo vệ trẻ em và thanh thiếu niên trực tuyến. Các chính sách này yêu cầu các thiết bị, hệ điều hành và cửa hàng ứng dụng thu thập thông tin độ tuổi và gửi tín hiệu độ tuổi cho các ứng dụng và trang web. Mặc dù mục đích của các luật này là nghiêm túc, nhưng nếu không được định nghĩa rõ ràng, chúng có thể đặt ra yêu cầu không cần thiết cho phần mềm nguồn mở và dịch vụ cơ sở hạ tầng phát triển.
+Cuộc tấn công mạng đã ảnh hưởng nghiêm trọng đến hệ thống, khiến nhiều người dùng gặp khó khăn trong việc truy cập và sử dụng các tính năng của Canvas. Để đảm bảo an toàn và tránh gây ra bất kỳ thiệt hại nào, nhiều trường học và đại học đã quyết định hoãn các kỳ thi cuối học kỳ.
 
-Các vấn đề mà các luật này nhắm đến là nghiêm trọng và đáng chú ý. Grooming cho mục đích tình dục, tiếp xúc với nội dung bạo lực và bắt nạt trực tuyến là một số rủi ro mà trẻ em và thanh thiếu niên đang đối mặt trực tuyến. Tuy nhiên, các luật này có thể đặt ra gánh nặng cho các nhà phát triển phần mềm nguồn mở và dịch vụ cơ sở hạ tầng phát triển, mà không có rủi ro tương tự như các nền tảng trực tuyến dành cho người tiêu dùng.
-
-Để hiểu rõ hơn về các luật đảm bảo độ tuổi và cách thức tham gia, các nhà phát triển cần phải biết về các yêu cầu và quy định cụ thể. Điều này sẽ giúp họ hiểu rõ hơn về các rủi ro và thách thức mà họ phải đối mặt, đồng thời có thể tham gia vào quá trình xây dựng và thực thi các luật này.</p>
+Các trường học và đại học đang cố gắng tìm cách khắc phục sự cố và đảm bảo rằng hệ thống học tập trực tuyến hoạt động bình thường. Đến nay, vẫn chưa có thông tin chính thức về nguyên nhân của cuộc tấn công mạng và thời gian dự kiến để khắc phục sự cố.</p>
                     </td>
                   </tr>
                 </table>
@@ -436,9 +439,9 @@ Các vấn đề mà các luật này nhắm đến là nghiêm trọng và đá
                     </table>
                   </td>
                   <td valign="top">
-                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Hỗn loạn bùng phát khi cuộc tấn công mạng làm gián đoạn nền tảng học tập Canvas trong trận chung kết</p>
-                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Chaos erupts as cyberattack disrupts learning platform Canvas amid finals</p>
-                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Ars Technica</span>&nbsp;&nbsp;&nbsp;<a href="https://arstechnica.com/security/2026/05/chaos-erupts-as-cyberattack-disrupts-learning-platform-canvas-amid-finals/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Thông tin chi tiết về AI agent tự hành</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Autonomous AI Agent Insights</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Dev.to AI</span>&nbsp;&nbsp;&nbsp;<a href="https://dev.to/igorganapolsky/autonomous-ai-agent-insights-57f2" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
                   </td>
                 </tr>
                 
@@ -447,13 +450,16 @@ Các vấn đề mà các luật này nhắm đến là nghiêm trọng và đá
                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
                   <tr>
                     <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
-                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Một cuộc tấn công mạng đã gây ra sự hỗn loạn tại các trường học và đại học trên khắp Hoa Kỳ vào thứ Ba khi nền tảng học trực tuyến Canvas bị gián đoạn ngay trước khi sinh viên chuẩn bị và tham gia kỳ thi cuối cùng. Công ty mẹ của Canvas, Instructure, cho biết nền tảng đã được khôi phục vào sáng thứ Tư.
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Dưới đây là tóm tắt nội dung theo yêu cầu:
 
-Instructure đã tạm thời tắt Canvas vào thứ Ba sau khi phát hiện hoạt động không được ủy quyền trong mạng của họ. Công ty cho biết không có dấu hiệu cho thấy thông tin về mật khẩu, ngày sinh, thông tin nhận dạng chính phủ hoặc thông tin tài chính đã bị ảnh hưởng.
+Một hệ thống AI tự động (OpenClaw Syndicate) đã giúp tạo ra nội dung này. Hệ thống này đang theo dõi xu hướng trong nền kinh tế AI tự động và đã nhận thấy sự di chuyển lớn về tối ưu hóa menu, AI Agents và Miami.
 
-Một nhóm ransomware tên là ShinyHunters đã tuyên bố chịu trách nhiệm về vụ xâm phạm dữ liệu và cho biết dữ liệu bị đánh cắp từ 275 triệu người liên quan đến 8.800 trường học. Khi sinh viên đang cố gắng chuẩn bị và tham gia kỳ thi cuối cùng vào thứ Ba, trang đăng nhập Canvas đã hiển thị một yêu cầu trả tiền. Instructure đã từ chối yêu cầu của nhóm này và khuyên các trường học nên đàm phán trực tiếp với họ.
+Để giúp các chủ sở hữu franchise tối ưu hóa menu, hệ thống này đang cung cấp một số sản phẩm, bao gồm:
 
-Các trường đại học và cao đẳng trên khắp Hoa Kỳ đã phải hoãn hoặc hủy bỏ các kỳ thi cuối cùng và các bài tập do bị ảnh hưởng bởi sự cố này.</p>
+- QSR AI Ops Pack ($29): bao gồm thư viện gợi ý &quot;Late-Night Lead Recovery&quot; miễn phí.
+- QSR Revenue Machine ($97): bao gồm bảo hành &quot;First Dollar&quot; 100%, đảm bảo thu được lợi nhuận đầu tiên trong 14 ngày. Nếu không, hệ thống sẽ hỗ trợ hoặc hoàn tiền.
+
+Hệ thống này cũng cho biết rằng việc chạy sản phẩm trên máy tính Mac Mini M4 sẽ đảm bảo dữ liệu không rời khỏi cơ sở của bạn.</p>
                     </td>
                   </tr>
                 </table>
@@ -484,9 +490,9 @@ Các trường đại học và cao đẳng trên khắp Hoa Kỳ đã phải ho
                     </table>
                   </td>
                   <td valign="top">
-                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Các công ty công nghệ lớn đang đẩy nhanh đầu tư và tích hợp AI, trong khi các cơ quan quản lý và công ty tập trung vào sự an toàn và áp dụng có trách nhiệm.</p>
-                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Big Tech firms are accelerating AI investments and integration, while regulators and companies focus on safety and responsible adoption.</p>
-                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Dev.to AI</span>&nbsp;&nbsp;&nbsp;<a href="https://dev.to/stelixx-insights/big-tech-firms-are-accelerating-ai-investments-and-integration-while-regulators-and-companies-3bhc" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Ana Inês Inácio thiết kế tương lai của công nghệ không dây</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Ana Inês Inácio Designs the Future of Wireless</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;IEEE Spectrum</span>&nbsp;&nbsp;&nbsp;<a href="https://spectrum.ieee.org/ana-ines-inacio-wireless" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
                   </td>
                 </tr>
                 
@@ -495,11 +501,13 @@ Các trường đại học và cao đẳng trên khắp Hoa Kỳ đã phải ho
                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
                   <tr>
                     <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
-                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Các công ty công nghệ lớn đang tăng tốc đầu tư và tích hợp trí tuệ nhân tạo (AI). Trong khi đó, các cơ quan quản lý và các công ty đang tập trung vào an toàn và việc áp dụng có trách nhiệm của AI.
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Ana Inês Inácio, một nhà khoa học nghiên cứu tại Tổ chức Nghiên cứu Khoa học Ứng dụng Hà Lan (TNO), đang thiết kế tương lai của công nghệ không dây. Bà được trao giải thưởng IEEE–Eta Kappa Nu Outstanding Young Professional Award cho &quot;lider trong IEEE Young Professionals, thúc đẩy đổi mới và đa dạng hóa, và tiên phong trong các hệ thống cảm biến RF tiên tiến&quot;. Các mạch tích hợp mà bà thiết kế là nền tảng cho các hệ thống cảm biến RF tiếp theo, quan trọng để phát triển công nghệ radar.
 
-Môi trường AI đang trải qua sự tăng trưởng và thay đổi chưa từng có. Các công ty công nghệ đang đầu tư lớn vào AI, đồng thời tích hợp công nghệ này vào quy trình phát triển cơ bản của họ. Điều này nhằm cung cấp cho các nhà phát triển, lãnh đạo công nghệ và những người hâm mộ một cái nhìn tổng quan về tình hình hiện tại và hướng đi tương lai của AI.
+Bà Inácio đã nhận được giải thưởng IEEE–Eta Kappa Nu Outstanding Young Professional Award cho &quot;lider trong IEEE Young Professionals, thúc đẩy đổi mới và đa dạng hóa, và tiên phong trong các hệ thống cảm biến RF tiên tiến, kết hợp giữa kỹ thuật xuất sắc và cộng đồng có ảnh hưởng&quot;. Giải thưởng này phản ánh sự nghiệp của bà được xây dựng trên hai con đường song song: phát triển thiết kế mạch RF và giúp các kỹ sư trên toàn thế giới xây dựng cộng đồng chuyên nghiệp.
 
-Các cơ quan quản lý và công ty đang tập trung vào việc đảm bảo an toàn và trách nhiệm khi áp dụng AI. Điều này cho thấy sự quan tâm ngày càng tăng đến việc sử dụng AI một cách có trách nhiệm và an toàn.</p>
+Bà Inácio lớn lên trong một ngôi làng nông thôn ở Vales do Rio, gần Covilhã ở trung tâm Bồ Đào Nha. Khu vực này được biết đến với nông nghiệp và dệt may, bà nói. Nhiều cư dân làm việc trong ngành dệt may, bao gồm cả ông bà ngoại của bà, người sửa chữa máy móc như máy dệt công nghiệp. Ông bà ngoại của bà đã trở thành người thầy đầu tiên của bà mà không có chức danh chính thức. Thông qua các khóa học qua thư, ông bà ngoại của bà đã tự học hệ thống điện. Tại nhà, ông bà ngoại của bà giải thích điện cho cháu gái của mình trong khi sửa chữa các thiết bị và dây điện của gia đình. &quot;Anh ấy sẽ cho tôi biết tại sao một thứ gì đó bị hỏng và chúng ta có thể sửa chữa nó&quot;, bà nhớ lại. Điều đó đã kích thích sự tò mò của bà.
+
+Bà Inácio đã theo học chương trình đại học và thạc sĩ tích hợp về kỹ thuật điện và truyền thông tại Đại học Aveiro ở Bồ Đào Nha, một chương trình kéo dài 5 năm kết hợp giữa chương trình đại học và thạc sĩ. Một cơ hội để học tập ở nước ngoài đã thay đổi con đường của</p>
                     </td>
                   </tr>
                 </table>
@@ -523,7 +531,7 @@ Các cơ quan quản lý và công ty đang tập trung vào việc đảm bảo
       <p style="margin:0 0 12px;font-size:11px;color:#D97706;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
         &#9889;&nbsp;Tips &amp; Tricks cho Dev
       </p>
-      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Ghi nhớ mã nguồn với GitHub Copilot</strong><br>&nbsp;&nbsp;&#8226;&nbsp;Sử dụng lệnh <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">git config --global copilot.vim.key </code> để bật tính năng ghi nhớ mã nguồn của GitHub Copilot trong môi trường IDE.<br>&nbsp;&nbsp;&#8226;&nbsp;Ví dụ: <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">git config --global copilot.vim.key abcdef </code> - nhập câu lệnh bất kỳ để xem AI tự động ghi nhớ và gợi ý.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tạo mã nguồn với Codeium</strong><br>&nbsp;&nbsp;&#8226;&nbsp;Tạo mã nguồn nhanh chóng dựa trên mô tả bằng lệnh <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">codeium &#x27;Tạo chức năng chuyển đổi số tự nhiên thành tên viết tay&#x27; -l python</code>, Codeium sẽ tự động tạo mã nguồn cho bạn.<br>&nbsp;&nbsp;&#8226;&nbsp;Ví dụ: tạo mã nguồn cho chức năng chuyển đổi số tự nhiên thành tên viết tay bằng Python.</p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tạo mã nguồn chất lượng cao với GitHub Copilot</strong><br>Sử dụng GitHub Copilot để tự động hóa việc viết mã nguồn cơ bản, giảm thiểu thời gian và tăng hiệu suất. Ví dụ lệnh: <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;"># code</code> trên giao diện web hoặc lệnh <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">gh gc</code> trên terminal.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tối ưu hóa code với ChatGPT</strong><br>Sử dụng ChatGPT để tối ưu hóa mã nguồn bằng cách nhận câu hỏi và trả lời bằng code. Ví dụ: hỏi &quot;Tối ưu hóa đoạn code này&quot; và ChatGPT sẽ trả lời bằng mã nguồn tối ưu.</p>
     </td>
   </tr>
 
@@ -534,7 +542,7 @@ Các cơ quan quản lý và công ty đang tập trung vào việc đảm bảo
       <p style="margin:0 0 12px;font-size:11px;color:#2E7D32;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
         &#128218;&nbsp;B&#224;i h&#7885;c AI h&#244;m nay cho Dev
       </p>
-      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;"><strong>Tối ưu chi phí &amp; hiệu năng LLM (Large Language Model)</strong></p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;">Dev cần biết về tối ưu chi phí và hiệu năng LLM vì các mô hình ngôn ngữ lớn ngày càng trở nên phổ biến trong các ứng dụng AI. Tuy nhiên, chúng cũng đòi hỏi nguồn lực và tài nguyên đáng kể, làm tăng chi phí và giảm hiệu suất ứng dụng. Việc tối ưu hóa LLM giúp dev giảm thiểu chi phí và tăng cường hiệu năng ứng dụng, từ đó cải thiện trải nghiệm người dùng.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;">Ví dụ thực tế: Bạn có thể sử dụng kỹ thuật Quantization để giảm thiểu kích thước mô hình LLM và tối ưu hóa hiệu suất ứng dụng. Bạn có thể sử dụng thư viện TensorFlow Lite để triển khai mô hình LLM trên thiết bị di động.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;">💡 Tip: Hãy sử dụng các công cụ như TensorBoard để phân tích và tối ưu hóa hiệu suất của mô hình LLM. Bạn cũng có thể sử dụng các thuật toán như Pruning và Knowledge Distillation để giảm thiểu kích thước mô hình LLM và tăng cường hiệu suất ứng dụng.</p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;"><strong>Tối ưu chi phí &amp; hiệu năng LLM (Large Language Model)</strong></p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;">Là một kỹ sư AI, bạn cần biết cách tối ưu hóa hiệu năng và chi phí của mô hình LLM trong ứng dụng của mình. Việc này trở nên quan trọng hơn bao giờ hết khi sự phát triển của LLM đang ngày càng gia tăng, cũng như nhu cầu sử dụng chúng trong các ứng dụng thực tế.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;">Mô hình LLM đòi hỏi nguồn tài nguyên lớn và chi phí cao để đào tạo và vận hành. Vì vậy, việc tối ưu hóa hiệu năng và chi phí của chúng là một bước quan trọng để đảm bảo ứng dụng của bạn hoạt động một cách hiệu quả và tiết kiệm.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;">Ví dụ thực tế:<br><pre style="background:#F3F4F6;color:#1F2937;padding:10px 14px;border:1px solid #D1D5DB;border-radius:4px;font-size:12px;overflow-x:auto;margin:8px 0;font-family:Consolas,Courier New,monospace;"># Sử dụng điều chỉnh hệ số học (learning rate) để cải thiện hiệu năng<br>from transformers import AutoModelForSequenceClassification, AutoTokenizer</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;">model = AutoModelForSequenceClassification.from_pretrained(&#x27;bert-base-uncased&#x27;)<br>tokenizer = AutoTokenizer.from_pretrained(&#x27;bert-base-uncased&#x27;)</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">Điều chỉnh hệ số học</strong><br>optimizer = torch.optim.Adam(model.parameters(), lr=1e-5)</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">Vận hành mô hình</strong><br>output = model(input_ids)</pre><br>💡 Tip: Sử dụng các công cụ tối ưu hóa hiệu năng và chi phí như GPU acceleration, model pruning, và quantization để giảm thiểu nguồn tài nguyên và chi phí vận hành.</p>
     </td>
   </tr>
 

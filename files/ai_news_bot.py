@@ -422,7 +422,7 @@ function sharePage(){{
 """
     email_html = build_html(data)
     email_html = _re.sub(r'(</head>)', print_css + r'\1', email_html, count=1)
-    return _re.sub(r'(<body[^>]*>)', r'\1\n' + nav, email_html, count=1)
+    return _re.sub(r'(<body[^>]*>)', lambda m: m.group(0) + '\n' + nav, email_html, count=1)
 
 
 def update_web_index(all_dates):

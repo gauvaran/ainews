@@ -18,8 +18,9 @@ import hashlib
 from html.parser import HTMLParser
 
 NEWS_URL    = "https://news.google.com/rss/search?q=AI+tools+software+developers+programming+productivity&hl=en-US&gl=US&ceid=US:en"
-GROQ_URL    = "https://api.groq.com/openai/v1/chat/completions"
-GROQ_MODEL  = "llama-3.1-8b-instant"
+GROQ_URL             = "https://api.groq.com/openai/v1/chat/completions"
+GROQ_MODEL           = "llama-3.1-8b-instant"
+GROQ_TRANSLATE_MODEL = "llama-3.3-70b-versatile"
 GEMINI_URL  = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent"
 
 # Specialized feeds — 1 article per feed, need 5, list has 9 as backup pool
@@ -270,15 +271,56 @@ def _gemini_translate_all_batch(titles, summaries, api_key):
 
         except urllib.error.HTTPError as e:
             if e.code == 429 and attempt < 2:
-                print(f"Gemini 429 — retry {attempt+1}/3 in 10s...", file=sys.stderr)
-                time.sleep(10)
+                wait = (attempt + 1) * 30  # 30s, 60s
+                print(f"Gemini 429 — retry {attempt+1}/3 in {wait}s...", file=sys.stderr)
+                time.sleep(wait)
             else:
-                print(f"Gemini translate_all error: {e}", file=sys.stderr)
+                print(f"Gemini translate_all error: HTTP {e.code}", file=sys.stderr)
                 return [""] * n, [""] * n
         except Exception as e:
             print(f"Gemini translate_all error: {e}", file=sys.stderr)
             return [""] * n, [""] * n
     return [""] * n, [""] * n
+
+
+def _groq_translate_summaries_batch(summaries, api_key):
+    """Translate English summaries to Vietnamese using Groq 70B. One call per summary."""
+    if not api_key:
+        return summaries
+    results = []
+    for s in summaries:
+        if not s:
+            results.append(s)
+            continue
+        prompt = (
+            "Translate the following tech news summary to natural Vietnamese. "
+            "Keep English technical terms (AI, API, LLM, model, token, developer, framework, etc.). "
+            "Return only the translation, no explanations.\n\n" + s
+        )
+        payload = json.dumps({
+            "model": "llama-3.3-70b-versatile",
+            "messages": [{"role": "user", "content": prompt}],
+            "max_tokens": 600,
+            "temperature": 0.2,
+        }).encode()
+        req = urllib.request.Request(
+            GROQ_URL, data=payload,
+            headers={
+                "Authorization": f"Bearer {api_key}",
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+                "User-Agent": "Mozilla/5.0 (compatible; NewsBot/1.0)",
+            },
+        )
+        try:
+            with urllib.request.urlopen(req, timeout=30) as r:
+                d = json.loads(r.read().decode())
+            results.append(d["choices"][0]["message"]["content"].strip())
+            time.sleep(4)
+        except Exception as e:
+            print(f"Groq translate summary error: {e}", file=sys.stderr)
+            results.append(s)
+    return results
 
 
 def _groq_translate_titles_batch(titles, api_key):
@@ -295,7 +337,7 @@ def _groq_translate_titles_batch(titles, api_key):
         f"{numbered}"
     )
     payload = json.dumps({
-        "model": GROQ_MODEL,
+        "model": GROQ_TRANSLATE_MODEL,
         "messages": [{"role": "user", "content": prompt}],
         "max_tokens": 800,
         "temperature": 0.1,
@@ -313,9 +355,7 @@ def _groq_translate_titles_batch(titles, api_key):
         with urllib.request.urlopen(req, timeout=20) as r:
             data = json.loads(r.read().decode())
         raw = data["choices"][0]["message"]["content"].strip()
-        # Parse "1. ...\n2. ...\n" → list
         lines = [re.sub(r'^\d+\.\s*', '', l).strip() for l in raw.splitlines() if l.strip()]
-        # Pad / trim to match input length
         while len(lines) < len(titles):
             lines.append("")
         return lines[:len(titles)]
@@ -512,8 +552,8 @@ def fetch_ai_news(google_items=3, specialized_items=5):
         titles_vi, summaries_vi = _gemini_translate_all_batch(title_inputs, summaries_raw, gemini_key)
         if not any(titles_vi):
             print("Gemini failed, falling back to Groq...", file=sys.stderr)
-            titles_vi  = _groq_translate_titles_batch(title_inputs, groq_key)
-            summaries_vi = summaries_raw  # keep English summaries as fallback
+            titles_vi    = _groq_translate_titles_batch(title_inputs, groq_key)
+            summaries_vi = _groq_translate_summaries_batch(summaries_raw, groq_key)
     else:
         titles_vi    = _groq_translate_titles_batch(title_inputs, groq_key)
         summaries_vi = summaries_raw  # already Vietnamese from Groq

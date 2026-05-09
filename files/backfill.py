@@ -18,7 +18,8 @@ if os.path.exists(_env):
                 os.environ.setdefault(k.strip(), v.strip())
 
 from fetch_news import (
-    _groq_translate_titles_batch, _gemini_translate_all_batch,
+    _groq_translate_titles_batch, _groq_translate_summaries_batch,
+    _gemini_translate_all_batch,
     _groq_summarize, _groq_lesson, _groq_tips,
     _fetch_article_text, _CURATED_QUOTES,
 )
@@ -89,15 +90,10 @@ def process_date(date_str):
         print("ok")
         summaries_raw.append(s)
 
-    print("  translating titles + summaries via Gemini..." if GEMINI_KEY else "  translating titles via Groq...")
-    if GEMINI_KEY:
-        titles_vi, summaries_vi = _gemini_translate_all_batch(title_inputs, summaries_raw, GEMINI_KEY)
-        if not any(titles_vi):
-            titles_vi    = _groq_translate_titles_batch(title_inputs, GROQ_KEY)
-            summaries_vi = summaries_raw
-    else:
-        titles_vi    = _groq_translate_titles_batch(title_inputs, GROQ_KEY)
-        summaries_vi = summaries_raw
+    # Backfill always uses Groq 70B (Gemini free tier = 20 req/day, not suitable for batch)
+    print("  translating titles + summaries via Groq 70B...")
+    titles_vi    = _groq_translate_titles_batch(title_inputs, GROQ_KEY)
+    summaries_vi = _groq_translate_summaries_batch(summaries_raw, GROQ_KEY)
     time.sleep(8)
 
     articles = []

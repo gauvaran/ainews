@@ -2,7 +2,8 @@ name: Daily AI News
 
 on:
   schedule:
-    - cron: '30 0 * * *'   # 07:30 GMT+7 (00:30 UTC)
+    - cron: '30 0 * * *'   # 07:30 GMT+7 (00:30 UTC) — primary
+    - cron: '30 2 * * *'   # 09:30 GMT+7 (02:30 UTC) — fallback if primary skipped
   workflow_dispatch:         # manual trigger for testing
 
 jobs:
@@ -16,7 +17,19 @@ jobs:
         env:
           FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
+      - name: Check if today's newsletter already exists
+        id: check
+        run: |
+          TODAY=$(date -u '+%Y-%m-%d')
+          if [ -f "docs/${TODAY}.html" ]; then
+            echo "skip=true" >> $GITHUB_OUTPUT
+            echo "Newsletter for ${TODAY} already exists — skipping."
+          else
+            echo "skip=false" >> $GITHUB_OUTPUT
+          fi
+
       - name: Set up Python
+        if: steps.check.outputs.skip == 'false'
         uses: actions/setup-python@v5
         env:
           FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -24,11 +37,13 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
+        if: steps.check.outputs.skip == 'false'
         run: |
           pip install feedparser weasyprint --quiet
           sudo apt-get install -y libpango-1.0-0 libpangoft2-1.0-0 libcairo2 --quiet 2>/dev/null || true
 
       - name: Run AI News Bot
+        if: steps.check.outputs.skip == 'false'
         env:
           EMAIL_FROM:     ${{ secrets.EMAIL_FROM }}
           EMAIL_TO:       ${{ secrets.EMAIL_TO }}
@@ -38,6 +53,7 @@ jobs:
         run: python files/ai_news_bot.py
 
       - name: Publish web pages
+        if: steps.check.outputs.skip == 'false'
         run: |
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"

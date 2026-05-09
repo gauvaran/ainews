@@ -353,21 +353,13 @@ def _all_dated_files():
 
 def build_web_html(data, prev_date=None, next_date=None, date_slug=None):
     """Wrap the email HTML with a sticky nav bar, PDF download and Share buttons."""
-    prev_btn = (
-        f'<a href="{prev_date}.html" style="color:#90C4F0;text-decoration:none;">&#8592; {prev_date}</a>'
-        if prev_date else '<span style="color:#4A6A8A;">&#8592;</span>'
-    )
-    next_btn = (
-        f'<a href="{next_date}.html" style="color:#90C4F0;text-decoration:none;">{next_date} &#8594;</a>'
-        if next_date else '<span style="color:#4A6A8A;">&#8594;</span>'
-    )
     btn_style = "background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;"
     pdf_slug  = date_slug or _date_slug()
     nav = f"""<div id="web-nav" style="background:#001a4d;padding:8px 16px;font-family:Arial,sans-serif;font-size:13px;position:sticky;top:0;z-index:999;border-bottom:2px solid #0066CC;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
-  <span>{prev_btn}</span>
+  <span id="nav-prev" style="color:#4A6A8A;">&#8592;</span>
   <a href="all.html" style="color:#FFD700;text-decoration:none;font-weight:bold;">&#128240; T&#7845;t c&#7843; b&#7843;n tin</a>
   <span style="color:#FFFFFF;">{h(data['date'])}</span>
-  <span>{next_btn}</span>
+  <span id="nav-next" style="color:#4A6A8A;">&#8594;</span>
   <a href="{pdf_slug}.pdf" download="{pdf_slug}.pdf" style="{btn_style}">&#128196; T&#7843;i PDF</a>
   <button onclick="sharePage()" style="{btn_style}">&#128279; Chia s&#7867;</button>
 </div>
@@ -379,6 +371,29 @@ function sharePage(){{
     alert('Đã sao chép link!');
   }});}}
 }}
+(function(){{
+  var m=location.pathname.match(/(\d{{4}}-\d{{2}}-\d{{2}})\.html/);
+  if(!m)return;
+  var slug=m[1];
+  function fmt(s){{var p=s.split('-');return p[2]+'/'+p[1];}}
+  var lnkStyle='color:#90C4F0;text-decoration:none;';
+  fetch('dates.json?_='+Date.now())
+    .then(function(r){{return r.json();}})
+    .then(function(dates){{
+      var idx=dates.indexOf(slug);
+      if(idx>0){{
+        var p=dates[idx-1];
+        document.getElementById('nav-prev').innerHTML=
+          '<a href="'+p+'.html" style="'+lnkStyle+'">&#8592; '+fmt(p)+'</a>';
+      }}
+      if(idx>=0&&idx<dates.length-1){{
+        var n=dates[idx+1];
+        document.getElementById('nav-next').innerHTML=
+          '<a href="'+n+'.html" style="'+lnkStyle+'">'+fmt(n)+' &#8594;</a>';
+      }}
+    }})
+    .catch(function(){{}});
+}})();
 </script>
 """
     print_css = """<style>
@@ -411,9 +426,14 @@ function sharePage(){{
 
 
 def update_web_index(all_dates):
-    """Regenerate docs/index.html (redirect to latest) and docs/all.html (archive)."""
+    """Regenerate docs/index.html, docs/all.html and docs/dates.json."""
+    import json as _json
     os.makedirs(DOCS_DIR, exist_ok=True)
     latest = all_dates[-1] if all_dates else ""
+
+    # dates.json — consumed by the JS nav on every newsletter page
+    with open(os.path.join(DOCS_DIR, "dates.json"), "w", encoding="utf-8") as f:
+        _json.dump(all_dates, f)
 
     # ── index.html: instant redirect to latest newsletter ────────────────────
     index_html = f"""<!DOCTYPE html>

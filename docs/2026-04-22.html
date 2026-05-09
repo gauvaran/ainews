@@ -43,14 +43,14 @@
 </div>
 <script>
 function sharePage(){
-  var title=document.title;
+  var title='Bản tin AI BIS-MT – 22/04/2026';
   if(navigator.share){navigator.share({title:title,url:location.href});}
   else{navigator.clipboard.writeText(location.href).then(function(){
-    alert('Da sao chep link!');
+    alert('Đã sao chép link!');
   });}
 }
 (function(){
-  var m=location.pathname.match(/([0-9]{4}-[0-9]{2}-[0-9]{2})\.html/);
+  var m=location.pathname.match(/(\d{4}-\d{2}-\d{2})\.html/);
   if(!m)return;
   var slug=m[1];
   function fmt(s){var p=s.split('-');return p[2]+'/'+p[1];}
@@ -135,7 +135,7 @@ function sharePage(){
                     </table>
                   </td>
                   <td valign="top">
-                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Met police in talks to buy Palantir AI tech for use in criminal investigations</p>
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Cảnh sát London đang đàm phán để mua công nghệ AI của Palantir cho việc điều tra tội phạm</p>
                     <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Met police in talks to buy Palantir AI tech for use in criminal investigations</p>
                     <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;The Guardian</span>&nbsp;&nbsp;&nbsp;<a href="https://www.theguardian.com/uk-news/2026/apr/22/met-police-talks-palantir-ai-tech-criminal-investigations-automate-intelligence" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
                   </td>
@@ -146,11 +146,13 @@ function sharePage(){
                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
                   <tr>
                     <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
-                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Cảnh sát London đang xem xét việc mua công nghệ trí tuệ nhân tạo (AI) của công ty Palantir để sử dụng trong các cuộc điều tra tội phạm. Tuy nhiên, có những lo ngại nội bộ về việc cho phép công ty này, liên kết với Cơ quan Hải quan và Biên phòng Hoa Kỳ (ICE) và quân đội Israel, xử lý dữ liệu nhạy cảm.
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Cảnh sát Hoàng gia Anh đang thảo luận về việc mua công nghệ trí tuệ nhân tạo (AI) của công ty Palantir để sử dụng trong các cuộc điều tra tội phạm. Tuy nhiên, có những lo ngại nội bộ về việc cho phép công ty này, liên kết với Cơ quan An ninh Quốc gia Hoa Kỳ (ICE) và quân đội Israel, xử lý dữ liệu nhạy cảm.
 
-Palantir đã được biết đến với công nghệ phân tích dữ liệu mạnh mẽ, nhưng cũng đã bị chỉ trích vì liên kết với các tổ chức có thể gây tổn hại cho cộng đồng thiểu số và người dân Palestine. Việc sử dụng công nghệ của Palantir để xử lý dữ liệu trong các cuộc điều tra tội phạm có thể khiến cảnh sát London phải đối mặt với những lo ngại về bảo mật và công bằng.
+Palantir đã được biết đến với việc cung cấp công nghệ AI cho các cơ quan an ninh và quân đội trên toàn thế giới. Công ty này đã từng hợp tác với ICE để xây dựng hệ thống theo dõi người nhập cư, và cũng đã cung cấp công nghệ cho quân đội Israel.
 
-Cảnh sát London chưa công bố bất kỳ thông tin nào về kế hoạch mua công nghệ của Palantir, nhưng các nguồn tin nội bộ cho biết cuộc đàm phán đang diễn ra. Việc mua công nghệ này sẽ cần phải được phê duyệt bởi các cơ quan chức năng và phải đáp ứng các tiêu chuẩn về bảo mật và công bằng.</p>
+Cảnh sát Hoàng gia Anh đang cân nhắc việc mua công nghệ AI của Palantir để sử dụng trong các cuộc điều tra tội phạm, bao gồm cả việc theo dõi và phân tích dữ liệu. Tuy nhiên, việc này đã gây ra lo ngại về việc bảo mật dữ liệu và sự tham gia của công ty này vào các hoạt động an ninh quốc gia.
+
+Việc mua công nghệ AI của Palantir vẫn đang trong giai đoạn thảo luận và chưa có quyết định cuối cùng.</p>
                     </td>
                   </tr>
                 </table>
@@ -181,7 +183,7 @@ Cảnh sát London chưa công bố bất kỳ thông tin nào về kế hoạch
                     </table>
                   </td>
                   <td valign="top">
-                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Trump’s FCC weighs whether to flag shows with trans or non-binary ‘programming’</p>
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Ủy ban Truyền thông Liên bang của Trump cân nhắc việc đánh dấu các chương trình có nội dung liên quan đến người chuyển giới hoặc không xác định giới tính</p>
                     <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Trump’s FCC weighs whether to flag shows with trans or non-binary ‘programming’</p>
                     <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;The Guardian</span>&nbsp;&nbsp;&nbsp;<a href="https://www.theguardian.com/tv-and-radio/2026/apr/22/trump-fcc-inquiry-gender-identity-tv-shows" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
                   </td>
@@ -192,13 +194,11 @@ Cảnh sát London chưa công bố bất kỳ thông tin nào về kế hoạch
                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
                   <tr>
                     <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
-                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">FCC (Cục Truyền thông Liên bang Mỹ) đang xem xét việc yêu cầu các chương trình truyền hình phải công bố nội dung liên quan đến bản dạng giới (trans hoặc non-binary) đối với các chương trình dành cho trẻ em.
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">FCC (Cục Quản lý Truyền thông Liên bang Mỹ) đang xem xét việc yêu cầu các chương trình truyền hình phải công khai nội dung liên quan đến bản dạng giới (trans) hoặc không xác định giới tính (non-binary). Điều này được thể hiện trong một tuyên bố về hệ thống xếp hạng chương trình truyền hình, cho rằng cần phải tiết lộ thông tin này cho các chương trình dành cho trẻ em.
 
-Trong một tuyên bố về hệ thống xếp hạng TV, FCC cho rằng cần phải tiết lộ thông tin về các chương trình có nội dung liên quan đến bản dạng giới để giúp phụ huynh và trẻ em có thể đưa ra quyết định về việc xem hay không xem các chương trình đó.
+Tuyên bố của FCC cho biết, việc tiết lộ thông tin về &quot;vấn đề bản dạng giới&quot; sẽ giúp phụ huynh và trẻ em có thể hiểu rõ hơn về nội dung của các chương trình. Tuy nhiên, vẫn chưa rõ ràng về cách thức và mức độ tiết lộ thông tin này sẽ được thực hiện.
 
-Tuy nhiên, không rõ ràng liệu FCC có yêu cầu các chương trình khác ngoài các chương trình dành cho trẻ em phải công bố thông tin này hay không. Tuyên bố của FCC không đề cập đến các chương trình dành cho người lớn.
-
-FCC đang cân nhắc việc đưa ra quy định mới về việc công bố nội dung liên quan đến bản dạng giới trong các chương trình truyền hình. Việc này có thể sẽ ảnh hưởng đến các chương trình truyền hình có nội dung liên quan đến bản dạng giới và sẽ được theo dõi chặt chẽ.</p>
+FCC đang cân nhắc việc yêu cầu các chương trình truyền hình phải công khai nội dung liên quan đến bản dạng giới và giới tính không xác định, đặc biệt là trong các chương trình dành cho trẻ em. Việc này sẽ giúp đảm bảo rằng trẻ em và phụ huynh có thể hiểu rõ hơn về nội dung của các chương trình và có thể đưa ra quyết định về việc xem hay không.</p>
                     </td>
                   </tr>
                 </table>
@@ -229,7 +229,7 @@ FCC đang cân nhắc việc đưa ra quy định mới về việc công bố n
                     </table>
                   </td>
                   <td valign="top">
-                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">AI-powered robot beats elite table tennis players</p>
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Robot được trang bị AI đánh bại các vận động viên bóng bàn chuyên nghiệp</p>
                     <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;AI-powered robot beats elite table tennis players</p>
                     <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;The Guardian</span>&nbsp;&nbsp;&nbsp;<a href="https://www.theguardian.com/science/2026/apr/22/ai-powered-robot-beats-elite-table-tennis-players-milestone-robotics" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
                   </td>
@@ -240,11 +240,11 @@ FCC đang cân nhắc việc đưa ra quy định mới về việc công bố n
                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
                   <tr>
                     <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
-                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Một robot chơi ping pong được trang bị trí tuệ nhân tạo (AI) của Sony AI đã đạt được một thành tựu đáng kể trong lĩnh vực công nghệ. Robot tên là Ace đã tham gia một giải đấu ping pong chuyên nghiệp và đã giành chiến thắng trong ba trong số năm trận đấu được chơi theo các quy tắc chính thức.
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Một robot chơi ping pong do công nghệ trí tuệ nhân tạo (AI) của Sony đã đạt được thành tích đáng kinh ngạc khi đánh bại các vận động viên chuyên nghiệp trong một giải đấu chính thức.
 
-Ace được thiết kế để có thể chơi ping pong một cách tự động và chính xác, sử dụng các thuật toán AI để dự đoán và phản ứng với các chuyển động của đối thủ. Mặc dù robot không thể cảm nhận được cảm xúc hoặc sự tự tin như con người, nhưng nó đã thể hiện khả năng chơi ping pong rất tốt.
+Robot được gọi là Ace của Sony AI đã tham gia vào một giải đấu ping pong với các vận động viên hàng đầu thế giới và đã giành được 3 trong 5 trận đấu. Đây được coi là một mốc quan trọng trong lĩnh vực robotics, thể hiện khả năng của công nghệ AI trong việc tạo ra các hệ thống tự động có thể tương tác và cạnh tranh với con người.
 
-Thành tựu này được coi là một bước tiến quan trọng trong lĩnh vực công nghệ và robotics, mở ra khả năng ứng dụng của robot trong các lĩnh vực khác nhau, bao gồm cả thể thao. Tuy nhiên, vẫn còn nhiều thách thức cần được giải quyết trước khi robot có thể trở thành một đối thủ đáng gờm trong các giải đấu thể thao.</p>
+Ace của Sony AI được trang bị các cảm biến và hệ thống điều khiển tiên tiến, cho phép nó di chuyển và đánh bóng ping pong với độ chính xác và tốc độ cao. Kết quả này cho thấy tiềm năng của công nghệ AI trong việc tạo ra các robot có thể tham gia vào các hoạt động thể thao và giải trí, mở ra những cơ hội mới cho lĩnh vực này.</p>
                     </td>
                   </tr>
                 </table>
@@ -275,7 +275,7 @@ Thành tựu này được coi là một bước tiến quan trọng trong lĩnh
                     </table>
                   </td>
                   <td valign="top">
-                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Ditch power tools, build a hedgehog highway: how to create a nature-friendly garden</p>
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Bỏ công cụ điện, xây dựng một con đường cho gấu gạc: cách tạo một vườn cây thân thiện với thiên nhiên</p>
                     <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Ditch power tools, build a hedgehog highway: how to create a nature-friendly garden</p>
                     <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;The Guardian</span>&nbsp;&nbsp;&nbsp;<a href="https://www.theguardian.com/thefilter/2026/apr/22/how-to-create-nature-friendly-garden" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
                   </td>
@@ -286,17 +286,13 @@ Thành tựu này được coi là một bước tiến quan trọng trong lĩnh
                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
                   <tr>
                     <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
-                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Để tạo một khu vườn thân thiện với thiên nhiên, bạn có thể thử các bước đơn giản và thú vị sau:
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Để tạo một khu vườn thân thiện với thiên nhiên, bạn có thể bắt đầu bằng cách thay thế các công cụ điện bằng các công cụ thủ công. Điều này sẽ giúp giảm thiểu tiếng ồn và ảnh hưởng đến môi trường.
 
-Đầu tiên, hãy loại bỏ các công cụ điện và thay thế bằng các công cụ thủ công như dao, kéo và chổi. Điều này sẽ giúp giảm thiểu tiếng ồn và tạo ra một môi trường yên tĩnh cho các loài động vật.
+Tiếp theo, hãy tạo một con đường cho động vật nhỏ như chuột, thỏ và chim. Bạn có thể xây dựng một &quot;highway&quot; bằng cách đặt các vật liệu như đá, gỗ hoặc thậm chí là các hộp nhựa cũ trên mặt đất.
 
-Tiếp theo, hãy tạo một con đường cho các động vật nhỏ như chuột, thỏ và chim. Bạn có thể xây dựng một &quot;highway&quot; bằng cách đặt các vật liệu như đá, gỗ hoặc đất trên mặt đất.
+Ngoài ra, hãy trồng các loại cây và hoa mà động vật yêu thích, như hoa cúc, hoa cỏ và các loại cây ăn quả. Điều này sẽ giúp thu hút các loài động vật đến khu vườn của bạn.
 
-Hãy trồng các loại cây và hoa có giá trị dinh dưỡng cao, như hoa cúc, hoa cỏ và cây rau muống. Những loại cây này sẽ cung cấp thức ăn và nơi ẩn náu cho các loài động vật.
-
-Cuối cùng, hãy tạo một nguồn nước sạch và an toàn cho các loài động vật. Bạn có thể đặt một hồ nước nhỏ hoặc một nguồn nước tự nhiên như suối hoặc sông.
-
-Bằng cách thực hiện các bước đơn giản này, bạn có thể tạo ra một khu vườn thân thiện với thiên nhiên và trở thành một phần của &quot;Secret Garden&quot; như trong phim David Attenborough.</p>
+Cuối cùng, hãy nhớ rằng một khu vườn thân thiện với thiên nhiên không chỉ là về việc tạo ra một môi trường sống cho động vật, mà còn là về việc tạo ra một không gian yên bình và thư giãn cho chính bạn.</p>
                     </td>
                   </tr>
                 </table>
@@ -327,7 +323,7 @@ Bằng cách thực hiện các bước đơn giản này, bạn có thể tạo
                     </table>
                   </td>
                   <td valign="top">
-                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Pentagon asks for $54bn in pivot towards AI-powered war</p>
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Bộ Quốc phòng yêu cầu 54 tỷ đô la để chuyển đổi sang chiến tranh được hỗ trợ bởi trí tuệ nhân tạo</p>
                     <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Pentagon asks for $54bn in pivot towards AI-powered war</p>
                     <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;The Guardian</span>&nbsp;&nbsp;&nbsp;<a href="https://www.theguardian.com/us-news/2026/apr/22/pentagon-asks-for-54bn-in-pivot-towards-ai-powered-war" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
                   </td>
@@ -338,13 +334,13 @@ Bằng cách thực hiện các bước đơn giản này, bạn có thể tạo
                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
                   <tr>
                     <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
-                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Bộ Quốc phòng Mỹ đã đề xuất ngân sách 54 tỷ USD để chuyển đổi sang chiến tranh được hỗ trợ bởi trí tuệ nhân tạo (AI). Ngân sách này bao gồm kinh phí cho chương trình chiến tranh bằng máy bay không người lái tự động.
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Bộ Quốc phòng Mỹ đã đề xuất ngân sách 54 tỷ USD để chuyển đổi sang chiến tranh được hỗ trợ bởi trí tuệ nhân tạo (AI). Ngân sách này bao gồm kinh phí cho chương trình chiến tranh không người lái tự động.
 
-Theo ngân sách, Bộ Quốc phòng sẽ dành 54 tỷ USD để phát triển và triển khai các công nghệ AI trong quân đội. Điều này bao gồm việc tăng cường khả năng tự động hóa và phân tích dữ liệu để hỗ trợ quyết định chiến lược.
+Theo ngân sách, Bộ Quốc phòng sẽ dành 54 tỷ USD để phát triển và triển khai các công nghệ AI trong quân đội. Điều này bao gồm việc phát triển các hệ thống tự động hóa, phân tích dữ liệu lớn và học máy.
 
-Tuy nhiên, các chuyên gia cho rằng quân đội Mỹ chưa sẵn sàng đối mặt với rủi ro liên quan đến việc sử dụng AI trong chiến tranh. Họ lo ngại rằng việc sử dụng AI có thể dẫn đến sự phụ thuộc quá mức vào công nghệ và giảm khả năng quyết định của con người.
+Tuy nhiên, nhiều chuyên gia cảnh báo rằng quân đội Mỹ chưa sẵn sàng đối mặt với rủi ro liên quan đến việc sử dụng AI trong chiến tranh. Họ lo ngại rằng việc sử dụng AI có thể dẫn đến sự mất kiểm soát và gây ra hậu quả không lường trước được.
 
-Ngân sách này cũng bao gồm kinh phí cho việc phát triển các công nghệ AI khác, bao gồm việc sử dụng AI để phân tích và xử lý dữ liệu trong chiến tranh. Tuy nhiên, vẫn còn nhiều câu hỏi về việc quân đội Mỹ có sẵn sàng đối mặt với rủi ro liên quan đến việc sử dụng AI hay không.</p>
+Ngân sách này cũng bao gồm kinh phí cho chương trình tự động hóa chiến tranh không người lái, giúp quân đội có thể thực hiện các nhiệm vụ chiến đấu một cách tự động và hiệu quả hơn.</p>
                     </td>
                   </tr>
                 </table>
@@ -375,7 +371,7 @@ Ngân sách này cũng bao gồm kinh phí cho việc phát triển các công n
                     </table>
                   </td>
                   <td valign="top">
-                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Anthropic investigates report of rogue access to hack-enabling Mythos AI</p>
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Anthropic điều tra báo cáo về truy cập không được phép vào AI Mythos có khả năng hack</p>
                     <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Anthropic investigates report of rogue access to hack-enabling Mythos AI</p>
                     <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;The Guardian</span>&nbsp;&nbsp;&nbsp;<a href="https://www.theguardian.com/technology/2026/apr/22/anthropic-investigates-report-of-rogue-access-to-hack-enabling-mythos-ai" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
                   </td>
@@ -386,13 +382,13 @@ Ngân sách này cũng bao gồm kinh phí cho việc phát triển các công n
                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
                   <tr>
                     <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
-                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Anthropic, một công ty công nghệ, đang điều tra một báo cáo cho rằng một số người đã có quyền truy cập trái phép vào mô hình AI Mythos. Mythos được thiết kế để phát hiện các lỗ hổng bảo mật trong hệ thống, nhưng nó cũng có khả năng hack.
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Anthropic, một công ty công nghệ trí tuệ nhân tạo, đang điều tra một báo cáo về việc một số người có quyền truy cập không được phép vào mô hình Mythos AI. Mô hình này được thiết kế để phát hiện lỗ hổng bảo mật trong hệ thống cybersecurity.
 
-Theo báo cáo, một số người đã có quyền truy cập trái phép vào Mythos, cho phép họ sử dụng mô hình này để tìm kiếm các lỗ hổng bảo mật. Tuy nhiên, không có thông tin chi tiết về số lượng người hoặc mức độ nghiêm trọng của vấn đề này.
+Theo báo cáo, một &quot;số ít&quot; người đã có quyền truy cập không được phép vào Mythos AI, cho phép họ sử dụng mô hình này để thực hiện các hoạt động hack. Tuy nhiên, Anthropic chưa công bố số lượng cụ thể người bị ảnh hưởng.
 
-Anthropic đã xác nhận rằng họ đang điều tra báo cáo này và đang làm việc để xác định nguyên nhân và giải quyết vấn đề. Công ty cũng chưa công bố thêm thông tin về vấn đề này.
+Anthropic đã xác nhận rằng họ đang điều tra vụ việc và đang làm việc để xác định nguyên nhân và ngăn chặn bất kỳ hoạt động không được phép nào khác. Công ty cũng chưa công bố thông tin chi tiết về vụ việc để tránh ảnh hưởng đến cuộc điều tra.
 
-Mythos là một mô hình AI được thiết kế để phát hiện các lỗ hổng bảo mật trong hệ thống, nhưng nó cũng có khả năng hack. Việc truy cập trái phép vào mô hình này có thể gây ra hậu quả nghiêm trọng cho các hệ thống bảo mật.</p>
+Mythos AI được thiết kế để giúp các tổ chức và cá nhân phát hiện và ngăn chặn các lỗ hổng bảo mật, nhưng việc truy cập không được phép vào mô hình này có thể khiến nó trở thành công cụ cho các hoạt động hack.</p>
                     </td>
                   </tr>
                 </table>
@@ -423,7 +419,7 @@ Mythos là một mô hình AI được thiết kế để phát hiện các lỗ
                     </table>
                   </td>
                   <td valign="top">
-                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">AI hallucinations found in high-profile Wall Street law firm filing</p>
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Phát hiện các ảo giác của AI trong hồ sơ pháp lý của một công ty luật hàng đầu trên Wall Street</p>
                     <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;AI hallucinations found in high-profile Wall Street law firm filing</p>
                     <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;The Guardian</span>&nbsp;&nbsp;&nbsp;<a href="https://www.theguardian.com/technology/2026/apr/22/ai-hallucinations-found-in-high-profile-wall-street-law-firm-filing" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
                   </td>
@@ -434,13 +430,11 @@ Mythos là một mô hình AI được thiết kế để phát hiện các lỗ
                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
                   <tr>
                     <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
-                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Một công ty luật hàng đầu tại Wall Street, Sullivan &amp; Cromwell, đã xin lỗi trước một thẩm phán liên bang tại New York vì một loạt sai sót trong hồ sơ của vụ án liên quan đến công ty Prince Group.
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Một vụ việc đáng chú ý đã xảy ra tại một công ty luật nổi tiếng trên Wall Street, Sullivan &amp; Cromwell. Công ty này đã xin lỗi trước một thẩm phán liên bang tại New York vì đã có một loạt sai sót trong các tài liệu liên quan đến vụ kiện của Prince Group.
 
-Theo thông tin mới đây, công ty luật này đã sử dụng trí tuệ nhân tạo (AI) để giúp chuẩn bị hồ sơ, nhưng quá trình này đã dẫn đến việc &quot;ảo giác&quot; (hallucinations) của AI, khiến cho các thông tin không chính xác được đưa vào hồ sơ.
+Theo đó, các tài liệu của công ty luật này đã chứa các thông tin sai lệch và không chính xác, được gọi là &quot;ảo hóa&quot; (hallucinations) của trí tuệ nhân tạo (AI). Điều này đã khiến thẩm phán phải đặt câu hỏi về độ tin cậy của các tài liệu này.
 
-Sai sót này đã được phát hiện và công ty luật đã nhanh chóng xin lỗi thẩm phán và đề nghị sửa đổi hồ sơ. Đây không phải là lần đầu tiên công ty luật sử dụng AI để hỗ trợ công việc, nhưng đây là lần đầu tiên họ phải đối mặt với sai sót nghiêm trọng do AI gây ra.
-
-Sullivan &amp; Cromwell đã cam kết sẽ xem xét lại quy trình sử dụng AI của mình để đảm bảo rằng các sai sót tương tự không xảy ra trong tương lai.</p>
+Công ty luật Sullivan &amp; Cromwell đã thừa nhận sai sót và xin lỗi trước thẩm phán. Vụ việc này đã cho thấy tầm quan trọng của việc kiểm tra và xác minh thông tin trước khi sử dụng trí tuệ nhân tạo trong các công việc pháp lý.</p>
                     </td>
                   </tr>
                 </table>
@@ -471,7 +465,7 @@ Sullivan &amp; Cromwell đã cam kết sẽ xem xét lại quy trình sử dụn
                     </table>
                   </td>
                   <td valign="top">
-                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Why Trump’s pick for Fed chair will not bring home the bank for the president</p>
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Vì sao người được Trump chọn làm chủ tịch Fed sẽ không mang lại lợi ích cho tổng thống</p>
                     <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Why Trump’s pick for Fed chair will not bring home the bank for the president</p>
                     <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;The Guardian</span>&nbsp;&nbsp;&nbsp;<a href="https://www.theguardian.com/business/2026/apr/22/trump-fed-chair-kevin-warsh-interest-rate-cut" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
                   </td>
@@ -482,11 +476,13 @@ Sullivan &amp; Cromwell đã cam kết sẽ xem xét lại quy trình sử dụn
                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
                   <tr>
                     <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
-                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Tổng thống Mỹ Donald Trump đã chọn Kevin Warsh, một chuyên gia kinh tế được cho là &quot;đúng như hình ảnh&quot; của ông, để trở thành Chủ tịch Cục Dự trữ Liên bang (Fed). Tuy nhiên, việc Warsh có thể thuyết phục thành công các thành viên hội đồng của Fed để giảm lãi suất vẫn còn rất xa.
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Tổng thống Mỹ Donald Trump đã đề cử Kevin Warsh, một chuyên gia kinh tế, để trở thành Chủ tịch Ngân hàng Trung ương Mỹ (Fed). Tuy nhiên, việc Warsh có thể thực hiện được mục tiêu của Trump về việc hạ lãi suất là một điều khó khăn.
 
-Warsh, từng là thành viên hội đồng Fed, đã thể hiện sự ủng hộ mạnh mẽ đối với chính sách kinh tế của Trump. Tuy nhiên, các thành viên hội đồng Fed khác có thể không đồng ý với quan điểm của Warsh về việc giảm lãi suất. Các thành viên này đã thể hiện sự lo ngại về lạm phát và sự ổn định của nền kinh tế.
+Warsh được coi là lựa chọn &quot;phù hợp&quot; của Trump, nhưng ông vẫn phải thuyết phục thành viên hội đồng quản trị của Fed để hạ lãi suất. Hội đồng quản trị này có quyền quyết định về chính sách tiền tệ của Fed, bao gồm lãi suất.
 
-Để trở thành Chủ tịch Fed, Warsh cần phải được các thành viên hội đồng bầu chọn. Việc này không phải là dễ dàng, vì các thành viên hội đồng thường có quan điểm khác nhau về chính sách kinh tế. Vì vậy, mặc dù Trump đã chọn Warsh, nhưng việc ông này trở thành Chủ tịch Fed vẫn còn rất xa và cần phải có sự đồng ý của các thành viên hội đồng.</p>
+Warsh đã có kinh nghiệm làm việc tại Fed và đã từng là thành viên hội đồng quản trị của ngân hàng trung ương này. Tuy nhiên, ông vẫn phải chứng minh được khả năng của mình để thuyết phục thành viên hội đồng quản trị khác về việc hạ lãi suất.
+
+Việc hạ lãi suất có thể giúp kích thích kinh tế, nhưng cũng có thể gây ra những rủi ro về lạm phát và ổn định tài chính. Do đó, việc Warsh có thể thực hiện được mục tiêu của Trump về việc hạ lãi suất sẽ phụ thuộc vào nhiều yếu tố, bao gồm quyết định của hội đồng quản trị và tình hình kinh tế hiện tại.</p>
                     </td>
                   </tr>
                 </table>
@@ -510,7 +506,7 @@ Warsh, từng là thành viên hội đồng Fed, đã thể hiện sự ủng h
       <p style="margin:0 0 12px;font-size:11px;color:#D97706;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
         &#9889;&nbsp;Tips &amp; Tricks cho Dev
       </p>
-      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Sử dụng ChatGPT để viết tài liệu hướng dẫn</strong></p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;">Sử dụng ChatGPT để viết tài liệu hướng dẫn, ví dụ như README cho dự án GitHub. Chỉ cần cung cấp mô tả ngắn gọn về dự án và ChatGPT sẽ tự động tạo ra tài liệu hướng dẫn chi tiết. Ví dụ: &quot;Hãy mô tả cách sử dụng công cụ này và thêm ví dụ về cách cài đặt&quot;.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tối ưu hóa mã sử dụng GitHub Copilot</strong></p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;">Sử dụng GitHub Copilot để tối ưu hóa mã và giảm thiểu thời gian viết mã. Chỉ cần nhập lệnh <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">ghcoupilot activate</code> và khởi động trình soạn thảo mã. GitHub Copilot sẽ tự động gợi ý và hoàn thiện mã dựa trên lịch sử commit của dự án. Ví dụ: &quot;Nhập lệnh ghcoupilot activate và viết mã mới để thấy tác dụng&quot;.</p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Chế tạo mã với GitHub Copilot một cách tự động</strong><br>GitHub Copilot là công cụ AI giúp bạn tạo mã dựa trên các gợi ý và yêu cầu. Với lệnh &quot;ghc create&quot; trong VS Code, bạn có thể tạo mã mới nhanh chóng và hiệu quả. Hãy thử bằng cách nhập lệnh &quot;ghc create hàm tính diện tích hình chữ nhật&quot; và xem Copilot sẽ tạo mã cho bạn!</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tìm kiếm tài liệu trên Gemini AI</strong><br>Gemini AI là công cụ tìm kiếm thông tin dựa trên AI. Nó có thể giúp bạn tìm kiếm các tài liệu và thông tin liên quan đến lập trình một cách nhanh chóng. Hãy thử nhập lệnh &quot;tìm hiểu về Python 3.x&quot; vào Gemini và xem kết quả bạn sẽ nhận được!</p>
     </td>
   </tr>
 
@@ -521,7 +517,7 @@ Warsh, từng là thành viên hội đồng Fed, đã thể hiện sự ủng h
       <p style="margin:0 0 12px;font-size:11px;color:#2E7D32;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
         &#128218;&nbsp;B&#224;i h&#7885;c AI h&#244;m nay cho Dev
       </p>
-      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;"><strong>Tối ưu chi phí &amp; hiệu năng LLM (Large Language Model)</strong></p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;">Trong bối cảnh ngày càng nhiều ứng dụng và dịch vụ dựa trên ngôn ngữ tự nhiên, việc sử dụng LLM trở nên phổ biến. Tuy nhiên, việc sử dụng LLM cũng đòi hỏi sự tối ưu hóa để đạt được hiệu suất cao nhất và chi phí thấp nhất. Điều này đặc biệt quan trọng khi ứng dụng của bạn xử lý hàng loạt yêu cầu và phải đáp ứng yêu cầu thời gian thực.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;">Giải thích ngắn gọn: Tối ưu hóa LLM giúp tăng tốc độ xử lý và giảm chi phí tính toán, đồng thời cũng giúp cải thiện chất lượng kết quả xử lý. Điều này đặc biệt quan trọng khi ứng dụng của bạn xử lý hàng loạt yêu cầu và phải đáp ứng yêu cầu thời gian thực.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;">Ví dụ thực tế:<br><pre style="background:#F3F4F6;color:#1F2937;padding:10px 14px;border:1px solid #D1D5DB;border-radius:4px;font-size:12px;overflow-x:auto;margin:8px 0;font-family:Consolas,Courier New,monospace;"># Sử dụng LLM để phân tích văn bản<br>import torch<br>from transformers import AutoModelForSequenceClassification, AutoTokenizer</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">Tải mô hình và tokenizer</strong><br>model_name = &quot;distilbert-base-uncased-finetuned-sst-2-english&quot;<br>tokenizer = AutoTokenizer.from_pretrained(model_name)<br>model = AutoModelForSequenceClassification.from_pretrained(model_name)</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">Xử lý văn bản</strong><br>text = &quot;Tôi yêu thích ứng dụng này.&quot;<br>input_ids = tokenizer.encode(text, return_tensors=&quot;pt&quot;)<br>outputs = model(input_ids)</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">Tối ưu hóa LLM</strong><br><strong style="font-size:14px;">Sử dụng GPU để tăng tốc độ xử lý</strong><br>device = torch.device(&quot;cuda&quot; if torch.cuda.is_available() else &quot;cpu&quot;)<br>model.to(device)<br>model.eval()</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">Sử dụng batch processing để giảm chi phí tính toán</strong><br>batch_size = 32<br>inputs = [text for _ in range(batch_size)]<br>input_ids = tokenizer.encode(inputs, return_tensors=&quot;pt&quot;)<br>outputs = model(input_ids)</pre><br>💡 Tip hoặc bước tiếp theo: Hãy sử dụng các công cụ tối ưu hóa LLM như Optimum, LlamaIndex, hoặc Hugging Face Transformers để tối ưu hóa hiệu suất và chi phí của LLM.</p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;"><strong>Tìm kiếm thông tin tự động với AI trong CI/CD &amp; DevOps</strong></p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;">Giải thích ngắn gọn: Trong quá trình tích hợp liên tục và phát hành liên tục (CI/CD), tìm kiếm thông tin tự động giúp giảm thời gian và tăng hiệu suất cho các nhà phát triển. Điều này đặc biệt hữu ích khi phải tìm kiếm thông tin từ các nguồn dữ liệu lớn và phức tạp.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;">Ví dụ thực tế:</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><pre style="background:#F3F4F6;color:#1F2937;padding:10px 14px;border:1px solid #D1D5DB;border-radius:4px;font-size:12px;overflow-x:auto;margin:8px 0;font-family:Consolas,Courier New,monospace;"># Sử dụng AI để tìm kiếm thông tin tự động trong CI/CD<br>curl -X POST \<br>  &#x27;https://api.example.com/search&#x27; \<br>  -H &#x27;Content-Type: application/json&#x27; \<br>  -d &#x27;{&quot;query&quot;: &quot;tên chức vụ của Elon Musk&quot;, &quot;model&quot;: &quot;davinci&quot;}</pre></p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;">Trong ví dụ trên, chúng ta sử dụng API tìm kiếm thông tin tự động để tìm kiếm thông tin về tên chức vụ của Elon Musk. Model được sử dụng là Davinci, một trong những mô hình ngôn ngữ lớn nhất.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;">💡 Tip hoặc bước tiếp theo: Hãy sử dụng các công cụ như OpenAI API hoặc Hugging Face để tích hợp tìm kiếm thông tin tự động vào CI/CD của bạn. Điều này sẽ giúp bạn giảm thời gian và tăng hiệu suất cho các nhà phát triển.</p>
     </td>
   </tr>
 

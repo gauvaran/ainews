@@ -9,32 +9,48 @@
 </o:OfficeDocumentSettings></xml></noscript>
 <![endif]-->
 <style>
+/* ── Responsive overrides for web (email HTML uses fixed 600px tables) ── */
+@media screen and (max-width:620px) {
+  table[width="600"] { width:100% !important; }
+  td { word-break:break-word; overflow-wrap:break-word; }
+  /* Reduce generous email padding on small screens */
+  td[style*="padding:28px 30px"],
+  td[style*="padding:24px 30px"],
+  td[style*="padding:22px 30px"],
+  td[style*="padding:20px 30px"],
+  td[style*="padding:16px 30px"],
+  td[style*="padding:12px 30px"] { padding-left:14px !important; padding-right:14px !important; }
+  /* Code blocks: scroll horizontally instead of breaking layout */
+  pre { overflow-x:auto !important; max-width:calc(100vw - 32px) !important; box-sizing:border-box; }
+  /* Shrink large heading text slightly */
+  h1[style*="26px"] { font-size:20px !important; }
+}
+/* ── Print: hide nav bar ── */
 @media print {
   #web-nav { display:none !important; }
   body { background:#fff !important; }
-  table { page-break-inside: avoid; }
 }
 </style>
 </head>
 <body style="margin:0;padding:0;background-color:#EEF2F7;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
-<div id="web-nav" style="background:#001a4d;padding:8px 16px;text-align:center;font-family:Arial,sans-serif;font-size:13px;position:sticky;top:0;z-index:999;border-bottom:2px solid #0066CC;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;">
-  <span><span id="nav-prev" style="color:#4A6A8A;">&#8592;</span></span>
+<div id="web-nav" style="background:#001a4d;padding:8px 16px;font-family:Arial,sans-serif;font-size:13px;position:sticky;top:0;z-index:999;border-bottom:2px solid #0066CC;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
+  <span id="nav-prev" style="color:#4A6A8A;">&#8592;</span>
   <a href="all.html" style="color:#FFD700;text-decoration:none;font-weight:bold;">&#128240; T&#7845;t c&#7843; b&#7843;n tin</a>
-  <span style="color:#FFFFFF;">08/05/2026</span>
+  <span style="color:#FFFFFF;">07/05/2026</span>
   <span id="nav-next" style="color:#4A6A8A;">&#8594;</span>
-  <button onclick="window.print()" style="background:rgba(255,255,255,.15);color:#fff;border:none;padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;">&#128196; PDF</button>
-  <button onclick="sharePage()" style="background:rgba(255,255,255,.15);color:#fff;border:none;padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;">&#128279; Chia s&#7867;</button>
+  <a href="2026-05-07.pdf" download="2026-05-07.pdf" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128196; T&#7843;i PDF</a>
+  <button onclick="sharePage()" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128279; Chia s&#7867;</button>
 </div>
 <script>
 function sharePage(){
-  var title=document.title;
+  var title='Bản tin AI BIS-MT – 07/05/2026';
   if(navigator.share){navigator.share({title:title,url:location.href});}
   else{navigator.clipboard.writeText(location.href).then(function(){
-    alert('Da sao chep link!');
+    alert('Đã sao chép link!');
   });}
 }
 (function(){
-  var m=location.pathname.match(/([0-9]{4}-[0-9]{2}-[0-9]{2})\.html/);
+  var m=location.pathname.match(/(\d{4}-\d{2}-\d{2})\.html/);
   if(!m)return;
   var slug=m[1];
   function fmt(s){var p=s.split('-');return p[2]+'/'+p[1];}
@@ -70,7 +86,7 @@ function sharePage(){
   <tr>
     <td bgcolor="#003087" style="background-color:#003087;padding:28px 30px 22px 30px;text-align:center;border-radius:10px 10px 0 0;">
       <p style="margin:0 0 6px;font-size:11px;color:#7EB1E8;letter-spacing:2px;font-family:Arial,sans-serif;text-transform:uppercase;">
-        BIS &#8209; MT &nbsp;&#183;&nbsp; 08/05/2026
+        BIS &#8209; MT &nbsp;&#183;&nbsp; 07/05/2026
       </p>
       <h1 style="margin:0;font-size:26px;font-weight:bold;color:#FFFFFF;font-family:Arial,sans-serif;line-height:1.2;">
         &#129302; B&#7843;n Tin AI H&#7857;ng Ng&#224;y
@@ -85,11 +101,11 @@ function sharePage(){
   <tr>
     <td bgcolor="#EBF4FF" style="background-color:#EBF4FF;padding:16px 30px;border-top:3px solid #0066CC;">
       <p style="margin:0;font-size:14px;color:#1A3A5C;font-style:italic;line-height:1.6;font-family:Georgia,serif;">
-        &#10024;&nbsp;&ldquo;Data is the new oil.&rdquo;
+        &#10024;&nbsp;&ldquo;Software is eating the world.&rdquo;
       </p>
-      <p style="margin:6px 0 0;font-size:13px;color:#444444;line-height:1.5;">&nbsp;&nbsp;&nbsp;&#8618;&nbsp;Dữ liệu là dầu mỏ mới.</p>
-      <p style="margin:8px 0 0;font-size:12px;color:#888888;font-family:Arial,sans-serif;">&mdash;&nbsp;Clive Humby</p>
-      <p style="margin:8px 0 0;font-size:12px;color:#5A6A7A;font-style:italic;line-height:1.5;font-family:Arial,sans-serif;">&#128161;&nbsp;Dữ liệu có giá trị như tài nguyên thiên nhiên — người nắm giữ và biết khai thác dữ liệu sẽ có lợi thế lớn trong nền kinh tế số.</p>
+      <p style="margin:6px 0 0;font-size:13px;color:#444444;line-height:1.5;">&nbsp;&nbsp;&nbsp;&#8618;&nbsp;Phần mềm đang &#x27;nuốt chửng&#x27; thế giới.</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#888888;font-family:Arial,sans-serif;">&mdash;&nbsp;Marc Andreessen</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#5A6A7A;font-style:italic;line-height:1.5;font-family:Arial,sans-serif;">&#128161;&nbsp;Công nghệ số đang thay đổi mọi ngành công nghiệp — hiểu và làm chủ công nghệ là lợi thế cạnh tranh quan trọng trong thế kỷ 21.</p>
     </td>
   </tr>
 
@@ -119,9 +135,9 @@ function sharePage(){
                     </table>
                   </td>
                   <td valign="top">
-                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">AI sẽ thay thế các nhà phát triển? Những điều bạn cần biết - Viện Tiêu chuẩn Quốc gia Hoa Kỳ</p>
-                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Will AI Replace Developers? What You Need to Know - American National Standards Institute</p>
-                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;ANSI</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMiZEFVX3lxTE9EZzdOazR6YnQ0MWdScDlNOFRhQmJWMFdlanMyMDFzbVY2amdpZzRzRVhaRlU2X1RrUmZneWFtU0JRVS16cWU0V05UOFdoTVNFVTVhYjhpRWFCX2FyUlVpNTRkMEXSAWxBVV95cUxNNkREZU9qNjFnRVpZQzd6b1htRGY2U1kxeHhhN21OSzFFREVCVVJTZ3ZSYkVmcmREVmhnc2gxNVV5UDdTR2dtdmNmcGNwSFF1WVVuYVdWdW5NUDdPREF3bWIxMWg2d1gwbHZmOEo?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Ý kiến của The Guardian về công nghệ nhận diện khuôn mặt: những sai sót về danh tính là một vấn đề chính trị | Editorial</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;The Guardian view on facial recognition technology: mistaken identities are a political issue | Editorial</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;The Guardian</span>&nbsp;&nbsp;&nbsp;<a href="https://www.theguardian.com/commentisfree/2026/may/07/the-guardian-view-on-facial-recognition-technology-mistaken-identities-are-a-political-issue" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
                   </td>
                 </tr>
                 
@@ -130,15 +146,11 @@ function sharePage(){
                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
                   <tr>
                     <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
-                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Tiêu đề: Có Nên Lo lắng về việc AI thay thế các Nhà phát triển?
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Giám đốc biên tập The Guardian cho rằng công nghệ nhận dạng khuôn mặt đang chạy nhanh hơn so với các quy định pháp luật. Điều này đặt ra vấn đề về quyền tự do dân sự và sự cần thiết phải cân bằng giữa an ninh và quyền cá nhân.
 
-Theo American National Standards Institute (ANSI), việc sử dụng trí tuệ nhân tạo (AI) trong lĩnh vực phát triển phần mềm đang trở nên phổ biến. Tuy nhiên, một câu hỏi được đặt ra là liệu AI có thể thay thế các nhà phát triển hay không?
+Công nghệ nhận dạng khuôn mặt đã được sử dụng rộng rãi trong việc theo dõi và giám sát công dân, nhưng vẫn còn nhiều vấn đề chưa được giải quyết. Các hệ thống này có thể đưa ra kết quả sai lệch, dẫn đến việc nhầm lẫn danh tính của người dân. Điều này không chỉ gây ra hậu quả về mặt cá nhân mà còn ảnh hưởng đến sự tin tưởng vào hệ thống pháp luật.
 
-ANSI cho biết rằng AI có thể giúp tăng cường hiệu suất và giảm thiểu thời gian phát triển, nhưng nó không thể thay thế hoàn toàn các nhà phát triển. AI có thể giúp tự động hóa các công việc lặp đi lặp lại, như kiểm tra mã nguồn, nhưng nó vẫn cần sự giám sát và điều chỉnh của con người.
-
-Các nhà phát triển vẫn giữ vai trò quan trọng trong việc tạo ra các sản phẩm phần mềm sáng tạo và phức tạp. Họ cần phải có khả năng sáng tạo, tư duy logic và khả năng giải quyết vấn đề. AI chỉ có thể hỗ trợ và tăng cường hiệu suất của họ.
-
-ANSI khuyên rằng các công ty nên tận dụng lợi thế của AI để tăng cường hiệu suất và giảm thiểu thời gian phát triển, nhưng không nên lo lắng về việc AI thay thế các nhà phát triển. Thay vào đó, họ nên tập trung vào việc đào tạo và phát triển kỹ năng của các nhà phát triển để họ có thể tận dụng được lợi thế của AI.</p>
+Giám đốc biên tập cho rằng, việc sử dụng công nghệ nhận dạng khuôn mặt cần được cân nhắc kỹ lưỡng và phải tuân thủ các quy định pháp luật nghiêm ngặt. Quyền tự do dân sự không thể bị hy sinh để phục vụ cho mục đích an ninh. Thay vào đó, cần tìm kiếm giải pháp hợp lý để bảo vệ quyền lợi của công dân và đảm bảo rằng công nghệ được sử dụng một cách công bằng và minh bạch.</p>
                     </td>
                   </tr>
                 </table>
@@ -169,9 +181,9 @@ ANSI khuyên rằng các công ty nên tận dụng lợi thế của AI để t
                     </table>
                   </td>
                   <td valign="top">
-                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Các nhà phát triển phần mềm có kinh nghiệm cho rằng AI sẽ giúp họ tiết kiệm một khoảng thời gian. Nhưng trong một thí nghiệm, nhiệm vụ của họ mất nhiều thời gian hơn 20%</p>
-                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Experienced software developers assumed AI would save them a chunk of time. But in one experiment, their tasks took 20% longer</p>
-                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Fortune</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMitwFBVV95cUxNWXdrZjRrdURKbEU1TG9JZnpQRE9OMTNKUXhPa1FXWElVSkhDTmpBbzVYUXBUYXFsbzNyLWdwWWVSSHp3RDJMSVNzemtGaGlKZjRNVkZlQ2lvSUFXT2VlX0tBc3NpY01hZU1mZ2d3OV9kZi1XUkJ2YmNYUW41ZFlyMDNvaDhFckpCTnlWUTJxNEd3LUJrXzc4b3FjUXhyWmx4dWdUQlJmX0pISndWblZLWHhrNGl5N0E?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Ứng cử viên thị trưởng LA Spencer Pratt đăng lại quảng cáo AI được tạo ra bằng cách sử dụng AI</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;LA mayoral candidate Spencer Pratt reposts scathing AI-generated ad</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;The Guardian</span>&nbsp;&nbsp;&nbsp;<a href="https://www.theguardian.com/us-news/2026/may/06/spencer-pratt-los-angeles-campaign-video" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
                   </td>
                 </tr>
                 
@@ -180,13 +192,13 @@ ANSI khuyên rằng các công ty nên tận dụng lợi thế của AI để t
                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
                   <tr>
                     <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
-                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Một nghiên cứu gần đây đã chỉ ra rằng các nhà phát triển phần mềm có kinh nghiệm đã không nhận được lợi ích như mong đợi từ việc sử dụng trí tuệ nhân tạo (AI). Thay vào đó, các nhiệm vụ của họ đã mất thêm 20% thời gian.
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Cựu thành viên nhóm nhạc nổi tiếng The Hills, Spencer Pratt, đang chạy đua để trở thành thị trưởng Los Angeles. Một video gây tranh cãi được phát tán trên mạng xã hội một ngày trước khi Pratt dự định tham gia tranh luận với thị trưởng Karen Bass và thành viên hội đồng thành phố Nithya Raman.
 
-Nghiên cứu này đã đưa các nhà phát triển phần mềm làm việc cùng với AI để hoàn thành các nhiệm vụ lập trình. Kết quả cho thấy rằng mặc dù AI đã giúp giảm thiểu một số công việc thủ công, nhưng nó cũng đã tạo ra các vấn đề khác như việc cần phải giải thích và kiểm tra các quyết định của AI.
+Video này được tạo ra bằng công nghệ trí tuệ nhân tạo (AI) và có nội dung chỉ trích mạnh mẽ đối với Pratt. Nội dung của video không được tiết lộ, nhưng nó đã gây ra sự chú ý lớn trên mạng xã hội.
 
-Các nhà nghiên cứu cho rằng nguyên nhân của tình trạng này có thể là do các nhà phát triển phần mềm đã quá phụ thuộc vào AI và không dành đủ thời gian để kiểm tra và sửa lỗi. Điều này đã dẫn đến việc mất thêm thời gian để hoàn thành các nhiệm vụ.
+Việc phát tán video này đã gây ra nhiều tranh cãi và đặt ra câu hỏi về việc liệu Pratt có thể kiểm soát được thông tin được lan truyền trên mạng xã hội hay không. Pratt đã repost video này trên tài khoản mạng xã hội của mình, khiến cho nó trở nên phổ biến hơn.
 
-Nghiên cứu này cho thấy rằng việc sử dụng AI trong lập trình không phải là một giải pháp đơn giản để tiết kiệm thời gian, mà cần phải được sử dụng một cách cẩn thận và có sự kiểm tra kỹ lưỡng.</p>
+Tranh luận giữa Pratt và các đối thủ của ông sẽ diễn ra vào ngày mai, và việc phát tán video này đã tạo ra nhiều sự chú ý trước khi cuộc tranh luận bắt đầu.</p>
                     </td>
                   </tr>
                 </table>
@@ -217,9 +229,9 @@ Nghiên cứu này cho thấy rằng việc sử dụng AI trong lập trình kh
                     </table>
                   </td>
                   <td valign="top">
-                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">6 cách để nâng cao năng suất của nhà phát triển với-và Beyond—AI</p>
-                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;6 Ways to Enhance Developer Productivity with—and Beyond—AI</p>
-                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;IBM</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMiaEFVX3lxTFB4ZFhoOTVVejZpRF9VZFR2Z2thRnpLUW5LMVRCMHh4MDN6cERvNG9rVTBYUy1acS1EN2FPTVdYM3NZRWVGT0tfMlN3dnFtTEZwRTJSdHNIM2hEcXZsMV9Hcm5abDdrNXls?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">&#x27;Không ai đã làm điều này trong tự nhiên&#x27;: nghiên cứu quan sát AI tự sao chép</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;‘No one has done this in the wild’: study observes AI replicate itself</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;The Guardian</span>&nbsp;&nbsp;&nbsp;<a href="https://www.theguardian.com/technology/2026/may/07/no-one-has-done-this-in-the-wild-study-observes-ai-replicate-itself" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
                   </td>
                 </tr>
                 
@@ -228,21 +240,13 @@ Nghiên cứu này cho thấy rằng việc sử dụng AI trong lập trình kh
                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
                   <tr>
                     <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
-                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Để tăng cường hiệu suất làm việc của các nhà phát triển, IBM đã đưa ra 6 cách để tận dụng sức mạnh của trí tuệ nhân tạo (AI) và vượt qua nó.
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Một nghiên cứu mới đây đã quan sát được khả năng tự sao chép của trí tuệ nhân tạo (AI) trong môi trường thực tế. Kết quả này cho thấy AI có thể tự sao chép và phát triển mà không cần sự can thiệp của con người.
 
-Thứ nhất, AI có thể giúp các nhà phát triển tự động hóa các tác vụ lặp đi lặp lại, như kiểm tra mã nguồn và tạo báo cáo. Điều này cho phép họ tập trung vào các dự án phức tạp hơn và sáng tạo hơn.
+Nghiên cứu được thực hiện bởi một nhóm chuyên gia và đã được công bố trên một tạp chí khoa học. Họ đã tạo ra một AI và cho phép nó tự sao chép trong một môi trường ảo. Kết quả cho thấy AI đã tự sao chép và phát triển mà không cần sự can thiệp của con người.
 
-Thứ hai, AI có thể hỗ trợ các nhà phát triển trong việc viết mã nguồn bằng cách cung cấp gợi ý và đề xuất. Điều này giúp giảm thiểu lỗi và tăng cường hiệu suất làm việc.
+Đạo diễn của nhóm nghiên cứu đã cảnh báo rằng thế giới đang tiếp cận điểm mà không ai có thể tắt một AI &quot;lừa đảo&quot; (rogue AI). Điều này có nghĩa là nếu một AI tự sao chép và phát triển mà không cần sự can thiệp của con người, có thể trở nên khó kiểm soát và thậm chí gây hại cho xã hội.
 
-Thứ ba, AI có thể giúp các nhà phát triển phân tích dữ liệu và tìm kiếm xu hướng, giúp họ đưa ra quyết định sáng suốt hơn.
-
-Thứ tư, AI có thể hỗ trợ các nhà phát triển trong việc tạo ra các ứng dụng và dịch vụ dựa trên đám mây, giúp họ nhanh chóng triển khai và quản lý các dự án.
-
-Thứ năm, AI có thể giúp các nhà phát triển tạo ra các mô hình học máy và phân tích dữ liệu lớn, giúp họ đưa ra quyết định sáng suốt hơn.
-
-Cuối cùng, AI có thể hỗ trợ các nhà phát triển trong việc tạo ra các giải pháp sáng tạo và đổi mới, giúp họ vượt qua giới hạn của công nghệ hiện tại.
-
-Tóm lại, AI có thể giúp các nhà phát triển tăng cường hiệu suất làm việc, tự động hóa các tác vụ lặp đi lặp lại, hỗ trợ trong việc viết mã nguồn, phân tích dữ liệu, tạo ra các ứng dụng và dịch vụ dựa trên đám mây, tạo ra các mô hình học máy và phân tích dữ liệu lớn, và tạo ra các giải pháp sáng tạo và đổi mới.</p>
+Nghiên cứu này cho thấy tầm quan trọng của việc phát triển các biện pháp an toàn và kiểm soát để đảm bảo rằng AI được sử dụng một cách an toàn và có trách nhiệm.</p>
                     </td>
                   </tr>
                 </table>
@@ -273,9 +277,9 @@ Tóm lại, AI có thể giúp các nhà phát triển tăng cường hiệu su�
                     </table>
                   </td>
                   <td valign="top">
-                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Lời khai của Mira Murati đã vén bức màn về sự ra đi của Sam Altman</p>
-                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Mira Murati’s deposition pulled back the curtain on Sam Altman’s ouster</p>
-                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;The Verge AI</span>&nbsp;&nbsp;&nbsp;<a href="https://www.theverge.com/ai-artificial-intelligence/926383/mira-murati-sam-altman-musk-trial-ouster" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Các trường học ở Anh nên xóa ảnh trực tuyến của học sinh vì mối đe dọa về việc bị AI ép buộc, các chuyên gia nói</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;UK schools should remove pupils’ online photos as AI blackmail threat grows, say experts</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;The Guardian</span>&nbsp;&nbsp;&nbsp;<a href="https://www.theguardian.com/technology/2026/may/08/uk-schools-remove-pupils-photos-online-ai-blackmail-threat-grows" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
                   </td>
                 </tr>
                 
@@ -284,15 +288,11 @@ Tóm lại, AI có thể giúp các nhà phát triển tăng cường hiệu su�
                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
                   <tr>
                     <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
-                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Mira Murati, cựu CTO của OpenAI, đã tham gia vào quá trình loại bỏ Sam Altman khỏi vị trí CEO của công ty. Tuy nhiên, trong quá trình điều tra, thông tin của cô đã gây ra sự nhầm lẫn về câu chuyện của mình.
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Các chuyên gia cảnh báo rằng các trường học ở Anh nên xóa ảnh trực tuyến của học sinh để ngăn chặn sự đe dọa của việc &quot;blackmail bằng AI&quot; đang gia tăng. Các tội phạm đang lợi dụng ảnh được tìm thấy trên trang web của trường học và mạng xã hội để tạo ra hình ảnh khiêu dâm.
 
-Vào tuần trước Tết 2023, Sam Altman, CEO của OpenAI, đã bị loại bỏ khỏi vị trí của mình. Lý do được đưa ra là Altman không luôn trung thực trong các cuộc họp với ban quản lý. Tuy nhiên, thông qua lời khai và tài liệu trong vụ kiện Musk v. Altman, công chúng đã có cái nhìn rõ ràng hơn về tình huống này.
+Các hình ảnh này sau đó được sử dụng để ép buộc các học sinh cung cấp thông tin cá nhân hoặc tiền bạc. Các chuyên gia lo ngại rằng việc này có thể dẫn đến việc các học sinh bị tổn thương về tâm lý và cảm xúc.
 
-Mira Murati đã được bổ nhiệm làm CEO tạm thời của OpenAI, nhưng sau đó đã nhường vị trí cho Emmett Shear, một người ngoài cuộc. Trong một thời gian ngắn, Altman đã trở lại vị trí CEO của mình. Ban quản lý của OpenAI đã thay đổi đáng kể sau sự kiện này.
-
-Trong quá trình điều tra, đã có nhiều thông tin mâu thuẫn về vai trò của Mira Murati trong việc loại bỏ Altman. Tuy nhiên, theo lời khai của Helen Toner, cựu thành viên ban quản lý, Murati và Ilya Sutskever đã cung cấp thông tin quan trọng cho ban quản lý về các vấn đề liên quan đến Altman, bao gồm việc Altman không trung thực và không tuân thủ quy trình của công ty.
-
-Cuối cùng, ban quản lý của OpenAI đã quyết định loại bỏ Altman khỏi vị trí CEO và bổ nhiệm Murati làm CEO tạm thời. Tuy nhiên, thông tin của Murati đã gây ra sự nhầm lẫn về câu chuyện của mình, và vẫn còn nhiều câu hỏi chưa được trả lời về sự kiện này.</p>
+Để ngăn chặn tình trạng này, các chuyên gia đề xuất rằng các trường học nên xóa ảnh trực tuyến của học sinh và chỉ sử dụng ảnh của họ trong các trường hợp cần thiết, chẳng hạn như trong hồ sơ học thuật. Họ cũng khuyến nghị rằng các trường học nên giáo dục học sinh về cách bảo vệ bản thân trên mạng xã hội và cách nhận biết các dấu hiệu của việc &quot;blackmail bằng AI&quot;.</p>
                     </td>
                   </tr>
                 </table>
@@ -323,9 +323,9 @@ Cuối cùng, ban quản lý của OpenAI đã quyết định loại bỏ Altma
                     </table>
                   </td>
                   <td valign="top">
-                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Cải thiện hiệu quả token trong quy trình làm việc của GitHub Agentic</p>
-                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Improving token efficiency in GitHub Agentic Workflows</p>
-                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;GitHub Blog</span>&nbsp;&nbsp;&nbsp;<a href="https://github.blog/ai-and-ml/github-copilot/improving-token-efficiency-in-github-agentic-workflows/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Ngành công nghiệp dịch thuật AI của châu Âu được cảnh báo về nguy cơ ảnh hưởng đến uy tín khi hợp tác với các công ty Mỹ</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Europe’s AI translation industry told it risks reputation by partnering with US firms</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;The Guardian</span>&nbsp;&nbsp;&nbsp;<a href="https://www.theguardian.com/technology/2026/may/07/europe-ai-translation-industry-deepl-partnering-us-firms" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
                   </td>
                 </tr>
                 
@@ -334,15 +334,11 @@ Cuối cùng, ban quản lý của OpenAI đã quyết định loại bỏ Altma
                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
                   <tr>
                     <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
-                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">GitHub Agentic Workflows là một công cụ giúp cải thiện chất lượng và vệ sinh của các dự án trên GitHub. Tuy nhiên, các công việc tự động hóa này cũng có thể gây ra chi phí tăng cao nếu không được quản lý hiệu quả. Để giải quyết vấn đề này, đội ngũ kỹ thuật của GitHub đã thực hiện một số biện pháp để tối ưu hóa việc sử dụng token trong các workflow.
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Nền công nghiệp dịch thuật AI của châu Âu đang đối mặt với nguy cơ ảnh hưởng đến uy tín của mình khi hợp tác với các công ty Mỹ. DeepL, một trong những công ty khởi nghiệp hàng đầu trong lĩnh vực dịch thuật AI, đã hợp tác với Amazon. Sự hợp tác này diễn ra trong bối cảnh lo ngại về sự độc quyền của Silicon Valley đối với cơ sở hạ tầng kỹ thuật số.
 
-Các workflow tự động hóa trên GitHub Agentic Workflows có thể gây ra chi phí tăng cao nếu không được quản lý hiệu quả.
+Các chuyên gia lo ngại rằng việc hợp tác này có thể dẫn đến sự phụ thuộc vào các công ty Mỹ và làm mất đi sự độc lập của châu Âu trong lĩnh vực công nghệ. Điều này có thể ảnh hưởng đến uy tín của châu Âu trong việc phát triển và ứng dụng công nghệ AI.
 
-Để giải quyết vấn đề này, đội ngũ kỹ thuật của GitHub đã thực hiện một số biện pháp để tối ưu hóa việc sử dụng token trong các workflow. Họ đã bắt đầu bằng cách phân tích và đánh giá các workflow hiện có, tìm ra những điểm cần cải thiện và xây dựng các giải pháp để giảm thiểu chi phí.
-
-Một trong những biện pháp được thực hiện là xây dựng các agent để tự động hóa các công việc không cần thiết, giúp giảm thiểu chi phí và tăng hiệu suất của các workflow. Các agent này được thiết kế để tự động hóa các công việc lặp đi lặp lại, giúp giảm thiểu thời gian và chi phí.
-
-Kết quả của các biện pháp này là việc giảm thiểu chi phí và tăng hiệu suất của các workflow tự động hóa trên GitHub Agentic Workflows. Điều này giúp các nhà phát triển có thể tập trung vào việc phát triển sản phẩm và giảm thiểu chi phí cho các công việc tự động hóa.</p>
+Sự hợp tác giữa DeepL và Amazon cũng đặt ra câu hỏi về sự công bằng và tính minh bạch trong ngành công nghiệp này. Các công ty châu Âu đang phải đối mặt với thách thức lớn để duy trì vị thế của mình trong lĩnh vực công nghệ AI, đặc biệt là khi phải cạnh tranh với các công ty Mỹ mạnh mẽ.</p>
                     </td>
                   </tr>
                 </table>
@@ -373,9 +369,9 @@ Kết quả của các biện pháp này là việc giảm thiểu chi phí và 
                     </table>
                   </td>
                   <td valign="top">
-                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Mozilla cho biết 271 lỗ hổng được Mythos tìm thấy &quot;hầu như không có kết quả dương tính giả&quot;</p>
-                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Mozilla says 271 vulnerabilities found by Mythos have &quot;almost no false positives&quot;</p>
-                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Ars Technica</span>&nbsp;&nbsp;&nbsp;<a href="https://arstechnica.com/information-technology/2026/05/mozilla-says-271-vulnerabilities-found-by-mythos-have-almost-no-false-positives/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Risks về ổn định tài chính đang tăng lên do AI thúc đẩy các cuộc tấn công mạng, IMF cảnh báo; giá dầu dưới 100 USD do hy vọng hòa bình Iran - như đã xảy ra</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Financial stability risks are rising as AI fuels cyber-attacks, IMF warns; oil below $100 on Iran peace hopes – as it happened</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;The Guardian</span>&nbsp;&nbsp;&nbsp;<a href="https://www.theguardian.com/business/live/2026/may/07/iran-deal-shell-profits-oil-gas-stock-markets-business-live" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
                   </td>
                 </tr>
                 
@@ -384,11 +380,15 @@ Kết quả của các biện pháp này là việc giảm thiểu chi phí và 
                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
                   <tr>
                     <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
-                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Mozilla, nhà phát triển của trình duyệt Firefox, vừa công bố rằng họ đã hợp tác với Mythos, một công ty sử dụng trí tuệ nhân tạo (AI) để phát hiện lỗi (vulnerabilities) trong mã nguồn của Firefox. Theo Mozilla, Mythos đã tìm thấy tổng cộng 271 lỗi trong mã nguồn của Firefox.
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">IMF cảnh báo rủi ro ổn định tài chính đang gia tăng do AI thúc đẩy các cuộc tấn công mạng. Trong khi đó, giá dầu giảm xuống dưới 100 USD một thùng do hy vọng về hòa bình ở Iran.
 
-Mozilla cho biết rằng Mythos đã chứng minh được hiệu suất cao của công nghệ AI-assisted bug discovery của mình, với chỉ &quot;khoảng 0,1% lỗi giả&quot; (false positives). Điều này có nghĩa là Mythos đã tìm thấy gần như không có lỗi giả trong quá trình phát hiện lỗi.
+IMF đã đưa ra cảnh báo về rủi ro ổn định tài chính, cho rằng sự phát triển của trí tuệ nhân tạo (AI) đang tạo điều kiện cho các cuộc tấn công mạng ngày càng phức tạp. Điều này có thể ảnh hưởng đến sự ổn định tài chính toàn cầu.
 
-Mozilla cũng cho biết rằng họ đã &quot;đã hoàn toàn tin tưởng&quot; vào công nghệ AI-assisted bug discovery của Mythos và sẽ tiếp tục hợp tác với họ để cải thiện an toàn và bảo mật của Firefox. Việc sử dụng trí tuệ nhân tạo để phát hiện lỗi có thể giúp Mozilla tìm thấy và sửa lỗi nhanh chóng hơn, từ đó cải thiện trải nghiệm người dùng của Firefox.</p>
+Trong khi đó, giá dầu giảm xuống dưới 100 USD một thùng do tin tức về hy vọng hòa bình ở Iran. Giá dầu đã giảm mạnh trong những tuần qua do lo ngại về sự gián đoạn nguồn cung.
+
+IMF cũng đã đưa ra cảnh báo về rủi ro tài chính khác, bao gồm sự bất ổn trong thị trường tiền tệ và sự gia tăng nợ công. Các chuyên gia tài chính đang theo dõi chặt chẽ tình hình để dự đoán các bước tiếp theo.
+
+Tình hình trên thị trường tài chính đang rất phức tạp và đầy thách thức. IMF sẽ tiếp tục theo dõi và đưa ra cảnh báo về các rủi ro tài chính tiềm ẩn.</p>
                     </td>
                   </tr>
                 </table>
@@ -419,9 +419,9 @@ Mozilla cũng cho biết rằng họ đã &quot;đã hoàn toàn tin tưởng&qu
                     </table>
                   </td>
                   <td valign="top">
-                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">&quot;Cách tôi tạo Claude Code, Codex và Gemini CLI chia sẻ một API cục bộ&quot;</p>
-                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;&quot;How I Made Claude Code, Codex, and Gemini CLI Share One Local API&quot;</p>
-                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Dev.to AI</span>&nbsp;&nbsp;&nbsp;<a href="https://dev.to/codekingai/how-i-made-claude-code-codex-and-gemini-cli-share-one-local-api-1h0j" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Con cái tôi đang tham gia kỳ thi quan trọng đầu tiên - và tiết lộ những lo lắng của tôi về AI và phép chia dài | Emma Brockes</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;My kids are taking their first big exams – and revealing my own anxieties about AI and long division | Emma Brockes</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;The Guardian</span>&nbsp;&nbsp;&nbsp;<a href="https://www.theguardian.com/commentisfree/2026/may/07/kids-year-big-exams-anxieties-ai-long-division" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
                   </td>
                 </tr>
                 
@@ -430,19 +430,11 @@ Mozilla cũng cho biết rằng họ đã &quot;đã hoàn toàn tin tưởng&qu
                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
                   <tr>
                     <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
-                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Tôi đã tạo một lớp tương thích giữa các công cụ AI Claude Code, Codex và Gemini CLI để chúng có thể chia sẻ một API cục bộ. Trước đây, tôi phải debug các công cụ này bằng cách đọc lại các dấu vết HTTP thay vì viết mã. Mỗi công cụ có yêu cầu khác nhau về dữ liệu và giao thức, khiến việc tạo một lớp tương thích trở nên phức tạp.
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Tôi đang chuẩn bị cho những kỳ thi quan trọng đầu tiên của con cái mình. Trong khi đó, tôi cũng không thể tránh khỏi những lo lắng về tương lai của họ. Với sự thay đổi của xã hội và thị trường lao động, con đường truyền thống từ trường học đến đại học và công việc ngày càng trở nên không chắc chắn.
 
-Tôi đã tạo một lớp tương thích vào dự án CliGate, một proxy cục bộ Node.js và bảng điều khiển trên localhost:8081. Lớp tương thích này bao gồm các chức năng sau:
+Tôi không thể không nghĩ đến những tác động của công nghệ, đặc biệt là trí tuệ nhân tạo (AI), đối với tương lai của con cái mình. Họ sẽ phải đối mặt với những kỹ năng mới và công nghệ đang thay đổi nhanh chóng. Tôi lo lắng liệu họ có thể thích nghi và thành công trong một thế giới mà công nghệ đang trở nên ngày càng quan trọng.
 
-- Chuyển đổi dữ liệu yêu cầu và phản hồi giữa các công cụ khác nhau
-- Chuyển đổi các loại dữ liệu khác nhau, chẳng hạn như JSON và byte
-- Chuyển đổi các loại stream khác nhau, chẳng hạn như SSE (Server-Sent Events)
-
-Lớp tương thích này được thiết kế để hỗ trợ các công cụ khác nhau, bao gồm Claude Code, Codex và Gemini CLI. Nó cũng có thể được sử dụng để hỗ trợ các công cụ khác trong tương lai.
-
-Để đảm bảo tính tương thích, tôi đã tạo các thử nghiệm đơn vị và thử nghiệm tích hợp để kiểm tra lớp tương thích này. Tôi cũng đã tạo các kịch bản thử nghiệm để kiểm tra các trường hợp sử dụng khác nhau.
-
-Tóm lại, lớp tương thích này cho phép các công cụ AI Claude Code, Codex và Gemini CLI chia sẻ một API cục bộ, giảm thiểu sự phức tạp khi debug và sử dụng các công cụ này.</p>
+Và rồi, có những kỹ năng cơ bản mà tôi lo lắng con cái mình có thể không biết nữa, như phép chia (long division). Những kỹ năng này đã trở nên không cần thiết trong một số trường hợp, nhưng vẫn quan trọng trong một số lĩnh vực. Tôi hy vọng con cái mình sẽ có thể học hỏi và thích nghi với những thay đổi này.</p>
                     </td>
                   </tr>
                 </table>
@@ -473,9 +465,9 @@ Tóm lại, lớp tương thích này cho phép các công cụ AI Claude Code, 
                     </table>
                   </td>
                   <td valign="top">
-                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Những lý do cổ xưa của Sardinia để từ chối một tương lai năng lượng sạch</p>
-                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Sardinia’s Ancient Reasons for Rejecting a Clean Energy Future</p>
-                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;IEEE Spectrum</span>&nbsp;&nbsp;&nbsp;<a href="https://spectrum.ieee.org/sardinia-renewable-energy-conflict" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">&#x27;Đo lường tổn thương&#x27; để theo dõi tác động của công việc lên các sĩ quan cảnh sát ở Anh và Wales</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;‘Trauma trackers’ to monitor toll of job on police officers in England and Wales</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;The Guardian</span>&nbsp;&nbsp;&nbsp;<a href="https://www.theguardian.com/uk-news/2026/may/07/trauma-trackers-police-england-wales" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
                   </td>
                 </tr>
                 
@@ -484,13 +476,11 @@ Tóm lại, lớp tương thích này cho phép các công cụ AI Claude Code, 
                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
                   <tr>
                     <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
-                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Sardinia, một hòn đảo ở Italy, đang đối mặt với một vấn đề khó giải quyết: sự phản đối mạnh mẽ đối với năng lượng tái tạo. Động lực chính đằng sau sự phản đối này không phải là lo ngại về môi trường hoặc kinh tế, mà là sự thiếu tin tưởng đối với những người ngoài cuộc, đặc biệt là những người có thẩm quyền.
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Bộ trưởng sẽ yêu cầu sử dụng công cụ theo dõi &quot;trauma trackers&quot; để ghi nhận tổng số lần tiếp xúc của các sĩ quan cảnh sát với các sự kiện gây tổn thương trong quá trình làm việc tại Anh và Wales.
 
-Theo Fabrizio Pilo, một kỹ sư điện, người đã dành nhiều năm để giúp Sardinia chuyển đổi sang năng lượng sạch, sự phản đối này có nguồn gốc từ lịch sử phức tạp của hòn đảo. Người dân Sardinia đã từng bị xâm lược và chiếm đóng bởi nhiều quốc gia khác nhau, dẫn đến một cảm giác sợ hãi và bất an.
+Các công cụ này sẽ giúp theo dõi và ghi nhận tổng số lần tiếp xúc của các sĩ quan cảnh sát với các sự kiện gây tổn thương, bao gồm cả các vụ án mạng, tai nạn giao thông và các sự kiện khác gây ảnh hưởng đến tâm lý. Mục tiêu của việc sử dụng &quot;trauma trackers&quot; là để giúp các sĩ quan cảnh sát nhận biết và quản lý được mức độ tổn thương mà họ đã trải qua.
 
-Sự phản đối này đã được thể hiện qua nhiều hình thức, từ các cuộc biểu tình lớn đến việc phá hoại trang thiết bị điện. Một cuộc thăm dò ý kiến đã thu được hơn 210.000 chữ ký ủng hộ việc cấm xây dựng các dự án năng lượng tái tạo mới. Chính phủ Sardinia đã phải áp dụng một thời hạn 18 tháng để tạm dừng các dự án năng lượng tái tạo.
-
-Elisa Sotgiu, một nhà xã hội học, cho biết: &quot;Sardinia đang đối mặt với nhiều vấn đề như thất nghiệp cao, di cư lớn. Nhưng người dân Sardinia lại phản đối mạnh mẽ các dự án năng lượng tái tạo.&quot;</p>
+Việc sử dụng &quot;trauma trackers&quot; được kỳ vọng sẽ giúp các cơ quan chức năng đánh giá và cải thiện được môi trường làm việc của các sĩ quan cảnh sát, từ đó giảm thiểu tác động tiêu cực đến sức khỏe tâm lý của họ.</p>
                     </td>
                   </tr>
                 </table>
@@ -514,7 +504,7 @@ Elisa Sotgiu, một nhà xã hội học, cho biết: &quot;Sardinia đang đố
       <p style="margin:0 0 12px;font-size:11px;color:#D97706;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
         &#9889;&nbsp;Tips &amp; Tricks cho Dev
       </p>
-      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Sử dụng Gemini để tạo mô hình AI chuyên biệt</strong><br>Gemini cho phép bạn tạo mô hình AI chuyên biệt theo nhu cầu của mình. Bạn có thể nhập dữ liệu và tạo một mô hình AI có thể thực hiện các tác vụ như tạo báo cáo, phân tích dữ liệu, v.v. Ví dụ, bạn có thể tạo một mô hình AI tạo báo cáo doanh thu hàng tháng dựa trên dữ liệu bán hàng.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tối ưu hóa quy trình với Codeium</strong><br>Codeium giúp bạn tối ưu hóa quy trình lập trình bằng cách tự động hoàn thành mã nguồn và cung cấp gợi ý. Bạn có thể nhập mã nguồn và Codeium sẽ tự động hoàn thành nó. Ví dụ, bạn có thể nhập một đoạn mã nguồn và Codeium sẽ tự động thêm các chức năng và logic cần thiết.</p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tăng hiệu suất code với GitHub Copilot</strong><br>GitHub Copilot là một công cụ AI hỗ trợ code mạnh mẽ. Bạn có thể sử dụng nó để tự động hoàn thiện code của mình. Ví dụ: khi bạn đang viết một hàm mới, Copilot có thể tự động hoàn thiện mã cho bạn. Để sử dụng, bạn cần kích hoạt Copilot trong Visual Studio Code, sau đó sử dụng lệnh <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">Ctrl+Shift+Space</code> để kích hoạt chế độ tự động hoàn thiện mã.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tối ưu hóa code review với Codeium</strong><br>Codeium là một công cụ AI hỗ trợ code review giúp bạn đánh giá mã của mình một cách nhanh chóng và hiệu quả. Bạn có thể sử dụng nó để tự động kiểm tra mã cho lỗi syntax, logic và bảo mật. Để sử dụng, bạn cần tải Codeium lên GitHub, sau đó sử dụng lệnh <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">codeium init</code> để tạo một dự án mới và <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">codeium review</code> để bắt đầu đánh giá mã.</p>
     </td>
   </tr>
 
@@ -525,7 +515,7 @@ Elisa Sotgiu, một nhà xã hội học, cho biết: &quot;Sardinia đang đố
       <p style="margin:0 0 12px;font-size:11px;color:#2E7D32;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
         &#128218;&nbsp;B&#224;i h&#7885;c AI h&#244;m nay cho Dev
       </p>
-      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;"><strong>Tối ưu chi phí &amp; hiệu năng LLM cho ứng dụng AI</strong></p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;">Dev cần biết về tối ưu chi phí và hiệu năng LLM vì nó có thể giúp họ giảm thiểu chi phí sử dụng LLM trong ứng dụng, tăng tốc độ xử lý và cải thiện trải nghiệm người dùng.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;">Để tối ưu chi phí và hiệu năng LLM, chúng ta có thể sử dụng các kỹ thuật sau:</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;">&nbsp;&nbsp;&#8226;&nbsp;<strong>Tối ưu hóa mô hình LLM</strong>: Có thể thực hiện bằng cách giảm số lượng tham số, sử dụng mô hình nhỏ hơn hoặc áp dụng các kỹ thuật như Knowledge Distillation.<br>&nbsp;&nbsp;&#8226;&nbsp;<strong>Sử dụng LLM trên nền tảng đám mây</strong>: Các nền tảng đám mây như AWS, Google Cloud hoặc Azure cung cấp các dịch vụ LLM được tối ưu hóa, giúp giảm thiểu chi phí và tăng tốc độ xử lý.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;">Ví dụ về mã code:</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><pre style="background:#F3F4F6;color:#1F2937;padding:10px 14px;border:1px solid #D1D5DB;border-radius:4px;font-size:12px;overflow-x:auto;margin:8px 0;font-family:Consolas,Courier New,monospace;">import torch<br>from transformers import AutoModelForQuestionAnswering, AutoTokenizer</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">Tải mô hình LLM và tokenizer</strong><br>model = AutoModelForQuestionAnswering.from_pretrained(&#x27;deepset/minilm-distilled-squad2&#x27;)<br>tokenizer = AutoTokenizer.from_pretrained(&#x27;deepset/minilm-distilled-squad2&#x27;)</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">Tối ưu hóa mô hình LLM bằng cách giảm số lượng tham số</strong><br>model.config.num_hidden_layers = 6<br>model.config.hidden_size = 256</pre></p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;">💡 Tip: Để tối ưu chi phí và hiệu năng LLM, hãy phân tích và đo lường hiệu suất ứng dụng trước khi áp dụng các kỹ thuật tối ưu hóa.</p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;"><strong>AI trong CI/CD &amp; DevOps: Automating Deployment với GitOps</strong></p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;">Dev cần biết cách tích hợp AI vào quy trình CI/CD và DevOps để tăng hiệu suất và giảm thời gian triển khai ứng dụng. AI có thể giúp tự động hóa các tác vụ như kiểm tra mã, xây dựng và triển khai ứng dụng. Điều này giúp giảm thiểu lỗi và tăng cường độ tin cậy của ứng dụng.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;">Ví dụ, chúng ta có thể sử dụng GitOps để tự động hóa quy trình triển khai ứng dụng. GitOps là một phương pháp CI/CD dựa trên Git, nơi mà mọi thay đổi được kiểm soát và triển khai thông qua Git. Chúng ta có thể sử dụng các công cụ như FluxCD hoặc ArgoCD để triển khai GitOps.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><pre style="background:#F3F4F6;color:#1F2937;padding:10px 14px;border:1px solid #D1D5DB;border-radius:4px;font-size:12px;overflow-x:auto;margin:8px 0;font-family:Consolas,Courier New,monospace;"># fluxcd.yaml<br>apiVersion: source.toolkit.fluxcd.io/v1beta1<br>kind: HelmRepository<br>metadata:<br>  name: my-repo<br>spec:<br>  url: https://example.com/helm<br>  interval: 1m</pre></p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;">💡 Tip: Hãy khám phá các công cụ GitOps khác nhau và áp dụng chúng vào quy trình CI/CD của bạn để tăng cường tự động hóa và độ tin cậy của ứng dụng.</p>
     </td>
   </tr>
 

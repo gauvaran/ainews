@@ -421,7 +421,7 @@ def _groq_lesson(api_key):
         f"Yêu cầu: 120-160 từ, tiếng Việt, giữ thuật ngữ kỹ thuật tiếng Anh."
     )
     payload = json.dumps({
-        "model": GROQ_MODEL,
+        "model": GROQ_TRANSLATE_MODEL,
         "messages": [{"role": "user", "content": prompt}],
         "max_tokens": 600,
         "temperature": 0.7,
@@ -460,7 +460,7 @@ def _groq_tips(api_key):
         "Yêu cầu: tiếng Việt, giữ thuật ngữ EN, mỗi tip ≤ 60 từ. Viết 2 tip liền nhau."
     )
     payload = json.dumps({
-        "model": GROQ_MODEL,
+        "model": GROQ_TRANSLATE_MODEL,
         "messages": [{"role": "user", "content": prompt}],
         "max_tokens": 450,
         "temperature": 0.85,

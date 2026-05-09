@@ -106,17 +106,25 @@ def _strip_html(text):
     return " ".join(s.parts).strip()
 
 
-def _groq_summarize(title, context_text, api_key):
-    """Summarize article in Vietnamese using Groq. Context = article text or RSS description."""
+def _groq_summarize(title, context_text, api_key, lang="vi"):
+    """Summarize article using Groq. lang='vi' → Vietnamese, lang='en' → English (for Gemini to translate)."""
     if not api_key or not context_text:
         return ""
-    prompt = (
-        "Bạn là trợ lý biên tập tin tức công nghệ. "
-        "Dựa HOÀN TOÀN vào nội dung được cung cấp bên dưới, "
-        "hãy viết tóm tắt bằng tiếng Việt khoảng 150-200 từ, rõ ràng và dễ hiểu. "
-        "TUYỆT ĐỐI không thêm thông tin ngoài bài, không suy diễn.\n\n"
-        f"Tiêu đề: {title}\n\nNội dung:\n{context_text}"
-    )
+    if lang == "en":
+        prompt = (
+            "You are a tech news editor. Based ONLY on the content below, "
+            "write an English summary in 150-200 words, clear and informative. "
+            "Do NOT add information beyond what is provided.\n\n"
+            f"Title: {title}\n\nContent:\n{context_text}"
+        )
+    else:
+        prompt = (
+            "Bạn là trợ lý biên tập tin tức công nghệ. "
+            "Dựa HOÀN TOÀN vào nội dung được cung cấp bên dưới, "
+            "hãy viết tóm tắt bằng tiếng Việt khoảng 150-200 từ, rõ ràng và dễ hiểu. "
+            "TUYỆT ĐỐI không thêm thông tin ngoài bài, không suy diễn.\n\n"
+            f"Tiêu đề: {title}\n\nNội dung:\n{context_text}"
+        )
     payload = json.dumps({
         "model": GROQ_MODEL,
         "messages": [{"role": "user", "content": prompt}],
@@ -202,6 +210,75 @@ def _gemini_translate_titles_batch(titles, api_key):
             print(f"Gemini translate error: {e}", file=sys.stderr)
             return [""] * len(titles)
     return [""] * len(titles)
+
+
+def _gemini_translate_all_batch(titles, summaries, api_key):
+    """ONE Gemini call: translate all titles + summaries to Vietnamese.
+    Returns (titles_vi, summaries_vi) lists aligned with input."""
+    n = len(titles)
+    if not api_key or not titles:
+        return [""] * n, [""] * n
+    titles_block   = "\n".join(f"{i+1}. {t}" for i, t in enumerate(titles))
+    summaries_block = "\n\n".join(f"{i+1}. {s}" for i, s in enumerate(summaries))
+    prompt = (
+        "Dịch sang tiếng Việt. Người đọc là developer Việt Nam giàu kinh nghiệm.\n"
+        "Quy tắc: giữ nguyên thuật ngữ kỹ thuật tiếng Anh "
+        "(AI, API, LLM, model, token, developer, framework, agent, fine-tune, v.v.). "
+        "Dịch tự nhiên như người Việt viết, không dịch cứng nhắc.\n\n"
+        "### TIÊU ĐỀ (dịch ngắn gọn):\n"
+        f"{titles_block}\n\n"
+        "### TÓM TẮT (dịch đầy đủ, giữ nguyên nghĩa gốc, ~150-200 từ mỗi bài):\n"
+        f"{summaries_block}\n\n"
+        "Trả về đúng format sau, không thêm gì khác:\n"
+        "### TIÊU ĐỀ:\n1. ...\n\n### TÓM TẮT:\n1. ..."
+    )
+    payload = json.dumps({
+        "contents": [{"parts": [{"text": prompt}]}],
+        "generationConfig": {"temperature": 0.1, "maxOutputTokens": 6000},
+    }).encode()
+    req = urllib.request.Request(
+        f"{GEMINI_URL}?key={api_key}",
+        data=payload,
+        headers={"Content-Type": "application/json"},
+    )
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(req, timeout=60) as r:
+                data = json.loads(r.read().decode())
+            raw = data["candidates"][0]["content"]["parts"][0]["text"].strip()
+
+            if "### TÓM TẮT:" not in raw:
+                return [""] * n, [""] * n
+
+            parts = raw.split("### TÓM TẮT:", 1)
+            titles_raw   = parts[0].replace("### TIÊU ĐỀ:", "").strip()
+            summaries_raw = parts[1].strip()
+
+            def parse_short(text, expected):
+                lines = [re.sub(r'^\d+\.\s*', '', l).strip()
+                         for l in text.splitlines() if re.match(r'^\d+\.', l.strip())]
+                while len(lines) < expected: lines.append("")
+                return lines[:expected]
+
+            def parse_long(text, expected):
+                items = re.split(r'\n(?=\d+\.)', text.strip())
+                result = [re.sub(r'^\d+\.\s*', '', it).strip() for it in items if it.strip()]
+                while len(result) < expected: result.append("")
+                return result[:expected]
+
+            return parse_short(titles_raw, n), parse_long(summaries_raw, n)
+
+        except urllib.error.HTTPError as e:
+            if e.code == 429 and attempt < 2:
+                print(f"Gemini 429 — retry {attempt+1}/3 in 10s...", file=sys.stderr)
+                time.sleep(10)
+            else:
+                print(f"Gemini translate_all error: {e}", file=sys.stderr)
+                return [""] * n, [""] * n
+        except Exception as e:
+            print(f"Gemini translate_all error: {e}", file=sys.stderr)
+            return [""] * n, [""] * n
+    return [""] * n, [""] * n
 
 
 def _groq_translate_titles_batch(titles, api_key):
@@ -418,29 +495,38 @@ def fetch_ai_news(google_items=3, specialized_items=5):
             context = _strip_html(entry.get("summary", entry.get("description", "")))
         parsed.append({"title_en": title_en, "publisher": publisher, "link": link, "context": context})
 
-    # ── Phase 3: batch-translate all titles (Gemini preferred, Groq fallback) ──
+    # ── Phase 3: Groq summarizes (EN when Gemini available, VI otherwise) ──────
+    sum_lang = "en" if gemini_key else "vi"
+    summaries_raw = []
+    for i, p in enumerate(parsed):
+        print(f"  summarize {i+1}/{len(parsed)}...", end=" ", flush=True, file=sys.stderr)
+        s = _groq_summarize(p["title_en"], p["context"], groq_key, lang=sum_lang)
+        time.sleep(6)
+        print("ok", file=sys.stderr)
+        summaries_raw.append(s)
+
+    # ── Phase 4: ONE Gemini call → translate titles + summaries ──────────────
     title_inputs = [p["title_en"] for p in parsed]
     if gemini_key:
-        print("Translating via Gemini Flash Lite...", file=sys.stderr)
-        titles_vi = _gemini_translate_titles_batch(title_inputs, gemini_key)
-        if not any(titles_vi):  # Gemini failed entirely, fall back
+        print("Translating titles + summaries via Gemini...", file=sys.stderr)
+        titles_vi, summaries_vi = _gemini_translate_all_batch(title_inputs, summaries_raw, gemini_key)
+        if not any(titles_vi):
             print("Gemini failed, falling back to Groq...", file=sys.stderr)
-            titles_vi = _groq_translate_titles_batch(title_inputs, groq_key)
+            titles_vi  = _groq_translate_titles_batch(title_inputs, groq_key)
+            summaries_vi = summaries_raw  # keep English summaries as fallback
     else:
-        titles_vi = _groq_translate_titles_batch(title_inputs, groq_key)
-    time.sleep(5)  # let token bucket recover before summarize calls
+        titles_vi    = _groq_translate_titles_batch(title_inputs, groq_key)
+        summaries_vi = summaries_raw  # already Vietnamese from Groq
+    time.sleep(5)
 
-    # ── Phase 4: summarize each article (one Groq call each, with delay) ─────
     articles = []
     for i, p in enumerate(parsed):
-        summary = _groq_summarize(p["title_en"], p["context"], groq_key)
-        time.sleep(6)
         articles.append({
             "title_en":  p["title_en"],
             "title_vi":  titles_vi[i] or p["title_en"],
             "publisher": p["publisher"],
             "link":      p["link"],
-            "summary":   summary,
+            "summary":   summaries_vi[i] or summaries_raw[i],
         })
 
     # ── Phase 5: lesson + tips ────────────────────────────────────────────────

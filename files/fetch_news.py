@@ -504,8 +504,8 @@ def _load_prev_seen():
         titles = set()
         for m in re.finditer(r'&#127468;&#127463;&nbsp;(.+?)(?=<)', html):
             t = m.group(1).strip()
-            if ' - ' in t:
-                t = t.rsplit(' - ', 1)[0].strip()
+            # Strip all " - Publisher" suffixes (Google News may have multiple)
+            t = t.split(' - ')[0].strip()
             titles.add(t.lower())
         urls = {m.group(1).split('?')[0]
                 for m in re.finditer(r'href="(https://(?!news\.google)[^"]+)"', html)}
@@ -530,16 +530,18 @@ def fetch_ai_news(google_items=3, specialized_items=5):
     try:
         feed = feedparser.parse(NEWS_URL, request_headers=_headers)
         added = 0
-        for entry in feed.entries[:google_items * 4]:
+        for entry in feed.entries[:google_items * 5]:
             if added >= google_items:
                 break
             t = entry.get("title", "").strip()
-            if " - " in t:
-                t = t.rsplit(" - ", 1)[0].strip()
-            if t.lower() not in prev_titles:
-                raw.append((entry, ""))
-                prev_titles.add(t.lower())
-                added += 1
+            # Strip all " - Publisher" suffixes
+            t_key = t.split(' - ')[0].strip().lower()
+            rss_summary = _strip_html(entry.get("summary", entry.get("description", "")))
+            if t_key in prev_titles or len(rss_summary) < 80:
+                continue
+            raw.append((entry, ""))
+            prev_titles.add(t_key)
+            added += 1
     except Exception as e:
         print(f"Google News feed error: {e}", file=sys.stderr)
 

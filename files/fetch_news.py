@@ -483,6 +483,37 @@ def _groq_tips(api_key):
         return ""
 
 
+def _load_prev_seen():
+    """Return (known_titles_lower, known_urls) from the most recent docs/YYYY-MM-DD.html
+    that is NOT today's date (avoids deduplicating against the file being regenerated)."""
+    docs_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "docs")
+    if not os.path.isdir(docs_dir):
+        return set(), set()
+    today_slug = (os.environ.get("WEB_DATE_OVERRIDE")
+                  or datetime.datetime.now().strftime("%Y-%m-%d"))
+    files = sorted(
+        f for f in os.listdir(docs_dir)
+        if re.match(r'\d{4}-\d{2}-\d{2}\.html$', f) and f != f"{today_slug}.html"
+    )
+    if not files:
+        return set(), set()
+    prev_path = os.path.join(docs_dir, files[-1])
+    try:
+        with open(prev_path, encoding='utf-8') as f:
+            html = f.read()
+        titles = set()
+        for m in re.finditer(r'&#127468;&#127463;&nbsp;(.+?)(?=<)', html):
+            t = m.group(1).strip()
+            if ' - ' in t:
+                t = t.rsplit(' - ', 1)[0].strip()
+            titles.add(t.lower())
+        urls = {m.group(1).split('?')[0]
+                for m in re.finditer(r'href="(https://(?!news\.google)[^"]+)"', html)}
+        return titles, urls
+    except Exception:
+        return set(), set()
+
+
 def fetch_ai_news(google_items=3, specialized_items=5):
     """Return structured dict: quote + 3 Google News + 5 specialized feed articles."""
     groq_key   = os.environ.get("GROQ_API_KEY", "")
@@ -491,13 +522,24 @@ def fetch_ai_news(google_items=3, specialized_items=5):
     socket.setdefaulttimeout(12)
     _headers = {"User-Agent": "Mozilla/5.0 (compatible; NewsBot/1.0)"}
 
+    prev_titles, prev_urls = _load_prev_seen()
+
     # ── Phase 1: collect raw entries (no Groq yet) ────────────────────────────
     raw = []  # list of (entry, publisher_hint)
 
     try:
         feed = feedparser.parse(NEWS_URL, request_headers=_headers)
-        for entry in feed.entries[:google_items]:
-            raw.append((entry, ""))
+        added = 0
+        for entry in feed.entries[:google_items * 4]:
+            if added >= google_items:
+                break
+            t = entry.get("title", "").strip()
+            if " - " in t:
+                t = t.rsplit(" - ", 1)[0].strip()
+            if t.lower() not in prev_titles:
+                raw.append((entry, ""))
+                prev_titles.add(t.lower())
+                added += 1
     except Exception as e:
         print(f"Google News feed error: {e}", file=sys.stderr)
 
@@ -507,12 +549,26 @@ def fetch_ai_news(google_items=3, specialized_items=5):
             break
         try:
             feed = feedparser.parse(feed_url, request_headers=_headers)
-            if feed.entries:
-                raw.append((feed.entries[0], feed_name))
-                collected += 1
-                print(f"OK: {feed_name}", file=sys.stderr)
-            else:
-                print(f"Empty: {feed_name}", file=sys.stderr)
+            picked = False
+            for entry in feed.entries[:5]:
+                url = entry.get("link", "").split("?")[0]
+                t   = entry.get("title", "").strip().lower()
+                if url and url not in prev_urls and t not in prev_titles:
+                    raw.append((entry, feed_name))
+                    prev_urls.add(url)
+                    prev_titles.add(t)
+                    collected += 1
+                    picked = True
+                    print(f"OK: {feed_name}", file=sys.stderr)
+                    break
+            if not picked:
+                # All entries seen before — take the first one anyway
+                if feed.entries:
+                    raw.append((feed.entries[0], feed_name))
+                    collected += 1
+                    print(f"OK (repeated): {feed_name}", file=sys.stderr)
+                else:
+                    print(f"Empty: {feed_name}", file=sys.stderr)
         except Exception as e:
             print(f"Feed error ({feed_name}): {e}", file=sys.stderr)
 
@@ -551,8 +607,11 @@ def fetch_ai_news(google_items=3, specialized_items=5):
         print("Translating titles + summaries via Gemini...", file=sys.stderr)
         titles_vi, summaries_vi = _gemini_translate_all_batch(title_inputs, summaries_raw, gemini_key)
         if not any(titles_vi):
-            print("Gemini failed, falling back to Groq...", file=sys.stderr)
+            print("Gemini failed, falling back to Groq for titles+summaries...", file=sys.stderr)
             titles_vi    = _groq_translate_titles_batch(title_inputs, groq_key)
+            summaries_vi = _groq_translate_summaries_batch(summaries_raw, groq_key)
+        elif not any(s for s in summaries_vi if s):
+            print("Gemini summaries empty, falling back to Groq for summaries...", file=sys.stderr)
             summaries_vi = _groq_translate_summaries_batch(summaries_raw, groq_key)
     else:
         titles_vi    = _groq_translate_titles_batch(title_inputs, groq_key)

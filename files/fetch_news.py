@@ -456,24 +456,26 @@ def _groq_lesson(api_key):
 
 
 def _groq_tips(api_key):
-    """Generate 2 trending AI tips & tricks for developers."""
+    """Generate 3 detailed AI tips & tricks for developers with explanation and evaluation."""
     if not api_key:
         return ""
     today = datetime.datetime.now().strftime("%Y-%m-%d")
     prompt = (
-        f"Hôm nay là {today}. Bạn là senior dev chia sẻ tips thực chiến về AI tools.\n\n"
-        "Viết ĐÚNG 2 tip & trick ngắn gọn, trending về dùng AI trong công việc dev hàng ngày "
+        f"Hôm nay là {today}. Bạn là senior AI engineer chia sẻ tips thực chiến về AI tools cho dev.\n\n"
+        "Viết ĐÚNG 3 tip & trick về dùng AI trong công việc dev hàng ngày "
         "(GitHub Copilot, ChatGPT, Claude, Cursor, Gemini, Windsurf, Codeium, v.v.). "
         "Chọn tips đang hot hoặc ít người biết, cụ thể và áp dụng được ngay.\n\n"
         "Format mỗi tip:\n"
         "### ⚡ [Tên tip]\n"
-        "[2-3 câu: giải thích + ví dụ prompt mẫu hoặc lệnh cụ thể]\n\n"
-        "Yêu cầu: tiếng Việt, giữ thuật ngữ EN, mỗi tip ≤ 60 từ. Viết 2 tip liền nhau."
+        "**Vấn đề:** [1 câu mô tả pain point mà tip này giải quyết]\n"
+        "**Cách làm:** [2-3 câu hướng dẫn cụ thể, kèm ví dụ prompt mẫu hoặc lệnh thực tế]\n"
+        "**Đánh giá:** [1-2 câu nói rõ hiệu quả thực tế, khi nào nên/không nên dùng]\n\n"
+        "Yêu cầu: tiếng Việt, giữ thuật ngữ kỹ thuật EN, mỗi tip 80-120 từ. Viết 3 tip liền nhau."
     )
     payload = json.dumps({
         "model": GROQ_TRANSLATE_MODEL,
         "messages": [{"role": "user", "content": prompt}],
-        "max_tokens": 450,
+        "max_tokens": 1000,
         "temperature": 0.85,
     }).encode()
     req = urllib.request.Request(

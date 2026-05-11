@@ -17,13 +17,17 @@ import time
 import hashlib
 from html.parser import HTMLParser
 
-NEWS_URL    = "https://news.google.com/rss/search?q=AI+tools+software+developers+programming+productivity&hl=en-US&gl=US&ceid=US:en"
+GOOGLE_NEWS_URLS = [
+    "https://news.google.com/rss/search?q=AI+tools+software+developers+programming+productivity&hl=en-US&gl=US&ceid=US:en",
+    "https://news.google.com/rss/search?q=LLM+agent+machine+learning+engineering+news&hl=en-US&gl=US&ceid=US:en",
+    "https://news.google.com/rss/search?q=generative+AI+developer+tools+model+release&hl=en-US&gl=US&ceid=US:en",
+]
 GROQ_URL             = "https://api.groq.com/openai/v1/chat/completions"
 GROQ_MODEL           = "llama-3.1-8b-instant"
 GROQ_TRANSLATE_MODEL = "llama-3.3-70b-versatile"
 GEMINI_URL  = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent"
 
-# Specialized feeds — 1 article per feed, need 5, list has 9 as backup pool
+# Specialized feeds — 1 article per feed, need 5, pool shuffled daily for variety
 SPECIALIZED_FEEDS = [
     ("https://www.theverge.com/rss/ai-artificial-intelligence/index.xml", "The Verge AI"),
     ("https://venturebeat.com/feed/",                                      "VentureBeat"),
@@ -35,6 +39,13 @@ SPECIALIZED_FEEDS = [
     ("https://www.infoq.com/ai-ml-data-eng/articles.atom",                "InfoQ AI"),
     ("https://spectrum.ieee.org/rss/blog/tech-talk/fulltext",              "IEEE Spectrum"),
     ("https://techcrunch.com/category/artificial-intelligence/feed/",      "TechCrunch AI"),
+    ("https://www.technologyreview.com/feed/",                             "MIT Tech Review"),
+    ("https://www.wired.com/feed/rss",                                     "Wired"),
+    ("https://simonwillison.net/atom/everything/",                         "Simon Willison"),
+    ("https://thegradient.pub/rss/",                                       "The Gradient"),
+    ("https://bdtechtalks.com/feed/",                                      "BD Tech Talks"),
+    ("https://huggingface.co/blog/feed.xml",                               "Hugging Face Blog"),
+    ("https://blog.langchain.dev/rss.xml",                                 "LangChain Blog"),
 ]
 
 try:
@@ -483,35 +494,34 @@ def _groq_tips(api_key):
         return ""
 
 
-def _load_prev_seen():
-    """Return (known_titles_lower, known_urls) from the most recent docs/YYYY-MM-DD.html
-    that is NOT today's date (avoids deduplicating against the file being regenerated)."""
+def _load_prev_seen(days=3):
+    """Return (known_titles_lower, known_urls) from the last N docs/YYYY-MM-DD.html files,
+    excluding today's date (avoids deduplicating against the file being regenerated)."""
     docs_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "docs")
     if not os.path.isdir(docs_dir):
         return set(), set()
     today_slug = (os.environ.get("WEB_DATE_OVERRIDE")
                   or datetime.datetime.now().strftime("%Y-%m-%d"))
-    files = sorted(
+    all_files = sorted(
         f for f in os.listdir(docs_dir)
         if re.match(r'\d{4}-\d{2}-\d{2}\.html$', f) and f != f"{today_slug}.html"
     )
-    if not files:
+    recent_files = all_files[-days:]
+    if not recent_files:
         return set(), set()
-    prev_path = os.path.join(docs_dir, files[-1])
-    try:
-        with open(prev_path, encoding='utf-8') as f:
-            html = f.read()
-        titles = set()
-        for m in re.finditer(r'&#127468;&#127463;&nbsp;(.+?)(?=<)', html):
-            t = m.group(1).strip()
-            # Strip all " - Publisher" suffixes (Google News may have multiple)
-            t = t.split(' - ')[0].strip()
-            titles.add(t.lower())
-        urls = {m.group(1).split('?')[0]
-                for m in re.finditer(r'href="(https://(?!news\.google)[^"]+)"', html)}
-        return titles, urls
-    except Exception:
-        return set(), set()
+    titles, urls = set(), set()
+    for fname in recent_files:
+        try:
+            with open(os.path.join(docs_dir, fname), encoding='utf-8') as f:
+                html = f.read()
+            for m in re.finditer(r'&#127468;&#127463;&nbsp;(.+?)(?=<)', html):
+                t = m.group(1).strip().split(' - ')[0].strip()
+                titles.add(t.lower())
+            for m in re.finditer(r'href="(https://(?!news\.google)[^"]+)"', html):
+                urls.add(m.group(1).split('?')[0])
+        except Exception:
+            continue
+    return titles, urls
 
 
 def fetch_ai_news(google_items=3, specialized_items=5):
@@ -527,26 +537,35 @@ def fetch_ai_news(google_items=3, specialized_items=5):
     # ── Phase 1: collect raw entries (no Groq yet) ────────────────────────────
     raw = []  # list of (entry, publisher_hint)
 
-    try:
-        feed = feedparser.parse(NEWS_URL, request_headers=_headers)
-        added = 0
-        for entry in feed.entries[:google_items * 5]:
-            if added >= google_items:
-                break
-            t = entry.get("title", "").strip()
-            # Strip all " - Publisher" suffixes
-            t_key = t.split(' - ')[0].strip().lower()
-            rss_summary = _strip_html(entry.get("summary", entry.get("description", "")))
-            if t_key in prev_titles or len(rss_summary) < 80:
-                continue
-            raw.append((entry, ""))
-            prev_titles.add(t_key)
-            added += 1
-    except Exception as e:
-        print(f"Google News feed error: {e}", file=sys.stderr)
+    added = 0
+    for news_url in GOOGLE_NEWS_URLS:
+        if added >= google_items:
+            break
+        try:
+            feed = feedparser.parse(news_url, request_headers=_headers)
+            for entry in feed.entries[:google_items * 5]:
+                if added >= google_items:
+                    break
+                t = entry.get("title", "").strip()
+                t_key = t.split(' - ')[0].strip().lower()
+                rss_summary = _strip_html(entry.get("summary", entry.get("description", "")))
+                if t_key in prev_titles or len(rss_summary) < 80:
+                    continue
+                raw.append((entry, ""))
+                prev_titles.add(t_key)
+                added += 1
+        except Exception as e:
+            print(f"Google News feed error: {e}", file=sys.stderr)
+
+    # Shuffle feed pool by day so different sources lead each day
+    import random as _random
+    day_seed = int(datetime.datetime.now().strftime("%Y%m%d"))
+    _rng = _random.Random(day_seed)
+    shuffled_feeds = list(SPECIALIZED_FEEDS)
+    _rng.shuffle(shuffled_feeds)
 
     collected = 0
-    for feed_url, feed_name in SPECIALIZED_FEEDS:
+    for feed_url, feed_name in shuffled_feeds:
         if collected >= specialized_items:
             break
         try:

@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--[if mso]>
+<noscript><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings></xml></noscript>
+<![endif]-->
+<style>
+/* ── Responsive overrides for web (email HTML uses fixed 600px tables) ── */
+@media screen and (max-width:620px) {
+  table[width="600"] { width:100% !important; }
+  td { word-break:break-word; overflow-wrap:break-word; }
+  /* Reduce generous email padding on small screens */
+  td[style*="padding:28px 30px"],
+  td[style*="padding:24px 30px"],
+  td[style*="padding:22px 30px"],
+  td[style*="padding:20px 30px"],
+  td[style*="padding:16px 30px"],
+  td[style*="padding:12px 30px"] { padding-left:14px !important; padding-right:14px !important; }
+  /* Code blocks: scroll horizontally instead of breaking layout */
+  pre { overflow-x:auto !important; max-width:calc(100vw - 32px) !important; box-sizing:border-box; }
+  /* Shrink large heading text slightly */
+  h1[style*="26px"] { font-size:20px !important; }
+}
+/* ── Print: hide nav bar ── */
+@media print {
+  #web-nav { display:none !important; }
+  body { background:#fff !important; }
+}
+</style>
+</head>
+<body style="margin:0;padding:0;background-color:#EEF2F7;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+<div id="web-nav" style="background:#001a4d;padding:8px 16px;font-family:Arial,sans-serif;font-size:13px;position:sticky;top:0;z-index:999;border-bottom:2px solid #0066CC;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
+  <span id="nav-prev" style="color:#4A6A8A;">&#8592;</span>
+  <a href="all.html" style="color:#FFD700;text-decoration:none;font-weight:bold;">&#128240; T&#7845;t c&#7843; b&#7843;n tin</a>
+  <span style="color:#FFFFFF;">11/05/2026</span>
+  <span id="nav-next" style="color:#4A6A8A;">&#8594;</span>
+  <a href="2026-05-11.pdf" download="2026-05-11.pdf" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128196; T&#7843;i PDF</a>
+  <button onclick="sharePage()" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128279; Chia s&#7867;</button>
+</div>
+<script>
+function sharePage(){
+  var title='Bản tin AI BIS-MT – 11/05/2026';
+  if(navigator.share){navigator.share({title:title,url:location.href});}
+  else{navigator.clipboard.writeText(location.href).then(function(){
+    alert('Đã sao chép link!');
+  });}
+}
+(function(){
+  var m=location.pathname.match(/(\d{4}-\d{2}-\d{2})\.html/);
+  if(!m)return;
+  var slug=m[1];
+  function fmt(s){var p=s.split('-');return p[2]+'/'+p[1];}
+  var lnkStyle='color:#90C4F0;text-decoration:none;';
+  fetch('dates.json?_='+Date.now())
+    .then(function(r){return r.json();})
+    .then(function(dates){
+      var idx=dates.indexOf(slug);
+      if(idx>0){
+        var p=dates[idx-1];
+        document.getElementById('nav-prev').innerHTML=
+          '<a href="'+p+'.html" style="'+lnkStyle+'">&#8592; '+fmt(p)+'</a>';
+      }
+      if(idx>=0&&idx<dates.length-1){
+        var n=dates[idx+1];
+        document.getElementById('nav-next').innerHTML=
+          '<a href="'+n+'.html" style="'+lnkStyle+'">'+fmt(n)+' &#8594;</a>';
+      }
+    })
+    .catch(function(){});
+})();
+</script>
+
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#EEF2F7" style="background-color:#EEF2F7;">
+<tr><td align="center" style="padding:24px 12px;">
+
+<!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0"><tr><td><![endif]-->
+<table role="presentation" width="600" cellpadding="0" cellspacing="0"
+       style="max-width:600px;width:100%;background-color:#FFFFFF;border-radius:10px;" bgcolor="#FFFFFF">
+
+  <!-- HEADER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:28px 30px 22px 30px;text-align:center;border-radius:10px 10px 0 0;">
+      <p style="margin:0 0 6px;font-size:11px;color:#7EB1E8;letter-spacing:2px;font-family:Arial,sans-serif;text-transform:uppercase;">
+        BIS &#8209; MT &nbsp;&#183;&nbsp; 11/05/2026
+      </p>
+      <h1 style="margin:0;font-size:26px;font-weight:bold;color:#FFFFFF;font-family:Arial,sans-serif;line-height:1.2;">
+        &#129302; B&#7843;n Tin AI H&#7857;ng Ng&#224;y
+      </h1>
+      <p style="margin:8px 0 0;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        C&#7853;p nh&#7853;t c&#244;ng ngh&#7879; AI m&#7899;i nh&#7845;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- QUOTE -->
+  <tr>
+    <td bgcolor="#EBF4FF" style="background-color:#EBF4FF;padding:16px 30px;border-top:3px solid #0066CC;">
+      <p style="margin:0;font-size:14px;color:#1A3A5C;font-style:italic;line-height:1.6;font-family:Georgia,serif;">
+        &#10024;&nbsp;&ldquo;The best way to predict the future is to invent it.&rdquo;
+      </p>
+      <p style="margin:6px 0 0;font-size:13px;color:#444444;line-height:1.5;">&nbsp;&nbsp;&nbsp;&#8618;&nbsp;Cách tốt nhất để dự đoán tương lai là tạo ra nó.</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#888888;font-family:Arial,sans-serif;">&mdash;&nbsp;Alan Kay</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#5A6A7A;font-style:italic;line-height:1.5;font-family:Arial,sans-serif;">&#128161;&nbsp;Đừng chỉ đoán về tương lai — hãy là người chủ động định hình nó thông qua đổi mới, sáng tạo và hành động táo bạo.</p>
+    </td>
+  </tr>
+
+  <!-- SECTION LABEL -->
+  <tr>
+    <td bgcolor="#F5F7FA" style="background-color:#F5F7FA;padding:12px 30px;">
+      <p style="margin:0;font-size:11px;color:#999999;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128240;&nbsp;Tin t&#7913;c n&#7893;i b&#7853;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- ARTICLES -->
+  
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">1</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Trí tuệ nhân tạo (AI) có thể thay thế nhà phát triển không? Những điều bạn cần biết - Viện Tiêu chuẩn Quốc gia Mỹ</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Will AI Replace Developers? What You Need to Know - American National Standards Institute</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;ANSI</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMiZEFVX3lxTE9EZzdOazR6YnQ0MWdScDlNOFRhQmJWMFdlanMyMDFzbVY2amdpZzRzRVhaRlU2X1RrUmZneWFtU0JRVS16cWU0V05UOFdoTVNFVTVhYjhpRWFCX2FyUlVpNTRkMEXSAWxBVV95cUxNNkREZU9qNjFnRVpZQzd6b1htRGY2U1kxeHhhN21OSzFFREVCVVJTZ3ZSYkVmcmREVmhnc2gxNVV5UDdTR2dtdmNmcGNwSFF1WVVuYVdWdW5NUDdPREF3bWIxMWg2d1gwbHZmOEo?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Viện Tiêu chuẩn Quốc gia Mỹ (ANSI) đã giải quyết các mối quan ngại về việc thay thế các nhà phát triển bằng trí tuệ nhân tạo (AI). Mặc dù AI đã đạt được những tiến bộ đáng kể trong những năm gần đây, nhưng nó không thể thay thế hoàn toàn các nhà phát triển con người. AI có thể tự động hóa các nhiệm vụ lặp đi lặp lại và nhàm chán, giúp các nhà phát triển tập trung vào các nhiệm vụ cấp cao hơn đòi hỏi sự sáng tạo, giải quyết vấn đề và tư duy phản biện.
+
+Tuy nhiên, AI cũng có thể tăng cường công việc của các nhà phát triển, giúp họ trở nên hiệu quả và hiệu quả hơn. Các công cụ được hỗ trợ bởi AI có thể hỗ trợ các nhiệm vụ như xem xét mã, gỡ lỗi và kiểm tra, cho phép các nhà phát triển tập trung vào việc viết mã mới và phát triển các giải pháp sáng tạo.
+
+ANSI nhấn mạnh rằng mối quan hệ giữa AI và các nhà phát triển là sự hợp tác, không phải là thay thế. Khi AI tiếp tục phát triển, nó có thể thay đổi bản chất công việc của các nhà phát triển, nhưng nó sẽ không loại bỏ hoàn toàn nhu cầu về các nhà phát triển con người. Thay vào đó, AI sẽ cho phép các nhà phát triển làm việc hiệu quả và hiệu quả hơn, thúc đẩy sự đổi mới và tiến bộ trong ngành công nghệ.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">2</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">AI cản trở năng suất của các nhà phát triển phần mềm, mặc dù kỳ vọng nó sẽ tăng hiệu suất</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;AI hampered productivity of software developers, despite expectations it would boost efficiency</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Fortune</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMitwFBVV95cUxNWXdrZjRrdURKbEU1TG9JZnpQRE9OMTNKUXhPa1FXWElVSkhDTmpBbzVYUXBUYXFsbzNyLWdwWWVSSHp3RDJMSVNzemtGaGlKZjRNVkZlQ2lvSUFXT2VlX0tBc3NpY01hZU1mZ2d3OV9kZi1XUkJ2YmNYUW41ZFlyMDNvaDhFckpCTnlWUTJxNEd3LUJrXzc4b3FjUXhyWmx4dWdUQlJmX0pISndWblZLWHhrNGl5N0E?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Một nghiên cứu gần đây đã phát hiện ra rằng việc sử dụng Trí tuệ Nhân tạo (AI) trong phát triển phần mềm thực sự đã giảm năng suất lao động của các nhà phát triển, trái ngược với những kỳ vọng ban đầu. Mặc dù AI được hứa hẹn sẽ tự động hóa các nhiệm vụ lặp đi lặp lại và tăng cường hiệu quả, công nghệ này đã tạo ra những thách thức và phức tạp mới cho các nhà phát triển. Nghiên cứu cho thấy AI đã giới thiệu thêm khối lượng công việc, tăng nhu cầu bảo trì và xử lý sự cố, và dẫn đến số lượng lỗi cao hơn. Kết quả là, các nhà phát triển đã phải dành nhiều thời gian hơn để giải quyết hậu quả của mã được tạo ra bởi AI, thay vì tập trung vào các nhiệm vụ cấp cao đòi hỏi sự sáng tạo và kỹ năng giải quyết vấn đề. Kết quả không mong đợi này nhấn mạnh nhu cầu cho các nhà phát triển tham gia nhiều hơn vào quá trình phát triển AI và các hệ thống AI được thiết kế với nhu cầu và hạn chế của con người. Phát hiện của nghiên cứu có ý nghĩa quan trọng đối với tương lai của phát triển phần mềm và vai trò của AI trong ngành công nghiệp.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">3</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Các kỹ sư phần mềm của Google đang chuyển từ viết mã sang đưa ra quyết định</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Google&#x27;s software engineers are shifting from coding to calling the shots</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Business Insider</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxQZFZlRHJBSWNLZU1VYmlGTkYwaHVreW45M1AyY0hzMVFMeWcyTUZNcHNPbFRUU1BUVHU3LWJtVnFZako0bkttTll0d29ZZGZsZWlIbVhYa1g0QzEzRE9ya0lLY3k1UjB1a0RWaHR3TDM0cG9tR3h3Snd1U1R5a3pWQXV4UHVUVmtT?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Các kỹ sư phần mềm của Google đang ngày càng đảm nhận các vai trò lãnh đạo trong công ty, rời xa trọng tâm truyền thống là viết mã. Theo báo cáo, những kỹ sư này hiện đang được giao thêm nhiều trách nhiệm, bao gồm giám sát dự án và đưa ra quyết định chiến lược. Sự thay đổi này là một phần trong nỗ lực của Google nhằm trao quyền cho tài năng kỹ thuật của mình và thúc đẩy đổi mới trong tổ chức.
+
+Sự di chuyển này được coi là một thay đổi đáng kể so với cấu trúc phân cấp truyền thống của Google, nơi các kỹ sư chủ yếu tập trung vào việc viết mã. Bằng cách trao cho các kỹ sư nhiều vai trò lãnh đạo hơn, Google nhằm tận dụng chuyên môn kỹ thuật của họ và khuyến khích họ đưa ra quyết định kinh doanh. Cách tiếp cận này cũng dự kiến sẽ tạo ra một môi trường hợp tác hơn, nơi các kỹ sư có thể làm việc chặt chẽ với các đội khác để phát triển và triển khai các ý tưởng mới.
+
+Sự thay đổi này cũng là sự phản ánh của sự tập trung ngày càng tăng của Google vào trí tuệ nhân tạo (AI) và học máy (LLM), những lĩnh vực mà chuyên môn kỹ thuật là rất quan trọng. Bằng cách trao quyền cho các kỹ sư phần mềm của mình, Google đang đặt mình vào vị trí dẫn đầu trong những lĩnh vực đang phát triển nhanh chóng này.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">4</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Tất cả các bản cập nhật mới nhất về trung tâm dữ liệu AI</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;All the latest updates on AI data centers</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;The Verge AI</span>&nbsp;&nbsp;&nbsp;<a href="https://www.theverge.com/ai-artificial-intelligence/902546/data-centers-ai-energy-power-grids-controversy" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Các trung tâm dữ liệu, nền tảng vật lý cho tham vọng AI của các công ty công nghệ, đang gây ra tranh cãi toàn cầu về tác động môi trường và xã hội của chúng. Một cuộc khảo sát mới của Trung tâm Nghiên cứu Pew cho thấy cả đảng Cộng hòa và Dân chủ đều chỉ ra các trung tâm dữ liệu là một lý do chính cho chi phí cao hơn. Tại Mỹ, các dự án trung tâm dữ liệu quy mô lớn đang đối mặt với sự phản đối từ các cộng đồng địa phương, với 47% cử tri ở Georgia phản đối một dự án phát triển trị giá hàng tỷ đô la. Trung tâm dữ liệu hyperscale được lên kế hoạch tại Quận Box Elder, được hỗ trợ bởi nhà đầu tư Shark Tank Kevin O&#x27;Leary, dự kiến sẽ sử dụng 9 gigawatt điện, nhiều hơn gấp đôi mức sử dụng điện hiện tại của bang. NAACP đang kiện xAI về dự án trung tâm dữ liệu của Elon Musk ở Tennessee, cáo buộc rằng nó vi phạm Đạo luật Không khí Sạch. Trong khi đó, Lực lượng Vệ binh Cách mạng Hồi giáo Iran đã đe dọa trung tâm dữ liệu Abu Dhabi của OpenAI, cảnh báo về &quot;sự hủy diệt hoàn toàn và tuyệt đối&quot; nếu Mỹ tấn công các nhà máy điện của nước này. Các thượng nghị sĩ Mỹ Elizabeth Warren và Josh Hawley đã kêu gọi Cơ quan Thông tin Năng lượng thu thập và công bố công khai dữ liệu về việc sử dụng năng lượng của các trung tâm dữ liệu. Một trang web theo dõi được huy động từ cộng đồng đang cung cấp cái nhìn tổng quan toàn diện về các dự án trung tâm dữ liệu được đề xuất trên 18 bang.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">5</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Công cụ AI bị nhiễm độc lộ ra một điểm yếu lớn trong bảo mật agent doanh nghiệp</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;AI tool poisoning exposes a major flaw in enterprise agent security</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;VentureBeat</span>&nbsp;&nbsp;&nbsp;<a href="https://venturebeat.com/security/ai-tool-poisoning-exposes-a-major-flaw-in-enterprise-agent-security" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Một lỗ hổng lớn trong bảo mật của các đại lý AI doanh nghiệp đã được lộ thông qua một hiện tượng được gọi là nhiễm độc công cụ AI. Điều này xảy ra khi các đại lý AI chọn công cụ từ các sổ đăng ký chung dựa trên mô tả ngôn ngữ tự nhiên, mà không có sự xác minh của con người đối với những mô tả đó. Kết quả là, nhiều điểm yếu có thể phát sinh tại các giai đoạn khác nhau của chu kỳ sống của một công cụ, bao gồm cả các mối đe dọa tại thời điểm chọn và thời điểm thực thi.
+
+Các biện pháp kiểm soát chuỗi cung ứng phần mềm hiện tại, chẳng hạn như ký mã và danh mục vật liệu phần mềm (SBOMs), là không đủ để giải quyết những vấn đề này. Những biện pháp kiểm soát này tập trung vào tính toàn vẹn của các thành phần, nhưng nhiễm độc công cụ AI đòi hỏi tính toàn vẹn về hành vi, đảm bảo rằng một công cụ hành động như mô tả và không thực hiện theo các lệnh từ bên ngoài.
+
+Để giải quyết vấn đề này, một proxy xác minh có thể được thực hiện giữa giao thức ngữ cảnh mô hình (MCP) của máy khách và máy chủ. Proxy này thực hiện ba lần xác minh trên mỗi lần gọi: liên kết khám phá, cho phép danh sách điểm cuối và xác thực lược đồ đầu ra. Một thông số kỹ thuật hành vi, chi tiết các điểm cuối bên ngoài của công cụ, đọc và ghi dữ liệu, và các hiệu ứng phụ, cũng được yêu cầu.
+
+Việc triển khai giải pháp này đòi hỏi một cách tiếp cận từng bước, bắt đầu với việc cho phép danh sách điểm cuối tại thời điểm triển khai và dần dần thêm các lần xác minh tiên tiến hơn. Cách tiếp cận này đảm bảo rằng đầu tư bảo mật tăng tỷ lệ với rủi ro, và hệ sinh thái trưởng thành theo thời gian, cho phép các nhà phát triển xây dựng các ứng dụng mạnh mẽ và an toàn bằng cách sử dụng các framework và API hiện có, cũng như các mô hình LLM và token.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">6</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Tại sao luật đảm bảo tuổi tác lại quan trọng đối với các nhà phát triển</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Why age assurance laws matter for developers</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;GitHub Blog</span>&nbsp;&nbsp;&nbsp;<a href="https://github.blog/news-insights/policy-news-and-insights/why-age-assurance-laws-matter-for-developers/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Các luật đảm bảo độ tuổi, nhằm bảo vệ trẻ em và thiếu niên trực tuyến, đang được đề xuất bởi các nhà hoạch định chính sách trên toàn thế giới. Những luật này sẽ hạn chế quyền truy cập của trẻ vị thành niên vào một số dịch vụ hoặc nội dung nhất định, hoặc yêu cầu các thiết bị và cửa hàng ứng dụng thu thập thông tin về độ tuổi và chuyển nó đến các ứng dụng và trang web. Mặc dù được thúc đẩy bởi những lo ngại nghiêm trọng, nhưng những đề xuất này có nguy cơ áp đặt các yêu cầu繁 tạp đối với phần mềm mã nguồn mở và dịch vụ cơ sở hạ tầng của nhà phát triển không gây ra cùng mức độ rủi ro cho trẻ vị thành niên như các nền tảng hướng đến người tiêu dùng. Các nhà phát triển nên nhận thức được những luật này và cách thức tương tác với chúng. Các luật này nhằm giải quyết các vấn đề nghiêm trọng như bắt nạt trực tuyến, tiếp xúc với nội dung bạo lực và quấy rối. Tuy nhiên, nếu không có phạm vi phù hợp, chúng có thể vô tình tạo ra các chướng ngại vật không cần thiết cho các nhà phát triển.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">7</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Sự hỗn loạn xảy ra khi cuộc tấn công mạng làm gián đoạn nền tảng học tập Canvas giữa kỳ thi cuối</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Chaos erupts as cyberattack disrupts learning platform Canvas amid finals</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Ars Technica</span>&nbsp;&nbsp;&nbsp;<a href="https://arstechnica.com/security/2026/05/chaos-erupts-as-cyberattack-disrupts-learning-platform-canvas-amid-finals/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Một cuộc tấn công mạng vào nền tảng học trực tuyến Canvas đã gây ra sự gián đoạn rộng rãi đối với các kỳ thi cuối cấp trên toàn nước Mỹ. Cuộc tấn công, được cho là do nhóm ransomware ShinyHunters thực hiện, đã xảy ra vào thứ Năm khi sinh viên dự kiến sẽ tham gia kỳ thi của họ. Công ty mẹ của Canvas, Instructure, đã tạm thời đưa nền tảng này ngoại tuyến sau khi phát hiện hoạt động không được ủy quyền trong mạng của mình. Công ty đã xác nhận rằng dữ liệu người dùng, bao gồm tên, địa chỉ email và số ID sinh viên, đã bị truy cập trong một sự cố bảo mật dữ liệu trước đó. Một yêu cầu tiền chuộc đã được hiển thị trên trang đăng nhập của Canvas, khiến các trường học và trường đại học phải hoãn hoặc sắp xếp lại các kỳ thi. Đại học Illinois, Đại học Massachusetts Dartmouth và hệ thống Đại học California là những trường bị ảnh hưởng. Instructure đã báo cáo rằng nền tảng đã trở lại trực tuyến vào sáng thứ Sáu.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">8</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Làm thế nào tôi giảm hóa đơn API của mình một nửa mà không hiểu tôi đang làm gì</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;How I Cut My API Bill in Half Without Understanding What I Was Doing</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Dev.to AI</span>&nbsp;&nbsp;&nbsp;<a href="https://dev.to/natevoss/how-i-cut-my-api-bill-in-half-without-understanding-what-i-was-doing-2dj8" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Một nhà phát triển chia sẻ kinh nghiệm của họ trong việc giảm hóa đơn API xuống 50% thông qua một kỹ thuật gọi là bộ nhớ đệm lời nhắc. Ban đầu, họ đã gửi một khối ngữ cảnh 4.000 token với mỗi yêu cầu, với chi phí khoảng 300 đô la mỗi tháng. Khi xem xét lại mã của họ, họ nhận ra rằng hầu hết thông tin được gửi với mỗi yêu cầu vẫn giữ nguyên, chẳng hạn như lời nhắc hệ thống và hướng dẫn phong cách của công ty. Bằng cách xác định và lưu trữ các yếu tố tĩnh này, họ đã đạt được sự giảm chi phí đáng kể. Tuy nhiên, nhà phát triển nhấn mạnh rằng chìa khóa để lưu trữ thành công nằm ở việc hiểu những gì là tĩnh và những gì là động trong yêu cầu. Điều này đòi hỏi sự xem xét cẩn thận và mã hóa có chủ đích, chứ không chỉ đơn giản là áp dụng một giải pháp lưu trữ. Bằng cách áp dụng phương pháp này, các nhà phát triển có thể cải thiện sự rõ ràng và khả năng bảo trì của mã, buộc họ phải suy nghĩ một cách nghiêm túc về lời nhắc và hướng dẫn của mình. Nhà phát triển cũng nhấn mạnh lợi ích của việc lưu trữ, bao gồm tiết kiệm chi phí và cải thiện chất lượng mã, và cung cấp một ví dụ về cách thực hiện lưu trữ trong mã của họ bằng cách sử dụng tham số `cache_control`.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+
+  <!-- TIPS SECTION -->
+  
+  <tr>
+    <td bgcolor="#FFFBEB" style="background-color:#FFFBEB;padding:20px 30px;border-top:3px solid #D97706;">
+      <p style="margin:0 0 12px;font-size:11px;color:#D97706;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#9889;&nbsp;Tips &amp; Tricks cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tối ưu GitHub Copilot</strong><br>Sử dụng GitHub Copilot để tự động hoàn thành code. Ví dụ: &quot;Implement bubble sort algorithm&quot;.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tăng hiệu suất ChatGPT</strong><br>Khai thác ChatGPT để debug code. Ví dụ: &quot;Fix error in này code snippet&quot;.</p>
+    </td>
+  </tr>
+
+  <!-- LESSON SECTION -->
+  
+  <tr>
+    <td bgcolor="#F0FFF4" style="background-color:#F0FFF4;padding:20px 30px;border-top:3px solid #2E7D32;">
+      <p style="margin:0 0 12px;font-size:11px;color:#2E7D32;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128218;&nbsp;B&#224;i h&#7885;c AI h&#244;m nay cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;">1. <strong>Tối ưu chi phí &amp; hiệu năng LLM</strong><br>2. Dev cần biết về tối ưu chi phí và hiệu năng LLM để giảm thiểu chi phí và tăng tốc độ xử lý. Điều này giúp ứng dụng hoạt động hiệu quả hơn và tiết kiệm tài nguyên.<br>3. Ví dụ: Sử dụng mô hình LLM nhỏ hơn để giảm chi phí tính toán.<br>4. 💡 Tip: Sử dụng kỹ thuật quantization và pruning để tối ưu hóa mô hình LLM.</p>
+    </td>
+  </tr>
+
+  <!-- FOOTER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:20px 30px;text-align:center;border-radius:0 0 10px 10px;">
+      <p style="margin:0 0 4px;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        &#128161;&nbsp;Lu&#244;n &#273;i &#273;&#7847;u trong th&#7871; gi&#7899;i AI!&nbsp;&#183;&nbsp;Stay ahead in AI!
+      </p>
+      <p style="margin:6px 0 0;font-size:11px;color:#4A7AAB;font-family:Arial,sans-serif;">
+        Ngu&#7891;n: Google News · Groq AI
+      </p>
+    </td>
+  </tr>
+
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+
+</td></tr>
+</table>
+</body>
+</html>

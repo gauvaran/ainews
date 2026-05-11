@@ -617,7 +617,7 @@ def fetch_ai_news(google_items=3, specialized_items=5):
             untranslated = [i for i, s in enumerate(summaries_vi)
                             if not s or not any(c in _vi_chars for c in s)]
             if len(untranslated) > len(summaries_vi) // 2:
-                print(f"Gemini only translated {n - len(untranslated)}/{n} summaries, falling back to Groq...", file=sys.stderr)
+                print(f"Gemini only translated {len(summaries_vi) - len(untranslated)}/{len(summaries_vi)} summaries, falling back to Groq...", file=sys.stderr)
                 summaries_vi = _groq_translate_summaries_batch(summaries_raw, groq_key)
             elif untranslated:
                 print(f"Gemini missed summaries {untranslated}, retranslating with Groq...", file=sys.stderr)

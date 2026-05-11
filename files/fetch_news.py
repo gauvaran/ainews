@@ -262,7 +262,7 @@ def _gemini_translate_all_batch(titles, summaries, api_key):
                 return lines[:expected]
 
             def parse_long(text, expected):
-                items = re.split(r'\n(?=\d+\.)', text.strip())
+                items = re.split(r'\n+(?=\d+\.)', text.strip())
                 result = [re.sub(r'^\d+\.\s*', '', it).strip() for it in items if it.strip()]
                 while len(result) < expected: result.append("")
                 return result[:expected]
@@ -612,9 +612,19 @@ def fetch_ai_news(google_items=3, specialized_items=5):
             print("Gemini failed, falling back to Groq for titles+summaries...", file=sys.stderr)
             titles_vi    = _groq_translate_titles_batch(title_inputs, groq_key)
             summaries_vi = _groq_translate_summaries_batch(summaries_raw, groq_key)
-        elif not any(s for s in summaries_vi if s):
-            print("Gemini summaries empty, falling back to Groq for summaries...", file=sys.stderr)
-            summaries_vi = _groq_translate_summaries_batch(summaries_raw, groq_key)
+        else:
+            _vi_chars = set('àáảạãăắặẳẵằâấầẩẫậèéẻẹẽêếềểệễìíỉịĩòóỏọõôốồổỗộơớờởỡợùúủụũưứừửữựỳýỷỵỹđ')
+            untranslated = [i for i, s in enumerate(summaries_vi)
+                            if not s or not any(c in _vi_chars for c in s)]
+            if len(untranslated) > n // 2:
+                print(f"Gemini only translated {n - len(untranslated)}/{n} summaries, falling back to Groq...", file=sys.stderr)
+                summaries_vi = _groq_translate_summaries_batch(summaries_raw, groq_key)
+            elif untranslated:
+                print(f"Gemini missed summaries {untranslated}, retranslating with Groq...", file=sys.stderr)
+                groq_partial = _groq_translate_summaries_batch(
+                    [summaries_raw[i] for i in untranslated], groq_key)
+                for idx, i in enumerate(untranslated):
+                    summaries_vi[i] = groq_partial[idx]
     else:
         titles_vi    = _groq_translate_titles_batch(title_inputs, groq_key)
         summaries_vi = summaries_raw  # already Vietnamese from Groq

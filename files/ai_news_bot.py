@@ -311,7 +311,7 @@ def send_email(subject, html, plain_text):
     msg["Subject"] = Header(subject, "utf-8")
     msg["From"]    = from_header
     msg["To"]      = "undisclosed-recipients:;"
-    msg["Bcc"]     = ", ".join(bcc_list)
+    # Do NOT set Bcc header — SMTP envelope handles delivery; header would expose recipient list
 
     msg.attach(MIMEText(plain_text, "plain", "utf-8"))
     msg.attach(MIMEText(html, "html", "utf-8"))

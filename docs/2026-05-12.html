@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--[if mso]>
+<noscript><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings></xml></noscript>
+<![endif]-->
+<style>
+/* ── Responsive overrides for web (email HTML uses fixed 600px tables) ── */
+@media screen and (max-width:620px) {
+  table[width="600"] { width:100% !important; }
+  td { word-break:break-word; overflow-wrap:break-word; }
+  /* Reduce generous email padding on small screens */
+  td[style*="padding:28px 30px"],
+  td[style*="padding:24px 30px"],
+  td[style*="padding:22px 30px"],
+  td[style*="padding:20px 30px"],
+  td[style*="padding:16px 30px"],
+  td[style*="padding:12px 30px"] { padding-left:14px !important; padding-right:14px !important; }
+  /* Code blocks: scroll horizontally instead of breaking layout */
+  pre { overflow-x:auto !important; max-width:calc(100vw - 32px) !important; box-sizing:border-box; }
+  /* Shrink large heading text slightly */
+  h1[style*="26px"] { font-size:20px !important; }
+}
+/* ── Print: hide nav bar ── */
+@media print {
+  #web-nav { display:none !important; }
+  body { background:#fff !important; }
+}
+</style>
+</head>
+<body style="margin:0;padding:0;background-color:#EEF2F7;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+<div id="web-nav" style="background:#001a4d;padding:8px 16px;font-family:Arial,sans-serif;font-size:13px;position:sticky;top:0;z-index:999;border-bottom:2px solid #0066CC;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
+  <span id="nav-prev" style="color:#4A6A8A;">&#8592;</span>
+  <a href="all.html" style="color:#FFD700;text-decoration:none;font-weight:bold;">&#128240; T&#7845;t c&#7843; b&#7843;n tin</a>
+  <span style="color:#FFFFFF;">12/05/2026</span>
+  <span id="nav-next" style="color:#4A6A8A;">&#8594;</span>
+  <a href="2026-05-12.pdf" download="2026-05-12.pdf" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128196; T&#7843;i PDF</a>
+  <button onclick="sharePage()" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128279; Chia s&#7867;</button>
+</div>
+<script>
+function sharePage(){
+  var title='Bản tin AI BIS-MT – 12/05/2026';
+  if(navigator.share){navigator.share({title:title,url:location.href});}
+  else{navigator.clipboard.writeText(location.href).then(function(){
+    alert('Đã sao chép link!');
+  });}
+}
+(function(){
+  var m=location.pathname.match(/(\d{4}-\d{2}-\d{2})\.html/);
+  if(!m)return;
+  var slug=m[1];
+  function fmt(s){var p=s.split('-');return p[2]+'/'+p[1];}
+  var lnkStyle='color:#90C4F0;text-decoration:none;';
+  fetch('dates.json?_='+Date.now())
+    .then(function(r){return r.json();})
+    .then(function(dates){
+      var idx=dates.indexOf(slug);
+      if(idx>0){
+        var p=dates[idx-1];
+        document.getElementById('nav-prev').innerHTML=
+          '<a href="'+p+'.html" style="'+lnkStyle+'">&#8592; '+fmt(p)+'</a>';
+      }
+      if(idx>=0&&idx<dates.length-1){
+        var n=dates[idx+1];
+        document.getElementById('nav-next').innerHTML=
+          '<a href="'+n+'.html" style="'+lnkStyle+'">'+fmt(n)+' &#8594;</a>';
+      }
+    })
+    .catch(function(){});
+})();
+</script>
+
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#EEF2F7" style="background-color:#EEF2F7;">
+<tr><td align="center" style="padding:24px 12px;">
+
+<!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0"><tr><td><![endif]-->
+<table role="presentation" width="600" cellpadding="0" cellspacing="0"
+       style="max-width:600px;width:100%;background-color:#FFFFFF;border-radius:10px;" bgcolor="#FFFFFF">
+
+  <!-- HEADER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:28px 30px 22px 30px;text-align:center;border-radius:10px 10px 0 0;">
+      <p style="margin:0 0 6px;font-size:11px;color:#7EB1E8;letter-spacing:2px;font-family:Arial,sans-serif;text-transform:uppercase;">
+        BIS &#8209; MT &nbsp;&#183;&nbsp; 12/05/2026
+      </p>
+      <h1 style="margin:0;font-size:26px;font-weight:bold;color:#FFFFFF;font-family:Arial,sans-serif;line-height:1.2;">
+        &#129302; B&#7843;n Tin AI H&#7857;ng Ng&#224;y
+      </h1>
+      <p style="margin:8px 0 0;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        C&#7853;p nh&#7853;t c&#244;ng ngh&#7879; AI m&#7899;i nh&#7845;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- QUOTE -->
+  <tr>
+    <td bgcolor="#EBF4FF" style="background-color:#EBF4FF;padding:16px 30px;border-top:3px solid #0066CC;">
+      <p style="margin:0;font-size:14px;color:#1A3A5C;font-style:italic;line-height:1.6;font-family:Georgia,serif;">
+        &#10024;&nbsp;&ldquo;Programs must be written for people to read, and only incidentally for machines to execute.&rdquo;
+      </p>
+      <p style="margin:6px 0 0;font-size:13px;color:#444444;line-height:1.5;">&nbsp;&nbsp;&nbsp;&#8618;&nbsp;Chương trình phải được viết cho con người đọc, và chỉ ngẫu nhiên cho máy móc thực thi.</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#888888;font-family:Arial,sans-serif;">&mdash;&nbsp;Harold Abelson</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#5A6A7A;font-style:italic;line-height:1.5;font-family:Arial,sans-serif;">&#128161;&nbsp;Code tốt là code rõ ràng và dễ hiểu — viết code sạch, có tài liệu tốt là biểu hiện của sự chuyên nghiệp và tôn trọng đồng đội.</p>
+    </td>
+  </tr>
+
+  <!-- SECTION LABEL -->
+  <tr>
+    <td bgcolor="#F5F7FA" style="background-color:#F5F7FA;padding:12px 30px;">
+      <p style="margin:0;font-size:11px;color:#999999;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128240;&nbsp;Tin t&#7913;c n&#7893;i b&#7853;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- ARTICLES -->
+  
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">1</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Các kỹ sư phần mềm của Google đang chuyển từ viết mã sang đưa ra quyết định</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Google&#x27;s software engineers are shifting from coding to calling the shots</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Business Insider</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxQZFZlRHJBSWNLZU1VYmlGTkYwaHVreW45M1AyY0hzMVFMeWcyTUZNcHNPbFRUU1BUVHU3LWJtVnFZako0bkttTll0d29ZZGZsZWlIbVhYa1g0QzEzRE9ya0lLY3k1UjB1a0RWaHR3TDM0cG9tR3h3Snd1U1R5a3pWQXV4UHVUVmtT?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Các kỹ sư phần mềm của Google đang ngày càng đảm nhận các vai trò lãnh đạo trong công ty, rời xa trọng tâm truyền thống là lập trình. Sự thay đổi này là một phần của xu hướng rộng lớn hơn nơi chuyên môn kỹ thuật được đánh giá cao cùng với kiến thức kinh doanh. Nhiều kỹ sư của Google hiện đang lãnh đạo các đội, đưa ra quyết định chiến lược và thúc đẩy phát triển sản phẩm.
+
+Sự thay đổi này được cho là do công ty nhận ra rằng chuyên môn kỹ thuật là điều cần thiết cho thành công kinh doanh. Các kỹ sư của Google đang được đào tạo để đảm nhận các vai trò cao cấp hơn, nơi họ có thể tận dụng kiến thức kỹ thuật của mình để thông báo quyết định kinh doanh. Công ty cũng đang đầu tư vào các chương trình phát triển kỹ năng lãnh đạo và kinh doanh của các kỹ sư.
+
+Kết quả là, các kỹ sư phần mềm của Google đang trở nên có ảnh hưởng hơn trong việc định hình lộ trình sản phẩm và chiến lược kinh doanh của công ty. Sự thay đổi này có khả năng sẽ có tác động đáng kể đến hướng đi và thành công tương lai của công ty.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">2</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Marc Benioff nghĩ rằng AI chưa sẵn sàng để thay thế các kỹ sư phần mềm</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Marc Benioff thinks AI isn&#x27;t quite ready to replace software engineers</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;IT Pro</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMixAJBVV95cUxPUW1VcXB5LVdDSWFNUUljYTU0SGFhTmNPWUZlaGNuSi1QMHVGWTMzaWVQRU9DMmp6eXRGZV83cEViSFVDeGZxQUN4V09pNnpRTUk3ZWo1UU0tZUpBRjNPX2xaWlJwbUF6Q2FxNE9KTGE1bi1PcVZRc1hpTktfQ3otb1FTS2Q5UUxBelNuSzhZd0J5VkJFMXlVYzVnV0JLcGhER1ZHd1hIRS02X0ZvMWg0YW5GQUJyTDA1MFhuN01DaVBLeGEzSy1TN1M3eDRaSnZCYm1fYlcyOHdqVmJYZmVBZ1dZaG9rUWlYTkdiWFNtU2l5Q3R3NW9JaFRPZHVyX1NNd2lqN1N5Rm0yZzN5OGNYQjhUSmlkZC1LVm8wRjZQOGJtVlB1TjV5WVhWMXh3dnhoQXhoM0dHTkpvWXNYemh6WWN1MW0?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Giám đốc điều hành Salesforce Marc Benioff đã bày tỏ quan điểm của mình về vai trò của trí tuệ nhân tạo (AI) trong phát triển phần mềm. Theo Benioff, AI chưa sẵn sàng để thay thế các kỹ sư phần mềm con người. Mặc dù thừa nhận khả năng của AI trong việc tự động hóa một số nhiệm vụ, ông tin rằng công nghệ này vẫn thiếu sự phức tạp và tinh tế cần thiết để hoàn toàn sao chép công việc của các kỹ sư phần mềm có kỹ năng.
+
+Các bình luận của Benioff gợi ý rằng AI phù hợp nhất để tăng cường công việc của các nhà phát triển con người, chứ không phải thay thế họ hoàn toàn. Quan điểm này phù hợp với quan điểm của nhiều chuyên gia trong ngành, những người coi AI là một công cụ để tăng cường năng suất và hiệu quả, chứ không phải là sự thay thế cho chuyên môn con người.
+
+Tuyên bố của Benioff làm nổi bật cuộc tranh luận đang diễn ra về tác động tiềm năng của AI đối với ngành công nghiệp phát triển phần mềm. Khi AI tiếp tục phát triển, sẽ rất thú vị khi xem nó được tích hợp vào quá trình phát triển như thế nào và nó thay đổi vai trò của các kỹ sư phần mềm con người.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">3</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">&#x27;Một kỷ nguyên mới của phát triển phần mềm&#x27;: Claude Code khiến các kỹ sư tại Seattle phấn khích khi mã hóa AI đạt giai đoạn mới</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;&#x27;A new era of software development&#x27;: Claude Code has Seattle engineers buzzing as AI coding hits new phase</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;GeekWire</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMizwFBVV95cUxPenBYakdycE9fLTRiNTIwbi0yWVMwVk4tV19fSkx1WWFYNWFoeFljRGc0bEhsRmh2ZHQ0d0lZN1VpWWk0aExxSGVYT0ZNWXRyOFNib2phdzV5Um8zWDVieE5XMTRpN0NGNUVKTGUyNHV0ZVQzT3lsUnVKYU9BR1BjMldaQ0xTbXZJbnVwenl0YWVnZ1hKZlRkOU1uNmY5UkhuZHAyM2ltX29lS2h1TFFULUtWeHllZHJBdTF4dGt0SVpSVFJxSkNXSE9URWYzMDA?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Các kỹ sư tại Seattle đang sôi sục với sự phấn khích khi một kỷ nguyên mới của phát triển phần mềm xuất hiện với sự ra mắt của Claude Code. Công cụ mã hóa được hỗ trợ bởi AI này đang cách mạng hóa cách phần mềm được tạo ra, đánh dấu một cột mốc quan trọng trong sự tiến hóa của trí tuệ nhân tạo trong mã hóa.
+
+Claude Code là một nền tảng mã hóa AI cho phép các nhà phát triển viết mã nhanh hơn và hiệu quả hơn. Nó sử dụng các thuật toán học máy để phân tích và tạo mã, cho phép các kỹ sư tập trung vào các nhiệm vụ cấp cao hơn và giải quyết vấn đề sáng tạo. Khả năng của nền tảng đã tạo ra một làn sóng quan tâm trong cộng đồng công nghệ của Seattle, với nhiều kỹ sư háo hức khám phá tiềm năng của nó.
+
+Sự ra mắt của Claude Code đại diện cho một sự thay đổi đáng kể trong phong cảnh phát triển phần mềm, khi AI đảm nhận vai trò nổi bật hơn trong quá trình mã hóa. Khi ngành công nghệ tiếp tục phát triển, sẽ rất thú vị khi xem Claude Code và các công cụ được hỗ trợ bởi AI khác định hình tương lai của phát triển phần mềm.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">4</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Tại sao việc掌握 EVM là thiết yếu cho các hệ thống không dây thế hệ tiếp theo</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Why Mastering EVM Is Essential for Next-Generation Wireless Systems</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;IEEE Spectrum</span>&nbsp;&nbsp;&nbsp;<a href="https://content.knowledgehub.wiley.com/understanding-evm-error-vector-magnitude-in-modern-wireless-communications/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Khi công nghệ truyền thông không dây tiếp tục phát triển, nhu cầu về tốc độ truyền dữ liệu cao hơn đã dẫn đến các sơ đồ điều chế ngày càng phức tạp. Các hệ thống hiện đại sử dụng điều chế biên độ quadrature (QAM) với các cấp độ cao, chẳng hạn như 4096QAM, nơi các sai lệch nhỏ về biên độ hoặc pha có thể gây ra lỗi bit. Để đo độ chính xác của các sơ đồ điều chế này, độ lớn của vector lỗi (EVM) đã trở thành chỉ số chính. Bài báo này nhằm mục đích bao gồm các nguyên tắc cơ bản của điều chế số, định nghĩa EVM và giải thích các phương pháp tính toán của nó. Nó cũng khám phá các nguồn gây suy giảm EVM phổ biến và thảo luận về cách các biểu đồ constellation có thể được sử dụng để chẩn đoán các suy giảm điều chế trong các hệ thống không dây thực tế. Việc hiểu EVM là điều cần thiết cho việc phát triển các hệ thống không dây thế hệ tiếp theo có thể cung cấp truyền dữ liệu đáng tin cậy và hiệu quả.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">5</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Google giới thiệu dự đoán đa token Gemma 4 LLM</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Google brings multi-token prediction Gemma 4 LLMs</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;BD Tech Talks</span>&nbsp;&nbsp;&nbsp;<a href="https://bdtechtalks.com/2026/05/11/google-gemma-4-multi-token-prediction/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=google-gemma-4-multi-token-prediction" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Google đã thực hiện một bản nâng cấp đáng kể cho dòng Gemma 4 của các Large Language Models (LLMs) mã nguồn mở bằng cách tích hợp công nghệ dự đoán đa token (MTP). Sự đổi mới này cho phép Gemma 4 thoát khỏi cách tiếp cận truyền thống một token tại một thời điểm, dẫn đến tăng lưu lượng trên phần cứng cấp người tiêu dùng. Bằng cách dự đoán nhiều token song song, Gemma 4 tận dụng khả năng xử lý song song của các GPU hiện đại một cách hiệu quả hơn, giảm số lần phải tải trọng của model từ bộ nhớ. Điều này dẫn đến sự tăng cường hiệu suất trực tiếp cho người dùng cuối, khiến các tương tác cục bộ cảm giác tức thời và mượt mà hơn. Kiến trúc Gemma 4 bao gồm các model nhỏ, chuyên dụng hoạt động như những người soạn thảo, làm việc trước model chính để đoán những token tiếp theo. Model chính sau đó xem xét các đề xuất này trong một lần đi qua, xác minh chúng bằng cơ chế chú ý của nó. Quá trình xác minh này cho phép model chính xác nhận một chuỗi toàn bộ trong khoảng thời gian tương đương với thời gian cần thiết để tạo ra chỉ một token. Các thí nghiệm cho thấy Gemma 4 có thể đạt được tốc độ tăng lên đến 3 lần trên cả phiên bản trên thiết bị và phiên bản lớn hơn của model.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">6</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Các khối xây dựng cho đào tạo và suy luận mô hình nền tảng trên AWS</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Building Blocks for Foundation Model Training and Inference on AWS</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Hugging Face Blog</span>&nbsp;&nbsp;&nbsp;<a href="https://huggingface.co/blog/amazon/foundation-model-building-blocks" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">AWS đã giới thiệu một cơ sở hạ tầng mới, được gọi là Building Blocks, để hỗ trợ việc đào tạo và suy luận của các mô hình nền tảng (foundation models). Truyền thống, việc mở rộng quy mô các mô hình nền tảng có nghĩa là đầu tư vào khả năng tính toán quy mô lớn, nhưng bối cảnh đã thay đổi. Giờ đây, hiệu suất được mở rộng thông qua các phương pháp sau đào tạo, tính toán thời gian thử nghiệm và các yếu tố khác. Sự thay đổi này yêu cầu một cơ sở hạ tầng hội tụ với khả năng tính toán gia tốc耦 hợp chặt chẽ, mạng lưới băng thông cao độ trễ thấp và lưu trữ phân tán. Để quản lý các tài nguyên này, các công cụ điều phối như Slurm và Kubernetes là thiết yếu. Chu kỳ sống của mô hình nền tảng cũng phụ thuộc vào một hệ sinh thái phần mềm mã nguồn mở, bao gồm các framework như PyTorch và JAX cho việc phát triển mô hình và đào tạo phân tán. Các công cụ quan sát như Prometheus và Grafana được sử dụng để giám sát và trực quan hóa hiệu suất của hệ thống. Cơ sở hạ tầng Building Blocks của AWS tương tác với các chồng mã nguồn mở này để cung cấp một nền tảng kỹ thuật để hiểu các nút thắt và đặc điểm mở rộng của hệ thống. Loạt bài đăng này sẽ khám phá cách kiến trúc phân lớp này được thực hiện trên AWS, bao gồm cơ sở hạ tầng, điều phối tài nguyên, chồng phần mềm ML và khả năng quan sát.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">7</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">GitLab Act 2</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;GitLab Act 2</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Simon Willison</span>&nbsp;&nbsp;&nbsp;<a href="https://simonwillison.net/2026/May/11/gitlab-act-2/#atom-everything" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">GitLab đã công bố chiến lược mới của mình, được gọi là &quot;GitLab Act 2&quot;, bao gồm việc giảm lực lượng lao động và thay đổi cấu trúc để đáp ứng với &quot;thời đại agentic&quot;. Công ty tin rằng thời đại agentic, được đặc trưng bởi nhu cầu ngày càng tăng về phần mềm, sẽ dẫn đến sự mở rộng đáng kể của thị trường nền tảng developer. Khi chi phí sản xuất phần mềm giảm, nhu cầu dự kiến sẽ tăng, với thị trường chuyển từ vài chục đô la mỗi người dùng mỗi tháng sang hàng trăm hoặc thậm chí hàng nghìn. GitLab đang định vị mình để phục vụ một lượng lớn phần mềm và developer ngày càng tăng, dự đoán sự tăng trưởng nhu cầu. Tuy nhiên, giá cổ phiếu của công ty đã giảm từ khoảng 52 đô la xuống 26 đô la trong năm qua, làm dấy lên lo ngại về triển vọng tăng trưởng liên tục của công ty trong bối cảnh tác động của kỹ thuật agentic đối với thị trường cốt lõi của nó.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">8</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">OpenAI vừa phát hành câu trả lời của mình cho Claude Mythos</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;OpenAI just released its answer to Claude Mythos</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;The Verge AI</span>&nbsp;&nbsp;&nbsp;<a href="https://www.theverge.com/ai-artificial-intelligence/928342/openai-daybreak-security-ai" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">OpenAI đã ra mắt Daybreak, một sáng kiến AI nhằm phát hiện và vá các lỗ hổng trong mã trước khi các kẻ tấn công có thể khai thác chúng. Động thái này được thực hiện để đáp lại thông báo của đối thủ Anthropic về Claude Mythos, một mô hình AI tập trung vào bảo mật ban đầu chỉ được chia sẻ riêng do lo ngại về các rủi ro tiềm năng của nó. Daybreak sử dụng đại lý AI bảo mật Codex của OpenAI để tạo một mô hình mối đe dọa dựa trên mã của một tổ chức và tự động hóa việc phát hiện các lỗ hổng có rủi ro cao. Sáng kiến này kết hợp nhiều mô hình AI, bao gồm Codex và GPT-5.5 với Truy cập Tin cậy cho An ninh mạng, và liên quan đến sự hợp tác với các đối tác trong ngành và chính phủ. Mục tiêu của Daybreak là cung cấp một giải pháp bảo mật toàn diện, chuẩn bị cho việc triển khai các mô hình có khả năng an ninh mạng ngày càng tăng trong tương lai.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+
+  <!-- TIPS SECTION -->
+  
+  <tr>
+    <td bgcolor="#FFFBEB" style="background-color:#FFFBEB;padding:20px 30px;border-top:3px solid #D97706;">
+      <p style="margin:0 0 12px;font-size:11px;color:#D97706;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#9889;&nbsp;Tips &amp; Tricks cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tối ưu hóa GitHub Copilot</strong><br><strong>Vấn đề:</strong> Khi sử dụng GitHub Copilot, đôi khi gợi ý không chính xác do không hiểu rõ context.<br><strong>Cách làm:</strong> Sử dụng lệnh <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">//</code> để cung cấp thêm thông tin cho Copilot về chức năng và yêu cầu cụ thể. Ví dụ: <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">// Hàm tính tổng của mảng số</code>.<br><strong>Đánh giá:</strong> Hiệu quả khi cần viết code nhanh chóng và chính xác, đặc biệt với các dự án có yêu cầu cụ thể.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ ChatGPT cho Debug</strong><br><strong>Vấn đề:</strong> Debug code tốn nhiều thời gian và công sức.<br><strong>Cách làm:</strong> Sử dụng ChatGPT để mô tả lỗi và yêu cầu giúp đỡ, ví dụ: &quot;Lỗi tại dòng 10, không hiểu lý do&quot;.<br><strong>Đánh giá:</strong> Tiết kiệm thời gian khi cần giải quyết vấn đề nhanh chóng, nhưng nên kiểm tra lại kết quả.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Claude cho Document</strong><br><strong>Vấn đề:</strong> Viết tài liệu cho code là công việc nhàm chán và tốn thời gian.<br><strong>Cách làm:</strong> Sử dụng Claude để tự động tạo tài liệu cho code, ví dụ: <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">Generate doc for this function</code>.<br><strong>Đánh giá:</strong> Hiệu quả khi cần tạo tài liệu nhanh chóng, nhưng cần kiểm tra và chỉnh sửa lại cho chính xác.</p>
+    </td>
+  </tr>
+
+  <!-- LESSON SECTION -->
+  
+  <tr>
+    <td bgcolor="#F0FFF4" style="background-color:#F0FFF4;padding:20px 30px;border-top:3px solid #2E7D32;">
+      <p style="margin:0 0 12px;font-size:11px;color:#2E7D32;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128218;&nbsp;B&#224;i h&#7885;c AI h&#244;m nay cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;">1. <strong>Tối ưu chi phí &amp; hiệu năng LLM</strong><br>2. Dev cần biết cách tối ưu hóa chi phí và hiệu năng của Large Language Model (LLM) để áp dụng vào dự án thực tế. Điều này giúp giảm thiểu chi phí tính toán và tăng tốc độ xử lý.<br>3. Ví dụ, sử dụng kỹ thuật pruning để giảm số lượng tham số trong mô hình.<br>4. 💡 Tip: Sử dụng thư viện như Hugging Face Transformers để tối ưu hóa hiệu năng LLM.</p>
+    </td>
+  </tr>
+
+  <!-- FOOTER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:20px 30px;text-align:center;border-radius:0 0 10px 10px;">
+      <p style="margin:0 0 4px;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        &#128161;&nbsp;Lu&#244;n &#273;i &#273;&#7847;u trong th&#7871; gi&#7899;i AI!&nbsp;&#183;&nbsp;Stay ahead in AI!
+      </p>
+      <p style="margin:6px 0 0;font-size:11px;color:#4A7AAB;font-family:Arial,sans-serif;">
+        Ngu&#7891;n: Google News · Groq AI
+      </p>
+    </td>
+  </tr>
+
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+
+</td></tr>
+</table>
+</body>
+</html>

@@ -18,9 +18,9 @@ import hashlib
 from html.parser import HTMLParser
 
 GOOGLE_NEWS_URLS = [
-    "https://news.google.com/rss/search?q=AI+tools+software+developers+programming+productivity&hl=en-US&gl=US&ceid=US:en",
-    "https://news.google.com/rss/search?q=LLM+agent+machine+learning+engineering+news&hl=en-US&gl=US&ceid=US:en",
-    "https://news.google.com/rss/search?q=generative+AI+developer+tools+model+release&hl=en-US&gl=US&ceid=US:en",
+    "https://news.google.com/rss/search?q=Claude+Code+Cursor+Aider+Copilot+AI+coding+developer&hl=en-US&gl=US&ceid=US:en",
+    "https://news.google.com/rss/search?q=MCP+model+context+protocol+AI+agent+LangGraph+developer&hl=en-US&gl=US&ceid=US:en",
+    "https://news.google.com/rss/search?q=LLM+API+model+release+developer+GPT+Claude+Gemini+2025&hl=en-US&gl=US&ceid=US:en",
 ]
 GROQ_URL             = "https://api.groq.com/openai/v1/chat/completions"
 GROQ_MODEL           = "llama-3.1-8b-instant"
@@ -46,6 +46,9 @@ SPECIALIZED_FEEDS = [
     ("https://bdtechtalks.com/feed/",                                      "BD Tech Talks"),
     ("https://huggingface.co/blog/feed.xml",                               "Hugging Face Blog"),
     ("https://blog.langchain.dev/rss.xml",                                 "LangChain Blog"),
+    ("https://openai.com/blog/rss.xml",                                    "OpenAI Blog"),
+    ("https://changelog.com/feed",                                         "Changelog"),
+    ("https://sourcegraph.com/blog/rss.xml",                               "Sourcegraph Blog"),
 ]
 
 try:
@@ -414,11 +417,30 @@ def _groq_lesson(api_key):
         return ""
     today = datetime.datetime.now().strftime("%Y-%m-%d")
     categories = ", ".join([
-        "tích hợp AI API vào ứng dụng", "GitHub Copilot & AI coding tools",
-        "prompt engineering cho dev", "RAG & semantic search",
-        "AI trong CI/CD & DevOps", "tự động hóa với LLM",
-        "bảo mật AI app", "tối ưu chi phí & hiệu năng LLM",
-        "AI cho testing & QA", "AI trong database & data pipeline",
+        # AI coding & IDE tools
+        "GitHub Copilot & AI coding tools", "Claude Code & AI CLI-first workflow",
+        "Cursor / Windsurf / Aider — AI-native IDE tips",
+        # Agent & MCP ecosystem
+        "MCP (Model Context Protocol) — kết nối AI với tools & data",
+        "AI agent frameworks (LangGraph, CrewAI, AutoGen, phiData)",
+        "multi-agent orchestration & super-agent patterns",
+        "agent memory & state management",
+        # Integration & architecture
+        "tích hợp AI API vào ứng dụng", "RAG & semantic search",
+        "context engineering & long-context strategies",
+        "streaming & real-time AI responses trong app",
+        # Ops & quality
+        "AI trong CI/CD & DevOps", "AI cho testing & QA automation",
+        "AI observability & monitoring (LangSmith, Langfuse, Arize)",
+        "bảo mật AI app & prompt injection defense",
+        "tối ưu chi phí & hiệu năng LLM",
+        # Broader AI engineering
+        "fine-tuning & LoRA cho use case cụ thể",
+        "local LLM & edge AI (Ollama, LM Studio, llama.cpp)",
+        "multi-modal AI trong ứng dụng (vision, audio, code)",
+        "AI-first code review & documentation automation",
+        "AI trong database & data pipeline",
+        "tự động hóa workflow với LLM",
     ])
     prompt = (
         f"Hôm nay là {today}. Bạn là AI engineer senior dạy dev ứng dụng AI vào công việc lập trình hàng ngày.\n\n"
@@ -429,12 +451,12 @@ def _groq_lesson(api_key):
         f"2. Giải thích ngắn gọn — tại sao dev cần biết (2-3 câu)\n"
         f"3. Ví dụ thực tế hoặc code snippet minh họa\n"
         f"4. 💡 Tip hoặc bước tiếp theo\n\n"
-        f"Yêu cầu: 120-160 từ, tiếng Việt, giữ thuật ngữ kỹ thuật tiếng Anh."
+        f"Yêu cầu: 150-200 từ, tiếng Việt, giữ thuật ngữ kỹ thuật tiếng Anh."
     )
     payload = json.dumps({
         "model": GROQ_TRANSLATE_MODEL,
         "messages": [{"role": "user", "content": prompt}],
-        "max_tokens": 600,
+        "max_tokens": 800,
         "temperature": 0.7,
     }).encode()
     req = urllib.request.Request(
@@ -460,17 +482,34 @@ def _groq_tips(api_key):
     if not api_key:
         return ""
     today = datetime.datetime.now().strftime("%Y-%m-%d")
+    tip_domains = [
+        "GitHub Copilot / Cursor / Windsurf / Aider / Continue.dev — AI pair programming trong IDE",
+        "Claude Code — AI CLI tool của Anthropic chạy trong terminal để viết code, debug, refactor",
+        "MCP (Model Context Protocol của Anthropic) — giao thức cho phép AI kết nối với file system, Git, database, APIs; dùng trong Claude Desktop, Claude Code, Cursor",
+        "AI agents & multi-agent orchestration — LangGraph, CrewAI, AutoGen, phiData: phối hợp nhiều AI agents xử lý task phức tạp",
+        "ChatGPT / Claude / Gemini — advanced prompting techniques cho dev: chain-of-thought, few-shot, system prompt design",
+        "RAG (Retrieval-Augmented Generation), embeddings & semantic search trong ứng dụng thực tế",
+        "AI cho testing, QA automation, code review tự động",
+        "Local LLM với Ollama / LM Studio — chạy LLM trên máy cá nhân không cần internet",
+        "AI observability, tracing & cost control — LangSmith, Langfuse, Arize Phoenix",
+        "Context engineering — kỹ thuật quản lý context window, long-context, memory cho AI apps",
+    ]
+    # Rotate domain focus by day-of-year so tips vary across the week
+    import datetime as _dt
+    day_idx = _dt.datetime.now().timetuple().tm_yday % len(tip_domains)
+    focus_domain = tip_domains[day_idx]
     prompt = (
         f"Hôm nay là {today}. Bạn là senior AI engineer chia sẻ tips thực chiến về AI tools cho dev.\n\n"
-        "Viết ĐÚNG 3 tip & trick về dùng AI trong công việc dev hàng ngày "
-        "(GitHub Copilot, ChatGPT, Claude, Cursor, Gemini, Windsurf, Codeium, v.v.). "
-        "Chọn tips đang hot hoặc ít người biết, cụ thể và áp dụng được ngay.\n\n"
+        f"Hôm nay tập trung vào chủ đề: **{focus_domain}**.\n"
+        "Viết ĐÚNG 3 tip & trick thực chiến — chỉ chia sẻ kiến thức BẠN CHẮC CHẮN là đúng, "
+        "không bịa lệnh hoặc API không tồn tại. Nếu đưa ví dụ prompt/lệnh thì phải là ví dụ thực tế "
+        "đang được dùng ngoài thực tế (ví dụ: câu prompt Claude thực sự, lệnh CLI có thật).\n\n"
         "Format mỗi tip:\n"
-        "### ⚡ [Tên tip]\n"
-        "**Vấn đề:** [1 câu mô tả pain point mà tip này giải quyết]\n"
-        "**Cách làm:** [2-3 câu hướng dẫn cụ thể, kèm ví dụ prompt mẫu hoặc lệnh thực tế]\n"
-        "**Đánh giá:** [1-2 câu nói rõ hiệu quả thực tế, khi nào nên/không nên dùng]\n\n"
-        "Yêu cầu: tiếng Việt, giữ thuật ngữ kỹ thuật EN, mỗi tip 80-120 từ. Viết 3 tip liền nhau."
+        "### ⚡ [Tên tip ngắn gọn]\n"
+        "**Vấn đề:** [1 câu mô tả pain point cụ thể]\n"
+        "**Cách làm:** [2-3 câu hướng dẫn rõ ràng, kèm ví dụ prompt thực tế hoặc lệnh có thật]\n"
+        "**Đánh giá:** [1-2 câu: hiệu quả thực tế, khi nào nên/không nên dùng]\n\n"
+        "Yêu cầu: tiếng Việt, giữ thuật ngữ kỹ thuật EN, mỗi tip 80-120 từ. Viết 3 tip liền nhau, không giải thích thêm."
     )
     payload = json.dumps({
         "model": GROQ_TRANSLATE_MODEL,

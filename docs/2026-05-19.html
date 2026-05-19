@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--[if mso]>
+<noscript><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings></xml></noscript>
+<![endif]-->
+<style>
+/* ── Responsive overrides for web (email HTML uses fixed 600px tables) ── */
+@media screen and (max-width:620px) {
+  table[width="600"] { width:100% !important; }
+  td { word-break:break-word; overflow-wrap:break-word; }
+  /* Reduce generous email padding on small screens */
+  td[style*="padding:28px 30px"],
+  td[style*="padding:24px 30px"],
+  td[style*="padding:22px 30px"],
+  td[style*="padding:20px 30px"],
+  td[style*="padding:16px 30px"],
+  td[style*="padding:12px 30px"] { padding-left:14px !important; padding-right:14px !important; }
+  /* Code blocks: scroll horizontally instead of breaking layout */
+  pre { overflow-x:auto !important; max-width:calc(100vw - 32px) !important; box-sizing:border-box; }
+  /* Shrink large heading text slightly */
+  h1[style*="26px"] { font-size:20px !important; }
+}
+/* ── Print: hide nav bar ── */
+@media print {
+  #web-nav { display:none !important; }
+  body { background:#fff !important; }
+}
+</style>
+</head>
+<body style="margin:0;padding:0;background-color:#EEF2F7;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+<div id="web-nav" style="background:#001a4d;padding:8px 16px;font-family:Arial,sans-serif;font-size:13px;position:sticky;top:0;z-index:999;border-bottom:2px solid #0066CC;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
+  <span id="nav-prev" style="color:#4A6A8A;">&#8592;</span>
+  <a href="all.html" style="color:#FFD700;text-decoration:none;font-weight:bold;">&#128240; T&#7845;t c&#7843; b&#7843;n tin</a>
+  <span style="color:#FFFFFF;">19/05/2026</span>
+  <span id="nav-next" style="color:#4A6A8A;">&#8594;</span>
+  <a href="2026-05-19.pdf" download="2026-05-19.pdf" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128196; T&#7843;i PDF</a>
+  <button onclick="sharePage()" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128279; Chia s&#7867;</button>
+</div>
+<script>
+function sharePage(){
+  var title='Bản tin AI BIS-MT – 19/05/2026';
+  if(navigator.share){navigator.share({title:title,url:location.href});}
+  else{navigator.clipboard.writeText(location.href).then(function(){
+    alert('Đã sao chép link!');
+  });}
+}
+(function(){
+  var m=location.pathname.match(/(\d{4}-\d{2}-\d{2})\.html/);
+  if(!m)return;
+  var slug=m[1];
+  function fmt(s){var p=s.split('-');return p[2]+'/'+p[1];}
+  var lnkStyle='color:#90C4F0;text-decoration:none;';
+  fetch('dates.json?_='+Date.now())
+    .then(function(r){return r.json();})
+    .then(function(dates){
+      var idx=dates.indexOf(slug);
+      if(idx>0){
+        var p=dates[idx-1];
+        document.getElementById('nav-prev').innerHTML=
+          '<a href="'+p+'.html" style="'+lnkStyle+'">&#8592; '+fmt(p)+'</a>';
+      }
+      if(idx>=0&&idx<dates.length-1){
+        var n=dates[idx+1];
+        document.getElementById('nav-next').innerHTML=
+          '<a href="'+n+'.html" style="'+lnkStyle+'">'+fmt(n)+' &#8594;</a>';
+      }
+    })
+    .catch(function(){});
+})();
+</script>
+
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#EEF2F7" style="background-color:#EEF2F7;">
+<tr><td align="center" style="padding:24px 12px;">
+
+<!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0"><tr><td><![endif]-->
+<table role="presentation" width="600" cellpadding="0" cellspacing="0"
+       style="max-width:600px;width:100%;background-color:#FFFFFF;border-radius:10px;" bgcolor="#FFFFFF">
+
+  <!-- HEADER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:28px 30px 22px 30px;text-align:center;border-radius:10px 10px 0 0;">
+      <p style="margin:0 0 6px;font-size:11px;color:#7EB1E8;letter-spacing:2px;font-family:Arial,sans-serif;text-transform:uppercase;">
+        BIS &#8209; MT &nbsp;&#183;&nbsp; 19/05/2026
+      </p>
+      <h1 style="margin:0;font-size:26px;font-weight:bold;color:#FFFFFF;font-family:Arial,sans-serif;line-height:1.2;">
+        &#129302; B&#7843;n Tin AI H&#7857;ng Ng&#224;y
+      </h1>
+      <p style="margin:8px 0 0;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        C&#7853;p nh&#7853;t c&#244;ng ngh&#7879; AI m&#7899;i nh&#7845;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- QUOTE -->
+  <tr>
+    <td bgcolor="#EBF4FF" style="background-color:#EBF4FF;padding:16px 30px;border-top:3px solid #0066CC;">
+      <p style="margin:0;font-size:14px;color:#1A3A5C;font-style:italic;line-height:1.6;font-family:Georgia,serif;">
+        &#10024;&nbsp;&ldquo;The function of leadership is to produce more leaders, not more followers.&rdquo;
+      </p>
+      <p style="margin:6px 0 0;font-size:13px;color:#444444;line-height:1.5;">&nbsp;&nbsp;&nbsp;&#8618;&nbsp;Chức năng của lãnh đạo là tạo ra nhiều nhà lãnh đạo hơn, không phải nhiều người theo hơn.</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#888888;font-family:Arial,sans-serif;">&mdash;&nbsp;Ralph Nader</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#5A6A7A;font-style:italic;line-height:1.5;font-family:Arial,sans-serif;">&#128161;&nbsp;Người lãnh đạo tốt đầu tư vào việc phát triển người khác — tạo ra những nhà lãnh đạo tiếp theo mới là di sản thật sự.</p>
+    </td>
+  </tr>
+
+  <!-- SECTION LABEL -->
+  <tr>
+    <td bgcolor="#F5F7FA" style="background-color:#F5F7FA;padding:12px 30px;">
+      <p style="margin:0;font-size:11px;color:#999999;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128240;&nbsp;Tin t&#7913;c n&#7893;i b&#7853;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- ARTICLES -->
+  
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">1</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Các nhà nghiên cứu bảo mật cảnh báo về lỗ hổng trong code do AI tạo ra</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Security Researchers Sound the Alarm on Vulnerabilities in AI-Generated Code</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Infosecurity Magazine</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMigwFBVV95cUxOa2EtOVAxcE9xSjRyTkZTNnQ4WV9XQWxKVDdYYjhGWHJ6S0YzanE2aWNfQlRja25RMkdINm16ZzhwM0pWQ1BUendwdjI5RnBFa2tVOTVWbHFfWExIZzNHNmdsZEJQSlBSN0gwQk5CRTVBUGdMLTk1bHJ1dzAzNEJWNkJGVQ?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Các nhà nghiên cứu bảo mật đã bày tỏ mối quan ngại về các điểm yếu trong mã được tạo ra bởi AI, nhấn mạnh các rủi ro tiềm ẩn liên quan đến công nghệ mới nổi này. Mã được tạo ra bởi AI đang trở nên phổ biến ngày càng tăng, đặc biệt là trong việc phát triển phần mềm và ứng dụng. Tuy nhiên, một nghiên cứu gần đây đã tiết lộ rằng loại mã này có thể chứa các lỗi bảo mật và điểm yếu mà các kẻ tấn công có thể khai thác.
+
+Các nhà nghiên cứu đã phát hiện ra rằng mã được tạo ra bởi AI có thể dễ bị lỗi và không nhất quán, khiến nó dễ bị tấn công mạng hơn. Điều này đặc biệt đáng lo ngại vì mã được tạo ra bởi AI thường được sử dụng trong các hệ thống và ứng dụng quan trọng, nơi các vi phạm bảo mật có thể có hậu quả nghiêm trọng.
+
+Kết quả nghiên cứu nhấn mạnh nhu cầu của các nhà phát triển phải xem xét và kiểm tra kỹ lưỡng mã được tạo ra bởi AI trước khi triển khai nó trong môi trường sản xuất. Điều này bao gồm việc xác minh tính toàn vẹn của mã, xác định các điểm yếu tiềm ẩn và triển khai các biện pháp bảo mật mạnh mẽ để giảm thiểu rủi ro. Khi mã được tạo ra bởi AI trở nên phổ biến hơn, điều quan trọng là các nhà phát triển và tổ chức phải ưu tiên bảo mật và thực hiện các bước chủ động để giải quyết các điểm yếu tiềm ẩn.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">2</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Cách chạy các AI model cục bộ trên RTX 5060 Ti của bạn — Hướng dẫn từng bước</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;How to Run Local AI Models on Your RTX 5060 Ti — Step-by-Step Guide</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;TechnoSports Media Group</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMif0FVX3lxTFBhUU5UTFV3cDRKNnZOV3NZQmlHemEwcjVybUhndnZxVzRmdlFRczV4eFVVTndmWUtwUUZxNm5hLW12aXZUdkNLMmJPa1pudVg5RzFraHY1NWU5cnRCSHFva0ViQ3lieEJDdnVSdDRyU2tNN3dfQjQ1RVU3TnpZdU0?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Bài viết cung cấp hướng dẫn từng bước về việc chạy các mô hình AI cục bộ trên card đồ họa NVIDIA RTX 5060 Ti. Hướng dẫn này nhằm giúp người dùng tận dụng sức mạnh của card đồ họa để chạy các mô hình AI trên máy cục bộ của họ, loại bỏ nhu cầu sử dụng dịch vụ đám mây.
+
+Để bắt đầu, người dùng cần cài đặt phần mềm cần thiết, bao gồm CUDA Toolkit và cuDNN. Những công cụ này cho phép RTX 5060 Ti xử lý các tính toán AI một cách hiệu quả.
+
+Tiếp theo, người dùng phải cài đặt một khuôn khổ học sâu như TensorFlow hoặc PyTorch, cung cấp các thư viện và công cụ cần thiết để xây dựng và chạy các mô hình AI.
+
+Khi phần mềm đã được cài đặt, người dùng có thể tải xuống và cài đặt một mô hình AI đã được đào tạo trước, chẳng hạn như mô hình học máy hoặc thị giác máy tính.
+
+Bài viết sau đó hướng dẫn người dùng qua quá trình tải mô hình AI vào khuôn khổ đã chọn và chạy nó trên RTX 5060 Ti. Điều này liên quan đến việc thiết lập các biến môi trường cần thiết và cấu hình khuôn khổ để tận dụng khả năng AI của card đồ họa.
+
+Bằng cách làm theo hướng dẫn này, người dùng có thể mở khóa toàn bộ tiềm năng của RTX 5060 Ti và chạy các mô hình AI cục bộ một cách dễ dàng.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">3</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Tối ưu hóa GitHub workflow bằng generative AI với Amazon Bedrock và MCP | Amazon Web Services</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Streamline GitHub workflows with generative AI using Amazon Bedrock and MCP | Amazon Web Services</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Amazon Web Services (AWS)</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxPVE52YWtPN0dnYXY0TDE0bUZDWFhhbnNVZWZnVVo0M1lCX0FlOHpmU2VsdmVPWmtVZDBXbE94ZGh2WlluaFdJTGU0cGFlRV9VUFdBVlMyUGlzU3IweHMxbXFKSG1NMGI5VUVCU19hbnhoREdMa0hFbkVCcUVLNWRUenVEWDhOY1dCWW1FUUk1dGl1SG5YOG5uMjZNemlBRl9lWmkyUmZ6Q09rYk41elBqbDEyOS00Rkt3MTBDVWVYbw?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Amazon Web Services (AWS) đã giới thiệu một tích hợp mới cho phép người dùng tối ưu hóa các quy trình làm việc trên GitHub với sự giúp đỡ của AI tạo sinh. Tích hợp này kết hợp Amazon Bedrock, một dịch vụ model ngôn ngữ lớn (LLM), với MCP, một nền tảng không phụ thuộc vào model cho việc triển khai và quản lý các model AI.
+
+Với tích hợp này, các nhà phát triển có thể tận dụng AI tạo sinh để tự động hóa các nhiệm vụ và nâng cao quy trình làm việc trên GitHub của họ. Bằng cách sử dụng Amazon Bedrock và MCP, người dùng có thể tạo các model AI tùy chỉnh có thể thực hiện các nhiệm vụ như tạo mã, sửa lỗi và tài liệu. Điều này có thể giúp giảm thời gian và công sức cần thiết để hoàn thành các nhiệm vụ này, cho phép các nhà phát triển tập trung vào các nhiệm vụ cấp cao hơn.
+
+Tích hợp này cung cấp một trải nghiệm liền mạch cho các nhà phát triển, cho phép họ dễ dàng triển khai và quản lý các model AI của mình trên GitHub. Điều này có thể giúp cải thiện hiệu quả và năng suất tổng thể của các đội phát triển, và cho phép họ xây dựng và triển khai phần mềm chất lượng cao hơn một cách nhanh chóng.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">4</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Top 11 máy cho mèo ăn tự động tốt nhất chúng tôi đã test trong năm 2026</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;These 11 Automatic Cat Feeders Were the Best We Tested in 2026</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Wired</span>&nbsp;&nbsp;&nbsp;<a href="https://www.wired.com/gallery/best-automatic-cat-feeders/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Các máy cho ăn mèo tự động đã cách mạng hóa việc chăm sóc thú cưng, mang lại sự yên tâm cho chủ sở hữu và một lối sống tiện lợi hơn. Các thiết bị này sử dụng Wi-Fi và ứng dụng di động để lên lịch cho ăn, theo dõi thói quen ăn uống và thậm chí phân phát thức ăn theo yêu cầu. Các mẫu mới hơn đã tích hợp các tính năng tiên tiến như máy ảnh được hỗ trợ bởi AI, có thể phân tích thức ăn còn lại và ngăn chặn việc cho ăn quá mức. Petkit YumShare Dual-Hopper 2 Automatic Feeder With Camera là một lựa chọn hàng đầu, với máy ảnh tích hợp có thể nhận dạng lên đến 20 chú mèo và theo dõi thói quen ăn uống cá nhân. Một sản phẩm nổi bật khác là Petlibro Polar Smart Wet Feeder, một tủ lạnh mini giữ thức ăn ướt tươi và cho phép cho ăn và ghi nhật ký tùy chỉnh. Các máy cho ăn tự động này không chỉ có lợi cho mèo mà còn có thể được sử dụng cho chó nhỏ hơn. Chúng cung cấp một loạt các tính năng, bao gồm cuộc gọi bữa ăn tùy chỉnh, âm thanh hai chiều và tầm nhìn ban đêm, khiến chúng trở thành một công cụ quý giá cho chủ sở hữu thú cưng muốn thúc đẩy thói quen ăn uống lành mạnh và theo dõi sức khỏe của thú cưng.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">5</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">SandboxAQ đưa các drug discovery model của mình lên Claude — không cần bằng PhD về computing</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;SandboxAQ brings its drug discovery models to Claude — no PhD in computing required</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;TechCrunch AI</span>&nbsp;&nbsp;&nbsp;<a href="https://techcrunch.com/2026/05/18/sandboxaq-brings-its-drug-discovery-models-to-claude-no-phd-in-computing-required/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">SandboxAQ, một công ty được thành lập bởi Alphabet như một công ty độc lập, đã hợp tác với Anthropic để tích hợp các mô hình AI khoa học của mình vào Claude, một giao diện trò chuyện. Động thái này nhằm mục đích đưa các công cụ khám phá thuốc và khoa học vật liệu mạnh mẽ đến tay các nhà nghiên cứu mà không cần cơ sở hạ tầng tính toán chuyên dụng. Các mô hình độc quyền của SandboxAQ, được gọi là Mô hình Lượng tính Lớn (LQMs), là &quot;được thiết lập trên cơ sở vật lý&quot; và có thể chạy các tính toán phức tạp, mô phỏng động lực học phân tử và phản ứng hóa học. Những mô hình này đã được đào tạo trên dữ liệu phòng thí nghiệm thực tế và các phương trình khoa học, khiến chúng phù hợp với nền kinh tế lượng tính, bao gồm các ngành công nghiệp như dược phẩm sinh học, dịch vụ tài chính và năng lượng. Tập trung của công ty là đưa những mô hình này đến với khán giả rộng lớn hơn, chứ không chỉ là các nhà khoa học tính toán và nhà nghiên cứu. Với sự tích hợp này, người dùng có thể truy cập và sử dụng LQMs của SandboxAQ bằng ngôn ngữ tự nhiên, có khả năng cách mạng hóa quá trình khám phá thuốc và các ngành công nghiệp khác.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">6</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Manchester Code giúp các bit hoạt động ổn định</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Manchester Code Made Bits Behave</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;IEEE Spectrum</span>&nbsp;&nbsp;&nbsp;<a href="https://spectrum.ieee.org/manchester-code-ieee-milestone" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Vào cuối những năm 1940, một đội kỹ sư tại Đại học Manchester, Anh, đã đối mặt với một thách thức đáng kể trong lĩnh vực tính toán kỹ thuật số: máy móc có thể tạo ra các bit, nhưng chúng không thể đọc lại chúng một cách đáng tin cậy do thời gian tín hiệu không nhất quán. Dưới sự dẫn dắt của Frederic C. Williams, Tom Kilburn và G.E. (Tommy) Thomas, đội đã nghĩ ra một giải pháp được gọi là mã Manchester hoặc mã hóa pha. Đổi mới này mã hóa mỗi bit với một chuyển tiếp ở giữa khoảng thời gian bit, hiệu quả là nhúng thông tin thời gian trực tiếp vào dòng dữ liệu. Tín hiệu tự đồng hồ này cho phép người nhận liên tục giữ thời gian, ngay cả khi tín hiệu bị suy giảm hoặc thời gian trôi đi slightly. Bằng cách loại bỏ nhu cầu về các đồng hồ riêng biệt và giảm thiểu lỗi đồng bộ hóa, mã Manchester đã làm cho việc truyền dữ liệu trở nên mạnh mẽ hơn trên cáp và mạch. Tác động của nó rất đáng kể, mở đường cho các giao thức mạng và truyền thông kỹ thuật số hiện đại. Vào ngày 13 tháng 4 năm 2026, đột phá này đã được vinh danh với một tấm biển IEEE Milestone trong một lễ trao giải tại Đại học Manchester.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">7</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Sau Orthogonality: Agency đạo đức đức hạnh và AI Alignment</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;After Orthogonality: Virtue-Ethical Agency and AI Alignment</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;The Gradient</span>&nbsp;&nbsp;&nbsp;<a href="https://thegradient.pub/virtue-ethics-ai-alignment/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Trong bài viết này, tác giả cho rằng những người có lý trí không có mục tiêu, mà thay vào đó, họ căn chỉnh hành động của mình với các thực hành, những mạng lưới gồm các hành động, khuynh hướng, tiêu chí đánh giá và tài nguyên. Quan điểm này có những ý nghĩa quan trọng đối với sự phát triển của trí tuệ nhân tạo (AI) có thể hỗ trợ và cộng tác một cách chân chính với khả năng hành động của con người. Tác giả đề xuất rằng sự suy xét của các tác nhân AI nên chia sẻ một &quot;chữ ký loại&quot; với logic dựa trên thực hành được con người sử dụng, thay vì dựa trên mục tiêu hoặc quy tắc.
+
+Tác giả khám phá khái niệm eudaimonia, hay sự thịnh vượng, lý trí và năng động của con người, và cho rằng nó chỉ đến một cấu trúc suy xét khác với lý trí hợp lý tiêu chuẩn. Hình thức hoạt động lý trí này, được gọi là lý trí eudaimonic, được xem là một khuôn khổ hữu ích cho khả năng hành động và giá trị của các AI được căn chỉnh với con người. Tác giả tuyên bố rằng lý trí eudaimonic là ổn định và an toàn hơn so với khả năng hành động deontological và consequentialist, và nó có thể giúp giải quyết các vấn đề và nghịch lý an toàn AI cổ điển.
+
+Tác giả cũng giới thiệu khái niệm &quot;khuyến khích x một cách x&quot;, nó nắm bắt ý tưởng rằng hoạt động cuộc sống có ý nghĩa của con người và đạo đức thực sự của con người liên quan đến việc khuyến khích các giá trị một cách nhất quán với những giá trị đó. Bài viết kết thúc bằng cách lập luận rằng lý trí eudaimonic là một hình thức khả năng hành động tự nhiên và hiệu quả, và nó nên được xem xét như một khuôn khổ để căn chỉnh AI với sự thịnh vượng của con người.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">8</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Mòng biển Glaucous-winged, Bồ nông nâu, Diệc tuyết, Ngỗng Canada</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Glaucous-winged Gull, Brown Pelican, Snowy Egret, Canada Goose</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Simon Willison</span>&nbsp;&nbsp;&nbsp;<a href="https://simonwillison.net/2026/May/18/sighting-362781627/#atom-everything" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Một người đam mê công nghệ đã đi dạo buổi sáng gần sự kiện PyCon US để phát hiện một con Bồ câu nâu trước khi về nhà. Trong chuyến đi, họ đã thành công khi phát hiện ra con chim, mặc dù họ không thể chụp được một bức ảnh rõ ràng. Ngoài ra, họ đã quan sát những con vịt con gần hồ thuyền swan. Bài đăng cũng đề cập đến một cơ hội tài trợ cho một bản tóm tắt email được chỉnh sửa của các phát triển Large Language Model (LLM) quan trọng nhất trong tháng với giá 10 đô la mỗi tháng.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+
+  <!-- TIPS SECTION -->
+  
+  <tr>
+    <td bgcolor="#FFFBEB" style="background-color:#FFFBEB;padding:20px 30px;border-top:3px solid #D97706;">
+      <p style="margin:0 0 12px;font-size:11px;color:#D97706;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#9889;&nbsp;Tips &amp; Tricks cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Quản lý context window</strong><br><strong>Vấn đề:</strong> Quản lý context window để tránh mất thông tin quan trọng.<br><strong>Cách làm:</strong> Sử dụng kỹ thuật <strong>windowing</strong> để chia nhỏ văn bản thành các phần nhỏ hơn, như ví dụ: <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">Claude: Summarize the text into 3 sentences, considering only the last 100 words</code>.<br><strong>Đánh giá:</strong> Hiệu quả khi xử lý văn bản dài, giúp tránh mất thông tin quan trọng.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tối ưu hóa long-context</strong><br><strong>Vấn đề:</strong> Tối ưu hóa long-context để tăng hiệu suất xử lý văn bản dài.<br><strong>Cách làm:</strong> Sử dụng kỹ thuật <strong>caching</strong> để lưu trữ thông tin đã xử lý, như ví dụ: <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;"> Transformers: use_cache=True</code> trong thư viện Hugging Face.<br><strong>Đánh giá:</strong> Hiệu quả khi xử lý văn bản dài, giúp giảm thời gian xử lý.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Quản lý memory</strong><br><strong>Vấn đề:</strong> Quản lý memory để tránh lỗi tràn bộ nhớ khi xử lý dữ liệu lớn.<br><strong>Cách làm:</strong> Sử dụng kỹ thuật <strong>batching</strong> để chia nhỏ dữ liệu thành các phần nhỏ hơn, như ví dụ: <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">Batch size=32</code> trong lệnh训练 mô hình.<br><strong>Đánh giá:</strong> Hiệu quả khi xử lý dữ liệu lớn, giúp tránh lỗi tràn bộ nhớ.</p>
+    </td>
+  </tr>
+
+  <!-- LESSON SECTION -->
+  
+  <tr>
+    <td bgcolor="#F0FFF4" style="background-color:#F0FFF4;padding:20px 30px;border-top:3px solid #2E7D32;">
+      <p style="margin:0 0 12px;font-size:11px;color:#2E7D32;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128218;&nbsp;B&#224;i h&#7885;c AI h&#244;m nay cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;">1. <strong>Tối ưu chi phí &amp; hiệu năng LLM</strong><br>2. Để giảm thiểu chi phí và tăng hiệu năng của mô hình ngôn ngữ lớn (LLM), các nhà phát triển cần biết cách tối ưu hóa chúng. Điều này giúp cải thiện hiệu suất và giảm thiểu chi phí tính toán. Việc tối ưu hóa LLM cũng giúp tăng cường bảo mật và giảm thiểu rủi ro.<br>3. Ví dụ, có thể sử dụng kỹ thuật fine-tuning và LoRA (Low-Rank Adaptation) để tối ưu hóa LLM cho các use case cụ thể. Điều này giúp giảm thiểu số lượng tham số và tăng cường hiệu suất của mô hình.<br>4. 💡 Tip hoặc bước tiếp theo: Sử dụng các công cụ như Hugging Face Transformers và các thư viện khác để thực hiện fine-tuning và LoRA cho LLM của bạn, và theo dõi hiệu suất của mô hình để đảm bảo rằng nó hoạt động tốt nhất có thể.</p>
+    </td>
+  </tr>
+
+  <!-- FOOTER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:20px 30px;text-align:center;border-radius:0 0 10px 10px;">
+      <p style="margin:0 0 4px;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        &#128161;&nbsp;Lu&#244;n &#273;i &#273;&#7847;u trong th&#7871; gi&#7899;i AI!&nbsp;&#183;&nbsp;Stay ahead in AI!
+      </p>
+      <p style="margin:6px 0 0;font-size:11px;color:#4A7AAB;font-family:Arial,sans-serif;">
+        Ngu&#7891;n: Google News · Groq AI
+      </p>
+    </td>
+  </tr>
+
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+
+</td></tr>
+</table>
+</body>
+</html>

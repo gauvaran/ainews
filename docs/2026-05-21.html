@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--[if mso]>
+<noscript><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings></xml></noscript>
+<![endif]-->
+<style>
+/* ── Responsive overrides for web (email HTML uses fixed 600px tables) ── */
+@media screen and (max-width:620px) {
+  table[width="600"] { width:100% !important; }
+  td { word-break:break-word; overflow-wrap:break-word; }
+  /* Reduce generous email padding on small screens */
+  td[style*="padding:28px 30px"],
+  td[style*="padding:24px 30px"],
+  td[style*="padding:22px 30px"],
+  td[style*="padding:20px 30px"],
+  td[style*="padding:16px 30px"],
+  td[style*="padding:12px 30px"] { padding-left:14px !important; padding-right:14px !important; }
+  /* Code blocks: scroll horizontally instead of breaking layout */
+  pre { overflow-x:auto !important; max-width:calc(100vw - 32px) !important; box-sizing:border-box; }
+  /* Shrink large heading text slightly */
+  h1[style*="26px"] { font-size:20px !important; }
+}
+/* ── Print: hide nav bar ── */
+@media print {
+  #web-nav { display:none !important; }
+  body { background:#fff !important; }
+}
+</style>
+</head>
+<body style="margin:0;padding:0;background-color:#EEF2F7;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+<div id="web-nav" style="background:#001a4d;padding:8px 16px;font-family:Arial,sans-serif;font-size:13px;position:sticky;top:0;z-index:999;border-bottom:2px solid #0066CC;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
+  <span id="nav-prev" style="color:#4A6A8A;">&#8592;</span>
+  <a href="all.html" style="color:#FFD700;text-decoration:none;font-weight:bold;">&#128240; T&#7845;t c&#7843; b&#7843;n tin</a>
+  <span style="color:#FFFFFF;">21/05/2026</span>
+  <span id="nav-next" style="color:#4A6A8A;">&#8594;</span>
+  <a href="2026-05-21.pdf" download="2026-05-21.pdf" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128196; T&#7843;i PDF</a>
+  <button onclick="sharePage()" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128279; Chia s&#7867;</button>
+</div>
+<script>
+function sharePage(){
+  var title='Bản tin AI BIS-MT – 21/05/2026';
+  if(navigator.share){navigator.share({title:title,url:location.href});}
+  else{navigator.clipboard.writeText(location.href).then(function(){
+    alert('Đã sao chép link!');
+  });}
+}
+(function(){
+  var m=location.pathname.match(/(\d{4}-\d{2}-\d{2})\.html/);
+  if(!m)return;
+  var slug=m[1];
+  function fmt(s){var p=s.split('-');return p[2]+'/'+p[1];}
+  var lnkStyle='color:#90C4F0;text-decoration:none;';
+  fetch('dates.json?_='+Date.now())
+    .then(function(r){return r.json();})
+    .then(function(dates){
+      var idx=dates.indexOf(slug);
+      if(idx>0){
+        var p=dates[idx-1];
+        document.getElementById('nav-prev').innerHTML=
+          '<a href="'+p+'.html" style="'+lnkStyle+'">&#8592; '+fmt(p)+'</a>';
+      }
+      if(idx>=0&&idx<dates.length-1){
+        var n=dates[idx+1];
+        document.getElementById('nav-next').innerHTML=
+          '<a href="'+n+'.html" style="'+lnkStyle+'">'+fmt(n)+' &#8594;</a>';
+      }
+    })
+    .catch(function(){});
+})();
+</script>
+
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#EEF2F7" style="background-color:#EEF2F7;">
+<tr><td align="center" style="padding:24px 12px;">
+
+<!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0"><tr><td><![endif]-->
+<table role="presentation" width="600" cellpadding="0" cellspacing="0"
+       style="max-width:600px;width:100%;background-color:#FFFFFF;border-radius:10px;" bgcolor="#FFFFFF">
+
+  <!-- HEADER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:28px 30px 22px 30px;text-align:center;border-radius:10px 10px 0 0;">
+      <p style="margin:0 0 6px;font-size:11px;color:#7EB1E8;letter-spacing:2px;font-family:Arial,sans-serif;text-transform:uppercase;">
+        BIS &#8209; MT &nbsp;&#183;&nbsp; 21/05/2026
+      </p>
+      <h1 style="margin:0;font-size:26px;font-weight:bold;color:#FFFFFF;font-family:Arial,sans-serif;line-height:1.2;">
+        &#129302; B&#7843;n Tin AI H&#7857;ng Ng&#224;y
+      </h1>
+      <p style="margin:8px 0 0;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        C&#7853;p nh&#7853;t c&#244;ng ngh&#7879; AI m&#7899;i nh&#7845;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- QUOTE -->
+  <tr>
+    <td bgcolor="#EBF4FF" style="background-color:#EBF4FF;padding:16px 30px;border-top:3px solid #0066CC;">
+      <p style="margin:0;font-size:14px;color:#1A3A5C;font-style:italic;line-height:1.6;font-family:Georgia,serif;">
+        &#10024;&nbsp;&ldquo;Good management is the art of making problems so interesting and their solutions so constructive that everyone wants to get to work and deal with them.&rdquo;
+      </p>
+      <p style="margin:6px 0 0;font-size:13px;color:#444444;line-height:1.5;">&nbsp;&nbsp;&nbsp;&#8618;&nbsp;Quản lý tốt là nghệ thuật làm cho vấn đề trở nên thú vị và giải pháp mang tính xây dựng đến mức mọi người đều muốn đối mặt và giải quyết.</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#888888;font-family:Arial,sans-serif;">&mdash;&nbsp;Paul Hawken</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#5A6A7A;font-style:italic;line-height:1.5;font-family:Arial,sans-serif;">&#128161;&nbsp;Lãnh đạo xuất sắc biến thách thức thành cơ hội học tập — khi đội nhóm thấy vấn đề là thú vị, họ sẽ tự tìm cách giải quyết.</p>
+    </td>
+  </tr>
+
+  <!-- SECTION LABEL -->
+  <tr>
+    <td bgcolor="#F5F7FA" style="background-color:#F5F7FA;padding:12px 30px;">
+      <p style="margin:0;font-size:11px;color:#999999;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128240;&nbsp;Tin t&#7913;c n&#7893;i b&#7853;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- ARTICLES -->
+  
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">1</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Bên trong giao thức Agent2Agent (A2A) của Google: Dạy các agent AI trò chuyện với nhau</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Inside Google’s Agent2Agent (A2A) Protocol: Teaching AI Agents to Talk to Each Other</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Towards Data Science</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMisgFBVV95cUxOZ2dzYk1yQzA2RTZrTkhSUUtrQ0tJNFEtSWMzQjluVVo0Wkp5VnY1aXp1cnUxZEdXajRSbkliUDlVaWdwcFNOYkxfd2o2V0pTdEJQejI2aGl1THRvLXJtN3hQUnI1TEhHM2MxTHB6bk10QU5kOHNTaWhSVUwxUjNnZGFzR3M0aVJTSTFZS2xnd05KeE1YZjlFbHNtY1h0MWRlMHFWSEo2dEpzcnFPX053WF9B?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Google đã phát triển một giao thức Agent2Agent (A2A), một hệ thống giao tiếp được thiết kế để cho phép các tác nhân AI tương tác và trao đổi thông tin với nhau. Giao thức này là một bước quan trọng hướng tới việc tạo ra các hệ thống AI tinh vi và hợp tác hơn.
+
+Giao thức A2A được xây dựng trên khuôn khổ TensorFlow hiện có của Google, cho phép các tác nhân AI giao tiếp thông qua một giao diện tiêu chuẩn hóa. Giao diện này cho phép các tác nhân chia sẻ kiến thức, phối hợp hành động và học hỏi từ kinh nghiệm của nhau. Giao thức được thiết kế để linh hoạt và có khả năng mở rộng, cho phép nó được áp dụng cho các ứng dụng AI khác nhau, từ robot đến xử lý ngôn ngữ tự nhiên.
+
+Bằng cách tạo điều kiện giao tiếp giữa các tác nhân AI, giao thức A2A có tiềm năng cách mạng hóa lĩnh vực trí tuệ nhân tạo. Nó có thể cho phép tạo ra các hệ thống phức tạp và tự chủ hơn, có khả năng giải quyết các vấn đề thực tế đòi hỏi sự hợp tác và phối hợp. Giao thức A2A của Google là một cột mốc quan trọng trong sự phát triển của AI và có thể có những ý nghĩa quan trọng đối với các ngành công nghiệp và ứng dụng khác nhau.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">2</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Bộ công cụ phát triển agent: Làm cho việc xây dựng ứng dụng đa agent trở nên dễ dàng</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Agent Development Kit: Making it easy to build multi-agent applications</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;blog.google</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxORl8tQ0VDTVZFM2pDRUs0NkFqQ1NiLTByWmM1N1hFRjNTbTJWUXcyUExlVFZBY1FkQkRKM211bnV6OTU2YXNSTHhLSUVaRldYbk9ubGpMTEF2X2RLbXUyZnRZX0lCUlVnWUctSUk3VXhhd1N1S1ZxcGRQZ1NydHhPcmN4VnEtVGYyVDhwSVdIdjg1UDBPb3h2dUVkaFRHWnM?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Google đã giới thiệu Bộ công cụ phát triển Trợ lý (ADK), một công cụ được thiết kế để đơn giản hóa việc tạo ra các ứng dụng đa trợ lý. ADK là một bộ công cụ phát triển phần mềm cho phép các nhà phát triển xây dựng các giao diện trò chuyện và tích hợp chúng với các dịch vụ và hệ thống khác nhau. Bộ công cụ này cho phép các nhà phát triển tạo ra các trợ lý có thể tương tác với người dùng, truy cập dữ liệu và thực hiện các nhiệm vụ trên các nền tảng khác nhau.
+
+ADK cung cấp một tập hợp các API và công cụ giúp việc xây dựng, thử nghiệm và triển khai các ứng dụng đa trợ lý trở nên dễ dàng hơn. Nó hỗ trợ nhiều ngôn ngữ lập trình, bao gồm Java, Python và C++. Bộ công cụ này cũng cung cấp một loạt các tính năng, chẳng hạn như xử lý ngôn ngữ tự nhiên, học máy và tích hợp với các dịch vụ Google Cloud.
+
+Với ADK, các nhà phát triển có thể tạo ra các trợ lý có thể thực hiện nhiều nhiệm vụ khác nhau, từ trả lời các truy vấn của người dùng đến tự động hóa các quy trình kinh doanh. Sự linh hoạt và khả năng mở rộng của ADK làm cho nó phù hợp với nhiều ứng dụng khác nhau, bao gồm các rô-bốt trò chuyện dịch vụ khách hàng, trợ lý ảo và nhiều hơn nữa. Bằng cách cung cấp một trải nghiệm phát triển trực quan, ADK nhằm mục đích đẩy nhanh việc tạo ra các ứng dụng đa trợ lý và đưa chúng ra thị trường nhanh hơn.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">3</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Tăng tốc phát triển với máy chủ AgentCore MCP của Amazon Bedrock | Trí tuệ nhân tạo</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Accelerate development with the Amazon Bedrock AgentCore MCP server | Artificial Intelligence</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Amazon Web Services (AWS)</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxOY0dNX2hZRGVzeUZyX01BaEdTaW9aZ3d0TVBnMThmci1LMWpGOGdJaUgzM0t2OGZsRkxrZDRJcUY5RmZOajVqeUpQQVBoOVJSTWZxNFVFOW0tbTRwMUYwNWprdklCNjZncnh6VUNNV3Y3VGVhNElSNDVZdFJqb1ppT2JUc1FhUGpBanhHY0Q0WTdJdUI0RmM5NFpBX19ocVl0aXRqMzdLbEtpakJ3NHVzQXY4bw?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Amazon Web Services (AWS) đã giới thiệu máy chủ Amazon Bedrock AgentCore MCP, được thiết kế để tăng tốc phát triển trong lĩnh vực Trí tuệ Nhân tạo (AI). Máy chủ AgentCore MCP là một thành phần chính của nền tảng Amazon Bedrock, cho phép các nhà phát triển xây dựng, đào tạo và triển khai các mô hình AI với quy mô lớn.
+
+Máy chủ AgentCore MCP là một máy chủ có khả năng mở rộng và bảo mật cao, có thể xử lý lượng dữ liệu lớn và các công việc AI phức tạp. Nó cung cấp một kiến trúc linh hoạt và mô-đun, cho phép các nhà phát triển dễ dàng tích hợp và tùy chỉnh máy chủ để đáp ứng nhu cầu cụ thể của họ.
+
+Với máy chủ AgentCore MCP, các nhà phát triển có thể tăng tốc phát triển AI của mình bằng cách tận dụng các khả năng AI tiên tiến và chuyên môn của Amazon. Máy chủ có thể được sử dụng để xây dựng và đào tạo các mô hình AI bằng cách sử dụng nhiều khuôn khổ và công cụ khác nhau, bao gồm TensorFlow và PyTorch.
+
+Bằng cách sử dụng máy chủ Amazon Bedrock AgentCore MCP, các nhà phát triển có thể tăng tốc quá trình phát triển AI, giảm chi phí và cải thiện chất lượng tổng thể của các mô hình AI của họ. Điều này có thể dẫn đến thời gian đưa sản phẩm ra thị trường nhanh hơn và khả năng cạnh tranh cao hơn trên thị trường.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">4</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Cách chúng tôi sử dụng Sourcegraph và bot Slack để phát hiện lỗ hổng và phản ứng nhanh chóng</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;How we&#x27;re using Sourcegraph and a Slack bot to detect vulnerabilities and react quickly</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Sourcegraph Blog</span>&nbsp;&nbsp;&nbsp;<a href="http://localhost:5174/blog/slack-bot-supply-chain-incident-response" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Các công ty công nghệ đang tận dụng các công cụ như Sourcegraph và bot Slack để nâng cao khả năng phát hiện và phản hồi lỗ hổng bảo mật. Một bot Slack được tích hợp để theo dõi các khuyến cáo trên GitHub, cảnh báo nhóm về các vấn đề bảo mật tiềm ẩn. Khi phát hiện ra lỗ hổng, bot sẽ kích hoạt thông báo trong kênh Slack của nhóm, yêu cầu một nhà vận hành con người xem xét tình hình.
+
+Khi nhận được cảnh báo, nhà vận hành có thể chọn chạy một đường ống toàn diện để phân tích lỗ hổng. Đường ống này bao gồm các truy vấn phát hiện, tạo bài đăng blog, bản nháp truyền thông xã hội, thậm chí là một bản demo tự động. Toàn bộ quá trình được thiết kế để diễn ra nhanh chóng, chỉ mất 35 giây để hoàn thành. Khi đường ống kết thúc, nhà vận hành sẽ xem xét nội dung được tạo để xác minh độ chính xác trước khi quyết định hành động tiếp theo. Quá trình được tối ưu hóa này cho phép nhóm phản hồi nhanh chóng với các mối đe dọa bảo mật và giảm thiểu rủi ro tiềm ẩn.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">5</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">ảo tưởng không bền vững về cửa hàng nền tảng cho doanh số kỹ thuật số</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;The Unsustainable Illusion of Platform Stores for Digital Sales</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Dev.to AI</span>&nbsp;&nbsp;&nbsp;<a href="https://dev.to/on-chain-commerce/the-unsustainable-illusion-of-platform-stores-for-digital-sales-3b15" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Một công ty công nghệ đã phát triển một sản phẩm kỹ thuật số được thúc đẩy bởi AI để tiếp cận người dùng trên toàn cầu mà không có hạn chế về địa lý. Ban đầu, họ đã sử dụng một cửa hàng nền tảng nổi tiếng để bán sản phẩm của mình, nhưng gặp phải các vấn đề như lỗi xử lý thanh toán và chính sách nội dung hạn chế. Chính sách của nền tảng buộc họ phải loại bỏ các tính năng quan trọng đối với giá trị của sản phẩm, dẫn đến một đề xuất bị pha loãng. Công ty nhận ra rằng việc phụ thuộc vào cửa hàng nền tảng của bên thứ ba là không bền vững do phí định kỳ, hạn chế về các tùy chọn thanh toán và chính sách nội dung hạn chế.
+
+Để vượt qua những thách thức này, công ty đã chuyển sang một giải pháp được xây dựng tùy chỉnh cho phép họ tổ chức và bán hàng hóa kỹ thuật số độc lập. Kiến trúc mới này sử dụng một cổng thanh toán tùy chỉnh và một Mạng phân phối nội dung (CDN) chuyên dụng, giảm thiểu độ trễ và đảm bảo trải nghiệm người dùng liền mạch trên các khu vực khác nhau. Việc chuyển đổi này đã thành công, với mức tăng 35% về doanh số toàn cầu trong sáu tháng đầu và giảm 30% độ trễ cho người dùng ở các khu vực bị hạn chế trước đây.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">6</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Anthropic cho biết họ sắp có quý đầu tiên có lợi nhuận</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Anthropic says it’s about to have its first profitable quarter</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;TechCrunch AI</span>&nbsp;&nbsp;&nbsp;<a href="https://techcrunch.com/2026/05/20/anthropic-says-its-about-to-have-its-first-profitable-quarter/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Anthropic, một công ty chuyên về công nghệ AI, đã thông báo với các nhà đầu tư rằng họ đang trên đà đạt được quý đầu tiên có lợi nhuận. Công ty dự kiến sẽ tăng doanh thu gấp đôi lên khoảng 10,9 tỷ đô la trong quý thứ hai, đánh dấu một cột mốc quan trọng trong sự phát triển của họ. Sự tăng trưởng nhanh chóng này từ quý này sang quý khác đặt Anthropic vào vị trí thuận lợi so với đối thủ chính của họ, OpenAI. Tuy nhiên, Anthropic có thể không duy trì lợi nhuận trong suốt năm do chi phí tính toán lớn mà họ sẽ phải chịu. Công ty đã trở nên phổ biến trong năm qua, được thúc đẩy bởi sự thành công của chatbot Claude và nỗ lực đa dạng hóa cơ sở khách hàng của mình. Tin tức này đến khi OpenAI được cho là đang lên kế hoạch nộp đơn cho đợt chào bán công khai ban đầu (IPO) của mình.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">7</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Công ty khởi nghiệp thép xanh Boston Metal đang tăng gấp đôi kim loại quan trọng</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Green steel startup Boston Metal is doubling down on critical metals</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;MIT Tech Review</span>&nbsp;&nbsp;&nbsp;<a href="https://www.technologyreview.com/2026/05/20/1137523/boston-metal-funding-critical-metals/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Boston Metal, một công ty khởi nghiệp thép xanh, đã đảm bảo một vòng tài trợ 75 triệu đô la để tập trung vào sản xuất các kim loại quan trọng như niobi, tantalum và niken. Công nghệ lõi của công ty, điện phân oxit nóng chảy (MOE), tách các kim loại mong muốn từ quặng bằng dòng điện. Ban đầu, Boston Metal nhằm mục đích làm sạch sản xuất thép, chiếm 8% lượng khí thải nhà kính toàn cầu. Tuy nhiên, công ty hiện đang chuyển sự tập trung của mình sang các kim loại có giá trị hơn có thể có giá cao hơn. Một chi nhánh tại Brazil đang thiết lập một cơ sở thương mại để sản xuất các kim loại quan trọng này, và nguồn tài trợ sẽ hỗ trợ hoạt động và các dự án tương lai của nó. Boston Metal đã đối mặt với vấn đề lưu chuyển tiền tệ sau một tai nạn công nghiệp tại cơ sở Brazil, nhưng nguồn tài trợ mới sẽ giúp công ty phục hồi và tiến hành kế hoạch của mình. Công ty dự kiến sẽ triển khai một nhà máy tại Mỹ để sản xuất crom, một kim loại mà nước này nhập khẩu gần như toàn bộ nguồn cung ngày nay.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">8</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">‘Giải quyết tất cả bệnh tật,’ bạn nói?</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;‘Solve all diseases,’ you say?</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;The Verge AI</span>&nbsp;&nbsp;&nbsp;<a href="https://www.theverge.com/column/935021/google-io-gemini-for-science-alphafold-alphagenome-ai-health" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Giám đốc điều hành Google DeepMind Demis Hassabis đã đưa ra một tuyên bố táo bạo tại buổi phát biểu chính của Google I/O năm nay, tuyên bố rằng công ty hy vọng &quot;tái tưởng tượng quá trình khám phá thuốc với mục tiêu một ngày nào đó giải quyết tất cả các bệnh.&quot; Tuy nhiên, tuyên bố này đã gặp phải sự hoài nghi, vì nó không phải là một lời hứa thẳng thắn về việc chữa khỏi tất cả các bệnh, mà là một mô tả về Gemini for Science, một bộ sưu tập các công cụ AI thử nghiệm được thiết kế để khuyến khích các nhà nghiên cứu khám phá và thực hiện các khám phá mới.
+
+Tuyên bố của Hassabis có thể đã bị hiểu lầm bởi công chúng nói chung, những người có thể đã giải thích nó như một bảo đảm rằng AI sẽ chữa khỏi tất cả các bệnh. Trên thực tế, AI đã là một phần không thể thiếu của nghiên cứu và khám phá y học trong nhiều thập kỷ, và vai trò của nó là để tăng tốc quá trình, không phải để giải quyết ma thuật tất cả các bệnh.
+
+Các dự án AlphaFold và AlphaGenome của Google là ví dụ về tiềm năng của AI trong nghiên cứu y học. AlphaFold giúp các nhà nghiên cứu hiểu rõ hơn về cấu trúc protein, điều này có thể dẫn đến những đột phá trong điều trị ung thư. AlphaGenome, mặt khác, dự đoán các đột biến trong các trình tự DNA của con người, điều này có thể giúp hiểu rõ hơn về các bệnh di truyền.
+
+Mặc dù AI có tiềm năng cách mạng hóa nghiên cứu y học, nhưng nó không phải là một viên đạn bạc, và vẫn còn nhiều thách thức đáng kể, bao gồm cả sự thiên vị thuật toán, quyền riêng tư dữ liệu và quyền truy cập toàn cầu công bằng.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+
+  <!-- TIPS SECTION -->
+  
+  <tr>
+    <td bgcolor="#FFFBEB" style="background-color:#FFFBEB;padding:20px 30px;border-top:3px solid #D97706;">
+      <p style="margin:0 0 12px;font-size:11px;color:#D97706;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#9889;&nbsp;Tips &amp; Tricks cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tối ưu hóa code</strong><br><strong>Vấn đề:</strong> Viết code hiệu quả và giảm thiểu lỗi.<br><strong>Cách làm:</strong> Sử dụng Claude Code với lệnh <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">claude generate</code> để tạo code, sau đó chỉnh sửa và tối ưu hóa. Ví dụ: <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">claude generate --lang python --func add_two_numbers</code>.<br><strong>Đánh giá:</strong> Hiệu quả trong việc giảm thiểu lỗi và tăng tốc phát triển.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Debug code</strong><br><strong>Vấn đề:</strong> Xác định và sửa lỗi trong code.<br><strong>Cách làm:</strong> Sử dụng Claude Code với lệnh <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">claude debug</code> để tìm kiếm và sửa lỗi. Ví dụ: <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">claude debug --file main.py --line 10</code>.<br><strong>Đánh giá:</strong> Hiệu quả trong việc tìm kiếm và sửa lỗi nhanh chóng.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Refactor code</strong><br><strong>Vấn đề:</strong> Cải thiện cấu trúc và читаемость code.<br><strong>Cách làm:</strong> Sử dụng Claude Code với lệnh <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">claude refactor</code> để cải thiện code. Ví dụ: <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">claude refactor --file main.py --func add_two_numbers</code>.<br><strong>Đánh giá:</strong> Hiệu quả trong việc cải thiện chất lượng và đọc hiểu code.</p>
+    </td>
+  </tr>
+
+  <!-- LESSON SECTION -->
+  
+  <tr>
+    <td bgcolor="#F0FFF4" style="background-color:#F0FFF4;padding:20px 30px;border-top:3px solid #2E7D32;">
+      <p style="margin:0 0 12px;font-size:11px;color:#2E7D32;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128218;&nbsp;B&#224;i h&#7885;c AI h&#244;m nay cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;">1. <strong>Tích hợp AI API vào ứng dụng</strong><br>Dev cần biết về tích hợp AI API vào ứng dụng để tận dụng khả năng của trí tuệ nhân tạo trong việc giải quyết các vấn đề phức tạp. Việc tích hợp này giúp tăng cường hiệu suất và tính tự động hóa trong ứng dụng. Điều này cũng giúp dev tập trung vào các khía cạnh khác của dự án.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;">2. Ví dụ thực tế, tích hợp AI API vào ứng dụng có thể được thực hiện thông qua các dịch vụ như Google Cloud AI Platform hoặc Microsoft Azure Cognitive Services. Ví dụ, một ứng dụng có thể sử dụng API nhận diện giọng nói để chuyển đổi giọng nói thành văn bản.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;">3. Ví dụ code snippet minh họa: <br><pre style="background:#F3F4F6;color:#1F2937;padding:10px 14px;border:1px solid #D1D5DB;border-radius:4px;font-size:12px;overflow-x:auto;margin:8px 0;font-family:Consolas,Courier New,monospace;">import requests</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;">url = &quot;https://api.example.com/ai-api&quot;<br>data = {&quot;input&quot;: &quot;Xin chào&quot;}<br>response = requests.post(url, json=data)<br>print(response.json())</pre></p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;">4. 💡 Tip hoặc bước tiếp theo: Để bắt đầu tích hợp AI API vào ứng dụng, dev nên bắt đầu bằng việc nghiên cứu các dịch vụ AI API hiện có và chọn dịch vụ phù hợp với nhu cầu của dự án. Sau đó, dev có thể bắt đầu tích hợp bằng cách sử dụng các thư viện và tài liệu cung cấp bởi nhà cung cấp dịch vụ AI API.</p>
+    </td>
+  </tr>
+
+  <!-- FOOTER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:20px 30px;text-align:center;border-radius:0 0 10px 10px;">
+      <p style="margin:0 0 4px;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        &#128161;&nbsp;Lu&#244;n &#273;i &#273;&#7847;u trong th&#7871; gi&#7899;i AI!&nbsp;&#183;&nbsp;Stay ahead in AI!
+      </p>
+      <p style="margin:6px 0 0;font-size:11px;color:#4A7AAB;font-family:Arial,sans-serif;">
+        Ngu&#7891;n: Google News · Groq AI
+      </p>
+    </td>
+  </tr>
+
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+
+</td></tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--[if mso]>
+<noscript><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings></xml></noscript>
+<![endif]-->
+<style>
+/* ── Responsive overrides for web (email HTML uses fixed 600px tables) ── */
+@media screen and (max-width:620px) {
+  table[width="600"] { width:100% !important; }
+  td { word-break:break-word; overflow-wrap:break-word; }
+  /* Reduce generous email padding on small screens */
+  td[style*="padding:28px 30px"],
+  td[style*="padding:24px 30px"],
+  td[style*="padding:22px 30px"],
+  td[style*="padding:20px 30px"],
+  td[style*="padding:16px 30px"],
+  td[style*="padding:12px 30px"] { padding-left:14px !important; padding-right:14px !important; }
+  /* Code blocks: scroll horizontally instead of breaking layout */
+  pre { overflow-x:auto !important; max-width:calc(100vw - 32px) !important; box-sizing:border-box; }
+  /* Shrink large heading text slightly */
+  h1[style*="26px"] { font-size:20px !important; }
+}
+/* ── Print: hide nav bar ── */
+@media print {
+  #web-nav { display:none !important; }
+  body { background:#fff !important; }
+}
+</style>
+</head>
+<body style="margin:0;padding:0;background-color:#EEF2F7;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+<div id="web-nav" style="background:#001a4d;padding:8px 16px;font-family:Arial,sans-serif;font-size:13px;position:sticky;top:0;z-index:999;border-bottom:2px solid #0066CC;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
+  <span id="nav-prev" style="color:#4A6A8A;">&#8592;</span>
+  <a href="all.html" style="color:#FFD700;text-decoration:none;font-weight:bold;">&#128240; T&#7845;t c&#7843; b&#7843;n tin</a>
+  <span style="color:#FFFFFF;">22/05/2026</span>
+  <span id="nav-next" style="color:#4A6A8A;">&#8594;</span>
+  <a href="2026-05-22.pdf" download="2026-05-22.pdf" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128196; T&#7843;i PDF</a>
+  <button onclick="sharePage()" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128279; Chia s&#7867;</button>
+</div>
+<script>
+function sharePage(){
+  var title='Bản tin AI BIS-MT – 22/05/2026';
+  if(navigator.share){navigator.share({title:title,url:location.href});}
+  else{navigator.clipboard.writeText(location.href).then(function(){
+    alert('Đã sao chép link!');
+  });}
+}
+(function(){
+  var m=location.pathname.match(/(\d{4}-\d{2}-\d{2})\.html/);
+  if(!m)return;
+  var slug=m[1];
+  function fmt(s){var p=s.split('-');return p[2]+'/'+p[1];}
+  var lnkStyle='color:#90C4F0;text-decoration:none;';
+  fetch('dates.json?_='+Date.now())
+    .then(function(r){return r.json();})
+    .then(function(dates){
+      var idx=dates.indexOf(slug);
+      if(idx>0){
+        var p=dates[idx-1];
+        document.getElementById('nav-prev').innerHTML=
+          '<a href="'+p+'.html" style="'+lnkStyle+'">&#8592; '+fmt(p)+'</a>';
+      }
+      if(idx>=0&&idx<dates.length-1){
+        var n=dates[idx+1];
+        document.getElementById('nav-next').innerHTML=
+          '<a href="'+n+'.html" style="'+lnkStyle+'">'+fmt(n)+' &#8594;</a>';
+      }
+    })
+    .catch(function(){});
+})();
+</script>
+
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#EEF2F7" style="background-color:#EEF2F7;">
+<tr><td align="center" style="padding:24px 12px;">
+
+<!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0"><tr><td><![endif]-->
+<table role="presentation" width="600" cellpadding="0" cellspacing="0"
+       style="max-width:600px;width:100%;background-color:#FFFFFF;border-radius:10px;" bgcolor="#FFFFFF">
+
+  <!-- HEADER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:28px 30px 22px 30px;text-align:center;border-radius:10px 10px 0 0;">
+      <p style="margin:0 0 6px;font-size:11px;color:#7EB1E8;letter-spacing:2px;font-family:Arial,sans-serif;text-transform:uppercase;">
+        BIS &#8209; MT &nbsp;&#183;&nbsp; 22/05/2026
+      </p>
+      <h1 style="margin:0;font-size:26px;font-weight:bold;color:#FFFFFF;font-family:Arial,sans-serif;line-height:1.2;">
+        &#129302; B&#7843;n Tin AI H&#7857;ng Ng&#224;y
+      </h1>
+      <p style="margin:8px 0 0;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        C&#7853;p nh&#7853;t c&#244;ng ngh&#7879; AI m&#7899;i nh&#7845;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- QUOTE -->
+  <tr>
+    <td bgcolor="#EBF4FF" style="background-color:#EBF4FF;padding:16px 30px;border-top:3px solid #0066CC;">
+      <p style="margin:0;font-size:14px;color:#1A3A5C;font-style:italic;line-height:1.6;font-family:Georgia,serif;">
+        &#10024;&nbsp;&ldquo;Take care of your body. It&#x27;s the only place you have to live.&rdquo;
+      </p>
+      <p style="margin:6px 0 0;font-size:13px;color:#444444;line-height:1.5;">&nbsp;&nbsp;&nbsp;&#8618;&nbsp;Hãy chăm sóc cơ thể bạn. Đó là nơi duy nhất bạn phải sống.</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#888888;font-family:Arial,sans-serif;">&mdash;&nbsp;Jim Rohn</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#5A6A7A;font-style:italic;line-height:1.5;font-family:Arial,sans-serif;">&#128161;&nbsp;Sức khỏe là nền tảng của mọi thành công — không có cơ thể và tinh thần khỏe mạnh, mọi tài sản và thành tích đều mất đi giá trị.</p>
+    </td>
+  </tr>
+
+  <!-- SECTION LABEL -->
+  <tr>
+    <td bgcolor="#F5F7FA" style="background-color:#F5F7FA;padding:12px 30px;">
+      <p style="margin:0;font-size:11px;color:#999999;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128240;&nbsp;Tin t&#7913;c n&#7893;i b&#7853;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- ARTICLES -->
+  
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">1</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Lớp lệnh AI nhà kho đa tác nhân cho phép đạt được xuất sắc về hoạt động và thông minh chuỗi cung ứng</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Multi-Agent Warehouse AI Command Layer Enables Operational Excellence and Supply Chain Intelligence</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;NVIDIA Developer</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMizwFBVV95cUxON2JaLWpmNDU2T3UwSG4yeUQ0eVVMNnowemV4OWFtaDlyX05KT3lNV1VhVGtCZjc2LTBjZjBOU3B5R1poaU1oZS1pcXlpczZORi04Y3QteE5nMmlISi1yWXdCcE05QUpwZFZyR2cyam96WVc5WVVBTHE2TlVBalVkOTdnVFNqRmFYQWhhSTFiRktyVFh0d3dERTFDSlktZHRvVGc1MFgxS290RTVUMHRTNWs5NlllT2h2Ym5MTnF0ajIwQ1hfYmJpTV8wQUtRbXM?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">NVIDIA đã giới thiệu Lớp lệnh AI Nhà kho Đa tác nhân, một công nghệ tiên tiến được thiết kế để tối ưu hóa hoạt động nhà kho và nâng cao trí tuệ chuỗi cung ứng. Giải pháp sáng tạo này sử dụng trí tuệ nhân tạo (AI) để tự động hóa quản lý nhà kho, cải thiện hiệu quả và giảm chi phí.
+
+Lớp lệnh AI Nhà kho Đa tác nhân là một trung tâm điều khiển tích hợp nhiều tác nhân AI để phân tích và tối ưu hóa các chức năng nhà kho khác nhau, bao gồm quản lý hàng tồn kho, thực hiện đơn hàng và hậu cần. Bằng cách tận dụng AI và các thuật toán học máy, hệ thống có thể dự đoán và ngăn chặn các nút thắt, tối ưu hóa phân bổ tài nguyên và cải thiện hiệu quả hoạt động tổng thể.
+
+Lợi ích chính của Lớp lệnh AI Nhà kho Đa tác nhân bao gồm khả năng hiển thị chuỗi cung ứng được cải thiện, độ chính xác hàng tồn kho được cải thiện và tốc độ thực hiện đơn hàng tăng. Công nghệ này cũng cho phép giám sát và phân tích hoạt động nhà kho theo thời gian thực, cho phép các doanh nghiệp đưa ra quyết định dựa trên dữ liệu và dẫn đầu trong cạnh tranh. Bằng cách tận dụng sức mạnh của AI, Lớp lệnh AI Nhà kho Đa tác nhân có khả năng cách mạng hóa cách thức hoạt động của các nhà kho và quản lý chuỗi cung ứng.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">2</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Nhà máy tác nhân: Kết nối các tác nhân, ứng dụng và dữ liệu với các tiêu chuẩn mở mới như MCP và A2A</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Agent Factory: Connecting agents, apps, and data with new open standards like MCP and A2A</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Microsoft Azure</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMixAFBVV95cUxOekoxbVV4Vml2ZG5yVGVhRWl1cVFLM1ZrYUVNbWdFTnI1bV9CTmVFZ3FJNTRCeTctZ3ctTUtVOW9YbFBqVWZPTGpfQnk0WWt4T09OdG00X25yZVV3TE1XbGpJckdHWVBNV2l1bDdKbEZXb1dmc1RjR1JENWNkMVF6WHVrdlZDMThhVDN5WFFiQ01YakVlWUZDR0gtS0NTZGxrOGFUMzN4ZWlNZzF1WlFPMnMwT3BDcUd6TjJDSWJXMkpkMEh5?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Microsoft đã giới thiệu Agent Factory, một sáng kiến mới nhằm kết nối các tác nhân, ứng dụng và dữ liệu thông qua các tiêu chuẩn mở. Dự án này sử dụng Nền tảng Điện toán Đám mây (MCP) và giao thức Ứng dụng-sang-Ứng dụng (A2A) của Microsoft để tạo điều kiện cho sự tương tác liền mạch giữa các thực thể khác nhau.
+
+Agent Factory cho phép các nhà phát triển tạo và tích hợp các tác nhân thông minh có thể giao tiếp với các ứng dụng và nguồn dữ liệu khác nhau. Sự tích hợp này cho phép tạo ra các hệ thống phức tạp và tự động hơn có thể thực hiện các nhiệm vụ phức tạp. Bằng cách tận dụng MCP và các tiêu chuẩn A2A, các nhà phát triển có thể xây dựng các giải pháp có thể mở rộng và bảo mật có thể được tích hợp dễ dàng với các hệ thống hiện có.
+
+Việc sử dụng các tiêu chuẩn mở trong Agent Factory thúc đẩy khả năng tương tác và linh hoạt, giúp các nhà phát triển dễ dàng xây dựng và triển khai các ứng dụng có thể tương tác với một loạt các tác nhân, ứng dụng và nguồn dữ liệu. Sáng kiến này có tiềm năng thúc đẩy đổi mới và tiến bộ trong các ngành công nghiệp khác nhau, từ chăm sóc sức khỏe đến tài chính, bằng cách cho phép tạo ra các hệ thống thông minh và kết nối hơn, sử dụng AI, API, LLM, model, token, và framework.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">3</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Giới thiệu Đặc tả Tác nhân Mở (Agent Spec): Một Biểu diễn Thống nhất cho các Tác nhân AI</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Introducing the Open Agent Specification (Agent Spec): A Unified Representation for AI Agents</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Oracle Blogs</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMihwFBVV95cUxNQVNvdUZTTVhSdmNqbFhDR3VTVkdFbmpuWTlyeVY5aElhVnc3R1JrcG5yb0NGYW1DNjlFanBaR0l3NkY0QVRQTVB5RTlDSnFabDVZcENETTBNYW1ORVlKWG5SNEpvaXdDdGZlekh0ZWtFeTc4N1lidmdRN05XOUhJTUtoVEZQWXM?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Oracle đã giới thiệu Open Agent Specification (Agent Spec), một biểu diễn thống nhất cho các tác nhân AI. Agent Spec nhằm tiêu chuẩn hóa cách thiết kế, phát triển và tích hợp các tác nhân AI vào các hệ thống khác nhau. Thông số kỹ thuật này cung cấp một khuôn khổ chung để mô tả hành vi, khả năng và tương tác của các tác nhân AI, cho phép giao tiếp và cộng tác liền mạch trên các nền tảng và ứng dụng khác nhau.
+
+Agent Spec được thiết kế để mở và có thể mở rộng, cho phép các nhà phát triển tạo ra các tác nhân tùy chỉnh có thể dễ dàng tích hợp với các hệ thống khác. Nó cung cấp một tập hợp các giao diện và định dạng dữ liệu tiêu chuẩn hóa cho giao tiếp của tác nhân, giúp xây dựng và triển khai các ứng dụng được hỗ trợ bởi AI dễ dàng hơn. Bằng cách áp dụng Agent Spec, các nhà phát triển có thể tạo ra các hệ thống AI có khả năng tương tác và mở rộng hơn, giảm thiểu sự phức tạp và phân mảnh liên quan đến phát triển AI hiện tại.
+
+Agent Spec là một sáng kiến mã nguồn mở, và Oracle đã làm cho thông số kỹ thuật này có sẵn cho việc xem xét và phản hồi của công chúng. Mục tiêu là tạo ra một tiêu chuẩn được áp dụng rộng rãi cho biểu diễn tác nhân AI, thúc đẩy đổi mới và áp dụng trong hệ sinh thái AI.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">4</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Ngoài động cơ: 10 dự án mã nguồn mở định hình cách trò chơi thực sự được tạo ra</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Beyond the engine: 10 open source projects shaping how games actually get made</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;GitHub Blog</span>&nbsp;&nbsp;&nbsp;<a href="https://github.blog/open-source/gaming/beyond-the-engine-10-open-source-projects-shaping-how-games-actually-get-made/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">GitHub, một nền tảng hàng đầu cho các nhà phát triển, đang nhấn mạnh tầm quan trọng của các dự án mã nguồn mở trong phát triển trò chơi. Mặc dù các công cụ game cung cấp nền tảng để tạo ra các trò chơi, nhưng có nhiều công cụ và quy trình làm việc tồn tại bên ngoài công cụ. Điều này bao gồm các đường ống tài sản, trình chỉnh sửa cấp độ, công cụ âm thanh và nhiều hơn nữa. Để giải quyết các điểm đau phổ biến trong phát triển trò chơi, GitHub đã xác định 10 dự án mã nguồn mở có thể giúp các nhà phát triển trò chơi với các nhiệm vụ như tạo nghệ thuật, hoạt hình, cấp độ, âm thanh và đối thoại. Những dự án này có thể được tích hợp vào bất kỳ công cụ trò chơi nào, bao gồm Godot, Unity, Unreal, MonoGame và các công cụ tùy chỉnh.
+
+10 dự án mã nguồn mở được đề cập bao gồm Blockbench, một trình chỉnh sửa mô hình 3D cho các mô hình poly thấp với kết cấu nghệ thuật pixel, và các công cụ khác cho gỡ lỗi, tạo UI, và quản lý tài sản. Những dự án này được tạo ra để giải quyết các điểm đau cụ thể trong phát triển trò chơi và có thể được sử dụng để cải thiện năng suất và hợp tác giữa các nhà phát triển. Bằng cách tận dụng các công cụ mã nguồn mở, các nhà phát triển trò chơi có thể tối ưu hóa quy trình làm việc của mình và tập trung vào việc tạo ra các trò chơi chất lượng cao. Việc sử dụng các dự án mã nguồn mở cũng có thể giúp giải quyết các thách thức trong DevSecOps và cải thiện trải nghiệm tổng thể của nhà phát triển.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">5</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">AiFinPay: Thanh toán tự động cho ruvnet/ruflo</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;AiFinPay: Autonomous Payments for ruvnet/ruflo</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Dev.to AI</span>&nbsp;&nbsp;&nbsp;<a href="https://dev.to/aa_aa_f7d9c2454af1f05d828/aifinpay-autonomous-payments-for-ruvnetruflo-4jj8" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">AiFinPay, một SDK thanh toán một dòng, đã được tích hợp với ruvnet/ruflo, một nền tảng điều phối đại lý, để cho phép thanh toán không gián đoạn cho các đại lý AI. Sự hợp tác này nhằm mục đích cách mạng hóa cách các đại lý AI tương tác và giao dịch, mở ra những khả năng mới cho các quy trình tự động và hệ thống AI đối thoại. Sự tích hợp của AiFinPay cho phép thanh toán đại lý AI được tối ưu hóa,赋 quyền cho tương lai của sự đổi mới được thúc đẩy bởi AI. Sự hợp tác giữa AiFinPay và ruvnet/ruflo dự kiến sẽ mang lại những tiến bộ đáng kể trong lĩnh vực AI và thanh toán tự động.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">6</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Giới thiệu Gia đình Tác nhân Ettin Reranker</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Introducing the Ettin Reranker Family</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Hugging Face Blog</span>&nbsp;&nbsp;&nbsp;<a href="https://huggingface.co/blog/ettin-reranker" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Các nhà nghiên cứu đã giới thiệu gia đình Ettin Reranker, một tập hợp gồm sáu mô hình Sentence Transformers CrossEncoder reranker hiện đại. Những mô hình này được xây dựng trên nền tảng các bộ mã hóa ModernBERT của Ettin và được thiết kế để cải thiện độ chính xác của các nhiệm vụ xếp hạng văn bản. Các mô hình reranker này được đào tạo bằng cách sử dụng công thức chưng cất và có thể được kết hợp với các mô hình embedder khác để đạt được hiệu suất tối ưu. Các mô hình này có sẵn để tải xuống, cùng với dữ liệu và công thức đào tạo được sử dụng để tạo ra chúng.
+
+Gia đình Ettin Reranker bao gồm sáu mô hình với các kích cỡ khác nhau, mỗi mô hình có điểm mạnh và điểm yếu riêng. Các mô hình này có thể được sử dụng cho một loạt các nhiệm vụ, bao gồm xếp hạng văn bản và thu hồi. Chúng được thiết kế để sử dụng kết hợp với các mô hình khác, chẳng hạn như mô hình nhúng, để cải thiện độ chính xác tổng thể của hệ thống.
+
+Các nhà nghiên cứu cũng đã cung cấp một hướng dẫn chi tiết về cách sử dụng các mô hình, bao gồm hướng dẫn về cách cài đặt và đào tạo chúng. Các mô hình này tương thích với nhiều framework khác nhau và có thể được sử dụng với chỉ một vài dòng mã. Các nhà nghiên cứu cũng đã cung cấp một ví dụ hoàn chỉnh về cách sử dụng các mô hình trong một ứng dụng thực tế.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">7</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Tác nhân Datasette</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Datasette Agent</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Simon Willison</span>&nbsp;&nbsp;&nbsp;<a href="https://simonwillison.net/2026/May/21/datasette-agent/#atom-everything" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Đại lý Datasette, một trợ lý AI mới cho Datasette, đã được phát hành. Interface trò chuyện này cho phép người dùng đặt câu hỏi về dữ liệu của họ được lưu trữ trong Datasette, với tùy chọn tạo biểu đồ bằng plugin datasette-agent-charts. Thông báo bao gồm một video demo giới thiệu khả năng của đại lý chống lại các cơ sở dữ liệu ví dụ. Datasette Agent được xây dựng trên một thư viện Python cho các mô hình ngôn ngữ lớn (LLM) và có thể mở rộng bằng plugin. Tác giả đã sử dụng thành công Claude Code và OpenAI Codex để viết plugin và đang khám phá việc sử dụng các mô hình cục bộ. Việc phát hành Datasette Agent cũng đã thông báo cho việc phát triển refactor LLM 0.32a0 chính và đã truyền cảm hứng cho việc tạo ra một trợ lý AI cá nhân, Claw. Dự án này mở cho phản hồi và hợp tác, với kênh Discord có sẵn để thảo luận. Datasette Agent sẽ được triển khai cho người dùng Datasette Cloud trong tương lai.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">8</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Các cuộc thảo luận tròn: Liệu AI có thể học để hiểu Thế giới?</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Roundtables: Can AI Learn to Understand the World?</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;MIT Tech Review</span>&nbsp;&nbsp;&nbsp;<a href="https://www.technologyreview.com/2026/05/21/1137756/roundtables-can-ai-learn-to-understand-the-world/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Một cuộc thảo luận gần đây giữa các chuyên gia AI tại MIT Technology Review đã khám phá khả năng trí tuệ nhân tạo (AI) hiểu thế giới vật lý. Cuộc trò chuyện, do Biên tập viên trưởng Mat Honan, Biên tập viên cao cấp Will Douglas Heaven và Báo cáo viên AI Grace Huckins dẫn dắt, đã đi sâu vào những hạn chế của các Large Language Models (LLMs) hiện tại và tiềm năng của các model thế giới để vượt qua những hạn chế này. Cuộc thảo luận đã nhấn mạnh sự phát triển nhanh chóng của AI, như được lưu ý trong Chỉ số AI năm 2026 của Stanford, cho thấy AI đang tiến bộ với tốc độ chưa từng có. Cuộc trò chuyện cũng đề cập đến những ý nghĩa của những phát triển này và nhu cầu của các hệ thống AI phải hiểu tốt hơn thế giới bên ngoài.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+
+  <!-- TIPS SECTION -->
+  
+  <tr>
+    <td bgcolor="#FFFBEB" style="background-color:#FFFBEB;padding:20px 30px;border-top:3px solid #D97706;">
+      <p style="margin:0 0 12px;font-size:11px;color:#D97706;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#9889;&nbsp;Tips &amp; Tricks cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Kết nối File System</strong><br><strong>Vấn đề:</strong> Cần truy cập file cục bộ trong ứng dụng AI.<br><strong>Cách làm:</strong> Sử dụng MCP để kết nối với file system, cho phép đọc và ghi file. Ví dụ: <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;"> Claude Desktop</code> có thể truy cập file hệ thống thông qua MCP.<br><strong>Đánh giá:</strong> Hiệu quả cao, nên dùng khi cần tương tác với file cục bộ.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tích hợp Git</strong><br><strong>Vấn đề:</strong> Cần tự động hóa quá trình commit và push code.<br><strong>Cách làm:</strong> Sử dụng MCP để kết nối với Git, cho phép tự động hóa commit và push code. Ví dụ: <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;"> Claude Code</code> có thể commit và push code thông qua MCP.<br><strong>Đánh giá:</strong> Tiết kiệm thời gian, nên dùng khi cần tự động hóa quản lý code.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Truy cập Database</strong><br><strong>Vấn đề:</strong> Cần truy cập và quản lý dữ liệu trong database.<br><strong>Cách làm:</strong> Sử dụng MCP để kết nối với database, cho phép đọc và ghi dữ liệu. Ví dụ: <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">Cursor</code> có thể truy cập database thông qua MCP.<br><strong>Đánh giá:</strong> Hiệu quả cao, nên dùng khi cần tương tác với dữ liệu trong database.</p>
+    </td>
+  </tr>
+
+  <!-- LESSON SECTION -->
+  
+  <tr>
+    <td bgcolor="#F0FFF4" style="background-color:#F0FFF4;padding:20px 30px;border-top:3px solid #2E7D32;">
+      <p style="margin:0 0 12px;font-size:11px;color:#2E7D32;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128218;&nbsp;B&#224;i h&#7885;c AI h&#244;m nay cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;">1. <strong>Tối ưu chi phí &amp; hiệu năng LLM</strong><br>2. Để xây dựng ứng dụng AI hiệu quả, các developer cần biết cách tối ưu hóa chi phí và hiệu năng của mô hình ngôn ngữ lớn (LLM). Việc này giúp giảm thiểu chi phí tính toán và tăng tốc độ xử lý dữ liệu. Điều này đặc biệt quan trọng khi triển khai ứng dụng trên các thiết bị di động hoặc trên các môi trường có tài nguyên hạn chế.<br>3. Ví dụ, việc sử dụng kỹ thuật fine-tuning và LoRA (Low-Rank Adaptation) có thể giúp giảm kích thước mô hình và tăng tốc độ xử lý. Ngoài ra, việc sử dụng các mô hình LLM cục bộ (local LLM) hoặc trí tuệ nhân tạo trên biên (edge AI) cũng có thể giúp giảm thiểu chi phí và tăng tốc độ xử lý.<br>4. 💡 Tip hoặc bước tiếp theo: Hãy thử nghiệm với các kỹ thuật tối ưu hóa khác nhau để tìm ra giải pháp phù hợp cho ứng dụng của bạn, chẳng hạn như sử dụng các mô hình LLM nhỏ hơn hoặc tối ưu hóa mã nguồn để giảm thiểu chi phí tính toán.</p>
+    </td>
+  </tr>
+
+  <!-- FOOTER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:20px 30px;text-align:center;border-radius:0 0 10px 10px;">
+      <p style="margin:0 0 4px;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        &#128161;&nbsp;Lu&#244;n &#273;i &#273;&#7847;u trong th&#7871; gi&#7899;i AI!&nbsp;&#183;&nbsp;Stay ahead in AI!
+      </p>
+      <p style="margin:6px 0 0;font-size:11px;color:#4A7AAB;font-family:Arial,sans-serif;">
+        Ngu&#7891;n: Google News · Groq AI
+      </p>
+    </td>
+  </tr>
+
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+
+</td></tr>
+</table>
+</body>
+</html>

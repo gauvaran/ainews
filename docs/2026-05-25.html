@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--[if mso]>
+<noscript><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings></xml></noscript>
+<![endif]-->
+<style>
+/* ── Responsive overrides for web (email HTML uses fixed 600px tables) ── */
+@media screen and (max-width:620px) {
+  table[width="600"] { width:100% !important; }
+  td { word-break:break-word; overflow-wrap:break-word; }
+  /* Reduce generous email padding on small screens */
+  td[style*="padding:28px 30px"],
+  td[style*="padding:24px 30px"],
+  td[style*="padding:22px 30px"],
+  td[style*="padding:20px 30px"],
+  td[style*="padding:16px 30px"],
+  td[style*="padding:12px 30px"] { padding-left:14px !important; padding-right:14px !important; }
+  /* Code blocks: scroll horizontally instead of breaking layout */
+  pre { overflow-x:auto !important; max-width:calc(100vw - 32px) !important; box-sizing:border-box; }
+  /* Shrink large heading text slightly */
+  h1[style*="26px"] { font-size:20px !important; }
+}
+/* ── Print: hide nav bar ── */
+@media print {
+  #web-nav { display:none !important; }
+  body { background:#fff !important; }
+}
+</style>
+</head>
+<body style="margin:0;padding:0;background-color:#EEF2F7;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+<div id="web-nav" style="background:#001a4d;padding:8px 16px;font-family:Arial,sans-serif;font-size:13px;position:sticky;top:0;z-index:999;border-bottom:2px solid #0066CC;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
+  <span id="nav-prev" style="color:#4A6A8A;">&#8592;</span>
+  <a href="all.html" style="color:#FFD700;text-decoration:none;font-weight:bold;">&#128240; T&#7845;t c&#7843; b&#7843;n tin</a>
+  <span style="color:#FFFFFF;">25/05/2026</span>
+  <span id="nav-next" style="color:#4A6A8A;">&#8594;</span>
+  <a href="2026-05-25.pdf" download="2026-05-25.pdf" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128196; T&#7843;i PDF</a>
+  <button onclick="sharePage()" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128279; Chia s&#7867;</button>
+</div>
+<script>
+function sharePage(){
+  var title='Bản tin AI BIS-MT – 25/05/2026';
+  if(navigator.share){navigator.share({title:title,url:location.href});}
+  else{navigator.clipboard.writeText(location.href).then(function(){
+    alert('Đã sao chép link!');
+  });}
+}
+(function(){
+  var m=location.pathname.match(/(\d{4}-\d{2}-\d{2})\.html/);
+  if(!m)return;
+  var slug=m[1];
+  function fmt(s){var p=s.split('-');return p[2]+'/'+p[1];}
+  var lnkStyle='color:#90C4F0;text-decoration:none;';
+  fetch('dates.json?_='+Date.now())
+    .then(function(r){return r.json();})
+    .then(function(dates){
+      var idx=dates.indexOf(slug);
+      if(idx>0){
+        var p=dates[idx-1];
+        document.getElementById('nav-prev').innerHTML=
+          '<a href="'+p+'.html" style="'+lnkStyle+'">&#8592; '+fmt(p)+'</a>';
+      }
+      if(idx>=0&&idx<dates.length-1){
+        var n=dates[idx+1];
+        document.getElementById('nav-next').innerHTML=
+          '<a href="'+n+'.html" style="'+lnkStyle+'">'+fmt(n)+' &#8594;</a>';
+      }
+    })
+    .catch(function(){});
+})();
+</script>
+
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#EEF2F7" style="background-color:#EEF2F7;">
+<tr><td align="center" style="padding:24px 12px;">
+
+<!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0"><tr><td><![endif]-->
+<table role="presentation" width="600" cellpadding="0" cellspacing="0"
+       style="max-width:600px;width:100%;background-color:#FFFFFF;border-radius:10px;" bgcolor="#FFFFFF">
+
+  <!-- HEADER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:28px 30px 22px 30px;text-align:center;border-radius:10px 10px 0 0;">
+      <p style="margin:0 0 6px;font-size:11px;color:#7EB1E8;letter-spacing:2px;font-family:Arial,sans-serif;text-transform:uppercase;">
+        BIS &#8209; MT &nbsp;&#183;&nbsp; 25/05/2026
+      </p>
+      <h1 style="margin:0;font-size:26px;font-weight:bold;color:#FFFFFF;font-family:Arial,sans-serif;line-height:1.2;">
+        &#129302; B&#7843;n Tin AI H&#7857;ng Ng&#224;y
+      </h1>
+      <p style="margin:8px 0 0;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        C&#7853;p nh&#7853;t c&#244;ng ngh&#7879; AI m&#7899;i nh&#7845;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- QUOTE -->
+  <tr>
+    <td bgcolor="#EBF4FF" style="background-color:#EBF4FF;padding:16px 30px;border-top:3px solid #0066CC;">
+      <p style="margin:0;font-size:14px;color:#1A3A5C;font-style:italic;line-height:1.6;font-family:Georgia,serif;">
+        &#10024;&nbsp;&ldquo;Your present circumstances don&#x27;t determine where you can go; they merely determine where you start.&rdquo;
+      </p>
+      <p style="margin:6px 0 0;font-size:13px;color:#444444;line-height:1.5;">&nbsp;&nbsp;&nbsp;&#8618;&nbsp;Hoàn cảnh hiện tại không quyết định bạn có thể đi đến đâu; nó chỉ xác định điểm xuất phát của bạn.</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#888888;font-family:Arial,sans-serif;">&mdash;&nbsp;Nido Qubein</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#5A6A7A;font-style:italic;line-height:1.5;font-family:Arial,sans-serif;">&#128161;&nbsp;Xuất phát điểm không quan trọng bằng hướng đi và nỗ lực — nhiều người thành công đã bắt đầu từ hoàn cảnh rất khó khăn.</p>
+    </td>
+  </tr>
+
+  <!-- SECTION LABEL -->
+  <tr>
+    <td bgcolor="#F5F7FA" style="background-color:#F5F7FA;padding:12px 30px;">
+      <p style="margin:0;font-size:11px;color:#999999;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128240;&nbsp;Tin t&#7913;c n&#7893;i b&#7853;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- ARTICLES -->
+  
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">1</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Bên trong giao thức Agent2Agent (A2A) của Google: Dạy các agent AI trò chuyện với nhau</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Inside Google’s Agent2Agent (A2A) Protocol: Teaching AI Agents to Talk to Each Other</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Towards Data Science</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMisgFBVV95cUxOZ2dzYk1yQzA2RTZrTkhSUUtrQ0tJNFEtSWMzQjluVVo0Wkp5VnY1aXp1cnUxZEdXajRSbkliUDlVaWdwcFNOYkxfd2o2V0pTdEJQejI2aGl1THRvLXJtN3hQUnI1TEhHM2MxTHB6bk10QU5kOHNTaWhSVUwxUjNnZGFzR3M0aVJTSTFZS2xnd05KeE1YZjlFbHNtY1h0MWRlMHFWSEo2dEpzcnFPX053WF9B?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Google đã phát triển một giao thức nội bộ gọi là Agent2Agent (A2A), cho phép các tác nhân trí tuệ nhân tạo (AI) giao tiếp với nhau một cách liền mạch. Giao thức A2A được thiết kế để tạo điều kiện cho cuộc trò chuyện giữa các tác nhân AI, cho phép họ chia sẻ thông tin và phối hợp hành động hiệu quả hơn.
+
+Giao thức này được xây dựng trên một đồ thị tri thức, đóng vai trò là một khuôn khổ hiểu biết chung cho các tác nhân AI. Cơ sở tri thức chung này cho phép các tác nhân hiểu được ngữ cảnh và ý định của nhau, làm cho các tương tác của họ trở nên hiệu quả và chính xác hơn.
+
+A2A là một thành phần quan trọng trong các nỗ lực nghiên cứu AI rộng lớn hơn của Google, đặc biệt là trong các lĩnh vực như xử lý ngôn ngữ tự nhiên và hệ thống đa tác nhân. Bằng cách dạy các tác nhân AI giao tiếp với nhau, Google nhằm tạo ra các hệ thống tinh vi và tự chủ hơn có thể giải quyết các nhiệm vụ và vấn đề phức tạp.
+
+Giao thức A2A có ý nghĩa quan trọng đối với nhiều ứng dụng, bao gồm cả rô-bốt trò chuyện dịch vụ khách hàng, trợ lý ảo và phương tiện tự hành. Bằng cách cho phép các tác nhân AI làm việc cùng nhau một cách liền mạch, Google đang đẩy ranh giới của nghiên cứu và phát triển AI.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">2</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Bộ công cụ phát triển agent: Làm cho việc xây dựng ứng dụng đa agent trở nên dễ dàng</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Agent Development Kit: Making it easy to build multi-agent applications</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;blog.google</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxORl8tQ0VDTVZFM2pDRUs0NkFqQ1NiLTByWmM1N1hFRjNTbTJWUXcyUExlVFZBY1FkQkRKM211bnV6OTU2YXNSTHhLSUVaRldYbk9ubGpMTEF2X2RLbXUyZnRZX0lCUlVnWUctSUk3VXhhd1N1S1ZxcGRQZ1NydHhPcmN4VnEtVGYyVDhwSVdIdjg1UDBPb3h2dUVkaFRHWnM?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Google đã giới thiệu Bộ công cụ phát triển Trợ lý (ADK), một công cụ được thiết kế để đơn giản hóa việc tạo ra các ứng dụng đa trợ lý. ADK cho phép các nhà phát triển xây dựng và quản lý nhiều trợ lý, là các chương trình phần mềm có thể thực hiện các nhiệm vụ cụ thể và tương tác với nhau.
+
+Với ADK, các nhà phát triển có thể tạo ra các trợ lý có thể được sử dụng trên nhiều nền tảng khác nhau, bao gồm Trợ lý Google và các dịch vụ của bên thứ ba khác. Bộ công cụ này cung cấp một tập hợp các API và công cụ cho phép các nhà phát triển xây dựng, thử nghiệm và triển khai các trợ lý một cách nhanh chóng và hiệu quả.
+
+ADK cũng hỗ trợ việc sử dụng khả năng xử lý ngôn ngữ tự nhiên (NLP) và học máy (ML), cho phép các trợ lý hiểu và phản hồi đầu vào của người dùng một cách trực quan và cá nhân hóa hơn. Bằng cách cung cấp một khuôn khổ tiêu chuẩn cho việc xây dựng các ứng dụng đa trợ lý, ADK nhằm mục đích giúp các nhà phát triển tạo ra những trải nghiệm phức tạp và tinh vi hơn có thể được sử dụng trong nhiều ngữ cảnh khác nhau, bao gồm cả việc tích hợp với AI, API, LLM và các model khác, cũng như token và framework để hỗ trợ cho quá trình phát triển.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">3</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Tăng tốc phát triển với máy chủ AgentCore MCP của Amazon Bedrock | Trí tuệ nhân tạo</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Accelerate development with the Amazon Bedrock AgentCore MCP server | Artificial Intelligence</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Amazon Web Services (AWS)</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxOY0dNX2hZRGVzeUZyX01BaEdTaW9aZ3d0TVBnMThmci1LMWpGOGdJaUgzM0t2OGZsRkxrZDRJcUY5RmZOajVqeUpQQVBoOVJSTWZxNFVFOW0tbTRwMUYwNWprdklCNjZncnh6VUNNV3Y3VGVhNElSNDVZdFJqb1ppT2JUc1FhUGpBanhHY0Q0WTdJdUI0RmM5NFpBX19ocVl0aXRqMzdLbEtpakJ3NHVzQXY4bw?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Amazon Web Services (AWS) đã giới thiệu máy chủ Amazon Bedrock AgentCore MCP, được thiết kế để tăng tốc phát triển trong lĩnh vực Trí tuệ Nhân tạo (AI). Máy chủ AgentCore MCP là một thành phần chính của nền tảng Amazon Bedrock, cho phép các tổ chức xây dựng, đào tạo và triển khai các model AI với quy mô lớn.
+
+Máy chủ AgentCore MCP là một máy chủ hiệu suất cao cung cấp môi trường phát triển AI có khả năng mở rộng và bảo mật. Nó được tối ưu hóa cho các công việc Machine Learning (ML) và hỗ trợ nhiều framework và công cụ AI khác nhau. Với máy chủ AgentCore MCP, các nhà phát triển có thể tăng tốc phát triển model AI, giảm thời gian đào tạo và cải thiện độ chính xác của model.
+
+Máy chủ Amazon Bedrock AgentCore MCP được tích hợp với các dịch vụ AWS khác, chẳng hạn như SageMaker và Lake Formation, để cung cấp một nền tảng phát triển AI toàn diện. Sự tích hợp này cho phép các nhà phát triển truy cập vào nhiều công cụ và dịch vụ AI khác nhau, giúp dễ dàng xây dựng và triển khai các model AI. Bằng cách tận dụng máy chủ Amazon Bedrock AgentCore MCP, các tổ chức có thể tăng tốc phát triển và triển khai AI, thúc đẩy đổi mới và tăng trưởng kinh doanh.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">4</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Một nhóm tin tặc đang đầu độc mã nguồn mở với quy mô chưa từng có</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;A hacker group is poisoning open source code at an unprecedented scale</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Ars Technica</span>&nbsp;&nbsp;&nbsp;<a href="https://arstechnica.com/information-technology/2026/05/a-hacker-group-is-poisoning-open-source-code-at-an-unprecedented-scale/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Một nhóm hacker nổi tiếng có tên TeamPCP đã thực hiện một loạt các cuộc tấn công chuỗi cung ứng phần mềm với quy mô chưa từng có. Nhóm này đã làm hỏng hàng trăm công cụ mã nguồn mở, tống tiền các nạn nhân để kiếm lợi và gieo rắc sự mất lòng tin trong hệ sinh thái phần mềm. Nạn nhân mới nhất là GitHub, một nền tảng thuộc sở hữu của Microsoft, nơi các hacker đã truy cập vào khoảng 4.000 kho mã sau khi một nhà phát triển cài đặt một tiện ích mở rộng &quot;độc hại&quot; cho trình soạn thảo mã VSCode. TeamPCP đã tuyên bố đã truy cập và quảng cáo mã nguồn và tổ chức nội bộ của GitHub để bán trên một diễn đàn tội phạm mạng. Theo công ty an ninh mạng Socket, TeamPCP đã thực hiện 20 &quot;làn sóng&quot; tấn công chuỗi cung ứng trong vài tháng qua, che giấu malware trong hơn 500 phần mềm riêng biệt. Điều này đã cho phép nhóm này xâm phạm hàng trăm công ty và trở thành cuộc tấn công chuỗi cung ứng phần mềm dài nhất từ trước đến nay. Các chiến thuật của nhóm này bao gồm việc truy cập vào một mạng nơi một công cụ mã nguồn mở đang được phát triển, cài đặt malware và đánh cắp thông tin đăng nhập để xuất bản các phiên bản độc hại của các công cụ. TeamPCP cũng đã tự động hóa các cuộc tấn công của mình bằng một loại giun tự lan truyền có tên là Mini Shai-Hulud.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">5</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">GitHub được công nhận là Nhà lãnh đạo trong Quadrant Magic của Gartner về các agent mã hóa AI doanh nghiệp lần thứ ba liên tiếp</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;GitHub recognized as a Leader in the Gartner® Magic Quadrant™ for Enterprise AI Coding Agents for the third year in a row</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;GitHub Blog</span>&nbsp;&nbsp;&nbsp;<a href="https://github.blog/ai-and-ml/github-copilot/github-recognized-as-a-leader-in-the-gartner-magic-quadrant-for-enterprise-ai-coding-agents-for-the-third-year-in-a-row/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">GitHub đã được công nhận là Nhà lãnh đạo trong Gartner Magic Quadrant về Các tác nhân mã hóa AI doanh nghiệp lần thứ ba liên tiếp. Thành tựu này nhấn mạnh cam kết của GitHub trong việc trao quyền cho các developer với một nền tảng mở, bảo mật và được hỗ trợ bởi AI, định hình lại tương lai của phát triển phần mềm. Công cụ GitHub Copilot của công ty cho phép các developer giao nhiệm vụ cho một tác nhân và rời đi, cho phép tác nhân xử lý phần còn lại, dẫn đến việc phát triển phần mềm nhanh hơn.
+
+Theo Gartner, các quy trình làm việc của tác nhân mã hóa AI không đồng bộ sẽ cải thiện năng suất của các đội kỹ sư phần mềm từ 30% đến 50% vào năm 2028. GitHub tin rằng việc đạt được những lợi ích này đòi hỏi phải có khả năng tác nhân trên mọi giai đoạn của chu kỳ phát triển phần mềm (SDLC), không chỉ là tạo mã. Sự tập trung của công ty vào việc tạo mã AI, xem xét, bảo mật và quản lý nhằm giải quyết các thách thức cốt lõi trong DevSecOps và cho phép các developer xây dựng, vận hành và duy trì phần mềm một cách hiệu quả hơn.
+
+Việc công nhận GitHub là Nhà lãnh đạo trong Gartner Magic Quadrant nhấn mạnh vị trí của nó như một nền tảng developer hàng đầu, cung cấp trải nghiệm hiệu suất cao và luôn sẵn sàng trên toàn hệ sinh thái. Công ty tiếp tục đổi mới và mở rộng khả năng của mình, cung cấp cho các developer các công cụ và tài nguyên cần thiết để phát triển kỹ năng và sự nghiệp của họ.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">6</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Các nhà phát triển: Hãy xác thực ứng dụng di động y tế của bạn với IEEE</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Developers: Get Your Medical Mobile App Verified By IEEE</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;IEEE Spectrum</span>&nbsp;&nbsp;&nbsp;<a href="https://spectrum.ieee.org/medical-mobile-app-ieee-verified" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Các ứng dụng di động y tế, được sử dụng để quản lý các tình trạng như trầm cảm và đau mãn tính, thường thiếu sự xác minh từ các cơ quan quản lý. Trong số hơn 55.000 ứng dụng y tế, hầu hết chưa được đánh giá về tính vững chắc kỹ thuật, thiết kế đạo đức hoặc lợi ích lâm sàng. Các ứng dụng này thường không tuân thủ các luật bảo mật và quyền riêng tư của dữ liệu, đặt thông tin sức khỏe nhạy cảm của người dùng vào tình trạng rủi ro. Hiệp hội Tiêu chuẩn IEEE đã ra mắt Sổ đăng ký và Đánh giá Ứng dụng Di động Y tế Toàn cầu IEEE để giải quyết vấn đề này. Thư mục tìm kiếm công khai liệt kê các ứng dụng đã được các chuyên gia thẩm định theo nhiều tiêu chí, bao gồm tính vững chắc kỹ thuật, thiết kế đạo đức và hiệu quả lâm sàng. Mục tiêu là thiết lập một phương pháp đánh giá tiêu chuẩn hóa sử dụng các tiêu chí được phát triển bởi các chuyên gia, giúp bệnh nhân, nhà lâm sàng và hệ thống chăm sóc sức khỏe phân biệt ứng dụng liệu pháp đáng tin cậy với ứng dụng được tiếp thị tốt. Sổ đăng ký IEEE nhằm lấp đầy khoảng trống trong việc giám sát quản lý và cung cấp một nguồn tin cậy để xác minh các ứng dụng di động y tế.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">7</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Dừng việc nhập lệnh. Bắt đầu chỉ định: Cách phát triển dựa trên spec sửa lỗi mã hóa AI</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Stop Prompting. Start Specifying: How Spec-Driven Development Fixes AI Coding</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Dev.to AI</span>&nbsp;&nbsp;&nbsp;<a href="https://dev.to/mahafuz/stop-prompting-start-specifying-how-spec-driven-development-fixes-ai-coding-247c" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Tình trạng hiện tại của việc mã hóa được hỗ trợ bởi AI đang bị ảnh hưởng bởi &quot;khủng hoảng ngữ cảnh AI&quot;, nơi các công cụ AI quên các quyết định trước đó, bỏ qua các mẫu đã được thiết lập và tái tạo hành vi im lặng do ngữ cảnh tạm thời và ý định không rõ ràng. Điều này dẫn đến các cuộc trò chuyện bị phân mảnh, kiến trúc trôi dạt và tạo ra các tính năng không mong muốn. Để giải quyết vấn đề này, một framework mới gọi là OpenSpec đã được giới thiệu, cho phép phát triển theo hướng spec (SDD). OpenSpec là một framework nhẹ, dựa trên tệp, chứa các thông số kỹ thuật, thiết kế và nhiệm vụ có cấu trúc cho các tính năng, thí nghiệm và tái cấu trúc. Nó cung cấp một hệ thống kiến thức nhất quán và các yêu cầu rõ ràng mà tồn tại qua các phiên và mở rộng quy mô với dự án. OpenSpec hoạt động với hơn 20 công cụ mã hóa AI và không bị khóa vào một hệ sinh thái. Bằng cách sử dụng OpenSpec, các nhà phát triển có thể định nghĩa các thông số kỹ thuật rõ ràng trở thành nguồn thông tin duy nhất cho các đề xuất, đánh giá và tự động hóa, biến AI từ một công cụ đoán thành một người xây dựng hệ thống đáng tin cậy.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">8</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Tải xuống: Tương lai của mã hóa, &#x27;Vận động viên Olympic steroid&#x27; và khoa học được thúc đẩy bởi AI</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;The Download: coding’s future, the ‘Steroid Olympics,’ and AI-driven science</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;MIT Tech Review</span>&nbsp;&nbsp;&nbsp;<a href="https://www.technologyreview.com/2026/05/22/1137845/the-download-coding-future-steroid-olympics-ai-science/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Trong phiên bản mới nhất của The Download, một bản tin công nghệ hàng ngày, một số câu chuyện chính được nhấn mạnh. Tại sự kiện của nhà phát triển Anthropic, nó đã được tiết lộ rằng gần một nửa số người tham dự đã xuất bản mã được viết hoàn toàn bởi AI, với một số người thừa nhận họ thậm chí chưa xem xét mã trước khi triển khai. Xu hướng này làm dấy lên lo ngại về sự phụ thuộc ngày càng tăng vào AI trong việc lập trình và những hậu quả tiềm ẩn của việc tự động hóa các nhiệm vụ phức tạp mà không có sự giám sát của con người.
+
+Trong khi đó, sự kiện Enhanced Games đầu tiên, một cuộc thi thể thao cho phép sử dụng thuốc tăng cường hiệu suất, sẽ diễn ra tại Las Vegas. Sự kiện này phản ánh một sự ám ảnh văn hóa rộng lớn hơn về việc tăng cường và tối ưu hóa, nơi các cá nhân được khuyến khích đẩy ranh giới của hiệu suất con người.
+
+Trong thế giới của AI, CEO của Google DeepMind, Demis Hassabis, đã tuyên bố rằng nhân loại đang đứng ở &quot;đồi chân của sự kỳ dị.&quot; Thông báo của Google về Gemini for Science, một hệ thống AI có thể thực hiện các dự án nghiên cứu tiên tiến mà không cần sự can thiệp của con người, được coi là một bước tiến hacia mục tiêu này. Tuy nhiên, một số nhà nghiên cứu đang tập trung vào việc phát triển các model thế giới, nhằm tạo ra các hệ thống AI hiểu được môi trường vật lý. Sự phát triển này có ý nghĩa quan trọng về cách AI hiểu thực tại và có thể thay đổi lĩnh vực nghiên cứu AI.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+
+  <!-- TIPS SECTION -->
+  
+  <tr>
+    <td bgcolor="#FFFBEB" style="background-color:#FFFBEB;padding:20px 30px;border-top:3px solid #D97706;">
+      <p style="margin:0 0 12px;font-size:11px;color:#D97706;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#9889;&nbsp;Tips &amp; Tricks cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tối ưu hóa Retrieval-Augmented Generation</strong><br><strong>Vấn đề:</strong> RAG thường yêu cầu nhiều tài nguyên để đào tạo và triển khai.<br><strong>Cách làm:</strong> Sử dụng các mô hình tiền đào tạo như BERT, RoBERTa để tối ưu hóa quá trình đào tạo RAG. Ví dụ, với câu prompt &quot;Tổng hợp thông tin về AI&quot;.<br><strong>Đánh giá:</strong> Hiệu quả cao trong việc giảm thiểu tài nguyên, nhưng yêu cầu kiến thức chuyên sâu về mô hình ngôn ngữ.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tích hợp Embeddings vào Semantic Search</strong><br><strong>Vấn đề:</strong> Tìm kiếm семантиc truyền thống thường không hiệu quả với dữ liệu phức tạp.<br><strong>Cách làm:</strong> Sử dụng các thư viện như Hugging Face để tạo embeddings cho văn bản và tích hợp vào hệ thống tìm kiếm. Ví dụ, lệnh CLI <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">python -m transformers</code> để tải mô hình.<br><strong>Đánh giá:</strong> Cải thiện đáng kể hiệu quả tìm kiếm, nhưng yêu cầu tài nguyên tính toán lớn.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Áp dụng Semantic Search trong Ứng dụng Thực tế</strong><br><strong>Vấn đề:</strong> Tìm kiếm thông tin liên quan trong cơ sở dữ liệu lớn.<br><strong>Cách làm:</strong> Sử dụng các công cụ như Elasticsearch để triển khai semantic search, với ví dụ prompt &quot;Tìm kiếm thông tin về công ty công nghệ&quot;.<br><strong>Đánh giá:</strong> Hiệu quả cao trong việc tìm kiếm thông tin liên quan, nhưng yêu cầu cấu hình và tối ưu hóa hệ thống.</p>
+    </td>
+  </tr>
+
+  <!-- LESSON SECTION -->
+  
+  <tr>
+    <td bgcolor="#F0FFF4" style="background-color:#F0FFF4;padding:20px 30px;border-top:3px solid #2E7D32;">
+      <p style="margin:0 0 12px;font-size:11px;color:#2E7D32;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128218;&nbsp;B&#224;i h&#7885;c AI h&#244;m nay cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;">1. <strong>Tối ưu chi phí &amp; hiệu năng LLM</strong><br>2. Để phát triển ứng dụng AI hiệu quả, các nhà phát triển cần biết cách tối ưu hóa chi phí và hiệu năng của mô hình ngôn ngữ lớn (LLM). Điều này giúp giảm thiểu chi phí vận hành và cải thiện trải nghiệm người dùng. Việc tối ưu hóa LLM cũng giúp tăng tốc độ xử lý và giảm thiểu tài nguyên cần thiết.<br>3. Ví dụ, việc sử dụng kỹ thuật fine-tuning và LoRA (Low-Rank Adaptation) có thể giúp giảm thiểu kích thước mô hình và cải thiện hiệu năng. Ví dụ code: <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">model = LLM.from_pretrained(&#x27;base_model&#x27;); model.fine_tune(...)</code><br>4. 💡 Tip: Sử dụng các công cụ như Hugging Face Transformers để tối ưu hóa LLM và giảm thiểu chi phí vận hành. Ngoài ra, cũng nên xem xét việc sử dụng mô hình LLM cục bộ (local LLM) để giảm thiểu phụ thuộc vào dịch vụ đám mây.</p>
+    </td>
+  </tr>
+
+  <!-- FOOTER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:20px 30px;text-align:center;border-radius:0 0 10px 10px;">
+      <p style="margin:0 0 4px;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        &#128161;&nbsp;Lu&#244;n &#273;i &#273;&#7847;u trong th&#7871; gi&#7899;i AI!&nbsp;&#183;&nbsp;Stay ahead in AI!
+      </p>
+      <p style="margin:6px 0 0;font-size:11px;color:#4A7AAB;font-family:Arial,sans-serif;">
+        Ngu&#7891;n: Google News · Groq AI
+      </p>
+    </td>
+  </tr>
+
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+
+</td></tr>
+</table>
+</body>
+</html>

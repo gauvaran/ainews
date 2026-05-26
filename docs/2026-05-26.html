@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--[if mso]>
+<noscript><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings></xml></noscript>
+<![endif]-->
+<style>
+/* ── Responsive overrides for web (email HTML uses fixed 600px tables) ── */
+@media screen and (max-width:620px) {
+  table[width="600"] { width:100% !important; }
+  td { word-break:break-word; overflow-wrap:break-word; }
+  /* Reduce generous email padding on small screens */
+  td[style*="padding:28px 30px"],
+  td[style*="padding:24px 30px"],
+  td[style*="padding:22px 30px"],
+  td[style*="padding:20px 30px"],
+  td[style*="padding:16px 30px"],
+  td[style*="padding:12px 30px"] { padding-left:14px !important; padding-right:14px !important; }
+  /* Code blocks: scroll horizontally instead of breaking layout */
+  pre { overflow-x:auto !important; max-width:calc(100vw - 32px) !important; box-sizing:border-box; }
+  /* Shrink large heading text slightly */
+  h1[style*="26px"] { font-size:20px !important; }
+}
+/* ── Print: hide nav bar ── */
+@media print {
+  #web-nav { display:none !important; }
+  body { background:#fff !important; }
+}
+</style>
+</head>
+<body style="margin:0;padding:0;background-color:#EEF2F7;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+<div id="web-nav" style="background:#001a4d;padding:8px 16px;font-family:Arial,sans-serif;font-size:13px;position:sticky;top:0;z-index:999;border-bottom:2px solid #0066CC;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
+  <span id="nav-prev" style="color:#4A6A8A;">&#8592;</span>
+  <a href="all.html" style="color:#FFD700;text-decoration:none;font-weight:bold;">&#128240; T&#7845;t c&#7843; b&#7843;n tin</a>
+  <span style="color:#FFFFFF;">26/05/2026</span>
+  <span id="nav-next" style="color:#4A6A8A;">&#8594;</span>
+  <a href="2026-05-26.pdf" download="2026-05-26.pdf" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128196; T&#7843;i PDF</a>
+  <button onclick="sharePage()" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128279; Chia s&#7867;</button>
+</div>
+<script>
+function sharePage(){
+  var title='Bản tin AI BIS-MT – 26/05/2026';
+  if(navigator.share){navigator.share({title:title,url:location.href});}
+  else{navigator.clipboard.writeText(location.href).then(function(){
+    alert('Đã sao chép link!');
+  });}
+}
+(function(){
+  var m=location.pathname.match(/(\d{4}-\d{2}-\d{2})\.html/);
+  if(!m)return;
+  var slug=m[1];
+  function fmt(s){var p=s.split('-');return p[2]+'/'+p[1];}
+  var lnkStyle='color:#90C4F0;text-decoration:none;';
+  fetch('dates.json?_='+Date.now())
+    .then(function(r){return r.json();})
+    .then(function(dates){
+      var idx=dates.indexOf(slug);
+      if(idx>0){
+        var p=dates[idx-1];
+        document.getElementById('nav-prev').innerHTML=
+          '<a href="'+p+'.html" style="'+lnkStyle+'">&#8592; '+fmt(p)+'</a>';
+      }
+      if(idx>=0&&idx<dates.length-1){
+        var n=dates[idx+1];
+        document.getElementById('nav-next').innerHTML=
+          '<a href="'+n+'.html" style="'+lnkStyle+'">'+fmt(n)+' &#8594;</a>';
+      }
+    })
+    .catch(function(){});
+})();
+</script>
+
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#EEF2F7" style="background-color:#EEF2F7;">
+<tr><td align="center" style="padding:24px 12px;">
+
+<!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0"><tr><td><![endif]-->
+<table role="presentation" width="600" cellpadding="0" cellspacing="0"
+       style="max-width:600px;width:100%;background-color:#FFFFFF;border-radius:10px;" bgcolor="#FFFFFF">
+
+  <!-- HEADER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:28px 30px 22px 30px;text-align:center;border-radius:10px 10px 0 0;">
+      <p style="margin:0 0 6px;font-size:11px;color:#7EB1E8;letter-spacing:2px;font-family:Arial,sans-serif;text-transform:uppercase;">
+        BIS &#8209; MT &nbsp;&#183;&nbsp; 26/05/2026
+      </p>
+      <h1 style="margin:0;font-size:26px;font-weight:bold;color:#FFFFFF;font-family:Arial,sans-serif;line-height:1.2;">
+        &#129302; B&#7843;n Tin AI H&#7857;ng Ng&#224;y
+      </h1>
+      <p style="margin:8px 0 0;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        C&#7853;p nh&#7853;t c&#244;ng ngh&#7879; AI m&#7899;i nh&#7845;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- QUOTE -->
+  <tr>
+    <td bgcolor="#EBF4FF" style="background-color:#EBF4FF;padding:16px 30px;border-top:3px solid #0066CC;">
+      <p style="margin:0;font-size:14px;color:#1A3A5C;font-style:italic;line-height:1.6;font-family:Georgia,serif;">
+        &#10024;&nbsp;&ldquo;Change your thoughts and you change your world.&rdquo;
+      </p>
+      <p style="margin:6px 0 0;font-size:13px;color:#444444;line-height:1.5;">&nbsp;&nbsp;&nbsp;&#8618;&nbsp;Thay đổi suy nghĩ của bạn và bạn thay đổi thế giới của mình.</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#888888;font-family:Arial,sans-serif;">&mdash;&nbsp;Norman Vincent Peale</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#5A6A7A;font-style:italic;line-height:1.5;font-family:Arial,sans-serif;">&#128161;&nbsp;Tư duy quyết định thực tại — khi thay đổi cách nhìn nhận và suy nghĩ, bạn sẽ nhận ra những cơ hội và khả năng mà trước đây không thấy.</p>
+    </td>
+  </tr>
+
+  <!-- SECTION LABEL -->
+  <tr>
+    <td bgcolor="#F5F7FA" style="background-color:#F5F7FA;padding:12px 30px;">
+      <p style="margin:0;font-size:11px;color:#999999;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128240;&nbsp;Tin t&#7913;c n&#7893;i b&#7853;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- ARTICLES -->
+  
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">1</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Lớp lệnh AI nhà kho đa tác nhân (Multi-Agent) cho phép đạt được sự xuất sắc trong hoạt động và thông minh chuỗi cung ứng</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Multi-Agent Warehouse AI Command Layer Enables Operational Excellence and Supply Chain Intelligence</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;NVIDIA Developer</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMizwFBVV95cUxON2JaLWpmNDU2T3UwSG4yeUQ0eVVMNnowemV4OWFtaDlyX05KT3lNV1VhVGtCZjc2LTBjZjBOU3B5R1poaU1oZS1pcXlpczZORi04Y3QteE5nMmlISi1yWXdCcE05QUpwZFZyR2cyam96WVc5WVVBTHE2TlVBalVkOTdnVFNqRmFYQWhhSTFiRktyVFh0d3dERTFDSlktZHRvVGc1MFgxS290RTVUMHRTNWs5NlllT2h2Ym5MTnF0ajIwQ1hfYmJpTV8wQUtRbXM?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">NVIDIA đã giới thiệu Lớp lệnh AI Nhà kho Đa tác nhân, được thiết kế để nâng cao hiệu quả hoạt động và thông tin chuỗi cung ứng. Giải pháp sáng tạo này tận dụng AI để tối ưu hóa hoạt động nhà kho, tự động hóa quy trình và cung cấp khả năng hiển thị thời gian thực vào các hoạt động chuỗi cung ứng.
+
+Lớp lệnh AI Nhà kho Đa tác nhân sử dụng kiến trúc đa tác nhân, nơi nhiều tác nhân AI làm việc cùng nhau để quản lý các khía cạnh khác nhau của hoạt động nhà kho. Các tác nhân này có thể được đào tạo để thực hiện các nhiệm vụ như quản lý hàng tồn kho, hoàn tất đơn hàng và bảo trì dự đoán, cho phép hoạt động nhà kho hiệu quả và tự động hơn.
+
+Bằng cách triển khai giải pháp này, các doanh nghiệp có thể thu được thông tin chi tiết quý giá về chuỗi cung ứng của mình, cho phép họ đưa ra quyết định dựa trên dữ liệu và cải thiện tính xuất sắc hoạt động tổng thể. Lớp lệnh AI Nhà kho Đa tác nhân được xây dựng trên nền tảng của nhà phát triển NVIDIA, cung cấp một khuôn khổ có thể mở rộng và linh hoạt để tích hợp AI vào hoạt động nhà kho. Giải pháp này có tiềm năng thay đổi cách thức hoạt động của nhà kho, cải thiện hiệu quả, giảm chi phí và nâng cao sự hài lòng của khách hàng.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">2</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Nhà máy tác nhân (Agent Factory): Kết nối các tác nhân, ứng dụng và dữ liệu với các tiêu chuẩn mở mới như MCP và A2A</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Agent Factory: Connecting agents, apps, and data with new open standards like MCP and A2A</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Microsoft Azure</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMixAFBVV95cUxOekoxbVV4Vml2ZG5yVGVhRWl1cVFLM1ZrYUVNbWdFTnI1bV9CTmVFZ3FJNTRCeTctZ3ctTUtVOW9YbFBqVWZPTGpfQnk0WWt4T09OdG00X25yZVV3TE1XbGpJckdHWVBNV2l1bDdKbEZXb1dmc1RjR1JENWNkMVF6WHVrdlZDMThhVDN5WFFiQ01YakVlWUZDR0gtS0NTZGxrOGFUMzN4ZWlNZzF1WlFPMnMwT3BDcUd6TjJDSWJXMkpkMEh5?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Microsoft đã giới thiệu Agent Factory, một nền tảng được thiết kế để kết nối các tác nhân, ứng dụng và dữ liệu bằng cách sử dụng các tiêu chuẩn mở mới. Nền tảng này tận dụng công nghệ Cloud PC (MCP) và Ứng dụng đến Ứng dụng (A2A) của Microsoft để tạo điều kiện cho các tương tác không gián đoạn giữa các thành phần khác nhau.
+
+Agent Factory cho phép các nhà phát triển tạo ra các tác nhân tùy chỉnh có thể tương tác với các ứng dụng và nguồn dữ liệu khác nhau, thúc đẩy sự linh hoạt và khả năng tương tác cao hơn. Bằng cách sử dụng các tiêu chuẩn MCP và A2A, Agent Factory cho phép trao đổi dữ liệu an toàn và hiệu quả giữa các tác nhân, ứng dụng và nguồn dữ liệu.
+
+Nền tảng này dự kiến sẽ mang lại lợi ích cho các ngành công nghiệp khác nhau, bao gồm chăm sóc sức khỏe, tài chính và bán lẻ, nơi tích hợp nhiều hệ thống và nguồn dữ liệu là rất quan trọng để hoạt động hiệu quả. Mục tiêu của Agent Factory của Microsoft là đơn giản hóa quá trình kết nối các thành phần khác nhau, cho phép các nhà phát triển tập trung vào việc xây dựng các ứng dụng và dịch vụ sáng tạo mang lại giá trị kinh doanh.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">3</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Giới thiệu Thông số kỹ thuật tác nhân mở (Open Agent Specification - Agent Spec): Một biểu diễn thống nhất cho các tác nhân AI</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Introducing the Open Agent Specification (Agent Spec): A Unified Representation for AI Agents</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Oracle Blogs</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMihwFBVV95cUxNQVNvdUZTTVhSdmNqbFhDR3VTVkdFbmpuWTlyeVY5aElhVnc3R1JrcG5yb0NGYW1DNjlFanBaR0l3NkY0QVRQTVB5RTlDSnFabDVZcENETTBNYW1ORVlKWG5SNEpvaXdDdGZlekh0ZWtFeTc4N1lidmdRN05XOUhJTUtoVEZQWXM?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Oracle đã giới thiệu Open Agent Specification (Agent Spec), một biểu diễn thống nhất cho các tác nhân AI. Đặc tả này nhằm cung cấp một khuôn khổ chung cho các nhà phát triển để tạo, tích hợp và tương tác với các tác nhân AI trên nhiều nền tảng và ứng dụng khác nhau. Agent Spec được thiết kế để mở, có thể mở rộng và không phụ thuộc vào ngôn ngữ, cho phép các nhà phát triển xây dựng các tác nhân AI có thể dễ dàng tích hợp với các hệ thống và dịch vụ khác nhau.
+
+Đặc tả này phác thảo một tập hợp các giao diện và cấu trúc dữ liệu tiêu chuẩn cho các tác nhân AI, cho phép giao tiếp và cộng tác liền mạch giữa các tác nhân và hệ thống. Biểu diễn thống nhất này dự kiến sẽ thúc đẩy sự phát triển của các hệ thống AI tinh vi và liên kết hơn, thúc đẩy đổi mới trong các lĩnh vực như AI đối thoại, robot và nhà thông minh.
+
+Bằng cách cung cấp một ngôn ngữ và khuôn khổ chung cho các tác nhân AI, Agent Spec có tiềm năng tăng tốc việc áp dụng các công nghệ AI và thúc đẩy một hệ sinh thái AI gắn kết và tương tác hơn.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">4</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Tại sao nợ lời nhắc (prompt debt), nợ thu hồi (retrieval debt) và nợ đánh giá (evaluation debt) đang âm thầm thay đổi lại rủi ro AI trong doanh nghiệp</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Why prompt debt, retrieval debt, and evaluation debt are quietly reshaping enterprise AI risk</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;VentureBeat</span>&nbsp;&nbsp;&nbsp;<a href="https://venturebeat.com/technology/why-prompt-debt-retrieval-debt-and-evaluation-debt-are-quietly-reshaping-enterprise-ai-risk" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Hệ thống AI doanh nghiệp đang giới thiệu các lớp nợ kỹ thuật mới, thường được gọi là &quot;nợ AI&quot;, có thể tinh vi và phi tuyến hơn so với nợ kỹ thuật truyền thống. Nợ này biểu hiện trên các lời nhắc, model, và phụ thuộc dữ liệu, khiến nó khó đo lường và nguy hiểm hơn. Một nghiên cứu của MIT năm 2025 cho thấy 95% dự án AI không đạt được sản xuất hoặc mang lại giá trị, trong khi một nghiên cứu của S&amp;P Global Market Intelligence cho thấy 42% doanh nghiệp đã hủy bỏ nhiều sáng kiến AI vào năm 2025.
+
+Nợ AI thường đến dưới bốn hình thức: nợ lời nhắc, nợ phụ thuộc model, nợ truy xuất, và nợ đánh giá. Nợ lời nhắc đề cập đến các lời nhắc không được ghi chép hoặc quản lý kém, trong khi nợ phụ thuộc model phát sinh từ việc phụ thuộc vào các model bên ngoài có thể thay đổi và mất khả năng tái tạo. Nợ truy xuất xảy ra khi hệ thống AI trả về thông tin lỗi thời hoặc không liên quan do các kho dữ liệu lộn xộn. Nợ đánh giá được gây ra bởi sự thiếu tiêu chuẩn hóa trong kiểm tra và giám sát các model và ứng dụng AI.
+
+Những hình thức nợ AI này kết hợp với nợ kỹ thuật truyền thống để tạo ra các rủi ro quy mô lớn có thể gây ra sự thất bại thảm hại của toàn bộ triển khai doanh nghiệp. Để ngăn chặn nợ AI, các doanh nghiệp cần đối xử với các lời nhắc như mã code, thiết lập các đường ống đánh giá liên tục, và bao gồm khả năng giải thích trong kết quả AI. Điều này yêu cầu các chương trình giảm nợ AI rõ ràng và các ngân sách liên quan, được thúc đẩy bởi các nhà lãnh đạo chủ chốt ở cấp CXO.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">5</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">OpenAI, Grupo Folha và Grupo UOL công bố quan hệ đối tác nội dung chiến lược</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;OpenAI, Grupo Folha and Grupo UOL announce strategic content partnership</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;OpenAI Blog</span>&nbsp;&nbsp;&nbsp;<a href="https://openai.com/index/grupo-folha-grupo-uol-partnership" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">OpenAI đã hình thành một quan hệ đối tác nội dung chiến lược với Grupo Folha và Grupo UOL, hai tập đoàn truyền thông hàng đầu của Brazil. Sự hợp tác này nhằm mục đích mang báo chí Brazil đáng tin cậy đến ChatGPT, một AI trò chuyện được phát triển bởi OpenAI. Quan hệ đối tác này sẽ cung cấp cho người dùng quyền truy cập vào nội dung tin tức từ Grupo Folha và Grupo UOL, tập trung vào tính minh bạch và thuộc tính. Điều này có nghĩa là người dùng sẽ có thể tương tác với các bài báo tin tức và nhận được thông tin chính xác trong khi nhận thức được nguồn gốc. Quan hệ đối tác này dự kiến sẽ mở rộng sự sẵn có của nội dung tin tức chất lượng cao đến khán giả rộng lớn hơn, tận dụng khả năng của ChatGPT để cung cấp thông tin này theo cách thân thiện với người dùng và dễ tiếp cận. Bằng cách tích hợp báo chí Brazil đáng tin cậy vào ChatGPT, quan hệ đối tác này nhằm mục đích thúc đẩy tính minh bạch, chính xác và uy tín trong việc phổ biến tin tức.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">6</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Đặt cược lớn của Mỹ vào tính toán lượng tử có thể không hoàn toàn hợp pháp</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;US&#x27;s big bet on quantum computing may not be entirely legal</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Ars Technica</span>&nbsp;&nbsp;&nbsp;<a href="https://arstechnica.com/tech-policy/2026/05/uss-big-bet-on-quantum-computing-may-not-be-entirely-legal/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Chính phủ Mỹ đã phân bổ 2 tỷ đô la để đầu tư vào các công ty máy tính lượng tử, với 100 triệu đô la mỗi công ty được trao cho các công ty khởi nghiệp khác nhau để đổi lấy cổ phần. Tuy nhiên, một thành viên của Quốc hội Mỹ, Zoe Lofgren, đang đặt câu hỏi về tính hợp pháp của những thỏa thuận này. Theo Lofgren, nguồn tài trợ này được dành để hỗ trợ nghiên cứu công về bán dẫn thông qua Đạo luật CHIPS và Khoa học, không phải máy tính lượng tử. Phần lớn tiền sẽ đi đến Anderon, một công ty được thành lập bởi IBM và chính phủ, sẽ hoạt động như một xưởng đúc để chế tạo đơn vị xử lý lượng tử. Lofgren cho rằng thỏa thuận này là bất hợp pháp vì nó không phù hợp với mục đích ban đầu của nguồn tài trợ. Cô cũng gợi ý rằng một cựu giám đốc điều hành của IBM có thể đã tham gia vào các cuộc đàm phán, điều này có thể là xung đột lợi ích. Thỏa thuận này đã gây ra tranh cãi, với một số người đặt câu hỏi về sự cần thiết của một công ty xưởng đúc riêng biệt và phân bổ nguồn vốn.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">7</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Việc sa thải hàng loạt của ClickUp cho chúng ta biết gì về tương lai của công việc</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;What ClickUp’s mass layoff tells us about the future of work</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;TechCrunch AI</span>&nbsp;&nbsp;&nbsp;<a href="https://techcrunch.com/2026/05/25/what-clickups-mass-layoff-tells-us-about-the-future-of-work/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">ClickUp, một công ty khởi nghiệp về phần mềm hợp tác được định giá 4 tỷ đô la vào năm 2021, đã宣 bố sa thải hàng loạt 22% lực lượng lao động của mình. Tuy nhiên, CEO Zeb Evans khẳng định việc cắt giảm này không phải là biện pháp cắt giảm chi phí, mà là một động thái chiến lược để tận dụng công nghệ AI. ClickUp đã giới thiệu 3.000 tác nhân AI nội bộ để xử lý các nhiệm vụ phức tạp, cho phép nhân viên tập trung vào chỉ đạo và xem xét đầu ra. Evans nhằm sử dụng AI để thúc đẩy công ty đến một &quot;100x org&quot;, nơi lợi ích về năng suất được tối đa hóa. Phương pháp này không độc đáo đối với ClickUp, vì 80% công ty sử dụng công nghệ tự động đã cắt giảm việc làm, theo một cuộc khảo sát của Gartner. Trong khi một số nhà phê bình cho rằng các công ty đang sử dụng AI chưa được chứng minh như một lý do để giảm quy mô, ClickUp vẫn khẳng định họ đang thấy lợi ích về năng suất đáng kể từ các tác nhân AI. Công ty đang lên kế hoạch tích hợp những hiệu quả này vào một sản phẩm sắp tới cho khách hàng của mình, chuyển trọng tâm từ việc tiêu thụ token sang giá trị được tạo ra và thời gian được tiết kiệm.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">8</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Ferrari Luce điện đã đến cuối cùng</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;The Electric Ferrari Luce Is Finally Here</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Wired</span>&nbsp;&nbsp;&nbsp;<a href="https://www.wired.com/story/ferrari-luce-ev-is-finally-here/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Ferrari cuối cùng đã ra mắt chiếc xe điện đầu tiên của mình, Luce, sau nhiều năm chờ đợi. Chiếc xe này lần đầu tiên được gợi ý vào năm 2018 bởi cựu chủ tịch Ferrari Sergio Marchionne, người nhằm tạo ra một siêu xe điện để cạnh tranh với Tesla. Luce tự hào với các số liệu hiệu suất ấn tượng, bao gồm bốn động cơ sản xuất hơn 1.000 mã lực trong chế độ Boost, tăng tốc từ 0-62mph trong 2,5 giây và đạt tốc độ tối đa 192mph. Xe có pin 122 kWh, một trong những pin lớn nhất trong bất kỳ xe điện sản xuất nào, cung cấp phạm vi hơn 329 dặm cho mỗi lần sạc. Luce cũng có hệ dẫn động bốn bánh và hệ thống lái được lấy cảm hứng từ SUV Purosangue, với mỗi bánh xe có sức mạnh, phanh, giảm xóc và hệ thống lái riêng. Ferrari cũng đã phát triển một hệ thống âm thanh độc đáo, sử dụng gia tốc kế để thu và lọc rung động từ động cơ để tạo ra âm thanh động cơ tự nhiên. Thiết kế của Luce được tạo ra với sự hợp tác của LoveFrom, một cơ quan được thành lập bởi Jony Ive, và có thiết kế bên ngoài khí động học và nội thất sang trọng với trọng tâm là vật liệu cao cấp và các yếu tố thiết kế sáng tạo.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+
+  <!-- TIPS SECTION -->
+  
+  <tr>
+    <td bgcolor="#FFFBEB" style="background-color:#FFFBEB;padding:20px 30px;border-top:3px solid #D97706;">
+      <p style="margin:0 0 12px;font-size:11px;color:#D97706;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#9889;&nbsp;Tips &amp; Tricks cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tự động kiểm thử đơn vị</strong><br><strong>Vấn đề:</strong> Viết và bảo trì các trường hợp kiểm thử đơn vị tốn thời gian và công sức.<br><strong>Cách làm:</strong> Sử dụng framework như Pytest để tự động hóa quá trình kiểm thử. Ví dụ, lệnh <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">pytest --cov</code> giúp tính toán mức độ bao phủ mã.<br><strong>Đánh giá:</strong> Hiệu quả cao trong việc giảm thời gian kiểm thử, nên dùng cho dự án lớn.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Code Review Tự Động</strong><br><strong>Vấn đề:</strong> Kiểm tra mã nguồn thủ công tốn nhiều thời gian và dễ xảy ra lỗi.<br><strong>Cách làm:</strong> Sử dụng công cụ như GitHub Code Review để tự động kiểm tra mã nguồn. Ví dụ, prompt &quot;Check code style and syntax&quot; giúp phát hiện lỗi cơ bản.<br><strong>Đánh giá:</strong> Nhanh chóng và hiệu quả, nên dùng cho dự án có quy mô trung bình.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tự động hóa kiểm thử giao diện</strong><br><strong>Vấn đề:</strong> Kiểm thử giao diện người dùng (UI) tốn nhiều thời gian và dễ xảy ra lỗi.<br><strong>Cách làm:</strong> Sử dụng framework như Selenium để tự động hóa quá trình kiểm thử UI. Ví dụ, lệnh <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">selenium webdriver</code> giúp tự động tương tác với giao diện.<br><strong>Đánh giá:</strong> Hiệu quả cao trong việc giảm thời gian kiểm thử UI, nên dùng cho dự án có giao diện phức tạp.</p>
+    </td>
+  </tr>
+
+  <!-- LESSON SECTION -->
+  
+  <tr>
+    <td bgcolor="#F0FFF4" style="background-color:#F0FFF4;padding:20px 30px;border-top:3px solid #2E7D32;">
+      <p style="margin:0 0 12px;font-size:11px;color:#2E7D32;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128218;&nbsp;B&#224;i h&#7885;c AI h&#244;m nay cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;">1. <strong>Tối ưu chi phí &amp; hiệu năng LLM</strong><br>2. Để xây dựng ứng dụng AI hiệu quả, các nhà phát triển cần tối ưu hóa chi phí và hiệu năng của mô hình ngôn ngữ lớn (LLM). Điều này giúp giảm thiểu chi phí vận hành và cải thiện trải nghiệm người dùng. Việc tối ưu hóa hiệu năng cũng giúp ứng dụng phản hồi nhanh chóng và chính xác.<br>3. Ví dụ, bằng cách sử dụng kỹ thuật fine-tuning và LoRA (Low-Rank Adaptation), chúng ta có thể giảm kích thước mô hình và cải thiện hiệu năng mà không mất đi độ chính xác. Điều này có thể được thực hiện thông qua việc sử dụng các thư viện như Hugging Face Transformers.<br>4. 💡 Tip hoặc bước tiếp theo: Hãy bắt đầu bằng việc đánh giá hiệu năng hiện tại của ứng dụng và xác định các điểm cần tối ưu hóa, sau đó áp dụng các kỹ thuật như fine-tuning và LoRA để cải thiện hiệu năng và giảm chi phí.</p>
+    </td>
+  </tr>
+
+  <!-- FOOTER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:20px 30px;text-align:center;border-radius:0 0 10px 10px;">
+      <p style="margin:0 0 4px;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        &#128161;&nbsp;Lu&#244;n &#273;i &#273;&#7847;u trong th&#7871; gi&#7899;i AI!&nbsp;&#183;&nbsp;Stay ahead in AI!
+      </p>
+      <p style="margin:6px 0 0;font-size:11px;color:#4A7AAB;font-family:Arial,sans-serif;">
+        Ngu&#7891;n: Google News · Groq AI
+      </p>
+    </td>
+  </tr>
+
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+
+</td></tr>
+</table>
+</body>
+</html>

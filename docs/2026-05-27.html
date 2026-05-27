@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--[if mso]>
+<noscript><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings></xml></noscript>
+<![endif]-->
+<style>
+/* ── Responsive overrides for web (email HTML uses fixed 600px tables) ── */
+@media screen and (max-width:620px) {
+  table[width="600"] { width:100% !important; }
+  td { word-break:break-word; overflow-wrap:break-word; }
+  /* Reduce generous email padding on small screens */
+  td[style*="padding:28px 30px"],
+  td[style*="padding:24px 30px"],
+  td[style*="padding:22px 30px"],
+  td[style*="padding:20px 30px"],
+  td[style*="padding:16px 30px"],
+  td[style*="padding:12px 30px"] { padding-left:14px !important; padding-right:14px !important; }
+  /* Code blocks: scroll horizontally instead of breaking layout */
+  pre { overflow-x:auto !important; max-width:calc(100vw - 32px) !important; box-sizing:border-box; }
+  /* Shrink large heading text slightly */
+  h1[style*="26px"] { font-size:20px !important; }
+}
+/* ── Print: hide nav bar ── */
+@media print {
+  #web-nav { display:none !important; }
+  body { background:#fff !important; }
+}
+</style>
+</head>
+<body style="margin:0;padding:0;background-color:#EEF2F7;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+<div id="web-nav" style="background:#001a4d;padding:8px 16px;font-family:Arial,sans-serif;font-size:13px;position:sticky;top:0;z-index:999;border-bottom:2px solid #0066CC;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
+  <span id="nav-prev" style="color:#4A6A8A;">&#8592;</span>
+  <a href="all.html" style="color:#FFD700;text-decoration:none;font-weight:bold;">&#128240; T&#7845;t c&#7843; b&#7843;n tin</a>
+  <span style="color:#FFFFFF;">27/05/2026</span>
+  <span id="nav-next" style="color:#4A6A8A;">&#8594;</span>
+  <a href="2026-05-27.pdf" download="2026-05-27.pdf" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128196; T&#7843;i PDF</a>
+  <button onclick="sharePage()" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128279; Chia s&#7867;</button>
+</div>
+<script>
+function sharePage(){
+  var title='Bản tin AI BIS-MT – 27/05/2026';
+  if(navigator.share){navigator.share({title:title,url:location.href});}
+  else{navigator.clipboard.writeText(location.href).then(function(){
+    alert('Đã sao chép link!');
+  });}
+}
+(function(){
+  var m=location.pathname.match(/(\d{4}-\d{2}-\d{2})\.html/);
+  if(!m)return;
+  var slug=m[1];
+  function fmt(s){var p=s.split('-');return p[2]+'/'+p[1];}
+  var lnkStyle='color:#90C4F0;text-decoration:none;';
+  fetch('dates.json?_='+Date.now())
+    .then(function(r){return r.json();})
+    .then(function(dates){
+      var idx=dates.indexOf(slug);
+      if(idx>0){
+        var p=dates[idx-1];
+        document.getElementById('nav-prev').innerHTML=
+          '<a href="'+p+'.html" style="'+lnkStyle+'">&#8592; '+fmt(p)+'</a>';
+      }
+      if(idx>=0&&idx<dates.length-1){
+        var n=dates[idx+1];
+        document.getElementById('nav-next').innerHTML=
+          '<a href="'+n+'.html" style="'+lnkStyle+'">'+fmt(n)+' &#8594;</a>';
+      }
+    })
+    .catch(function(){});
+})();
+</script>
+
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#EEF2F7" style="background-color:#EEF2F7;">
+<tr><td align="center" style="padding:24px 12px;">
+
+<!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0"><tr><td><![endif]-->
+<table role="presentation" width="600" cellpadding="0" cellspacing="0"
+       style="max-width:600px;width:100%;background-color:#FFFFFF;border-radius:10px;" bgcolor="#FFFFFF">
+
+  <!-- HEADER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:28px 30px 22px 30px;text-align:center;border-radius:10px 10px 0 0;">
+      <p style="margin:0 0 6px;font-size:11px;color:#7EB1E8;letter-spacing:2px;font-family:Arial,sans-serif;text-transform:uppercase;">
+        BIS &#8209; MT &nbsp;&#183;&nbsp; 27/05/2026
+      </p>
+      <h1 style="margin:0;font-size:26px;font-weight:bold;color:#FFFFFF;font-family:Arial,sans-serif;line-height:1.2;">
+        &#129302; B&#7843;n Tin AI H&#7857;ng Ng&#224;y
+      </h1>
+      <p style="margin:8px 0 0;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        C&#7853;p nh&#7853;t c&#244;ng ngh&#7879; AI m&#7899;i nh&#7845;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- QUOTE -->
+  <tr>
+    <td bgcolor="#EBF4FF" style="background-color:#EBF4FF;padding:16px 30px;border-top:3px solid #0066CC;">
+      <p style="margin:0;font-size:14px;color:#1A3A5C;font-style:italic;line-height:1.6;font-family:Georgia,serif;">
+        &#10024;&nbsp;&ldquo;Start where you are. Use what you have. Do what you can.&rdquo;
+      </p>
+      <p style="margin:6px 0 0;font-size:13px;color:#444444;line-height:1.5;">&nbsp;&nbsp;&nbsp;&#8618;&nbsp;Bắt đầu từ nơi bạn đang đứng. Dùng những gì bạn có. Làm những gì bạn có thể.</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#888888;font-family:Arial,sans-serif;">&mdash;&nbsp;Arthur Ashe</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#5A6A7A;font-style:italic;line-height:1.5;font-family:Arial,sans-serif;">&#128161;&nbsp;Đừng chờ điều kiện lý tưởng — hành động ngay với nguồn lực hiện có là sự khôn ngoan và là khởi đầu của mọi thành tựu.</p>
+    </td>
+  </tr>
+
+  <!-- SECTION LABEL -->
+  <tr>
+    <td bgcolor="#F5F7FA" style="background-color:#F5F7FA;padding:12px 30px;">
+      <p style="margin:0;font-size:11px;color:#999999;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128240;&nbsp;Tin t&#7913;c n&#7893;i b&#7853;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- ARTICLES -->
+  
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">1</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Claude Code so sánh GitHub Copilot 2026: SWE-bench, Giá cả [Đã thử nghiệm]</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Claude Code vs GitHub Copilot 2026: SWE-bench, Pricing [Tested]</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;tech-insider.org</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMibEFVX3lxTE01N0EtazhZV2lGNmlVdnpoWllIcVdaVDdFREJ5VXlRSl95UDNaejhiR21lamtHb3dvTlN5TUJEdnVyZDEtQjZPQnBiamkxTGpIVTBPQ09IaVgtV1c1M05uWUVTSXhvQ3NZZUhrZA?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Trong một so sánh gần đây, Claude Code và GitHub Copilot đã được kiểm tra về khả năng kỹ thuật phần mềm (SWE) của chúng. Công cụ chuẩn bị SWE-bench đã được sử dụng để đánh giá hiệu suất của cả hai trợ lý mã hóa được hỗ trợ bởi AI. Kết quả cho thấy Claude Code vượt trội so với GitHub Copilot ở nhiều lĩnh vực, bao gồm hoàn thành mã, xem xét mã và tạo mã.
+
+Giá cả của cả hai dịch vụ cũng được so sánh. Claude Code cung cấp một kế hoạch miễn phí, cũng như đăng ký trả phí bắt đầu từ một mức giá nhất định. Mặt khác, GitHub Copilot được bao gồm trong kế hoạch cao cấp của GitHub, với chi phí một số tiền cụ thể trên mỗi người dùng. Chi tiết giá cả không được nêu rõ trong bài viết.
+
+So sánh này làm nổi bật điểm mạnh và điểm yếu của cả hai trợ lý mã hóa được hỗ trợ bởi AI, cung cấp cho các nhà phát triển những thông tin quý giá để đưa ra quyết định sáng suốt về công cụ nào để sử dụng trong quy trình làm việc của họ.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">2</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Tối ưu hóa các quy trình làm việc trên GitHub với AI tạo sinh sử dụng Amazon Bedrock và MCP | Amazon Web Services</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Streamline GitHub workflows with generative AI using Amazon Bedrock and MCP | Amazon Web Services</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Amazon Web Services (AWS)</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxPVE52YWtPN0dnYXY0TDE0bUZDWFhhbnNVZWZnVVo0M1lCX0FlOHpmU2VsdmVPWmtVZDBXbE94ZGh2WlluaFdJTGU0cGFlRV9VUFdBVlMyUGlzU3IweHMxbXFKSG1NMGI5VUVCU19hbnhoREdMa0hFbkVCcUVLNWRUenVEWDhOY1dCWW1FUUk1dGl1SG5YOG5uMjZNemlBRl9lWmkyUmZ6Q09rYk41elBqbDEyOS00Rkt3MTBDVWVYbw?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Amazon Web Services (AWS) đã giới thiệu một tích hợp mới giữa Amazon Bedrock và Amazon MCP (Nền tảng Canvas Model) để tối ưu hóa các quy trình làm việc trên GitHub bằng cách sử dụng AI tạo sinh. Tích hợp này cho phép các nhà phát triển tận dụng khả năng của AI tạo sinh để tự động hóa và tối ưu hóa các quy trình làm việc trên GitHub của họ.
+
+Với Amazon Bedrock, các nhà phát triển có thể tạo và quản lý các model quy mô lớn, trong khi Amazon MCP cung cấp một nền tảng để xây dựng, triển khai và quản lý các model học máy. Bằng cách kết hợp các dịch vụ này, các nhà phát triển hiện có thể sử dụng AI tạo sinh để tự động hóa các nhiệm vụ như tạo mã, kiểm tra và xem xét trên GitHub.
+
+Tích hợp này nhằm cải thiện năng suất và hiệu quả của nhà phát triển bằng cách giảm thời gian và công sức cần thiết để hoàn thành các nhiệm vụ. Bằng cách tự động hóa các nhiệm vụ lặp đi lặp lại và nhàm chán, các nhà phát triển có thể tập trung vào các nhiệm vụ cấp cao hơn đòi hỏi sự sáng tạo và kỹ năng giải quyết vấn đề. Tích hợp giữa Amazon Bedrock và Amazon MCP dự kiến sẽ nâng cao trải nghiệm tổng thể trên GitHub và làm cho nó dễ dàng hơn cho các nhà phát triển khi làm việc với AI tạo sinh.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">3</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Các model mở trọng lượng nhẹ tốt nhất của Trung Quốc — và các đối thủ mạnh nhất của Mỹ</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;The best Chinese open-weight models — and the strongest US rivals</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;understandingai.org</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMieEFVX3lxTE5aRUUtRDNyd05CNlRPU1JDN2lPcEU3RkZVOTU0UkN4T1Vzb0hvMjhWTGJLUzlwcW83dWxsY1pVTFlHNjlnLUt1N0JJVnB1dGtqdTQxNjd1R2U4OW14RWhUVVZkVlFUVDExWWx5QjJ2U1ZFSlVKS0s5RA?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Bài viết &quot;Các mô hình mở trọng lượng hàng đầu của Trung Quốc - và những đối thủ mạnh nhất của Mỹ&quot; là một phân tích so sánh về các mô hình mở trọng lượng từ Trung Quốc và Hoa Kỳ. Mục tiêu của nó là xác định các mô hình mở trọng lượng hàng đầu của Trung Quốc và so sánh chúng với các đối thủ mạnh nhất của Mỹ. Các mô hình mở trọng lượng, cũng được gọi là mô hình mã nguồn mở, là các mô hình AI có thể được sử dụng, sửa đổi và phân phối miễn phí. Bài viết có khả năng khám phá các khả năng, điểm mạnh và điểm yếu của các mô hình này, cung cấp thông tin về hiệu suất, độ chính xác và các ứng dụng tiềm năng của chúng. Bằng cách so sánh các mô hình mở trọng lượng của Trung Quốc và Mỹ, bài viết nhằm cung cấp cho người đọc một hiểu biết toàn diện về tình trạng hiện tại của công nghệ AI ở cả hai quốc gia. So sánh này dự kiến sẽ nhấn mạnh những tiến bộ và đổi mới trong nghiên cứu và phát triển AI, làm sáng tỏ cảnh quan cạnh tranh của các mô hình mở trọng lượng, bao gồm cả việc sử dụng API, LLM, và framework để phát triển các mô hình này, cũng như việc các developer sử dụng token và các kỹ thuật khác để cải thiện hiệu suất của mô hình.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">4</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Cách chúng tôi sử dụng Sourcegraph và bot Slack để phát hiện lỗ hổng bảo mật và phản ứng nhanh chóng</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;How we&#x27;re using Sourcegraph and a Slack bot to detect vulnerabilities and react quickly</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Sourcegraph Blog</span>&nbsp;&nbsp;&nbsp;<a href="http://localhost:5174/blog/slack-bot-supply-chain-incident-response" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Một công ty công nghệ đang tận dụng Sourcegraph và một bot Slack để phát hiện và phản hồi hiệu quả các điểm yếu tiềm năng. Bot Slack được lập trình để tự động xử lý mọi lời khuyên GitHub, đăng một thông báo trong kênh Slack của công ty. Khi nhận được thông báo, một vận hành viên có thể nhanh chóng kích hoạt toàn bộ đường ống nội dung, bao gồm các truy vấn phát hiện, viết blog, tạo bản nháp truyền thông xã hội và một bản demo tự động tạo trong 35 giây. Quá trình này cho phép công ty phản hồi nhanh chóng với các mối đe dọa bảo mật tiềm năng. Vai trò của vận hành viên sau đó là xem xét nội dung được tạo và xác minh độ chính xác của nó trước khi hoàn thiện phản hồi. Hệ thống tự động này cho phép công ty nhanh chóng xác định và giải quyết các điểm yếu, giảm thiểu rủi ro và thời gian ngừng hoạt động tiềm năng.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">5</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Lượng cài đặt DuckDuckGo tăng 30% khi người dùng từ chối bị &#x27;cưỡng chế&#x27; sử dụng Tìm kiếm AI của Google</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;DuckDuckGo installs are up 30% as users reject being ‘force-fed’ Google’s AI Search</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;TechCrunch AI</span>&nbsp;&nbsp;&nbsp;<a href="https://techcrunch.com/2026/05/26/duckduckgo-installs-are-up-30-as-users-reject-being-force-fed-googles-ai-search/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">DuckDuckGo đã chứng kiến sự gia tăng đáng kể về số lượng cài đặt và truy cập sau khi Google thay đổi công cụ tìm kiếm của mình. Thay đổi này, kết hợp các tính năng được hỗ trợ bởi AI như công cụ trò chuyện và tìm kiếm tự động hoàn thành, đã dẫn đến phản ứng dữ dội từ người dùng cảm thấy họ bị &quot;ép buộc&quot; phải sử dụng. Kết quả là, nhiều người đang chuyển sang DuckDuckGo, một lựa chọn thay thế tập trung vào quyền riêng tư, vốn truyền thống chỉ chiếm 2% thị phần tìm kiếm tại Mỹ. Theo DuckDuckGo, số lượng cài đặt ứng dụng tại Mỹ đã tăng 18,1% mỗi tuần, đạt đỉnh 30,5% vào ngày 25 tháng 5. Trên iOS, tốc độ tăng trưởng thậm chí còn cao hơn, với mức tăng trung bình 33% về số lượng cài đặt. Số lượng truy cập vào trang tìm kiếm không có AI của DuckDuckGo cũng chứng kiến sự tăng trưởng đáng kể, với mức tăng trung bình 22,7% mỗi tuần. Xu hướng này mạnh mẽ hơn tại Mỹ, và DuckDuckGo tiếp tục thu hút người dùng trong dịp cuối tuần Ngày Tưởng niệm. Giám đốc điều hành của công ty, Gabriel Weinberg, cho rằng sự tăng trưởng này là do DuckDuckGo cam kết với sự lựa chọn và quyền riêng tư của người dùng, tuyên bố rằng mọi thứ được thực hiện trên nền tảng đều riêng tư và không được sử dụng cho việc đào tạo AI.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">6</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">GitHub cho Người mới bắt đầu: Bắt đầu với Git và GitHub trong VS Code</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;GitHub for Beginners: Getting started with Git and GitHub in VS Code</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;GitHub Blog</span>&nbsp;&nbsp;&nbsp;<a href="https://github.blog/developer-skills/github/github-for-beginners-getting-started-with-git-and-github-in-vs-code/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">GitHub cho Người Mới Bắt Đầu: Bắt Đầu với Git và GitHub trong VS Code
+
+Bài viết này là hướng dẫn dành cho người mới bắt đầu về việc sử dụng GitHub và Git trong trình biên tập Visual Studio Code (VS Code). Nó bao gồm các kiến thức cơ bản về việc bắt đầu với GitHub và Git, và cách sử dụng VS Code để tương tác với GitHub và quản lý dự án. Bài viết giải thích cách khởi tạo một kho lưu trữ, chuyển đổi nhánh, stage, commit và push thay đổi bằng VS Code, tất cả mà không cần rời khỏi trình biên tập. luồng làm việc được tối ưu hóa này giảm chuyển đổi ngữ cảnh và tăng năng suất. Để theo dõi bài viết, người dùng cần cài đặt Git và VS Code. Hướng dẫn này được thiết kế để giúp các developer bắt đầu sử dụng GitHub và Git, và cải thiện trải nghiệm của developer.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">7</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Tái đánh giá thiết kế tổ chức trong kỷ nguyên AI có tính đại lý</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Rethinking organizational design in the age of agentic AI</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;MIT Tech Review</span>&nbsp;&nbsp;&nbsp;<a href="https://www.technologyreview.com/2026/05/26/1137584/rethinking-organizational-design-in-the-age-of-agentic-ai/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Khi các đại lý AI cấp doanh nghiệp ngày càng được quan tâm, một sự脱 kết đang xuất hiện giữa tham vọng và thực hiện. Mặc dù 85% các tổ chức nhằm trở thành đại lý trong vòng ba năm, 76% cho biết hoạt động và cơ sở hạ tầng hiện tại của họ không thể hỗ trợ sự thay đổi này. Nhiều tổ chức đang thêm các đại lý AI vào hoạt động hiện có, thay vì tưởng tượng lại mô hình hoạt động và quy trình làm việc của họ. Cách tiếp cận này có thể ngăn cản các tổ chức tận dụng tối đa giá trị của đại lý AI, bao gồm cả việc tăng tốc các quy trình kinh doanh từ 30-50% và giảm thời gian làm việc có giá trị thấp từ 25-40%.
+
+Để thực sự được hưởng lợi từ đại lý AI, các tổ chức cần phải trải qua một sự thay đổi cấp hệ thống, được gọi là chuyển đổi kinh doanh đại lý (ABT). Điều này liên quan đến việc thiết kế lại mô hình hoạt động, quy trình làm việc, quyền quyết định và hệ thống quản lý hiệu suất của tổ chức. ABT bao gồm ba trụ cột cốt lõi: ngăn xếp công nghệ, lực lượng lao động và các chỉ số được sử dụng để đo lường thành công. Để đạt được ABT, các nhà lãnh đạo phải chuyển từ các quy trình tuyến tính sang tái cấu trúc công việc theo một cách mới, tận dụng các đại lý AI như một mô liên kết phối hợp các nhiệm vụ và truy xuất dữ liệu từ nhiều ứng dụng. Cách tiếp cận này có thể tạo ra một sự khác biệt cạnh tranh thực sự cho một doanh nghiệp, nhưng đòi hỏi một sự thay đổi cơ bản trong cách các tổ chức hoạt động.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">8</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Cách Virgin Atlantic giao hàng nhanh hơn với Codex</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;How Virgin Atlantic ships faster with Codex</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;OpenAI Blog</span>&nbsp;&nbsp;&nbsp;<a href="https://openai.com/index/virgin-atlantic" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Hãng hàng không Virgin Atlantic đã triển khai thành công ứng dụng di động được thiết kế lại bằng nền tảng Codex. Hãng hàng không này đã đạt được một cột mốc quan trọng khi đạt được phạm vi kiểm tra đơn vị gần như hoàn toàn, đảm bảo rằng tính năng của ứng dụng được kiểm tra kỹ lưỡng. Ngoài ra, Virgin Atlantic đã có thể đáp ứng thời hạn chót nghiêm ngặt cho mùa du lịch lễ hội, với Codex đóng vai trò quan trọng trong thành tựu này.
+
+Một trong những kết quả đáng chú ý của việc sử dụng Codex là giảm số lượng lỗi quan trọng, được gọi là lỗi P1, xuống mức zero. Điều này cho thấy ứng dụng rất ổn định và đáng tin cậy, cung cấp trải nghiệm người dùng liền mạch cho khách hàng của Virgin Atlantic.
+
+Việc sử dụng Codex đã cho phép Virgin Atlantic xuất ứng dụng di động được thiết kế lại một cách hiệu quả, đáp ứng thời hạn chót khắt khe cho mùa du lịch lễ hội. Thành tựu này thể hiện hiệu quả của Codex trong việc hỗ trợ phát triển và triển khai các ứng dụng phần mềm chất lượng cao.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+
+  <!-- TIPS SECTION -->
+  
+  <tr>
+    <td bgcolor="#FFFBEB" style="background-color:#FFFBEB;padding:20px 30px;border-top:3px solid #D97706;">
+      <p style="margin:0 0 12px;font-size:11px;color:#D97706;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#9889;&nbsp;Tips &amp; Tricks cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Cài đặt Ollama</strong><br><strong>Vấn đề:</strong> Khó cài đặt Ollama trên máy cá nhân.<br><strong>Cách làm:</strong> Sử dụng lệnh <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">pip install ollama</code> để cài đặt, sau đó chạy <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">ollama --help</code> để xem các tùy chọn. Ví dụ: <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">ollama --model small</code>.<br><strong>Đánh giá:</strong> Hiệu quả cao, giúp cài đặt Ollama dễ dàng.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Chạy LM Studio</strong><br><strong>Vấn đề:</strong> Không biết cách chạy LM Studio trên máy cá nhân.<br><strong>Cách làm:</strong> Sử dụng lệnh <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">lm-studio --model-path /path/to/model</code> để chạy, sau đó nhập prompt như &quot;Tổng hợp thông tin về AI&quot;.<br><strong>Đánh giá:</strong> Hiệu quả cao, giúp chạy LM Studio dễ dàng.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tối ưu hóa Local LLM</strong><br><strong>Vấn đề:</strong> Local LLM chạy chậm trên máy cá nhân.<br><strong>Cách làm:</strong> Sử dụng lệnh <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">ollama --optimize</code> để tối ưu hóa, sau đó chạy lại model.<br><strong>Đánh giá:</strong> Hiệu quả cao, giúp tăng tốc độ chạy Local LLM.</p>
+    </td>
+  </tr>
+
+  <!-- LESSON SECTION -->
+  
+  <tr>
+    <td bgcolor="#F0FFF4" style="background-color:#F0FFF4;padding:20px 30px;border-top:3px solid #2E7D32;">
+      <p style="margin:0 0 12px;font-size:11px;color:#2E7D32;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128218;&nbsp;B&#224;i h&#7885;c AI h&#244;m nay cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;">1. <strong>Tối ưu chi phí &amp; hiệu năng LLM</strong><br>2. Để tối ưu hóa chi phí và hiệu năng của Mô hình Ngôn ngữ Lớn (LLM), các nhà phát triển cần biết cách giảm thiểu tài nguyên tính toán và lưu trữ. Điều này giúp giảm chi phí vận hành và tăng tốc độ xử lý của ứng dụng.<br>3. Ví dụ, sử dụng kỹ thuật fine-tuning và LoRA (Low-Rank Adaptation) có thể giúp giảm kích thước mô hình và tăng tốc độ huấn luyện.<br>4. 💡 Tip: Sử dụng thư viện như Hugging Face Transformers để thực hiện fine-tuning và LoRA, và thử nghiệm với các kích thước mô hình khác nhau để tìm ra sự cân bằng giữa chi phí và hiệu năng.</p>
+    </td>
+  </tr>
+
+  <!-- FOOTER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:20px 30px;text-align:center;border-radius:0 0 10px 10px;">
+      <p style="margin:0 0 4px;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        &#128161;&nbsp;Lu&#244;n &#273;i &#273;&#7847;u trong th&#7871; gi&#7899;i AI!&nbsp;&#183;&nbsp;Stay ahead in AI!
+      </p>
+      <p style="margin:6px 0 0;font-size:11px;color:#4A7AAB;font-family:Arial,sans-serif;">
+        Ngu&#7891;n: Google News · Groq AI
+      </p>
+    </td>
+  </tr>
+
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+
+</td></tr>
+</table>
+</body>
+</html>

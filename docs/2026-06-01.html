@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--[if mso]>
+<noscript><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings></xml></noscript>
+<![endif]-->
+<style>
+/* ── Responsive overrides for web (email HTML uses fixed 600px tables) ── */
+@media screen and (max-width:620px) {
+  table[width="600"] { width:100% !important; }
+  td { word-break:break-word; overflow-wrap:break-word; }
+  /* Reduce generous email padding on small screens */
+  td[style*="padding:28px 30px"],
+  td[style*="padding:24px 30px"],
+  td[style*="padding:22px 30px"],
+  td[style*="padding:20px 30px"],
+  td[style*="padding:16px 30px"],
+  td[style*="padding:12px 30px"] { padding-left:14px !important; padding-right:14px !important; }
+  /* Code blocks: scroll horizontally instead of breaking layout */
+  pre { overflow-x:auto !important; max-width:calc(100vw - 32px) !important; box-sizing:border-box; }
+  /* Shrink large heading text slightly */
+  h1[style*="26px"] { font-size:20px !important; }
+}
+/* ── Print: hide nav bar ── */
+@media print {
+  #web-nav { display:none !important; }
+  body { background:#fff !important; }
+}
+</style>
+</head>
+<body style="margin:0;padding:0;background-color:#EEF2F7;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+<div id="web-nav" style="background:#001a4d;padding:8px 16px;font-family:Arial,sans-serif;font-size:13px;position:sticky;top:0;z-index:999;border-bottom:2px solid #0066CC;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
+  <span id="nav-prev" style="color:#4A6A8A;">&#8592;</span>
+  <a href="all.html" style="color:#FFD700;text-decoration:none;font-weight:bold;">&#128240; T&#7845;t c&#7843; b&#7843;n tin</a>
+  <span style="color:#FFFFFF;">01/06/2026</span>
+  <span id="nav-next" style="color:#4A6A8A;">&#8594;</span>
+  <a href="2026-06-01.pdf" download="2026-06-01.pdf" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128196; T&#7843;i PDF</a>
+  <button onclick="sharePage()" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128279; Chia s&#7867;</button>
+</div>
+<script>
+function sharePage(){
+  var title='Bản tin AI BIS-MT – 01/06/2026';
+  if(navigator.share){navigator.share({title:title,url:location.href});}
+  else{navigator.clipboard.writeText(location.href).then(function(){
+    alert('Đã sao chép link!');
+  });}
+}
+(function(){
+  var m=location.pathname.match(/(\d{4}-\d{2}-\d{2})\.html/);
+  if(!m)return;
+  var slug=m[1];
+  function fmt(s){var p=s.split('-');return p[2]+'/'+p[1];}
+  var lnkStyle='color:#90C4F0;text-decoration:none;';
+  fetch('dates.json?_='+Date.now())
+    .then(function(r){return r.json();})
+    .then(function(dates){
+      var idx=dates.indexOf(slug);
+      if(idx>0){
+        var p=dates[idx-1];
+        document.getElementById('nav-prev').innerHTML=
+          '<a href="'+p+'.html" style="'+lnkStyle+'">&#8592; '+fmt(p)+'</a>';
+      }
+      if(idx>=0&&idx<dates.length-1){
+        var n=dates[idx+1];
+        document.getElementById('nav-next').innerHTML=
+          '<a href="'+n+'.html" style="'+lnkStyle+'">'+fmt(n)+' &#8594;</a>';
+      }
+    })
+    .catch(function(){});
+})();
+</script>
+
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#EEF2F7" style="background-color:#EEF2F7;">
+<tr><td align="center" style="padding:24px 12px;">
+
+<!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0"><tr><td><![endif]-->
+<table role="presentation" width="600" cellpadding="0" cellspacing="0"
+       style="max-width:600px;width:100%;background-color:#FFFFFF;border-radius:10px;" bgcolor="#FFFFFF">
+
+  <!-- HEADER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:28px 30px 22px 30px;text-align:center;border-radius:10px 10px 0 0;">
+      <p style="margin:0 0 6px;font-size:11px;color:#7EB1E8;letter-spacing:2px;font-family:Arial,sans-serif;text-transform:uppercase;">
+        BIS &#8209; MT &nbsp;&#183;&nbsp; 01/06/2026
+      </p>
+      <h1 style="margin:0;font-size:26px;font-weight:bold;color:#FFFFFF;font-family:Arial,sans-serif;line-height:1.2;">
+        &#129302; B&#7843;n Tin AI H&#7857;ng Ng&#224;y
+      </h1>
+      <p style="margin:8px 0 0;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        C&#7853;p nh&#7853;t c&#244;ng ngh&#7879; AI m&#7899;i nh&#7845;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- QUOTE -->
+  <tr>
+    <td bgcolor="#EBF4FF" style="background-color:#EBF4FF;padding:16px 30px;border-top:3px solid #0066CC;">
+      <p style="margin:0;font-size:14px;color:#1A3A5C;font-style:italic;line-height:1.6;font-family:Georgia,serif;">
+        &#10024;&nbsp;&ldquo;Dream big, start small, but most of all, start.&rdquo;
+      </p>
+      <p style="margin:6px 0 0;font-size:13px;color:#444444;line-height:1.5;">&nbsp;&nbsp;&nbsp;&#8618;&nbsp;Mơ lớn, bắt đầu nhỏ, nhưng quan trọng nhất, hãy bắt đầu.</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#888888;font-family:Arial,sans-serif;">&mdash;&nbsp;Simon Sinek</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#5A6A7A;font-style:italic;line-height:1.5;font-family:Arial,sans-serif;">&#128161;&nbsp;Ước mơ lớn cần hành động nhỏ đầu tiên — sự hoàn hảo của kế hoạch không quan trọng bằng việc thực sự bắt tay vào làm.</p>
+    </td>
+  </tr>
+
+  <!-- SECTION LABEL -->
+  <tr>
+    <td bgcolor="#F5F7FA" style="background-color:#F5F7FA;padding:12px 30px;">
+      <p style="margin:0;font-size:11px;color:#999999;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128240;&nbsp;Tin t&#7913;c n&#7893;i b&#7853;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- ARTICLES -->
+  
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">1</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">AWS mở mã nguồn một máy chủ MCP cho Bedrock AgentCore để đơn giản hóa phát triển AI agent</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;AWS Open-Sources an MCP Server for Bedrock AgentCore to Streamline AI Agent Development</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;MarkTechPost</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMixwFBVV95cUxNZDEzc3dIU3dtSUFCMzJVVU1HeXZSUkdqNmFqMDh5U2d4MEZjRzV6RE14YWdscDYxdWpXelhjUWtPaWZYS19uamp1bUd0Z3dBRWFqOGZ2anAtQ3VvQ0pOUXVvc2tjNHR5cDBGSVJlMkJJQ25CcnRMLWtfWWZVVUwxcXhxMk5qY25BSFJyUk14NGNDWk1BbXp0WUtNeTJqVG1uVDA3NTRHVmF6RWFTeDZ2LVNRTHJ3cTRLWkdtekZ6VjhyNXE3YVFJ?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Amazon Web Services (AWS) đã mở nguồn một máy chủ MCP (Nền tảng Đa đám mây) cho Bedrock AgentCore, một framework để phát triển các tác nhân AI. Động thái này nhằm mục đích đơn giản hóa việc phát triển tác nhân AI bằng cách cung cấp một nền tảng tiêu chuẩn hóa cho việc thử nghiệm và triển khai trên nhiều môi trường đám mây.
+
+Máy chủ MCP được thiết kế để hoạt động liền mạch với Bedrock AgentCore, cho phép các nhà phát triển tạo, thử nghiệm và triển khai các tác nhân AI một cách dễ dàng. Bằng cách mở nguồn máy chủ MCP, AWS đang cho phép cộng đồng nhà phát triển rộng lớn hơn đóng góp và hưởng lợi từ nền tảng này.
+
+Framework Bedrock AgentCore là một thành phần quan trọng trong nỗ lực của AWS nhằm đơn giản hóa việc phát triển AI. Bằng cách cung cấp một nền tảng tiêu chuẩn hóa cho các tác nhân AI, AWS đang giúp các nhà phát triển xây dựng, thử nghiệm và triển khai các ứng dụng được hỗ trợ bởi AI trên nhiều môi trường đám mây.
+
+Việc mở nguồn máy chủ MCP dự kiến sẽ đẩy nhanh việc phát triển các tác nhân AI và thúc đẩy sự hợp tác giữa các nhà phát triển. Động thái này phù hợp với mục tiêu của AWS là làm cho việc phát triển AI trở nên dễ tiếp cận và hiệu quả hơn cho khách hàng của mình.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">2</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Xây dựng một agent phân tích tài chính thông minh với LangGraph và Strands Agents | Amazon Web Services</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Build an intelligent financial analysis agent with LangGraph and Strands Agents | Amazon Web Services</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Amazon Web Services (AWS)</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMixAFBVV95cUxQcDBxeXdxZlJjREktdFdBdnJST0xDSzQtYmppeEZQdHZWSXdaWGxSLXNvNlRYUjYwMlQ0LWtzU3RUdVRJWkJzbW1MektRRDNRS2lTZkJXUGJXNUplcHlIQkxQdkhxZEJkZW1Dd0k2R1lPdDlXQXhYdUdUdnJ0NlJDSnFlUXVOY0pYRDdITjFRVXRKMjlqWkNORnp5SXQzdnZIazc5ZURWMU8xQlgzV19DRjIxeTE4RFZXdTBOc1JLOER3NFZl?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Amazon Web Services (AWS) đã giới thiệu một giải pháp mới để xây dựng một tác nhân phân tích tài chính thông minh sử dụng LangGraph và Strands Agents. Cách tiếp cận sáng tạo này cho phép người dùng tạo ra một hệ thống phân tích tài chính tinh vi có thể xử lý và phân tích lượng lớn dữ liệu tài chính.
+
+LangGraph là một thư viện xử lý ngôn ngữ tự nhiên (NLP) cho phép người dùng trích xuất thông tin chi tiết từ các tài liệu tài chính, chẳng hạn như báo cáo và tuyên bố tài chính. Strands Agents, mặt khác, là một nền tảng low-code cho phép người dùng xây dựng, triển khai và quản lý các tác nhân được hỗ trợ bởi AI.
+
+Bằng cách kết hợp LangGraph và Strands Agents, người dùng có thể tạo ra một tác nhân phân tích tài chính có thể tự động trích xuất thông tin liên quan từ các tài liệu tài chính, phân tích nó và cung cấp thông tin chi tiết có thể hành động. Tác nhân này có thể được tích hợp với các dịch vụ AWS khác, chẳng hạn như Amazon SageMaker và Amazon Comprehend, để tăng cường khả năng của nó.
+
+Giải pháp này được thiết kế để giúp các tổ chức tài chính, kế toán và nhà phân tích tối ưu hóa quy trình phân tích tài chính của họ, cải thiện độ chính xác và giảm công việc thủ công. Với LangGraph và Strands Agents, người dùng có thể xây dựng một hệ thống phân tích tài chính thông minh và hiệu quả hơn có thể theo kịp sự phức tạp của tài chính hiện đại.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">3</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Các model trọng lượng mở tốt nhất của Trung Quốc — và các đối thủ mạnh nhất của Mỹ</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;The best Chinese open-weight models — and the strongest US rivals</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;understandingai.org</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMieEFVX3lxTE5aRUUtRDNyd05CNlRPU1JDN2lPcEU3RkZVOTU0UkN4T1Vzb0hvMjhWTGJLUzlwcW83dWxsY1pVTFlHNjlnLUt1N0JJVnB1dGtqdTQxNjd1R2U4OW14RWhUVVZkVlFUVDExWWx5QjJ2U1ZFSlVKS0s5RA?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Bài viết thảo luận về các mô hình trọng lượng mở hàng đầu của Trung Quốc và các đối thủ mạnh nhất của Mỹ. Các mô hình trọng lượng mở đề cập đến xe điện không có giới hạn trọng lượng, cho phép nhiều tùy chọn tùy chỉnh rộng rãi. Các nhà sản xuất Trung Quốc đã đạt được những bước tiến đáng kể trong lĩnh vực này, với một số mô hình nổi bật về hiệu suất và tính năng.
+
+Một số mô hình trọng lượng mở hàng đầu của Trung Quốc được đề cập trong bài viết bao gồm XPeng P7, BYD Song và Geely Geometry A. Những xe này cung cấp phạm vi ấn tượng, tốc độ và các tính năng công nghệ tiên tiến, khiến chúng trở thành những đối thủ mạnh trên thị trường.
+
+Bài viết cũng nhấn mạnh các đối thủ mạnh nhất của Mỹ đối với các mô hình Trung Quốc này. Tuy nhiên, các mô hình cụ thể của Mỹ không được cung cấp trong nội dung cho trước. Bài viết gợi ý rằng các nhà sản xuất Trung Quốc đang tạo ra sự cạnh tranh gay gắt cho các công ty Mỹ trong thị trường xe điện trọng lượng mở, với các thiết kế sáng tạo và giá cả cạnh tranh.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">4</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">datasette 1.0a32</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;datasette 1.0a32</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Simon Willison</span>&nbsp;&nbsp;&nbsp;<a href="https://simonwillison.net/2026/May/31/datasette/#atom-everything" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Datasette đã phát hành phiên bản 1.0a32, một bản cập nhật nhỏ tập trung vào việc sửa lỗi. Phiên bản này giải quyết hai vấn đề cụ thể: một vấn đề với các truy vấn INSERT ... RETURNING qua điểm cuối /db/-/execute-write và các vấn đề base_url khác phát sinh trong quá trình thử nghiệm với Service Workers. Những sửa lỗi này nhằm cải thiện sự ổn định và chức năng của Datasette.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">5</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Các trang web có một cách mới để theo dõi khách truy cập: Phân tích hoạt động SSD của họ</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Websites have a new way to spy on visitors: Analyzing their SSD activity</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Ars Technica</span>&nbsp;&nbsp;&nbsp;<a href="https://arstechnica.com/security/2026/05/websites-have-a-new-way-to-spy-on-visitors-analyzing-their-ssd-activity/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Các trang web đã phát hiện ra một cách mới để theo dõi bí mật thói quen duyệt web và sử dụng thiết bị của khách truy cập. Một kỹ thuật gọi là FROST (lấy dấu vân tay từ xa sử dụng thời gian SSD dựa trên OPFS) cho phép các trang web theo dõi các trang web khác mà khách truy cập đang xem và các ứng dụng nào đang mở trên thiết bị của họ. Phương pháp này khai thác một kênh phụ, đo lường sự tương tác giữa các quá trình cạnh tranh cho một tài nguyên, chẳng hạn như ổ đĩa trạng thái rắn (SSD). Bằng cách phân tích thời gian của các hoạt động SSD nhất định, kẻ tấn công có thể suy luận dữ liệu bí mật, bao gồm cả trang web và ứng dụng đang mở. FROST không cần sự tương tác từ khách truy cập và có thể được thực hiện chỉ trong trình duyệt sử dụng JavaScript. Các nhà nghiên cứu đã chứng minh tính hiệu quả của FROST trong việc theo dõi hoạt động của người dùng, nhưng kỹ thuật này có những hạn chế, bao gồm cả nhu cầu về một tệp OPFS lớn và yêu cầu tệp đó phải được lưu trữ trên cùng một SSD với thiết bị của khách truy cập. Để ngăn chặn các cuộc tấn công FROST, người dùng có thể đóng các tab không cần thiết và theo dõi việc tạo và kích thước của các tệp OPFS được phân bổ bởi các trang web không xác định. Các nhà sản xuất trình duyệt cũng đang tìm cách giảm thiểu lỗ hổng này.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">6</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Erin Brockovich nhắm vào bí mật của trung tâm dữ liệu</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Erin Brockovich takes aim at data center secrecy</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;TechCrunch AI</span>&nbsp;&nbsp;&nbsp;<a href="https://techcrunch.com/2026/05/31/erin-brockovich-takes-aim-at-data-center-secrecy/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Nhà hoạt động môi trường Erin Brockovich đã khởi xướng một nhiệm vụ mới để mang lại minh bạch cho việc xây dựng trung tâm dữ liệu và tác động của nó đối với các cộng đồng lân cận. Brockovich, được biết đến với vụ kiện cao cấp chống lại Pacific Gas &amp; Electric, đã tạo một trang web có tính năng bản đồ các trung tâm dữ liệu trên toàn nước Mỹ, được đóng góp từ các thành viên cộng đồng. Sau khi nhận được gần 4.000 bản gửi trong tháng đầu tiên, Brockovich đã nhấn mạnh mối quan ngại chung về sự thiếu minh bạch trong các dự án trung tâm dữ liệu. Cô ấy nhấn mạnh rằng mục tiêu của mình không phải là phản đối trung tâm dữ liệu hoặc AI, mà là giải quyết mô hình bí mật bao quanh sự phát triển trung tâm dữ liệu, bao gồm cả các dự án được công bố sau khi giấy phép được bảo đảm và các quan chức địa phương ký thỏa thuận không tiết lộ mà không có kiến thức của cộng đồng. Sáng kiến của Brockovich nhằm mục đích làm sáng tỏ các vấn đề ảnh hưởng đến các cộng đồng lân cận và thúc đẩy giao tiếp cởi mở hơn trong xây dựng trung tâm dữ liệu.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">7</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Mọi người đều đặt mục tiêu vào MacBook Neo</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Everyone Has Their Targets Set on the MacBook Neo</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Wired</span>&nbsp;&nbsp;&nbsp;<a href="https://www.wired.com/story/everyone-has-their-targets-set-on-the-macbook-neo/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Tác động của MacBook Neo đối với thị trường laptop vẫn còn được cảm nhận, với các nhà sản xuất Windows phản ứng lại mức giá 599 đô la của nó. Dell XPS 13 mới và Microsoft Surface Laptop 8 là những sản phẩm mới nhất, cả hai đều nhằm mục đích khớp với vẻ ngoài và cảm giác cao cấp của Neo trong khi cung cấp giá cả cạnh tranh. Dell XPS 13 được làm hoàn toàn bằng nhôm, có màn hình IPS cao cấp và có tốc độ làm mới nhanh hơn Neo. Tuy nhiên, nó bắt đầu với 8 GB RAM và bộ xử lý Intel Core 5 chậm hơn, tương tự như Neo. XPS 13 có thể được cấu hình lên đến 32 GB RAM và 1 TB lưu trữ, cung cấp nhiều tính linh hoạt hơn so với Neo. Mặt khác, Microsoft Surface Laptop 8 bắt đầu với 16 GB RAM trong mẫu cao cấp hơn nhưng chỉ 8 GB trong phiên bản 13 inch giá rẻ hơn, dự kiến ra mắt vào cuối năm nay. Dell XPS 13 mới được định vị là một đối thủ cạnh tranh trực tiếp hơn với MacBook Neo, cung cấp trải nghiệm cao cấp với mức giá thấp hơn.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">8</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Cách Composer 2.5 của Cursor sử dụng tự chưng cất để vượt qua các LLM tiền phong trong mã hóa</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;How Cursor’s Composer 2.5 uses self-distillation to beat the frontier LLMs at coding</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;BD Tech Talks</span>&nbsp;&nbsp;&nbsp;<a href="https://bdtechtalks.com/2026/05/25/composer-25-llm-self-distillation/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=composer-25-llm-self-distillation" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Composer 2.5 của Cursor đã nổi lên như một mô hình mã hóa hàng đầu, vượt trội so với các mô hình lớn hơn, đắt tiền hơn như GPT-5.5 của OpenAI và Opus 4.7 của Anthropic trong các nhiệm vụ kỹ thuật hàng ngày. Điều này được thực hiện thông qua một kỹ thuật gọi là tự chưng cất, cho phép một mô hình nhỏ hơn bắt chước đầu ra của một mô hình lớn hơn. Composer 2.5 sử dụng một quá trình gọi là &quot;học tăng cường có mục tiêu với phản hồi văn bản&quot; để cải thiện hiệu suất của nó. Điều này liên quan đến việc tiêm các gợi ý văn bản cục bộ vào ngữ cảnh của mô hình khi nó mắc lỗi, cho phép nó điều chỉnh hành vi và sửa lỗi của mình mà không làm giảm khả năng tổng thể của nó. Hiệu quả thuật toán của mô hình làm cho nó có thể tài chính cho các nhóm nhỏ, với chi phí 0,50 đô la cho mỗi triệu token đầu vào và 2,50 đô la cho mỗi triệu token đầu ra. Mặc dù Composer 2.5 không hoàn hảo và có thể gặp khó khăn với các nhiệm vụ phức tạp, nhưng nó chứng minh rằng các mô hình chuyên dụng có thể cạnh tranh với các mô hình lớn hơn mà không cần nhiều tham số hơn. Cách tiếp cận này có khả năng dân chủ hóa mã hóa agentic mạnh mẽ và làm cho nó dễ tiếp cận hơn với các nhà phát triển.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+
+  <!-- TIPS SECTION -->
+  
+  <tr>
+    <td bgcolor="#FFFBEB" style="background-color:#FFFBEB;padding:20px 30px;border-top:3px solid #D97706;">
+      <p style="margin:0 0 12px;font-size:11px;color:#D97706;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#9889;&nbsp;Tips &amp; Tricks cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tích hợp File System</strong><br><strong>Vấn đề:</strong> Việc kết nối AI với file system giúp tăng cường khả năng đọc và ghi dữ liệu.<br><strong>Cách làm:</strong> Sử dụng MCP để kết nối Claude Desktop với file system, cho phép đọc và ghi file trực tiếp. Ví dụ, câu prompt &quot;Tạo file mới tên là example.txt&quot; sẽ tạo file mới trong thư mục hiện tại.<br><strong>Đánh giá:</strong> Hiệu quả trong việc tự động hóa các tác vụ liên quan đến file, nhưng cần đảm bảo an toàn dữ liệu.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Kết nối Database</strong><br><strong>Vấn đề:</strong> Việc kết nối AI với database giúp tăng cường khả năng truy cập và xử lý dữ liệu.<br><strong>Cách làm:</strong> Sử dụng MCP để kết nối Claude Code với database, cho phép thực hiện các truy vấn SQL trực tiếp. Ví dụ, lệnh &quot;SELECT * FROM users&quot; sẽ trả về tất cả dữ liệu từ bảng users.<br><strong>Đánh giá:</strong> Hiệu quả trong việc tăng cường khả năng truy cập dữ liệu, nhưng cần đảm bảo an toàn và bảo mật dữ liệu.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tích hợp API</strong><br><strong>Vấn đề:</strong> Việc kết nối AI với API giúp tăng cường khả năng tương tác với các dịch vụ ngoài.<br><strong>Cách làm:</strong> Sử dụng MCP để kết nối Cursor với API, cho phép thực hiện các yêu cầu API trực tiếp. Ví dụ, câu prompt &quot;Gửi yêu cầu GET đến https://api.example.com/data&quot; sẽ trả về dữ liệu từ API.<br><strong>Đánh giá:</strong> Hiệu quả trong việc tăng cường khả năng tương tác với các dịch vụ ngoài, nhưng cần đảm bảo an toàn và bảo mật dữ liệu.</p>
+    </td>
+  </tr>
+
+  <!-- LESSON SECTION -->
+  
+  <tr>
+    <td bgcolor="#F0FFF4" style="background-color:#F0FFF4;padding:20px 30px;border-top:3px solid #2E7D32;">
+      <p style="margin:0 0 12px;font-size:11px;color:#2E7D32;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128218;&nbsp;B&#224;i h&#7885;c AI h&#244;m nay cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;">1. <strong>Tích hợp AI API vào ứng dụng</strong><br>2. Trong thời đại hiện nay, tích hợp AI vào ứng dụng là một bước quan trọng để tăng cường khả năng và hiệu suất của ứng dụng. Các dev cần biết cách tích hợp AI API để tạo ra các ứng dụng thông minh hơn. Việc này giúp cải thiện trải nghiệm người dùng và tăng cường cạnh tranh trên thị trường.<br>3. Ví dụ, chúng ta có thể sử dụng API như Google Cloud Vision để phân tích hình ảnh trong ứng dụng di động, hoặc sử dụng API như Dialogflow để tạo ra các chatbot thông minh.<br>4. 💡 Tip hoặc bước tiếp theo: Hãy bắt đầu bằng cách lựa chọn một AI API phù hợp với nhu cầu của ứng dụng, sau đó tích hợp nó vào mã nguồn của bạn bằng cách sử dụng các thư viện và framework hỗ trợ như RESTful API hoặc gRPC.</p>
+    </td>
+  </tr>
+
+  <!-- FOOTER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:20px 30px;text-align:center;border-radius:0 0 10px 10px;">
+      <p style="margin:0 0 4px;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        &#128161;&nbsp;Lu&#244;n &#273;i &#273;&#7847;u trong th&#7871; gi&#7899;i AI!&nbsp;&#183;&nbsp;Stay ahead in AI!
+      </p>
+      <p style="margin:6px 0 0;font-size:11px;color:#4A7AAB;font-family:Arial,sans-serif;">
+        Ngu&#7891;n: Google News · Groq AI
+      </p>
+    </td>
+  </tr>
+
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+
+</td></tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--[if mso]>
+<noscript><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings></xml></noscript>
+<![endif]-->
+<style>
+/* ── Responsive overrides for web (email HTML uses fixed 600px tables) ── */
+@media screen and (max-width:620px) {
+  table[width="600"] { width:100% !important; }
+  td { word-break:break-word; overflow-wrap:break-word; }
+  /* Reduce generous email padding on small screens */
+  td[style*="padding:28px 30px"],
+  td[style*="padding:24px 30px"],
+  td[style*="padding:22px 30px"],
+  td[style*="padding:20px 30px"],
+  td[style*="padding:16px 30px"],
+  td[style*="padding:12px 30px"] { padding-left:14px !important; padding-right:14px !important; }
+  /* Code blocks: scroll horizontally instead of breaking layout */
+  pre { overflow-x:auto !important; max-width:calc(100vw - 32px) !important; box-sizing:border-box; }
+  /* Shrink large heading text slightly */
+  h1[style*="26px"] { font-size:20px !important; }
+}
+/* ── Print: hide nav bar ── */
+@media print {
+  #web-nav { display:none !important; }
+  body { background:#fff !important; }
+}
+</style>
+</head>
+<body style="margin:0;padding:0;background-color:#EEF2F7;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+<div id="web-nav" style="background:#001a4d;padding:8px 16px;font-family:Arial,sans-serif;font-size:13px;position:sticky;top:0;z-index:999;border-bottom:2px solid #0066CC;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
+  <span id="nav-prev" style="color:#4A6A8A;">&#8592;</span>
+  <a href="all.html" style="color:#FFD700;text-decoration:none;font-weight:bold;">&#128240; T&#7845;t c&#7843; b&#7843;n tin</a>
+  <span style="color:#FFFFFF;">03/06/2026</span>
+  <span id="nav-next" style="color:#4A6A8A;">&#8594;</span>
+  <a href="2026-06-03.pdf" download="2026-06-03.pdf" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128196; T&#7843;i PDF</a>
+  <button onclick="sharePage()" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128279; Chia s&#7867;</button>
+</div>
+<script>
+function sharePage(){
+  var title='Bản tin AI BIS-MT – 03/06/2026';
+  if(navigator.share){navigator.share({title:title,url:location.href});}
+  else{navigator.clipboard.writeText(location.href).then(function(){
+    alert('Đã sao chép link!');
+  });}
+}
+(function(){
+  var m=location.pathname.match(/(\d{4}-\d{2}-\d{2})\.html/);
+  if(!m)return;
+  var slug=m[1];
+  function fmt(s){var p=s.split('-');return p[2]+'/'+p[1];}
+  var lnkStyle='color:#90C4F0;text-decoration:none;';
+  fetch('dates.json?_='+Date.now())
+    .then(function(r){return r.json();})
+    .then(function(dates){
+      var idx=dates.indexOf(slug);
+      if(idx>0){
+        var p=dates[idx-1];
+        document.getElementById('nav-prev').innerHTML=
+          '<a href="'+p+'.html" style="'+lnkStyle+'">&#8592; '+fmt(p)+'</a>';
+      }
+      if(idx>=0&&idx<dates.length-1){
+        var n=dates[idx+1];
+        document.getElementById('nav-next').innerHTML=
+          '<a href="'+n+'.html" style="'+lnkStyle+'">'+fmt(n)+' &#8594;</a>';
+      }
+    })
+    .catch(function(){});
+})();
+</script>
+
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#EEF2F7" style="background-color:#EEF2F7;">
+<tr><td align="center" style="padding:24px 12px;">
+
+<!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0"><tr><td><![endif]-->
+<table role="presentation" width="600" cellpadding="0" cellspacing="0"
+       style="max-width:600px;width:100%;background-color:#FFFFFF;border-radius:10px;" bgcolor="#FFFFFF">
+
+  <!-- HEADER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:28px 30px 22px 30px;text-align:center;border-radius:10px 10px 0 0;">
+      <p style="margin:0 0 6px;font-size:11px;color:#7EB1E8;letter-spacing:2px;font-family:Arial,sans-serif;text-transform:uppercase;">
+        BIS &#8209; MT &nbsp;&#183;&nbsp; 03/06/2026
+      </p>
+      <h1 style="margin:0;font-size:26px;font-weight:bold;color:#FFFFFF;font-family:Arial,sans-serif;line-height:1.2;">
+        &#129302; B&#7843;n Tin AI H&#7857;ng Ng&#224;y
+      </h1>
+      <p style="margin:8px 0 0;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        C&#7853;p nh&#7853;t c&#244;ng ngh&#7879; AI m&#7899;i nh&#7845;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- QUOTE -->
+  <tr>
+    <td bgcolor="#EBF4FF" style="background-color:#EBF4FF;padding:16px 30px;border-top:3px solid #0066CC;">
+      <p style="margin:0;font-size:14px;color:#1A3A5C;font-style:italic;line-height:1.6;font-family:Georgia,serif;">
+        &#10024;&nbsp;&ldquo;We must accept finite disappointment, but never lose infinite hope.&rdquo;
+      </p>
+      <p style="margin:6px 0 0;font-size:13px;color:#444444;line-height:1.5;">&nbsp;&nbsp;&nbsp;&#8618;&nbsp;Chúng ta phải chấp nhận thất vọng hữu hạn, nhưng không bao giờ mất đi hy vọng vô hạn.</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#888888;font-family:Arial,sans-serif;">&mdash;&nbsp;Martin Luther King Jr.</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#5A6A7A;font-style:italic;line-height:1.5;font-family:Arial,sans-serif;">&#128161;&nbsp;Giữ hy vọng không có nghĩa là ngây thơ — đó là sự lựa chọn tích cực để tiếp tục tiến về phía trước dù có gặp thất bại tạm thời.</p>
+    </td>
+  </tr>
+
+  <!-- SECTION LABEL -->
+  <tr>
+    <td bgcolor="#F5F7FA" style="background-color:#F5F7FA;padding:12px 30px;">
+      <p style="margin:0;font-size:11px;color:#999999;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128240;&nbsp;Tin t&#7913;c n&#7893;i b&#7853;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- ARTICLES -->
+  
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">1</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Hướng dẫn hoàn chỉnh về tệp nhớ của AI Agent (CLAUDE.md, AGENTS.md, và hơn thế nữa)</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;The Complete Guide to AI Agent Memory Files (CLAUDE.md, AGENTS.md, and Beyond)</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;HackerNoon</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxNMGVuaXdvWmdfZ3F0SUlFNDRhMmdRSnBFalBrcmFfeHRFLVNGZkZyd0o3MmxuQW94c1FqSVlFUUNpajZnampmUWlYU0swTFFjM1BGWncyWlpQcjctd01NSms2NHZwWkNyS1p4cm1GOWZ5bzJZRzhuME1xV3A0SmZ3RjhSVU9yekdKTW5JMG1tMGdsSjJGMldLMHpoSQ?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Bài viết này cung cấp một hướng dẫn chi tiết về các tệp tin bộ nhớ của tác nhân AI, tập trung cụ thể vào CLAUDE.md và AGENTS.md. Tác giả đi sâu vào thế giới của các tác nhân AI, giải thích tầm quan trọng của các tệp tin bộ nhớ trong hoạt động của chúng. CLAUDE.md được mô tả là một tệp tin quan trọng chứa siêu dữ liệu về tác nhân AI, bao gồm tên, mô tả và các chi tiết liên quan khác. AGENTS.md, mặt khác, là một tệp tin lưu trữ thông tin về các tác nhân AI, chẳng hạn như khả năng và giới hạn của chúng.
+
+Bài viết cũng đề cập đến các tệp tin bộ nhớ của tác nhân AI khác, mặc dù các chi tiết cụ thể không được cung cấp. Nó nhấn mạnh tầm quan trọng của các tệp tin này trong việc hiểu và quản lý các tác nhân AI, đang ngày càng được sử dụng trong nhiều ứng dụng, bao gồm cả chatbot và trợ lý ảo. Bằng cách khám phá các tệp tin bộ nhớ này, các nhà phát triển có thể thu được những hiểu biết quý giá về hoạt động nội bộ của các tác nhân AI và cải thiện hiệu suất và chức năng của chúng. Bài viết này phục vụ như một tài nguyên toàn diện cho những người quan tâm đến việc phát triển và quản lý tác nhân AI, đặc biệt là trong việc xây dựng và tích hợp các mô hình LLM, API và framework khác nhau để tạo ra các giải pháp AI hiệu quả hơn.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">2</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Lớp lệnh AI nhà kho đa agent cho phép xuất sắc hoạt động và thông minh chuỗi cung ứng</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Multi-Agent Warehouse AI Command Layer Enables Operational Excellence and Supply Chain Intelligence</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;NVIDIA Developer</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMizwFBVV95cUxON2JaLWpmNDU2T3UwSG4yeUQ0eVVMNnowemV4OWFtaDlyX05KT3lNV1VhVGtCZjc2LTBjZjBOU3B5R1poaU1oZS1pcXlpczZORi04Y3QteE5nMmlISi1yWXdCcE05QUpwZFZyR2cyam96WVc5WVVBTHE2TlVBalVkOTdnVFNqRmFYQWhhSTFiRktyVFh0d3dERTFDSlktZHRvVGc1MFgxS290RTVUMHRTNWs5NlllT2h2Ym5MTnF0ajIwQ1hfYmJpTV8wQUtRbXM?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">NVIDIA đã giới thiệu Lớp lệnh AI Nhà kho Đa tác nhân, một công nghệ tiên tiến được thiết kế để nâng cao hiệu quả hoạt động và trí tuệ chuỗi cung ứng. Giải pháp đổi mới này tận dụng AI và học máy để tối ưu hóa hoạt động nhà kho, cho phép các doanh nghiệp đưa ra quyết định dựa trên dữ liệu.
+
+Lớp lệnh AI Nhà kho Đa tác nhân là một trung tâm điều hành tích hợp các tác nhân AI khác nhau để quản lý và điều phối các hoạt động nhà kho. Các tác nhân này làm việc cùng nhau để phân tích dữ liệu từ các nguồn khác nhau, bao gồm mức tồn kho, lịch trình giao hàng và hiệu suất thiết bị. Bằng cách làm như vậy, hệ thống có thể xác định các điểm nghẽn, dự đoán các vấn đề tiềm ẩn và đề xuất cải tiến để tối ưu hóa hoạt động nhà kho.
+
+Công nghệ này cũng cung cấp khả năng hiển thị thời gian thực vào hoạt động chuỗi cung ứng, cho phép các doanh nghiệp theo dõi chuyển động hàng tồn kho, trạng thái giao hàng và các chỉ số chính khác. Mức độ minh bạch này cho phép các công ty phản ứng nhanh chóng với những thay đổi về nhu cầu, giảm chi phí và cải thiện sự hài lòng của khách hàng. Bằng cách tận dụng sức mạnh của AI và học máy, Lớp lệnh AI Nhà kho Đa tác nhân có tiềm năng cách mạng hóa cách các doanh nghiệp quản lý nhà kho và chuỗi cung ứng của họ.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">3</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Nhà máy Agent: Kết nối các agent, ứng dụng và dữ liệu với các tiêu chuẩn mở mới như MCP và A2A</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Agent Factory: Connecting agents, apps, and data with new open standards like MCP and A2A</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Microsoft Azure</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMixAFBVV95cUxOekoxbVV4Vml2ZG5yVGVhRWl1cVFLM1ZrYUVNbWdFTnI1bV9CTmVFZ3FJNTRCeTctZ3ctTUtVOW9YbFBqVWZPTGpfQnk0WWt4T09OdG00X25yZVV3TE1XbGpJckdHWVBNV2l1bDdKbEZXb1dmc1RjR1JENWNkMVF6WHVrdlZDMThhVDN5WFFiQ01YakVlWUZDR0gtS0NTZGxrOGFUMzN4ZWlNZzF1WlFPMnMwT3BDcUd6TjJDSWJXMkpkMEh5?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Microsoft đã giới thiệu Agent Factory, một sáng kiến mới nhằm kết nối các tác nhân, ứng dụng và dữ liệu thông qua các tiêu chuẩn mở. Dự án này sử dụng Cloud PC (MCP) và giao thức Ứng dụng đến Ứng dụng (A2A) của Microsoft để tạo điều kiện cho sự tương tác liền mạch giữa các thành phần khác nhau.
+
+Agent Factory nhằm mục đích đơn giản hóa quá trình tích hợp bằng cách cung cấp một khuôn khổ tiêu chuẩn hóa cho giao tiếp và trao đổi dữ liệu. Điều này cho phép các nhà phát triển xây dựng các ứng dụng hiệu quả và có khả năng mở rộng hơn, có thể dễ dàng tương tác với các hệ thống và dịch vụ khác.
+
+Việc sử dụng các tiêu chuẩn mở như MCP và A2A cho phép có sự linh hoạt và khả năng tương tác cao hơn, làm cho việc các hệ thống khác nhau làm việc cùng nhau trở nên dễ dàng hơn. Điều này có thể dẫn đến năng suất lao động được cải thiện, chi phí giảm và trải nghiệm người dùng tổng thể được nâng cao. Bằng cách tận dụng các tiêu chuẩn mở này, Agent Factory có tiềm năng cách mạng hóa cách các ứng dụng và dữ liệu tương tác, mở đường cho các giải pháp sáng tạo và kết nối hơn.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">4</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Tại sao tương lai của AI agent lại xoay quanh việc điều khiển</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Why the future of agentic AI is all about the harness</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;BD Tech Talks</span>&nbsp;&nbsp;&nbsp;<a href="https://bdtechtalks.com/2026/06/01/ai-harness-scaling/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=ai-harness-scaling" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Tương lai của AI agentic, một loại trí tuệ nhân tạo có thể thực hiện hành động và đưa ra quyết định, đang thay đổi từ việc chỉ tập trung vào xây dựng các model lớn hơn và cung cấp cho chúng nhiều dữ liệu hơn. Theo một bài báo mới từ UC Berkeley, điểm nghẽn chính tiếp theo trong AI agentic là &quot;system scaling&quot;, hoặc việc mở rộng &quot;harness&quot; giúp dịch các câu trả lời của model thành hành vi trong thế giới thực. Harness này là một hệ thống phức tạp bao gồm nhiều thành phần, chẳng hạn như lưu trữ bộ nhớ, xây dựng ngữ cảnh, định tuyến kỹ năng và xác minh và quản trị. Các thành phần này hoạt động cùng nhau để quản lý hành vi của agent và đảm bảo hiệu suất tối ưu.
+
+Các nhà nghiên cứu hiện đang nhận ra rằng toàn bộ hệ thống, bao gồm model và cơ sở hạ tầng xung quanh, phải được tối ưu hóa cho hiệu suất. Các framework agent hiện đại hoạt động như cơ sở hạ tầng hệ thống mạnh mẽ, chứ không chỉ là các wrapper prompt đơn giản. Các tác giả đề xuất chia hệ thống AI thành ba lớp chức năng: prompt, kỹ năng và bộ nhớ. Prompt định nghĩa các mục tiêu ngay lập tức, kỹ năng là các mẫu thực hiện có thể tái sử dụng và bộ nhớ lưu giữ các事 thực qua các phiên. Tuy nhiên, mỗi lớp này lại đưa ra những thách thức mới, chẳng hạn như định tuyến, thành phần và ủy quyền, và suy giảm bộ nhớ, ô nhiễm và tổng quát hóa quá mức.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">5</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Cyera hướng tới định giá 12 tỷ USD với hệ số ARR 80 lần bất chấp lỗ hoạt động</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Cyera eyes $12B valuation at 80x ARR multiple despite operating losses</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;TechCrunch AI</span>&nbsp;&nbsp;&nbsp;<a href="https://techcrunch.com/2026/06/02/cyera-eyes-12b-valuation-at-80x-arr-multiple-despite-operating-losses/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Cyera, một công ty bảo mật lưu trữ dữ liệu, được báo cáo đang hoàn thiện vòng tài trợ do Evolution Equity Partners dẫn đầu, định giá công ty ở mức 12 tỷ đô la. Định giá này dựa trên doanh thu định kỳ hàng năm (ARR) là 150 triệu đô la, đưa công ty đến hệ số ARR là 80, cao hơn nhiều công ty khởi nghiệp AI tăng trưởng nhanh. Mặc dù có sự tăng trưởng doanh thu đáng kể, Cyera không có lợi nhuận và đã hoạt động trong tình trạng thua lỗ, với một số chi phí được chỉ đạo để thuê nhân viên bán hàng. Công ty đã thêm 500 việc làm từ đầu năm đến nay. Vòng tài trợ mới này dự kiến sẽ đưa tổng số vốn của Cyera lên ít nhất 2 tỷ đô la, sau vòng Series F trước đó là 400 triệu đô la vào năm 2025.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">6</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Qwen3.7-Plus của Alibaba hỗ trợ nhập văn bản, video và hình ảnh với chi phí thấp 0,4/1,6 USD cho mỗi 1 triệu token — nhưng nó là độc quyền</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Alibaba&#x27;s Qwen3.7-Plus supports text, video and imagery inputs at low cost of $0.4/$1.6 per 1M token — but it&#x27;s proprietary</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;VentureBeat</span>&nbsp;&nbsp;&nbsp;<a href="https://venturebeat.com/technology/alibabas-qwen3-7-plus-supports-text-video-and-imagery-inputs-at-low-cost-of-0-4-1-6-per-1m-token-but-its-proprietary" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Alibaba đã phát hành Qwen3.7-Plus, một mô hình AI ngôn ngữ lớn mới hỗ trợ đầu vào văn bản, video và hình ảnh với chi phí thấp hơn so với người tiền nhiệm của nó, Qwen3.7-Max. Mô hình này có sẵn dưới giấy phép độc quyền và có thể được truy cập thông qua Cloud Model Studio của Alibaba. Qwen3.7-Plus tự hào có chi phí thấp hơn 60% so với Qwen3.7-Max, với giá 0,4 đô la cho 1 triệu token cho đầu vào và 1,6 đô la cho 1 triệu token cho đầu ra.
+
+Mô hình này có khả năng đa phương thức, cho phép nó tạo ra hình ảnh cấp doanh nghiệp và phân tích video, hình ảnh và ảnh chụp màn hình. Nó cũng có một cửa sổ ngữ cảnh 1 triệu token và phân bổ lên đến 256K token cho quá trình xử lý chuỗi suy nghĩ nội bộ. Tính năng này, được gọi là &quot;preserve_thinking&quot;, cho phép mô hình giữ lại các vòng lặp logic nội bộ và ngăn chặn mất ngữ cảnh trong các nhiệm vụ phức tạp.
+
+Qwen3.7-Plus đã được thử nghiệm so với các mô hình khác, thể hiện hiệu suất cạnh tranh trên các nhiệm vụ đa phương thức và tác nhân. Tuy nhiên, nó vẫn thấp hơn một số mô hình hàng đầu về các chỉ số khả năng thô. Mô hình này được thiết kế để thay thế các mô hình tiền phong trong các công việc của nhà phát triển tần suất cao, tự động hóa quy trình robot và đường ống kỹ thuật dữ liệu.
+
+Alibaba đã cấu trúc việc phân phối API của mình để phù hợp với các khuôn khổ doanh nghiệp mã nguồn mở và độc quyền hiện có, khiến nó dễ dàng tích hợp vào các ngăn xếp công nghệ hiện có. Mô hình này cũng cung cấp các điểm giá bộ nhớ đệm chi tiết, khiến các lần lặp lại của tác nhân đa lượt tần suất cao trở nên thực tế về mặt kinh tế ở quy mô doanh nghiệp.
+
+Tuy nhiên, mô hình này chỉ có sẵn dưới giấy phép độc quyền, điều này gây ra lo ngại về tuân thủ và chủ quyền cho các doanh nghiệp hoạt động dưới các nghĩa vụ cư trú dữ liệu nghiêm ngặt. Mặc dù vậy, Qwen3.7-Plus trình bày một giải pháp thay thế thực tế cho người mua doanh nghiệp đang tìm cách xây dựng các vòng lặp phần mềm tự động, có khả năng hình ảnh mạnh mẽ mà không vượt quá ngân sách suy luận của họ.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">7</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Travelers triển khai yêu cầu bồi thường bằng AI trên toàn quốc với OpenAI</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Travelers deploys AI-powered claims countrywide with OpenAI</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;OpenAI Blog</span>&nbsp;&nbsp;&nbsp;<a href="https://openai.com/index/travelers" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Travelers, nhà cung cấp bảo hiểm hàng đầu, đã giới thiệu Trợ lý Yêu cầu Bảo hiểm được hỗ trợ bởi AI trên toàn quốc. Công cụ đổi mới này, được phát triển hợp tác với OpenAI, nhằm mục đích đơn giản hóa quá trình nộp yêu cầu bồi thường cho khách hàng. Trợ lý hỗ trợ bởi AI cung cấp hỗ trợ 24/7, cho phép khách hàng tìm kiếm sự hỗ trợ tại thời điểm thuận tiện cho họ.
+
+Một trong những lợi ích chính của hệ thống mới này là khả năng mở rộng hoạt động trong thời kỳ nhu cầu cao điểm. Điều này có nghĩa là Travelers có thể quản lý hiệu quả một lượng lớn yêu cầu bồi thường mà không ảnh hưởng đến chất lượng dịch vụ hoặc thời gian phản hồi. Bằng cách tận dụng công nghệ AI, công ty có thể cung cấp trải nghiệm được sắp xếp hợp lý và phản hồi hơn cho khách hàng của mình.
+
+Việc triển khai Trợ lý Yêu cầu Bảo hiểm được hỗ trợ bởi AI đánh dấu một bước tiến quan trọng trong nỗ lực của Travelers nhằm nâng cao sự hài lòng của khách hàng và hiệu quả hoạt động. Với công cụ mới này, khách hàng có thể mong đợi một trải nghiệm yêu cầu bồi thường liền mạch và không phức tạp hơn.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">8</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Tải xuống: AI có thể chạy bộ phận hành chính của bạn bây giờ</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;The Download: AI can run your admin department now</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;MIT Tech Review</span>&nbsp;&nbsp;&nbsp;<a href="https://www.technologyreview.com/2026/06/02/1138277/the-download-ai-tips-small-businesses-admin/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Phiên bản hôm nay của The Download nhấn mạnh khả năng ngày càng tăng của trí tuệ nhân tạo (AI) trong các nhiệm vụ hành chính. Các công ty lớn thường có nguồn lực để thuê chuyên gia cho các chức năng kinh doanh khác nhau, nhưng các doanh nghiệp nhỏ có thể không có cùng sự sang trọng. Các mô hình AI hiện có thể thực hiện công việc hành chính cơ bản, bao gồm tổ chức ghi chú, tóm tắt cuộc họp, lập hóa đơn, đặt mục tiêu và lập kế hoạch truyền thông xã hội. Sự phát triển này có thể là một yếu tố thay đổi cuộc chơi cho các doanh nghiệp nhỏ, cho phép họ đưa AI vào công việc và tối ưu hóa hoạt động của mình.
+
+Trong các tin tức công nghệ khác, Anthropic đã nộp đơn xin chào bán công khai ban đầu (IPO) một cách bí mật trước OpenAI, với công ty nhằm mục đích niêm yết công khai sớm nhất là vào mùa thu này. Liên minh Châu Âu (EU) cũng có thể loại trừ các gã khổng lồ đám mây của Mỹ khỏi các hợp đồng quan trọng, giảm sự phụ thuộc vào công nghệ Mỹ. Ngoài ra, Florida đã trở thành tiểu bang đầu tiên kiện OpenAI vì những rủi ro an toàn cho trẻ em được cho là trong ứng dụng trò chuyện ChatGPT của họ.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+
+  <!-- TIPS SECTION -->
+  
+  <tr>
+    <td bgcolor="#FFFBEB" style="background-color:#FFFBEB;padding:20px 30px;border-top:3px solid #D97706;">
+      <p style="margin:0 0 12px;font-size:11px;color:#D97706;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#9889;&nbsp;Tips &amp; Tricks cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Chain-of-Thought Prompting</strong><br><strong>Vấn đề:</strong> Dev gặp khó khăn khi tạo prompt cho các task phức tạp.<br><strong>Cách làm:</strong> Sử dụng chain-of-thought prompting, ví dụ &quot;Break down the solution into smaller steps&quot; để tạo ra chuỗi suy nghĩ logic.<br><strong>Đánh giá:</strong> Hiệu quả cao cho các task phức tạp, nhưng có thể không phù hợp cho task đơn giản.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Few-Shot Learning</strong><br><strong>Vấn đề:</strong> Dev cần train mô hình với dữ liệu hạn chế.<br><strong>Cách làm:</strong> Sử dụng few-shot learning, ví dụ &quot;Train a model to classify images with only 5 examples per class&quot; để tận dụng dữ liệu ít.<br><strong>Đánh giá:</strong> Hiệu quả cao cho các mô hình nhỏ, nhưng có thể không phù hợp cho mô hình lớn.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ System Prompt Design</strong><br><strong>Vấn đề:</strong> Dev cần thiết kế prompt cho hệ thống phức tạp.<br><strong>Cách làm:</strong> Sử dụng system prompt design, ví dụ &quot;Design a prompt to extract information from a database&quot; để tạo ra prompt hiệu quả.<br><strong>Đánh giá:</strong> Hiệu quả cao cho các hệ thống phức tạp, nhưng yêu cầu dev có kinh nghiệm về thiết kế prompt.</p>
+    </td>
+  </tr>
+
+  <!-- LESSON SECTION -->
+  
+  <tr>
+    <td bgcolor="#F0FFF4" style="background-color:#F0FFF4;padding:20px 30px;border-top:3px solid #2E7D32;">
+      <p style="margin:0 0 12px;font-size:11px;color:#2E7D32;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128218;&nbsp;B&#224;i h&#7885;c AI h&#244;m nay cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;">1. <strong>Tối ưu chi phí &amp; hiệu năng LLM</strong><br>2. Các nhà phát triển cần biết cách tối ưu hóa chi phí và hiệu năng của mô hình ngôn ngữ lớn (LLM) để đảm bảo ứng dụng của họ hoạt động hiệu quả và tiết kiệm. Điều này đặc biệt quan trọng khi tích hợp AI vào ứng dụng, vì LLM có thể tiêu thụ nhiều tài nguyên và ảnh hưởng đến hiệu suất của hệ thống. Việc tối ưu hóa LLM giúp giảm thiểu chi phí và cải thiện trải nghiệm người dùng.<br>3. Ví dụ, có thể sử dụng kỹ thuật fine-tuning và LoRA (Low-Rank Adaptation) để điều chỉnh mô hình cho phù hợp với từng trường hợp cụ thể, giảm kích thước mô hình và tăng tốc độ xử lý.<br>4. 💡 Tip hoặc bước tiếp theo: Nên xem xét sử dụng các công cụ như Hugging Face Transformers hoặc TensorFlow để tối ưu hóa LLM và cải thiện hiệu suất của ứng dụng.</p>
+    </td>
+  </tr>
+
+  <!-- FOOTER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:20px 30px;text-align:center;border-radius:0 0 10px 10px;">
+      <p style="margin:0 0 4px;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        &#128161;&nbsp;Lu&#244;n &#273;i &#273;&#7847;u trong th&#7871; gi&#7899;i AI!&nbsp;&#183;&nbsp;Stay ahead in AI!
+      </p>
+      <p style="margin:6px 0 0;font-size:11px;color:#4A7AAB;font-family:Arial,sans-serif;">
+        Ngu&#7891;n: Google News · Groq AI
+      </p>
+    </td>
+  </tr>
+
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+
+</td></tr>
+</table>
+</body>
+</html>

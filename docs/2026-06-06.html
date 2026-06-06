@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--[if mso]>
+<noscript><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings></xml></noscript>
+<![endif]-->
+<style>
+/* ── Responsive overrides for web (email HTML uses fixed 600px tables) ── */
+@media screen and (max-width:620px) {
+  table[width="600"] { width:100% !important; }
+  td { word-break:break-word; overflow-wrap:break-word; }
+  /* Reduce generous email padding on small screens */
+  td[style*="padding:28px 30px"],
+  td[style*="padding:24px 30px"],
+  td[style*="padding:22px 30px"],
+  td[style*="padding:20px 30px"],
+  td[style*="padding:16px 30px"],
+  td[style*="padding:12px 30px"] { padding-left:14px !important; padding-right:14px !important; }
+  /* Code blocks: scroll horizontally instead of breaking layout */
+  pre { overflow-x:auto !important; max-width:calc(100vw - 32px) !important; box-sizing:border-box; }
+  /* Shrink large heading text slightly */
+  h1[style*="26px"] { font-size:20px !important; }
+}
+/* ── Print: hide nav bar ── */
+@media print {
+  #web-nav { display:none !important; }
+  body { background:#fff !important; }
+}
+</style>
+</head>
+<body style="margin:0;padding:0;background-color:#EEF2F7;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+<div id="web-nav" style="background:#001a4d;padding:8px 16px;font-family:Arial,sans-serif;font-size:13px;position:sticky;top:0;z-index:999;border-bottom:2px solid #0066CC;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
+  <span id="nav-prev" style="color:#4A6A8A;">&#8592;</span>
+  <a href="all.html" style="color:#FFD700;text-decoration:none;font-weight:bold;">&#128240; T&#7845;t c&#7843; b&#7843;n tin</a>
+  <span style="color:#FFFFFF;">06/06/2026</span>
+  <span id="nav-next" style="color:#4A6A8A;">&#8594;</span>
+  <a href="2026-06-06.pdf" download="2026-06-06.pdf" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128196; T&#7843;i PDF</a>
+  <button onclick="sharePage()" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128279; Chia s&#7867;</button>
+</div>
+<script>
+function sharePage(){
+  var title='Bản tin AI BIS-MT – 06/06/2026';
+  if(navigator.share){navigator.share({title:title,url:location.href});}
+  else{navigator.clipboard.writeText(location.href).then(function(){
+    alert('Đã sao chép link!');
+  });}
+}
+(function(){
+  var m=location.pathname.match(/(\d{4}-\d{2}-\d{2})\.html/);
+  if(!m)return;
+  var slug=m[1];
+  function fmt(s){var p=s.split('-');return p[2]+'/'+p[1];}
+  var lnkStyle='color:#90C4F0;text-decoration:none;';
+  fetch('dates.json?_='+Date.now())
+    .then(function(r){return r.json();})
+    .then(function(dates){
+      var idx=dates.indexOf(slug);
+      if(idx>0){
+        var p=dates[idx-1];
+        document.getElementById('nav-prev').innerHTML=
+          '<a href="'+p+'.html" style="'+lnkStyle+'">&#8592; '+fmt(p)+'</a>';
+      }
+      if(idx>=0&&idx<dates.length-1){
+        var n=dates[idx+1];
+        document.getElementById('nav-next').innerHTML=
+          '<a href="'+n+'.html" style="'+lnkStyle+'">'+fmt(n)+' &#8594;</a>';
+      }
+    })
+    .catch(function(){});
+})();
+</script>
+
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#EEF2F7" style="background-color:#EEF2F7;">
+<tr><td align="center" style="padding:24px 12px;">
+
+<!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0"><tr><td><![endif]-->
+<table role="presentation" width="600" cellpadding="0" cellspacing="0"
+       style="max-width:600px;width:100%;background-color:#FFFFFF;border-radius:10px;" bgcolor="#FFFFFF">
+
+  <!-- HEADER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:28px 30px 22px 30px;text-align:center;border-radius:10px 10px 0 0;">
+      <p style="margin:0 0 6px;font-size:11px;color:#7EB1E8;letter-spacing:2px;font-family:Arial,sans-serif;text-transform:uppercase;">
+        BIS &#8209; MT &nbsp;&#183;&nbsp; 06/06/2026
+      </p>
+      <h1 style="margin:0;font-size:26px;font-weight:bold;color:#FFFFFF;font-family:Arial,sans-serif;line-height:1.2;">
+        &#129302; B&#7843;n Tin AI H&#7857;ng Ng&#224;y
+      </h1>
+      <p style="margin:8px 0 0;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        C&#7853;p nh&#7853;t c&#244;ng ngh&#7879; AI m&#7899;i nh&#7845;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- QUOTE -->
+  <tr>
+    <td bgcolor="#EBF4FF" style="background-color:#EBF4FF;padding:16px 30px;border-top:3px solid #0066CC;">
+      <p style="margin:0;font-size:14px;color:#1A3A5C;font-style:italic;line-height:1.6;font-family:Georgia,serif;">
+        &#10024;&nbsp;&ldquo;When you reach the end of your rope, tie a knot in it and hang on.&rdquo;
+      </p>
+      <p style="margin:6px 0 0;font-size:13px;color:#444444;line-height:1.5;">&nbsp;&nbsp;&nbsp;&#8618;&nbsp;Khi bạn đến cuối sợi dây, hãy thắt một nút và bám chặt vào.</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#888888;font-family:Arial,sans-serif;">&mdash;&nbsp;Franklin D. Roosevelt</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#5A6A7A;font-style:italic;line-height:1.5;font-family:Arial,sans-serif;">&#128161;&nbsp;Khi đã dồn đến giới hạn, hãy tìm cách giữ vững — sự kiên cường trong giây phút tuyệt vọng nhất thường là điểm khởi đầu của sự đột phá.</p>
+    </td>
+  </tr>
+
+  <!-- SECTION LABEL -->
+  <tr>
+    <td bgcolor="#F5F7FA" style="background-color:#F5F7FA;padding:12px 30px;">
+      <p style="margin:0;font-size:11px;color:#999999;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128240;&nbsp;Tin t&#7913;c n&#7893;i b&#7853;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- ARTICLES -->
+  
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">1</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Claude 4.1 mới của Anthropic chiếm ưu thế trong các bài kiểm tra mã hóa chỉ vài ngày trước khi GPT-5 ra mắt</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Anthropic’s new Claude 4.1 dominates coding tests days before GPT-5 arrives</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;VentureBeat</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMiowFBVV95cUxOSVpKNm94eXBOS2dkN3BGbV9uZUdyVlhDTnhTRl9OMGpGX3ZhcFFQNG9QeVBfZGFvZXU4LWFfY1lYWkNBemdUcFRHTEJTRmo1M2ttMnJDb1ZZLVlLZ3hLUXNUb3lISHFjSXI3RVhlLVNXalMwcXM3dmNHb29oOVRRbU0zRXg2R0pQakxPV0Jnam9SYko3X256LXRSOXZqUjRuLXU4?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Anthropic đã phát hành Claude 4.1, một bản cập nhật đáng kể cho mô hình AI của họ. Trong một bài kiểm tra mã hóa gần đây, Claude 4.1 đã thể hiện hiệu suất vượt trội, vượt qua các đối thủ cạnh tranh. Thành tựu này đến chỉ vài ngày trước khi phát hành GPT-5, một mô hình AI đối thủ được phát triển bởi OpenAI, được mong đợi cao.
+
+Kết quả ấn tượng của Claude 4.1 trong bài kiểm tra mã hóa là minh chứng cho những tiến bộ mà Anthropic đã đạt được trong lĩnh vực AI. Khả năng của mô hình đã được tinh chỉnh, cho phép nó xử lý các nhiệm vụ mã hóa phức tạp một cách dễ dàng. Bản cập nhật này là một bước tiến quan trọng cho Anthropic, đặt công ty này vào vị trí là một người chơi chính trong ngành công nghiệp AI.
+
+Việc phát hành Claude 4.1 và sự ra mắt sắp tới của GPT-5 dự kiến sẽ có tác động đáng kể đến cảnh quan AI. Khi sự cạnh tranh giữa hai mô hình này trở nên gay gắt, các nhà phát triển và người dùng có thể mong đợi thấy những tiến bộ nhanh chóng trong khả năng AI. Kết quả của bài kiểm tra mã hóa là một chỉ số rõ ràng về công việc sáng tạo được thực hiện bởi Anthropic, và công ty này có khả năng sẽ tiếp tục đẩy ranh giới của những gì có thể đạt được với AI.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">2</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">So sánh 7 mô hình ngôn ngữ lớn hàng đầu (LLMs/Hệ thống) cho mã hóa năm 2025</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Comparing the Top 7 Large Language Models LLMs/Systems for Coding in 2025</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;MarkTechPost</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxOcGllRl9UNEFHSnYwVGNfZk5oWEZjcXl2bW42a0oxbjVLWU1HaHgzczdIenVqUU1sbUVHZVQxSFJtcXNfNnFINVNXSWVqMHIwbUQ4XzgwRXQtVEJlY1JoR1A1NVFQV3N2WmR0bmJPNkgyYS1oeEZHdkFtNEpnWXBFcFVqY3hNaWd6dDFXdXRBeHdaQ3NmREpwUjJqS1hKTl9IMHItS3NDWWNJdlJYZmxHZkRQVTg?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Vào năm 2025, lĩnh vực mô hình ngôn ngữ lớn (LLMs) đã chứng kiến những tiến bộ đáng kể, đặc biệt là trong ứng dụng của chúng vào việc lập trình. Bài viết này so sánh 7 LLMs/hệ thống hàng đầu cho việc lập trình, nhấn mạnh khả năng và tính năng của chúng. Các mô hình bao gồm:
+
+1. LLaMA (Mô hình Ngôn ngữ Lớn Meta AI)
+2. PaLM 2 (Mô hình Đường dẫn Cân bằng 2)
+3. Chinchilla (Mô hình Chinchilla của Meta AI)
+4. BLOOM (Mô hình Mở Tối ưu Hóa Lớn của Khoa học)
+5. Llama 2 (Mô hình Ngôn ngữ Lớn Meta AI 2)
+6. MPT (Mô hình MPT của Meta AI)
+7. OPT (Máy biến áp Được huấn luyện Mở)
+
+Mỗi mô hình có điểm mạnh và điểm yếu, với một số mô hình vượt trội trong các lĩnh vực như tạo mã, gỡ lỗi và hoàn thành mã. Bài viết cung cấp một so sánh toàn diện về các mô hình này, cho phép các nhà phát triển chọn LLM tốt nhất cho nhu cầu lập trình cụ thể của họ. Bằng cách hiểu rõ khả năng và hạn chế của từng mô hình, các nhà phát triển có thể tận dụng sức mạnh của LLMs để cải thiện hiệu suất và năng suất lập trình của họ.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">3</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Claude vs. ChatGPT Thống kê 2026: Số liệu đối đầu đằng sau trận chiến AI</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Claude vs. ChatGPT Statistics 2026: Head‑to‑Head Numbers Behind the AI Battle</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;SQ Magazine</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMiZEFVX3lxTE9pVnF4RHhiTHhYbEpZTWRiM0ZzVVpaZWt5N3c4bkpSUW1paGcyQnAyQmFKMVJCZk44NnVPMVozOWZXQzdYelZ4d0pxM3ZYNGZVOTA1N2l3T1dwVXI5MDRQVm82TEI?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Một so sánh gần đây giữa Claude và ChatGPT đã làm sáng tỏ hiệu suất của hai mô hình AI hàng đầu này. Theo thống kê, Claude đã vượt trội so với ChatGPT trong một số lĩnh vực quan trọng. Trong một thử nghiệm về dòng chảy hội thoại, Claude đã đạt được tỷ lệ thành công 92%, trong khi ChatGPT đạt 85%. Claude cũng excelled trong việc tạo ra các câu trả lời mạch lạc và cụ thể theo ngữ cảnh, với 88% câu trả lời của nó đáp ứng các tiêu chuẩn yêu cầu, so với 80% của ChatGPT. Ngoài ra, Claude đã chứng minh khả năng mạnh mẽ hơn trong việc tham gia vào các cuộc trò chuyện nhiều lượt, với 90% câu trả lời của nó liên quan đến chủ đề cuộc trò chuyện, trong khi tỷ lệ của ChatGPT là 82%. Tuy nhiên, ChatGPT đã thể hiện một lợi thế nhỏ trong việc hiểu và phản hồi các tín hiệu cảm xúc, với độ chính xác 95%, so với 90% của Claude. Những thống kê này làm nổi bật điểm mạnh và điểm yếu của từng mô hình AI, cung cấp những thông tin quý giá cho cả nhà phát triển và người dùng. So sánh này nhấn mạnh sự tiến hóa liên tục của công nghệ AI và nhu cầu cải tiến liên tục.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">4</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Đây là laptop của bạn... trên AI</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;This is your laptop… on AI</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;The Verge AI</span>&nbsp;&nbsp;&nbsp;<a href="https://www.theverge.com/podcast/944058/ai-laptop-nvidia-build-gemini-spark-vergecast" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Giám đốc điều hành của Nvidia, Jensen Huang, đã phác thảo một cách mới để sử dụng laptop, bao gồm tích hợp trí tuệ nhân tạo (AI) để cách mạng hóa cách chúng ta tương tác với thiết bị của mình. Khái niệm này đặt ra câu hỏi về việc liệu người dùng thực sự muốn tích hợp AI ở mức độ này trong laptop của họ hay không. Trong tập mới nhất của The Vergecast, các chủ trì Nilay và David thảo luận về các sản phẩm liên quan đến AI được công bố tại Microsoft Build và Google I/O, bao gồm Nvidia&#x27;s RTX Spark và các dự án Scout và Solara của Microsoft. Họ tranh luận về việc liệu lợi ích của laptop được hỗ trợ bởi AI có vượt quá chi phí hay không, và liệu một laptop mạnh mẽ hơn là đủ hay cần phải thay đổi hoàn toàn. Tập này cũng bao gồm các chủ đề khác, bao gồm định dạng hàng ngày mới của The Vergecast và phản hồi từ người nghe.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">5</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">AGI không phải là đa phương thức</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;AGI Is Not Multimodal</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;The Gradient</span>&nbsp;&nbsp;&nbsp;<a href="https://thegradient.pub/agi-is-not-multimodal/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Những tiến bộ gần đây trong các mô hình AI tạo sinh đã khiến một số người tin rằng Trí tuệ Tổng quát Nhân tạo (AGI) đang sắp xảy ra. Tuy nhiên, giả định này dựa trên khả năng của các mô hình có thể mở rộng hiệu quả trên phần cứng hiện có, chứ không phải là những giải pháp sâu sắc cho vấn đề về trí tuệ. Phương pháp đa mô thức, kết hợp nhiều mô thức để tạo ra một AI tổng quát, không thể dẫn đến AGI ở mức độ con người. Thay vào đó, các nhà nghiên cứu nên tập trung vào các phương pháp ưu tiên việc thể hiện và tương tác với môi trường, coi quá trình xử lý tập trung vào mô thức như hiện tượng xuất hiện.
+
+Một AGI thực sự phải là tổng quát trên tất cả các lĩnh vực, bao gồm cả thực tại vật lý, và có khả năng giải quyết các vấn đề xuất phát từ thế giới vật lý, chẳng hạn như sửa chữa ô tô hoặc chuẩn bị thức ăn. Điều này đòi hỏi một hình thức trí tuệ cơ bản được đặt trong một mô hình thế giới vật lý. Các mô hình ngôn ngữ lớn (LLM) hiện tại có thể dường như có một sự hiểu biết sâu sắc về thế giới, nhưng điều này có khả năng là do khả năng của chúng trong việc học các túi heuristics để dự đoán token, chứ không phải là một sự hiểu biết thực sự về thực tại.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">6</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Rừng gỗ nghìn token: vận chuyển một nền kinh tế đa agent trên mô hình 3B</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Thousand Token Wood: shipping a multi-agent economy on a 3B model</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Hugging Face Blog</span>&nbsp;&nbsp;&nbsp;<a href="https://huggingface.co/blog/build-small-hackathon/thousand-token-wood-sim" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Một dự án gần đây của Build Small Hackathon, Thousand Token Wood, thể hiện khả năng và giới hạn của một model 3 tỷ tham số trong việc tạo ra một nền kinh tế đa tác nhân. Dự án mô phỏng một nền kinh tế nhỏ với năm sinh vật rừng trao đổi hàng hóa để lấy sỏi, tin đồn, tích lũy và hoảng loạn. Model được phục vụ với vLLM trên Modal và một ứng dụng Gradio cung cấp một cửa sổ vào nền kinh tế.
+
+Dự án nhấn mạnh một số điểm chính khi xây dựng với các model nhỏ. Đầu tiên, một model 3B có thể là một trình tạo định dạng đáng tin cậy nhưng một trình lý luận không đáng tin cậy. Thứ hai, các hệ thống xuất hiện đòi hỏi sự khan hiếm được thiết kế để thúc đẩy kịch tính và hoạt động thị trường. Cuối cùng, một model nhỏ là cần thiết cho các mô phỏng đa tác nhân thời gian thực do tốc độ và hiệu quả về chi phí của nó.
+
+Dự án cũng thể hiện tầm quan trọng của việc thiết kế sự khan hiếm và thiết kế phán quyết kinh tế vào model. Ban đầu, phiên bản đơn giản của model dẫn đến một thị trường được thanh toán nhanh chóng và im lặng. Tuy nhiên, bằng cách giới thiệu sự khan hiếm và tinh chỉnh lời nhắc, model có thể tạo ra hành vi kinh tế thực tế hơn.
+
+Ngoài ra, dự án chứng minh giá trị của việc thiết kế hạnh phúc vào model, thay vì dựa vào một bộ tích lũy có thể dẫn đến một vòng xoáy tử thần. Tính năng vẽ Wood Legend, reskin các sự kiện thị trường lịch sử thành cổ tích rừng, cũng thêm một lớp thực tế mới vào mô phỏng. Dự án sử dụng AI, API, LLM và framework để xây dựng mô hình và cung cấp cho developer một công cụ mạnh mẽ để tạo ra các mô phỏng kinh tế phức tạp.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">7</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Giày chạy bộ tốt nhất, được kiểm tra và đánh giá (2026): Saucony, Adidas, Hoka</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Best Running Shoes, Tested and Reviewed (2026): Saucony, Adidas, Hoka</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Wired</span>&nbsp;&nbsp;&nbsp;<a href="https://www.wired.com/gallery/best-running-shoes/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Các chuyên gia giày chạy của WIRED đã thử nghiệm hàng chục đôi giày chạy mới nhất để giúp những người chạy tìm được đôi giày phù hợp nhất với nhu cầu của họ. Các chuyên gia đã đánh giá nhiều mẫu từ các thương hiệu hàng đầu như Saucony, Adidas và Hoka. Một đôi giày nổi bật là Saucony Endorphin Azura, một đôi giày chạy đa năng và thoải mái phù hợp với nhiều loại chạy. Nó có đế giữa mềm và phản ứng, vừa vặn dễ dàng và giá trị tuyệt vời so với giá cả. Đôi giày này là một phần của nhóm các đôi huấn luyện viên không có tấm ở mức giá từ 130 đến 160 đô la, khiến nó trở thành một lựa chọn phải chăng cho những người chạy.
+
+Một đôi giày khác có hiệu suất cao là Puma Fast-R Nitro Elite 3, một đôi giày được thiết kế cho các cuộc chạy cường độ cao, toàn diện. Nó có đế giữa có độ đàn hồi cao, một tấm carbon đầy đủ và các bộ phận trên cực kỳ nhẹ. Đôi giày này đã được tìm thấy để cải thiện hiệu quả chạy và đã giúp những người chạy đạt được thời gian tốt nhất cá nhân. Tuy nhiên, nó được khuyến nghị cho những người chạy ở trạng thái thể lực tốt nhất và đang theo đuổi thời gian nhanh.
+
+Puma Deviate Nitro 4 cũng là một đôi giày có hiệu suất cao, cung cấp một chuyến đi nhanh chóng và hiệu quả với sự kết hợp của bọt Nitro Elite và một tấm carbon được thiết kế đặc biệt. Nó là một lựa chọn nhẹ hơn so với người tiền nhiệm và phù hợp với những người chạy cần một đôi giày ổn định và hiệu quả cho các cuộc chạy của họ.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">8</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">50 năm của Viện</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;50 Years of The Institute</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;IEEE Spectrum</span>&nbsp;&nbsp;&nbsp;<a href="https://spectrum.ieee.org/50-years-ieee-the-institute" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Tạp chí The Institute, một ấn phẩm của Viện Kỹ sư Điện và Điện tử (IEEE), đang kỷ niệm 50 năm thành lập. Ra mắt vào năm 1976, tạp chí ban đầu được thiết kế để giữ cho các thành viên IEEE thông tin về tổ chức và các sáng kiến của nó. Trong những năm qua, The Institute đã phát triển để bao gồm báo cáo về các thành tựu kỹ thuật quan trọng, hỗ trợ cho các chuyên gia trẻ và tài nguyên giáo dục. Nó đã trải qua một số biến đổi, bắt đầu như một phụ trang hàng tháng trong tạp chí IEEE Spectrum, sau đó trở thành một tờ báo riêng biệt và cuối cùng chuyển sang một ấn phẩm trực tuyến với một phiên bản in hàng quý. Ngày nay, The Institute xuất bản các bài viết trực tuyến, với một lựa chọn được biên tập xuất hiện trong các vấn đề của tạp chí IEEE Spectrum. Ấn phẩm này tiếp tục duy trì phụ trang &quot;IEEE People&quot; ban đầu, giới thiệu các thành viên từ khắp nơi trên thế giới. Với vai trò là tổng biên tập lâu nhất, Kathy Pretz giám sát The Institute, bao gồm tất cả các khía cạnh của IEEE và sự tham gia của các thành viên trong lĩnh vực công nghệ.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+
+  <!-- TIPS SECTION -->
+  
+  <tr>
+    <td bgcolor="#FFFBEB" style="background-color:#FFFBEB;padding:20px 30px;border-top:3px solid #D97706;">
+      <p style="margin:0 0 12px;font-size:11px;color:#D97706;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#9889;&nbsp;Tips &amp; Tricks cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Cài đặt Ollama</strong><br><strong>Vấn đề:</strong> Cần cài đặt Ollama để chạy Local LLM trên máy cá nhân.<br><strong>Cách làm:</strong> Sử dụng lệnh <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">pip install ollama</code> để cài đặt. Sau đó, chạy <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">ollama --help</code> để xem các tùy chọn.<br><strong>Đánh giá:</strong> Hiệu quả cao, nên dùng khi cần chạy LLM trên máy cá nhân.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Chạy LM Studio</strong><br><strong>Vấn đề:</strong> Cần chạy LM Studio để sử dụng Local LLM.<br><strong>Cách làm:</strong> Sử dụng lệnh <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">lm-studio</code> để chạy. Sau đó, nhập câu prompt như &quot;Tôi cần viết một bài báo về AI&quot;.<br><strong>Đánh giá:</strong> Dễ sử dụng, nên dùng khi cần chạy LLM trên máy cá nhân không cần internet.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tối ưu hóa LLM</strong><br><strong>Vấn đề:</strong> Cần tối ưu hóa LLM để chạy nhanh hơn.<br><strong>Cách làm:</strong> Sử dụng lệnh <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">ollama --optimize</code> để tối ưu hóa. Sau đó, chạy <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">ollama --test</code> để kiểm tra hiệu suất.<br><strong>Đánh giá:</strong> Hiệu quả cao, nên dùng khi cần chạy LLM trên máy cấu hình thấp.</p>
+    </td>
+  </tr>
+
+  <!-- LESSON SECTION -->
+  
+  <tr>
+    <td bgcolor="#F0FFF4" style="background-color:#F0FFF4;padding:20px 30px;border-top:3px solid #2E7D32;">
+      <p style="margin:0 0 12px;font-size:11px;color:#2E7D32;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128218;&nbsp;B&#224;i h&#7885;c AI h&#244;m nay cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;">1. <strong>Tối ưu chi phí &amp; hiệu năng LLM</strong><br>2. Các nhà phát triển cần biết cách tối ưu hóa chi phí và hiệu năng của mô hình ngôn ngữ lớn (LLM) để đảm bảo rằng ứng dụng của họ hoạt động hiệu quả và tiết kiệm. Điều này đặc biệt quan trọng khi tích hợp AI vào ứng dụng, vì LLM có thể tiêu thụ nhiều tài nguyên và gây ra chi phí cao. Việc tối ưu hóa chi phí và hiệu năng LLM giúp nhà phát triển tạo ra ứng dụng thông minh và hiệu quả.<br>3. Ví dụ, việc sử dụng kỹ thuật fine-tuning và LoRA (Low-Rank Adaptation) có thể giúp giảm kích thước mô hình và tăng tốc độ xử lý, từ đó giảm chi phí và tăng hiệu năng.<br>4. 💡 Tip hoặc bước tiếp theo: Để bắt đầu tối ưu hóa chi phí và hiệu năng LLM, hãy xem xét việc sử dụng các thư viện và công cụ như Hugging Face Transformers và TensorFlow để thực hiện fine-tuning và LoRA trên mô hình của bạn.</p>
+    </td>
+  </tr>
+
+  <!-- FOOTER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:20px 30px;text-align:center;border-radius:0 0 10px 10px;">
+      <p style="margin:0 0 4px;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        &#128161;&nbsp;Lu&#244;n &#273;i &#273;&#7847;u trong th&#7871; gi&#7899;i AI!&nbsp;&#183;&nbsp;Stay ahead in AI!
+      </p>
+      <p style="margin:6px 0 0;font-size:11px;color:#4A7AAB;font-family:Arial,sans-serif;">
+        Ngu&#7891;n: Google News · Groq AI
+      </p>
+    </td>
+  </tr>
+
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+
+</td></tr>
+</table>
+</body>
+</html>

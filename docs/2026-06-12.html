@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--[if mso]>
+<noscript><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings></xml></noscript>
+<![endif]-->
+<style>
+/* ── Responsive overrides for web (email HTML uses fixed 600px tables) ── */
+@media screen and (max-width:620px) {
+  table[width="600"] { width:100% !important; }
+  td { word-break:break-word; overflow-wrap:break-word; }
+  /* Reduce generous email padding on small screens */
+  td[style*="padding:28px 30px"],
+  td[style*="padding:24px 30px"],
+  td[style*="padding:22px 30px"],
+  td[style*="padding:20px 30px"],
+  td[style*="padding:16px 30px"],
+  td[style*="padding:12px 30px"] { padding-left:14px !important; padding-right:14px !important; }
+  /* Code blocks: scroll horizontally instead of breaking layout */
+  pre { overflow-x:auto !important; max-width:calc(100vw - 32px) !important; box-sizing:border-box; }
+  /* Shrink large heading text slightly */
+  h1[style*="26px"] { font-size:20px !important; }
+}
+/* ── Print: hide nav bar ── */
+@media print {
+  #web-nav { display:none !important; }
+  body { background:#fff !important; }
+}
+</style>
+</head>
+<body style="margin:0;padding:0;background-color:#EEF2F7;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+<div id="web-nav" style="background:#001a4d;padding:8px 16px;font-family:Arial,sans-serif;font-size:13px;position:sticky;top:0;z-index:999;border-bottom:2px solid #0066CC;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
+  <span id="nav-prev" style="color:#4A6A8A;">&#8592;</span>
+  <a href="all.html" style="color:#FFD700;text-decoration:none;font-weight:bold;">&#128240; T&#7845;t c&#7843; b&#7843;n tin</a>
+  <span style="color:#FFFFFF;">12/06/2026</span>
+  <span id="nav-next" style="color:#4A6A8A;">&#8594;</span>
+  <a href="2026-06-12.pdf" download="2026-06-12.pdf" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128196; T&#7843;i PDF</a>
+  <button onclick="sharePage()" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128279; Chia s&#7867;</button>
+</div>
+<script>
+function sharePage(){
+  var title='Bản tin AI BIS-MT – 12/06/2026';
+  if(navigator.share){navigator.share({title:title,url:location.href});}
+  else{navigator.clipboard.writeText(location.href).then(function(){
+    alert('Đã sao chép link!');
+  });}
+}
+(function(){
+  var m=location.pathname.match(/(\d{4}-\d{2}-\d{2})\.html/);
+  if(!m)return;
+  var slug=m[1];
+  function fmt(s){var p=s.split('-');return p[2]+'/'+p[1];}
+  var lnkStyle='color:#90C4F0;text-decoration:none;';
+  fetch('dates.json?_='+Date.now())
+    .then(function(r){return r.json();})
+    .then(function(dates){
+      var idx=dates.indexOf(slug);
+      if(idx>0){
+        var p=dates[idx-1];
+        document.getElementById('nav-prev').innerHTML=
+          '<a href="'+p+'.html" style="'+lnkStyle+'">&#8592; '+fmt(p)+'</a>';
+      }
+      if(idx>=0&&idx<dates.length-1){
+        var n=dates[idx+1];
+        document.getElementById('nav-next').innerHTML=
+          '<a href="'+n+'.html" style="'+lnkStyle+'">'+fmt(n)+' &#8594;</a>';
+      }
+    })
+    .catch(function(){});
+})();
+</script>
+
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#EEF2F7" style="background-color:#EEF2F7;">
+<tr><td align="center" style="padding:24px 12px;">
+
+<!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0"><tr><td><![endif]-->
+<table role="presentation" width="600" cellpadding="0" cellspacing="0"
+       style="max-width:600px;width:100%;background-color:#FFFFFF;border-radius:10px;" bgcolor="#FFFFFF">
+
+  <!-- HEADER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:28px 30px 22px 30px;text-align:center;border-radius:10px 10px 0 0;">
+      <p style="margin:0 0 6px;font-size:11px;color:#7EB1E8;letter-spacing:2px;font-family:Arial,sans-serif;text-transform:uppercase;">
+        BIS &#8209; MT &nbsp;&#183;&nbsp; 12/06/2026
+      </p>
+      <h1 style="margin:0;font-size:26px;font-weight:bold;color:#FFFFFF;font-family:Arial,sans-serif;line-height:1.2;">
+        &#129302; B&#7843;n Tin AI H&#7857;ng Ng&#224;y
+      </h1>
+      <p style="margin:8px 0 0;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        C&#7853;p nh&#7853;t c&#244;ng ngh&#7879; AI m&#7899;i nh&#7845;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- QUOTE -->
+  <tr>
+    <td bgcolor="#EBF4FF" style="background-color:#EBF4FF;padding:16px 30px;border-top:3px solid #0066CC;">
+      <p style="margin:0;font-size:14px;color:#1A3A5C;font-style:italic;line-height:1.6;font-family:Georgia,serif;">
+        &#10024;&nbsp;&ldquo;Peace comes from within. Do not seek it without.&rdquo;
+      </p>
+      <p style="margin:6px 0 0;font-size:13px;color:#444444;line-height:1.5;">&nbsp;&nbsp;&nbsp;&#8618;&nbsp;Bình an đến từ bên trong. Đừng tìm kiếm nó bên ngoài.</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#888888;font-family:Arial,sans-serif;">&mdash;&nbsp;Phật Thích Ca</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#5A6A7A;font-style:italic;line-height:1.5;font-family:Arial,sans-serif;">&#128161;&nbsp;Hạnh phúc và sự bình yên không đến từ hoàn cảnh bên ngoài mà từ trạng thái nội tâm — đầu tư vào sự phát triển tâm linh và tự nhận thức mới là con đường bền vững.</p>
+    </td>
+  </tr>
+
+  <!-- SECTION LABEL -->
+  <tr>
+    <td bgcolor="#F5F7FA" style="background-color:#F5F7FA;padding:12px 30px;">
+      <p style="margin:0;font-size:11px;color:#999999;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128240;&nbsp;Tin t&#7913;c n&#7893;i b&#7853;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- ARTICLES -->
+  
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">1</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Claude Code đấu với GitHub Copilot 2026: SWE-bench, Giá cả [Đã thử nghiệm]</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Claude Code vs GitHub Copilot 2026: SWE-bench, Pricing [Tested]</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;tech-insider.org</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMibEFVX3lxTE01N0EtazhZV2lGNmlVdnpoWllIcVdaVDdFREJ5VXlRSl95UDNaejhiR21lamtHb3dvTlN5TUJEdnVyZDEtQjZPQnBiamkxTGpIVTBPQ09IaVgtV1c1M05uWUVTSXhvQ3NZZUhrZA?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Trong một so sánh gần đây, Claude Code và GitHub Copilot đã được thử nghiệm trong một điểm chuẩn Kỹ thuật Phần mềm (SWE). Kết quả cho thấy Claude Code vượt trội so với GitHub Copilot ở một số lĩnh vực chính, bao gồm hoàn thành mã, xem xét mã và hiệu quả phát triển tổng thể.
+
+Bài kiểm tra SWE-bench, đánh giá hiệu suất của các công cụ mã hóa được hỗ trợ bởi AI, đã tiết lộ rằng Claude Code có thể hoàn thành nhiệm vụ nhanh hơn 20% so với GitHub Copilot. Ngoài ra, Claude Code đã chứng minh mức độ chính xác cao hơn trong việc hoàn thành mã, với sự cải thiện 15% so với đối thủ của nó.
+
+Về giá cả, cả hai công cụ đều cung cấp một loạt các kế hoạch, nhưng Claude Code dường như là lựa chọn tiết kiệm chi phí hơn cho các đội lớn. Trong khi giá của GitHub Copilot dựa trên mô hình mỗi người dùng, Claude Code cung cấp một kế hoạch giá cố định cho các đội lên đến 100 người dùng. Điều này có thể khiến Claude Code trở thành một lựa chọn hấp dẫn hơn cho các doanh nghiệp có nhiều nhà phát triển.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">2</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Ai cũng muốn tham gia vào vibe coding — và Google cũng không ngoại lệ với Stitch, dự án tiếp nối Jules</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Everyone&#x27;s looking to get in on vibe coding — and Google is no different with Stitch, its follow-up to Jules</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Venturebeat</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMiywFBVV95cUxQZnlqOVZXTUU2bGFUQUZXeWU4NWlyOFFnWVMzbndfNlJNUTJfVXJTa0c2bE43dHFQRk9ISXBTckJvdE5xeEkzUWhPeC1CMGE0OEU3aTVMSG9pRGtsT180UWpjVnFPUXNWd0F1cXg0R1RFWGd3M3FBWEEyM2J0RXItSDhyaEk4S0l4azNTLUlhY1RoMUtJV2t2QWZZalFxZl96RlNwWWVwX3F3bDh1S0FqYnk5M1E4djMtS01vUWVET1RzRjJOZGNuR0hrQQ?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Google đang tham gia vào xu hướng &quot;lập trình cảm giác&quot; với việc phát hành Stitch, một dự án tiếp theo sau Jules. Lập trình cảm giác đề cập đến việc sử dụng các đoạn mã được tạo bởi AI để hỗ trợ các nhà phát triển trong công việc của họ. Các chi tiết chính xác của Stitch vẫn chưa rõ ràng, nhưng có khả năng nó sẽ là sự tiếp tục của nỗ lực của Google nhằm làm cho việc lập trình trở nên hiệu quả và dễ tiếp cận hơn.
+
+Jules, được phát triển trước đó bởi Google, nhằm mục đích tạo ra mã dựa trên các mô tả ngôn ngữ tự nhiên. Hiện vẫn chưa rõ Stitch sẽ mang lại những tính năng hoặc cải tiến mới nào, nhưng có khả năng nó sẽ xây dựng trên các khả năng của Jules. Việc phát hành Stitch cho thấy Google cam kết thúc đẩy lĩnh vực lập trình cảm giác và làm cho nó trở thành một phần quan trọng hơn trong quá trình phát triển.
+
+Khi ngành công nghệ tiếp tục phát triển, việc sử dụng mã được tạo bởi AI đang trở nên phổ biến hơn. Sự tham gia của Google vào không gian này với Stitch có khả năng sẽ có những ý nghĩa quan trọng đối với tương lai của việc lập trình và phát triển phần mềm.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">3</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Agent Factory: Kết nối các agent, app và data bằng các open standard mới như MCP và A2A</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Agent Factory: Connecting agents, apps, and data with new open standards like MCP and A2A</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Microsoft Azure</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMixAFBVV95cUxOekoxbVV4Vml2ZG5yVGVhRWl1cVFLM1ZrYUVNbWdFTnI1bV9CTmVFZ3FJNTRCeTctZ3ctTUtVOW9YbFBqVWZPTGpfQnk0WWt4T09OdG00X25yZVV3TE1XbGpJckdHWVBNV2l1bDdKbEZXb1dmc1RjR1JENWNkMVF6WHVrdlZDMThhVDN5WFFiQ01YakVlWUZDR0gtS0NTZGxrOGFUMzN4ZWlNZzF1WlFPMnMwT3BDcUd6TjJDSWJXMkpkMEh5?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Microsoft đã giới thiệu Agent Factory, một nền tảng cho phép kết nối liền mạch giữa các tác nhân, ứng dụng và dữ liệu bằng cách sử dụng các tiêu chuẩn mở như MCP (Giao thức Đám mây Microsoft) và A2A (Ứng dụng đến Ứng dụng). Đổi mới này nhằm mục đích đơn giản hóa quá trình tích hợp, cho phép các nhà phát triển xây dựng các giải pháp hiệu quả và có khả năng mở rộng hơn.
+
+Với Agent Factory, các nhà phát triển có thể tạo ra các tác nhân có thể giao tiếp với các ứng dụng và nguồn dữ liệu khác nhau, tận dụng sức mạnh của các giao thức MCP và A2A. Các giao thức này cho phép trao đổi dữ liệu an toàn và đáng tin cậy, đảm bảo rằng thông tin nhạy cảm được bảo vệ trong suốt quá trình.
+
+Bằng cách áp dụng các tiêu chuẩn mở, Agent Factory thúc đẩy khả năng tương tác và giảm độ phức tạp liên quan đến việc tích hợp các hệ thống khác nhau. Điều này, đến lượt, cho phép các nhà phát triển tập trung vào việc xây dựng các ứng dụng đổi mới có thể thúc đẩy sự tăng trưởng kinh doanh và cải thiện trải nghiệm của khách hàng. Việc giới thiệu Agent Factory đánh dấu một bước tiến quan trọng hướng tới một hệ sinh thái kỹ thuật số kết nối và hiệu quả hơn, trao quyền cho các nhà phát triển tạo ra các giải pháp hiệu quả hơn.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">4</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Vượt xa vibe coding: Codev 3.0 xây dựng đội ngũ dev được hỗ trợ bởi AI như thế nào</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Beyond vibe coding: How Codev 3.0 engineers the AI-powered dev team</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;BD Tech Talks</span>&nbsp;&nbsp;&nbsp;<a href="https://bdtechtalks.com/2026/06/08/codev-3-ai-assisted-coding/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=codev-3-ai-assisted-coding" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Ngành công nghiệp phần mềm hiện đang ám ảnh với &quot;lập trình vibe&quot; - sử dụng các lệnh AI đối thoại để tạo ra phần mềm trực tiếp - có những hạn chế. Khi các dự án phát triển, khả năng của AI trong việc cân bằng các yêu cầu tính năng mới với các quy tắc kiến trúc hiện có bị suy giảm, dẫn đến một cơ sở mã giòn. Codev, một nền tảng mã nguồn mở, giải quyết vấn đề này với &quot;Phát triển theo ngữ cảnh&quot;. Thay vì dựa vào nhật ký trò chuyện, Codev coi các thông số kỹ thuật ngôn ngữ tự nhiên là mã nguồn thực sự, phiên bản và xem xét chúng cùng với phần mềm. Cách tiếp cận này chuyển đổi các nhà phát triển từ việc sử dụng AI như một tự động hoàn thành thông minh sang vai trò của các đạo diễn, điều khiển các tác nhân AI chuyên dụng phối hợp với các tác nhân khác. Codev 3.0 giới thiệu một mẫu Kiến trúc sư-Xây dựng, nơi các nhà phát triển con người đóng vai trò là khách hàng, và các tác nhân AI làm việc song song để viết mã. Nền tảng này cũng tích hợp toàn bộ hệ sinh thái vào một môi trường phát triển tích hợp (IDE), loại bỏ việc chuyển đổi ngữ cảnh và giới thiệu một trừu tượng &quot;lò rèn&quot; mô-đun để tiêu chuẩn hóa các tương tác với các nền tảng quản lý kho.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">5</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Các data center của Amazon đã sử dụng 2.5 tỷ gallon nước vào năm ngoái</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Amazon&amp;#8217;s data centers used 2.5 billion gallons of water last year</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;The Verge AI</span>&nbsp;&nbsp;&nbsp;<a href="https://www.theverge.com/tech/948534/amazon-data-centers-water-use" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Amazon đã phát hành dữ liệu sử dụng nước hàng năm cho các trung tâm dữ liệu toàn cầu của mình, cho thấy họ đã tiêu thụ 2,5 tỷ gallon nước vào năm 2025. Điều này đại diện cho mức giảm 2% so với năm trước, mặc dù hoạt động đã được mở rộng. Theo Amazon, các trung tâm dữ liệu của họ sử dụng nước với tốc độ 0,12 lít trên mỗi kilowatt giờ điện. Công ty tuyên bố sử dụng nước hiệu quả hơn một số đối thủ Big Tech của mình, bao gồm Microsoft, Google và Meta. Các trung tâm dữ liệu của Amazon được cho là sử dụng làm mát bằng không khí 90% thời gian và làm mát bằng bay hơi vào những ngày nóng nhất. Công ty cũng tuyên bố rằng các trung tâm dữ liệu của họ hiệu quả về nước gấp 7 lần so với trung bình của ngành, dựa trên nghiên cứu từ một bài báo được đánh giá ngang hàng. Tuy nhiên, dữ liệu của Amazon không tính đến việc sử dụng nước gián tiếp tại các nhà máy điện hoặc sử dụng nước từ việc xây dựng trung tâm dữ liệu mới.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">6</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">SpaceX chính thức định giá cổ phiếu 135 USD trong đợt IPO lớn nhất lịch sử</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;SpaceX officially prices shares at $135 in the largest IPO ever</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;TechCrunch AI</span>&nbsp;&nbsp;&nbsp;<a href="https://techcrunch.com/2026/06/11/spacex-officially-prices-shares-at-135-in-the-largest-ipo-ever/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">SpaceX đã chính thức định giá cổ phiếu của mình ở mức 135 đô la mỗi cổ phiếu, huy động được 75 tỷ đô la từ việc bán 555,6 triệu cổ phiếu cho các nhà bảo lãnh phát hành. Việc chào bán cổ phiếu lần đầu ra công chúng (IPO) lịch sử này có thể sẽ khiến Elon Musk trở thành tỷ phú đầu tiên trên thế giới. Thương vụ này vượt qua kỷ lục trước đó được giữ bởi Saudi Aramco, đã huy động được 24,9 tỷ đô la vào năm 2019. SpaceX sẽ được giao dịch dưới biểu tượng chứng khoán SPCX trên sàn chứng khoán Nasdaq. Giá cổ phiếu của công ty có thể biến động khi giao dịch bắt đầu, nhưng các báo cáo không chính thức cho thấy nhu cầu mạnh mẽ từ các nhà đầu tư tổ chức và người mua cá nhân. Nếu việc bán hàng được đăng ký quá mức, SpaceX có tùy chọn đưa thêm 83,3 triệu cổ phiếu ra thị trường, huy động thêm 11 tỷ đô la. IPO cũng sẽ mang lại lợi nhuận đáng kể cho các cổ đông lớn, bao gồm Elon Musk, cũng như các nhà đầu tư mạo hiểm và các nhà đầu tư nhỏ hơn đã hỗ trợ công ty trong giai đoạn là một thực thể tư nhân.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">7</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Tại sao các data center trên quỹ đạo lại khó hơn những gì Silicon Valley nghĩ</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Why Orbital Data Centers Are Harder Than Silicon Valley Thinks</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;IEEE Spectrum</span>&nbsp;&nbsp;&nbsp;<a href="https://spectrum.ieee.org/orbital-data-centers-heat" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Các trung tâm dữ liệu dựa trên vũ trụ, từng được coi là khoa học viễn tưởng, hiện đã trở thành một loại hình đầu tư nghiêm túc. Các công ty như SpaceX, Google và startup Starcloud đang lên kế hoạch cho các chùm vệ tinh được trang bị GPU cấp AI cho xử lý dữ liệu. Những người ủng hộ cho rằng tính toán dựa trên vũ trụ mang lại những lợi thế như năng lượng mặt trời dồi dào, làm mát miễn phí và miễn nhiễm với các sự cố trên Trái đất. Tuy nhiên, khi xem xét kỹ hơn về vật lý của tính toán dựa trên vũ trụ, nó tiết lộ những thách thức đáng kể. Làm mát miễn phí không đơn giản như vẻ ngoài, vì vũ trụ không có khí quyển, khiến cho dẫn nhiệt và đối lưu trở nên không thể. Sự bức xạ là lựa chọn duy nhất, đòi hỏi một diện tích bề mặt lớn và tốn kém để tản nhiệt. Việc thu thập năng lượng mặt trời trong vũ trụ cũng phức tạp, và bức xạ ion hóa gây ra mối đe dọa cho các tấm pin mặt trời, bộ làm mát bức xạ và chip. So sánh chi phí giữa trung tâm dữ liệu trên đất liền và dựa trên vũ trụ cho thấy việc phóng và vận hành một GPU trong vũ trụ ít nhất là đắt hơn một bậc so với trên Trái đất. Mặc dù trung tâm dữ liệu dựa trên vũ trụ có thể khó được chứng minh về mặt kinh tế, nhưng có những ứng dụng chuyên dụng mà chi phí cao hơn có thể được chứng minh, chẳng hạn như tiền xử lý dữ liệu từ vệ tinh quan sát Trái đất hoặc tránh va chạm chủ động trong quỹ đạo thấp của Trái đất.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">8</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">OpenAI sẽ thâu tóm Ona</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;OpenAI to acquire Ona</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;OpenAI Blog</span>&nbsp;&nbsp;&nbsp;<a href="https://openai.com/index/openai-to-acquire-ona" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">OpenAI đã công bố kế hoạch mua lại Ona, một động thái nhằm nâng cao nền tảng Codex của mình. Việc mua lại này tập trung vào việc tích hợp môi trường đám mây an toàn và ổn định vào Codex, cho phép triển khai các tác nhân AI chạy dài trên các quy trình làm việc doanh nghiệp khác nhau. Sự mở rộng này dự kiến sẽ cung cấp cho người dùng khả năng AI mạnh mẽ và đáng tin cậy hơn, được thiết kế để đáp ứng nhu cầu của các doanh nghiệp và tổ chức. Việc mua lại này là một phần trong nỗ lực liên tục của OpenAI để phát triển và tinh chỉnh công nghệ AI của mình, với trọng tâm là tạo ra một trải nghiệm người dùng liền mạch và hiệu quả hơn. Bằng cách tích hợp môi trường đám mây của Ona vào Codex, OpenAI nhằm mục đích củng cố thêm vị trí của mình như một nhà lãnh đạo trong không gian phát triển AI. Các điều khoản và chi tiết của việc mua lại chưa được tiết lộ, nhưng động thái này được coi là một bước tiến chiến lược cho OpenAI trong việc theo đuổi đổi mới và tăng trưởng.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+
+  <!-- TIPS SECTION -->
+  
+  <tr>
+    <td bgcolor="#FFFBEB" style="background-color:#FFFBEB;padding:20px 30px;border-top:3px solid #D97706;">
+      <p style="margin:0 0 12px;font-size:11px;color:#D97706;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#9889;&nbsp;Tips &amp; Tricks cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tạo Agents Linh Hoạt</strong><br><strong>Vấn đề:</strong> Xử lý task phức tạp cần phối hợp nhiều AI agents.<br><strong>Cách làm:</strong> Sử dụng LangGraph để tạo agents linh hoạt, ví dụ <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">langgraph create-agent --name my_agent --task translation</code>.<br><strong>Đánh giá:</strong> Hiệu quả trong việc tự động hóa task phức tạp, nên dùng khi cần phối hợp nhiều agents.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Orchestrate Agents</strong><br><strong>Vấn đề:</strong> Quản lý và phối hợp nhiều AI agents.<br><strong>Cách làm:</strong> Sử dụng CrewAI để orchestrate agents, ví dụ <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">crewai run --agents my_agent1,my_agent2 --task complex_task</code>.<br><strong>Đánh giá:</strong> Hiệu quả trong việc quản lý và phối hợp agents, nên dùng khi cần thực hiện task phức tạp.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tự Động Hóa Task</strong><br><strong>Vấn đề:</strong> Tự động hóa task phức tạp với nhiều agents.<br><strong>Cách làm:</strong> Sử dụng AutoGen để tự động hóa task, ví dụ <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">autogen generate --task complex_task --agents my_agent1,my_agent2</code>.<br><strong>Đánh giá:</strong> Hiệu quả trong việc tự động hóa task, nên dùng khi cần tiết kiệm thời gian và tăng hiệu suất.</p>
+    </td>
+  </tr>
+
+  <!-- LESSON SECTION -->
+  
+  <tr>
+    <td bgcolor="#F0FFF4" style="background-color:#F0FFF4;padding:20px 30px;border-top:3px solid #2E7D32;">
+      <p style="margin:0 0 12px;font-size:11px;color:#2E7D32;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128218;&nbsp;B&#224;i h&#7885;c AI h&#244;m nay cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;">1. <strong>Tối ưu chi phí &amp; hiệu năng LLM</strong><br>2. Trong phát triển ứng dụng AI, việc tối ưu chi phí và hiệu năng của mô hình ngôn ngữ lớn (LLM) là rất quan trọng để đảm bảo hiệu suất và giảm thiểu chi phí. Điều này giúp các nhà phát triển tạo ra ứng dụng AI hiệu quả và tiết kiệm. Việc tối ưu hóa LLM cũng giúp cải thiện tốc độ xử lý và giảm latency.<br>3. Ví dụ, khi sử dụng mô hình LLM như Transformers, chúng ta có thể tối ưu hóa bằng cách giảm kích thước mô hình, sử dụng kỹ thuật quantization, hoặc áp dụng các phương pháp fine-tuning.<br>4. 💡 Tip hoặc bước tiếp theo: Để bắt đầu tối ưu hóa LLM, bạn nên bắt đầu bằng việc phân tích yêu cầu của ứng dụng và xác định các điểm cần cải thiện, sau đó áp dụng các kỹ thuật như model pruning, knowledge distillation, hoặc sử dụng các thư viện như Hugging Face Transformers để tối ưu hóa mô hình.</p>
+    </td>
+  </tr>
+
+  <!-- FOOTER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:20px 30px;text-align:center;border-radius:0 0 10px 10px;">
+      <p style="margin:0 0 4px;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        &#128161;&nbsp;Lu&#244;n &#273;i &#273;&#7847;u trong th&#7871; gi&#7899;i AI!&nbsp;&#183;&nbsp;Stay ahead in AI!
+      </p>
+      <p style="margin:6px 0 0;font-size:11px;color:#4A7AAB;font-family:Arial,sans-serif;">
+        Ngu&#7891;n: Google News · Groq AI
+      </p>
+    </td>
+  </tr>
+
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+
+</td></tr>
+</table>
+</body>
+</html>

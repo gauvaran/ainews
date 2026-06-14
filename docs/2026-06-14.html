@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--[if mso]>
+<noscript><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings></xml></noscript>
+<![endif]-->
+<style>
+/* ── Responsive overrides for web (email HTML uses fixed 600px tables) ── */
+@media screen and (max-width:620px) {
+  table[width="600"] { width:100% !important; }
+  td { word-break:break-word; overflow-wrap:break-word; }
+  /* Reduce generous email padding on small screens */
+  td[style*="padding:28px 30px"],
+  td[style*="padding:24px 30px"],
+  td[style*="padding:22px 30px"],
+  td[style*="padding:20px 30px"],
+  td[style*="padding:16px 30px"],
+  td[style*="padding:12px 30px"] { padding-left:14px !important; padding-right:14px !important; }
+  /* Code blocks: scroll horizontally instead of breaking layout */
+  pre { overflow-x:auto !important; max-width:calc(100vw - 32px) !important; box-sizing:border-box; }
+  /* Shrink large heading text slightly */
+  h1[style*="26px"] { font-size:20px !important; }
+}
+/* ── Print: hide nav bar ── */
+@media print {
+  #web-nav { display:none !important; }
+  body { background:#fff !important; }
+}
+</style>
+</head>
+<body style="margin:0;padding:0;background-color:#EEF2F7;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+<div id="web-nav" style="background:#001a4d;padding:8px 16px;font-family:Arial,sans-serif;font-size:13px;position:sticky;top:0;z-index:999;border-bottom:2px solid #0066CC;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
+  <span id="nav-prev" style="color:#4A6A8A;">&#8592;</span>
+  <a href="all.html" style="color:#FFD700;text-decoration:none;font-weight:bold;">&#128240; T&#7845;t c&#7843; b&#7843;n tin</a>
+  <span style="color:#FFFFFF;">14/06/2026</span>
+  <span id="nav-next" style="color:#4A6A8A;">&#8594;</span>
+  <a href="2026-06-14.pdf" download="2026-06-14.pdf" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128196; T&#7843;i PDF</a>
+  <button onclick="sharePage()" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128279; Chia s&#7867;</button>
+</div>
+<script>
+function sharePage(){
+  var title='Bản tin AI BIS-MT – 14/06/2026';
+  if(navigator.share){navigator.share({title:title,url:location.href});}
+  else{navigator.clipboard.writeText(location.href).then(function(){
+    alert('Đã sao chép link!');
+  });}
+}
+(function(){
+  var m=location.pathname.match(/(\d{4}-\d{2}-\d{2})\.html/);
+  if(!m)return;
+  var slug=m[1];
+  function fmt(s){var p=s.split('-');return p[2]+'/'+p[1];}
+  var lnkStyle='color:#90C4F0;text-decoration:none;';
+  fetch('dates.json?_='+Date.now())
+    .then(function(r){return r.json();})
+    .then(function(dates){
+      var idx=dates.indexOf(slug);
+      if(idx>0){
+        var p=dates[idx-1];
+        document.getElementById('nav-prev').innerHTML=
+          '<a href="'+p+'.html" style="'+lnkStyle+'">&#8592; '+fmt(p)+'</a>';
+      }
+      if(idx>=0&&idx<dates.length-1){
+        var n=dates[idx+1];
+        document.getElementById('nav-next').innerHTML=
+          '<a href="'+n+'.html" style="'+lnkStyle+'">'+fmt(n)+' &#8594;</a>';
+      }
+    })
+    .catch(function(){});
+})();
+</script>
+
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#EEF2F7" style="background-color:#EEF2F7;">
+<tr><td align="center" style="padding:24px 12px;">
+
+<!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0"><tr><td><![endif]-->
+<table role="presentation" width="600" cellpadding="0" cellspacing="0"
+       style="max-width:600px;width:100%;background-color:#FFFFFF;border-radius:10px;" bgcolor="#FFFFFF">
+
+  <!-- HEADER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:28px 30px 22px 30px;text-align:center;border-radius:10px 10px 0 0;">
+      <p style="margin:0 0 6px;font-size:11px;color:#7EB1E8;letter-spacing:2px;font-family:Arial,sans-serif;text-transform:uppercase;">
+        BIS &#8209; MT &nbsp;&#183;&nbsp; 14/06/2026
+      </p>
+      <h1 style="margin:0;font-size:26px;font-weight:bold;color:#FFFFFF;font-family:Arial,sans-serif;line-height:1.2;">
+        &#129302; B&#7843;n Tin AI H&#7857;ng Ng&#224;y
+      </h1>
+      <p style="margin:8px 0 0;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        C&#7853;p nh&#7853;t c&#244;ng ngh&#7879; AI m&#7899;i nh&#7845;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- QUOTE -->
+  <tr>
+    <td bgcolor="#EBF4FF" style="background-color:#EBF4FF;padding:16px 30px;border-top:3px solid #0066CC;">
+      <p style="margin:0;font-size:14px;color:#1A3A5C;font-style:italic;line-height:1.6;font-family:Georgia,serif;">
+        &#10024;&nbsp;&ldquo;In three words I can sum up everything I&#x27;ve learned about life: it goes on.&rdquo;
+      </p>
+      <p style="margin:6px 0 0;font-size:13px;color:#444444;line-height:1.5;">&nbsp;&nbsp;&nbsp;&#8618;&nbsp;Trong ba chữ tôi có thể tóm tắt tất cả những gì đã học về cuộc sống: nó tiếp tục.</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#888888;font-family:Arial,sans-serif;">&mdash;&nbsp;Robert Frost</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#5A6A7A;font-style:italic;line-height:1.5;font-family:Arial,sans-serif;">&#128161;&nbsp;Cuộc sống không dừng lại vì bất kỳ điều gì — dù vui hay buồn, tốt hay xấu, hãy tiếp tục bước về phía trước.</p>
+    </td>
+  </tr>
+
+  <!-- SECTION LABEL -->
+  <tr>
+    <td bgcolor="#F5F7FA" style="background-color:#F5F7FA;padding:12px 30px;">
+      <p style="margin:0;font-size:11px;color:#999999;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128240;&nbsp;Tin t&#7913;c n&#7893;i b&#7853;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- ARTICLES -->
+  
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">1</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Mọi người đều muốn tham gia &quot;vibe coding&quot; — Google cũng không ngoại lệ với Stitch, dự án kế nhiệm Jules</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Everyone&#x27;s looking to get in on vibe coding — and Google is no different with Stitch, its follow-up to Jules</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Venturebeat</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMiywFBVV95cUxQZnlqOVZXTUU2bGFUQUZXeWU4NWlyOFFnWVMzbndfNlJNUTJfVXJTa0c2bE43dHFQRk9ISXBTckJvdE5xeEkzUWhPeC1CMGE0OEU3aTVMSG9pRGtsT180UWpjVnFPUXNWd0F1cXg0R1RFWGd3M3FBWEEyM2J0RXItSDhyaEk4S0l4azNTLUlhY1RoMUtJV2t2QWZZalFxZl96RlNwWWVwX3F3bDh1S0FqYnk5M1E4djMtS01vUWVET1RzRjJOZGNuR0hrQQ?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Google đang tham gia vào xu hướng &quot;lập trình cảm giác&quot; với việc phát hành Stitch, dự án tiếp theo sau Jules. Thuật ngữ &quot;lập trình cảm giác&quot; đề cập đến sự quan tâm ngày càng tăng trong việc tạo ra các công cụ lập trình cung cấp trải nghiệm沉浸 và tương tác hơn cho các nhà phát triển. Mặc dù các chi tiết cụ thể về Stitch vẫn chưa rõ ràng, nhưng nó được định vị là người kế thừa của Jules, một dự án nhằm đơn giản hóa quá trình xây dựng và triển khai các model học máy.
+
+Với Stitch, Google có khả năng xây dựng trên nền tảng được đặt ra bởi Jules, có khả năng cung cấp các tính năng và khả năng mới giúp nâng cao trải nghiệm của nhà phát triển. Động thái này là một phần của xu hướng rộng lớn hơn trong ngành công nghệ, nơi các công ty đang đầu tư vào các công cụ và công nghệ giúp làm cho việc lập trình trở nên dễ tiếp cận và thú vị hơn. Khi nhu cầu về các nhà phát triển có kỹ năng tiếp tục tăng, các công ty đang tìm cách làm cho quá trình lập trình trở nên hấp dẫn và hiệu quả hơn.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">2</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Hướng dẫn đầy đủ về các file bộ nhớ của AI Agent (CLAUDE.md, AGENTS.md và hơn thế nữa)</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;The Complete Guide to AI Agent Memory Files (CLAUDE.md, AGENTS.md, and Beyond)</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;HackerNoon</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxNMGVuaXdvWmdfZ3F0SUlFNDRhMmdRSnBFalBrcmFfeHRFLVNGZkZyd0o3MmxuQW94c1FqSVlFUUNpajZnampmUWlYU0swTFFjM1BGWncyWlpQcjctd01NSms2NHZwWkNyS1p4cm1GOWZ5bzJZRzhuME1xV3A0SmZ3RjhSVU9yekdKTW5JMG1tMGdsSjJGMldLMHpoSQ?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Bài viết này cung cấp một hướng dẫn chi tiết về các tệp tin bộ nhớ của tác nhân AI, tập trung cụ thể vào CLAUDE.md và AGENTS.md. Những tệp tin này là các thành phần quan trọng của hệ thống AI, lưu trữ thông tin về kiến thức, mục tiêu và tương tác của tác nhân. CLAUDE.md là một tệp tin siêu dữ liệu chứa thông tin về bộ nhớ của tác nhân, chẳng hạn như đồ thị kiến thức và khả năng suy luận của nó. AGENTS.md, mặt khác, là một tệp tin cấu hình định nghĩa hành vi và tương tác của tác nhân với môi trường.
+
+Bài viết giải thích cách những tệp tin này được sử dụng trong hệ thống AI, bao gồm vai trò của chúng trong việc xây dựng đồ thị kiến thức, suy luận và ra quyết định. Nó cũng thảo luận về tầm quan trọng của những tệp tin này trong việc đảm bảo tính nhất quán và tính hợp lý trong hành động và quyết định của tác nhân. Hướng dẫn cung cấp thông tin về cấu trúc và nội dung của những tệp tin này, làm cho nó trở thành một tài nguyên quý giá cho các nhà phát triển và nhà nghiên cứu làm việc với tác nhân AI. Bằng cách hiểu CLAUDE.md và AGENTS.md, các nhà phát triển có thể thiết kế và triển khai hệ thống AI hiệu quả, hiệu lực và đáng tin cậy hơn.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">3</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">AWS open-source MCP server cho Bedrock AgentCore nhằm tinh gọn phát triển AI Agent</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;AWS Open-Sources an MCP Server for Bedrock AgentCore to Streamline AI Agent Development</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;MarkTechPost</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMixwFBVV95cUxNZDEzc3dIU3dtSUFCMzJVVU1HeXZSUkdqNmFqMDh5U2d4MEZjRzV6RE14YWdscDYxdWpXelhjUWtPaWZYS19uamp1bUd0Z3dBRWFqOGZ2anAtQ3VvQ0pOUXVvc2tjNHR5cDBGSVJlMkJJQ25CcnRMLWtfWWZVVUwxcXhxMk5qY25BSFJyUk14NGNDWk1BbXp0WUtNeTJqVG1uVDA3NTRHVmF6RWFTeDZ2LVNRTHJ3cTRLWkdtekZ6VjhyNXE3YVFJ?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Amazon Web Services (AWS) đã thực hiện một bước tiến quan trọng trong lĩnh vực trí tuệ nhân tạo (AI) bằng cách mở nguồn một máy chủ MCP (Lập kế hoạch đa tiêu chí) cho Bedrock AgentCore. Phát triển này nhằm mục đích đơn giản hóa quá trình tạo ra các tác nhân AI, là các thành phần quan trọng trong nhiều ứng dụng như robot, xe tự hành và nhà thông minh.
+
+Máy chủ MCP được thiết kế để hoạt động liền mạch với Bedrock AgentCore, một framework cho phép các nhà phát triển xây dựng, đào tạo và triển khai các tác nhân AI một cách hiệu quả. Bằng cách mở nguồn máy chủ MCP, AWS đang cung cấp cho cộng đồng nhà phát triển một tài nguyên quý giá có thể được sử dụng để đẩy nhanh quá trình phát triển tác nhân AI.
+
+Máy chủ MCP dự kiến sẽ đơn giản hóa quá trình tạo ra các tác nhân AI bằng cách cung cấp một giải pháp tiêu chuẩn hóa và có thể mở rộng cho việc lập kế hoạch đa tiêu chí. Điều này, đến lượt, có thể dẫn đến việc phát triển và triển khai các ứng dụng được hỗ trợ bởi AI nhanh hơn, cuối cùng thúc đẩy sự đổi mới trong nhiều ngành công nghiệp. Việc mở nguồn máy chủ MCP đánh dấu một bước tiến quan trọng trong nỗ lực của AWS nhằm thúc đẩy sự phát triển và áp dụng AI.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">4</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Box AI đã xây dựng các enterprise content agent bằng Deep Agents như thế nào</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;How Box AI built enterprise content agents with Deep Agents</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;LangChain Blog</span>&nbsp;&nbsp;&nbsp;<a href="https://www.langchain.com/blog/building-box-ai-how-an-enterprise-content-platform-went-ai-native-with-deep-agents" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Box, một nền tảng quản lý nội dung thông minh, đã phát triển các đại lý nội dung doanh nghiệp với Deep Agents, một công nghệ cho phép tìm kiếm trên toàn bộ thư viện nội dung của doanh nghiệp và tổng hợp kết quả trên hàng nghìn tài liệu. Box Agent, một phần của Box AI, cho phép người dùng đặt câu hỏi phức tạp và nhận báo cáo cũng như phân tích trong khi vẫn tôn trọng các bảo mật và quyền truy cập hiện có. Ban đầu, Box Agent chỉ có thể tìm kiếm trong một tài liệu duy nhất, nhưng nó đã phát triển để xử lý các truy vấn phức tạp trên các lĩnh vực khác nhau. Để đạt được điều này, Box cần một kiến trúc đại lý vượt qua các câu hỏi và trả lời tiêu chuẩn, dẫn họ đến việc chọn Deep Agents cho lớp trừu tượng hóa model và khung đại lý mở. Kiến trúc của Box Agent sử dụng mô hình cha/con, nơi cha (Global Agent) nhận yêu cầu, phân loại ý định và quyết định xem có xử lý trực tiếp hay tạo ra các đại lý con để phân phối công việc. Thiết kế này cho phép xử lý hiệu quả các nhiệm vụ phức tạp và tạo ra các đại lý con động, cho phép hệ thống xử lý các nhiệm vụ mà chưa được thiết kế rõ ràng.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">5</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Nghiên cứu bảo mật của Amazon được cho là nguyên nhân khiến Nhà Trắng cấm Anthropic Fable</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Amazon security research reportedly led to the White House’s Anthropic Fable ban</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;The Verge AI</span>&nbsp;&nbsp;&nbsp;<a href="https://www.theverge.com/ai-artificial-intelligence/949601/amazon-anthropic-fablemythos-government-ban" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Nghiên cứu an ninh mạng của Amazon đã được cho là đã góp phần vào quyết định của Nhà Trắng cấm Anthropic&#x27;s Fable 5 và Mythos 5 được truy cập bởi người nước ngoài. Theo Wall Street Journal, nghiên cứu của Amazon đã phát hiện ra rằng Fable 5 có thể bị khai thác để cung cấp thông tin có thể được sử dụng trong các cuộc tấn công mạng. CEO Andy Jassy đã chia sẻ những phát hiện này với Nhà Trắng, dẫn đến chỉ thị kiểm soát xuất khẩu. Anthropic đã tranh cãi về việc mô tả vấn đề này là một &quot;jailbreak&quot;, cho rằng các lỗ hổng tương tự có thể được phát hiện bằng cách sử dụng các model công khai khác. Việc cấm này đã gây ra sự phức tạp cho các nhà nghiên cứu sinh ra ở nước ngoài của Anthropic, những người bị cấm truy cập vào sản phẩm của chính họ. Quyết định này đã gây ra tranh luận, với một số nhà nghiên cứu bảo mật ủng hộ cách giải thích của Anthropic và những người khác suy đoán rằng sự không thích của Nhà Trắng đối với công ty có thể đã ảnh hưởng đến quyết định.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">6</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Preply kết hợp AI và gia sư người thật để cá nhân hóa việc học như thế nào</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;How Preply combines AI and human tutors to personalize learning</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;OpenAI Blog</span>&nbsp;&nbsp;&nbsp;<a href="https://openai.com/index/preply" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Preply, một nền tảng học ngôn ngữ, đã tích hợp công nghệ OpenAI để nâng cao trải nghiệm học tập của mình. Công ty đã phát triển các bản tóm tắt bài học được tạo bởi AI, cung cấp phản hồi cá nhân hóa và các bài tập học ngôn ngữ. Cách tiếp cận đổi mới này nhằm cung cấp trải nghiệm học tập được tùy chỉnh hơn cho người dùng. Bằng cách tận dụng OpenAI, hệ thống AI của Preply có thể phân tích nhu cầu học tập cá nhân và tạo ra nội dung được tùy chỉnh để hỗ trợ phát triển ngôn ngữ. Các bản tóm tắt và bài tập được tạo bởi AI được thiết kế để bổ sung cho hướng dẫn của các gia sư người thật, cho phép học sinh nhận được cả phản hồi tự động và của con người. Sự kết hợp giữa AI và chuyên môn của con người dự kiến sẽ cải thiện hiệu quả của việc học ngôn ngữ, làm cho nó trở nên hấp dẫn và hiệu quả hơn. Việc tích hợp công nghệ OpenAI là một bước phát triển quan trọng cho Preply, đặt nền tảng này vào vị trí hàng đầu trong lĩnh vực đổi mới học ngôn ngữ.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">7</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">The Download: &quot;Tái lập trình&quot; lão hóa và giác quan ẩn interoception</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;The Download: “reprogramming” aging, and the hidden sense of interoception</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;MIT Tech Review</span>&nbsp;&nbsp;&nbsp;<a href="https://www.technologyreview.com/2026/06/12/1138899/the-download-reprogramming-reverse-aging-interoception/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Trong phiên bản hôm nay của The Download, một công ty công nghệ sinh học có tên Life Biosciences đã cho bệnh nhân đầu tiên sử dụng một phương pháp điều trị thử nghiệm nhằm mục đích đảo ngược các bệnh liên quan đến tuổi tác. Phương pháp điều trị này bao gồm việc tiêm một chất vào nhãn cầu để tái tạo các dây thần kinh khỏe mạnh và có khả năng đảo ngược bệnh glaucôm. Nếu thành công, các phương pháp điều trị tương tự có thể đảo ngược các bệnh khác liên quan đến lão hóa, và thậm chí đảo ngược quá trình lão hóa hoàn toàn, bằng cách &quot;lập trình lại&quot; các tế bào để trở về trạng thái trẻ hơn. Cách tiếp cận này là một trong nhiều cách được các công ty công nghệ sinh học khám phá để làm chậm và đảo ngược quá trình lão hóa.
+
+Trong khi đó, các nhà nghiên cứu đang làm việc để hiểu rõ hơn về khái niệm cảm nhận nội tại, hoặc cách chúng ta cảm nhận bản thân từ bên trong. Giải thưởng Nobel năm 2021 và các công cụ mới đã dẫn đến sự gia tăng nghiên cứu, với những ý nghĩa đối với việc điều trị các tình trạng như béo phì, đau mãn tính và lo lắng. Ngoài ra, nhiều câu chuyện về công nghệ đang làm tiêu đề, bao gồm cả việc IPO kỷ lục của SpaceX, startup AI công nghiệp mới của Jeff Bezos và việc tăng cường thực thi công nghệ của các nhà quản lý Trung Quốc. Các chủ đề khác bao gồm vụ kiện của Google chống lại Gemini về các trò lừa đảo dựa trên AI và tiềm năng của AI trong việc thống nhất mạng lưới chiến trường trong chiến tranh, cũng như các chủ đề khác liên quan đến AI, API, LLM, model, token, developer, framework, v.v.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">8</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Anthropic chặn mọi truy cập công khai vào Claude Fable 5, Mythos 5 theo lệnh của chính phủ Mỹ — các enterprise nên làm gì</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Anthropic blocks all public access to Claude Fable 5, Mythos 5 following US government order — what enterprises should do</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;VentureBeat</span>&nbsp;&nbsp;&nbsp;<a href="https://venturebeat.com/technology/anthropic-blocks-all-public-access-to-claude-fable-5-mythos-5-following-us-government-order-what-enterprises-should-do" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Chính phủ Mỹ đã ban hành một chỉ thị kiểm soát xuất khẩu chưa từng có, yêu cầu Anthropic đình chỉ truy cập vào các mô hình AI hàng đầu của mình, Claude Fable 5 và Claude Mythos 5, đối với người nước ngoài. Để đáp lại, Anthropic đã chặn tất cả truy cập công khai vào các mô hình này, ảnh hưởng đến cả khách hàng doanh nghiệp trả phí và người dùng nội bộ. Chỉ thị này được đưa ra chỉ ba ngày sau khi phát hành công khai Fable/Mythos 5 và được cho là liên quan đến việc một người dùng có tên &quot;Pliny the Liberator&quot; đã jailbreak mô hình. Hành động của chính phủ này служ như một cảnh báo cho lĩnh vực doanh nghiệp về rủi ro khi phụ thuộc vào các mô hình AI tập trung, dựa trên đám mây, có thể bị kiểm soát và tuân thủ của chính phủ và nhà cung cấp.
+
+Anthropic đã xin lỗi khách hàng của mình và tuyên bố rằng họ đang làm việc để khôi phục truy cập càng sớm càng tốt. Tuy nhiên, công ty lưu ý rằng các khả năng được phát hiện bởi jailbreak là &quot;có sẵn rộng rãi&quot; trong các mô hình công khai khác, bao gồm cả mô hình GPT-5.5 của đối thủ OpenAI. Sự mất điện đột ngột của các mô hình AI mới nhất của Anthropic làm nổi bật sự cần thiết của sự dư thừa và đa dạng hóa AI trong doanh nghiệp, vì việc phụ thuộc vào một mô hình AI hoặc nhà cung cấp duy nhất tạo ra một điểm thất bại duy nhất, giòn.
+
+Sự việc này đã gây ra một cuộc tranh luận về sự đánh đổi giữa việc chạy các mô hình trọng lượng mở cục bộ trên phần cứng chủ quyền và việc áp dụng các mô hình AI tập trung tiên tiến. Trong khi các mô hình cục bộ cung cấp quyền kiểm soát tuyệt đối và miễn dịch với các biện pháp kiểm soát xuất khẩu của chính phủ, chúng hy sinh các khả năng suy luận tiên tiến và khả năng của các mô hình tiền phong. Con đường tiến bộ vững chắc nhất là kiến trúc dự phòng hoạt động, nơi các doanh nghiệp thiết kế hệ thống của mình để trở nên độc lập với mô hình và có thể chuyển đổi động giữa các mô hình hoặc nhà cung cấp khác nhau trong trường hợp mất điện hoặc cấm theo quy định.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+
+  <!-- TIPS SECTION -->
+  
+  <tr>
+    <td bgcolor="#FFFBEB" style="background-color:#FFFBEB;padding:20px 30px;border-top:3px solid #D97706;">
+      <p style="margin:0 0 12px;font-size:11px;color:#D97706;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#9889;&nbsp;Tips &amp; Tricks cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tối ưu hóa Retrieval-Augmented Generation</strong><br><strong>Vấn đề:</strong> Model RAG không thể tìm kiếm thông tin liên quan hiệu quả.<br><strong>Cách làm:</strong> Sử dụng thư viện Hugging Face để tinh chỉnh mô hình, ví dụ: <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">pipeline = pipeline(&quot;question-answering&quot;)</code>.<br><strong>Đánh giá:</strong> Hiệu quả khi cần tìm kiếm thông tin cụ thể, nhưng có thể mất thời gian.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tạo Embeddings cho Semantic Search</strong><br><strong>Vấn đề:</strong> Dữ liệu không có đặc trưng phù hợp cho tìm kiếm ngữ nghĩa.<br><strong>Cách làm:</strong> Sử dụng thư viện sentence-transformers để tạo embeddings, ví dụ: <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">from sentence_transformers import SentenceTransformer</code>.<br><strong>Đánh giá:</strong> Hiệu quả khi cần tìm kiếm ngữ nghĩa, nhưng yêu cầu dữ liệu chất lượng.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Áp dụng Semantic Search trong Ứng dụng</strong><br><strong>Vấn đề:</strong> Cần tìm kiếm thông tin liên quan trong dữ liệu lớn.<br><strong>Cách làm:</strong> Sử dụng thư viện FAISS để tìm kiếm nhanh, ví dụ: <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">import faiss</code>.<br><strong>Đánh giá:</strong> Hiệu quả khi cần tìm kiếm nhanh, nhưng yêu cầu cấu hình phù hợp.</p>
+    </td>
+  </tr>
+
+  <!-- LESSON SECTION -->
+  
+  <tr>
+    <td bgcolor="#F0FFF4" style="background-color:#F0FFF4;padding:20px 30px;border-top:3px solid #2E7D32;">
+      <p style="margin:0 0 12px;font-size:11px;color:#2E7D32;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128218;&nbsp;B&#224;i h&#7885;c AI h&#244;m nay cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;">1. <strong>Tích hợp AI API vào ứng dụng</strong><br>2. Tích hợp AI API vào ứng dụng giúp tăng cường khả năng xử lý và phân tích dữ liệu, cho phép phát triển các ứng dụng thông minh hơn. Điều này giúp các nhà phát triển cải thiện trải nghiệm người dùng và tăng hiệu suất công việc. Việc tích hợp AI API cũng giúp giảm thiểu thời gian và công sức phát triển.<br>3. Ví dụ, khi xây dựng một ứng dụng chatbot, bạn có thể tích hợp AI API như Dialogflow hoặc Microsoft Bot Framework để xử lý ngôn ngữ tự nhiên và trả lời các câu hỏi của người dùng.<br>4. 💡 Tip hoặc bước tiếp theo: Để bắt đầu tích hợp AI API, hãy nghiên cứu các thư viện và framework hỗ trợ như TensorFlow hoặc PyTorch, và tìm hiểu cách deploy mô hình AI lên cloud hoặc edge device.</p>
+    </td>
+  </tr>
+
+  <!-- FOOTER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:20px 30px;text-align:center;border-radius:0 0 10px 10px;">
+      <p style="margin:0 0 4px;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        &#128161;&nbsp;Lu&#244;n &#273;i &#273;&#7847;u trong th&#7871; gi&#7899;i AI!&nbsp;&#183;&nbsp;Stay ahead in AI!
+      </p>
+      <p style="margin:6px 0 0;font-size:11px;color:#4A7AAB;font-family:Arial,sans-serif;">
+        Ngu&#7891;n: Google News · Groq AI
+      </p>
+    </td>
+  </tr>
+
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+
+</td></tr>
+</table>
+</body>
+</html>

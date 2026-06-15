@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--[if mso]>
+<noscript><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings></xml></noscript>
+<![endif]-->
+<style>
+/* ── Responsive overrides for web (email HTML uses fixed 600px tables) ── */
+@media screen and (max-width:620px) {
+  table[width="600"] { width:100% !important; }
+  td { word-break:break-word; overflow-wrap:break-word; }
+  /* Reduce generous email padding on small screens */
+  td[style*="padding:28px 30px"],
+  td[style*="padding:24px 30px"],
+  td[style*="padding:22px 30px"],
+  td[style*="padding:20px 30px"],
+  td[style*="padding:16px 30px"],
+  td[style*="padding:12px 30px"] { padding-left:14px !important; padding-right:14px !important; }
+  /* Code blocks: scroll horizontally instead of breaking layout */
+  pre { overflow-x:auto !important; max-width:calc(100vw - 32px) !important; box-sizing:border-box; }
+  /* Shrink large heading text slightly */
+  h1[style*="26px"] { font-size:20px !important; }
+}
+/* ── Print: hide nav bar ── */
+@media print {
+  #web-nav { display:none !important; }
+  body { background:#fff !important; }
+}
+</style>
+</head>
+<body style="margin:0;padding:0;background-color:#EEF2F7;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+<div id="web-nav" style="background:#001a4d;padding:8px 16px;font-family:Arial,sans-serif;font-size:13px;position:sticky;top:0;z-index:999;border-bottom:2px solid #0066CC;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
+  <span id="nav-prev" style="color:#4A6A8A;">&#8592;</span>
+  <a href="all.html" style="color:#FFD700;text-decoration:none;font-weight:bold;">&#128240; T&#7845;t c&#7843; b&#7843;n tin</a>
+  <span style="color:#FFFFFF;">15/06/2026</span>
+  <span id="nav-next" style="color:#4A6A8A;">&#8594;</span>
+  <a href="2026-06-15.pdf" download="2026-06-15.pdf" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128196; T&#7843;i PDF</a>
+  <button onclick="sharePage()" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128279; Chia s&#7867;</button>
+</div>
+<script>
+function sharePage(){
+  var title='Bản tin AI BIS-MT – 15/06/2026';
+  if(navigator.share){navigator.share({title:title,url:location.href});}
+  else{navigator.clipboard.writeText(location.href).then(function(){
+    alert('Đã sao chép link!');
+  });}
+}
+(function(){
+  var m=location.pathname.match(/(\d{4}-\d{2}-\d{2})\.html/);
+  if(!m)return;
+  var slug=m[1];
+  function fmt(s){var p=s.split('-');return p[2]+'/'+p[1];}
+  var lnkStyle='color:#90C4F0;text-decoration:none;';
+  fetch('dates.json?_='+Date.now())
+    .then(function(r){return r.json();})
+    .then(function(dates){
+      var idx=dates.indexOf(slug);
+      if(idx>0){
+        var p=dates[idx-1];
+        document.getElementById('nav-prev').innerHTML=
+          '<a href="'+p+'.html" style="'+lnkStyle+'">&#8592; '+fmt(p)+'</a>';
+      }
+      if(idx>=0&&idx<dates.length-1){
+        var n=dates[idx+1];
+        document.getElementById('nav-next').innerHTML=
+          '<a href="'+n+'.html" style="'+lnkStyle+'">'+fmt(n)+' &#8594;</a>';
+      }
+    })
+    .catch(function(){});
+})();
+</script>
+
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#EEF2F7" style="background-color:#EEF2F7;">
+<tr><td align="center" style="padding:24px 12px;">
+
+<!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0"><tr><td><![endif]-->
+<table role="presentation" width="600" cellpadding="0" cellspacing="0"
+       style="max-width:600px;width:100%;background-color:#FFFFFF;border-radius:10px;" bgcolor="#FFFFFF">
+
+  <!-- HEADER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:28px 30px 22px 30px;text-align:center;border-radius:10px 10px 0 0;">
+      <p style="margin:0 0 6px;font-size:11px;color:#7EB1E8;letter-spacing:2px;font-family:Arial,sans-serif;text-transform:uppercase;">
+        BIS &#8209; MT &nbsp;&#183;&nbsp; 15/06/2026
+      </p>
+      <h1 style="margin:0;font-size:26px;font-weight:bold;color:#FFFFFF;font-family:Arial,sans-serif;line-height:1.2;">
+        &#129302; B&#7843;n Tin AI H&#7857;ng Ng&#224;y
+      </h1>
+      <p style="margin:8px 0 0;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        C&#7853;p nh&#7853;t c&#244;ng ngh&#7879; AI m&#7899;i nh&#7845;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- QUOTE -->
+  <tr>
+    <td bgcolor="#EBF4FF" style="background-color:#EBF4FF;padding:16px 30px;border-top:3px solid #0066CC;">
+      <p style="margin:0;font-size:14px;color:#1A3A5C;font-style:italic;line-height:1.6;font-family:Georgia,serif;">
+        &#10024;&nbsp;&ldquo;You have brains in your head. You have feet in your shoes. You can steer yourself any direction you choose.&rdquo;
+      </p>
+      <p style="margin:6px 0 0;font-size:13px;color:#444444;line-height:1.5;">&nbsp;&nbsp;&nbsp;&#8618;&nbsp;Bạn có não trong đầu. Bạn có chân trong giày. Bạn có thể lái mình theo bất kỳ hướng nào bạn chọn.</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#888888;font-family:Arial,sans-serif;">&mdash;&nbsp;Dr. Seuss</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#5A6A7A;font-style:italic;line-height:1.5;font-family:Arial,sans-serif;">&#128161;&nbsp;Mỗi người đều có khả năng tự định hướng cuộc đời mình — đừng để hoàn cảnh hay người khác quyết định bạn sẽ đi đâu.</p>
+    </td>
+  </tr>
+
+  <!-- SECTION LABEL -->
+  <tr>
+    <td bgcolor="#F5F7FA" style="background-color:#F5F7FA;padding:12px 30px;">
+      <p style="margin:0;font-size:11px;color:#999999;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128240;&nbsp;Tin t&#7913;c n&#7893;i b&#7853;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- ARTICLES -->
+  
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">1</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Chuyên gia bảo mật gióng lên hồi chuông cảnh báo về lỗ hổng trong code do AI sinh ra</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Security Researchers Sound the Alarm on Vulnerabilities in AI-Generated Code</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Infosecurity Magazine</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMigwFBVV95cUxOa2EtOVAxcE9xSjRyTkZTNnQ4WV9XQWxKVDdYYjhGWHJ6S0YzanE2aWNfQlRja25RMkdINm16ZzhwM0pWQ1BUendwdjI5RnBFa2tVOTVWbHFfWExIZzNHNmdsZEJQSlBSN0gwQk5CRTVBUGdMLTk1bHJ1dzAzNEJWNkJGVQ?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Các nhà nghiên cứu bảo mật đã bày tỏ mối quan ngại về các điểm yếu bảo mật trong mã được tạo ra bởi AI. Mã này được tạo ra bằng cách sử dụng trí tuệ nhân tạo và các thuật toán học máy, thường được thiết kế để tự động hóa các nhiệm vụ và tăng tốc quá trình phát triển. Tuy nhiên, các nhà nghiên cứu đã phát hiện ra rằng mã được tạo ra bởi AI có thể chứa các lỗi bảo mật, điều này có thể đặt người dùng và hệ thống vào tình trạng nguy hiểm.
+
+Vấn đề này phát sinh từ việc các thuật toán AI có thể không hiểu đầy đủ ngữ cảnh và sắc thái của mã mà chúng tạo ra. Kết quả là, chúng có thể tạo ra mã dễ bị tấn công hoặc khai thác. Điều này có thể dẫn đến việc mất mát dữ liệu, hệ thống bị sập và các sự cố bảo mật khác.
+
+Các nhà nghiên cứu cảnh báo rằng việc sử dụng mã được tạo ra bởi AI trong môi trường sản xuất có thể dẫn đến hậu quả nghiêm trọng. Họ kêu gọi thực hiện các thử nghiệm và xác thực nghiêm ngặt hơn đối với mã được tạo ra bởi AI để đảm bảo tính bảo mật và độ tin cậy của nó. Điều này bao gồm việc thực hiện các kiểm tra và kiểm soát bổ sung để phát hiện và giảm thiểu các điểm yếu bảo mật tiềm ẩn.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">2</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Ai cũng muốn tham gia &quot;vibe coding&quot; — và Google cũng không ngoại lệ với Stitch, dự án kế nhiệm của Jules</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Everyone&#x27;s looking to get in on vibe coding — and Google is no different with Stitch, its follow-up to Jules</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;VentureBeat</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMiywFBVV95cUxQZnlqOVZXTUU2bGFUQUZXeWU4NWlyOFFnWVMzbndfNlJNUTJfVXJTa0c2bE43dHFQRk9ISXBTckJvdE5xeEkzUWhPeC1CMGE0OEU3aTVMSG9pRGtsT180UWpjVnFPUXNWd0F1cXg0R1RFWGd3M3FBWEEyM2J0RXItSDhyaEk4S0l4azNTLUlhY1RoMUtJV2t2QWZZalFxZl96RlNwWWVwX3F3bDh1S0FqYnk5M1E4djMtS01vUWVET1RzRjJOZGNuR0hrQQ?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Google đang tham gia vào xu hướng &quot;lập trình cảm xúc&quot; với việc ra mắt Stitch, một dự án tiếp theo sau Jules. Thuật ngữ &quot;lập trình cảm xúc&quot; đề cập đến sự quan tâm ngày càng tăng trong việc tạo ra các công cụ lập trình tập trung vào trải nghiệm người dùng và kết nối cảm xúc. Sự tham gia của Google vào lĩnh vực này cho thấy sự thay đổi trong cách tiếp cận lập trình của gã khổng lồ công nghệ, ưu tiên sự dễ sử dụng và giao diện trực quan.
+
+Mặc dù chi tiết về Stitch còn khan hiếm, việc phát hành nó như một dự án tiếp theo sau Jules cho thấy Google cam kết phát triển thêm khả năng lập trình cảm xúc của mình. Jules, một dự án trước đó, nhằm mục đích đơn giản hóa quá trình xây dựng và triển khai các model học máy (machine learning model). Với Stitch, Google có thể đang mở rộng khái niệm này, tạo ra một môi trường lập trình thân thiện với người dùng và dễ tiếp cận hơn.
+
+Các tính năng và chức năng chính xác của Stitch vẫn còn chưa rõ, nhưng việc phát hành nó có khả năng được theo dõi chặt chẽ bởi cộng đồng công nghệ, đặc biệt là những người quan tâm đến lập trình cảm xúc và trải nghiệm người dùng.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">3</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Lớp lệnh AI đa agent cho kho hàng giúp đạt hiệu suất vận hành vượt trội và tình báo chuỗi cung ứng</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Multi-Agent Warehouse AI Command Layer Enables Operational Excellence and Supply Chain Intelligence</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;NVIDIA Developer</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMizwFBVV95cUxON2JaLWpmNDU2T3UwSG4yeUQ0eVVMNnowemV4OWFtaDlyX05KT3lNV1VhVGtCZjc2LTBjZjBOU3B5R1poaU1oZS1pcXlpczZORi04Y3QteE5nMmlISi1yWXdCcE05QUpwZFZyR2cyam96WVc5WVVBTHE2TlVBalVkOTdnVFNqRmFYQWhhSTFiRktyVFh0d3dERTFDSlktZHRvVGc1MFgxS290RTVUMHRTNWs5NlllT2h2Ym5MTnF0ajIwQ1hfYmJpTV8wQUtRbXM?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">NVIDIA đã giới thiệu Lớp lệnh AI Nhà kho đa tác nhân, một công nghệ được thiết kế để nâng cao hiệu quả hoạt động và trí tuệ chuỗi cung ứng trong các nhà kho. Lớp lệnh AI này cho phép giao tiếp và phối hợp liền mạch giữa các tác nhân khác nhau, bao gồm robot, máy bay không người lái và các hệ thống tự động khác, để tối ưu hóa hoạt động nhà kho.
+
+Lớp lệnh AI Nhà kho đa tác nhân sử dụng nền tảng Omniverse của NVIDIA, một bộ công cụ để xây dựng và mô phỏng các môi trường AI phức tạp. Công nghệ này cho phép theo dõi và kiểm soát hoạt động nhà kho theo thời gian thực, cho phép các doanh nghiệp đưa ra quyết định dựa trên dữ liệu và cải thiện khả năng chống chịu của chuỗi cung ứng.
+
+Các lợi ích chính của Lớp lệnh AI Nhà kho đa tác nhân bao gồm:
+
+- Tăng cường hiệu quả hoạt động thông qua phân bổ nhiệm vụ và tự động hóa được tối ưu hóa
+- Cải thiện trí tuệ chuỗi cung ứng thông qua theo dõi và phân tích dữ liệu theo thời gian thực
+- Tăng cường linh hoạt và khả năng mở rộng trong hoạt động nhà kho
+- Ra quyết định tốt hơn thông qua thông tin chi tiết dựa trên dữ liệu
+
+Bằng cách tận dụng công nghệ của NVIDIA, các doanh nghiệp có thể tối ưu hóa hoạt động nhà kho, giảm chi phí và cải thiện hiệu suất chuỗi cung ứng tổng thể.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">4</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Trung Quốc có thể đã tiếp cận Mythos</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;China may have accessed Mythos</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;The Verge AI</span>&nbsp;&nbsp;&nbsp;<a href="https://www.theverge.com/ai-artificial-intelligence/949644/china-white-house-anthropic-mythos" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Tòa Bạch Ốc đã được cho là thể hiện mối quan ngại rằng một nhóm liên kết với Trung Quốc có thể đã truy cập vào mô hình AI mạnh mẽ của Anthropic, Mythos. Theo một báo cáo mới từ Semafor, quyết định của Tòa Bạch Ốc trong việc áp đặt hạn chế xuất khẩu đối với Mythos đã được thúc đẩy một phần bởi nỗi sợ về một rủi ro an ninh quốc gia tiềm năng. Nếu chính phủ Trung Quốc có quyền truy cập vào Mythos, họ có thể cố gắng đảo ngược mô hình, điều này có thể làm tổn hại thông tin nhạy cảm. Anthropic đã không bình luận về báo cáo, nhưng một người phát ngôn cho biết chính phủ không đề cập đến Trung Quốc trong các cuộc thảo luận xung quanh kiểm soát xuất khẩu. Đây không phải là lần đầu tiên mô hình mạnh mẽ của Anthropic bị xâm phạm, vì một nhóm Discord đã được cho là có quyền truy cập vào Mythos trong hai tuần trước khi sự vi phạm được phát hiện. Tòa Bạch Ốc đã không xác nhận báo cáo, và một bài đăng trên X của một cố vấn Trump đã không đề cập đến Trung Quốc, thay vào đó tập trung vào khả năng Fable và Mythos có thể bị &quot;jailbroken&quot;.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">5</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Tin tức Lawmadi OS — 2026-06-05</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Lawmadi OS News — 2026-06-05</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Dev.to AI</span>&nbsp;&nbsp;&nbsp;<a href="https://dev.to/peter_choe_74edfaa33306ed/lawmadi-os-news-2026-06-05-5e2" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Hàn Quốc dự kiến sẽ trở thành quốc gia đầu tiên thực hiện &quot;Đạo luật Cơ bản về Trí tuệ Nhân tạo&quot; vào ngày 22 tháng 6. Sự phát triển này đã gây sự quan tâm về cách nó sẽ ảnh hưởng đến hệ thống pháp lý. Lawmadi OS, một hệ thống vận hành pháp lý được hỗ trợ bởi AI của Hàn Quốc, được thiết kế để phân tích câu hỏi và xác minh trích dẫn so với cơ sở dữ liệu luật pháp chính thức của Hàn Quốc (law.go.kr) theo thời gian thực. Hệ thống này sử dụng 60 tác nhân AI chuyên dụng trên 60 lĩnh vực. Nó cũng có các mẫu để trả lời nhanh các câu hỏi thường gặp hoặc lưu trữ các đoạn mã có thể tái sử dụng. Hệ thống hỗ trợ bởi AI này nhằm mục đích tối ưu hóa quá trình pháp lý, có thể dẫn đến việc ra quyết định nhanh hơn và hiệu quả hơn.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">6</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Từ những dự án open source thành công đến OpenAI</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;From open source hits to OpenAI</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Changelog</span>&nbsp;&nbsp;&nbsp;<a href="https://changelog.com/podcast/682" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Trong một cuộc trò chuyện gần đây, Max Stoiber, một developer tại OpenAI, đã thảo luận về các dự án mã nguồn mở và tác động của chúng đối với ngành công nghiệp công nghệ. Ông đã đề cập đến tầm quan trọng của các dự án mã nguồn mở ít được biết đến, chẳng hạn như react-boilerplate và styled-components, cùng với những dự án nổi bật hơn. Stoiber cũng chia sẻ kinh nghiệm của mình với Spectrum, đã trở thành một phần của GitHub và đóng góp vào sự phát triển của GitHub Discussions. Ngoài ra, ông cũng đề cập đến thành công của Stellate, một bộ nhớ đệm GraphQL đã được Shopify và The Guild mua lại. Công việc của Stoiber trên thư viện plugin và nền tảng ứng dụng của ChatGPT cũng được nhấn mạnh, với trọng tâm là cách các ứng dụng ChatGPT đang tạo ra một bề mặt mới cho phát triển phần mềm.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">7</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">olmo-eval: Môi trường làm việc đánh giá cho chu trình phát triển model</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;olmo-eval: An evaluation workbench for the model development loop</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Hugging Face Blog</span>&nbsp;&nbsp;&nbsp;<a href="https://huggingface.co/blog/allenai/olmo-eval" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Viện Allen về Trí tuệ Nhân tạo (AI) đã phát triển một công cụ mới gọi là olmo-eval, được thiết kế để giúp quá trình đánh giá các mô hình ngôn ngữ lớn (LLMs) trong quá trình phát triển. Không giống như các công cụ hiện có, olmo-eval là một ngăn xếp đánh giá tích hợp cho phép đánh giá có thể tái tạo và là mã nguồn mở. Nó được xây dựng trên Tiêu chuẩn Đánh giá Mô hình Ngôn ngữ Mở (OLMES), được giới thiệu vào năm 2024, nhằm tiêu chuẩn hóa điểm chuẩn LLM để dễ dàng so sánh.
+
+olmo-eval mở rộng OLMES bằng cách cung cấp nhiều tính linh hoạt hơn trong việc định nghĩa và chạy đánh giá, giúp dễ dàng hơn trong việc tạo thành các thành phần riêng lẻ thành các quy trình công việc lớn hơn. Nó hỗ trợ đánh giá agentic và đa lượt, và cung cấp các công cụ phân tích mạnh mẽ hơn để xác định xem một can thiệp có thực sự cải thiện mô hình hay sự khác biệt là do nhiễu.
+
+So với Harbor, một khuôn khổ mở để đánh giá các tác nhân AI, olmo-eval được thiết kế cho phát triển mô hình hàng ngày, cho phép đánh giá và phân tích nhanh chóng hiệu suất của mô hình. Nó cũng cung cấp một đường dẫn đánh giá nhẹ, đây là mặc định, và chỉ sử dụng một thiết lập nặng khi cần thiết. olmo-eval là mã nguồn mở và có sẵn trên GitHub.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">8</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Cách chọn Sandbox phù hợp cho AI Agent</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;How to Choose the Right Sandbox for AI Agents</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;LangChain Blog</span>&nbsp;&nbsp;&nbsp;<a href="https://www.langchain.com/blog/how-to-choose-the-right-sandbox-for-your-agent" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Việc chọn sandbox phù hợp cho các tác nhân AI là rất quan trọng để đảm bảo sự tự chủ của chúng không ảnh hưởng đến bảo mật dữ liệu và hệ thống. Các tác nhân AI có thể tạo ra giá trị bằng cách tạo và thực thi mã, nhưng điều này cũng tiềm ẩn nguy cơ về các mối đe dọa không lường trước. Sandboxes cách ly mã được tạo ra bởi AI, hạn chế quyền truy cập và tạo ra một ranh giới an toàn hơn cho các tác nhân hoạt động. Về cơ bản, chúng là máy tính an toàn mà các tác nhân có thể sử dụng mà không gây ra mối đe dọa.
+
+Để chọn một sandbox phù hợp, các đội cần xem xét các rủi ro bảo mật liên quan đến việc chạy mã được tạo ra bởi AI. Điều này bao gồm rủi ro của các cuộc tấn công tiêm prompt, nơi một kẻ tấn công khiến tác nhân viết mã làm tổn hại dữ liệu và hệ thống. &quot;Tam giác tử thần&quot; của các điều kiện, được phác thảo bởi Simon Willison, làm tăng rủi ro của các cuộc tấn công như vậy.
+
+Một giải pháp sandbox an toàn nên cung cấp các tính năng như:
+
+- Chứa chỉ dữ liệu mà tác nhân cần để thực hiện công việc của nó
+- Chặn tác nhân truy cập vào dữ liệu khác
+- Hạn chế các điểm cuối ngoài mà tác nhân có thể gửi dữ liệu đến qua internet
+- Kiểm soát việc sử dụng tính toán và bộ nhớ
+- Cho phép quyết định tái sử dụng sandbox hay không
+
+Khi chọn sandbox, các đội nên đánh giá các giải pháp tiềm năng một cách nghiêm túc để đảm bảo chúng đáp ứng các yêu cầu này.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+
+  <!-- TIPS SECTION -->
+  
+  <tr>
+    <td bgcolor="#FFFBEB" style="background-color:#FFFBEB;padding:20px 30px;border-top:3px solid #D97706;">
+      <p style="margin:0 0 12px;font-size:11px;color:#D97706;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#9889;&nbsp;Tips &amp; Tricks cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tự động hóa kiểm thử đơn vị</strong><br><strong>Vấn đề:</strong> Viết test case thủ công tốn thời gian và dễ xảy ra lỗi.<br><strong>Cách làm:</strong> Sử dụng AI tools như Pytest và Unittest để tự động hóa kiểm thử đơn vị. Ví dụ, sử dụng lệnh <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">pytest --cov</code> để kiểm tra coverage.<br><strong>Đánh giá:</strong> Hiệu quả cao, nên dùng khi dự án có nhiều module và chức năng.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Kiểm tra mã nguồn tự động</strong><br><strong>Vấn đề:</strong> Kiểm tra mã nguồn thủ công dễ bỏ sót lỗi và tốn thời gian.<br><strong>Cách làm:</strong> Sử dụng công cụ như SonarQube và CodeCoverage để kiểm tra mã nguồn tự động. Ví dụ, sử dụng lệnh <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">sonar-scanner</code> để quét mã nguồn.<br><strong>Đánh giá:</strong> Hiệu quả cao, nên dùng khi dự án có nhiều contributor.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tự động hóa kiểm tra hiệu suất</strong><br><strong>Vấn đề:</strong> Kiểm tra hiệu suất thủ công tốn thời gian và không chính xác.<br><strong>Cách làm:</strong> Sử dụng công cụ như JMeter và Locust để tự động hóa kiểm tra hiệu suất. Ví dụ, sử dụng lệnh <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">locust -f</code> để chạy test hiệu suất.<br><strong>Đánh giá:</strong> Hiệu quả cao, nên dùng khi dự án yêu cầu hiệu suất cao.</p>
+    </td>
+  </tr>
+
+  <!-- LESSON SECTION -->
+  
+  <tr>
+    <td bgcolor="#F0FFF4" style="background-color:#F0FFF4;padding:20px 30px;border-top:3px solid #2E7D32;">
+      <p style="margin:0 0 12px;font-size:11px;color:#2E7D32;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128218;&nbsp;B&#224;i h&#7885;c AI h&#244;m nay cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;">1. <strong> Fine-tuning &amp; LoRA cho use case cụ thể</strong><br>2. Dev cần biết về fine-tuning và LoRA để tối ưu hóa mô hình AI cho ứng dụng cụ thể, giúp cải thiện hiệu suất và giảm chi phí. Điều này cho phép các mô hình AI học hỏi từ dữ liệu cụ thể và điều chỉnh để phù hợp với nhu cầu thực tế.<br>3. Ví dụ, sử dụng thư viện Hugging Face Transformers để fine-tune mô hình BERT cho nhiệm vụ phân loại văn bản: <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">from transformers import BertTokenizer, BertModel; tokenizer = BertTokenizer.from_pretrained(&#x27;bert-base-uncased&#x27;); model = BertModel.from_pretrained(&#x27;bert-base-uncased&#x27;)</code>.<br>4. 💡 Tip hoặc bước tiếp theo: Sử dụng kỹ thuật LoRA (Low-Rank Adaptation) để giảm thiểu sự thay đổi của mô hình khi fine-tuning, giúp giữ nguyên kiến thức đã học và cải thiện hiệu suất.</p>
+    </td>
+  </tr>
+
+  <!-- FOOTER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:20px 30px;text-align:center;border-radius:0 0 10px 10px;">
+      <p style="margin:0 0 4px;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        &#128161;&nbsp;Lu&#244;n &#273;i &#273;&#7847;u trong th&#7871; gi&#7899;i AI!&nbsp;&#183;&nbsp;Stay ahead in AI!
+      </p>
+      <p style="margin:6px 0 0;font-size:11px;color:#4A7AAB;font-family:Arial,sans-serif;">
+        Ngu&#7891;n: Google News · Groq AI
+      </p>
+    </td>
+  </tr>
+
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+
+</td></tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--[if mso]>
+<noscript><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings></xml></noscript>
+<![endif]-->
+<style>
+/* ── Responsive overrides for web (email HTML uses fixed 600px tables) ── */
+@media screen and (max-width:620px) {
+  table[width="600"] { width:100% !important; }
+  td { word-break:break-word; overflow-wrap:break-word; }
+  /* Reduce generous email padding on small screens */
+  td[style*="padding:28px 30px"],
+  td[style*="padding:24px 30px"],
+  td[style*="padding:22px 30px"],
+  td[style*="padding:20px 30px"],
+  td[style*="padding:16px 30px"],
+  td[style*="padding:12px 30px"] { padding-left:14px !important; padding-right:14px !important; }
+  /* Code blocks: scroll horizontally instead of breaking layout */
+  pre { overflow-x:auto !important; max-width:calc(100vw - 32px) !important; box-sizing:border-box; }
+  /* Shrink large heading text slightly */
+  h1[style*="26px"] { font-size:20px !important; }
+}
+/* ── Print: hide nav bar ── */
+@media print {
+  #web-nav { display:none !important; }
+  body { background:#fff !important; }
+}
+</style>
+</head>
+<body style="margin:0;padding:0;background-color:#EEF2F7;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+<div id="web-nav" style="background:#001a4d;padding:8px 16px;font-family:Arial,sans-serif;font-size:13px;position:sticky;top:0;z-index:999;border-bottom:2px solid #0066CC;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
+  <span id="nav-prev" style="color:#4A6A8A;">&#8592;</span>
+  <a href="all.html" style="color:#FFD700;text-decoration:none;font-weight:bold;">&#128240; T&#7845;t c&#7843; b&#7843;n tin</a>
+  <span style="color:#FFFFFF;">16/06/2026</span>
+  <span id="nav-next" style="color:#4A6A8A;">&#8594;</span>
+  <a href="2026-06-16.pdf" download="2026-06-16.pdf" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128196; T&#7843;i PDF</a>
+  <button onclick="sharePage()" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128279; Chia s&#7867;</button>
+</div>
+<script>
+function sharePage(){
+  var title='Bản tin AI BIS-MT – 16/06/2026';
+  if(navigator.share){navigator.share({title:title,url:location.href});}
+  else{navigator.clipboard.writeText(location.href).then(function(){
+    alert('Đã sao chép link!');
+  });}
+}
+(function(){
+  var m=location.pathname.match(/(\d{4}-\d{2}-\d{2})\.html/);
+  if(!m)return;
+  var slug=m[1];
+  function fmt(s){var p=s.split('-');return p[2]+'/'+p[1];}
+  var lnkStyle='color:#90C4F0;text-decoration:none;';
+  fetch('dates.json?_='+Date.now())
+    .then(function(r){return r.json();})
+    .then(function(dates){
+      var idx=dates.indexOf(slug);
+      if(idx>0){
+        var p=dates[idx-1];
+        document.getElementById('nav-prev').innerHTML=
+          '<a href="'+p+'.html" style="'+lnkStyle+'">&#8592; '+fmt(p)+'</a>';
+      }
+      if(idx>=0&&idx<dates.length-1){
+        var n=dates[idx+1];
+        document.getElementById('nav-next').innerHTML=
+          '<a href="'+n+'.html" style="'+lnkStyle+'">'+fmt(n)+' &#8594;</a>';
+      }
+    })
+    .catch(function(){});
+})();
+</script>
+
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#EEF2F7" style="background-color:#EEF2F7;">
+<tr><td align="center" style="padding:24px 12px;">
+
+<!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0"><tr><td><![endif]-->
+<table role="presentation" width="600" cellpadding="0" cellspacing="0"
+       style="max-width:600px;width:100%;background-color:#FFFFFF;border-radius:10px;" bgcolor="#FFFFFF">
+
+  <!-- HEADER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:28px 30px 22px 30px;text-align:center;border-radius:10px 10px 0 0;">
+      <p style="margin:0 0 6px;font-size:11px;color:#7EB1E8;letter-spacing:2px;font-family:Arial,sans-serif;text-transform:uppercase;">
+        BIS &#8209; MT &nbsp;&#183;&nbsp; 16/06/2026
+      </p>
+      <h1 style="margin:0;font-size:26px;font-weight:bold;color:#FFFFFF;font-family:Arial,sans-serif;line-height:1.2;">
+        &#129302; B&#7843;n Tin AI H&#7857;ng Ng&#224;y
+      </h1>
+      <p style="margin:8px 0 0;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        C&#7853;p nh&#7853;t c&#244;ng ngh&#7879; AI m&#7899;i nh&#7845;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- QUOTE -->
+  <tr>
+    <td bgcolor="#EBF4FF" style="background-color:#EBF4FF;padding:16px 30px;border-top:3px solid #0066CC;">
+      <p style="margin:0;font-size:14px;color:#1A3A5C;font-style:italic;line-height:1.6;font-family:Georgia,serif;">
+        &#10024;&nbsp;&ldquo;It&#x27;s not about how hard you hit. It&#x27;s about how hard you can get hit and keep moving forward.&rdquo;
+      </p>
+      <p style="margin:6px 0 0;font-size:13px;color:#444444;line-height:1.5;">&nbsp;&nbsp;&nbsp;&#8618;&nbsp;Không phải về việc bạn đánh mạnh đến đâu. Mà là bạn có thể chịu đựng đòn nặng thế nào và vẫn tiếp tục tiến về phía trước.</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#888888;font-family:Arial,sans-serif;">&mdash;&nbsp;Rocky Balboa</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#5A6A7A;font-style:italic;line-height:1.5;font-family:Arial,sans-serif;">&#128161;&nbsp;Sức bền và khả năng phục hồi quan trọng hơn sức tấn công — người thật sự mạnh là người không bỏ cuộc dù bị đánh gục nhiều lần.</p>
+    </td>
+  </tr>
+
+  <!-- SECTION LABEL -->
+  <tr>
+    <td bgcolor="#F5F7FA" style="background-color:#F5F7FA;padding:12px 30px;">
+      <p style="margin:0;font-size:11px;color:#999999;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128240;&nbsp;Tin t&#7913;c n&#7893;i b&#7853;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- ARTICLES -->
+  
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">1</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Claude Code đấu GitHub Copilot 2026: SWE-bench, Giá cả [Kiểm chứng]</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Claude Code vs GitHub Copilot 2026: SWE-bench, Pricing [Tested]</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;tech-insider.org</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMibEFVX3lxTE01N0EtazhZV2lGNmlVdnpoWllIcVdaVDdFREJ5VXlRSl95UDNaejhiR21lamtHb3dvTlN5TUJEdnVyZDEtQjZPQnBiamkxTGpIVTBPQ09IaVgtV1c1M05uWUVTSXhvQ3NZZUhrZA?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Trong một so sánh gần đây, Claude Code và GitHub Copilot đã được đưa vào thử nghiệm về khả năng kỹ thuật phần mềm và giá cả. SWE-bench, một công cụ benchmark cho kỹ thuật phần mềm, đã được sử dụng để đánh giá hiệu suất của cả hai trợ lý lập trình được hỗ trợ bởi AI.
+
+Kết quả cho thấy Claude Code vượt trội hơn GitHub Copilot ở một số lĩnh vực, bao gồm code completion, debugging và code review. Claude Code thể hiện tỷ lệ chính xác cao hơn và thời gian phản hồi nhanh hơn, biến nó thành một lựa chọn hiệu quả hơn cho các developer.
+
+Về giá cả, GitHub Copilot cung cấp một free tier với các tính năng giới hạn, cũng như một gói đăng ký trả phí bắt đầu từ 10 USD mỗi tháng. Claude Code, mặt khác, cung cấp bản dùng thử miễn phí và một gói trả phí với cấu trúc giá cạnh tranh hơn.
+
+So sánh này làm nổi bật điểm mạnh và điểm yếu của từng công cụ, cung cấp cho các developer những thông tin chi tiết có giá trị để đưa ra quyết định sáng suốt về trợ lý lập trình AI nào phù hợp nhất với nhu cầu của họ.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">2</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Ai cũng muốn bắt kịp xu hướng vibe coding — và Google cũng không ngoại lệ với Stitch, dự án tiếp nối Jules</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Everyone&#x27;s looking to get in on vibe coding — and Google is no different with Stitch, its follow-up to Jules</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;VentureBeat</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMiywFBVV95cUxQZnlqOVZXTUU2bGFUQUZXeWU4NWlyOFFnWVMzbndfNlJNUTJfVXJTa0c2bE43dHFQRk9ISXBTckJvdE5xeEkzUWhPeC1CMGE0OEU3aTVMSG9pRGtsT180UWpjVnFPUXNWd0F1cXg0R1RFWGd3M3FBWEEyM2J0RXItSDhyaEk4S0l4azNTLUlhY1RoMUtJV2t2QWZZalFxZl96RlNwWWVwX3F3bDh1S0FqYnk5M1E4djMtS01vUWVET1RzRjJOZGNuR0hrQQ?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Google đang gia nhập không gian vibe coding với Stitch, dự án tiếp nối của Jules. Vibe coding đề cập đến việc viết code mang tính biểu cảm và sáng tạo hơn, thường lấy cảm hứng từ âm nhạc và các loại hình nghệ thuật khác. Dự án Jules, trước đây được Google phát triển, nhằm mục đích mang lại trải nghiệm coding trực quan và biểu cảm hơn cho các developer.
+
+Với Stitch, Google tiếp tục khám phá những khả năng của vibe coding. Chi tiết của dự án chưa được tiết lộ đầy đủ, nhưng rõ ràng Google cam kết thúc đẩy lĩnh vực creative coding. Những nỗ lực của công ty trong lĩnh vực này cho thấy sự quan tâm ngày càng tăng đối với sự giao thoa giữa công nghệ và nghệ thuật.
+
+Khi ngành công nghệ tiếp tục phát triển, sẽ rất thú vị để xem dự án Stitch của Google phát triển như thế nào và nó có thể ảnh hưởng đến cộng đồng coding rộng lớn hơn ra sao. Thông tin thêm về Stitch dự kiến sẽ được công bố trong tương lai, nhưng hiện tại, dự án vẫn còn là một bí ẩn.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">3</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Agent Factory: Kết nối các agent, app và dữ liệu bằng các tiêu chuẩn mở mới như MCP và A2A</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Agent Factory: Connecting agents, apps, and data with new open standards like MCP and A2A</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Microsoft Azure</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMixAFBVV95cUxOekoxbVV4Vml2ZG5yVGVhRWl1cVFLM1ZrYUVNbWdFTnI1bV9CTmVFZ3FJNTRCeTctZ3ctTUtVOW9YbFBqVWZPTGpfQnk0WWt4T09OdG00X25yZVV3TE1XbGpJckdHWVBNV2l1bDdKbEZXb1dmc1RjR1JENWNkMVF6WHVrdlZDMThhVDN5WFFiQ01YakVlWUZDR0gtS0NTZGxrOGFUMzN4ZWlNZzF1WlFPMnMwT3BDcUd6TjJDSWJXMkpkMEh5?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Microsoft đã giới thiệu Agent Factory, một nền tảng được thiết kế để kết nối các agent, app và dữ liệu bằng cách sử dụng các tiêu chuẩn mở mới. Nền tảng này tận dụng các tiêu chuẩn Cloud PC (MCP) và Application to Application (A2A) của Microsoft để cho phép tương tác liền mạch giữa các hệ thống và ứng dụng khác nhau.
+
+Agent Factory cho phép các developer tạo ra các custom agent có thể tương tác với nhiều ứng dụng và nguồn dữ liệu khác nhau, tạo điều kiện thuận lợi cho việc trao đổi thông tin và tự động hóa các tác vụ. Điều này giúp các doanh nghiệp xây dựng các workflow tích hợp và hiệu quả hơn, cải thiện năng suất và giảm lỗi thủ công.
+
+Việc sử dụng các tiêu chuẩn mở như MCP và A2A đảm bảo rằng Agent Factory là platform-agnostic, cho phép các developer tạo ra các agent có thể hoạt động trên các môi trường và hệ sinh thái khác nhau. Bằng cách cung cấp một cách thức tiêu chuẩn hóa để kết nối các agent, app và dữ liệu, Agent Factory nhằm mục đích đơn giản hóa quá trình xây dựng các hệ thống và ứng dụng tích hợp, cuối cùng thúc đẩy đổi mới và tăng trưởng trong nhiều ngành công nghiệp.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">4</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">MCP trên Code Mode</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;MCP on Code Mode</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Changelog</span>&nbsp;&nbsp;&nbsp;<a href="https://changelog.com/podcast/681" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Matt Carey từ Cloudflare thảo luận về Code Mode và mối quan hệ của nó với MCP (Model-Code-Protocol) trong một tập gần đây. Carey tiết lộ rằng hầu hết mọi người đã hiểu sai về MCP. Anh giải thích cách Code Mode phía server cho phép một MCP server duy nhất expose tất cả 2.500 Cloudflare API endpoint chỉ với khoảng 1.000 token context. Ngoài ra, Carey còn nói về dynamic Worker loader chạy an toàn code do model viết trong một V8 isolate. Cuộc trò chuyện cũng đề cập đến workflow cá nhân của Carey với Claude, vai trò của memory trong tương lai của các agent, và việc anh sử dụng một git wrapper tên là Zaggy để ngăn chặn force-pushing các repository của mình.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">5</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Sundar Pichai đối mặt với phản đối và cuộc bỏ ra ngoài tại lễ tốt nghiệp Stanford vì mối quan hệ của Google với Israel và ICE</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Sundar Pichai faces boos, walkout at Stanford graduation ceremony over Google’s Israel, ICE ties</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;TechCrunch AI</span>&nbsp;&nbsp;&nbsp;<a href="https://techcrunch.com/2026/06/15/sundar-pichai-faces-boos-walkout-at-stanford-graduation-ceremony-over-googles-israel-ice-ties/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">CEO Google Sundar Pichai đã đối mặt với một cuộc biểu tình và bỏ ra ngoài trong bài phát biểu khai giảng của mình tại Đại học Stanford, nơi ông đã lấy bằng sau đại học. Khoảng 200 sinh viên từ khóa tốt nghiệp đã bỏ ra ngoài, trong khi những người khác la ó ông, để phản đối mối quan hệ quốc phòng của Google và mối quan hệ với cơ quan Thực thi Di trú và Hải quan Hoa Kỳ (ICE). Cuộc biểu tình tập trung vào hợp đồng trị giá 1,2 tỷ USD của Google với Amazon để cung cấp các dịch vụ cloud và AI cho quân đội Israel, cũng như mối quan hệ của họ với ICE. Sinh viên đã giơ các biểu ngữ và vẫy cờ Palestine, bày tỏ sự phản đối việc Google tham gia vào các vấn đề này. Cuộc bỏ ra ngoài được tổ chức bởi các nhóm hoạt động trong khuôn viên trường, bao gồm Stanford Students for Justice in Palestine và No Tech for Apartheid. Sự việc này đánh dấu sự kiện mới nhất trong một loạt các cuộc biểu tình và chỉ trích chống lại việc Google tham gia vào Project Nimbus và mối quan hệ của họ với ICE.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">6</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">datasette-agent 0.3a0</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;datasette-agent 0.3a0</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Simon Willison</span>&nbsp;&nbsp;&nbsp;<a href="https://simonwillison.net/2026/Jun/15/datasette-agent/#atom-everything" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Một phiên bản mới của datasette-agent, 0.3a0, đã được phát hành. Bản cập nhật này bao gồm một cơ chế user approval, cho phép người dùng được nhắc nhở trước khi thực hiện một số operation nhất định. Công cụ &quot;execute_write_sql&quot; mới giờ đây có thể yêu cầu approval cho nhiều hành động khác nhau, chẳng hạn như thêm dữ liệu vào một table. Chế độ chat terminal của datasette agent cũng đã được cải tiến để hỗ trợ approvals. Ngoài ra, một số tùy chọn mới đã được thêm vào, bao gồm chế độ &quot;--unsafe&quot; tự động approve các operation. Chế độ này</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">7</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Profiling trong PyTorch (Phần 2): Từ nn.Linear đến một Fused MLP</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Profiling in PyTorch (Part 2): From nn.Linear to a Fused MLP</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Hugging Face Blog</span>&nbsp;&nbsp;&nbsp;<a href="https://huggingface.co/blog/torch-mlp-fusion" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Trong bài viết này, tác giả tiếp tục khám phá việc phân tích hiệu suất của PyTorch, tập trung vào mô-đun nn.Linear và các hoạt động cơ bản của nó. Tác giả thay thế việc nhân ma trận và cộng viết tay bằng mô-đun nn.Linear, là một khối xây dựng phổ biến trong các model học sâu. Mô-đun này sau đó được xếp chồng với các mô-đun nn.Linear khác và một hàm kích hoạt để tạo thành một khối Multilayer Perceptron (MLP).
+
+Tác giả kiểm tra dấu vết của bộ phân tích hiệu suất trong một cuộc gọi forward của lớp tuyến tính và lưu ý rằng hoạt động chuyển vị được sử dụng để viết lại siêu dữ liệu tensor, thay vì khởi chạy một kernel trên GPU. Việc thêm bias cũng được tích hợp vào kernel nhân ma trận bằng cách sử dụng một epilogue, giúp tránh tải hoặc ghi vào HBM lần thứ hai.
+
+Tác giả cũng thảo luận về việc sử dụng torch.compile và sự khác biệt giữa hai loại kernel GEMM. Ngoài ra, họ giới thiệu khái niệm về các kernel được tinh chỉnh thủ công và thư viện kernel, có thể cung cấp hiệu suất tốt hơn. Bài viết kết thúc bằng việc nhấn mạnh lợi ích của việc sử dụng các kernel đã được tinh chỉnh.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">8</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Cách biến Tweets thành Video Viral bằng AI: T3P Agent Framework</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;How to Turn Tweets Into Viral Videos With AI: The T3P Agent Framework</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Dev.to AI</span>&nbsp;&nbsp;&nbsp;<a href="https://dev.to/aarhamforensics_eb3c024eb/how-to-turn-tweets-into-viral-videos-with-ai-the-t3p-agent-framework-n8c" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Các nhà sáng tạo công nghệ đang gặp khó khăn trong việc chuyển đổi các tweet thành video lan truyền do quá trình chỉnh sửa thủ công tốn thời gian. Quy trình làm việc trung bình mất khoảng 4-6 giờ, chiếm 33% thời gian lan truyền 18 giờ của tweet. Tuy nhiên, nghiên cứu cho thấy thời gian là rất quan trọng, với 7/10 video được xuất bản trong 3 giờ đầu vượt trội so với video 10/10 được xuất bản 9 giờ sau. 
+
+Để vượt qua thách thức này, một khuôn khổ mới gọi là T3P Agent Framework đã được phát triển. Khuôn khổ này sử dụng trí tuệ nhân tạo (AI) để tự động hóa quá trình chuyển đổi tweet thành video lan truyền. Nó kết hợp nhiều công cụ, bao gồm n8n cho việc dàn xếp, LangGraph cho logic tác nhân trạng thái, GPT-4o cho kịch bản, ElevenLabs cho giọng nói và Runway Gen-3 cho cảnh quay. 
+
+Khuôn khổ T3P Agent Framework thu gọn quy trình làm việc thủ công thành một tác nhân không cần giám sát, xuất bản video trước khi thời gian lan truyền kết thúc. Bằng cách loại bỏ con người khỏi giữa các giai đoạn, các nhà sáng tạo có thể giảm chi phí thời gian cho mỗi video xuống một bậc. Khuôn khổ này có sẵn với giá dưới 47 đô la/tháng và có thể được xây dựng bởi bất kỳ ai, giúp nó trở nên dễ tiếp cận với các nhà sáng tạo muốn chuyển đổi tweet thành video lan truyền với sự hỗ trợ của LLM và API, cũng như các nhà phát triển muốn tích hợp framework này vào model của họ thông qua token và các công cụ khác.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+
+  <!-- TIPS SECTION -->
+  
+  <tr>
+    <td bgcolor="#FFFBEB" style="background-color:#FFFBEB;padding:20px 30px;border-top:3px solid #D97706;">
+      <p style="margin:0 0 12px;font-size:11px;color:#D97706;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#9889;&nbsp;Tips &amp; Tricks cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Cài đặt Ollama</strong><br><strong>Vấn đề:</strong> Chạy Local LLM trên máy cá nhân mà không cần internet.<br><strong>Cách làm:</strong> Sử dụng lệnh <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">pip install ollama</code> để cài đặt, sau đó chạy <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">ollama --model lmstudio</code> để khởi động. Ví dụ, chạy lệnh <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">ollama --model lmstudio --prompt &quot;Tạo một đoạn văn về chủ đề AI&quot;</code> để tạo văn bản.<br><strong>Đánh giá:</strong> Hiệu quả cho dự án cần sự riêng tư, không nên dùng khi máy có tài nguyên thấp.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tối ưu LM Studio</strong><br><strong>Vấn đề:</strong> Tối ưu hiệu suất của Local LLM khi chạy trên máy cá nhân.<br><strong>Cách làm:</strong> Sử dụng lệnh <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">lmstudio --optimize</code> để tối ưu hóa, sau đó chạy <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">lmstudio --model optimize</code> để áp dụng. Ví dụ, chạy lệnh <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">lmstudio --optimize --model lmstudio</code> để tối ưu hóa mô hình.<br><strong>Đánh giá:</strong> Hiệu quả khi máy có tài nguyên hạn chế, nên dùng thường xuyên.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Sử dụng CLI Ollama</strong><br><strong>Vấn đề:</strong> Sử dụng dòng lệnh để chạy Local LLM trên máy cá nhân.<br><strong>Cách làm:</strong> Sử dụng lệnh <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">ollama --help</code> để xem hướng dẫn, sau đó chạy <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">ollama --model lmstudio --prompt &quot;Tạo một đoạn văn&quot;</code> để tạo văn bản. Ví dụ, chạy lệnh <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">ollama --model lmstudio --prompt &quot;Tạo một đoạn văn về chủ đề AI&quot;</code> để tạo văn bản.<br><strong>Đánh giá:</strong> Hiệu quả khi cần chạy nhanh, nên dùng khi cần tạo văn bản nhanh chóng.</p>
+    </td>
+  </tr>
+
+  <!-- LESSON SECTION -->
+  
+  <tr>
+    <td bgcolor="#F0FFF4" style="background-color:#F0FFF4;padding:20px 30px;border-top:3px solid #2E7D32;">
+      <p style="margin:0 0 12px;font-size:11px;color:#2E7D32;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128218;&nbsp;B&#224;i h&#7885;c AI h&#244;m nay cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;">1. <strong>Tối ưu chi phí &amp; hiệu năng LLM</strong><br>2. Dev cần biết cách tối ưu chi phí và hiệu năng của mô hình ngôn ngữ lớn (LLM) để đảm bảo ứng dụng AI của họ hoạt động hiệu quả và tiết kiệm. Điều này giúp giảm thiểu chi phí vận hành và nâng cao trải nghiệm người dùng. Ngoài ra, tối ưu hóa LLM cũng giúp giảm thiểu tác động môi trường của các ứng dụng AI.<br>3. Ví dụ, sử dụng kỹ thuật fine-tuning và LoRA (Low-Rank Adaptation) có thể giúp giảm kích thước mô hình và tăng tốc độ xử lý, từ đó giảm chi phí và cải thiện hiệu năng.<br>4. 💡 Tip hoặc bước tiếp theo: Sử dụng các thư viện như Hugging Face Transformers để tối ưu hóa LLM và thử nghiệm với các kỹ thuật khác nhau để tìm ra giải pháp phù hợp cho ứng dụng của bạn.</p>
+    </td>
+  </tr>
+
+  <!-- FOOTER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:20px 30px;text-align:center;border-radius:0 0 10px 10px;">
+      <p style="margin:0 0 4px;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        &#128161;&nbsp;Lu&#244;n &#273;i &#273;&#7847;u trong th&#7871; gi&#7899;i AI!&nbsp;&#183;&nbsp;Stay ahead in AI!
+      </p>
+      <p style="margin:6px 0 0;font-size:11px;color:#4A7AAB;font-family:Arial,sans-serif;">
+        Ngu&#7891;n: Google News · Groq AI
+      </p>
+    </td>
+  </tr>
+
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+
+</td></tr>
+</table>
+</body>
+</html>

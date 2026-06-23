@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--[if mso]>
+<noscript><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings></xml></noscript>
+<![endif]-->
+<style>
+/* ── Responsive overrides for web (email HTML uses fixed 600px tables) ── */
+@media screen and (max-width:620px) {
+  table[width="600"] { width:100% !important; }
+  td { word-break:break-word; overflow-wrap:break-word; }
+  /* Reduce generous email padding on small screens */
+  td[style*="padding:28px 30px"],
+  td[style*="padding:24px 30px"],
+  td[style*="padding:22px 30px"],
+  td[style*="padding:20px 30px"],
+  td[style*="padding:16px 30px"],
+  td[style*="padding:12px 30px"] { padding-left:14px !important; padding-right:14px !important; }
+  /* Code blocks: scroll horizontally instead of breaking layout */
+  pre { overflow-x:auto !important; max-width:calc(100vw - 32px) !important; box-sizing:border-box; }
+  /* Shrink large heading text slightly */
+  h1[style*="26px"] { font-size:20px !important; }
+}
+/* ── Print: hide nav bar ── */
+@media print {
+  #web-nav { display:none !important; }
+  body { background:#fff !important; }
+}
+</style>
+</head>
+<body style="margin:0;padding:0;background-color:#EEF2F7;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+<div id="web-nav" style="background:#001a4d;padding:8px 16px;font-family:Arial,sans-serif;font-size:13px;position:sticky;top:0;z-index:999;border-bottom:2px solid #0066CC;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
+  <span id="nav-prev" style="color:#4A6A8A;">&#8592;</span>
+  <a href="all.html" style="color:#FFD700;text-decoration:none;font-weight:bold;">&#128240; T&#7845;t c&#7843; b&#7843;n tin</a>
+  <span style="color:#FFFFFF;">23/06/2026</span>
+  <span id="nav-next" style="color:#4A6A8A;">&#8594;</span>
+  <a href="2026-06-23.pdf" download="2026-06-23.pdf" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128196; T&#7843;i PDF</a>
+  <button onclick="sharePage()" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128279; Chia s&#7867;</button>
+</div>
+<script>
+function sharePage(){
+  var title='Bản tin AI BIS-MT – 23/06/2026';
+  if(navigator.share){navigator.share({title:title,url:location.href});}
+  else{navigator.clipboard.writeText(location.href).then(function(){
+    alert('Đã sao chép link!');
+  });}
+}
+(function(){
+  var m=location.pathname.match(/(\d{4}-\d{2}-\d{2})\.html/);
+  if(!m)return;
+  var slug=m[1];
+  function fmt(s){var p=s.split('-');return p[2]+'/'+p[1];}
+  var lnkStyle='color:#90C4F0;text-decoration:none;';
+  fetch('dates.json?_='+Date.now())
+    .then(function(r){return r.json();})
+    .then(function(dates){
+      var idx=dates.indexOf(slug);
+      if(idx>0){
+        var p=dates[idx-1];
+        document.getElementById('nav-prev').innerHTML=
+          '<a href="'+p+'.html" style="'+lnkStyle+'">&#8592; '+fmt(p)+'</a>';
+      }
+      if(idx>=0&&idx<dates.length-1){
+        var n=dates[idx+1];
+        document.getElementById('nav-next').innerHTML=
+          '<a href="'+n+'.html" style="'+lnkStyle+'">'+fmt(n)+' &#8594;</a>';
+      }
+    })
+    .catch(function(){});
+})();
+</script>
+
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#EEF2F7" style="background-color:#EEF2F7;">
+<tr><td align="center" style="padding:24px 12px;">
+
+<!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0"><tr><td><![endif]-->
+<table role="presentation" width="600" cellpadding="0" cellspacing="0"
+       style="max-width:600px;width:100%;background-color:#FFFFFF;border-radius:10px;" bgcolor="#FFFFFF">
+
+  <!-- HEADER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:28px 30px 22px 30px;text-align:center;border-radius:10px 10px 0 0;">
+      <p style="margin:0 0 6px;font-size:11px;color:#7EB1E8;letter-spacing:2px;font-family:Arial,sans-serif;text-transform:uppercase;">
+        BIS &#8209; MT &nbsp;&#183;&nbsp; 23/06/2026
+      </p>
+      <h1 style="margin:0;font-size:26px;font-weight:bold;color:#FFFFFF;font-family:Arial,sans-serif;line-height:1.2;">
+        &#129302; B&#7843;n Tin AI H&#7857;ng Ng&#224;y
+      </h1>
+      <p style="margin:8px 0 0;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        C&#7853;p nh&#7853;t c&#244;ng ngh&#7879; AI m&#7899;i nh&#7845;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- QUOTE -->
+  <tr>
+    <td bgcolor="#EBF4FF" style="background-color:#EBF4FF;padding:16px 30px;border-top:3px solid #0066CC;">
+      <p style="margin:0;font-size:14px;color:#1A3A5C;font-style:italic;line-height:1.6;font-family:Georgia,serif;">
+        &#10024;&nbsp;&ldquo;Học, học nữa, học mãi.&rdquo;
+      </p>
+      
+      <p style="margin:8px 0 0;font-size:12px;color:#888888;font-family:Arial,sans-serif;">&mdash;&nbsp;V.I. Lenin</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#5A6A7A;font-style:italic;line-height:1.5;font-family:Arial,sans-serif;">&#128161;&nbsp;Việc học không có điểm dừng — luôn trau dồi kiến thức mới là nền tảng của sự tiến bộ.</p>
+    </td>
+  </tr>
+
+  <!-- SECTION LABEL -->
+  <tr>
+    <td bgcolor="#F5F7FA" style="background-color:#F5F7FA;padding:12px 30px;">
+      <p style="margin:0;font-size:11px;color:#999999;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128240;&nbsp;Tin t&#7913;c n&#7893;i b&#7853;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- ARTICLES -->
+  
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">1</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">11 Lựa chọn thay thế GitHub Copilot mà các Developer đã chuyển sang dùng trong năm 2026</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;11 GitHub Copilot Alternatives Developers Switched To in 2026</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Security Boulevard</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxQd3BkQ01CZExGeTAtOTlKdEVOVDRQNklZLUFOQnBUOUREUGtfYXBTXzRSUVg3TjdWNk5hYmZQLVJUb096ektrVlp3V1YwckRoSDhkN010MExrSDBGY3FjU2Y4bDYxcXRTQk92a0xnS3EzZzdaS2VKM1h2MVQ5VTVYRlFZVUg2NXptZTgzMUxGRXZXV0JtMEdMTW02TndJZTJHenc?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Vào năm 2026, các nhà phát triển đang tìm kiếm các giải pháp thay thế cho GitHub Copilot, một trợ lý mã hóa được hỗ trợ bởi AI phổ biến. Một xu hướng gần đây cho thấy nhiều nhà phát triển chuyển sang các công cụ khác, được thúc đẩy bởi các lý do như chi phí, chức năng và lo ngại về bảo mật.
+
+Theo các báo cáo gần đây, 11 giải pháp thay thế cho GitHub Copilot đã trở nên phổ biến среди các nhà phát triển. Những giải pháp thay thế này cung cấp các tính năng tương tự, bao gồm hoàn thành mã, đề xuất và công cụ gỡ lỗi. Một số giải pháp thay thế đáng chú ý bao gồm Kite, TabNine và CodeWithMe.
+
+Kite, ví dụ, cung cấp hoàn thành mã và đề xuất được hỗ trợ bởi AI, trong khi TabNine cung cấp một loạt các tính năng rộng lớn hơn, bao gồm công cụ xem xét mã và gỡ lỗi. CodeWithMe, mặt khác, là một nền tảng mã hóa hợp tác cho phép các nhà phát triển làm việc cùng nhau theo thời gian thực.
+
+Những giải pháp thay thế này đã thu hút được sự chú ý của các nhà phát triển, những người đang tìm kiếm sự linh hoạt và kiểm soát hơn đối với trải nghiệm mã hóa của họ. Khi nhu cầu về các công cụ mã hóa được hỗ trợ bởi AI tiếp tục tăng, sẽ rất thú vị khi xem những giải pháp thay thế này sẽ phát triển và cạnh tranh với GitHub Copilot trên thị trường.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">2</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Các nhà nghiên cứu bảo mật gióng lên hồi chuông cảnh báo về lỗ hổng trong Code do AI tạo ra</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Security Researchers Sound the Alarm on Vulnerabilities in AI-Generated Code</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Infosecurity Magazine</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMigwFBVV95cUxOa2EtOVAxcE9xSjRyTkZTNnQ4WV9XQWxKVDdYYjhGWHJ6S0YzanE2aWNfQlRja25RMkdINm16ZzhwM0pWQ1BUendwdjI5RnBFa2tVOTVWbHFfWExIZzNHNmdsZEJQSlBSN0gwQk5CRTVBUGdMLTk1bHJ1dzAzNEJWNkJGVQ?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Các nhà nghiên cứu bảo mật đã bày tỏ mối quan ngại về các lỗ hổng bảo mật hiện diện trong mã được tạo ra bởi AI. Mã này, được tạo ra bằng cách sử dụng trí tuệ nhân tạo và các thuật toán học máy, đang ngày càng được sử dụng trong nhiều ứng dụng khác nhau, bao gồm cả phát triển phần mềm và bảo mật mạng. Tuy nhiên, một nghiên cứu gần đây đã chỉ ra các điểm yếu tiềm ẩn trong mã được tạo ra bởi AI mà có thể bị các kẻ tấn công khai thác.
+
+Các nhà nghiên cứu đã phát hiện ra rằng mã được tạo ra bởi AI thường thiếu các tính năng bảo mật thiết yếu, chẳng hạn như kiểm tra đầu vào và xử lý lỗi, những tính năng này rất quan trọng để ngăn chặn các lỗ hổng bảo mật phổ biến như SQL injection và cross-site scripting. Hơn nữa, việc sử dụng mã được tạo ra bởi AI cũng có thể dẫn đến việc giới thiệu các backdoor, những lỗ hổng bảo mật ẩn cho phép truy cập không được phép vào hệ thống.
+
+Kết quả của nghiên cứu cho thấy rằng sự phụ thuộc vào mã được tạo ra bởi AI có thể làm suy yếu bảo mật của các ứng dụng và hệ thống sử dụng nó. Do đó, các chuyên gia bảo mật được khuyên nên thận trọng khi sử dụng mã được tạo ra bởi AI và nên kiểm tra và xem xét kỹ lưỡng về các lỗ hổng bảo mật tiềm ẩn trước khi triển khai.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">3</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Hiện trạng các Agent Framework: Chọn Runtime phù hợp cho việc triển khai AI trong doanh nghiệp</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;State of Agent Frameworks: Choosing the Right Runtime for Enterprise AI Execution</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Medium</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxOdXdHT2dlWEx6TUh4VW5nQ0hCZWdqVjN4dEhkWXdhQ3ZhT2lPZUtmUlRVSG5zVTBQOWQ3MUIxZjdPZUl6ZmpsbXFWWTNQN3g4M0xfcWJhUDY1aU0tcEFLeDNZYXFmTDIzZmRLNG5VODcyem16VEFuUXRSWEFUSmE3WmFZTzhDbDFRaW1IcFp5QjBqeHpBb0dJM18wbjl0ZVVSNU8yM1Jwb2E3WkxyenNJNk0tTHRUWC1IRngwbEJycUxPTGc?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Bài viết &quot;Trạng thái của các Framework Trình điều khiển: Chọn Thời gian chạy Phù hợp cho Thực thi AI Doanh nghiệp&quot; khám phá cảnh quan hiện tại của các framework trình điều khiển trong bối cảnh thực thi AI doanh nghiệp. Các framework trình điều khiển là các framework phần mềm cho phép phát triển và triển khai các trình điều khiển thông minh, có thể tương tác với các hệ thống và môi trường khác nhau.
+
+Bài viết nhấn mạnh tầm quan trọng của việc chọn thời gian chạy phù hợp cho thực thi AI doanh nghiệp, vì nó có thể ảnh hưởng đáng kể đến hiệu suất, khả năng mở rộng và khả năng bảo trì của các hệ thống AI. Nó thảo luận về các framework trình điều khiển khác nhau, bao gồm Rasa, Microsoft Bot Framework và Google Dialogflow, cũng như các điểm mạnh và điểm yếu tương ứng của chúng.
+
+Bài viết cũng đề cập đến các thách thức khi tích hợp các hệ thống AI với cơ sở hạ tầng doanh nghiệp hiện có, chẳng hạn như hệ thống lưu trữ dữ liệu và bảo mật. Nó nhấn mạnh nhu cầu về một framework trình điều khiển linh hoạt và có khả năng mở rộng có thể thích nghi với các yêu cầu kinh doanh thay đổi và tiến bộ công nghệ.
+
+Cuối cùng, bài viết nhằm cung cấp một cái nhìn tổng quan toàn diện về trạng thái hiện tại của các framework trình điều khiển, cho phép người đọc đưa ra quyết định thông minh khi chọn thời gian chạy cho nhu cầu thực thi AI doanh nghiệp của họ.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">4</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Server Sourcegraph MCP và một model giá rẻ hơn đánh bại một model hạng Mythos đơn lẻ</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Sourcegraph MCP server and a cheaper model beat a Mythos-class model alone</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Sourcegraph Blog</span>&nbsp;&nbsp;&nbsp;<a href="http://localhost:5174/blog/sourcegraph-mcp-and-a-cheaper-model-beat-a-mythos-class-model-alone" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Một thử nghiệm benchmark gần đây đã so sánh các mô hình AI khác nhau trong việc đánh giá hiệu quả của chúng trong các cơ sở mã lớn. Thử nghiệm, được gọi là CodeScaleBench, bao gồm chín nhiệm vụ được thiết kế để đánh giá hiệu suất của các tác nhân AI trong bối cảnh này. Trong thử nghiệm, Claude Sonnet 4.6, kết hợp với máy chủ Sourcegraph MCP, đã vượt trội so với Fable 5 trong sáu trong số chín nhiệm vụ. Đáng chú ý, mô hình Claude Sonnet 4.6 đã đạt được thành công này với chi phí khoảng một nửa so với Fable 5 cho mỗi điểm chất lượng. Điều này cho thấy rằng sự kết hợp giữa Claude Sonnet 4.6 và máy chủ Sourcegraph MCP cung cấp một giải pháp tiết kiệm chi phí để đánh giá hiệu quả của AI trong các cơ sở mã lớn. Kết quả của thử nghiệm benchmark này cung cấp những thông tin quý giá về hiệu suất của các mô hình AI trong ứng dụng cụ thể này.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">5</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Sau Orthogonality: Tính tác nhân đạo đức đức hạnh và AI Alignment</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;After Orthogonality: Virtue-Ethical Agency and AI Alignment</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;The Gradient</span>&nbsp;&nbsp;&nbsp;<a href="https://thegradient.pub/virtue-ethics-ai-alignment/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Bài viết &quot;Sau Orthogonality: Virtue-Ethical Agency và AI Alignment&quot; cho rằng con người và AI hợp lý không nên có mục tiêu, mà thay vào đó nên căn chỉnh hành động của họ với các thực hành. Những thực hành này là mạng lưới các hành động, xu hướng hành động, tiêu chí đánh giá và tài nguyên cấu trúc và thúc đẩy bản thân. Tác giả đề xuất rằng sự suy xét của các tác nhân AI nên chia sẻ một logic tương tự với lý lẽ dựa trên thực hành của con người để thực sự hỗ trợ và cộng tác với cơ quan con người. Cách tiếp cận này rất quan trọng để căn chỉnh AI với các thuộc tính an toàn như minh bạch, hữu ích và vô hại.
+
+Bài viết khám phá khái niệm eudaimonia, hay sự thịnh vượng con người tích cực và hợp lý, và cho rằng nó chỉ ra một cấu trúc suy xét khác với tính hợp lý kết quả tiêu chuẩn. Tác giả đề xuất tính hợp lý eudaimonic như một khuôn khổ hữu ích cho cơ quan AI và giá trị căn chỉnh con người, trích dẫn những lợi thế tiềm năng của nó trong ổn định và an toàn. Tính hợp lý eudaimonic được đặc trưng bởi sự thiếu phân biệt nghiêm ngặt giữa phương tiện và mục đích, và tập trung vào các thực hành được đánh giá cao như một toàn thể.
+
+Tác giả tuyên bố rằng tính hợp lý eudaimonic là một hình thức cơ quan tự nhiên, hiệu quả ngay cả theo tiêu chuẩn kết quả, và đề xuất rằng nó có thể là chìa khóa để giải quyết các vấn đề an toàn AI cổ điển và nghịch lý. Bài viết nhằm khám phá các ý nghĩa của tính hợp lý eudaimonic đối với căn chỉnh AI và tiềm năng của nó trong việc hỗ trợ sự thịnh vượng của con người.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">6</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Google Veo 3 AI Video Generator: Cẩm nang Tự động hóa &amp; Kiếm tiền năm 2025</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Google Veo 3 AI Video Generator: The 2025 Automation &amp; Monetisation Playbook</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Dev.to AI</span>&nbsp;&nbsp;&nbsp;<a href="https://dev.to/aarhamforensics_eb3c024eb/google-veo-3-ai-video-generator-the-2025-automation-monetisation-playbook-4pi7" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Google gần đây đã ra mắt trình tạo video AI Veo 3, một công cụ đột phá được phát triển bởi Google DeepMind. Model này có thể tạo ra các clip lên đến 60 giây với âm thanh được đồng bộ hóa với môi, kết hợp với lớp điều phối Google Flow để duy trì tính nhất quán trên các cảnh. Trình tạo video AI Veo 3 có tiềm năng phá vỡ ngành công nghiệp sản xuất video 50 tỷ đô la bằng cách làm cho cấu trúc chi phí trở nên &quot;không thể bảo vệ được.&quot; Trong khi những người tạo nội dung chỉ sử dụng nó như một hộp lời nhắc có thể kiếm thu nhập tối thiểu, những người tích hợp nó vào đường ống tác nhân tự động có thể thống trị thế hệ truyền thông kỹ thuật số tiếp theo.
+
+Model Veo 3 có ba bước tiến quan trọng: tạo âm thanh bản địa, mô phỏng vật lý và tính nhất quán điện ảnh. Nó có thể tạo ra hội thoại, chuyển động môi và âm thanh xung quanh trong một lần đi qua nhất quán, khiến mục &quot;thiết kế âm thanh&quot; trong ngân sách sản xuất không còn có thể bảo vệ được. Model này đã được xếp hạng là model tiền phong hàng đầu về tuân thủ lời nhắc và tính thực tế của chuyển động, và nó không có đối thủ tương đương về tính nhất quán âm thanh và tính nhất quán nhân vật trên các cảnh.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">7</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Giải mã loop engineering: Tận dụng tối đa AI agent, tránh loopmaxxing</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Demystifying loop engineering: Get more from AI agents, avoid loopmaxxing</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;BD Tech Talks</span>&nbsp;&nbsp;&nbsp;<a href="https://bdtechtalks.com/2026/06/22/ai-loop-engineering/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=ai-loop-engineering" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Các nhà phát triển đang chuyển sự tập trung của họ từ việc trực tiếp yêu cầu các mô hình ngôn ngữ lớn (LLMs) sang thiết kế các vòng lặp yêu cầu các tác nhân này. Sự thay đổi này, được gọi là kỹ thuật vòng lặp, cho phép các hệ thống đánh giá đầu ra trung gian, cập nhật trạng thái của chúng và tự xác định các bước tiếp theo một cách tự chủ. Kỹ thuật vòng lặp đại diện cho một sự thay đổi范式 từ kỹ thuật yêu cầu, tập trung vào việc quản lý vi mô các tương tác cá nhân.
+
+Bằng cách thiết kế các vòng lặp, các nhà phát triển có thể tạo ra các chương trình có cấu trúc hoặc tự động hóa đã lên lịch, cung cấp ngữ cảnh và hướng dẫn cho LLMs, đánh giá đầu ra của chúng so với các tiêu chí bên ngoài và xác định xem nhiệm vụ có yêu cầu một lần lặp lại khác hay không. Cách tiếp cận này cho phép các hệ thống thực hiện các nhiệm vụ không đồng bộ mà không cần giám sát của con người, chẳng hạn như tối ưu hóa yêu cầu kéo qua đêm hoặc chuẩn bị tham số nhiều giờ.
+
+Để tạo ra các vòng lặp hiệu quả, các nhà phát triển cần xem xét các nguyên tắc cấu trúc cụ thể, bao gồm theo dõi trạng thái bền vững, các plugin bên ngoài và các rào cản hoạt động nghiêm ngặt. Một vòng lặp sẵn sàng sản xuất yêu cầu một kích hoạt hoạt động riêng biệt và một điều kiện thoát có thể xác minh. Sự thay đổi này hướng tới kỹ thuật vòng lặp là một phát triển quan trọng trong kỹ thuật AI, với các nền tảng lớn như Codex và Claude Code đã tích hợp các lệnh &quot;mục tiêu&quot; và &quot;vòng lặp&quot; vào các công cụ của họ.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">8</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Model video AI của Alibaba vươn lên vị trí thứ 2 toàn cầu, khi Sora của OpenAI và Seedance của ByteDance mất dần vị thế</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Alibaba&#x27;s AI video model rises to No. 2 in global rankings, as OpenAI&#x27;s Sora and ByteDance&#x27;s Seedance fall away</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;VentureBeat</span>&nbsp;&nbsp;&nbsp;<a href="https://venturebeat.com/technology/alibabas-ai-video-model-rises-to-no-2-in-global-rankings-as-openais-sora-and-bytedances-seedance-fall-away" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Alibaba Cloud đã phát hành HappyHorse 1.1, một bản nâng cấp lớn cho mô hình AI tạo video của mình, đã vươn lên vị trí số 2 toàn cầu trong bảng xếp hạng. Mô hình này cung cấp khả năng tổng hợp video sẵn sàng sản xuất trên các kịch bản tạo nội dung cốt lõi và hiện đã được tích hợp vào Alibaba Cloud Model Studio với quyền truy cập API đầy đủ cho khách hàng doanh nghiệp và nhà phát triển. Việc phát hành này diễn ra vào thời điểm thị trường AI tạo video đang trải qua sự thay đổi lớn, với Sora của OpenAI bị ngừng và Seedance 2.0 của ByteDance bị hoãn vô thời hạn do vấn đề tài chính và bản quyền.
+
+HappyHorse 1.1 có một số bản nâng cấp chính, bao gồm khả năng tham chiếu đa hình ảnh, chất lượng chuyển động được cải thiện và sự đồng bộ hóa âm thanh-hình ảnh được tăng cường. Kiến trúc của mô hình, được xây dựng xung quanh một bộ chuyển đổi tự chú ý thống nhất 15 tỷ tham số, cho phép nó xử lý văn bản, hình ảnh, video và âm thanh token trong một chuỗi token duy nhất, loại bỏ nhu cầu sử dụng công cụ dubbing hoặc xử lý âm thanh hậu kỳ của bên thứ ba.
+
+Việc phát hành HappyHorse 1.1 đi kèm với giảm giá 40% trên toàn trang web trong hai tuần đầu, khiến nó trở thành một lựa chọn cạnh tranh cho người mua doanh nghiệp. Đặt cược cơ sở hạ tầng 52,7 tỷ USD của Alibaba mang lại cho HappyHorse lợi thế phân phối hơn các đối thủ, với công ty đã thiết lập một dấu ấn toàn cầu với 105 khu vực sẵn sàng trên 32 khu vực.
+
+Tuy nhiên, tham vọng của Alibaba trên thị trường Tây phương bị phức tạp hóa bởi việc Lầu Năm Góc gần đây liệt kê công ty này là một công ty quân sự Trung Quốc, điều này có thể gây ra lo ngại về danh tiếng và quy định cho người mua doanh nghiệp. Mặc dù vậy, HappyHorse 1.1 có khả năng trở thành một người chơi quan trọng trong thị trường AI tạo video, với khả năng rộng lớn, giá cả cạnh tranh và lợi thế cơ sở hạ tầng làm cho nó trở thành một lựa chọn hấp dẫn cho các đội doanh nghiệp.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+
+  <!-- TIPS SECTION -->
+  
+  <tr>
+    <td bgcolor="#FFFBEB" style="background-color:#FFFBEB;padding:20px 30px;border-top:3px solid #D97706;">
+      <p style="margin:0 0 12px;font-size:11px;color:#D97706;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#9889;&nbsp;Tips &amp; Tricks cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Chain-of-Thought Prompting</strong><br><strong>Vấn đề:</strong> Các mô hình ngôn ngữ thường không thể giải quyết các vấn đề phức tạp.<br><strong>Cách làm:</strong> Sử dụng kỹ thuật chain-of-thought prompting, yêu cầu mô hình thực hiện từng bước một. Ví dụ, &quot;Để tính tổng 2 + 2, trước tiên tôi sẽ cộng 1 + 1, sau đó cộng thêm 1, và cuối cùng cộng thêm 1 nữa.&quot;<br><strong>Đánh giá:</strong> Hiệu quả khi giải quyết vấn đề cần nhiều bước, nhưng có thể gây khó khăn nếu không thiết kế đúng.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Few-Shot Learning</strong><br><strong>Vấn đề:</strong> Không đủ dữ liệu để huấn luyện mô hình từ đầu.<br><strong>Cách làm:</strong> Sử dụng few-shot learning, cung cấp vài ví dụ mẫu để mô hình học. Ví dụ, &quot;Xếp hạng sự hài lòng của khách hàng, ví dụ: &#x27;Tôi rất hài lòng&#x27; - 5/5, &#x27;Tôi không hài lòng&#x27; - 1/5.&quot;<br><strong>Đánh giá:</strong> Rất hiệu quả khi dữ liệu hạn chế, nhưng cần chọn ví dụ mẫu phù hợp.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ System Prompt Design</strong><br><strong>Vấn đề:</strong> Mô hình ngôn ngữ không hiểu rõ ngữ cảnh.<br><strong>Cách làm:</strong> Sử dụng system prompt design, cung cấp thông tin về hệ thống và nhiệm vụ. Ví dụ, &quot;Tôi là một trợ lý ảo, nhiệm vụ của tôi là trả lời các câu hỏi về công nghệ.&quot;<br><strong>Đánh giá:</strong> Cải thiện đáng kể hiệu suất của mô hình, giúp nó hiểu rõ hơn về ngữ cảnh và nhiệm vụ.</p>
+    </td>
+  </tr>
+
+  <!-- LESSON SECTION -->
+  
+  <tr>
+    <td bgcolor="#F0FFF4" style="background-color:#F0FFF4;padding:20px 30px;border-top:3px solid #2E7D32;">
+      <p style="margin:0 0 12px;font-size:11px;color:#2E7D32;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128218;&nbsp;B&#224;i h&#7885;c AI h&#244;m nay cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;">1. <strong>Tối ưu chi phí &amp; hiệu năng LLM</strong><br>2. Để phát triển ứng dụng AI hiệu quả, các nhà phát triển cần tối ưu chi phí và hiệu năng của mô hình ngôn ngữ lớn (LLM). Điều này giúp giảm thiểu chi phí tính toán và cải thiện hiệu suất của ứng dụng. Việc tối ưu hóa LLM cũng giúp tăng cường khả năng cạnh tranh của sản phẩm trên thị trường.<br>3. Ví dụ, chúng ta có thể sử dụng kỹ thuật fine-tuning để tối ưu hóa LLM cho một use case cụ thể, như phân tích cảm xúc của văn bản. Điều này giúp giảm thiểu số lượng參 số cần thiết và cải thiện độ chính xác của mô hình.<br>4. 💡 Tip hoặc bước tiếp theo: Sử dụng thư viện như Hugging Face Transformers để thực hiện fine-tuning và tối ưu hóa LLM cho ứng dụng của bạn. Điều này giúp bạn tiết kiệm thời gian và công sức trong việc phát triển và triển khai mô hình AI.</p>
+    </td>
+  </tr>
+
+  <!-- FOOTER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:20px 30px;text-align:center;border-radius:0 0 10px 10px;">
+      <p style="margin:0 0 4px;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        &#128161;&nbsp;Lu&#244;n &#273;i &#273;&#7847;u trong th&#7871; gi&#7899;i AI!&nbsp;&#183;&nbsp;Stay ahead in AI!
+      </p>
+      <p style="margin:6px 0 0;font-size:11px;color:#4A7AAB;font-family:Arial,sans-serif;">
+        Ngu&#7891;n: Google News · Groq AI
+      </p>
+    </td>
+  </tr>
+
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+
+</td></tr>
+</table>
+</body>
+</html>

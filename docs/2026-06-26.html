@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--[if mso]>
+<noscript><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings></xml></noscript>
+<![endif]-->
+<style>
+/* ── Responsive overrides for web (email HTML uses fixed 600px tables) ── */
+@media screen and (max-width:620px) {
+  table[width="600"] { width:100% !important; }
+  td { word-break:break-word; overflow-wrap:break-word; }
+  /* Reduce generous email padding on small screens */
+  td[style*="padding:28px 30px"],
+  td[style*="padding:24px 30px"],
+  td[style*="padding:22px 30px"],
+  td[style*="padding:20px 30px"],
+  td[style*="padding:16px 30px"],
+  td[style*="padding:12px 30px"] { padding-left:14px !important; padding-right:14px !important; }
+  /* Code blocks: scroll horizontally instead of breaking layout */
+  pre { overflow-x:auto !important; max-width:calc(100vw - 32px) !important; box-sizing:border-box; }
+  /* Shrink large heading text slightly */
+  h1[style*="26px"] { font-size:20px !important; }
+}
+/* ── Print: hide nav bar ── */
+@media print {
+  #web-nav { display:none !important; }
+  body { background:#fff !important; }
+}
+</style>
+</head>
+<body style="margin:0;padding:0;background-color:#EEF2F7;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+<div id="web-nav" style="background:#001a4d;padding:8px 16px;font-family:Arial,sans-serif;font-size:13px;position:sticky;top:0;z-index:999;border-bottom:2px solid #0066CC;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
+  <span id="nav-prev" style="color:#4A6A8A;">&#8592;</span>
+  <a href="all.html" style="color:#FFD700;text-decoration:none;font-weight:bold;">&#128240; T&#7845;t c&#7843; b&#7843;n tin</a>
+  <span style="color:#FFFFFF;">26/06/2026</span>
+  <span id="nav-next" style="color:#4A6A8A;">&#8594;</span>
+  <a href="2026-06-26.pdf" download="2026-06-26.pdf" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128196; T&#7843;i PDF</a>
+  <button onclick="sharePage()" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128279; Chia s&#7867;</button>
+</div>
+<script>
+function sharePage(){
+  var title='Bản tin AI BIS-MT – 26/06/2026';
+  if(navigator.share){navigator.share({title:title,url:location.href});}
+  else{navigator.clipboard.writeText(location.href).then(function(){
+    alert('Đã sao chép link!');
+  });}
+}
+(function(){
+  var m=location.pathname.match(/(\d{4}-\d{2}-\d{2})\.html/);
+  if(!m)return;
+  var slug=m[1];
+  function fmt(s){var p=s.split('-');return p[2]+'/'+p[1];}
+  var lnkStyle='color:#90C4F0;text-decoration:none;';
+  fetch('dates.json?_='+Date.now())
+    .then(function(r){return r.json();})
+    .then(function(dates){
+      var idx=dates.indexOf(slug);
+      if(idx>0){
+        var p=dates[idx-1];
+        document.getElementById('nav-prev').innerHTML=
+          '<a href="'+p+'.html" style="'+lnkStyle+'">&#8592; '+fmt(p)+'</a>';
+      }
+      if(idx>=0&&idx<dates.length-1){
+        var n=dates[idx+1];
+        document.getElementById('nav-next').innerHTML=
+          '<a href="'+n+'.html" style="'+lnkStyle+'">'+fmt(n)+' &#8594;</a>';
+      }
+    })
+    .catch(function(){});
+})();
+</script>
+
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#EEF2F7" style="background-color:#EEF2F7;">
+<tr><td align="center" style="padding:24px 12px;">
+
+<!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0"><tr><td><![endif]-->
+<table role="presentation" width="600" cellpadding="0" cellspacing="0"
+       style="max-width:600px;width:100%;background-color:#FFFFFF;border-radius:10px;" bgcolor="#FFFFFF">
+
+  <!-- HEADER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:28px 30px 22px 30px;text-align:center;border-radius:10px 10px 0 0;">
+      <p style="margin:0 0 6px;font-size:11px;color:#7EB1E8;letter-spacing:2px;font-family:Arial,sans-serif;text-transform:uppercase;">
+        BIS &#8209; MT &nbsp;&#183;&nbsp; 26/06/2026
+      </p>
+      <h1 style="margin:0;font-size:26px;font-weight:bold;color:#FFFFFF;font-family:Arial,sans-serif;line-height:1.2;">
+        &#129302; B&#7843;n Tin AI H&#7857;ng Ng&#224;y
+      </h1>
+      <p style="margin:8px 0 0;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        C&#7853;p nh&#7853;t c&#244;ng ngh&#7879; AI m&#7899;i nh&#7845;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- QUOTE -->
+  <tr>
+    <td bgcolor="#EBF4FF" style="background-color:#EBF4FF;padding:16px 30px;border-top:3px solid #0066CC;">
+      <p style="margin:0;font-size:14px;color:#1A3A5C;font-style:italic;line-height:1.6;font-family:Georgia,serif;">
+        &#10024;&nbsp;&ldquo;Đi một ngày đàng, học một sàng khôn.&rdquo;
+      </p>
+      
+      <p style="margin:8px 0 0;font-size:12px;color:#888888;font-family:Arial,sans-serif;">&mdash;&nbsp;Tục ngữ Việt Nam</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#5A6A7A;font-style:italic;line-height:1.5;font-family:Arial,sans-serif;">&#128161;&nbsp;Trải nghiệm thực tế luôn mang lại tri thức và sự hiểu biết sâu sắc hơn bất kỳ sách vở nào.</p>
+    </td>
+  </tr>
+
+  <!-- SECTION LABEL -->
+  <tr>
+    <td bgcolor="#F5F7FA" style="background-color:#F5F7FA;padding:12px 30px;">
+      <p style="margin:0;font-size:11px;color:#999999;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128240;&nbsp;Tin t&#7913;c n&#7893;i b&#7853;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- ARTICLES -->
+  
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">1</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Tăng tốc phát triển với server Amazon Bedrock AgentCore MCP | Artificial Intelligence</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Accelerate development with the Amazon Bedrock AgentCore MCP server | Artificial Intelligence</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Amazon Web Services (AWS)</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxOY0dNX2hZRGVzeUZyX01BaEdTaW9aZ3d0TVBnMThmci1LMWpGOGdJaUgzM0t2OGZsRkxrZDRJcUY5RmZOajVqeUpQQVBoOVJSTWZxNFVFOW0tbTRwMUYwNWprdklCNjZncnh6VUNNV3Y3VGVhNElSNDVZdFJqb1ppT2JUc1FhUGpBanhHY0Q0WTdJdUI0RmM5NFpBX19ocVl0aXRqMzdLbEtpakJ3NHVzQXY4bw?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Amazon Web Services (AWS) đã giới thiệu server Amazon Bedrock AgentCore MCP, được thiết kế để tăng tốc phát triển trong lĩnh vực Artificial Intelligence (AI). Server Bedrock AgentCore MCP là một thành phần chủ chốt của nền tảng Amazon Bedrock, với mục tiêu đơn giản hóa việc phát triển và triển khai các AI model.
+
+    Server này được tối ưu hóa cho high-performance computing và cung cấp một môi trường scalable, secure cho việc phát triển AI. Nó cho phép các developer tập trung vào việc xây dựng và training các AI model mà không cần lo lắng về hạ tầng bên dưới. Server Bedrock AgentCore MCP hỗ trợ nhiều AI framework và tool khác nhau, giúp các developer lựa chọn môi trường phát triển ưa thích của mình.
+
+    Bằng cách tận dụng server Bedrock AgentCore MCP, các developer có thể tăng tốc quá trình phát triển AI, giảm chi phí và cải thiện hiệu quả tổng thể. Các tính năng scalability và security của server cũng cho phép các developer triển khai AI model của họ trong môi trường production-ready, biến nó thành một giải pháp hấp dẫn cho các doanh nghiệp muốn tích hợp AI vào hoạt động của mình.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">2</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Agent Factory: Từ prototype đến production—công cụ developer và phát triển agent nhanh chóng</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Agent Factory: From prototype to production—developer tools and rapid agent development</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Microsoft Azure</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMixAFBVV95cUxOdndkeDZ5QVBfUkZSNEllamdIOTZoek9icUtocDFTYVJXRlNUbm1GQ0c0WkZLNkdudzB3WGppcTJhMV9fS05aOEsyRnU1S2psSVNleW1YaEZqOE1sZk5IVEhqSWpMU3JpbUNTeWd4MktxQUlkUnJHZllkeWlvTDBzN3YzT3dXRHd3Vi1RRTlMWDBidzQ2aFYtbV9OdTB6TGNHYWxjSFRNSEVTazhSNzE4X1VKUlJBSVlETjVRVHVidFNIb2du?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Microsoft Azure đã giới thiệu Agent Factory, một developer tool được thiết kế để tạo điều kiện thuận lợi cho việc phát triển và triển khai agent nhanh chóng. Tool này cho phép các developer tạo và quản lý các agent, vốn là các software component có thể tương tác với nhiều hệ thống và service khác nhau. Agent Factory cho phép tạo ra các prototype và chuyển đổi liền mạch sang các agent production-ready.
+
+    Với Agent Factory, các developer có thể xây dựng, test và deploy agent một cách nhanh chóng và hiệu quả. Tool này cung cấp một loạt các tính năng và khả năng, bao gồm phát triển, triển khai và quản lý agent. Điều này giúp các developer tập trung vào việc xây dựng và tích hợp agent vào ứng dụng của họ, thay vì lo lắng về hạ tầng bên dưới.
+
+    Agent Factory là một phần trong nỗ lực rộng lớn hơn của Microsoft Azure nhằm hỗ trợ phát triển các intelligent agent và các giải pháp AI-powered khác. Tool này được thiết kế để có tính scalable và flexible cao, phù hợp với nhiều loại ứng dụng và use case. Bằng cách cung cấp trải nghiệm phát triển tinh gọn, Agent Factory hướng tới việc tăng tốc tạo và triển khai các intelligent agent cũng như các giải pháp AI-powered khác.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">3</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Xây dựng agent phân tích tài chính thông minh với LangGraph và Strands Agents | Amazon Web Services</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Build an intelligent financial analysis agent with LangGraph and Strands Agents | Amazon Web Services</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Amazon Web Services (AWS)</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMixAFBVV95cUxQcDBxeXdxZlJjREktdFdBdnJST0xDSzQtYmppeEZQdHZWSXdaWGxSLXNvNlRYUjYwMlQ0LWtzU3RUdVRJWkJzbW1MektRRDNRS2lTZkJXUGJXNUplcHlIQkxQdkhxZEJkZW1Dd0k2R1lPdDlXQXhYdUdUdnJ0NlJDSnFlUXVOY0pYRDdITjFRVXRKMjlqWkNORnp5SXQzdnZIazc5ZURWMU8xQlgzV19DRjIxeTE4RFZXdTBOc1JLOER3NFZl?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Amazon Web Services (AWS) đã giới thiệu một giải pháp để xây dựng một intelligent financial analysis agent sử dụng LangGraph và Strands Agents. LangGraph là một natural language processing (NLP) library cho phép người dùng phân tích và hiểu dữ liệu tài chính phức tạp. Strands Agents, mặt khác, là một low-code, no-code platform để xây dựng các conversational interface.
+
+    Bằng cách kết hợp LangGraph và Strands Agents, người dùng có thể tạo ra một financial analysis agent có khả năng trích xuất insight từ dữ liệu tài chính, cung cấp các recommendation được cá nhân hóa và tương tác trò chuyện với người dùng. Agent này có thể được tích hợp với nhiều hệ thống tài chính khác nhau, cho phép nó truy cập và phân tích các dataset lớn.
+
+    Giải pháp này cho phép người dùng xây dựng một conversational interface có thể hiểu các user query, cung cấp thông tin tài chính liên quan và đưa ra lời khuyên hữu ích. Intelligent financial analysis agent này có thể giúp người dùng đưa ra các quyết định đầu tư sáng suốt, theo dõi hiệu suất tài chính và tối ưu hóa kế hoạch tài chính của họ. Giải pháp được thiết kế để có tính scalable và flexible, phù hợp với nhiều ứng dụng tài chính khác nhau.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">4</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Định vị lại ngành bán lẻ trong kỷ nguyên AI</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Repositioning retail for the AI era</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;MIT Tech Review</span>&nbsp;&nbsp;&nbsp;<a href="https://www.technologyreview.com/2026/06/25/1137848/repositioning-retail-for-the-ai-era/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Macy&#x27;s đang định vị lại chiến lược bán lẻ của mình để ưu tiên artificial intelligence (AI) như một triết lý vận hành. Theo Murali Murugan, senior director of engineering tại Macy&#x27;s, cách tiếp cận &quot;AI-first&quot; này bao gồm việc nhúng intelligence trực tiếp vào các hệ thống, thay vì đặt nó lên trên các workflow hiện có. Cách tiếp cận này nhằm mục đích đưa ra quyết định nhanh hơn và tạo ra những trải nghiệm phù hợp hơn cho khách hàng một cách mặc định. Macy&#x27;s đang tích hợp AI vào nhiều lĩnh vực khác nhau, bao gồm personalization, search, operational planning và software development. Chiến lược của công ty là một phần của sự thay đổi lớn hơn trong ngành bán lẻ, chuyển từ các AI pilot riêng lẻ sang các hệ thống tích hợp có thể rút ngắn khoảng cách giữa tín hiệu và hành động. Cách tiếp cận này đã mang lại những thành công nhanh chóng trong các lĩnh vực như search recommendation và customer engagement, và hiện đang được mở rộng sang conversational commerce thông qua các tool như Ask Macy&#x27;s, một AI-powered shopping assistant. Tầm nhìn dài hạn là một ngành bán lẻ liền mạch, thích ứng và được cá nhân hóa, được hỗ trợ bởi các hệ thống mà khách hàng thậm chí có thể không nhận ra sự hiện diện của chúng.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">5</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Chi phí ẩn của những dòng code không ai đụng đến</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;The hidden cost of code that nobody touches</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Sourcegraph Blog</span>&nbsp;&nbsp;&nbsp;<a href="http://localhost:5174/blog/the-hidden-cost-of-code-that-nobody-touches" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Chi phí ẩn của những dòng code không ai đụng đến. Mọi engineering organization đều có một tập hợp các file code bị bỏ quên và không được quản lý, thường được gọi là &quot;dead code&quot;. Những file này có thể là một gánh nặng đáng kể, nhưng chi phí thực sự của chúng thường bị bỏ qua.
+
+    Sự tồn tại của dead code có thể dẫn đến một loạt các vấn đề, bao gồm tăng chi phí maintenance, rủi ro security và giảm productivity. Khi các developer phải đối mặt với một codebase lớn, họ có thể gặp khó khăn trong việc xác định và ưu tiên những file nào là cần thiết và những file nào có thể được loại bỏ một cách an toàn.
+
+    Kết quả là, dead code có thể tiếp tục tích lũy, khiến việc quản lý và maintain toàn bộ codebase ngày càng khó khăn. Điều này cuối cùng</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">6</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Notion khai tử ứng dụng email lấy cảm hứng từ Skiff vì hầu hết người dùng chuyển sang dùng AI agent</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Notion killing Skiff-influenced email app since most users use AI agents instead</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Ars Technica</span>&nbsp;&nbsp;&nbsp;<a href="https://arstechnica.com/gadgets/2026/06/notion-killing-skiff-influenced-email-app-since-most-users-use-ai-agents-instead/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Notion đã宣 bố ngừng hoạt động của ứng dụng email, Notion Mail, được ra mắt vào tháng 4 năm 2025. Quyết định này được đưa ra sau một năm phát triển, chủ yếu bởi các nhân viên cũ của Skiff được Notion mua lại vào tháng 2 năm 2024. Notion cho biết rằng hầu hết người dùng dựa vào các tác nhân AI để xử lý thư từ của họ, với hơn một nửa người dùng Notion Mail quản lý email mà không cần mở hộp thư đến. Kết quả là, Notion đang chuyển trọng tâm sang quản lý email dựa trên AI. Hộp thư Notion Mail sẽ bị tắt vào ngày 22 tháng 9 và người dùng sẽ có thể xuất dữ liệu của mình, bao gồm cả bản nháp và email đã lên lịch, vào ngày 21 tháng 9. Người dùng Notion Mail phụ thuộc vào bảo vệ HIPAA được tư vấn chuyển sang dịch vụ email mới trước ngày 30 tháng 6 năm 2026. Động thái này hiệu quả đã chấm dứt những tàn dư của dịch vụ email Skiff, được Notion mua lại vào năm ngoái.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">7</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Amazon Prime Day: Giá preorder Project Hail Mary 4K UHD giảm xuống mức thấp kỷ lục</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Amazon Prime Day: Project Hail Mary 4K UHD Preorder Price Drops to a New Low</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Dev.to AI</span>&nbsp;&nbsp;&nbsp;<a href="https://dev.to/yagyaraj_sharma_6cd410179/amazon-prime-day-project-hail-mary-4k-uhd-preorder-price-drops-to-a-new-low-26jm" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Ngày Prime Day của Amazon đang đến gần và gã khổng lồ công nghệ này đã cung cấp một cái nhìn sơ bộ về các ưu đãi và giảm giá đang chờ đợi. Một trong những trò chơi được mong đợi nhất trong năm, Project Hail Mary, đã giảm xuống mức giá đặt hàng trước thấp nhất từ trước đến nay trên Amazon. Được phát triển bởi Night School Studio, trò chơi khoa học viễn tưởng này được đặt trong một tương lai xa nơi loài người đang đứng trên bờ vực tuyệt chủng, và người chơi phải khám phá ra những bí mật của vũ trụ. Giá đặt hàng trước của trò chơi đã được giảm xuống mức thấp mới, khiến nó trở thành một ưu đãi hấp dẫn cho các game thủ. Thông thường, đặt hàng trước cho các trò chơi có ngày phát hành không chắc chắn đi kèm với mức giá cao hơn, nhưng Amazon đang cung cấp đặt hàng trước Project Hail Mary 4K UHD với mức giá không thể đánh bại. Việc giảm giá này rất đáng kể, đặc biệt là khi xem xét sự không chắc chắn xung quanh ngày phát hành, và đây là một cơ hội tuyệt vời cho các game thủ để tham gia sớm. Với đồ họa tuyệt đẹp, cốt truyện hấp dẫn và gameplay hấp dẫn, Project Hail Mary đang trở thành một trong những trò chơi được mong đợi nhất trong năm.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">8</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Tại sao một ngân hàng cần có Chief Scientist?</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Why Does a Bank Need a Chief Scientist?</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;IEEE Spectrum</span>&nbsp;&nbsp;&nbsp;<a href="https://spectrum.ieee.org/capital-one-science-ai-finance-innovation" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Capital One, một tổ chức tài chính phục vụ hơn 100 triệu khách hàng, đang chuyển đổi lĩnh vực tài chính thông qua đổi mới được thúc đẩy bởi AI. Để đạt được điều này, ngân hàng đang xây dựng một cộng đồng khoa học và tổ chức nghiên cứu để thúc đẩy ranh giới của AI và khám phá khoa học trong lĩnh vực tài chính. Prem Natarajan, một cựu nhân viên nghiên cứu được tài trợ bởi DARPA và học thuật, đang dẫn đầu nỗ lực này với tư cách là Chief Scientist của ngân hàng. Natarajan tin rằng những vấn đề AI phức tạp nhất được tìm thấy trong các lĩnh vực dọc như tài chính, nơi các vấn đề của khách hàng trong thế giới thực, kiến thức kinh doanh theo ngữ cảnh và học tập liên tục là rất quan trọng.
+
+Không giống như các công ty công nghệ lớn, tập trung vào các nền tảng ngang, Capital One đang giải quyết các thách thức cụ thể cho lĩnh vực, chẳng hạn như phát hiện gian lận trong thời gian thực và cung cấp các công cụ trò chuyện tiên tiến. Những thách thức này đòi hỏi nghiên cứu ban đầu và đổi mới khoa học, sau đó được chuyển trở lại vào kinh doanh để tạo ra các ứng dụng trong thế giới thực. Với cơ sở hạ tầng hiện đại, cách tiếp cận kỷ luật đối với quản trị và đội ngũ tài năng sâu, Capital One được đặt ở vị trí dẫn đầu trong lĩnh vực AI doanh nghiệp. Natarajan nhấn mạnh rằng việc giải quyết các vấn đề AI quan trọng và thấy chúng trở thành hiện thực là có thể tại Capital One, khiến nó trở thành một nơi hấp dẫn cho các nhà nghiên cứu và nhà khoa học.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+
+  <!-- TIPS SECTION -->
+  
+  <tr>
+    <td bgcolor="#FFFBEB" style="background-color:#FFFBEB;padding:20px 30px;border-top:3px solid #D97706;">
+      <p style="margin:0 0 12px;font-size:11px;color:#D97706;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#9889;&nbsp;Tips &amp; Tricks cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Cài Đặt Ollama</strong><br><strong>Vấn đề:</strong> Chạy LLM trên máy cá nhân mà không cần internet.<br><strong>Cách làm:</strong> Sử dụng Ollama, chạy lệnh <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">ollama --model tiny</code> để tải mô hình. Ví dụ prompt: &quot;Tóm tắt nội dung của văn bản này&quot;.<br><strong>Đánh giá:</strong> Hiệu quả cho các mô hình nhỏ, phù hợp với máy tính cấu hình thấp.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tối Ưu LM Studio</strong><br><strong>Vấn đề:</strong> Tối ưu hóa hiệu suất của LM Studio trên máy cá nhân.<br><strong>Cách làm:</strong> Sử dụng lệnh <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">lm-studio --optimize</code> để tối ưu hóa mô hình. Ví dụ: <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">lm-studio --optimize --model medium</code>.<br><strong>Đánh giá:</strong> Phù hợp với máy tính cấu hình trung bình, giúp tăng tốc độ xử lý.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Sử Dụng CLI</strong><br><strong>Vấn đề:</strong> Chạy LLM trên máy cá nhân mà không cần giao diện đồ họa.<br><strong>Cách làm:</strong> Sử dụng lệnh <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">ollama --cli</code> để chạy Ollama trên CLI. Ví dụ: <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">ollama --cli --prompt &quot;Tóm tắt nội dung&quot;</code>.<br><strong>Đánh giá:</strong> Phù hợp với người dùng quen với giao diện lệnh, giúp tăng tốc độ làm việc.</p>
+    </td>
+  </tr>
+
+  <!-- LESSON SECTION -->
+  
+  <tr>
+    <td bgcolor="#F0FFF4" style="background-color:#F0FFF4;padding:20px 30px;border-top:3px solid #2E7D32;">
+      <p style="margin:0 0 12px;font-size:11px;color:#2E7D32;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128218;&nbsp;B&#224;i h&#7885;c AI h&#244;m nay cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;">1. <strong>Tối ưu chi phí &amp; hiệu năng LLM</strong><br>2. Để phát triển ứng dụng hiệu quả, các nhà phát triển cần tối ưu hóa chi phí và hiệu năng của ngôn ngữ mô hình lớn (LLM). Điều này giúp giảm thiểu chi phí vận hành và cải thiện tốc độ xử lý.<br>3. Ví dụ, bằng cách sử dụng kỹ thuật fine-tuning và LoRA, chúng ta có thể giảm kích thước mô hình và tăng tốc độ đào tạo.<br>4. 💡 Tip: Sử dụng kỹ thuật pruning và quantization để giảm kích thước mô hình và tăng tốc độ xử lý, từ đó tối ưu hóa chi phí và hiệu năng của LLM.</p>
+    </td>
+  </tr>
+
+  <!-- FOOTER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:20px 30px;text-align:center;border-radius:0 0 10px 10px;">
+      <p style="margin:0 0 4px;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        &#128161;&nbsp;Lu&#244;n &#273;i &#273;&#7847;u trong th&#7871; gi&#7899;i AI!&nbsp;&#183;&nbsp;Stay ahead in AI!
+      </p>
+      <p style="margin:6px 0 0;font-size:11px;color:#4A7AAB;font-family:Arial,sans-serif;">
+        Ngu&#7891;n: Google News · Groq AI
+      </p>
+    </td>
+  </tr>
+
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+
+</td></tr>
+</table>
+</body>
+</html>

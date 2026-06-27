@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--[if mso]>
+<noscript><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings></xml></noscript>
+<![endif]-->
+<style>
+/* ── Responsive overrides for web (email HTML uses fixed 600px tables) ── */
+@media screen and (max-width:620px) {
+  table[width="600"] { width:100% !important; }
+  td { word-break:break-word; overflow-wrap:break-word; }
+  /* Reduce generous email padding on small screens */
+  td[style*="padding:28px 30px"],
+  td[style*="padding:24px 30px"],
+  td[style*="padding:22px 30px"],
+  td[style*="padding:20px 30px"],
+  td[style*="padding:16px 30px"],
+  td[style*="padding:12px 30px"] { padding-left:14px !important; padding-right:14px !important; }
+  /* Code blocks: scroll horizontally instead of breaking layout */
+  pre { overflow-x:auto !important; max-width:calc(100vw - 32px) !important; box-sizing:border-box; }
+  /* Shrink large heading text slightly */
+  h1[style*="26px"] { font-size:20px !important; }
+}
+/* ── Print: hide nav bar ── */
+@media print {
+  #web-nav { display:none !important; }
+  body { background:#fff !important; }
+}
+</style>
+</head>
+<body style="margin:0;padding:0;background-color:#EEF2F7;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+<div id="web-nav" style="background:#001a4d;padding:8px 16px;font-family:Arial,sans-serif;font-size:13px;position:sticky;top:0;z-index:999;border-bottom:2px solid #0066CC;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
+  <span id="nav-prev" style="color:#4A6A8A;">&#8592;</span>
+  <a href="all.html" style="color:#FFD700;text-decoration:none;font-weight:bold;">&#128240; T&#7845;t c&#7843; b&#7843;n tin</a>
+  <span style="color:#FFFFFF;">27/06/2026</span>
+  <span id="nav-next" style="color:#4A6A8A;">&#8594;</span>
+  <a href="2026-06-27.pdf" download="2026-06-27.pdf" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128196; T&#7843;i PDF</a>
+  <button onclick="sharePage()" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128279; Chia s&#7867;</button>
+</div>
+<script>
+function sharePage(){
+  var title='Bản tin AI BIS-MT – 27/06/2026';
+  if(navigator.share){navigator.share({title:title,url:location.href});}
+  else{navigator.clipboard.writeText(location.href).then(function(){
+    alert('Đã sao chép link!');
+  });}
+}
+(function(){
+  var m=location.pathname.match(/(\d{4}-\d{2}-\d{2})\.html/);
+  if(!m)return;
+  var slug=m[1];
+  function fmt(s){var p=s.split('-');return p[2]+'/'+p[1];}
+  var lnkStyle='color:#90C4F0;text-decoration:none;';
+  fetch('dates.json?_='+Date.now())
+    .then(function(r){return r.json();})
+    .then(function(dates){
+      var idx=dates.indexOf(slug);
+      if(idx>0){
+        var p=dates[idx-1];
+        document.getElementById('nav-prev').innerHTML=
+          '<a href="'+p+'.html" style="'+lnkStyle+'">&#8592; '+fmt(p)+'</a>';
+      }
+      if(idx>=0&&idx<dates.length-1){
+        var n=dates[idx+1];
+        document.getElementById('nav-next').innerHTML=
+          '<a href="'+n+'.html" style="'+lnkStyle+'">'+fmt(n)+' &#8594;</a>';
+      }
+    })
+    .catch(function(){});
+})();
+</script>
+
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#EEF2F7" style="background-color:#EEF2F7;">
+<tr><td align="center" style="padding:24px 12px;">
+
+<!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0"><tr><td><![endif]-->
+<table role="presentation" width="600" cellpadding="0" cellspacing="0"
+       style="max-width:600px;width:100%;background-color:#FFFFFF;border-radius:10px;" bgcolor="#FFFFFF">
+
+  <!-- HEADER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:28px 30px 22px 30px;text-align:center;border-radius:10px 10px 0 0;">
+      <p style="margin:0 0 6px;font-size:11px;color:#7EB1E8;letter-spacing:2px;font-family:Arial,sans-serif;text-transform:uppercase;">
+        BIS &#8209; MT &nbsp;&#183;&nbsp; 27/06/2026
+      </p>
+      <h1 style="margin:0;font-size:26px;font-weight:bold;color:#FFFFFF;font-family:Arial,sans-serif;line-height:1.2;">
+        &#129302; B&#7843;n Tin AI H&#7857;ng Ng&#224;y
+      </h1>
+      <p style="margin:8px 0 0;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        C&#7853;p nh&#7853;t c&#244;ng ngh&#7879; AI m&#7899;i nh&#7845;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- QUOTE -->
+  <tr>
+    <td bgcolor="#EBF4FF" style="background-color:#EBF4FF;padding:16px 30px;border-top:3px solid #0066CC;">
+      <p style="margin:0;font-size:14px;color:#1A3A5C;font-style:italic;line-height:1.6;font-family:Georgia,serif;">
+        &#10024;&nbsp;&ldquo;Không có gì là không thể.&rdquo;
+      </p>
+      
+      <p style="margin:8px 0 0;font-size:12px;color:#888888;font-family:Arial,sans-serif;">&mdash;&nbsp;Tục ngữ Việt Nam</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#5A6A7A;font-style:italic;line-height:1.5;font-family:Arial,sans-serif;">&#128161;&nbsp;Giới hạn lớn nhất của con người nằm ở chính tâm trí — khi tin vào bản thân, mọi thách thức đều có thể vượt qua.</p>
+    </td>
+  </tr>
+
+  <!-- SECTION LABEL -->
+  <tr>
+    <td bgcolor="#F5F7FA" style="background-color:#F5F7FA;padding:12px 30px;">
+      <p style="margin:0;font-size:11px;color:#999999;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128240;&nbsp;Tin t&#7913;c n&#7893;i b&#7853;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- ARTICLES -->
+  
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">1</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">11 lựa chọn thay thế GitHub Copilot mà các developer đã chuyển sang dùng trong năm 2026</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;11 GitHub Copilot Alternatives Developers Switched To in 2026</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Security Boulevard</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxQd3BkQ01CZExGeTAtOTlKdEVOVDRQNklZLUFOQnBUOUREUGtfYXBTXzRSUVg3TjdWNk5hYmZQLVJUb096ektrVlp3V1YwckRoSDhkN010MExrSDBGY3FjU2Y4bDYxcXRTQk92a0xnS3EzZzdaS2VKM1h2MVQ5VTVYRlFZVUg2NXptZTgzMUxGRXZXV0JtMEdMTW02TndJZTJHenc?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Vào năm 2026, ngày càng nhiều developer đã tìm kiếm các giải pháp thay thế cho GitHub Copilot, một trợ lý mã hóa AI phổ biến. Sự thay đổi này được thúc đẩy bởi nhiều yếu tố, bao gồm lo ngại về bảo mật dữ liệu và mong muốn kiểm soát nhiều hơn đối với các gợi ý mã hóa. 
+
+Kết quả là, một số giải pháp thay thế đã trở nên phổ biến trong cộng đồng developer. Những giải pháp thay thế này cung cấp các chức năng tương tự như GitHub Copilot, chẳng hạn như tính năng tự động hoàn thiện mã và gợi ý. Một số giải pháp thay thế đáng chú ý bao gồm Kite, TabNine và CodeWithMe. 
+
+Các giải pháp thay thế khác như Code Scanner của GitHub, Codex của Microsoft và Llama của Meta cũng đã được các developer áp dụng. Những công cụ này tận dụng AI để cung cấp cho developer các gợi ý mã, cải thiện hiệu suất mã hóa và tăng cường hợp tác. 
+
+Mặc dù GitHub Copilot vẫn là một công cụ được sử dụng rộng rãi, nhu cầu ngày càng tăng đối với các giải pháp thay thế này nhấn mạnh nhu cầu về sự linh hoạt và tùy chỉnh nhiều hơn trong các trợ lý mã hóa. Khi nhu cầu về các công cụ mã hóa AI tiếp tục tăng, các developer đang tìm kiếm các lựa chọn đáp ứng nhu cầu và sở thích cụ thể của họ.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">2</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Claude Code đấu với Cursor 2026: Đạt 80.8% SWE-bench, 1M Context [Đã thử nghiệm]</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Claude Code vs Cursor 2026: 80.8% SWE-bench, 1M Context [Tested]</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;tech-insider.org</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMiZEFVX3lxTE95NG1FWjBEODdnR0pEV21ldXBxRjlTNTJqVDRPUzUtVUZnRGxFMnNHM2pvb1lfN2M2S3JXaWRWSVVpYjEzZGlLLUpjTEN5b2UxQnVUQzNZVzZfcWxRLTJrc1BMdHA?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Trong một bài kiểm tra benchmarking gần đây, Claude Code và Cursor 2026 đã được so sánh trong một loạt các đánh giá. Kết quả cho thấy Claude Code đã đạt được điểm số ấn tượng 80,8% trên SWE-bench, một công cụ benchmark được sử dụng rộng rãi để đánh giá các model ngôn ngữ. Ngoài ra, Claude Code đã chứng minh khả năng của mình bằng cách xử lý một bài kiểm tra ngữ cảnh khổng lồ với 1 triệu token. 
+
+SWE-bench là một công cụ đánh giá toàn diện đánh giá khả năng của một model ngôn ngữ trong việc hiểu và tạo ra văn bản giống con người. Điểm số 80,8% cho thấy Claude Code đã đạt được tiến bộ đáng kể trong lĩnh vực này, thể hiện tiềm năng của nó cho các ứng dụng thực tế.
+
+Bài kiểm tra ngữ cảnh 1 triệu token进一步 nhấn mạnh khả năng của Claude Code trong việc xử lý lượng lớn thông tin và tạo ra các phản hồi mạch lạc. Thành tựu này là minh chứng cho khả năng mở rộng của model và khả năng xử lý dữ liệu phức tạp. Kết quả của bài kiểm tra benchmarking này chứng minh khả năng của Claude Code và tiềm năng của nó để trở thành một model ngôn ngữ hàng đầu trong tương lai.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">3</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Tình hình các Agent Framework: Chọn Runtime phù hợp cho việc triển khai AI trong doanh nghiệp</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;State of Agent Frameworks: Choosing the Right Runtime for Enterprise AI Execution</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Medium</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxOdXdHT2dlWEx6TUh4VW5nQ0hCZWdqVjN4dEhkWXdhQ3ZhT2lPZUtmUlRVSG5zVTBQOWQ3MUIxZjdPZUl6ZmpsbXFWWTNQN3g4M0xfcWJhUDY1aU0tcEFLeDNZYXFmTDIzZmRLNG5VODcyem16VEFuUXRSWEFUSmE3WmFZTzhDbDFRaW1IcFp5QjBqeHpBb0dJM18wbjl0ZVVSNU8yM1Jwb2E3WkxyenNJNk0tTHRUWC1IRngwbEJycUxPTGc?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Bài viết &quot;Trạng thái của các Framework Trình điều khiển: Chọn Thời gian chạy Đúng cho Thực thi AI Doanh nghiệp&quot; cung cấp cái nhìn tổng quan về trạng thái hiện tại của các framework trình điều khiển cho thực thi AI doanh nghiệp. Các framework trình điều khiển là các nền tảng phần mềm cho phép tích hợp trí tuệ nhân tạo (AI) và các model học máy (ML) vào các ứng dụng kinh doanh. Các framework này cung cấp một môi trường thời gian chạy cho các model AI để thực thi và tương tác với các hệ thống khác.
+
+Bài viết nhấn mạnh tầm quan trọng của việc chọn framework trình điều khiển đúng cho thực thi AI doanh nghiệp, xem xét các yếu tố như khả năng mở rộng, bảo mật và tích hợp với các hệ thống hiện có. Nó cũng thảo luận về các đặc điểm chính của các framework trình điều khiển phổ biến, bao gồm Rasa, Microsoft Bot Framework và Google Dialogflow.
+
+Bài viết nhằm giúp các nhà phát triển và tổ chức chọn framework trình điều khiển phù hợp nhất cho các dự án AI của họ, dựa trên nhu cầu và yêu cầu cụ thể của họ. Bằng cách hiểu rõ điểm mạnh và điểm yếu của từng framework, các nhà phát triển có thể đưa ra quyết định thông minh và xây dựng các ứng dụng được hỗ trợ bởi AI hiệu quả hơn.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">4</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Xem trước GPT-5.6 Sol: một model thế hệ tiếp theo</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Previewing GPT-5.6 Sol: a next-generation model</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;OpenAI Blog</span>&nbsp;&nbsp;&nbsp;<a href="https://openai.com/index/previewing-gpt-5-6-sol" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">OpenAI đã ra mắt bản xem trước của mô hình mới nhất của họ, GPT-5.6 Sol, một hệ thống AI thế hệ tiếp theo được thiết kế để vượt trội trong nhiều lĩnh vực. Mô hình tiên tiến này có khả năng nâng cao trong lĩnh vực lập trình, khoa học và an ninh mạng, khiến nó trở thành một công cụ mạnh mẽ cho các chuyên gia và tổ chức trong các lĩnh vực này. Ngoài hiệu suất được cải thiện, GPT-5.6 Sol cũng được trang bị bộ tính năng an toàn tiên tiến nhất của OpenAI. Tính năng an toàn này có khả năng được thiết kế để giảm thiểu các rủi ro tiềm ẩn liên quan đến hệ thống AI, đảm bảo một trải nghiệm an toàn và đáng tin cậy hơn. Việc ra mắt GPT-5.6 Sol cho thấy OpenAI đang đẩy ranh giới của công nghệ AI, nhằm tạo ra các mô hình tinh vi và hữu ích hơn có thể mang lại lợi ích cho nhiều ngành công nghiệp và ứng dụng khác nhau. Mặc dù các chi tiết cụ thể về khả năng và tính năng của mô hình chưa được công bố, bản xem trước của GPT-5.6 Sol cho thấy một bước tiến đáng kể trong sự phát triển của AI.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">5</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Điểm tin: Sóng nhiệt kỷ lục và những hạn chế chưa từng có từ OpenAI</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;The Download: brain-melting heatwaves and unprecedented OpenAI restrictions</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;MIT Tech Review</span>&nbsp;&nbsp;&nbsp;<a href="https://www.technologyreview.com/2026/06/26/1139780/the-download-heatwaves-brain-health-openai-restrictions/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Một đợt sóng nhiệt khắc nghiệt đang ảnh hưởng đến Tây Âu, với Vương quốc Anh ghi nhận nhiệt độ tháng 6 cao nhất từ trước đến nay là 36,1°C (97°F). Nhiệt độ cực đoan này đang gây ra gián đoạn cho nông nghiệp, cơ sở hạ tầng và hệ thống chăm sóc sức khỏe. Nghiên cứu cho thấy rằng nhiệt độ tăng cao có thể có tác động tiêu cực đến não bộ, dẫn đến tăng tính dễ cáu gắt và bạo lực, cũng như khó khăn trong việc tập trung cho lính cứu hỏa. Tác động của nhiệt đối với não bộ vẫn chưa được hiểu đầy đủ, nhưng các nghiên cứu trên động vật thí nghiệm đã chỉ ra rằng nhiệt độ quá cao có thể thay đổi chức năng của tín hiệu hóa học trong não.
+
+Trong tin tức khác, chính quyền Trump đã yêu cầu OpenAI hạn chế việc phát hành mô hình tiếp theo của họ, GPT 5.6, và kiểm tra người dùng đầu tiên trước khi ra mắt rộng rãi. Đây là lần đầu tiên một công ty Mỹ bị yêu cầu hạn chế một mô hình AI trước khi phát hành. Ngoài ra, Apple và Xbox đã tăng giá cho một số sản phẩm của họ do chi phí chip tăng cao được驱 động bởi AI, điều này đã dẫn đến tình trạng khan hiếm và tăng giá cho bộ nhớ và lưu trữ.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">6</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Google Interactions API: Công nghệ AI thu hẹp khoảng cách phối hợp</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Google Interactions API: AI Technology That Closes the Coordination Gap</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Dev.to AI</span>&nbsp;&nbsp;&nbsp;<a href="https://dev.to/aarhamforensics_eb3c024eb/google-interactions-api-ai-technology-that-closes-the-coordination-gap-8i0" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Google đã宣 bố tính khả dụng chung của Interactions API, một điểm cuối thống nhất để tương tác với các mô hình Gemini và tác nhân. API này hiện là giao diện chính cho cả mô hình Gemini và tác nhân, thay thế nhu cầu của các nhóm phải xây dựng các lớp điều phối của riêng họ bằng cách sử dụng các công cụ như LangChain và hàng đợi tùy chỉnh. Interactions API cung cấp một loạt các khả năng chính, bao gồm Managed Agents, trạng thái phía máy chủ, thực thi nền, kết hợp công cụ và tạo đa phương thức. Nó cho phép thực hiện một cuộc gọi API duy nhất để cung cấp một hộp cát Linux từ xa có thể duyệt, mã hóa và quản lý tệp. Sự thay đổi này trong cơ sở hạ tầng nhằm giải quyết &quot;khoảng trống phối hợp AI&quot;, độ tin cậy và chi phí kỹ thuật phát sinh từ việc quản lý trạng thái, định tuyến công cụ và chuyển giao tác nhân trong các hệ thống AI. Bằng cách di chuyển lớp phối hợp này sang cơ sở hạ tầng của Google, các nhóm có thể đơn giản hóa các quy trình làm việc của họ và giảm độ phức tạp khi tích hợp các mô hình AI vào các ứng dụng của họ.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">7</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">OpenAI hạn chế phát hành GPT-5.6 theo yêu cầu của chính phủ, khẳng định các hạn chế không nên là thông lệ</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;OpenAI limits GPT-5.6 rollout after government request, says restrictions shouldn’t be the norm</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;TechCrunch AI</span>&nbsp;&nbsp;&nbsp;<a href="https://techcrunch.com/2026/06/26/openai-limits-gpt-5-6-rollout-after-government-request-says-restrictions-shouldnt-be-the-norm/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">OpenAI đã tạm thời hạn chế việc phát hành các mô hình AI mới nhất của mình, GPT-5.6, cho một nhóm nhỏ các đối tác đáng tin cậy do yêu cầu từ chính phủ Mỹ. Các mô hình này, bao gồm Sol, Terra và Luna, đã được lên kế hoạch phát hành cho công chúng nhưng giờ chỉ có sẵn cho các đối tác đã được chính phủ kiểm duyệt. Quyết định này được đưa ra khi chính phủ Mỹ tăng áp lực lên các công ty AI để hạn chế truy cập vào các hệ thống tiên tiến nhất của họ. OpenAI đã thể hiện sự không hài lòng với thỏa thuận này, tuyên bố rằng họ không tin rằng các quy trình truy cập của chính phủ nên trở thành mặc định lâu dài. Công ty cho rằng hạn chế này sẽ giữ các công cụ tốt nhất khỏi người dùng và các nhà phát triển cần chúng. GPT-5.6 Sol là mô hình mạnh nhất của OpenAI cho đến nay, với khả năng cải tiến trong lĩnh vực mã hóa, sinh học và an ninh mạng. Công ty đang làm việc với chính quyền để phát triển một khuôn khổ mới cho việc phát hành mô hình trong tương lai và đã nhấn mạnh các tính năng bảo mật mạnh mẽ của mô hình mới, bao gồm khả năng ưu tiên công việc an ninh mạng phòng thủ hơn các lỗ hổng tấn công.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">8</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">GitHub và UNDP hợp tác thúc đẩy các ưu tiên phát triển tại Ghana bằng open source</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;GitHub and UNDP team up to advance development priorities in Ghana with open source</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;GitHub Blog</span>&nbsp;&nbsp;&nbsp;<a href="https://github.blog/open-source/social-impact/github-and-undp-team-up-to-advance-development-priorities-in-ghana-with-open-source/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">GitHub, một nền tảng hàng đầu cho các nhà phát triển, đã hợp tác với Chương trình Phát triển Liên Hợp Quốc (UNDP) để thúc đẩy các ưu tiên phát triển tại Ghana thông qua việc sử dụng phần mềm mã nguồn mở. Đối tác này nhằm khám phá cách quản trị mã nguồn mở có thể hỗ trợ nỗ lực cải cách số đầy tham vọng của Ghana. Bộ Truyền thông, Công nghệ Kỹ thuật số và Đổi mới (MoCDTI) của Ghana đang thực hiện một cuộc tái thiết số để tạo việc làm, phát triển doanh nghiệp và trao quyền cho giới trẻ. Nỗ lực này bao gồm các cải cách lập pháp trong các lĩnh vực như an ninh mạng, bảo vệ dữ liệu và công nghệ mới nổi. Đối tác giữa GitHub và UNDP sẽ giúp Ghana tận dụng các phương pháp mã nguồn mở để thúc đẩy tác động phát triển và cải thiện cuộc sống của công dân. Bằng cách áp dụng phần mềm mã nguồn mở, Ghana có thể hưởng lợi từ một phương pháp tiếp cận hợp tác và thích nghi với phát triển phần mềm, điều này có thể dẫn đến các giải pháp hiệu quả và hiệu quả hơn. Đối tác này là một bước quan trọng hướng tới thúc đẩy chuyển đổi số và tăng trưởng kinh tế tại Ghana.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+
+  <!-- TIPS SECTION -->
+  
+  <tr>
+    <td bgcolor="#FFFBEB" style="background-color:#FFFBEB;padding:20px 30px;border-top:3px solid #D97706;">
+      <p style="margin:0 0 12px;font-size:11px;color:#D97706;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#9889;&nbsp;Tips &amp; Tricks cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Sử dụng LangSmith</strong><br><strong>Vấn đề:</strong> Khó theo dõi hiệu suất của mô hình AI.<br><strong>Cách làm:</strong> Sử dụng LangSmith để theo dõi và phân tích hiệu suất của mô hình. Ví dụ, tạo dashboard với <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">langsmith create-dashboard</code>.<br><strong>Đánh giá:</strong> Hiệu quả trong việc theo dõi mô hình, nên dùng khi cần tối ưu hóa.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tích hợp Langfuse</strong><br><strong>Vấn đề:</strong> Chi phí sử dụng mô hình AI quá cao.<br><strong>Cách làm:</strong> Tích hợp Langfuse để tối ưu hóa chi phí. Ví dụ, sử dụng <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">langfuse optimize-model</code> để giảm chi phí.<br><strong>Đánh giá:</strong> Giúp giảm chi phí, nên dùng khi cần tiết kiệm.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Arize Phoenix</strong><br><strong>Vấn đề:</strong> Khó debug và theo dõi mô hình AI.<br><strong>Cách làm:</strong> Sử dụng Arize Phoenix để theo dõi và debug mô hình. Ví dụ, sử dụng <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">arize phoenix log</code> để xem log.<br><strong>Đánh giá:</strong> Hiệu quả trong việc debug, nên dùng khi cần tìm lỗi.</p>
+    </td>
+  </tr>
+
+  <!-- LESSON SECTION -->
+  
+  <tr>
+    <td bgcolor="#F0FFF4" style="background-color:#F0FFF4;padding:20px 30px;border-top:3px solid #2E7D32;">
+      <p style="margin:0 0 12px;font-size:11px;color:#2E7D32;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128218;&nbsp;B&#224;i h&#7885;c AI h&#244;m nay cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;">1. <strong>Tối ưu chi phí &amp; hiệu năng LLM</strong><br>2. Để tối ưu hóa chi phí và hiệu năng của mô hình ngôn ngữ lớn (LLM), các nhà phát triển cần biết cách tối ưu hóa kiến trúc và đào tạo mô hình. Điều này giúp giảm thiểu chi phí tính toán và tăng tốc độ xử lý.<br>3. Ví dụ, sử dụng kỹ thuật fine-tuning và LoRA (Low-Rank Adaptation) có thể giúp giảm kích thước mô hình và tăng tốc độ đào tạo.<br>4. 💡 Tip hoặc bước tiếp theo: Sử dụng thư viện như Hugging Face Transformers để thực hiện fine-tuning và LoRA cho mô hình LLM của bạn, giúp giảm chi phí và tăng hiệu năng.</p>
+    </td>
+  </tr>
+
+  <!-- FOOTER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:20px 30px;text-align:center;border-radius:0 0 10px 10px;">
+      <p style="margin:0 0 4px;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        &#128161;&nbsp;Lu&#244;n &#273;i &#273;&#7847;u trong th&#7871; gi&#7899;i AI!&nbsp;&#183;&nbsp;Stay ahead in AI!
+      </p>
+      <p style="margin:6px 0 0;font-size:11px;color:#4A7AAB;font-family:Arial,sans-serif;">
+        Ngu&#7891;n: Google News · Groq AI
+      </p>
+    </td>
+  </tr>
+
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+
+</td></tr>
+</table>
+</body>
+</html>

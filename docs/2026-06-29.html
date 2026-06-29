@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--[if mso]>
+<noscript><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings></xml></noscript>
+<![endif]-->
+<style>
+/* ── Responsive overrides for web (email HTML uses fixed 600px tables) ── */
+@media screen and (max-width:620px) {
+  table[width="600"] { width:100% !important; }
+  td { word-break:break-word; overflow-wrap:break-word; }
+  /* Reduce generous email padding on small screens */
+  td[style*="padding:28px 30px"],
+  td[style*="padding:24px 30px"],
+  td[style*="padding:22px 30px"],
+  td[style*="padding:20px 30px"],
+  td[style*="padding:16px 30px"],
+  td[style*="padding:12px 30px"] { padding-left:14px !important; padding-right:14px !important; }
+  /* Code blocks: scroll horizontally instead of breaking layout */
+  pre { overflow-x:auto !important; max-width:calc(100vw - 32px) !important; box-sizing:border-box; }
+  /* Shrink large heading text slightly */
+  h1[style*="26px"] { font-size:20px !important; }
+}
+/* ── Print: hide nav bar ── */
+@media print {
+  #web-nav { display:none !important; }
+  body { background:#fff !important; }
+}
+</style>
+</head>
+<body style="margin:0;padding:0;background-color:#EEF2F7;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+<div id="web-nav" style="background:#001a4d;padding:8px 16px;font-family:Arial,sans-serif;font-size:13px;position:sticky;top:0;z-index:999;border-bottom:2px solid #0066CC;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
+  <span id="nav-prev" style="color:#4A6A8A;">&#8592;</span>
+  <a href="all.html" style="color:#FFD700;text-decoration:none;font-weight:bold;">&#128240; T&#7845;t c&#7843; b&#7843;n tin</a>
+  <span style="color:#FFFFFF;">29/06/2026</span>
+  <span id="nav-next" style="color:#4A6A8A;">&#8594;</span>
+  <a href="2026-06-29.pdf" download="2026-06-29.pdf" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128196; T&#7843;i PDF</a>
+  <button onclick="sharePage()" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128279; Chia s&#7867;</button>
+</div>
+<script>
+function sharePage(){
+  var title='Bản tin AI BIS-MT – 29/06/2026';
+  if(navigator.share){navigator.share({title:title,url:location.href});}
+  else{navigator.clipboard.writeText(location.href).then(function(){
+    alert('Đã sao chép link!');
+  });}
+}
+(function(){
+  var m=location.pathname.match(/(\d{4}-\d{2}-\d{2})\.html/);
+  if(!m)return;
+  var slug=m[1];
+  function fmt(s){var p=s.split('-');return p[2]+'/'+p[1];}
+  var lnkStyle='color:#90C4F0;text-decoration:none;';
+  fetch('dates.json?_='+Date.now())
+    .then(function(r){return r.json();})
+    .then(function(dates){
+      var idx=dates.indexOf(slug);
+      if(idx>0){
+        var p=dates[idx-1];
+        document.getElementById('nav-prev').innerHTML=
+          '<a href="'+p+'.html" style="'+lnkStyle+'">&#8592; '+fmt(p)+'</a>';
+      }
+      if(idx>=0&&idx<dates.length-1){
+        var n=dates[idx+1];
+        document.getElementById('nav-next').innerHTML=
+          '<a href="'+n+'.html" style="'+lnkStyle+'">'+fmt(n)+' &#8594;</a>';
+      }
+    })
+    .catch(function(){});
+})();
+</script>
+
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#EEF2F7" style="background-color:#EEF2F7;">
+<tr><td align="center" style="padding:24px 12px;">
+
+<!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0"><tr><td><![endif]-->
+<table role="presentation" width="600" cellpadding="0" cellspacing="0"
+       style="max-width:600px;width:100%;background-color:#FFFFFF;border-radius:10px;" bgcolor="#FFFFFF">
+
+  <!-- HEADER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:28px 30px 22px 30px;text-align:center;border-radius:10px 10px 0 0;">
+      <p style="margin:0 0 6px;font-size:11px;color:#7EB1E8;letter-spacing:2px;font-family:Arial,sans-serif;text-transform:uppercase;">
+        BIS &#8209; MT &nbsp;&#183;&nbsp; 29/06/2026
+      </p>
+      <h1 style="margin:0;font-size:26px;font-weight:bold;color:#FFFFFF;font-family:Arial,sans-serif;line-height:1.2;">
+        &#129302; B&#7843;n Tin AI H&#7857;ng Ng&#224;y
+      </h1>
+      <p style="margin:8px 0 0;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        C&#7853;p nh&#7853;t c&#244;ng ngh&#7879; AI m&#7899;i nh&#7845;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- QUOTE -->
+  <tr>
+    <td bgcolor="#EBF4FF" style="background-color:#EBF4FF;padding:16px 30px;border-top:3px solid #0066CC;">
+      <p style="margin:0;font-size:14px;color:#1A3A5C;font-style:italic;line-height:1.6;font-family:Georgia,serif;">
+        &#10024;&nbsp;&ldquo;Gần mực thì đen, gần đèn thì rạng.&rdquo;
+      </p>
+      
+      <p style="margin:8px 0 0;font-size:12px;color:#888888;font-family:Arial,sans-serif;">&mdash;&nbsp;Tục ngữ Việt Nam</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#5A6A7A;font-style:italic;line-height:1.5;font-family:Arial,sans-serif;">&#128161;&nbsp;Môi trường và người xung quanh ảnh hưởng lớn đến nhân cách — hãy chọn bạn tốt, chọn môi trường tích cực.</p>
+    </td>
+  </tr>
+
+  <!-- SECTION LABEL -->
+  <tr>
+    <td bgcolor="#F5F7FA" style="background-color:#F5F7FA;padding:12px 30px;">
+      <p style="margin:0;font-size:11px;color:#999999;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128240;&nbsp;Tin t&#7913;c n&#7893;i b&#7853;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- ARTICLES -->
+  
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">1</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">AWS Mở Mã Nguồn Server MCP cho Bedrock AgentCore để Tối Ưu Phát Triển AI Agent</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;AWS Open-Sources an MCP Server for Bedrock AgentCore to Streamline AI Agent Development</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;MarkTechPost</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMixwFBVV95cUxNZDEzc3dIU3dtSUFCMzJVVU1HeXZSUkdqNmFqMDh5U2d4MEZjRzV6RE14YWdscDYxdWpXelhjUWtPaWZYS19uamp1bUd0Z3dBRWFqOGZ2anAtQ3VvQ0pOUXVvc2tjNHR5cDBGSVJlMkJJQ25CcnRMLWtfWWZVVUwxcXhxMk5qY25BSFJyUk14NGNDWk1BbXp0WUtNeTJqVG1uVDA3NTRHVmF6RWFTeDZ2LVNRTHJ3cTRLWkdtekZ6VjhyNXE3YVFJ?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Amazon Web Services (AWS) đã thực hiện một bước tiến quan trọng trong lĩnh vực phát triển trí tuệ nhân tạo (AI) bằng cách mở nguồn một máy chủ MCP (Nền tảng Đa đám mây) cho Bedrock AgentCore. Động thái này nhằm mục đích đơn giản hóa quá trình phát triển các tác nhân AI, là những thành phần quan trọng trong các ứng dụng như robot, xe tự hành và nhiều hơn nữa.
+
+Máy chủ MCP được thiết kế để hoạt động mượt mà với Bedrock AgentCore, một framework để xây dựng các tác nhân AI. Bằng cách mở nguồn máy chủ MCP, AWS cung cấp cho các nhà phát triển một nền tảng tiêu chuẩn hóa để xây dựng, triển khai và quản lý các tác nhân AI trên nhiều môi trường đám mây. Điều này có thể giúp giảm thiểu sự phức tạp và chi phí liên quan đến việc phát triển và triển khai các tác nhân AI.
+
+Việc mở nguồn máy chủ MCP dự kiến sẽ đẩy nhanh sự phát triển và áp dụng các tác nhân AI trên nhiều ngành công nghiệp. Nó cũng thể hiện cam kết của AWS trong việc làm cho việc phát triển AI trở nên dễ tiếp cận và hiệu quả hơn cho các nhà phát triển.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">2</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Tối Ưu Hóa Workflow GitHub với Generative AI Sử Dụng Amazon Bedrock và MCP | Amazon Web Services</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Streamline GitHub workflows with generative AI using Amazon Bedrock and MCP | Amazon Web Services</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Amazon Web Services (AWS)</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxPVE52YWtPN0dnYXY0TDE0bUZDWFhhbnNVZWZnVVo0M1lCX0FlOHpmU2VsdmVPWmtVZDBXbE94ZGh2WlluaFdJTGU0cGFlRV9VUFdBVlMyUGlzU3IweHMxbXFKSG1NMGI5VUVCU19hbnhoREdMa0hFbkVCcUVLNWRUenVEWDhOY1dCWW1FUUk1dGl1SG5YOG5uMjZNemlBRl9lWmkyUmZ6Q09rYk41elBqbDEyOS00Rkt3MTBDVWVYbw?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Amazon Web Services (AWS) đã giới thiệu một tích hợp mới cho phép người dùng tối ưu hóa các quy trình làm việc trên GitHub với sự giúp đỡ của AI tạo sinh. Tích hợp này kết hợp Amazon Bedrock và MCP (Nền tảng Canvas Mô hình), cho phép các nhà phát triển tận dụng sức mạnh của AI để tự động hóa và tối ưu hóa các quy trình làm việc trên GitHub của họ.
+
+Với tích hợp này, các nhà phát triển có thể sử dụng Amazon Bedrock để tạo và quản lý các model, và sau đó triển khai chúng lên MCP để thực thi. Điều này cho phép sử dụng AI tạo sinh để tự động hóa các nhiệm vụ như xem xét mã, phát hiện lỗi và thậm chí là tạo mã.
+
+Tích hợp này nhằm mục đích đơn giản hóa quá trình tích hợp AI vào các quy trình làm việc trên GitHub, giúp các nhà phát triển dễ dàng áp dụng và tận dụng các công nghệ AI mới nhất. Bằng cách tự động hóa các nhiệm vụ lặp đi lặp lại và cải thiện chất lượng mã, các nhà phát triển có thể tập trung vào các nhiệm vụ cấp cao hơn và giao tiếp dự án một cách hiệu quả hơn. Tích hợp này dự kiến sẽ nâng cao trải nghiệm của nhà phát triển trên GitHub và đẩy nhanh việc áp dụng AI trong phát triển phần mềm.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">3</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Agent Factory: Kết Nối Các Agent, App và Data với Các Open Standard Mới Như MCP và A2A</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Agent Factory: Connecting agents, apps, and data with new open standards like MCP and A2A</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Microsoft Azure</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMixAFBVV95cUxOekoxbVV4Vml2ZG5yVGVhRWl1cVFLM1ZrYUVNbWdFTnI1bV9CTmVFZ3FJNTRCeTctZ3ctTUtVOW9YbFBqVWZPTGpfQnk0WWt4T09OdG00X25yZVV3TE1XbGpJckdHWVBNV2l1bDdKbEZXb1dmc1RjR1JENWNkMVF6WHVrdlZDMThhVDN5WFFiQ01YakVlWUZDR0gtS0NTZGxrOGFUMzN4ZWlNZzF1WlFPMnMwT3BDcUd6TjJDSWJXMkpkMEh5?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Microsoft đã giới thiệu Agent Factory, một sáng kiến mới nhằm kết nối các tác nhân, ứng dụng và dữ liệu bằng cách sử dụng các tiêu chuẩn mở. Sáng kiến này tận dụng hai tiêu chuẩn mở mới: MCP (Microsoft Cloud Protocol) và A2A (Application to Application). Agent Factory cho phép giao tiếp và tích hợp liền mạch giữa các hệ thống, ứng dụng và dịch vụ khác nhau.
+
+Với Agent Factory, các nhà phát triển có thể xây dựng và triển khai các tác nhân có thể tương tác với các ứng dụng và nguồn dữ liệu khác nhau, bất kể công nghệ hoặc vị trí cơ bản của chúng. Điều này tạo điều kiện cho sự linh hoạt và khả năng tương tác cao hơn, cho phép các tổ chức tạo ra các quy trình làm việc hiệu quả và hiệu quả hơn.
+
+Việc giới thiệu các tiêu chuẩn MCP và A2A dự kiến sẽ đơn giản hóa quá trình tích hợp các hệ thống và ứng dụng khác nhau, giảm độ phức tạp và chi phí liên quan đến trao đổi và tích hợp dữ liệu. Bằng cách cung cấp một khuôn khổ chung cho giao tiếp và trao đổi dữ liệu, Agent Factory có tiềm năng mở ra những khả năng mới cho sự đổi mới và hợp tác trên các ngành và lĩnh vực khác nhau, đặc biệt là trong lĩnh vực AI, API, LLM, model, token, và framework.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">4</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Prompt Injection Khai Thác Các Lỗ Hổng Thiết Kế Lớn Nhất Của Enterprise AI Bằng Cách Nhắm Mục Tiêu Vào Agent, RAG Pipeline và Model Router</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Prompt injection is exploiting enterprise AI&#x27;s biggest design flaws by targeting agents, RAG pipelines and model routers</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;VentureBeat</span>&nbsp;&nbsp;&nbsp;<a href="https://venturebeat.com/security/prompt-injection-is-exploiting-enterprise-ais-biggest-design-flaws-by-targeting-agents-rag-pipelines-and-model-routers" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Các doanh nghiệp đã ngày càng áp dụng các mô hình ngôn ngữ lớn (LLM) cho các nhiệm vụ khác nhau, nhưng điều này cũng đã dẫn đến một mối đe dọa ngày càng tăng của các cuộc tấn công tiêm lệnh (prompt injection attacks). Những cuộc tấn công này khai thác các điểm yếu thiết kế của LLM, vốn gặp khó khăn trong việc phân biệt giữa các lệnh và dữ liệu. Kết quả là, các kẻ tấn công có thể thao túng LLM bằng cách tạo ra các lệnh độc hại, dẫn đến hệ thống và dữ liệu bị xâm phạm.
+
+Trong năm 2025 và 2026, một số báo cáo đã nhấn mạnh mức độ nghiêm trọng của các cuộc tấn công tiêm lệnh, với danh sách OWASP LLM Top 10 xếp nó là điểm yếu nghiêm trọng nhất. Báo cáo Đe dọa Toàn cầu của CrowdStrike đã ghi nhận hơn 90 tổ chức bị ảnh hưởng bởi các cuộc tấn công tiêm lệnh, được sử dụng để đánh cắp thông tin đăng nhập và tiền điện tử. Các sự kiện thực tế, chẳng hạn như một điểm yếu trong Slack AI và một cuộc khai thác zero-click chống lại Microsoft 365 Copilot, chứng minh tác động hoạt động của các cuộc tấn công tiêm lệnh.
+
+Bề mặt tấn công đã mở rộng để bao gồm kiến trúc đa tác nhân, đường ống tạo ra tăng cường bằng cách thu thập, bộ định tuyến mô hình và khả năng bộ nhớ dài hạn. Để giải quyết mối đe dọa này, các doanh nghiệp phải thay đổi tư duy và coi LLM như các trình thông dịch không đáng tin cậy. Điều này bao gồm việc hạn chế quyền của mô hình, phân đoạn nội dung không đáng tin cậy, giám sát việc gọi công cụ, xác thực nguồn gốc nội dung, tăng cường bảo mật cho bộ định tuyến mô hình và coi LLM như các thành phần không đáng tin cậy.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">5</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">HP Inc. Khởi Động Đối Tác Chiến Lược Frontier với OpenAI</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;HP Inc. launches Frontier strategic partnership with OpenAI</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;OpenAI Blog</span>&nbsp;&nbsp;&nbsp;<a href="https://openai.com/index/hp-frontier-partnership" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">HP Inc. đã công bố việc mở rộng quan hệ đối tác chiến lược với OpenAI, một công ty công nghệ trí tuệ nhân tạo (AI) hàng đầu. Đối tác này, được gọi là Frontier, nhằm tích hợp các khả năng AI trên nhiều khía cạnh của kinh doanh HP. Điều này bao gồm nâng cao trải nghiệm khách hàng, cải thiện phát triển phần mềm và tối ưu hóa hoạt động doanh nghiệp.
+
+Thông qua quan hệ đối tác này, HP Inc. tìm cách tận dụng chuyên môn của OpenAI trong lĩnh vực AI để thúc đẩy đổi mới và hiệu quả trên toàn bộ hoạt động. Việc triển khai các công nghệ AI dự kiến sẽ có tác động đáng kể đến nhiều lĩnh vực của công ty, cho phép nó cung cấp dịch vụ cá nhân hóa và phản hồi hơn cho khách hàng, tối ưu hóa quy trình phát triển phần mềm và cải thiện hiệu quả hoạt động tổng thể.
+
+Quan hệ đối tác mở rộng này là một bước phát triển quan trọng cho HP Inc., vì nó tìm cách tận dụng sức mạnh của AI để thúc đẩy tăng trưởng và cạnh tranh trên thị trường. Với các công nghệ AI tiên tiến của OpenAI, HP Inc. được đặt vào vị trí thuận lợi để đi đầu và mang lại giá trị vượt trội cho khách hàng và các bên liên quan của mình.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">6</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Chiến Dịch Toàn Cầu Giáng Đòn Kép Phá Vỡ &quot;Dây Chuyền Lắp Ráp&quot; Tội Phạm Mạng</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;One-two punch delivered in global operation disrupts cybercrime &quot;assembly line&quot;</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Ars Technica</span>&nbsp;&nbsp;&nbsp;<a href="https://arstechnica.com/security/2026/06/one-two-punch-delivered-in-global-operation-disrupts-cybercrime-assembly-line/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Trong một hoạt động lớn, các cơ quan chức năng quốc tế và các công ty công nghệ tư nhân đã phá vỡ một &quot;dây chuyền lắp ráp&quot; tội phạm mạng cho phép các hacker thu thập hàng triệu thông tin đăng nhập và đánh cắp hơn 47 triệu đô la. Được đặt tên là &quot;Operation Endgame&quot;, việc nhắm mục tiêu đồng thời vào hai công cụ tội phạm được sử dụng rộng rãi, Amadey và StealC, đã làm tê liệt nghiêm trọng mạng lưới phân phối malware. Amadey là một nền tảng malware-as-a-service được sử dụng để xâm phạm thiết bị và phân phối payload độc hại, trong khi StealC là một nền tảng infostealer-as-a-service thu thập thông tin nhạy cảm. Các công cụ, đã được sử dụng từ ít nhất năm 2018, phụ thuộc vào cùng một cơ sở hạ tầng cơ bản, cho phép Microsoft tìm kiếm một lệnh gián đoạn chung. Hoạt động này đã dẫn đến việc gián đoạn hơn 200 máy chủ command-and-control, cắt đứt quyền kiểm soát hơn 18.000 máy tính bị nhiễm và thu hồi 27 triệu thông tin đăng nhập bị đánh cắp. Các công ty khác, bao gồm ESET, Proofpoint và IBM X-Force, đã hỗ trợ trong hoạt động này, bao gồm các quốc gia như Canada, Đan Mạch, Đức, Hà Lan, Anh và Mỹ.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">7</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Cách Mạng Năng Lượng Tái Tạo: Common Energy Đang Định Hình Lại Bức Tranh Năng Lượng Toàn Cầu Như Thế Nào</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Renewable Energy Revolution: How Common Energy is Reshaping the Global Energy Landscape</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Dev.to AI</span>&nbsp;&nbsp;&nbsp;<a href="https://dev.to/yagyaraj_sharma_6cd410179/renewable-energy-revolution-how-common-energy-is-reshaping-the-global-energy-landscape-1fe3" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Thế giới đang ở một ngã rẽ quan trọng, với nhu cầu về các giải pháp năng lượng bền vững ngày càng trở nên cấp thiết do biến đổi khí hậu. Hệ thống năng lượng hiện tại, dựa trên nhiên liệu hóa thạch, đang gây hại cho môi trường và延续 sự bất bình đẳng xã hội và kinh tế. Để giải quyết vấn đề này, Common Energy đang dẫn đầu trong cuộc cách mạng năng lượng tái tạo. Tổ chức này có sứ mệnh thúc đẩy các dự án năng lượng mặt trời cộng đồng, thay thế nhiên liệu hóa thạch bằng năng lượng sạch địa phương, dẫn đến giảm lượng khí thải carbon và giảm chi phí năng lượng cho khách hàng. Tầm nhìn của Common Energy là tạo ra một thế giới nơi năng lượng là một lực lượng tốt, chứ không phải là nguồn ô nhiễm và phá hủy. Bằng cách trao quyền cho các cộng đồng kiểm soát nhu cầu năng lượng của mình, tổ chức này đang giảm sự phụ thuộc vào nhiên liệu hóa thạch và tạo ra một tương lai sạch hơn, bền vững hơn.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">8</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Sóng Nhiệt Gây Rối Loạn Não Bộ. Các Nhà Khoa Học Đang Tìm Hiểu Lý Do.</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Heat waves mess with your brain. Scientists are trying to figure out why.</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;MIT Tech Review</span>&nbsp;&nbsp;&nbsp;<a href="https://www.technologyreview.com/2026/06/26/1139760/heat-waves-mess-with-your-brain-scientists-are-trying-to-figure-out-why/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Một đợt sóng nhiệt khắc nghiệt đã ập đến Tây Âu, với Vương quốc Anh ghi nhận nhiệt độ tháng 6 cao nhất từ trước đến nay là 36,1 °C (97 °F). Nhiệt độ cực đoan không chỉ gây hại về thể chất mà còn ảnh hưởng đến sức khỏe tâm lý và chức năng não. Nghiên cứu cho thấy trẻ em và cá nhân mắc rối loạn sức khỏe tâm lý đặc biệt dễ bị tổn thương bởi tác động của sóng nhiệt. Các nghiên cứu đã chỉ ra rằng khi nhiệt độ tăng, mọi người trở nên dễ cáu gắt và bạo lực hơn, và những người mắc chứng rối loạn sức khỏe tâm lý dễ bị tổn thương bởi tác động vật lý của nhiệt. Một nghiên cứu gần đây cho thấy có sự tăng 9,7% trong số lượng nhập viện của những người mắc chứng rối loạn sức khỏe tâm lý trong thời kỳ sóng nhiệt. Các nhà nghiên cứu vẫn đang cố gắng hiểu các cơ chế đằng sau những tác động này, nhưng các nghiên cứu ban đầu cho thấy rằng việc tiếp xúc với nhiệt có thể làm suy giảm kỹ năng nhận thức, chẳng hạn như tập trung và chú ý, và những tác động này có thể kéo dài trong một thời gian dài. Cần có thêm nghiên cứu để xác định tác động lâu dài của sóng nhiệt đối với sức khỏe tâm lý và để phát triển các chiến lược bảo vệ dân số dễ bị tổn thương.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+
+  <!-- TIPS SECTION -->
+  
+  <tr>
+    <td bgcolor="#FFFBEB" style="background-color:#FFFBEB;padding:20px 30px;border-top:3px solid #D97706;">
+      <p style="margin:0 0 12px;font-size:11px;color:#D97706;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#9889;&nbsp;Tips &amp; Tricks cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tối ưu hóa mã với GitHub Copilot</strong><br><strong>Vấn đề:</strong> Mã nguồn chưa được tối ưu hóa khiến hiệu suất thấp.<br><strong>Cách làm:</strong> Sử dụng GitHub Copilot để đề xuất cải tiến, nhập <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">/<em> TODO: optimize </em>/</code> và Copilot sẽ gợi ý cải thiện mã.<br><strong>Đánh giá:</strong> Hiệu quả cao trong việc tối ưu hóa mã, nên dùng khi muốn cải thiện hiệu suất.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tự động hoàn thành mã với Aider</strong><br><strong>Vấn đề:</strong> Nhập mã nguồn tốn nhiều thời gian.<br><strong>Cách làm:</strong> Sử dụng Aider để tự động hoàn thành mã, nhập <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">print(</code> và Aider sẽ đề xuất hoàn thành câu lệnh.<br><strong>Đánh giá:</strong> Tiết kiệm thời gian, nên dùng khi cần nhập mã nhanh chóng.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Debug mã với Continue.dev</strong><br><strong>Vấn đề:</strong> Debug mã nguồn tốn nhiều công sức.<br><strong>Cách làm:</strong> Sử dụng Continue.dev để phân tích và debug mã, nhập <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">console.log(</code> và Continue.dev sẽ giúp tìm ra vấn đề.<br><strong>Đánh giá:</strong> Hiệu quả trong việc debug, nên dùng khi cần tìm ra nguyên nhân lỗi.</p>
+    </td>
+  </tr>
+
+  <!-- LESSON SECTION -->
+  
+  <tr>
+    <td bgcolor="#F0FFF4" style="background-color:#F0FFF4;padding:20px 30px;border-top:3px solid #2E7D32;">
+      <p style="margin:0 0 12px;font-size:11px;color:#2E7D32;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128218;&nbsp;B&#224;i h&#7885;c AI h&#244;m nay cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;">1. <strong>Tối ưu chi phí &amp; hiệu năng LLM</strong><br>2. Để tối ưu hóa chi phí và hiệu năng của mô hình ngôn ngữ lớn (LLM), các nhà phát triển cần biết cách tinh chỉnh và tối ưu hóa mô hình cho từng trường hợp sử dụng cụ thể. Điều này giúp giảm thiểu chi phí tính toán và tăng tốc độ xử lý. Việc tối ưu hóa hiệu năng LLM cũng giúp cải thiện hiệu suất của ứng dụng.<br>3. Ví dụ, chúng ta có thể sử dụng kỹ thuật fine-tuning và LoRA (Low-Rank Adaptation) để tinh chỉnh mô hình LLM cho từng nhiệm vụ cụ thể, giúp giảm thiểu số lượng tham số cần đào tạo và tăng tốc độ xử lý.<br>4. 💡 Tip hoặc bước tiếp theo: Các nhà phát triển nên bắt đầu bằng cách đánh giá hiệu suất của mô hình LLM hiện tại và xác định các điểm cần cải thiện, sau đó áp dụng các kỹ thuật tinh chỉnh và tối ưu hóa để đạt được hiệu suất tốt nhất.</p>
+    </td>
+  </tr>
+
+  <!-- FOOTER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:20px 30px;text-align:center;border-radius:0 0 10px 10px;">
+      <p style="margin:0 0 4px;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        &#128161;&nbsp;Lu&#244;n &#273;i &#273;&#7847;u trong th&#7871; gi&#7899;i AI!&nbsp;&#183;&nbsp;Stay ahead in AI!
+      </p>
+      <p style="margin:6px 0 0;font-size:11px;color:#4A7AAB;font-family:Arial,sans-serif;">
+        Ngu&#7891;n: Google News · Groq AI
+      </p>
+    </td>
+  </tr>
+
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+
+</td></tr>
+</table>
+</body>
+</html>

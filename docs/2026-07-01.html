@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--[if mso]>
+<noscript><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings></xml></noscript>
+<![endif]-->
+<style>
+/* ── Responsive overrides for web (email HTML uses fixed 600px tables) ── */
+@media screen and (max-width:620px) {
+  table[width="600"] { width:100% !important; }
+  td { word-break:break-word; overflow-wrap:break-word; }
+  /* Reduce generous email padding on small screens */
+  td[style*="padding:28px 30px"],
+  td[style*="padding:24px 30px"],
+  td[style*="padding:22px 30px"],
+  td[style*="padding:20px 30px"],
+  td[style*="padding:16px 30px"],
+  td[style*="padding:12px 30px"] { padding-left:14px !important; padding-right:14px !important; }
+  /* Code blocks: scroll horizontally instead of breaking layout */
+  pre { overflow-x:auto !important; max-width:calc(100vw - 32px) !important; box-sizing:border-box; }
+  /* Shrink large heading text slightly */
+  h1[style*="26px"] { font-size:20px !important; }
+}
+/* ── Print: hide nav bar ── */
+@media print {
+  #web-nav { display:none !important; }
+  body { background:#fff !important; }
+}
+</style>
+</head>
+<body style="margin:0;padding:0;background-color:#EEF2F7;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+<div id="web-nav" style="background:#001a4d;padding:8px 16px;font-family:Arial,sans-serif;font-size:13px;position:sticky;top:0;z-index:999;border-bottom:2px solid #0066CC;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
+  <span id="nav-prev" style="color:#4A6A8A;">&#8592;</span>
+  <a href="all.html" style="color:#FFD700;text-decoration:none;font-weight:bold;">&#128240; T&#7845;t c&#7843; b&#7843;n tin</a>
+  <span style="color:#FFFFFF;">01/07/2026</span>
+  <span id="nav-next" style="color:#4A6A8A;">&#8594;</span>
+  <a href="2026-07-01.pdf" download="2026-07-01.pdf" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128196; T&#7843;i PDF</a>
+  <button onclick="sharePage()" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128279; Chia s&#7867;</button>
+</div>
+<script>
+function sharePage(){
+  var title='Bản tin AI BIS-MT – 01/07/2026';
+  if(navigator.share){navigator.share({title:title,url:location.href});}
+  else{navigator.clipboard.writeText(location.href).then(function(){
+    alert('Đã sao chép link!');
+  });}
+}
+(function(){
+  var m=location.pathname.match(/(\d{4}-\d{2}-\d{2})\.html/);
+  if(!m)return;
+  var slug=m[1];
+  function fmt(s){var p=s.split('-');return p[2]+'/'+p[1];}
+  var lnkStyle='color:#90C4F0;text-decoration:none;';
+  fetch('dates.json?_='+Date.now())
+    .then(function(r){return r.json();})
+    .then(function(dates){
+      var idx=dates.indexOf(slug);
+      if(idx>0){
+        var p=dates[idx-1];
+        document.getElementById('nav-prev').innerHTML=
+          '<a href="'+p+'.html" style="'+lnkStyle+'">&#8592; '+fmt(p)+'</a>';
+      }
+      if(idx>=0&&idx<dates.length-1){
+        var n=dates[idx+1];
+        document.getElementById('nav-next').innerHTML=
+          '<a href="'+n+'.html" style="'+lnkStyle+'">'+fmt(n)+' &#8594;</a>';
+      }
+    })
+    .catch(function(){});
+})();
+</script>
+
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#EEF2F7" style="background-color:#EEF2F7;">
+<tr><td align="center" style="padding:24px 12px;">
+
+<!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0"><tr><td><![endif]-->
+<table role="presentation" width="600" cellpadding="0" cellspacing="0"
+       style="max-width:600px;width:100%;background-color:#FFFFFF;border-radius:10px;" bgcolor="#FFFFFF">
+
+  <!-- HEADER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:28px 30px 22px 30px;text-align:center;border-radius:10px 10px 0 0;">
+      <p style="margin:0 0 6px;font-size:11px;color:#7EB1E8;letter-spacing:2px;font-family:Arial,sans-serif;text-transform:uppercase;">
+        BIS &#8209; MT &nbsp;&#183;&nbsp; 01/07/2026
+      </p>
+      <h1 style="margin:0;font-size:26px;font-weight:bold;color:#FFFFFF;font-family:Arial,sans-serif;line-height:1.2;">
+        &#129302; B&#7843;n Tin AI H&#7857;ng Ng&#224;y
+      </h1>
+      <p style="margin:8px 0 0;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        C&#7853;p nh&#7853;t c&#244;ng ngh&#7879; AI m&#7899;i nh&#7845;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- QUOTE -->
+  <tr>
+    <td bgcolor="#EBF4FF" style="background-color:#EBF4FF;padding:16px 30px;border-top:3px solid #0066CC;">
+      <p style="margin:0;font-size:14px;color:#1A3A5C;font-style:italic;line-height:1.6;font-family:Georgia,serif;">
+        &#10024;&nbsp;&ldquo;Một mình làm chẳng nên non, ba người chụm lại thành hòn núi cao.&rdquo;
+      </p>
+      
+      <p style="margin:8px 0 0;font-size:12px;color:#888888;font-family:Arial,sans-serif;">&mdash;&nbsp;Tục ngữ Việt Nam</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#5A6A7A;font-style:italic;line-height:1.5;font-family:Arial,sans-serif;">&#128161;&nbsp;Sức mạnh của tập thể luôn lớn hơn cá nhân — hợp tác là chìa khóa để đạt những mục tiêu lớn.</p>
+    </td>
+  </tr>
+
+  <!-- SECTION LABEL -->
+  <tr>
+    <td bgcolor="#F5F7FA" style="background-color:#F5F7FA;padding:12px 30px;">
+      <p style="margin:0;font-size:11px;color:#999999;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128240;&nbsp;Tin t&#7913;c n&#7893;i b&#7853;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- ARTICLES -->
+  
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">1</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Claude Code đấu với Cursor 2026: 80.8% SWE-bench, 1M Context [Đã kiểm chứng]</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Claude Code vs Cursor 2026: 80.8% SWE-bench, 1M Context [Tested]</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;tech-insider.org</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMiZEFVX3lxTE95NG1FWjBEODdnR0pEV21ldXBxRjlTNTJqVDRPUzUtVUZnRGxFMnNHM2pvb1lfN2M2S3JXaWRWSVVpYjEzZGlLLUpjTEN5b2UxQnVUQzNZVzZfcWxRLTJrc1BMdHA?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Một thử nghiệm benchmark gần đây đã so sánh Claude Code với Cursor 2026, với kết quả đáng chú ý. Thử nghiệm, dường như tập trung vào SWE-bench, một thước đo hiệu suất của mô hình ngôn ngữ, đã cho kết quả điểm số 80,8% cho Claude Code. Ngoài ra, thử nghiệm đã sử dụng một ngữ cảnh 1 triệu, cung cấp một đánh giá toàn diện về khả năng của mô hình.
+
+SWE-bench là một chuẩn mực được công nhận rộng rãi để đánh giá hiệu suất của mô hình ngôn ngữ, khiến thử nghiệm này trở thành một chỉ số quan trọng về khả năng của Claude Code. Điểm số 80,8% cho thấy Claude Code đã thể hiện hiệu suất mạnh mẽ trong lĩnh vực này. Việc sử dụng ngữ cảnh 1 triệu thêm độ sâu hơn vào thử nghiệm, vì nó cho phép đánh giá tinh tế hơn về khả năng hiểu và tạo ra của mô hình.
+
+Mặc dù các chi tiết của thử nghiệm và phương pháp luận không được cung cấp, kết quả mang lại một cái nhìn về hiệu suất của Claude Code so với Cursor 2026. Phân tích và thử nghiệm thêm sẽ cần thiết để hiểu đầy đủ ý nghĩa của những kết quả này.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">2</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Tổng quan về Agent Frameworks: Lựa chọn Runtime phù hợp cho Vận hành AI Doanh nghiệp</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;State of Agent Frameworks: Choosing the Right Runtime for Enterprise AI Execution</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Medium</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxOdXdHT2dlWEx6TUh4VW5nQ0hCZWdqVjN4dEhkWXdhQ3ZhT2lPZUtmUlRVSG5zVTBQOWQ3MUIxZjdPZUl6ZmpsbXFWWTNQN3g4M0xfcWJhUDY1aU0tcEFLeDNZYXFmTDIzZmRLNG5VODcyem16VEFuUXRSWEFUSmE3WmFZTzhDbDFRaW1IcFp5QjBqeHpBb0dJM18wbjl0ZVVSNU8yM1Jwb2E3WkxyenNJNk0tTHRUWC1IRngwbEJycUxPTGc?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Bài viết &quot;Trạng thái của các Framework Trình điều khiển: Chọn Thời gian chạy Đúng cho Thực thi AI Doanh nghiệp&quot; khám phá cảnh quan hiện tại của các framework trình điều khiển trong bối cảnh thực thi AI doanh nghiệp. Các framework trình điều khiển là các nền tảng phần mềm cho phép phát triển và triển khai các model trí tuệ nhân tạo (AI) và học máy (ML). Bài viết nhấn mạnh tầm quan trọng của việc chọn thời gian chạy đúng cho thực thi AI doanh nghiệp, vì nó có thể ảnh hưởng đáng kể đến hiệu suất, khả năng mở rộng và độ tin cậy của các ứng dụng AI.
+
+Bài viết thảo luận về các framework trình điều khiển khác nhau, bao gồm Rasa, Dialogflow và Botpress, là những lựa chọn phổ biến để xây dựng các ứng dụng AI trò chuyện. Nó cũng đề cập đến tầm quan trọng của việc xem xét các yếu tố như dễ sử dụng, tùy chỉnh và tích hợp với các hệ thống hiện có khi chọn một framework trình điều khiển. Hơn nữa, bài viết nhấn mạnh nhu cầu về một môi trường thời gian chạy mạnh mẽ có thể xử lý các phức tạp của thực thi AI doanh nghiệp, bao gồm quản lý dữ liệu, bảo mật và khả năng mở rộng. Bằng cách hiểu trạng thái hiện tại của các framework trình điều khiển, các tổ chức có thể đưa ra quyết định thông minh về việc chọn thời gian chạy nào cho các sáng kiến AI của họ.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">3</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Vai trò thầm lặng của Toán học và Algorithms trong MCP &amp; Multi-Agent Systems</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;The Silent Role of Mathematics and Algorithms in MCP &amp; Multi-Agent Systems</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Cisco Blogs</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxOME9kMDczanJtZHZrenl2ZjctR2ppUnFKWGhQYmZoQmVBbUhZNlFvbmtpNjJoZXRUNV9GVjNQRWpFQXNTN0pSLXM3U2dKUWduVklKTVBVU205ZG4tS19ka0lKZGpWSzJGOEdzdnBTTGtDOHJuYjlNMEppZXE3Z1V6TkZTWGFCdzl0QWdSc0huOEdjMHJ0OWRXbXVGWVpmeDFTT0U5T2JGdVk0QQ?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Bài viết nhấn mạnh vai trò quan trọng nhưng thường bị bỏ qua của toán học và thuật toán trong Computation nhiều bên (MCP) và Hệ thống nhiều tác nhân. MCP cho phép tính toán bảo mật trên dữ liệu riêng tư mà không tiết lộ đầu vào cá nhân, trong khi Hệ thống nhiều tác nhân giúp thúc đẩy sự hợp tác và ra quyết định giữa các thực thể tự chủ. Toán học và thuật toán đóng vai trò im lặng nhưng quan trọng trong cả hai lĩnh vực.
+
+Trong MCP, các khái niệm toán học như mã hóa đồng hình và giao thức tính toán nhiều bên bảo mật đảm bảo tính toàn vẹn và bảo mật của dữ liệu. Các thuật toán như Chia sẻ Bí mật Shamir và Giao thức Yao cho phép tính toán bảo mật trên dữ liệu riêng tư, cho phép các bên hợp tác mà không ảnh hưởng đến đầu vào cá nhân của họ.
+
+Trong Hệ thống nhiều tác nhân, các mô hình toán học và thuật toán giúp thúc đẩy sự phối hợp và ra quyết định của các tác nhân tự chủ. Các kỹ thuật như lý thuyết trò chơi và lý thuyết đồ thị giúp các tác nhân điều hướng các kịch bản phức tạp và đưa ra quyết định tối ưu. Bài viết nhấn mạnh tầm quan trọng của toán học và thuật toán trong các lĩnh vực này, thường bị bỏ qua để ủng hộ những tiến bộ công nghệ rõ ràng hơn. Bằng cách nhận ra tầm quan trọng của chúng, các nhà nghiên cứu và nhà phát triển có thể tạo ra các hệ thống mạnh mẽ và bảo mật hơn.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">4</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Agentic Batch Changes hiện đã có bản public beta</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Agentic Batch Changes is now in public beta</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Sourcegraph Blog</span>&nbsp;&nbsp;&nbsp;<a href="http://localhost:5174/blog/agentic-batch-changes-public-beta" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Agentic Batch Changes, một công cụ được hỗ trợ bởi AI, đã bước vào giai đoạn beta công khai. Công nghệ này sử dụng một AI agent để quản lý việc di chuyển mã trên quy mô lớn trên nhiều kho lưu trữ. Trình đại lý này có khả năng xác định và thực hiện các thay đổi cần thiết, đảm bảo rằng tất cả các yêu cầu kéo (PRs) trở nên có thể hợp nhất. Quá trình này có thể được áp dụng cho hàng trăm kho lưu trữ, giúp đơn giản hóa quá trình di chuyển mã.
+
+Mục tiêu chính của Agentic Batch Changes là đơn giản hóa và tự động hóa nhiệm vụ di chuyển mã thường phức tạp và tốn thời gian. Bằng cách tận dụng AI, công cụ này nhằm giảm thiểu nỗ lực thủ công cần thiết để cập nhật cơ sở mã, giúp cho các nhà phát triển và nhóm làm việc hiệu quả hơn. Với công cụ hiện đang trong giai đoạn beta công khai, các nhà phát triển có thể thử nghiệm và trải nghiệm các khả năng của Agentic Batch Changes, cung cấp phản hồi quý giá để cải thiện thêm công nghệ.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">5</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Chính quyền Trump gỡ bỏ hạn chế xuất khẩu các AI Model Mythos và Fable của Anthropic</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;The Trump Administration Is Lifting Its Export Controls on Anthropic’s Mythos and Fable AI Models</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Wired</span>&nbsp;&nbsp;&nbsp;<a href="https://www.wired.com/story/trump-administration-lifts-export-controls-on-anthropics-mythos-and-fable-ai-models/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Chính quyền Trump đã dỡ bỏ các hạn chế xuất khẩu đối với các mô hình AI mạnh mẽ của Anthropic, bao gồm Mythos 5 và Fable 5, sau khi công ty này đạt được thỏa thuận với Bộ Thương mại. Một bức thư từ Bộ trưởng Thương mại Howard Lutnick gửi đến đồng sáng lập Anthropic Tom Brown xác nhận rằng không cần giấy phép để xuất khẩu hoặc chuyển giao các mô hình này. Quyết định này được đưa ra sau khi Anthropic đồng ý tăng cường các biện pháp bảo vệ để ngăn chặn người dùng vượt qua các hạn chế an toàn, đặc biệt là những hạn chế liên quan đến an ninh mạng. Công ty đã cam kết chủ động phát hiện và giải quyết các rủi ro bảo mật, hợp tác với chính phủ Mỹ về các giao thức và tiêu chuẩn, và giảm số lượng &quot;jailbreaks&quot; có thể mở khóa các khả năng mạnh mẽ hơn của mô hình. Động thái này đánh dấu một sự thay đổi trong cách tiếp cận của Anthropic để giải quyết các lo ngại về bảo mật của chính quyền, những lo ngại mà công ty trước đây đã phản đối. Thỏa thuận này được thương lượng bởi Lutnick và giám đốc an ninh mạng quốc gia Sean Cairncross, và được coi là một bước phát triển quan trọng trong nỗ lực của công ty để đưa các mô hình AI của mình trở lại trực tuyến.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">6</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">ScarfBench: Benchmarking AI Agents cho việc di chuyển Enterprise Java Framework</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;ScarfBench: Benchmarking AI Agents for Enterprise Java Framework Migration</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Hugging Face Blog</span>&nbsp;&nbsp;&nbsp;<a href="https://huggingface.co/blog/ibm-research/scarfbench" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Việc hiện đại hóa các ứng dụng doanh nghiệp là một quá trình phức tạp và tốn kém, với các đội di chuyển ứng dụng qua các framework để cải thiện khả năng bảo trì và truy cập vào các khả năng hiện đại. Những tiến bộ gần đây trong các tác nhân mã hóa đã tạo ra sự phấn khích xung quanh việc hiện đại hóa được hỗ trợ bởi AI, nhưng một câu hỏi quan trọng vẫn còn: liệu các tác nhân AI có thể hiện đại hóa đáng tin cậy các ứng dụng doanh nghiệp thực tế hay không? Để giải quyết khoảng trống này, các nhà nghiên cứu đã giới thiệu ScarfBench, một điểm chuẩn mở để đánh giá các tác nhân AI trên các nhiệm vụ di chuyển framework trong Enterprise Java. ScarfBench tập trung vào việc di chuyển qua ba hệ sinh thái Java chính: Spring, Jakarta EE và Quarkus. Không giống như các điểm chuẩn truyền thống, ScarfBench đánh giá liệu các ứng dụng đã di chuyển có thực sự được xây dựng, triển khai và bảo tồn hành vi hay không, cung cấp một biện pháp thực tế hơn về chất lượng hiện đại hóa.
+
+Các nhà nghiên cứu đã đánh giá một số tác nhân mã hóa tiên tiến nhất trên ScarfBench và phát hiện ra rằng việc di chuyển framework vẫn còn khó khăn, với tỷ lệ thành công khác nhau đáng kể trên các cặp framework và các lần di chuyển toàn ứng dụng. Sự thành công khi biên dịch nhất quán vượt qua sự thành công khi triển khai, điều này lại vượt qua sự thành công về hành vi, nhấn mạnh tầm quan trọng của việc đánh giá không chỉ việc chuyển đổi mã mà còn cả các quá trình xây dựng và triển khai. Nghiên cứu cũng gợi ý rằng việc tự đánh giá của tác nhân không nên được coi là một tín hiệu đáng tin cậy về việc hoàn thành di chuyển, và rằng di chuyển là một quá trình giải quyết sự phụ thuộc lặp lại chứ không phải là một chuyển đổi nguồn-thành-nguồn đơn giản.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">7</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Function Calling từ Angular — Structured JSON từ LLMs (2026)</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Function Calling from Angular — Structured JSON from LLMs (2026)</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Dev.to AI</span>&nbsp;&nbsp;&nbsp;<a href="https://dev.to/alkademy/function-calling-from-angular-structured-json-from-llms-2026-b2a" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Một hướng dẫn mới đã được xuất bản trên DEV Community, với tiêu đề &quot;Function Calling from Angular — Structured JSON từ LLMs (2026)&quot;. Hướng dẫn này trình diễn cách sử dụng Angular để gọi hàm đối với backend Spring AI, cụ thể là sử dụng phương pháp @Tool. Hướng dẫn cũng bao gồm việc sử dụng khối @if trong mẫu để hiển thị thẻ giá khi trợ lý trả về JSON. Ngoài ra, hướng dẫn cũng đề cập đến các chủ đề liên quan như xác thực biểu mẫu phản ứng cho xác thực đầu vào trước khi gửi lời nhắc. Mã code đầy đủ cho hướng dẫn có sẵn trên GitHub. Hướng dẫn này là một phần của loạt hướng dẫn AI Developer Tutorials và được thiết kế để giúp các developer nhanh chóng trả lời các câu hỏi thường gặp hoặc lưu trữ các đoạn code để tái sử dụng.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">8</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Morgan Stanley giảm một nửa công việc đối chiếu rủi ro nhất nhờ giảm tính tự chủ của các agent</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Morgan Stanley cut its riskiest reconciliation job in half — by making its agents less autonomous</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;VentureBeat</span>&nbsp;&nbsp;&nbsp;<a href="https://venturebeat.com/orchestration/morgan-stanley-cut-its-riskiest-reconciliation-job-in-half-by-making-its-agents-less-autonomous" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Morgan Stanley đã giảm thành công thời gian dành cho việc đối chiếu lợi nhuận và lỗ (P&amp;L) xuống một nửa, từ sáu giờ xuống hai đến ba giờ, bằng cách triển khai một hệ thống sản xuất nội bộ có tên là FIXR. Hệ thống này, bao gồm nhiều tác nhân làm việc cùng nhau, phân tích &quot;lỗi&quot; trong dữ liệu và đề xuất giải pháp dựa trên các quy tắc đã học. Tuy nhiên, không giống như nhiều triển khai AI, FIXR không dựa vào tính tự chủ, mà dựa trên vòng phản hồi giữa con người và tác nhân, nơi con người xem xét, phê duyệt hoặc sửa đổi mọi khuyến nghị do hệ thống đưa ra. Cách tiếp cận này cho phép hệ thống học hỏi từ người kiểm soát và cải thiện theo thời gian, đồng thời vẫn duy trì trách nhiệm giải trình của con người.
+
+Hệ thống được thiết kế để xác định và lặp lại, với trọng tâm là quy trình trước và khả năng mở rộng. Bằng cách thiết lập quy trình trước và sau đó thêm AI, Morgan Stanley đã có thể xác định các lĩnh vực mà tự động hóa sẽ mang lại lợi ích nhất và biến cơ hội thành hiện thực. Kinh nghiệm của công ty phản ánh các mẫu được thấy trong các triển khai AI doanh nghiệp, nơi các phương pháp quy trình trước và mua-và-kết hợp có thể bền vững hơn so với việc theo đuổi các model tùy chỉnh.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+
+  <!-- TIPS SECTION -->
+  
+  <tr>
+    <td bgcolor="#FFFBEB" style="background-color:#FFFBEB;padding:20px 30px;border-top:3px solid #D97706;">
+      <p style="margin:0 0 12px;font-size:11px;color:#D97706;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#9889;&nbsp;Tips &amp; Tricks cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Kết nối File System</strong><br><strong>Vấn đề:</strong> Cần truy cập file system trong Claude Desktop.<br><strong>Cách làm:</strong> Sử dụng MCP để kết nối với file system, cho phép đọc và ghi file. Ví dụ: <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;"> Claude, tạo file mới trong thư mục hiện tại</code>.<br><strong>Đánh giá:</strong> Hiệu quả cao, nên dùng khi cần tương tác với file system.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tích hợp Git</strong><br><strong>Vấn đề:</strong> Cần tích hợp Git vào Claude Code.<br><strong>Cách làm:</strong> Sử dụng MCP để kết nối với Git, cho phép thực hiện lệnh Git. Ví dụ: <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">git clone https://github.com/user/repo</code>.<br><strong>Đánh giá:</strong> Nên dùng khi cần quản lý mã nguồn.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Truy cập Database</strong><br><strong>Vấn đề:</strong> Cần truy cập database trong Cursor.<br><strong>Cách làm:</strong> Sử dụng MCP để kết nối với database, cho phép thực hiện lệnh SQL. Ví dụ: <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">SELECT * FROM table</code>.<br><strong>Đánh giá:</strong> Hiệu quả cao, nên dùng khi cần tương tác với database.</p>
+    </td>
+  </tr>
+
+  <!-- LESSON SECTION -->
+  
+  <tr>
+    <td bgcolor="#F0FFF4" style="background-color:#F0FFF4;padding:20px 30px;border-top:3px solid #2E7D32;">
+      <p style="margin:0 0 12px;font-size:11px;color:#2E7D32;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128218;&nbsp;B&#224;i h&#7885;c AI h&#244;m nay cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;">1. <strong>Tối ưu chi phí &amp; hiệu năng LLM</strong><br>2. Trong quá trình phát triển ứng dụng AI, việc tối ưu hóa chi phí và hiệu năng của mô hình ngôn ngữ lớn (LLM) là rất quan trọng. Điều này giúp giảm thiểu chi phí vận hành và cải thiện hiệu suất của ứng dụng. Dev cần biết cách tối ưu hóa LLM để đảm bảo ứng dụng của họ hoạt động hiệu quả.<br>3. Ví dụ, việc sử dụng kỹ thuật fine-tuning và LoRA (Low-Rank Adaptation) có thể giúp giảm kích thước mô hình và cải thiện hiệu suất. Code snippet minh họa: <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">model = LLM.from_pretrained(&#x27;base_model&#x27;); model.fine_tune(...)</code>.<br>4. 💡 Tip hoặc bước tiếp theo: Để tối ưu hóa LLM, dev nên thử nghiệm với các kỹ thuật khác nhau như quantization, pruning và knowledge distillation để tìm ra phương pháp phù hợp nhất cho ứng dụng của mình.</p>
+    </td>
+  </tr>
+
+  <!-- FOOTER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:20px 30px;text-align:center;border-radius:0 0 10px 10px;">
+      <p style="margin:0 0 4px;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        &#128161;&nbsp;Lu&#244;n &#273;i &#273;&#7847;u trong th&#7871; gi&#7899;i AI!&nbsp;&#183;&nbsp;Stay ahead in AI!
+      </p>
+      <p style="margin:6px 0 0;font-size:11px;color:#4A7AAB;font-family:Arial,sans-serif;">
+        Ngu&#7891;n: Google News · Groq AI
+      </p>
+    </td>
+  </tr>
+
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+
+</td></tr>
+</table>
+</body>
+</html>

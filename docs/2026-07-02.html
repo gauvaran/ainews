@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--[if mso]>
+<noscript><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings></xml></noscript>
+<![endif]-->
+<style>
+/* ── Responsive overrides for web (email HTML uses fixed 600px tables) ── */
+@media screen and (max-width:620px) {
+  table[width="600"] { width:100% !important; }
+  td { word-break:break-word; overflow-wrap:break-word; }
+  /* Reduce generous email padding on small screens */
+  td[style*="padding:28px 30px"],
+  td[style*="padding:24px 30px"],
+  td[style*="padding:22px 30px"],
+  td[style*="padding:20px 30px"],
+  td[style*="padding:16px 30px"],
+  td[style*="padding:12px 30px"] { padding-left:14px !important; padding-right:14px !important; }
+  /* Code blocks: scroll horizontally instead of breaking layout */
+  pre { overflow-x:auto !important; max-width:calc(100vw - 32px) !important; box-sizing:border-box; }
+  /* Shrink large heading text slightly */
+  h1[style*="26px"] { font-size:20px !important; }
+}
+/* ── Print: hide nav bar ── */
+@media print {
+  #web-nav { display:none !important; }
+  body { background:#fff !important; }
+}
+</style>
+</head>
+<body style="margin:0;padding:0;background-color:#EEF2F7;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+<div id="web-nav" style="background:#001a4d;padding:8px 16px;font-family:Arial,sans-serif;font-size:13px;position:sticky;top:0;z-index:999;border-bottom:2px solid #0066CC;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
+  <span id="nav-prev" style="color:#4A6A8A;">&#8592;</span>
+  <a href="all.html" style="color:#FFD700;text-decoration:none;font-weight:bold;">&#128240; T&#7845;t c&#7843; b&#7843;n tin</a>
+  <span style="color:#FFFFFF;">02/07/2026</span>
+  <span id="nav-next" style="color:#4A6A8A;">&#8594;</span>
+  <a href="2026-07-02.pdf" download="2026-07-02.pdf" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128196; T&#7843;i PDF</a>
+  <button onclick="sharePage()" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128279; Chia s&#7867;</button>
+</div>
+<script>
+function sharePage(){
+  var title='Bản tin AI BIS-MT – 02/07/2026';
+  if(navigator.share){navigator.share({title:title,url:location.href});}
+  else{navigator.clipboard.writeText(location.href).then(function(){
+    alert('Đã sao chép link!');
+  });}
+}
+(function(){
+  var m=location.pathname.match(/(\d{4}-\d{2}-\d{2})\.html/);
+  if(!m)return;
+  var slug=m[1];
+  function fmt(s){var p=s.split('-');return p[2]+'/'+p[1];}
+  var lnkStyle='color:#90C4F0;text-decoration:none;';
+  fetch('dates.json?_='+Date.now())
+    .then(function(r){return r.json();})
+    .then(function(dates){
+      var idx=dates.indexOf(slug);
+      if(idx>0){
+        var p=dates[idx-1];
+        document.getElementById('nav-prev').innerHTML=
+          '<a href="'+p+'.html" style="'+lnkStyle+'">&#8592; '+fmt(p)+'</a>';
+      }
+      if(idx>=0&&idx<dates.length-1){
+        var n=dates[idx+1];
+        document.getElementById('nav-next').innerHTML=
+          '<a href="'+n+'.html" style="'+lnkStyle+'">'+fmt(n)+' &#8594;</a>';
+      }
+    })
+    .catch(function(){});
+})();
+</script>
+
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#EEF2F7" style="background-color:#EEF2F7;">
+<tr><td align="center" style="padding:24px 12px;">
+
+<!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0"><tr><td><![endif]-->
+<table role="presentation" width="600" cellpadding="0" cellspacing="0"
+       style="max-width:600px;width:100%;background-color:#FFFFFF;border-radius:10px;" bgcolor="#FFFFFF">
+
+  <!-- HEADER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:28px 30px 22px 30px;text-align:center;border-radius:10px 10px 0 0;">
+      <p style="margin:0 0 6px;font-size:11px;color:#7EB1E8;letter-spacing:2px;font-family:Arial,sans-serif;text-transform:uppercase;">
+        BIS &#8209; MT &nbsp;&#183;&nbsp; 02/07/2026
+      </p>
+      <h1 style="margin:0;font-size:26px;font-weight:bold;color:#FFFFFF;font-family:Arial,sans-serif;line-height:1.2;">
+        &#129302; B&#7843;n Tin AI H&#7857;ng Ng&#224;y
+      </h1>
+      <p style="margin:8px 0 0;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        C&#7853;p nh&#7853;t c&#244;ng ngh&#7879; AI m&#7899;i nh&#7845;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- QUOTE -->
+  <tr>
+    <td bgcolor="#EBF4FF" style="background-color:#EBF4FF;padding:16px 30px;border-top:3px solid #0066CC;">
+      <p style="margin:0;font-size:14px;color:#1A3A5C;font-style:italic;line-height:1.6;font-family:Georgia,serif;">
+        &#10024;&nbsp;&ldquo;Lửa thử vàng, gian nan thử sức.&rdquo;
+      </p>
+      
+      <p style="margin:8px 0 0;font-size:12px;color:#888888;font-family:Arial,sans-serif;">&mdash;&nbsp;Tục ngữ Việt Nam</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#5A6A7A;font-style:italic;line-height:1.5;font-family:Arial,sans-serif;">&#128161;&nbsp;Khó khăn là phép thử thực sự của ý chí — chỉ khi đối mặt thử thách, ta mới khám phá được năng lực thật sự của mình.</p>
+    </td>
+  </tr>
+
+  <!-- SECTION LABEL -->
+  <tr>
+    <td bgcolor="#F5F7FA" style="background-color:#F5F7FA;padding:12px 30px;">
+      <p style="margin:0;font-size:11px;color:#999999;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128240;&nbsp;Tin t&#7913;c n&#7893;i b&#7853;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- ARTICLES -->
+  
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">1</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Claude Code vs GitHub Copilot 2026: SWE-bench, Giá [Đã thử nghiệm]</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Claude Code vs GitHub Copilot 2026: SWE-bench, Pricing [Tested]</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;tech-insider.org</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMibEFVX3lxTE01N0EtazhZV2lGNmlVdnpoWllIcVdaVDdFREJ5VXlRSl95UDNaejhiR21lamtHb3dvTlN5TUJEdnVyZDEtQjZPQnBiamkxTGpIVTBPQ09IaVgtV1c1M05uWUVTSXhvQ3NZZUhrZA?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Trong một so sánh gần đây, Claude Code và GitHub Copilot đã được kiểm tra về hiệu suất và giá cả của chúng. Công cụ SWE-bench, một công cụ dùng để đánh giá hiệu quả của các công cụ phát triển phần mềm, đã được sử dụng để đánh giá khả năng mã hóa của cả hai trợ lý AI.
+
+Kết quả cho thấy Claude Code vượt trội so với GitHub Copilot ở nhiều lĩnh vực, bao gồm chất lượng mã, tốc độ và độ chính xác. Tuy nhiên, mô hình giá của GitHub Copilot cung cấp một tầng miễn phí, cho phép người dùng truy cập vào các tính năng của nó mà không phải chịu chi phí. Ngược lại, Claude Code yêu cầu đăng ký, với các kế hoạch giá từ $15 đến $50 mỗi tháng.
+
+So sánh này nhấn mạnh sự đánh đổi giữa hiệu suất và chi phí khi lựa chọn giữa hai công cụ mã hóa AI này. Trong khi Claude Code cung cấp khả năng mã hóa vượt trội, giá của nó có thể là một rào cản đối với một số người dùng. Mặt khác, tầng miễn phí của GitHub Copilot khiến nó trở thành một lựa chọn dễ tiếp cận hơn cho các developer, mặc dù hiệu suất của nó có thể không mạnh như Claude Code.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">2</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Lớp lệnh AI Multi-Agent cho kho hàng: Đạt hiệu quả vận hành vượt trội và thông minh chuỗi cung ứng</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Multi-Agent Warehouse AI Command Layer Enables Operational Excellence and Supply Chain Intelligence</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;NVIDIA Developer</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMizwFBVV95cUxON2JaLWpmNDU2T3UwSG4yeUQ0eVVMNnowemV4OWFtaDlyX05KT3lNV1VhVGtCZjc2LTBjZjBOU3B5R1poaU1oZS1pcXlpczZORi04Y3QteE5nMmlISi1yWXdCcE05QUpwZFZyR2cyam96WVc5WVVBTHE2TlVBalVkOTdnVFNqRmFYQWhhSTFiRktyVFh0d3dERTFDSlktZHRvVGc1MFgxS290RTVUMHRTNWs5NlllT2h2Ym5MTnF0ajIwQ1hfYmJpTV8wQUtRbXM?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">NVIDIA đã giới thiệu Lớp lệnh AI Nhà kho Đa tác nhân, được thiết kế để nâng cao hiệu quả hoạt động và trí tuệ chuỗi cung ứng trong các nhà kho. Giải pháp này được hỗ trợ bởi AI cho phép giao tiếp và phối hợp liền mạch giữa các hệ thống khác nhau, bao gồm robot, xe nâng và các thiết bị khác. Bằng cách tận dụng các thuật toán AI và học máy tiên tiến, lớp lệnh có thể tối ưu hóa hoạt động nhà kho, dự đoán và ngăn chặn các nút thắt, và cải thiện năng suất tổng thể.
+
+Kiến trúc đa tác nhân của hệ thống cho phép nó thích nghi với các điều kiện nhà kho thay đổi và đưa ra quyết định theo thời gian thực. Điều này cho phép các nhà kho phản ứng nhanh với nhu cầu thay đổi và tối ưu hóa quy trình làm việc của họ cho phù hợp. Ngoài ra, lớp lệnh cung cấp thông tin chi tiết quý giá về hoạt động chuỗi cung ứng, cho phép các doanh nghiệp đưa ra quyết định dựa trên dữ liệu và cải thiện khả năng chống chịu chuỗi cung ứng tổng thể của họ.
+
+Bằng cách triển khai Lớp lệnh AI Nhà kho Đa tác nhân, các nhà kho có thể đạt được sự xuất sắc trong hoạt động, giảm chi phí và nâng cao khả năng đáp ứng nhu cầu của khách hàng. Giải pháp này có tiềm năng cách mạng hóa cách các nhà kho hoạt động, làm cho chúng trở nên hiệu quả, linh hoạt và phản ứng nhanh với các điều kiện thị trường thay đổi.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">3</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Vai trò thầm lặng của Toán học và Algorithms trong MCP &amp; Multi-Agent Systems</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;The Silent Role of Mathematics and Algorithms in MCP &amp; Multi-Agent Systems</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Cisco Blogs</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxOME9kMDczanJtZHZrenl2ZjctR2ppUnFKWGhQYmZoQmVBbUhZNlFvbmtpNjJoZXRUNV9GVjNQRWpFQXNTN0pSLXM3U2dKUWduVklKTVBVU205ZG4tS19ka0lKZGpWSzJGOEdzdnBTTGtDOHJuYjlNMEppZXE3Z1V6TkZTWGFCdzl0QWdSc0huOEdjMHJ0OWRXbXVGWVpmeDFTT0U5T2JGdVk0QQ?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Bài viết &quot;Vai trò im lặng của Toán học và Thuật toán trong MCP &amp; Hệ thống Đa tác nhân&quot; nhấn mạnh sự đóng góp quan trọng nhưng thường bị bỏ qua của toán học và thuật toán trong các hệ thống phức tạp. Hệ thống Đa tác nhân (MAS) và Nền tảng Đa đám mây (MCP) phụ thuộc nặng nề vào các mô hình toán học và thuật toán để hoạt động hiệu quả.
+
+Trong MAS, các mô hình toán học được sử dụng để mô phỏng và phân tích các tương tác phức tạp giữa nhiều tác nhân, cho phép các nhà nghiên cứu hiểu và dự đoán hành vi của chúng. Các mô hình này cũng giúp tạo ra các thuật toán ra quyết định tối ưu hóa kết quả trong các môi trường động.
+
+Tương tự, MCP dựa vào các thuật toán để quản lý và điều phối tài nguyên trên nhiều nền tảng đám mây, đảm bảo tích hợp liền mạch và phân bổ tài nguyên hiệu quả. Các thuật toán này cho phép MCP cung cấp các dịch vụ có thể mở rộng, bảo mật và đáng tin cậy cho người dùng.
+
+Bài viết nhấn mạnh tầm quan trọng của toán học và thuật toán trong việc cho phép phát triển và vận hành các hệ thống phức tạp như MAS và MCP. Bằng cách tận dụng các mô hình toán học và thuật toán, các nhà nghiên cứu và nhà phát triển có thể tạo ra các hệ thống hiệu quả, bảo mật và đáng tin cậy hơn, đáp ứng nhu cầu của các ứng dụng hiện đại.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">4</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Ưu đãi Grill và Griddle tốt nhất dịp 4 tháng 7: Weber, Traeger, Recteq</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;The Best July 4 Grill and Griddle Deals: Weber, Traeger, Recteq</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Wired</span>&nbsp;&nbsp;&nbsp;<a href="https://www.wired.com/story/best-grill-griddle-deals-july-4-2026/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Khi ngày 4 tháng 7 đang đến gần, đây là dịp cuối cùng để có được những ưu đãi tốt nhất cho nướng BBQ trong suốt mùa hè. Những lựa chọn hàng đầu từ WIRED bao gồm Recteq Flagship 1,600 pellet smoker, hiện đang giảm giá 250 đô la. Thiết bị nướng này có khả năng kết nối Wi-Fi, có diện tích nấu 1,600 inch vuông và có thùng chứa 40 pound cho các món ăn dài và nhiệt độ đều. Thiết bị griddle Traeger Flatrock cũng được khuyến nghị cao, với bề mặt dẫn nhiệt và thiết kế bộ đốt hình U sáng tạo cho phân phối nhiệt hoàn hảo. Phiên bản 2 bộ đốt của Traeger Flatrock hiện giảm giá 100 đô la, với giá 699 đô la vào cuối tuần ngày 4 tháng 7. Ngoài ra, dòng griddle Traeger Irontop cung cấp một lựa chọn tiết kiệm hơn, với mô hình 4 bộ đốt có sẵn với giá 599 đô la. Các ưu đãi khác bao gồm nướng khí Weber Spirit 200 series, hiện giảm giá 50 đô la, và dòng griddle Weber Slate đã được tẩm ướp trước, cũng giảm giá 50 đô la. Nướng pellet Traeger Woodridge Pro là một lựa chọn hàng đầu khác, hiện giảm giá 150 đô la và có sẵn với giá dưới 1.000 đô la. Những ưu đãi này chỉ có sẵn vào cuối tuần ngày 4 tháng 7, vì vậy hãy hành động nhanh để tận dụng những tiết kiệm này.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">5</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Google tạo ra smart speaker tuyệt vời, nhưng Gemini chưa sẵn sàng</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Google built a great smart speaker, but Gemini isn’t ready for it</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;The Verge AI</span>&nbsp;&nbsp;&nbsp;<a href="https://www.theverge.com/tech/959503/google-home-speaker-review-gemini-for-home" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Google đã phát hành loa thông minh mới đầu tiên trong sáu năm, Loa Google Home, được xây dựng cụ thể cho trợ lý Gemini. Phần cứng của loa đã nhận được lời khen ngợi về thiết kế và chất lượng âm thanh, khiến nó trở thành một bổ sung tuyệt vời cho bất kỳ phòng nào. Nó nhỏ gọn, hấp dẫn và phải chăng, với màu ngọc bích mềm mà hòa lẫn hoàn hảo. Loa có âm thanh 360 độ và có thể kết hợp với các loa khác để tạo hiệu ứng âm thanh nổi. Tuy nhiên, trợ lý Gemini, điều khiển loa, vẫn cảm giác chưa hoàn thiện. Nó chậm và không đáng tin cậy đôi khi, và một số tính năng bị khóa sau thanh toán. Ngoài ra, chất lượng âm thanh của loa không tốt như Nest Audio mà nó thay thế, đặc biệt là về âm trầm. Mặc dù những vấn đề này, Loa Google Home là một thiết bị vững chắc có thể là một lựa chọn tuyệt vời cho những người đang tìm kiếm một loa thông minh, nhưng nó có thể không phải là lựa chọn tốt nhất cho những người đã đầu tư mạnh vào hệ sinh thái nhà thông minh.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">6</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Cuộc đua vũ trang AI: Từ smart model đến hạ tầng full-stack</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;How the AI arms race moved from smart models to full-stack infrastructure</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;BD Tech Talks</span>&nbsp;&nbsp;&nbsp;<a href="https://bdtechtalks.com/2026/06/30/how-the-ai-arms-race-moved-from-smart-models-to-full-stack-infrastructure/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=how-the-ai-arms-race-moved-from-smart-models-to-full-stack-infrastructure" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Cuộc đua vũ trang trí tuệ nhân tạo (AI) đã phát triển từ việc tập trung vào phát triển các mô hình thông minh thành một cuộc chiến cơ sở hạ tầng nhiều lớp. Bộ xếp chồng AI hiện đại bao gồm bốn lớp chính: phần cứng, cụm tính toán, lớp mô hình và lớp ứng dụng. Các công ty không còn hài lòng với việc thống trị một lớp duy nhất, vì điều này không còn là lợi thế lâu dài khả thi. Thay vào đó, các công ty thành công đang mở rộng sang các lớp liền kề để bảo vệ biên độ và nắm bắt giá trị mới.
+
+Để đạt được điều này, các công ty đang đầu tư vào cơ sở hạ tầng tùy chỉnh, chẳng hạn như chip suy luận AI tùy chỉnh và trung tâm dữ liệu chuyên dụng. Ví dụ, OpenAI đang hợp tác với Broadcom để ra mắt chip suy luận AI tùy chỉnh đầu tiên, trong khi Anthropic đã ký kết một quan hệ đối tác cơ sở hạ tầng 50 tỷ USD với nhà cung cấp neocloud FluidStack. Một số công ty, như xAI, thậm chí còn bỏ qua đám mây hoàn toàn bằng cách xây dựng siêu máy tính của riêng họ.
+
+Trong khi đó, các công ty lớp ứng dụng cũng đang mở rộng khả năng của mình bằng cách phát triển mô hình của riêng họ và tích lũy dữ liệu người dùng. Điều này cho phép họ xây dựng các rào cản phòng thủ và giảm sự phụ thuộc vào các API tiền phong tốn kém. Kết quả là, các công ty lớp ứng dụng đang trở nên hấp dẫn hơn đối với các gã khổng lồ tính toán lớp cơ sở, những người tuyệt vọng muốn đảm bảo các điểm chạm người dùng.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">7</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Trích dẫn từ Anthropic</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Quoting Anthropic</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Simon Willison</span>&nbsp;&nbsp;&nbsp;<a href="https://simonwillison.net/2026/Jun/30/anthropic/#atom-everything" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Bộ Thương mại đã đưa ra một thông báo quan trọng liên quan đến kiểm soát xuất khẩu đối với hai mô hình AI, Claude Fable 5 và Mythos 5. Theo thông báo, các kiểm soát xuất khẩu đã được dỡ bỏ, cho phép khôi phục quyền truy cập vào các mô hình này. Sự thay đổi này dự kiến sẽ có hiệu lực vào ngày mai, với các cập nhật thêm sẽ được chia sẻ trong tương lai gần. Tin tức này được thu thập bởi Simon Willison và đăng vào ngày 30 tháng 6 năm 2026. Việc dỡ bỏ kiểm soát xuất khẩu đối với các mô hình AI này cho thấy sự thay đổi trong các chính sách quản lý, có khả năng mở ra những cơ hội mới cho nghiên cứu, phát triển và triển khai các công nghệ này. Tuy nhiên, các ý nghĩa chính xác của sự thay đổi này vẫn còn phải được xem xét và có khả năng sẽ được làm rõ trong những ngày tới.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">8</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">LLM mắc kẹt trong lối tư duy tập thể. Startup này đang tìm cách đưa chúng thoát ra.</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;LLMs are stuck in a groupthink groove. This startup is trying to get them out.</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;MIT Tech Review</span>&nbsp;&nbsp;&nbsp;<a href="https://www.technologyreview.com/2026/07/01/1140003/llms-are-stuck-in-a-groupthink-rut-this-startup-is-trying-to-get-them-out/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Các mô hình ngôn ngữ lớn (LLMs) thường dễ đoán và ít sáng tạo trong các phản hồi của chúng hơn dự kiến, điều này có thể là một vấn đề khi suy nghĩ hoặc tìm kiếm ý tưởng độc đáo. Một trò chơi minh họa vấn đề này liên quan đến việc yêu cầu các LLM phổ biến, chẳng hạn như Claude và ChatGPT, tạo ra một số ngẫu nhiên giữa 1 và 10, kết quả là cùng một số, 7, hầu hết thời gian. Sự dự đoán này là do cách mà hầu hết các LLM được đào tạo trên dữ liệu tương tự để thực hiện các nhiệm vụ tương tự.
+
+Một công ty khởi nghiệp của Úc có tên Springboards đã phát triển một LLM gọi là Flint, nhằm phá vỡ khuôn mẫu này bằng cách tạo ra nhiều loại phản hồi đa dạng hơn cho các câu hỏi mở. Phản hồi của Flint đối với trò chơi số ngẫu nhiên và các lời nhắc khác, chẳng hạn như đặt tên cho một loại xe hơi, khác biệt đáng kể so với phản hồi của Claude và ChatGPT. Điều này là vì Flint đã được đào tạo để &quot;chào đón ảo giác&quot;, những phản hồi sai hoặc không mong đợi có thể dẫn đến các câu trả lời sáng tạo và đa dạng hơn.
+
+Các nhà nghiên cứu cũng đã nhấn mạnh vấn đề về sự lặp lại trong các LLM, với một nghiên cứu gần đây cho thấy các mô hình khác nhau hội tụ trên các câu trả lời tương tự cho các câu hỏi mở. Giới hạn này đang bắt đầu nhận được sự chú ý nhiều hơn, với một số chuyên gia suy đoán rằng nó có thể là do các phương pháp đào tạo và dữ liệu tương tự được sử dụng để phát triển hầu hết các LLM.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+
+  <!-- TIPS SECTION -->
+  
+  <tr>
+    <td bgcolor="#FFFBEB" style="background-color:#FFFBEB;padding:20px 30px;border-top:3px solid #D97706;">
+      <p style="margin:0 0 12px;font-size:11px;color:#D97706;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#9889;&nbsp;Tips &amp; Tricks cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Orchestrate AI Agents</strong><br><strong>Vấn đề:</strong> Xử lý task phức tạp cần phối hợp nhiều AI agents.<br><strong>Cách làm:</strong> Sử dụng LangGraph, CrewAI, AutoGen để tạo và quản lý các agents. Ví dụ: <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">langgraph init</code> để tạo dự án mới.<br><strong>Đánh giá:</strong> Hiệu quả cao khi xử lý task phức tạp, nhưng cần kinh nghiệm về AI orchestration.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Deploy Multi-Agent Systems</strong><br><strong>Vấn đề:</strong> Triển khai hệ thống nhiều AI agents hiệu quả.<br><strong>Cách làm:</strong> Sử dụng phiData để deploy và quản lý các agents. Ví dụ: <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">phidata deploy</code> để triển khai hệ thống.<br><strong>Đánh giá:</strong> Hiệu quả cao khi cần deploy và quản lý nhiều agents, nhưng cần kiến thức về DevOps.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Monitor AI Agents</strong><br><strong>Vấn đề:</strong> Theo dõi và giám sát hiệu suất của các AI agents.<br><strong>Cách làm:</strong> Sử dụng các công cụ như Prometheus và Grafana để monitor các agents. Ví dụ: <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">prometheus --help</code> để xem các tùy chọn.<br><strong>Đánh giá:</strong> Hiệu quả cao khi cần theo dõi và giám sát hiệu suất của các agents, giúp tối ưu hóa hệ thống.</p>
+    </td>
+  </tr>
+
+  <!-- LESSON SECTION -->
+  
+  <tr>
+    <td bgcolor="#F0FFF4" style="background-color:#F0FFF4;padding:20px 30px;border-top:3px solid #2E7D32;">
+      <p style="margin:0 0 12px;font-size:11px;color:#2E7D32;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128218;&nbsp;B&#224;i h&#7885;c AI h&#244;m nay cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;">1. <strong>Tối ưu chi phí &amp; hiệu năng LLM</strong><br>2. Để xây dựng ứng dụng AI hiệu quả, các nhà phát triển cần tối ưu hóa chi phí và hiệu năng của mô hình ngôn ngữ lớn (LLM). Điều này giúp giảm thiểu chi phí tính toán và tăng tốc độ xử lý, đồng thời đảm bảo hiệu suất của mô hình.<br>3. Ví dụ, việc sử dụng kỹ thuật fine-tuning và LoRA (Low-Rank Adaptation) có thể giúp giảm kích thước mô hình và tăng tốc độ huấn luyện, từ đó giảm chi phí và tăng hiệu năng.<br>4. 💡 Tip: Để bắt đầu, hãy khám phá các kỹ thuật tối ưu hóa như quantization, pruning và knowledge distillation để giảm kích thước và tăng tốc độ của mô hình LLM, và áp dụng chúng vào dự án của bạn.</p>
+    </td>
+  </tr>
+
+  <!-- FOOTER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:20px 30px;text-align:center;border-radius:0 0 10px 10px;">
+      <p style="margin:0 0 4px;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        &#128161;&nbsp;Lu&#244;n &#273;i &#273;&#7847;u trong th&#7871; gi&#7899;i AI!&nbsp;&#183;&nbsp;Stay ahead in AI!
+      </p>
+      <p style="margin:6px 0 0;font-size:11px;color:#4A7AAB;font-family:Arial,sans-serif;">
+        Ngu&#7891;n: Google News · Groq AI
+      </p>
+    </td>
+  </tr>
+
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+
+</td></tr>
+</table>
+</body>
+</html>

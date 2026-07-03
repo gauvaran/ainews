@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--[if mso]>
+<noscript><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings></xml></noscript>
+<![endif]-->
+<style>
+/* ── Responsive overrides for web (email HTML uses fixed 600px tables) ── */
+@media screen and (max-width:620px) {
+  table[width="600"] { width:100% !important; }
+  td { word-break:break-word; overflow-wrap:break-word; }
+  /* Reduce generous email padding on small screens */
+  td[style*="padding:28px 30px"],
+  td[style*="padding:24px 30px"],
+  td[style*="padding:22px 30px"],
+  td[style*="padding:20px 30px"],
+  td[style*="padding:16px 30px"],
+  td[style*="padding:12px 30px"] { padding-left:14px !important; padding-right:14px !important; }
+  /* Code blocks: scroll horizontally instead of breaking layout */
+  pre { overflow-x:auto !important; max-width:calc(100vw - 32px) !important; box-sizing:border-box; }
+  /* Shrink large heading text slightly */
+  h1[style*="26px"] { font-size:20px !important; }
+}
+/* ── Print: hide nav bar ── */
+@media print {
+  #web-nav { display:none !important; }
+  body { background:#fff !important; }
+}
+</style>
+</head>
+<body style="margin:0;padding:0;background-color:#EEF2F7;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+<div id="web-nav" style="background:#001a4d;padding:8px 16px;font-family:Arial,sans-serif;font-size:13px;position:sticky;top:0;z-index:999;border-bottom:2px solid #0066CC;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
+  <span id="nav-prev" style="color:#4A6A8A;">&#8592;</span>
+  <a href="all.html" style="color:#FFD700;text-decoration:none;font-weight:bold;">&#128240; T&#7845;t c&#7843; b&#7843;n tin</a>
+  <span style="color:#FFFFFF;">03/07/2026</span>
+  <span id="nav-next" style="color:#4A6A8A;">&#8594;</span>
+  <a href="2026-07-03.pdf" download="2026-07-03.pdf" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128196; T&#7843;i PDF</a>
+  <button onclick="sharePage()" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128279; Chia s&#7867;</button>
+</div>
+<script>
+function sharePage(){
+  var title='Bản tin AI BIS-MT – 03/07/2026';
+  if(navigator.share){navigator.share({title:title,url:location.href});}
+  else{navigator.clipboard.writeText(location.href).then(function(){
+    alert('Đã sao chép link!');
+  });}
+}
+(function(){
+  var m=location.pathname.match(/(\d{4}-\d{2}-\d{2})\.html/);
+  if(!m)return;
+  var slug=m[1];
+  function fmt(s){var p=s.split('-');return p[2]+'/'+p[1];}
+  var lnkStyle='color:#90C4F0;text-decoration:none;';
+  fetch('dates.json?_='+Date.now())
+    .then(function(r){return r.json();})
+    .then(function(dates){
+      var idx=dates.indexOf(slug);
+      if(idx>0){
+        var p=dates[idx-1];
+        document.getElementById('nav-prev').innerHTML=
+          '<a href="'+p+'.html" style="'+lnkStyle+'">&#8592; '+fmt(p)+'</a>';
+      }
+      if(idx>=0&&idx<dates.length-1){
+        var n=dates[idx+1];
+        document.getElementById('nav-next').innerHTML=
+          '<a href="'+n+'.html" style="'+lnkStyle+'">'+fmt(n)+' &#8594;</a>';
+      }
+    })
+    .catch(function(){});
+})();
+</script>
+
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#EEF2F7" style="background-color:#EEF2F7;">
+<tr><td align="center" style="padding:24px 12px;">
+
+<!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0"><tr><td><![endif]-->
+<table role="presentation" width="600" cellpadding="0" cellspacing="0"
+       style="max-width:600px;width:100%;background-color:#FFFFFF;border-radius:10px;" bgcolor="#FFFFFF">
+
+  <!-- HEADER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:28px 30px 22px 30px;text-align:center;border-radius:10px 10px 0 0;">
+      <p style="margin:0 0 6px;font-size:11px;color:#7EB1E8;letter-spacing:2px;font-family:Arial,sans-serif;text-transform:uppercase;">
+        BIS &#8209; MT &nbsp;&#183;&nbsp; 03/07/2026
+      </p>
+      <h1 style="margin:0;font-size:26px;font-weight:bold;color:#FFFFFF;font-family:Arial,sans-serif;line-height:1.2;">
+        &#129302; B&#7843;n Tin AI H&#7857;ng Ng&#224;y
+      </h1>
+      <p style="margin:8px 0 0;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        C&#7853;p nh&#7853;t c&#244;ng ngh&#7879; AI m&#7899;i nh&#7845;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- QUOTE -->
+  <tr>
+    <td bgcolor="#EBF4FF" style="background-color:#EBF4FF;padding:16px 30px;border-top:3px solid #0066CC;">
+      <p style="margin:0;font-size:14px;color:#1A3A5C;font-style:italic;line-height:1.6;font-family:Georgia,serif;">
+        &#10024;&nbsp;&ldquo;Kiến tha lâu đầy tổ.&rdquo;
+      </p>
+      
+      <p style="margin:8px 0 0;font-size:12px;color:#888888;font-family:Arial,sans-serif;">&mdash;&nbsp;Tục ngữ Việt Nam</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#5A6A7A;font-style:italic;line-height:1.5;font-family:Arial,sans-serif;">&#128161;&nbsp;Tích lũy từng chút một mỗi ngày — dù nhỏ bé, sự kiên trì sẽ tạo nên kết quả lớn theo thời gian.</p>
+    </td>
+  </tr>
+
+  <!-- SECTION LABEL -->
+  <tr>
+    <td bgcolor="#F5F7FA" style="background-color:#F5F7FA;padding:12px 30px;">
+      <p style="margin:0;font-size:11px;color:#999999;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128240;&nbsp;Tin t&#7913;c n&#7893;i b&#7853;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- ARTICLES -->
+  
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">1</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Các nhà nghiên cứu bảo mật cảnh báo về lỗ hổng trong code do AI tạo ra</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Security Researchers Sound the Alarm on Vulnerabilities in AI-Generated Code</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Infosecurity Magazine</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMigwFBVV95cUxOa2EtOVAxcE9xSjRyTkZTNnQ4WV9XQWxKVDdYYjhGWHJ6S0YzanE2aWNfQlRja25RMkdINm16ZzhwM0pWQ1BUendwdjI5RnBFa2tVOTVWbHFfWExIZzNHNmdsZEJQSlBSN0gwQk5CRTVBUGdMLTk1bHJ1dzAzNEJWNkJGVQ?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Các nhà nghiên cứu bảo mật đã bày tỏ lo ngại về các lỗ hổng trong code do AI tạo ra. Theo một báo cáo gần đây, các công cụ hỗ trợ bởi AI đang ngày càng được sử dụng để tạo ra code, nhưng code này thường chứa các lỗi và lỗ hổng bảo mật. Các nhà nghiên cứu cảnh báo rằng việc phụ thuộc vào code do AI tạo ra có thể khiến người dùng gặp rủi ro bị tấn công mạng.
+
+Báo cáo nhấn mạnh rằng code do AI tạo ra có thể không được kiểm thử hoặc review kỹ lưỡng, dẫn đến các vấn đề bảo mật tiềm ẩn. Ngoài ra, việc sử dụng code do AI tạo ra cũng có thể gây khó khăn trong việc xác định nguyên nhân gốc rễ của một vấn đề bảo mật, vì code có thể không dễ hiểu đối với các developer con người.
+
+Các nhà nghiên cứu đang kêu gọi các developer thận trọng khi sử dụng code do AI tạo ra và kiểm thử, review kỹ lưỡng code trước khi deploy. Họ cũng khuyến nghị các developer cần hiểu rõ về các công cụ AI đang được sử dụng và những rủi ro tiềm ẩn liên quan đến chúng.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">2</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Agent Factory: Kết nối các agent, ứng dụng và dữ liệu bằng các chuẩn mở mới như MCP và A2A</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Agent Factory: Connecting agents, apps, and data with new open standards like MCP and A2A</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Microsoft Azure</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMixAFBVV95cUxOekoxbVV4Vml2ZG5yVGVhRWl1cVFLM1ZrYUVNbWdFTnI1bV9CTmVFZ3FJNTRCeTctZ3ctTUtVOW9YbFBqVWZPTGpfQnk0WWt4T09OdG00X25yZVV3TE1XbGpJckdHWVBNV2l1bDdKbEZXb1dmc1RjR1JENWNkMVF6WHVrdlZDMThhVDN5WFFiQ01YakVlWUZDR0gtS0NTZGxrOGFUMzN4ZWlNZzF1WlFPMnMwT3BDcUd6TjJDSWJXMkpkMEh5?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Microsoft đã giới thiệu Agent Factory, một sáng kiến mới nhằm kết nối các agent, ứng dụng và dữ liệu thông qua các chuẩn mở. Nền tảng này sử dụng các chuẩn Cloud PC (MCP) và Application-to-Application (A2A) của Microsoft để tạo điều kiện tương tác liền mạch giữa các thành phần khác nhau.
+
+Agent Factory cho phép các developer tạo và quản lý các agent thông minh có thể tương tác với nhiều ứng dụng và nguồn dữ liệu. Điều này cho phép tạo ra các workflow phức tạp và tự động hơn, nâng cao năng suất và hiệu quả.
+
+Việc sử dụng các chuẩn mở như MCP và A2A đảm bảo khả năng tương tác và tính linh hoạt, cho phép các developer xây dựng các giải pháp có thể tích hợp với nhiều hệ thống và dịch vụ. Động thái này của Microsoft có khả năng có những tác động đáng kể đến sự phát triển của các ứng dụng thông minh và bối cảnh kỹ thuật số rộng lớn hơn.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">3</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">AWS mở mã nguồn MCP server cho Bedrock AgentCore nhằm tinh gọn phát triển AI agent</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;AWS Open-Sources an MCP Server for Bedrock AgentCore to Streamline AI Agent Development</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;MarkTechPost</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMixwFBVV95cUxNZDEzc3dIU3dtSUFCMzJVVU1HeXZSUkdqNmFqMDh5U2d4MEZjRzV6RE14YWdscDYxdWpXelhjUWtPaWZYS19uamp1bUd0Z3dBRWFqOGZ2anAtQ3VvQ0pOUXVvc2tjNHR5cDBGSVJlMkJJQ25CcnRMLWtfWWZVVUwxcXhxMk5qY25BSFJyUk14NGNDWk1BbXp0WUtNeTJqVG1uVDA3NTRHVmF6RWFTeDZ2LVNRTHJ3cTRLWkdtekZ6VjhyNXE3YVFJ?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Amazon Web Services (AWS) đã mở mã nguồn một MCP (Multi-Cloud Platform) server cho Bedrock AgentCore, một framework được thiết kế để tinh gọn quá trình phát triển AI agent. MCP server là một thành phần quan trọng của Bedrock AgentCore, cho phép các developer xây dựng và deploy các AI agent trên nhiều nền tảng cloud khác nhau. Bằng cách mở mã nguồn MCP server, AWS đặt mục tiêu đẩy nhanh quá trình phát triển AI agent và thúc đẩy sự hợp tác trong cộng đồng developer.
+
+MCP server là một phần cốt lõi của Bedrock AgentCore, cung cấp một giao diện thống nhất để xây dựng, deploy và quản lý các AI agent. Với việc MCP server hiện đã được mở mã nguồn, các developer có thể truy cập code và đóng góp vào quá trình phát triển của nó, cho phép đổi mới và cải tiến nhanh hơn. Động thái này dự kiến sẽ mang lại lợi ích cho các developer làm việc trong các dự án AI, vì họ sẽ có quyền truy cập vào một MCP server được sử dụng rộng rãi và được duy trì tốt. Việc mở mã nguồn MCP server là một bước tiến đáng kể hướng tới việc làm cho quá trình phát triển AI trở nên dễ tiếp cận và hiệu quả hơn.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">4</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">PamStealer mới được phát hiện không phải là malware macOS thông thường</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Newly discovered PamStealer isn&#x27;t your typical macOS malware</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Ars Technica</span>&nbsp;&nbsp;&nbsp;<a href="https://arstechnica.com/security/2026/07/new-pamstealer-macos-malware-uses-clever-tradecraft-to-remain-stealthy/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Các nhà nghiên cứu tại Jamf đã phát hiện một loại malware macOS mới có tên PamStealer, kết hợp các kỹ thuật tinh vi để lây nhiễm vào máy Mac bằng code đánh cắp credential được phát triển tùy chỉnh và hoạt động ẩn mình. Malware này được phân phối theo hai giai đoạn, với giai đoạn đầu tiên ngụy trang thành một clipboard manager cho máy Mac có tên Maccy, được phân phối dưới dạng disk image. Khi mở, disk image sẽ thực thi code độc hại bên trong một AppleScript, sử</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">5</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">ChatGPT đã được chấp nhận rộng rãi như thế nào</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;How ChatGPT adoption has expanded</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;OpenAI Blog</span>&nbsp;&nbsp;&nbsp;<a href="https://openai.com/index/how-chatgpt-adoption-has-expanded" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Theo dữ liệu gần đây từ OpenAI Signals, việc áp dụng ChatGPT đang mở rộng trên toàn cầu. Nền tảng này đã chứng kiến sự tăng trưởng về mức độ tương tác của người dùng, với các cá nhân không chỉ sử dụng dịch vụ này thường xuyên hơn mà còn khám phá các khả năng khác nhau của nó. Sự tăng trưởng này được thúc đẩy trên các khu vực và ngôn ngữ khác nhau, cho thấy việc áp dụng công nghệ này một cách rộng rãi và phổ biến. Dữ liệu cung cấp thông tin về phạm vi mở rộng của ChatGPT, nhấn mạnh sự phổ biến và sử dụng ngày càng tăng của nó trên toàn thế giới.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">6</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Bản nhại &#x27;Infowars&#x27; của The Onion đã ra mắt. Alex Jones chắc chắn sẽ ghét nó</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;The Onion’s ‘Infowars’ Parody Is Here. Alex Jones Is Going to Hate It</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Wired</span>&nbsp;&nbsp;&nbsp;<a href="https://www.wired.com/story/the-onions-infowars-parody-is-here-alex-jones-is-going-to-hate-it/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">The Onion, một kênh tin tức châm biếm, đã ra mắt một phiên bản nhái của mạng lưới Infowars của nhà lý thuyết âm mưu Alex Jones. Chương trình phát trực tiếp hàng tuần, cũng được gọi là Infowars, được phát vào thứ Năm lúc 8 giờ tối theo giờ ET trên các nền tảng như Twitch, YouTube và Instagram. Chương trình này là một phiên bản hài hước về văn hóa internet và cánh hữu cực đoan, với trọng tâm là nhái lại phong cách bình luận của Jones. Giám đốc sáng tạo của The Onion, Tim Heidecker, sẽ tiếp tục dẫn dắt dự án, nhằm mục đích chế giễu văn hóa internet âm mưu đã lan rộng trên các nền tảng truyền thông xã hội. Tập đầu tiên của chương trình nhái này có một phiên bản hài hước về cái chết của Jones, với nhân vật này phát nổ sau khi ăn quá nhiều Whataburger. The Onion đã mua lại quyền sử dụng tên Infowars trong một phiên đấu giá phá sản, nhưng thỏa thuận này đã bị một thẩm phán liên bang chặn lại tạm thời. Kênh này dự định sử dụng chương trình nhái này để quyên tiền cho các gia đình của các nạn nhân trong vụ nổ súng tại trường Sandy Hook, những người đã được trao hơn 1 tỷ đô la trong các bản án chống lại Jones. Giám đốc điều hành của The Onion, Ben Collins, cho biết chương trình nhái này là một cách để &quot;phá vỡ sự ngớ ngẩn&quot; của văn hóa internet âm mưu đã trở nên như thế nào.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">7</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">GitHub đã dùng secret scanning để đạt &quot;inbox zero&quot; như thế nào</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;How GitHub used secret scanning to reach inbox zero</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;GitHub Blog</span>&nbsp;&nbsp;&nbsp;<a href="https://github.blog/security/application-security/how-github-used-secret-scanning-to-reach-inbox-zero/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">GitHub, một nền tảng hàng đầu cho các developer, đã đạt được &quot;hộp thư đến zero&quot; cho các cảnh báo quét bí mật trong vòng chín tháng. Ban đầu, đội an ninh của công ty đã phát hiện hơn 20.000 cảnh báo quét bí mật trên 15.000 kho lưu trữ. Để giải quyết vấn đề này, GitHub Security đã khởi xướng một sáng kiến để cải thiện vệ sinh bí mật và thử nghiệm khả năng Secret Scanning. Sau đó, đội tập trung vào việc xác định các rủi ro thực sự, phân công quyền sở hữu và khắc phục an toàn các bí mật. Nỗ lực này đã dẫn đến việc đạt được zero cảnh báo mở. Kinh nghiệm của công ty này nhấn mạnh tầm quan trọng của việc quản lý bí mật hiệu quả và những thách thức mà nó mang lại. Cách tiếp cận của GitHub đối với việc quản lý bí mật đã phát triển theo thời gian, và thành công của công ty chứng minh lợi ích của việc triển khai các biện pháp bảo mật mạnh mẽ.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">8</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">llm-coding-agent 0.1a0</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;llm-coding-agent 0.1a0</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Simon Willison</span>&nbsp;&nbsp;&nbsp;<a href="https://simonwillison.net/2026/Jul/2/llm-coding-agent/#atom-everything" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Một thư viện Python mã nguồn mở mới, llm-coding-agent 0.1a0, đã được phát hành. Thư viện này là một thử nghiệm trong việc xây dựng một tác nhân mã hóa (coding agent) sử dụng một khung khổ mô hình ngôn ngữ lớn (LLM). Tác nhân này được thiết kế để hỗ trợ các nhiệm vụ mã hóa, bao gồm đọc và chỉnh sửa tệp, thực thi lệnh, và thực hiện một phong cách mã hóa tương tự như Claude Code. Thư viện cung cấp một tập hợp các công cụ, chẳng hạn như chỉnh sửa tệp, thực thi lệnh, liệt kê tệp, đọc tệp và tìm kiếm tệp, có thể được sử dụng để tự động hóa các nhiệm vụ mã hóa.
+
+Thư viện này được xây dựng sử dụng một kho lưu trữ mẫu và tuân theo phương pháp phát triển dựa trên thử nghiệm (TDD). Nó đã được gửi đến PyPI và có thể được cài đặt và sử dụng như bất kỳ thư viện Python nào khác. Tác giả đã chứng minh khả năng của thư viện bằng cách sử dụng nó để tạo một ứng dụng CLI SwiftUI đơn giản để hiển thị thời gian dưới dạng nghệ thuật ASCII. API của thư viện dựa trên lớp CodingAgent, cung cấp một giao diện Python để tương tác với tác nhân mã hóa.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+
+  <!-- TIPS SECTION -->
+  
+  <tr>
+    <td bgcolor="#FFFBEB" style="background-color:#FFFBEB;padding:20px 30px;border-top:3px solid #D97706;">
+      <p style="margin:0 0 12px;font-size:11px;color:#D97706;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#9889;&nbsp;Tips &amp; Tricks cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Chain-of-Thought Prompting</strong><br><strong>Vấn đề:</strong> Khi cần thực hiện các nhiệm vụ phức tạp, đòi hỏi nhiều bước suy nghĩ.<br><strong>Cách làm:</strong> Sử dụng kỹ thuật chain-of-thought, ví dụ &quot;Let&#x27;s think step by step to solve this math problem...&quot;. <br><strong>Đánh giá:</strong> Hiệu quả khi giải quyết vấn đề phức tạp, nhưng đòi hỏi thiết kế prompt tốt.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Few-Shot Learning</strong><br><strong>Vấn đề:</strong> Khi dữ liệu huấn luyện hạn chế cho mô hình AI.<br><strong>Cách làm:</strong> Sử dụng few-shot learning, ví dụ &quot;Write a story about a character who learns to play the guitar in 3 sentences.&quot;.<br><strong>Đánh giá:</strong> Hiệu quả khi dữ liệu hạn chế, nhưng đòi hỏi chất lượng dữ liệu cao.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ System Prompt Design</strong><br><strong>Vấn đề:</strong> Khi cần thiết kế hệ thống AI có tính tùy chỉnh cao.<br><strong>Cách làm:</strong> Sử dụng system prompt design, ví dụ &quot;Act as a personal assistant and respond to user queries.&quot;<br><strong>Đánh giá:</strong> Hiệu quả khi xây dựng hệ thống AI tùy chỉnh, nhưng đòi hỏi thiết kế cẩn thận.</p>
+    </td>
+  </tr>
+
+  <!-- LESSON SECTION -->
+  
+  <tr>
+    <td bgcolor="#F0FFF4" style="background-color:#F0FFF4;padding:20px 30px;border-top:3px solid #2E7D32;">
+      <p style="margin:0 0 12px;font-size:11px;color:#2E7D32;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128218;&nbsp;B&#224;i h&#7885;c AI h&#244;m nay cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;">1. <strong>Tích hợp AI API vào ứng dụng</strong><br>2. Tích hợp AI API vào ứng dụng giúp nâng cao khả năng tự động hóa và phân tích dữ liệu. Dev cần biết cách tích hợp AI API để tạo ra các ứng dụng thông minh hơn. Điều này cũng giúp giảm thiểu thời gian và công sức phát triển.<br>3. Ví dụ, sử dụng thư viện như TensorFlow hoặc PyTorch để tích hợp mô hình AI vào ứng dụng, cho phép thực hiện các nhiệm vụ như nhận diện hình ảnh hoặc phân tích ngôn ngữ tự nhiên.<br>4. 💡 Tip hoặc bước tiếp theo: Sử dụng các nền tảng như Google Cloud AI Platform hoặc AWS SageMaker để dễ dàng tích hợp AI API vào ứng dụng và giảm thiểu công việc backend.</p>
+    </td>
+  </tr>
+
+  <!-- FOOTER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:20px 30px;text-align:center;border-radius:0 0 10px 10px;">
+      <p style="margin:0 0 4px;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        &#128161;&nbsp;Lu&#244;n &#273;i &#273;&#7847;u trong th&#7871; gi&#7899;i AI!&nbsp;&#183;&nbsp;Stay ahead in AI!
+      </p>
+      <p style="margin:6px 0 0;font-size:11px;color:#4A7AAB;font-family:Arial,sans-serif;">
+        Ngu&#7891;n: Google News · Groq AI
+      </p>
+    </td>
+  </tr>
+
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+
+</td></tr>
+</table>
+</body>
+</html>

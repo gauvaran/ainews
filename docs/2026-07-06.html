@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--[if mso]>
+<noscript><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings></xml></noscript>
+<![endif]-->
+<style>
+/* ── Responsive overrides for web (email HTML uses fixed 600px tables) ── */
+@media screen and (max-width:620px) {
+  table[width="600"] { width:100% !important; }
+  td { word-break:break-word; overflow-wrap:break-word; }
+  /* Reduce generous email padding on small screens */
+  td[style*="padding:28px 30px"],
+  td[style*="padding:24px 30px"],
+  td[style*="padding:22px 30px"],
+  td[style*="padding:20px 30px"],
+  td[style*="padding:16px 30px"],
+  td[style*="padding:12px 30px"] { padding-left:14px !important; padding-right:14px !important; }
+  /* Code blocks: scroll horizontally instead of breaking layout */
+  pre { overflow-x:auto !important; max-width:calc(100vw - 32px) !important; box-sizing:border-box; }
+  /* Shrink large heading text slightly */
+  h1[style*="26px"] { font-size:20px !important; }
+}
+/* ── Print: hide nav bar ── */
+@media print {
+  #web-nav { display:none !important; }
+  body { background:#fff !important; }
+}
+</style>
+</head>
+<body style="margin:0;padding:0;background-color:#EEF2F7;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+<div id="web-nav" style="background:#001a4d;padding:8px 16px;font-family:Arial,sans-serif;font-size:13px;position:sticky;top:0;z-index:999;border-bottom:2px solid #0066CC;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
+  <span id="nav-prev" style="color:#4A6A8A;">&#8592;</span>
+  <a href="all.html" style="color:#FFD700;text-decoration:none;font-weight:bold;">&#128240; T&#7845;t c&#7843; b&#7843;n tin</a>
+  <span style="color:#FFFFFF;">06/07/2026</span>
+  <span id="nav-next" style="color:#4A6A8A;">&#8594;</span>
+  <a href="2026-07-06.pdf" download="2026-07-06.pdf" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128196; T&#7843;i PDF</a>
+  <button onclick="sharePage()" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128279; Chia s&#7867;</button>
+</div>
+<script>
+function sharePage(){
+  var title='Bản tin AI BIS-MT – 06/07/2026';
+  if(navigator.share){navigator.share({title:title,url:location.href});}
+  else{navigator.clipboard.writeText(location.href).then(function(){
+    alert('Đã sao chép link!');
+  });}
+}
+(function(){
+  var m=location.pathname.match(/(\d{4}-\d{2}-\d{2})\.html/);
+  if(!m)return;
+  var slug=m[1];
+  function fmt(s){var p=s.split('-');return p[2]+'/'+p[1];}
+  var lnkStyle='color:#90C4F0;text-decoration:none;';
+  fetch('dates.json?_='+Date.now())
+    .then(function(r){return r.json();})
+    .then(function(dates){
+      var idx=dates.indexOf(slug);
+      if(idx>0){
+        var p=dates[idx-1];
+        document.getElementById('nav-prev').innerHTML=
+          '<a href="'+p+'.html" style="'+lnkStyle+'">&#8592; '+fmt(p)+'</a>';
+      }
+      if(idx>=0&&idx<dates.length-1){
+        var n=dates[idx+1];
+        document.getElementById('nav-next').innerHTML=
+          '<a href="'+n+'.html" style="'+lnkStyle+'">'+fmt(n)+' &#8594;</a>';
+      }
+    })
+    .catch(function(){});
+})();
+</script>
+
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#EEF2F7" style="background-color:#EEF2F7;">
+<tr><td align="center" style="padding:24px 12px;">
+
+<!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0"><tr><td><![endif]-->
+<table role="presentation" width="600" cellpadding="0" cellspacing="0"
+       style="max-width:600px;width:100%;background-color:#FFFFFF;border-radius:10px;" bgcolor="#FFFFFF">
+
+  <!-- HEADER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:28px 30px 22px 30px;text-align:center;border-radius:10px 10px 0 0;">
+      <p style="margin:0 0 6px;font-size:11px;color:#7EB1E8;letter-spacing:2px;font-family:Arial,sans-serif;text-transform:uppercase;">
+        BIS &#8209; MT &nbsp;&#183;&nbsp; 06/07/2026
+      </p>
+      <h1 style="margin:0;font-size:26px;font-weight:bold;color:#FFFFFF;font-family:Arial,sans-serif;line-height:1.2;">
+        &#129302; B&#7843;n Tin AI H&#7857;ng Ng&#224;y
+      </h1>
+      <p style="margin:8px 0 0;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        C&#7853;p nh&#7853;t c&#244;ng ngh&#7879; AI m&#7899;i nh&#7845;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- QUOTE -->
+  <tr>
+    <td bgcolor="#EBF4FF" style="background-color:#EBF4FF;padding:16px 30px;border-top:3px solid #0066CC;">
+      <p style="margin:0;font-size:14px;color:#1A3A5C;font-style:italic;line-height:1.6;font-family:Georgia,serif;">
+        &#10024;&nbsp;&ldquo;Dốt đến đâu học lâu cũng biết.&rdquo;
+      </p>
+      
+      <p style="margin:8px 0 0;font-size:12px;color:#888888;font-family:Arial,sans-serif;">&mdash;&nbsp;Tục ngữ Việt Nam</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#5A6A7A;font-style:italic;line-height:1.5;font-family:Arial,sans-serif;">&#128161;&nbsp;Không ai sinh ra đã giỏi — sự kiên trì học hỏi có thể giúp bất kỳ ai đạt được tri thức và kỹ năng.</p>
+    </td>
+  </tr>
+
+  <!-- SECTION LABEL -->
+  <tr>
+    <td bgcolor="#F5F7FA" style="background-color:#F5F7FA;padding:12px 30px;">
+      <p style="margin:0;font-size:11px;color:#999999;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128240;&nbsp;Tin t&#7913;c n&#7893;i b&#7853;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- ARTICLES -->
+  
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">1</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Claude Code đối đầu GitHub Copilot 2026: SWE-bench, Giá cả [Đã thử nghiệm]</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Claude Code vs GitHub Copilot 2026: SWE-bench, Pricing [Tested]</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;tech-insider.org</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMibEFVX3lxTE01N0EtazhZV2lGNmlVdnpoWllIcVdaVDdFREJ5VXlRSl95UDNaejhiR21lamtHb3dvTlN5TUJEdnVyZDEtQjZPQnBiamkxTGpIVTBPQ09IaVgtV1c1M05uWUVTSXhvQ3NZZUhrZA?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Trong một so sánh gần đây, Claude Code và GitHub Copilot đã được đặt lên bàn cân trong một loạt các thử nghiệm để xác định hiệu suất và giá cả của chúng. Công cụ SWE-bench, một công cụ đánh giá hiệu suất cho phát triển phần mềm, đã được sử dụng để đánh giá hai trợ lý mã hóa được hỗ trợ bởi AI này. Kết quả cho thấy Claude Code vượt trội so với GitHub Copilot về độ chính xác và tốc độ, đặc biệt là trong các nhiệm vụ mã hóa phức tạp.
+
+Khi nói đến giá cả, Claude Code cung cấp một lựa chọn linh hoạt và tiết kiệm chi phí hơn. Mô hình giá của Claude Code dựa trên số lượng dòng mã được tạo, với mức giá cố định là $0,01 cho mỗi dòng. Ngược lại, GitHub Copilot yêu cầu đăng ký dịch vụ cao cấp của GitHub, bắt đầu từ $19,99 mỗi tháng. Điều này làm cho Claude Code trở thành một lựa chọn hấp dẫn hơn cho các developer cần tạo ra lượng mã lớn.
+
+Tổng thể, kết quả của so sánh này cho thấy Claude Code là một đối thủ mạnh trên thị trường trợ lý mã hóa được hỗ trợ bởi AI, cung cấp hiệu suất tốt hơn và giá cả cạnh tranh hơn.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">2</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Lớp lệnh AI Multi-Agent cho kho hàng: Đạt hiệu suất vận hành vượt trội và thông minh chuỗi cung ứng</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Multi-Agent Warehouse AI Command Layer Enables Operational Excellence and Supply Chain Intelligence</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;NVIDIA Developer</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMizwFBVV95cUxON2JaLWpmNDU2T3UwSG4yeUQ0eVVMNnowemV4OWFtaDlyX05KT3lNV1VhVGtCZjc2LTBjZjBOU3B5R1poaU1oZS1pcXlpczZORi04Y3QteE5nMmlISi1yWXdCcE05QUpwZFZyR2cyam96WVc5WVVBTHE2TlVBalVkOTdnVFNqRmFYQWhhSTFiRktyVFh0d3dERTFDSlktZHRvVGc1MFgxS290RTVUMHRTNWs5NlllT2h2Ym5MTnF0ajIwQ1hfYmJpTV8wQUtRbXM?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">NVIDIA đã giới thiệu Lớp lệnh AI Nhà kho đa tác nhân, được thiết kế để nâng cao hiệu quả hoạt động và trí tuệ chuỗi cung ứng. Giải pháp sáng tạo này tận dụng trí tuệ nhân tạo (AI) để tối ưu hóa hoạt động nhà kho, cho phép các doanh nghiệp tối ưu hóa hậu cần và quản lý hàng tồn kho của họ.
+
+Lớp lệnh AI Nhà kho đa tác nhân được xây dựng trên nền tảng Omniverse của NVIDIA, cho phép trao đổi dữ liệu thời gian thực và hợp tác giữa các hệ thống khác nhau. Điều này cho phép các tác nhân AI làm việc cùng nhau một cách liền mạch, đưa ra quyết định thông minh để giảm thiểu độ trễ, giảm chi phí và cải thiện hiệu suất chuỗi cung ứng tổng thể.
+
+Các tính năng chính của Lớp lệnh AI Nhà kho đa tác nhân bao gồm:
+
+- Trao đổi dữ liệu thời gian thực và hợp tác giữa các hệ thống
+- Ra quyết định dựa trên AI để tối ưu hóa hậu cần và quản lý hàng tồn kho
+- Tăng cường trí tuệ chuỗi cung ứng và khả năng hiển thị
+- Cải thiện hiệu quả hoạt động và giảm chi phí
+
+Bằng cách triển khai giải pháp này, các doanh nghiệp có thể đạt được lợi thế cạnh tranh trên thị trường bằng cách cải thiện hoạt động chuỗi cung ứng của họ và đưa ra quyết định dựa trên dữ liệu. Lớp lệnh AI Nhà kho đa tác nhân có tiềm năng cách mạng hóa cách thức hoạt động của các nhà kho, cho phép họ phản ứng nhanh chóng với các điều kiện thị trường và nhu cầu khách hàng thay đổi.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">3</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Tối ưu workflow GitHub bằng generative AI với Amazon Bedrock và MCP | Amazon Web Services</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Streamline GitHub workflows with generative AI using Amazon Bedrock and MCP | Amazon Web Services</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Amazon Web Services (AWS)</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxPVE52YWtPN0dnYXY0TDE0bUZDWFhhbnNVZWZnVVo0M1lCX0FlOHpmU2VsdmVPWmtVZDBXbE94ZGh2WlluaFdJTGU0cGFlRV9VUFdBVlMyUGlzU3IweHMxbXFKSG1NMGI5VUVCU19hbnhoREdMa0hFbkVCcUVLNWRUenVEWDhOY1dCWW1FUUk1dGl1SG5YOG5uMjZNemlBRl9lWmkyUmZ6Q09rYk41elBqbDEyOS00Rkt3MTBDVWVYbw?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Amazon Web Services (AWS) đã giới thiệu một tích hợp mới giữa Amazon Bedrock và Model Canvas Platform (MCP) để tối ưu hóa các quy trình làm việc trên GitHub bằng cách sử dụng AI tạo sinh. Tích hợp này cho phép các developer tận dụng khả năng của AI tạo sinh để tự động hóa và tối ưu hóa các quy trình làm việc trên GitHub của họ.
+
+Với Amazon Bedrock và MCP, các developer hiện có thể sử dụng AI tạo sinh để tự động hóa các nhiệm vụ như tạo mã, tài liệu và kiểm thử. Điều này có thể giúp giảm thời gian và công sức cần thiết để hoàn thành các nhiệm vụ này, cho phép các developer tập trung vào các nhiệm vụ phức tạp và có giá trị cao hơn.
+
+Tích hợp này cũng cho phép các developer sử dụng MCP để tạo và quản lý các model có thể được sử dụng để tạo mã và tài liệu được hỗ trợ bởi AI. Điều này có thể giúp cải thiện chất lượng mã, giảm lỗi và tăng năng suất.
+
+Quan hệ đối tác giữa Amazon Bedrock và MCP nhằm mục đích giúp các developer dễ dàng áp dụng AI tạo sinh vào các quy trình làm việc trên GitHub của họ, cho phép họ xây dựng các quy trình phát triển phần mềm hiệu quả và hiệu quả hơn.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">4</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Từ các dự án open source đình đám đến OpenAI</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;From open source hits to OpenAI</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Changelog</span>&nbsp;&nbsp;&nbsp;<a href="https://changelog.com/podcast/682" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Trong tập này, Max Stoiber, một developer làm việc trên thư mục plugin và nền tảng ứng dụng của ChatGPT tại OpenAI, chia sẻ những hiểu biết của mình về ngành công nghệ. Ông thảo luận về các dự án mã nguồn mở ít được biết đến đã có tác động đáng kể, chẳng hạn như react-boilerplate và styled-components. Stoiber cũng đề cập đến sự phát triển của GitHub, đặc biệt là vai trò của Spectrum trong việc định hình GitHub Discussions. Ngoài ra, ông nói về sự thành công của Stellate, một bộ nhớ đệm GraphQL được Shopify và The Guild mua lại. Hơn nữa, Stoiber giải thích tại sao các ứng dụng ChatGPT cảm giác như một bề mặt mới cho phát triển phần mềm. Tập này được tài trợ bởi Coder.com, WorkOS, Notion, Fly.io và Changelog++.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">5</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">sqlite-utils 4.0rc2, chủ yếu do Claude Fable viết (với chi phí khoảng 149.25 USD)</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;sqlite-utils 4.0rc2, mostly written by Claude Fable (for about $149.25)</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Simon Willison</span>&nbsp;&nbsp;&nbsp;<a href="https://simonwillison.net/2026/Jul/5/sqlite-utils-fable/#atom-everything" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Tôi là biên tập viên tin tức công nghệ. Một bản cập nhật gần đây cho sqlite-utils, một thư viện quản lý cơ sở dữ liệu phổ biến, đã được phát hành dưới dạng phiên bản 4.0rc2. Bản cập nhật này được thực hiện nhờ Claude Fable, một tác nhân lập trình, người đã làm việc trên dự án với khoảng $149,25. Phiên bản mới này giải quyết một số vấn đề quan trọng, bao gồm một lỗi nghiêm trọng có thể dẫn đến mất dữ liệu. Lỗi này được Fable xác định và sửa thông qua một loạt 37 yêu cầu và 34 commit. Bản cập nhật cũng bao gồm tài liệu toàn diện về xử lý giao dịch, một tính năng mới trong thư viện. Tài liệu này giải thích cách giao dịch hoạt động trong sqlite-utils và cung cấp hướng dẫn về khi nào sử dụng db.atomic() và các phương thức liên quan đến giao dịch khác. Ngoài ra, bản cập nhật đảm bảo rằng thư viện hoạt động chính xác với các kết nối Python 3.12+, có các cài đặt autocommit khác nhau. Việc xem xét cuối cùng được thực hiện thông qua giao diện PR của GitHub và bản cập nhật hiện đã có sẵn để thử nghiệm.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">6</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Thiên tài ẩn mình của Jim Henson: Khám phá kiệt tác The Cube, tiền thân của Black Mirror</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;The Unseen Genius of Jim Henson: Unpacking the Proto-Black Mirror Masterpiece, The Cube</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Dev.to AI</span>&nbsp;&nbsp;&nbsp;<a href="https://dev.to/yagyaraj_sharma_6cd410179/the-unseen-genius-of-jim-henson-unpacking-the-proto-black-mirror-masterpiece-the-cube-4b8d" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Jim Henson, người tạo ra nổi tiếng của The Muppets và The Dark Crystal, có một viên ngọc ít được biết đến trong tác phẩm của mình - The Cube, một vở kịch truyền hình năm 1969 xuất hiện trước những tác phẩm như Black Mirror hàng thập kỷ. Sản xuất cho Experiment in Television của NBC, The Cube là một cuộc khám phá 30 phút về tình trạng con người, đi sâu vào các chủ đề về sự cô lập, hoảng loạn và sự模糊 của thực tại. Câu chuyện theo dõi một nhóm người bị mắc kẹt trong một khối lập phương bí ẩn, luôn thay đổi với không có lối thoát hoặc giải thích rõ ràng. The Cube là một lớp học thạc sĩ về sự tinh tế, sử dụng khối lập phương như một ẩn dụ cho sự phức tạp của sự tồn tại con người. Vở kịch truyền hình này展示 khả năng của Henson trong việc tạo ra những câu chuyện phức tạp, sâu sắc và phù hợp với khán giả, và các chủ đề của nó hiện diện trong các tác phẩm sau này của ông, mặc dù ở những hình thức tinh tế hơn. The Cube là một viên ngọc ẩn trong tác phẩm của Henson, cung cấp một cái nhìn về phía tối, sâu sắc hơn của ông, và là một tác phẩm phải xem cho người hâm mộ công việc của ông và những người quan tâm đến sự tiến hóa của khoa học viễn tưởng và cách kể chuyện thử nghiệm.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">7</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Thiết bị hồi sinh nhãn cầu từ người hiến đã mất có thể giúp cấy ghép mắt thành hiện thực</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;A device that revives eyeballs from dead donors could make eye transplants possible</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;MIT Tech Review</span>&nbsp;&nbsp;&nbsp;<a href="https://www.technologyreview.com/2026/07/03/1140148/a-device-that-revives-eyeballs-from-dead-donors-could-make-eye-transplants-possible/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Các nhà khoa học đã có một bước tiến đột phá trong cấy ghép mắt với sự phát triển của một thiết bị gọi là Eye-in-a-Care-Box (ECaBox). Thiết bị này sử dụng kỹ thuật perfusion, một phương pháp cung cấp oxy và chất dinh dưỡng cho các cơ quan, để duy trì và hồi sinh các quả cầu mắt vừa được loại bỏ. Các nhà nghiên cứu do Pia Cosma dẫn đầu tại Trung tâm Quản lý Genomic ở Tây Ban Nha đã thử nghiệm thiết bị trên mắt lợn và mắt người từ các nhà tài trợ đã qua đời. Kết quả cho thấy mắt được điều trị bằng ECaBox vẫn giữ khả năng truyền tín hiệu điện và có khả năng nhìn, thậm chí sau 24 giờ. Ngược lại, mắt không được điều trị nhanh chóng suy giảm và mất cấu trúc. Thiết bị có một cửa sổ trong để các nhà nghiên cứu nghiên cứu và hình ảnh hóa mắt, và nó duy trì nhiệt độ và áp suất cụ thể để bảo tồn cơ quan. Đội ngũ hy vọng rằng ECaBox có thể một ngày nào đó biến cấy ghép toàn bộ mắt thành một khả năng có thể, cho phép mọi người nhìn lại sau khi nhận được một mắt hiến tặng. Mặc dù thiết bị đã cho thấy kết quả đầy hứa hẹn, nhưng vẫn cần thêm thử nghiệm và cải tiến trước khi nó có thể được sử dụng trong cấy ghép cho người.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">8</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Mức tiêu thụ điện năng biến động của AI âm thầm thử thách giới hạn lưới điện</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;AI’s Volatile Power Use Quietly Tests Grid Limits</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;IEEE Spectrum</span>&nbsp;&nbsp;&nbsp;<a href="https://spectrum.ieee.org/data-centers-grid-instability" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Sự phát triển nhanh chóng của cơ sở hạ tầng trí tuệ nhân tạo (AI) đang gây áp lực lên lưới điện, không chỉ do nhu cầu năng lượng tăng cao, mà còn do tính chất khó dự đoán và đồng bộ của các khối lượng công việc tính toán AI. Các trung tâm dữ liệu, nơi đặt cơ sở hạ tầng AI, dự kiến sẽ tiêu thụ 3-4% nhu cầu điện toàn cầu trong thập kỷ này. Vấn đề không chỉ là về lượng điện tiêu thụ, mà còn là về tốc độ và vị trí nhu cầu thay đổi, tạo ra những thách thức vận hành mới cho các nhà điều hành lưới điện. Không giống như nhu cầu công nghiệp truyền thống, các khối lượng công việc AI có thể tăng và giảm nhanh chóng, tạo ra những thay đổi đáng kể về tiêu thụ điện trong khoảng thời gian ngắn. Sự biến động này có thể gây áp lực lên các nguồn dự phòng, cơ chế kiểm soát tần số và cơ sở hạ tầng truyền tải địa phương. Do đó, các nhà điều hành trung tâm dữ liệu đang triển khai các công nghệ giảm thiểu, và các tổ chức nghiên cứu đang nhấn mạnh sự phức tạp ngày càng tăng của việc tích hợp các nguồn lực động vào hoạt động lưới điện hiện đại.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+
+  <!-- TIPS SECTION -->
+  
+  <tr>
+    <td bgcolor="#FFFBEB" style="background-color:#FFFBEB;padding:20px 30px;border-top:3px solid #D97706;">
+      <p style="margin:0 0 12px;font-size:11px;color:#D97706;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#9889;&nbsp;Tips &amp; Tricks cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Sử dụng Ollama</strong><br><strong>Vấn đề:</strong> Cần chạy LLM trên máy cá nhân mà không cần kết nối internet.<br><strong>Cách làm:</strong> Cài đặt Ollama, chọn mô hình LLM phù hợp, và nhập prompt như &quot;Tôi cần thông tin về chủ đề AI&quot;. <br><strong>Đánh giá:</strong> Hiệu quả cho các dự án cần bảo mật dữ liệu, không nên dùng cho mô hình quá lớn.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tối ưu hóa LM Studio</strong><br><strong>Vấn đề:</strong> LM Studio chạy chậm trên máy cá nhân.<br><strong>Cách làm:</strong> Điều chỉnh cấu hình LM Studio, giảm kích thước mô hình, và nhập lệnh <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">lmstudio --optimize</code> để tối ưu hóa.<br><strong>Đánh giá:</strong> Hiệu quả cho máy cá nhân cấu hình thấp, không nên dùng cho dự án cần độ chính xác cao.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Chạy LLM Offline</strong><br><strong>Vấn đề:</strong> Cần chạy LLM trên máy cá nhân mà không có kết nối internet.<br><strong>Cách làm:</strong> Sử dụng LM Studio, nhập lệnh <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">lmstudio --offline</code> và nhập prompt như &quot;Tôi cần thông tin về chủ đề machine learning&quot;.<br><strong>Đánh giá:</strong> Hiệu quả cho dự án cần bảo mật và không cần cập nhật dữ liệu mới.</p>
+    </td>
+  </tr>
+
+  <!-- LESSON SECTION -->
+  
+  <tr>
+    <td bgcolor="#F0FFF4" style="background-color:#F0FFF4;padding:20px 30px;border-top:3px solid #2E7D32;">
+      <p style="margin:0 0 12px;font-size:11px;color:#2E7D32;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128218;&nbsp;B&#224;i h&#7885;c AI h&#244;m nay cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;">1. <strong>Tối ưu chi phí &amp; hiệu năng LLM</strong><br>2. Để xây dựng ứng dụng AI hiệu quả, các developer cần biết cách tối ưu chi phí và hiệu năng của mô hình ngôn ngữ lớn (LLM). Điều này giúp giảm thiểu chi phí tính toán và tăng tốc độ xử lý, từ đó cải thiện trải nghiệm người dùng. Việc tối ưu hóa LLM cũng giúp giảm thiểu tác động môi trường của các ứng dụng AI.<br>3. Ví dụ, bằng cách sử dụng kỹ thuật fine-tuning và LoRA, các developer có thể giảm kích thước mô hình và tăng tốc độ đào tạo, từ đó giảm chi phí và tăng hiệu năng.<br>4. 💡 Tip hoặc bước tiếp theo: Các developer nên khám phá các kỹ thuật tối ưu hóa LLM như quantization, pruning và knowledge distillation để giảm chi phí và tăng hiệu năng cho ứng dụng AI của mình.</p>
+    </td>
+  </tr>
+
+  <!-- FOOTER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:20px 30px;text-align:center;border-radius:0 0 10px 10px;">
+      <p style="margin:0 0 4px;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        &#128161;&nbsp;Lu&#244;n &#273;i &#273;&#7847;u trong th&#7871; gi&#7899;i AI!&nbsp;&#183;&nbsp;Stay ahead in AI!
+      </p>
+      <p style="margin:6px 0 0;font-size:11px;color:#4A7AAB;font-family:Arial,sans-serif;">
+        Ngu&#7891;n: Google News · Groq AI
+      </p>
+    </td>
+  </tr>
+
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+
+</td></tr>
+</table>
+</body>
+</html>

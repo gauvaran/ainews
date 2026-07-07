@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--[if mso]>
+<noscript><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings></xml></noscript>
+<![endif]-->
+<style>
+/* ── Responsive overrides for web (email HTML uses fixed 600px tables) ── */
+@media screen and (max-width:620px) {
+  table[width="600"] { width:100% !important; }
+  td { word-break:break-word; overflow-wrap:break-word; }
+  /* Reduce generous email padding on small screens */
+  td[style*="padding:28px 30px"],
+  td[style*="padding:24px 30px"],
+  td[style*="padding:22px 30px"],
+  td[style*="padding:20px 30px"],
+  td[style*="padding:16px 30px"],
+  td[style*="padding:12px 30px"] { padding-left:14px !important; padding-right:14px !important; }
+  /* Code blocks: scroll horizontally instead of breaking layout */
+  pre { overflow-x:auto !important; max-width:calc(100vw - 32px) !important; box-sizing:border-box; }
+  /* Shrink large heading text slightly */
+  h1[style*="26px"] { font-size:20px !important; }
+}
+/* ── Print: hide nav bar ── */
+@media print {
+  #web-nav { display:none !important; }
+  body { background:#fff !important; }
+}
+</style>
+</head>
+<body style="margin:0;padding:0;background-color:#EEF2F7;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+<div id="web-nav" style="background:#001a4d;padding:8px 16px;font-family:Arial,sans-serif;font-size:13px;position:sticky;top:0;z-index:999;border-bottom:2px solid #0066CC;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
+  <span id="nav-prev" style="color:#4A6A8A;">&#8592;</span>
+  <a href="all.html" style="color:#FFD700;text-decoration:none;font-weight:bold;">&#128240; T&#7845;t c&#7843; b&#7843;n tin</a>
+  <span style="color:#FFFFFF;">07/07/2026</span>
+  <span id="nav-next" style="color:#4A6A8A;">&#8594;</span>
+  <a href="2026-07-07.pdf" download="2026-07-07.pdf" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128196; T&#7843;i PDF</a>
+  <button onclick="sharePage()" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128279; Chia s&#7867;</button>
+</div>
+<script>
+function sharePage(){
+  var title='Bản tin AI BIS-MT – 07/07/2026';
+  if(navigator.share){navigator.share({title:title,url:location.href});}
+  else{navigator.clipboard.writeText(location.href).then(function(){
+    alert('Đã sao chép link!');
+  });}
+}
+(function(){
+  var m=location.pathname.match(/(\d{4}-\d{2}-\d{2})\.html/);
+  if(!m)return;
+  var slug=m[1];
+  function fmt(s){var p=s.split('-');return p[2]+'/'+p[1];}
+  var lnkStyle='color:#90C4F0;text-decoration:none;';
+  fetch('dates.json?_='+Date.now())
+    .then(function(r){return r.json();})
+    .then(function(dates){
+      var idx=dates.indexOf(slug);
+      if(idx>0){
+        var p=dates[idx-1];
+        document.getElementById('nav-prev').innerHTML=
+          '<a href="'+p+'.html" style="'+lnkStyle+'">&#8592; '+fmt(p)+'</a>';
+      }
+      if(idx>=0&&idx<dates.length-1){
+        var n=dates[idx+1];
+        document.getElementById('nav-next').innerHTML=
+          '<a href="'+n+'.html" style="'+lnkStyle+'">'+fmt(n)+' &#8594;</a>';
+      }
+    })
+    .catch(function(){});
+})();
+</script>
+
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#EEF2F7" style="background-color:#EEF2F7;">
+<tr><td align="center" style="padding:24px 12px;">
+
+<!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0"><tr><td><![endif]-->
+<table role="presentation" width="600" cellpadding="0" cellspacing="0"
+       style="max-width:600px;width:100%;background-color:#FFFFFF;border-radius:10px;" bgcolor="#FFFFFF">
+
+  <!-- HEADER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:28px 30px 22px 30px;text-align:center;border-radius:10px 10px 0 0;">
+      <p style="margin:0 0 6px;font-size:11px;color:#7EB1E8;letter-spacing:2px;font-family:Arial,sans-serif;text-transform:uppercase;">
+        BIS &#8209; MT &nbsp;&#183;&nbsp; 07/07/2026
+      </p>
+      <h1 style="margin:0;font-size:26px;font-weight:bold;color:#FFFFFF;font-family:Arial,sans-serif;line-height:1.2;">
+        &#129302; B&#7843;n Tin AI H&#7857;ng Ng&#224;y
+      </h1>
+      <p style="margin:8px 0 0;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        C&#7853;p nh&#7853;t c&#244;ng ngh&#7879; AI m&#7899;i nh&#7845;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- QUOTE -->
+  <tr>
+    <td bgcolor="#EBF4FF" style="background-color:#EBF4FF;padding:16px 30px;border-top:3px solid #0066CC;">
+      <p style="margin:0;font-size:14px;color:#1A3A5C;font-style:italic;line-height:1.6;font-family:Georgia,serif;">
+        &#10024;&nbsp;&ldquo;Chớ thấy sóng cả mà ngã tay chèo.&rdquo;
+      </p>
+      
+      <p style="margin:8px 0 0;font-size:12px;color:#888888;font-family:Arial,sans-serif;">&mdash;&nbsp;Tục ngữ Việt Nam</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#5A6A7A;font-style:italic;line-height:1.5;font-family:Arial,sans-serif;">&#128161;&nbsp;Trước khó khăn lớn, đừng bỏ cuộc — giữ vững ý chí và tiếp tục nỗ lực mới là con đường đến thành công.</p>
+    </td>
+  </tr>
+
+  <!-- SECTION LABEL -->
+  <tr>
+    <td bgcolor="#F5F7FA" style="background-color:#F5F7FA;padding:12px 30px;">
+      <p style="margin:0;font-size:11px;color:#999999;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128240;&nbsp;Tin t&#7913;c n&#7893;i b&#7853;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- ARTICLES -->
+  
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">1</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Chuyên gia bảo mật cảnh báo lỗ hổng trong mã nguồn do AI tạo.</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Security Researchers Sound the Alarm on Vulnerabilities in AI-Generated Code</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Infosecurity Magazine</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMigwFBVV95cUxOa2EtOVAxcE9xSjRyTkZTNnQ4WV9XQWxKVDdYYjhGWHJ6S0YzanE2aWNfQlRja25RMkdINm16ZzhwM0pWQ1BUendwdjI5RnBFa2tVOTVWbHFfWExIZzNHNmdsZEJQSlBSN0gwQk5CRTVBUGdMLTk1bHJ1dzAzNEJWNkJGVQ?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Các nhà nghiên cứu bảo mật đã bày tỏ mối quan ngại về các điểm yếu trong mã được tạo ra bởi AI, nhấn mạnh các rủi ro tiềm ẩn đối với bảo mật phần mềm. Vấn đề này phát sinh từ sự phụ thuộc vào các thuật toán học máy, có thể giới thiệu các lỗi và điểm yếu vào mã. Các điểm yếu này có thể bị khai thác bởi các kẻ tấn công, làm tổn hại đến tính toàn vẹn và bảo mật của phần mềm.
+
+Các nhà nghiên cứu đã xác định một số vấn đề với mã được tạo ra bởi AI, bao gồm khả năng có backdoor, chức năng không mong muốn và xử lý lỗi kém. Việc sử dụng các model đã được đào tạo trước và thử nghiệm hạn chế cũng có thể dẫn đến các hậu quả không lường trước. Hơn nữa, sự thiếu minh bạch và giải thích trong mã được tạo ra bởi AI làm cho việc xác định và giải quyết các điểm yếu trở nên thách thức.
+
+Các phát hiện này nhấn mạnh nhu cầu của các developer phải đánh giá và thử nghiệm cẩn thận mã được tạo ra bởi AI trước khi triển khai. Điều này bao gồm việc thực hiện các thủ tục thử nghiệm và xác thực mạnh mẽ để đảm bảo mã đáp ứng các tiêu chuẩn bảo mật. Cảnh báo của các nhà nghiên cứu đóng vai trò như một lời nhắc nhở về tầm quan trọng của sự giám sát và xem xét của con người trong quá trình phát triển, đặc biệt khi sử dụng mã được tạo ra bởi AI.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">2</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">AWS mã nguồn mở MCP Server cho Bedrock AgentCore để tinh gọn phát triển AI Agent.</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;AWS Open-Sources an MCP Server for Bedrock AgentCore to Streamline AI Agent Development</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;MarkTechPost</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMixwFBVV95cUxNZDEzc3dIU3dtSUFCMzJVVU1HeXZSUkdqNmFqMDh5U2d4MEZjRzV6RE14YWdscDYxdWpXelhjUWtPaWZYS19uamp1bUd0Z3dBRWFqOGZ2anAtQ3VvQ0pOUXVvc2tjNHR5cDBGSVJlMkJJQ25CcnRMLWtfWWZVVUwxcXhxMk5qY25BSFJyUk14NGNDWk1BbXp0WUtNeTJqVG1uVDA3NTRHVmF6RWFTeDZ2LVNRTHJ3cTRLWkdtekZ6VjhyNXE3YVFJ?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Amazon Web Services (AWS) đã mở nguồn một máy chủ MCP (Nền tảng Đa đám mây) cho Bedrock AgentCore, một framework được thiết kế để đơn giản hóa việc phát triển các tác nhân AI. Việc này nhằm mục đích đơn giản hóa quá trình tạo và triển khai các tác nhân AI trên nhiều môi trường đám mây khác nhau.
+
+Máy chủ MCP là một thành phần quan trọng của Bedrock AgentCore, cho phép các nhà phát triển quản lý và điều phối các tác nhân AI trên nhiều nền tảng đám mây, bao gồm AWS, Azure và Google Cloud. Bằng cách mở nguồn máy chủ MCP, AWS cung cấp một giao diện tiêu chuẩn hóa cho việc phát triển tác nhân AI, giúp các nhà phát triển dễ dàng xây dựng và triển khai các ứng dụng được hỗ trợ bởi AI trên các môi trường đám mây khác nhau.
+
+Việc phát hành mã nguồn mở này dự kiến sẽ đẩy nhanh việc phát triển và triển khai tác nhân AI, vì các nhà phát triển hiện có thể tận dụng một nền tảng thống nhất để tạo và quản lý các tác nhân AI trên nhiều nền tảng đám mây. Máy chủ MCP sẽ có sẵn dưới giấy phép Apache 2.0, cho phép các nhà phát triển sửa đổi và mở rộng mã để đáp ứng nhu cầu cụ thể của họ.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">3</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Các model open-weight hàng đầu Trung Quốc — và những đối thủ mạnh nhất từ Mỹ.</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;The best Chinese open-weight models — and the strongest US rivals</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;understandingai.org</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMieEFVX3lxTE5aRUUtRDNyd05CNlRPU1JDN2lPcEU3RkZVOTU0UkN4T1Vzb0hvMjhWTGJLUzlwcW83dWxsY1pVTFlHNjlnLUt1N0JJVnB1dGtqdTQxNjd1R2U4OW14RWhUVVZkVlFUVDExWWx5QjJ2U1ZFSlVKS0s5RA?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Bài viết thảo luận về các mẫu xe điện không giới hạn trọng lượng hàng đầu của Trung Quốc và các đối thủ mạnh nhất của Mỹ. Các mẫu xe không giới hạn trọng lượng đề cập đến xe điện có thiết kế tối giản, thường không có mái cố định hoặc cửa. Các nhà sản xuất Trung Quốc đã đi đầu trong xu hướng này, cung cấp các lựa chọn sáng tạo và thời trang.
+
+Một số mẫu xe không giới hạn trọng lượng hàng đầu của Trung Quốc được đề cập bao gồm FAW Hongqi H9, BYD Tang và Geely Geometry A. Những xe này cung cấp sự kết hợp độc đáo giữa hiệu suất, sự thoải mái và phong cách, khiến chúng trở nên phổ biến среди người tiêu dùng.
+
+Bài viết cũng nhấn mạnh những đối thủ mạnh nhất của Mỹ đối với các mẫu xe Trung Quốc này. Tuy nhiên, các mẫu xe cụ thể của Mỹ không được cung cấp trong nội dung cho trước. Bài viết kết thúc bằng cách nhấn mạnh sự cạnh tranh ngày càng tăng trong thị trường không giới hạn trọng lượng, với các nhà sản xuất Trung Quốc đang đẩy ranh giới của sự đổi mới và thiết kế.
+
+Bài viết dường như tập trung vào ngành công nghiệp ô tô, đặc biệt là xe điện và các mẫu xe không giới hạn trọng lượng, và cung cấp một so sánh giữa các nhà sản xuất Trung Quốc và Mỹ.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">4</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">VHF Propagation: Những điều mọi RF Engineer cần biết.</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;VHF Propagation: What Every RF Engineer Should Know</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;IEEE Spectrum</span>&nbsp;&nbsp;&nbsp;<a href="https://content.knowledgehub.wiley.com/understanding-vhf-very-high-frequency-propagation/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Sự lan truyền VHF: Hiểu rõ sự phức tạp của tín hiệu tần số vô tuyến
+
+Tần số VHF, trải từ 30-300 MHz, được sử dụng cho nhiều ứng dụng khác nhau bao gồm phát sóng, liên lạc giọng nói, dẫn đường hàng không và radar quốc phòng. Tuy nhiên, giả định chung rằng tín hiệu VHF cần một &quot;đường ngắm&quot; để hoạt động là một sự đơn giản hóa quá mức. Trên thực tế, tín hiệu VHF tương tác với khí quyển và các vật thể vật lý, dẫn đến sự khúc xạ, phản xạ và tán xạ. Những hiệu ứng hàng ngày này có thể được bổ sung bởi một số chế độ không phổ biến giúp mở rộng đáng kể phạm vi VHF. Những chế độ này bao gồm ống dẫn troposphere, sự kiện E спорадический, đường mòn ion hóa của sao chổi và liên lạc Trái Đất-Mặt Trăng-Trái Đất. Bài báo này nhằm mục đích giáo dục các kỹ sư và nhà lập kế hoạch về vật lý, đặc điểm và ý nghĩa hoạt động của các chế độ này, cung cấp kiến thức thiết yếu cho thiết kế hệ thống VHF hiệu quả.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">5</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">300 USD cổ phần của gia đình bạn tại OpenAI.</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Your family’s $300 stake in OpenAI</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;MIT Tech Review</span>&nbsp;&nbsp;&nbsp;<a href="https://www.technologyreview.com/2026/07/06/1140176/your-familys-300-stake-in-openai/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Giám đốc điều hành OpenAI Sam Altman đã đề xuất một kế hoạch để trao cho chính phủ Mỹ một cổ phần 5% trong công ty, được định giá khoảng 42,6 tỷ USD. Cổ phần này sẽ được phân phối среди các hộ gia đình Mỹ, có thể cung cấp cho mỗi hộ khoảng 320 USD cổ phần. Ý tưởng này dựa trên quan niệm rằng các công ty AI nên bồi thường cho cá nhân về giá trị mà họ tạo ra, vì AI học hỏi từ công việc do con người tạo ra. Điều này có thể phục vụ như một hình thức bồi thường chậm trễ và cung cấp một mạng lưới an toàn cho những người có thể mất việc do tự động hóa AI. Kế hoạch này được cho là đang được thảo luận với Tổng thống Trump, người có lịch sử làm các thỏa thuận công nghệ. Tuy nhiên, chi tiết của đề xuất vẫn còn hạn chế, và vẫn chưa rõ liệu một kế hoạch cụ thể sẽ được hình thành. Thượng nghị sĩ Bernie Sanders đã đề xuất một kế hoạch tham vọng hơn, trao cho người Mỹ một cổ phần 50% trong các công ty AI hàng đầu. Ý tưởng này có sức hấp dẫn chính trị rộng rãi nhưng vẫn chủ yếu là một câu chuyện chứ không phải là một kế hoạch chính sách.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">6</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Agentic Batch Changes hiện đã ra mắt public beta.</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Agentic Batch Changes is now in public beta</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Sourcegraph Blog</span>&nbsp;&nbsp;&nbsp;<a href="http://localhost:5174/blog/agentic-batch-changes-public-beta" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Agentic Batch Changes đã bước vào giai đoạn beta công khai, đánh dấu một bước phát triển quan trọng trong việc di chuyển mã tự động. Trình đại lý này được hỗ trợ bởi AI, được thiết kế để tối ưu hóa việc cập nhật mã quy mô lớn trên nhiều kho lưu trữ. Các khả năng của nó bao gồm xác định phạm vi, thực thi và vận chuyển các bản di chuyển mã, cuối cùng đảm bảo rằng tất cả các yêu cầu kéo (PRs) đều có thể hợp nhất.
+
+Chức năng chính của trình đại lý này là đơn giản hóa quá trình cập nhật cơ sở mã, một nhiệm vụ có thể tốn thời gian và đòi hỏi nhiều lao động. Bằng cách tự động hóa quá trình này, các nhà phát triển có thể tập trung vào các khía cạnh khác của công việc, chẳng hạn như viết mã mới hoặc giải quyết các vấn đề quan trọng.
+
+Phiên bản beta công khai của Agentic Batch Changes cho thấy công nghệ này hiện đã có sẵn để thử nghiệm và đánh giá bởi một đối tượng rộng lớn hơn. Động thái này có thể báo hiệu tiềm năng của trình đại lý này trở thành một công cụ hữu ích cho các nhà phát triển và tổ chức nhằm cải thiện các quy trình quản lý và bảo trì mã của họ.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">7</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Framework ASPIRE của Nvidia tăng tốc lập trình robot bằng AI tự cải thiện như thế nào.</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;How Nvidia’s ASPIRE framework accelerates robot programming with self-improving AI</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;BD Tech Talks</span>&nbsp;&nbsp;&nbsp;<a href="https://bdtechtalks.com/2026/07/06/nvidia-aspire-self-improving-robotic-framework/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=nvidia-aspire-self-improving-robotic-framework" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Khung ASPIRE của Nvidia là một giải pháp đột phá cho các thách thức lập trình robot truyền thống. Nó sử dụng một phương pháp AI tự cải thiện cho phép các hệ thống trí tuệ nhân tạo viết, thực thi và tinh chỉnh các chương trình điều khiển robot một cách tự động. ASPIRE chẩn đoán các lỗi của chính nó và tích lũy các sửa chữa thành công vào một thư viện kỹ năng có thể tái sử dụng, giảm đáng kể nỗ lực lập trình, token và gỡ lỗi cần thiết trên các robot vật lý. Khung này phù hợp với xu hướng ngành công nghiệp hướng tới các hệ thống tự cải thiện, có thể thích nghi và triển khai các hệ thống robot trong các môi trường phức tạp.
+
+ASPIRE hoạt động như một kỹ sư robot senior, liên tục học hỏi từ kinh nghiệm và tích lũy kiến thức có thể chuyển giao. Không giống như các tác nhân mã hóa robot hiện tại, ASPIRE có thể xác định nguyên nhân gốc rễ của các lỗi và phát triển các chiến lược sửa chữa hiệu quả. Nó cũng có thể nhớ các giải pháp thành công và áp dụng chúng cho các nhiệm vụ trong tương lai, cho phép nó trở nên tốt hơn theo thời gian.
+
+Khung ASPIRE có tiềm năng cách mạng hóa lĩnh vực robot bằng cách cho phép robot học hỏi từ kinh nghiệm và cải thiện hiệu suất của chúng một cách tự động. Khả năng tích lũy kiến thức có thể tái sử dụng và thích nghi với các tình huống mới làm cho nó trở thành một phát triển thú vị trong lĩnh vực trí tuệ nhân tạo, đặc biệt là LLM và API, mang lại nhiều cơ hội cho các developer trong việc xây dựng các model và framework mới.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">8</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Mets gặp khó khăn: Lindor và Stearns nhận trách nhiệm về khởi đầu tệ hại.</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Mets&#x27; Struggles: Lindor and Stearns Take Responsibility for Dismal Start</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Dev.to AI</span>&nbsp;&nbsp;&nbsp;<a href="https://dev.to/yagyaraj_sharma_6cd410179/mets-struggles-lindor-and-stearns-take-responsibility-for-dismal-start-18if" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Đội bóng chày New York Mets đang gặp khó khăn trong mùa giải này, đứng cuối bảng xếp hạng National League East. Trong một diễn biến gần đây, huấn luyện viên Carlos Mendoza đã bị sa thải, khiến ngắnstop Francisco Lindor và chủ tịch vận hành bóng chày David Stearns phải chịu trách nhiệm về hiệu suất kém của đội. Đây là một biểu hiện hiếm thấy về trách nhiệm từ các vận động viên và ban quản lý, khi họ thừa nhận những khó khăn của đội và tự nhận trách nhiệm về hành động của mình. Lindor tuyên bố rằng các cầu thủ đã &quot;thất bại&quot; Mendoza, trong khi Stearns nhấn mạnh rằng mọi người đều phải chịu trách nhiệm về hiệu suất của đội. Sự thay đổi trong thái độ này có thể là một bước ngoặt cho Mets, khi họ bắt đầu tập trung vào việc thực hiện những thay đổi và cải thiện trò chơi của mình. Với Mendoza rời đi, đội sẽ cần tìm một huấn luyện viên mới để dẫn dắt họ thoát khỏi tình trạng này. Mets sẽ cần tái tập hợp và tái tập trung, giải quyết các vấn đề như tấn công yếu kém và phòng thủ lỏng lẻo. Nếu đội sẵn sàng làm việc, họ có thể đang trên con đường trở lại.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+
+  <!-- TIPS SECTION -->
+  
+  <tr>
+    <td bgcolor="#FFFBEB" style="background-color:#FFFBEB;padding:20px 30px;border-top:3px solid #D97706;">
+      <p style="margin:0 0 12px;font-size:11px;color:#D97706;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#9889;&nbsp;Tips &amp; Tricks cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Sử dụng LangSmith</strong><br><strong>Vấn đề:</strong> Khó theo dõi hiệu suất mô hình AI.<br><strong>Cách làm:</strong> Sử dụng LangSmith để theo dõi và phân tích hiệu suất mô hình. Ví dụ, lệnh <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">langsmith monitor</code> giúp theo dõi tiến trình đào tạo.<br><strong>Đánh giá:</strong> Hiệu quả cao trong việc tối ưu hóa mô hình, đặc biệt khi đào tạo mô hình lớn.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tích hợp Langfuse</strong><br><strong>Vấn đề:</strong> Chi phí đào tạo mô hình AI cao.<br><strong>Cách làm:</strong> Tích hợp Langfuse để giảm chi phí đào tạo mô hình. Ví dụ, lệnh <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">langfuse optimize</code> giúp giảm thiểu tài nguyên cần thiết.<br><strong>Đánh giá:</strong> Giúp giảm chi phí đào tạo mô hình, đặc biệt khi sử dụng tài nguyên điện toán đám mây.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Triển khai Arize Phoenix</strong><br><strong>Vấn đề:</strong> Khó kiểm soát và theo dõi mô hình AI trong sản xuất.<br><strong>Cách làm:</strong> Triển khai Arize Phoenix để giám sát và kiểm soát mô hình AI trong sản xuất. Ví dụ, lệnh <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">arize phoenix deploy</code> giúp triển khai mô hình nhanh chóng.<br><strong>Đánh giá:</strong> Hiệu quả cao trong việc đảm bảo mô hình AI hoạt động ổn định và đáng tin cậy trong sản xuất.</p>
+    </td>
+  </tr>
+
+  <!-- LESSON SECTION -->
+  
+  <tr>
+    <td bgcolor="#F0FFF4" style="background-color:#F0FFF4;padding:20px 30px;border-top:3px solid #2E7D32;">
+      <p style="margin:0 0 12px;font-size:11px;color:#2E7D32;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128218;&nbsp;B&#224;i h&#7885;c AI h&#244;m nay cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;">1. <strong>Tích hợp AI API vào ứng dụng</strong><br>2. Tích hợp AI API vào ứng dụng giúp tăng cường khả năng xử lý và phân tích dữ liệu, từ đó cải thiện trải nghiệm người dùng. Điều này cho phép các nhà phát triển tạo ra các ứng dụng thông minh hơn, có thể tự động hóa các nhiệm vụ và đưa ra quyết định dựa trên dữ liệu. Việc tích hợp AI API cũng giúp giảm thiểu thời gian và công sức phát triển.<br>3. Ví dụ, một ứng dụng có thể sử dụng API của Google Cloud Vision để phân tích hình ảnh và nhận diện đối tượng, hoặc sử dụng API của IBM Watson để phân tích ngôn ngữ tự nhiên và trả lời câu hỏi của người dùng.<br>4. 💡 Tip hoặc bước tiếp theo: Để bắt đầu tích hợp AI API vào ứng dụng, các nhà phát triển nên nghiên cứu các dịch vụ AI API hiện có và chọn dịch vụ phù hợp với nhu cầu của ứng dụng, sau đó đọc tài liệu và thực hiện các bước tích hợp theo hướng dẫn.</p>
+    </td>
+  </tr>
+
+  <!-- FOOTER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:20px 30px;text-align:center;border-radius:0 0 10px 10px;">
+      <p style="margin:0 0 4px;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        &#128161;&nbsp;Lu&#244;n &#273;i &#273;&#7847;u trong th&#7871; gi&#7899;i AI!&nbsp;&#183;&nbsp;Stay ahead in AI!
+      </p>
+      <p style="margin:6px 0 0;font-size:11px;color:#4A7AAB;font-family:Arial,sans-serif;">
+        Ngu&#7891;n: Google News · Groq AI
+      </p>
+    </td>
+  </tr>
+
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+
+</td></tr>
+</table>
+</body>
+</html>

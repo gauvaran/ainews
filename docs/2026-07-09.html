@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--[if mso]>
+<noscript><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings></xml></noscript>
+<![endif]-->
+<style>
+/* ── Responsive overrides for web (email HTML uses fixed 600px tables) ── */
+@media screen and (max-width:620px) {
+  table[width="600"] { width:100% !important; }
+  td { word-break:break-word; overflow-wrap:break-word; }
+  /* Reduce generous email padding on small screens */
+  td[style*="padding:28px 30px"],
+  td[style*="padding:24px 30px"],
+  td[style*="padding:22px 30px"],
+  td[style*="padding:20px 30px"],
+  td[style*="padding:16px 30px"],
+  td[style*="padding:12px 30px"] { padding-left:14px !important; padding-right:14px !important; }
+  /* Code blocks: scroll horizontally instead of breaking layout */
+  pre { overflow-x:auto !important; max-width:calc(100vw - 32px) !important; box-sizing:border-box; }
+  /* Shrink large heading text slightly */
+  h1[style*="26px"] { font-size:20px !important; }
+}
+/* ── Print: hide nav bar ── */
+@media print {
+  #web-nav { display:none !important; }
+  body { background:#fff !important; }
+}
+</style>
+</head>
+<body style="margin:0;padding:0;background-color:#EEF2F7;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+<div id="web-nav" style="background:#001a4d;padding:8px 16px;font-family:Arial,sans-serif;font-size:13px;position:sticky;top:0;z-index:999;border-bottom:2px solid #0066CC;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
+  <span id="nav-prev" style="color:#4A6A8A;">&#8592;</span>
+  <a href="all.html" style="color:#FFD700;text-decoration:none;font-weight:bold;">&#128240; T&#7845;t c&#7843; b&#7843;n tin</a>
+  <span style="color:#FFFFFF;">09/07/2026</span>
+  <span id="nav-next" style="color:#4A6A8A;">&#8594;</span>
+  <a href="2026-07-09.pdf" download="2026-07-09.pdf" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128196; T&#7843;i PDF</a>
+  <button onclick="sharePage()" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128279; Chia s&#7867;</button>
+</div>
+<script>
+function sharePage(){
+  var title='Bản tin AI BIS-MT – 09/07/2026';
+  if(navigator.share){navigator.share({title:title,url:location.href});}
+  else{navigator.clipboard.writeText(location.href).then(function(){
+    alert('Đã sao chép link!');
+  });}
+}
+(function(){
+  var m=location.pathname.match(/(\d{4}-\d{2}-\d{2})\.html/);
+  if(!m)return;
+  var slug=m[1];
+  function fmt(s){var p=s.split('-');return p[2]+'/'+p[1];}
+  var lnkStyle='color:#90C4F0;text-decoration:none;';
+  fetch('dates.json?_='+Date.now())
+    .then(function(r){return r.json();})
+    .then(function(dates){
+      var idx=dates.indexOf(slug);
+      if(idx>0){
+        var p=dates[idx-1];
+        document.getElementById('nav-prev').innerHTML=
+          '<a href="'+p+'.html" style="'+lnkStyle+'">&#8592; '+fmt(p)+'</a>';
+      }
+      if(idx>=0&&idx<dates.length-1){
+        var n=dates[idx+1];
+        document.getElementById('nav-next').innerHTML=
+          '<a href="'+n+'.html" style="'+lnkStyle+'">'+fmt(n)+' &#8594;</a>';
+      }
+    })
+    .catch(function(){});
+})();
+</script>
+
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#EEF2F7" style="background-color:#EEF2F7;">
+<tr><td align="center" style="padding:24px 12px;">
+
+<!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0"><tr><td><![endif]-->
+<table role="presentation" width="600" cellpadding="0" cellspacing="0"
+       style="max-width:600px;width:100%;background-color:#FFFFFF;border-radius:10px;" bgcolor="#FFFFFF">
+
+  <!-- HEADER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:28px 30px 22px 30px;text-align:center;border-radius:10px 10px 0 0;">
+      <p style="margin:0 0 6px;font-size:11px;color:#7EB1E8;letter-spacing:2px;font-family:Arial,sans-serif;text-transform:uppercase;">
+        BIS &#8209; MT &nbsp;&#183;&nbsp; 09/07/2026
+      </p>
+      <h1 style="margin:0;font-size:26px;font-weight:bold;color:#FFFFFF;font-family:Arial,sans-serif;line-height:1.2;">
+        &#129302; B&#7843;n Tin AI H&#7857;ng Ng&#224;y
+      </h1>
+      <p style="margin:8px 0 0;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        C&#7853;p nh&#7853;t c&#244;ng ngh&#7879; AI m&#7899;i nh&#7845;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- QUOTE -->
+  <tr>
+    <td bgcolor="#EBF4FF" style="background-color:#EBF4FF;padding:16px 30px;border-top:3px solid #0066CC;">
+      <p style="margin:0;font-size:14px;color:#1A3A5C;font-style:italic;line-height:1.6;font-family:Georgia,serif;">
+        &#10024;&nbsp;&ldquo;Đường dài mới biết ngựa hay, ở lâu mới biết người ngay kẻ tà.&rdquo;
+      </p>
+      
+      <p style="margin:8px 0 0;font-size:12px;color:#888888;font-family:Arial,sans-serif;">&mdash;&nbsp;Tục ngữ Việt Nam</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#5A6A7A;font-style:italic;line-height:1.5;font-family:Arial,sans-serif;">&#128161;&nbsp;Phẩm chất thật sự chỉ được bộc lộ qua thời gian và thử thách — đừng vội đánh giá người hay việc.</p>
+    </td>
+  </tr>
+
+  <!-- SECTION LABEL -->
+  <tr>
+    <td bgcolor="#F5F7FA" style="background-color:#F5F7FA;padding:12px 30px;">
+      <p style="margin:0;font-size:11px;color:#999999;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128240;&nbsp;Tin t&#7913;c n&#7893;i b&#7853;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- ARTICLES -->
+  
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">1</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Hiện trạng các Agent Framework: Chọn Runtime phù hợp cho triển khai AI trong doanh nghiệp</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;State of Agent Frameworks: Choosing the Right Runtime for Enterprise AI Execution</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Medium</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxOdXdHT2dlWEx6TUh4VW5nQ0hCZWdqVjN4dEhkWXdhQ3ZhT2lPZUtmUlRVSG5zVTBQOWQ3MUIxZjdPZUl6ZmpsbXFWWTNQN3g4M0xfcWJhUDY1aU0tcEFLeDNZYXFmTDIzZmRLNG5VODcyem16VEFuUXRSWEFUSmE3WmFZTzhDbDFRaW1IcFp5QjBqeHpBb0dJM18wbjl0ZVVSNU8yM1Jwb2E3WkxyenNJNk0tTHRUWC1IRngwbEJycUxPTGc?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Bài viết &quot;Trạng thái của các Framework Trình điều khiển: Chọn Thời gian chạy Phù hợp cho Thực thi AI Doanh nghiệp&quot; cung cấp cái nhìn tổng quan về trạng thái hiện tại của các framework trình điều khiển trong bối cảnh thực thi AI doanh nghiệp. Các framework trình điều khiển là các nền tảng phần mềm cho phép tích hợp các model AI với các ứng dụng và hệ thống khác nhau.
+
+Bài viết nhấn mạnh tầm quan trọng của việc chọn thời gian chạy phù hợp cho thực thi AI doanh nghiệp, vì nó có thể ảnh hưởng đáng kể đến hiệu suất, khả năng mở rộng và khả năng bảo trì của các hệ thống được hỗ trợ bởi AI. Nó thảo luận về các đặc điểm chính của các framework trình điều khiển, bao gồm khả năng xử lý các quy trình làm việc phức tạp, tích hợp với nhiều nguồn dữ liệu và cung cấp khả năng ra quyết định thời gian thực.
+
+Bài viết cũng khám phá các loại framework trình điều khiển khác nhau có sẵn, bao gồm framework dựa trên quy tắc, framework dựa trên học máy và framework hỗn hợp. Nó nhấn mạnh nhu cầu về một framework có thể thích nghi với các yêu cầu kinh doanh thay đổi và cung cấp mức độ tùy chỉnh và linh hoạt cao.
+
+Cuối cùng, bài viết nhằm giúp các tổ chức doanh nghiệp đưa ra quyết định thông minh khi chọn một framework trình điều khiển cho nhu cầu thực thi AI của họ, đảm bảo rằng họ chọn một nền tảng đáp ứng các yêu cầu cụ thể của họ và hỗ trợ các mục tiêu kinh doanh của họ.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">2</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Xây dựng agent phân tích tài chính thông minh với LangGraph và Strands Agents</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Build an intelligent financial analysis agent with LangGraph and Strands Agents</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Amazon Web Services (AWS)</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMixAFBVV95cUxQcDBxeXdxZlJjREktdFdBdnJST0xDSzQtYmppeEZQdHZWSXdaWGxSLXNvNlRYUjYwMlQ0LWtzU3RUdVRJWkJzbW1MektRRDNRS2lTZkJXUGJXNUplcHlIQkxQdkhxZEJkZW1Dd0k2R1lPdDlXQXhYdUdUdnJ0NlJDSnFlUXVOY0pYRDdITjFRVXRKMjlqWkNORnp5SXQzdnZIazc5ZURWMU8xQlgzV19DRjIxeTE4RFZXdTBOc1JLOER3NFZl?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Amazon Web Services (AWS) đã giới thiệu một giải pháp để xây dựng một tác nhân phân tích tài chính thông minh sử dụng LangGraph và Strands Agents. Cách tiếp cận đổi mới này cho phép người dùng tạo một công cụ phân tích tài chính tinh vi có thể xử lý và phân tích dữ liệu tài chính phức tạp.
+
+LangGraph là một model ngôn ngữ dựa trên đồ thị có thể hiểu và tạo ra văn bản giống con người. Nó được tích hợp với Strands Agents, một framework để xây dựng giao diện trò chuyện. Bằng cách kết hợp hai công nghệ này, người dùng có thể phát triển một tác nhân phân tích tài chính có thể cung cấp phân tích sâu sắc và chính xác về dữ liệu tài chính.
+
+Tác nhân này có thể được đào tạo trên các tập dữ liệu tài chính khác nhau, cho phép nó học các mẫu và mối quan hệ trong dữ liệu. Sau đó, nó có thể tạo báo cáo và cung cấp khuyến nghị cho người dùng dựa trên phân tích của nó. Giao diện trò chuyện của tác nhân cho phép người dùng tương tác với nó một cách tự nhiên và trực quan, giúp họ dễ dàng truy cập và hiểu rõ về thông tin tài chính.
+
+Giải pháp này có tiềm năng cách mạng hóa cách dữ liệu tài chính được phân tích và trình bày, cung cấp cho người dùng một sự hiểu biết toàn diện và có thể hành động hơn về tình hình tài chính của họ.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">3</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">So sánh 7 LLM/hệ thống hàng đầu cho lập trình năm 2025</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Comparing the Top 7 Large Language Models LLMs/Systems for Coding in 2025</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;MarkTechPost</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxOcGllRl9UNEFHSnYwVGNfZk5oWEZjcXl2bW42a0oxbjVLWU1HaHgzczdIenVqUU1sbUVHZVQxSFJtcXNfNnFINVNXSWVqMHIwbUQ4XzgwRXQtVEJlY1JoR1A1NVFQV3N2WmR0bmJPNkgyYS1oeEZHdkFtNEpnWXBFcFVqY3hNaWd6dDFXdXRBeHdaQ3NmREpwUjJqS1hKTl9IMHItS3NDWWNJdlJYZmxHZkRQVTg?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Bài viết so sánh 7 mô hình ngôn ngữ lớn (LLM) hàng đầu cho việc lập trình vào năm 2025. Những mô hình này đã cách mạng hóa lĩnh vực lập trình bằng cách cho phép các nhà phát triển viết mã code hiệu quả và chính xác hơn. Các mô hình được so sánh bao gồm LLaMA, PaLM 2, Chinchilla, Llama 2, BLOOM, OPT-175B và MPT-PM.
+
+Mỗi mô hình có điểm mạnh và điểm yếu độc đáo, với một số mô hình vượt trội trong các lĩnh vực cụ thể như hoàn thiện code, gỡ lỗi và tạo code. Bài viết nhấn mạnh khả năng của từng mô hình, bao gồm khả năng hiểu và tạo code trong nhiều ngôn ngữ lập trình khác nhau.
+
+So sánh cũng tính đến tài nguyên tính toán, dữ liệu đào tạo và khả năng tinh chỉnh của các mô hình. Thông tin này rất quan trọng đối với các nhà phát triển để chọn mô hình phù hợp nhất với nhu cầu lập trình cụ thể của họ. Bằng cách hiểu điểm mạnh và hạn chế của từng mô hình, các nhà phát triển có thể tận dụng sức mạnh của LLM để cải thiện năng suất và hiệu quả lập trình của mình.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">4</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">MCP trên Code Mode</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;MCP on Code Mode</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Changelog</span>&nbsp;&nbsp;&nbsp;<a href="https://changelog.com/podcast/681" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Matt Carey của Cloudflare thảo luận về Code Mode và mối quan hệ của nó với MCP (Model-Code-Protocol) trong một cuộc phỏng vấn gần đây. Carey tiết lộ rằng chế độ Code Mode phía máy chủ cho phép một máy chủ MCP duy nhất hiển thị khoảng 2.500 điểm cuối API của Cloudflare bằng cách sử dụng khoảng 1.000 token ngữ cảnh. Ông cũng chia sẻ quy trình làm việc của mình với Claude, một model, và thảo luận về vai trò của bộ nhớ trong tương lai của các tác nhân. Ngoài ra, Carey đề cập đến trình tải Worker động, chạy an toàn mã được viết bởi model trong một môi trường cách ly V8. Cuộc trò chuyện cũng đề cập đến quy trình làm việc và công cụ cá nhân của Carey, chẳng hạn như trình bao git Zaggy của ông, ngăn chặn việc đẩy lực lên các kho lưu trữ của mình. Tập này được tài trợ bởi các công ty khác nhau, bao gồm Coder.com, Tailscale, RWX và Fly.io.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">5</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Giải mã loop engineering: Tận dụng tối đa AI agent, tránh &quot;loopmaxxing&quot;</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Demystifying loop engineering: Get more from AI agents, avoid loopmaxxing</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;BD Tech Talks</span>&nbsp;&nbsp;&nbsp;<a href="https://bdtechtalks.com/2026/06/22/ai-loop-engineering/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=ai-loop-engineering" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Các nhà phát triển đang thay đổi cách tiếp cận xây dựng ứng dụng với các mô hình ngôn ngữ lớn (LLM) bằng cách tập trung vào thiết kế các vòng lặp kích hoạt các tác nhân này, thay vì kích hoạt trực tiếp. Xu hướng này, được gọi là kỹ thuật vòng lặp, đã đang thu được động lực kể từ năm 2022 với sự xuất hiện của các vòng lặp suy luận kiểu ReAct. Thực tiễn này đã phát triển thông qua các thí nghiệm và sản phẩm hóa khác nhau, bao gồm các dự án mã nguồn mở AutoGPT và vòng lặp Ralph, và hiện đang được các nền tảng phát triển lớn áp dụng.
+
+Kỹ thuật vòng lặp đại diện cho một sự thay đổi范式 chức năng, chuyển từ việc quản lý vi mô các tương tác cá nhân sang việc tạo ra các dây chuyền lắp ráp phần mềm rộng lớn hơn. Điều này cho phép các hệ thống đánh giá các đầu ra trung gian, cập nhật trạng thái của chúng và tự xác định các bước tiếp theo một cách tự chủ. Tuy nhiên, các vòng lặp được thiết kế kém có thể dẫn đến các vấn đề như chi phí tăng vọt, giảm khả năng quan sát và việc theo đuổi mục tiêu không hiệu quả.
+
+Để xây dựng các vòng lặp hiệu quả, các nhà phát triển cần tập trung vào thiết kế các chương trình có cấu trúc hoặc tự động hóa đã lên lịch để cung cấp ngữ cảnh và hướng dẫn cho các LLM, đánh giá đầu ra kết quả so với các tiêu chí bên ngoài và xác định xem nhiệm vụ có yêu cầu một lần lặp lại hay không. Điều này liên quan đến việc sử dụng đệ quy, theo dõi trạng thái bền vững, các plugin bên ngoài và các rào cản hoạt động nghiêm ngặt để tạo ra các vòng lặp sẵn sàng sản xuất.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">6</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">STEM cần lãnh đạo từ mọi thế hệ tham gia</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;STEM Needs Leaders From Every Generation at the Table</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;IEEE Spectrum</span>&nbsp;&nbsp;&nbsp;<a href="https://spectrum.ieee.org/stem-leaders-ieee-ilc" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Hội nghị Lãnh đạo Quốc tế IEEE sẽ tập trung vào tầm quan trọng của lãnh đạo hợp tác trong các lĩnh vực STEM. Hội nghị, dự kiến diễn ra vào ngày 3-4 tháng 10 tại Budapest, nhằm trang bị cho các chuyên gia những công cụ cho lãnh đạo hợp tác và giải quyết nhu cầu chia sẻ kiến thức giữa các thế hệ. Với tốc độ phát triển công nghệ nhanh chóng và những thách thức toàn cầu phức tạp, lãnh đạo không còn là một nỗ lực cá nhân, mà là một nỗ lực hợp tác thúc đẩy kết nối, tận dụng các quan điểm đa dạng và hướng tới các kết quả chung.
+
+Hội nghị sẽ tập hợp các chuyên gia mới nổi, chuyên gia hàng đầu và các nhà lãnh đạo để thảo luận về cách các nhà lãnh đạo có thể chia sẻ thông tin giữa các vai trò, thích nghi với sự phát triển công nghệ nhanh chóng và xây dựng các cộng đồng chuyên nghiệp mạnh mẽ hơn. Thông qua các cuộc thảo luận, hội thảo và phiên họp tương tác, người tham dự sẽ xem xét cách hợp tác giữa các cấp độ kinh nghiệm và lĩnh vực có thể tăng cường việc ra quyết định và thúc đẩy đổi mới.
+
+Sự chuyển dịch sang lãnh đạo hợp tác được thúc đẩy bởi các yếu tố như chu kỳ phát triển công nghệ tăng tốc, nhu cầu xây dựng niềm tin công chúng và tỷ lệ lớn lực lượng lao động STEM đang đến tuổi nghỉ hưu. Hội nghị sẽ nhấn mạnh tầm quan trọng của một hệ sinh thái chung được xây dựng trên tinh thần hướng dẫn, học tập liên tục và chuyển giao kiến thức có chủ đích, nơi phát triển chuyên môn là một trao đổi đa hướng giữa các chuyên gia mới nổi, quản lý giữa sự nghiệp và các chuyên gia giàu kinh nghiệm.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">7</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Lovable được cho là đang đàm phán để tăng gấp đôi định giá lên 13,2 tỷ USD</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Lovable reportedly in talks to double its valuation to $13.2B</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;TechCrunch AI</span>&nbsp;&nbsp;&nbsp;<a href="https://techcrunch.com/2026/07/08/lovable-reportedly-in-talks-to-double-its-valuation-to-13-2b/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Lovable, một công ty khởi nghiệp Thụy Điển chuyên về vibe-coding, được cho là đang đàm phán để huy động 300 triệu đô la với mức định giá 13,2 tỷ đô la. Điều này sẽ làm tăng hơn gấp đôi mức định giá của công ty từ 6,6 tỷ đô la đạt được vào tháng 12 năm ngoái. Menlo Ventures dự kiến sẽ dẫn đầu vòng này, theo một báo cáo. Lovable đã chứng kiến sự tăng trưởng đáng kể, đạt tốc độ doanh thu hàng năm là 500 triệu đô la vào tháng 6. Người dùng của công ty bao gồm các nhà sáng lập, nhà thiết kế và nhân viên bán hàng, cũng như các doanh nghiệp lớn như Workday, Asana và Nvidia. Vibe coding, cho phép người dùng xây dựng phần mềm bằng cách mô tả nó, là một trường hợp sử dụng phổ biến và có lợi nhuận cao cho AI. Vòng đầu tư này sẽ tiếp theo các công ty khởi nghiệp vibe-coding đáng chú ý khác, bao gồm Replit và Factory, những công ty cũng đã nhận được nguồn vốn đáng kể.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">8</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Viết lại Bun bằng Rust</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Rewriting Bun in Rust</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Simon Willison</span>&nbsp;&nbsp;&nbsp;<a href="https://simonwillison.net/2026/Jul/8/rewriting-bun-in-rust/#atom-everything" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Jarred Sumner đã hoàn thành một bài đăng trên blog chi tiết về việc ông đã thành công trong việc viết lại dự án Bun bằng ngôn ngữ Rust, một ngôn ngữ mà ông đã chọn vì khả năng xử lý quản lý bộ nhớ hiệu quả hơn so với Zig, ngôn ngữ mà ông đã sử dụng trước đó. Quyết định viết lại Bun được thúc đẩy bởi số lượng lỗi cao của dự án, đặc biệt là lỗi use-after-free và double-free, những lỗi này là lỗi biên dịch trong Rust an toàn. Sumner đã sử dụng một bộ thử nghiệm được viết bằng TypeScript, phục vụ như một bộ thử nghiệm tuân thủ, cho phép một khung thử nghiệm tự động hóa nhiều phần của quá trình chuyển đổi ban đầu từ Bun sang Rust. Ông đã làm việc với một tác nhân mã hóa được hỗ trợ bởi một model LLM tiên phong, được gọi là Mythos/Fable, để hỗ trợ trong việc viết lại. Việc triển khai mới của Bun đã được triển khai trên Claude Code trong gần một tháng, với thời gian khởi động nhanh hơn 10% trên Linux. Dự án này chứng tỏ tiềm năng của việc sử dụng các tác nhân song song phối hợp để giải quyết các dự án đầy tham vọng và nhấn mạnh lợi ích của việc sử dụng Rust vì khả năng quản lý bộ nhớ của nó.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+
+  <!-- TIPS SECTION -->
+  
+  <tr>
+    <td bgcolor="#FFFBEB" style="background-color:#FFFBEB;padding:20px 30px;border-top:3px solid #D97706;">
+      <p style="margin:0 0 12px;font-size:11px;color:#D97706;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#9889;&nbsp;Tips &amp; Tricks cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tối ưu hóa mã với GitHub Copilot</strong><br><strong>Vấn đề:</strong> Mã nguồn chưa tối ưu, cần cải thiện hiệu suất.<br><strong>Cách làm:</strong> Sử dụng GitHub Copilot để đề xuất cải tiến mã, ví dụ &quot;Optimize this function for performance&quot;.<br><strong>Đánh giá:</strong> Hiệu quả trong việc cải thiện hiệu suất mã, nên dùng khi cần tối ưu hóa mã nguồn.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tự động hoàn thành mã với Cursor</strong><br><strong>Vấn đề:</strong> Gãy dòng mã, cần tự động hoàn thành.<br><strong>Cách làm:</strong> Sử dụng Cursor để hoàn thành mã tự động, ví dụ &quot;Complete this line of code&quot;.<br><strong>Đánh giá:</strong> Tiết kiệm thời gian, nên dùng khi cần hoàn thành mã nhanh chóng.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Hỗ trợ lập trình với Aider</strong><br><strong>Vấn đề:</strong> Cần hỗ trợ lập trình, tìm kiếm giải pháp.<br><strong>Cách làm:</strong> Sử dụng Aider để tìm kiếm giải pháp, ví dụ &quot;How to implement a sorting algorithm&quot;.<br><strong>Đánh giá:</strong> Hiệu quả trong việc hỗ trợ lập trình, nên dùng khi cần tìm kiếm giải pháp lập trình.</p>
+    </td>
+  </tr>
+
+  <!-- LESSON SECTION -->
+  
+  <tr>
+    <td bgcolor="#F0FFF4" style="background-color:#F0FFF4;padding:20px 30px;border-top:3px solid #2E7D32;">
+      <p style="margin:0 0 12px;font-size:11px;color:#2E7D32;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128218;&nbsp;B&#224;i h&#7885;c AI h&#244;m nay cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;">1. <strong>Tối ưu chi phí &amp; hiệu năng LLM</strong><br>Dev cần biết cách tối ưu chi phí và hiệu năng của LLM (Large Language Model) để đảm bảo ứng dụng của mình hoạt động hiệu quả và tiết kiệm chi phí. Điều này đặc biệt quan trọng khi triển khai LLM trong các dự án thực tế. </p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;">2. Việc tối ưu hóa giúp giảm thiểu chi phí tính toán và tăng tốc độ xử lý của LLM, từ đó cải thiện trải nghiệm người dùng. </p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;">3. Ví dụ, có thể sử dụng kỹ thuật fine-tuning và LoRA (Low-Rank Adaptation) để điều chỉnh LLM cho các use case cụ thể, giảm nhu cầu về tài nguyên tính toán.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;">4. 💡 Tip hoặc bước tiếp theo: Sử dụng các công cụ như Hugging Face Transformers để triển khai và tối ưu hóa LLM trong dự án của bạn.</p>
+    </td>
+  </tr>
+
+  <!-- FOOTER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:20px 30px;text-align:center;border-radius:0 0 10px 10px;">
+      <p style="margin:0 0 4px;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        &#128161;&nbsp;Lu&#244;n &#273;i &#273;&#7847;u trong th&#7871; gi&#7899;i AI!&nbsp;&#183;&nbsp;Stay ahead in AI!
+      </p>
+      <p style="margin:6px 0 0;font-size:11px;color:#4A7AAB;font-family:Arial,sans-serif;">
+        Ngu&#7891;n: Google News · Groq AI
+      </p>
+    </td>
+  </tr>
+
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+
+</td></tr>
+</table>
+</body>
+</html>

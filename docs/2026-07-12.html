@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--[if mso]>
+<noscript><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings></xml></noscript>
+<![endif]-->
+<style>
+/* ── Responsive overrides for web (email HTML uses fixed 600px tables) ── */
+@media screen and (max-width:620px) {
+  table[width="600"] { width:100% !important; }
+  td { word-break:break-word; overflow-wrap:break-word; }
+  /* Reduce generous email padding on small screens */
+  td[style*="padding:28px 30px"],
+  td[style*="padding:24px 30px"],
+  td[style*="padding:22px 30px"],
+  td[style*="padding:20px 30px"],
+  td[style*="padding:16px 30px"],
+  td[style*="padding:12px 30px"] { padding-left:14px !important; padding-right:14px !important; }
+  /* Code blocks: scroll horizontally instead of breaking layout */
+  pre { overflow-x:auto !important; max-width:calc(100vw - 32px) !important; box-sizing:border-box; }
+  /* Shrink large heading text slightly */
+  h1[style*="26px"] { font-size:20px !important; }
+}
+/* ── Print: hide nav bar ── */
+@media print {
+  #web-nav { display:none !important; }
+  body { background:#fff !important; }
+}
+</style>
+</head>
+<body style="margin:0;padding:0;background-color:#EEF2F7;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+<div id="web-nav" style="background:#001a4d;padding:8px 16px;font-family:Arial,sans-serif;font-size:13px;position:sticky;top:0;z-index:999;border-bottom:2px solid #0066CC;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
+  <span id="nav-prev" style="color:#4A6A8A;">&#8592;</span>
+  <a href="all.html" style="color:#FFD700;text-decoration:none;font-weight:bold;">&#128240; T&#7845;t c&#7843; b&#7843;n tin</a>
+  <span style="color:#FFFFFF;">12/07/2026</span>
+  <span id="nav-next" style="color:#4A6A8A;">&#8594;</span>
+  <a href="2026-07-12.pdf" download="2026-07-12.pdf" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128196; T&#7843;i PDF</a>
+  <button onclick="sharePage()" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128279; Chia s&#7867;</button>
+</div>
+<script>
+function sharePage(){
+  var title='Bản tin AI BIS-MT – 12/07/2026';
+  if(navigator.share){navigator.share({title:title,url:location.href});}
+  else{navigator.clipboard.writeText(location.href).then(function(){
+    alert('Đã sao chép link!');
+  });}
+}
+(function(){
+  var m=location.pathname.match(/(\d{4}-\d{2}-\d{2})\.html/);
+  if(!m)return;
+  var slug=m[1];
+  function fmt(s){var p=s.split('-');return p[2]+'/'+p[1];}
+  var lnkStyle='color:#90C4F0;text-decoration:none;';
+  fetch('dates.json?_='+Date.now())
+    .then(function(r){return r.json();})
+    .then(function(dates){
+      var idx=dates.indexOf(slug);
+      if(idx>0){
+        var p=dates[idx-1];
+        document.getElementById('nav-prev').innerHTML=
+          '<a href="'+p+'.html" style="'+lnkStyle+'">&#8592; '+fmt(p)+'</a>';
+      }
+      if(idx>=0&&idx<dates.length-1){
+        var n=dates[idx+1];
+        document.getElementById('nav-next').innerHTML=
+          '<a href="'+n+'.html" style="'+lnkStyle+'">'+fmt(n)+' &#8594;</a>';
+      }
+    })
+    .catch(function(){});
+})();
+</script>
+
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#EEF2F7" style="background-color:#EEF2F7;">
+<tr><td align="center" style="padding:24px 12px;">
+
+<!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0"><tr><td><![endif]-->
+<table role="presentation" width="600" cellpadding="0" cellspacing="0"
+       style="max-width:600px;width:100%;background-color:#FFFFFF;border-radius:10px;" bgcolor="#FFFFFF">
+
+  <!-- HEADER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:28px 30px 22px 30px;text-align:center;border-radius:10px 10px 0 0;">
+      <p style="margin:0 0 6px;font-size:11px;color:#7EB1E8;letter-spacing:2px;font-family:Arial,sans-serif;text-transform:uppercase;">
+        BIS &#8209; MT &nbsp;&#183;&nbsp; 12/07/2026
+      </p>
+      <h1 style="margin:0;font-size:26px;font-weight:bold;color:#FFFFFF;font-family:Arial,sans-serif;line-height:1.2;">
+        &#129302; B&#7843;n Tin AI H&#7857;ng Ng&#224;y
+      </h1>
+      <p style="margin:8px 0 0;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        C&#7853;p nh&#7853;t c&#244;ng ngh&#7879; AI m&#7899;i nh&#7845;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- QUOTE -->
+  <tr>
+    <td bgcolor="#EBF4FF" style="background-color:#EBF4FF;padding:16px 30px;border-top:3px solid #0066CC;">
+      <p style="margin:0;font-size:14px;color:#1A3A5C;font-style:italic;line-height:1.6;font-family:Georgia,serif;">
+        &#10024;&nbsp;&ldquo;Tiên học lễ, hậu học văn.&rdquo;
+      </p>
+      
+      <p style="margin:8px 0 0;font-size:12px;color:#888888;font-family:Arial,sans-serif;">&mdash;&nbsp;Tục ngữ Việt Nam</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#5A6A7A;font-style:italic;line-height:1.5;font-family:Arial,sans-serif;">&#128161;&nbsp;Đạo đức và nhân cách phải được xây dựng trước kiến thức — người có học vấn mà thiếu lễ nghĩa thì cũng vô ích.</p>
+    </td>
+  </tr>
+
+  <!-- SECTION LABEL -->
+  <tr>
+    <td bgcolor="#F5F7FA" style="background-color:#F5F7FA;padding:12px 30px;">
+      <p style="margin:0;font-size:11px;color:#999999;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128240;&nbsp;Tin t&#7913;c n&#7893;i b&#7853;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- ARTICLES -->
+  
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">1</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Giới thiệu Open Agent Specification (Agent Spec): Một cách biểu diễn thống nhất cho AI Agent</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Introducing the Open Agent Specification (Agent Spec): A Unified Representation for AI Agents</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Oracle Blogs</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMihwFBVV95cUxNQVNvdUZTTVhSdmNqbFhDR3VTVkdFbmpuWTlyeVY5aElhVnc3R1JrcG5yb0NGYW1DNjlFanBaR0l3NkY0QVRQTVB5RTlDSnFabDVZcENETTBNYW1ORVlKWG5SNEpvaXdDdGZlekh0ZWtFeTc4N1lidmdRN05XOUhJTUtoVEZQWXM?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Oracle đã giới thiệu Open Agent Specification (Agent Spec), một biểu diễn thống nhất cho các tác nhân AI. Agent Spec nhằm cung cấp một khuôn khổ tiêu chuẩn hóa để mô tả và tương tác với các tác nhân AI, cho phép tích hợp và giao tiếp liền mạch trên các hệ thống và nền tảng khác nhau. Thông số kỹ thuật này được thiết kế để mở và có thể mở rộng, cho phép các nhà phát triển tạo và chia sẻ các tác nhân AI của riêng họ và tích hợp chúng với các ứng dụng khác nhau.
+
+Agent Spec được xây dựng trên các công nghệ và tiêu chuẩn hiện có, chẳng hạn như JSON và HTTP, để đảm bảo khả năng tương tác và dễ dàng áp dụng. Nó cung cấp một cách rõ ràng và concis để biểu diễn các tác nhân AI, bao gồm khả năng, ý định và hành vi của chúng. Biểu diễn thống nhất này cho phép các nhà phát triển tập trung vào việc xây dựng và tích hợp các tác nhân AI, thay vì lo lắng về các vấn đề tương thích.
+
+Bằng cách áp dụng Agent Spec, các nhà phát triển có thể tạo ra các hệ thống AI phức tạp và kết nối hơn, và các tổ chức có thể tận dụng một loạt các tác nhân AI để thúc đẩy đổi mới và tăng trưởng. Agent Spec là một dự án mã nguồn mở, và Oracle mời cộng đồng đóng góp và tham gia vào quá trình phát triển của nó.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">2</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Tăng tốc phát triển với Amazon Bedrock AgentCore MCP server | Trí tuệ nhân tạo</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Accelerate development with the Amazon Bedrock AgentCore MCP server | Artificial Intelligence</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Amazon Web Services (AWS)</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxOY0dNX2hZRGVzeUZyX01BaEdTaW9aZ3d0TVBnMThmci1LMWpGOGdJaUgzM0t2OGZsRkxrZDRJcUY5RmZOajVqeUpQQVBoOVJSTWZxNFVFOW0tbTRwMUYwNWprdklCNjZncnh6VUNNV3Y3VGVhNElSNDVZdFJqb1ppT2JUc1FhUGpBanhHY0Q0WTdJdUI0RmM5NFpBX19ocVl0aXRqMzdLbEtpakJ3NHVzQXY4bw?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Amazon Web Services (AWS) đã giới thiệu máy chủ Amazon Bedrock AgentCore MCP, được thiết kế để tăng tốc phát triển trong lĩnh vực trí tuệ nhân tạo (AI). Máy chủ AgentCore MCP là một phần của nền tảng Amazon Bedrock, nhằm mục đích đơn giản hóa việc phát triển và triển khai các model AI.
+
+Máy chủ AgentCore MCP là một máy chủ hiệu suất cao cho phép các nhà phát triển xây dựng, đào tạo và triển khai các model AI một cách hiệu quả hơn. Nó cung cấp một môi trường có thể mở rộng và bảo mật cho phát triển AI, cho phép các nhà phát triển tập trung vào xây dựng các ứng dụng AI sáng tạo.
+
+Với máy chủ AgentCore MCP, các nhà phát triển có thể tận dụng chuyên môn của Amazon trong lĩnh vực AI và học máy để tăng tốc quá trình phát triển của họ. Máy chủ này được tích hợp với các dịch vụ AWS khác, giúp dễ dàng triển khai và quản lý các model AI trên đám mây.
+
+Máy chủ Amazon Bedrock AgentCore MCP là một công cụ quý giá cho các nhà phát triển muốn xây dựng và triển khai các model AI một cách nhanh chóng và hiệu quả. Bằng cách cung cấp một môi trường có hiệu suất cao và có thể mở rộng, nó cho phép các nhà phát triển tập trung vào đổi mới và đưa các dự án AI của họ vào cuộc sống.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">3</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">GPT-5 của OpenAI đã ra mắt: Phân tích chuyên sâu System Card cho AI thông minh hơn, an toàn hơn và nhanh hơn</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;OpenAI’s GPT-5 Is Here: A Deep Dive Into the System Card for AI That’s Smarter, Safer, and Faster</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Medium</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMi1AFBVV95cUxNVkgwNTRPa3UwcUVHdWF4NW9MVXcySGlrVWd4dkNRXzk5Rmw0bVZPcW9yV2p2Vm05alZocXRtZm4tSXhGU2Q2NHBkWVVTMzItYkJpSUg3Q0xYbHlsaFFfRnRMTGdBV09KZUhQTXVndlFvRzg5dWFNUVFkX1FfTHMzSkU2YmY2aU5SUmJZeUZSOTRsS2pUbWdhX2FoN2VDNVlaVUU3RUc3aFUwc0lsVGl0ZU1wNGh3RlplSWxsdno4Rk9Mb1Nta1o1elBubDNoaTk0YmdmeA?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">OpenAI đã công bố việc phát hành GPT-5, một bản cập nhật quan trọng cho hệ thống AI của họ. Mô hình mới này tự hào với các khả năng được cải tiến, bao gồm trí tuệ tăng cường, các tính năng an toàn được nâng cao và tốc độ xử lý được tăng tốc. Một khía cạnh quan trọng của GPT-5 là khả năng học hỏi và thích nghi hiệu quả hơn, cho phép nó giải quyết các nhiệm vụ phức tạp một cách dễ dàng hơn.
+
+Thẻ hệ thống cho GPT-5 được thiết kế với sự an toàn trong tâm trí, kết hợp các biện pháp khác nhau để ngăn chặn việc lạm dụng tiềm năng. Các tính năng này nhằm giảm thiểu rủi ro liên quan đến các hệ thống AI tiên tiến, đảm bảo một môi trường an toàn và được kiểm soát hơn.
+
+Hiệu suất được cải tiến của GPT-5 được cho là nhờ vào kiến trúc tiên tiến và phương pháp đào tạo của nó. Khả năng xử lý thông tin nhanh hơn và chính xác hơn của mô hình cho phép nó xử lý một loạt các nhiệm vụ rộng lớn hơn, từ tạo văn bản đến cung cấp các phản hồi sâu sắc. Kết quả là, GPT-5 có khả năng tạo ra tác động đáng kể đối với các ngành công nghiệp khác nhau, bao gồm chăm sóc sức khỏe, tài chính và giáo dục, nơi các giải pháp được hỗ trợ bởi AI ngày càng được yêu cầu.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">4</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Profiling trong PyTorch (Phần 3): Attention là tất cả những gì bạn profile</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Profiling in PyTorch (Part 3): Attention is all you profile</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Hugging Face Blog</span>&nbsp;&nbsp;&nbsp;<a href="https://huggingface.co/blog/torch-attention-profile" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Trong phần thứ ba của &quot;Profiling in PyTorch&quot;, một loạt bài tập trung vào việc đọc các dấu vết của profiler để thúc đẩy tối ưu hóa, tác giả khám phá cơ chế chú ý, một thành phần cơ bản của kiến trúc Transformer. Mặc dù có độ phức tạp thời gian bậc hai nổi tiếng, chú ý có thể được tối ưu hóa bằng cách sử dụng các kỹ thuật khác nhau. Tác giả phân tích bốn triển khai khác nhau của chú ý: chú ý đơn giản, chú ý với mặt nạ nguyên nhân tại chỗ, chú ý dot sản phẩm có tỷ lệ và chú ý với kernel hiệu quả. Bằng cách phân tích các dấu vết của profiler, tác giả xác định các cơ hội để tối ưu hóa, chẳng hạn như thay thế các hoạt động ngoài chỗ bằng các hoạt động tại chỗ, điều này có thể giảm đáng kể số lượng hoạt động CPU và loại bỏ các bản sao bộ nhớ không cần thiết trên GPU. Những phát hiện này có ý nghĩa đối với các model lớn, nơi các hoạt động chú ý được lặp lại nhiều lần, và có thể dẫn đến lợi ích hiệu suất đáng kể.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">5</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Phát hiện trong một repo không phải là một security posture hoàn chỉnh</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Detection in one repo isn&#x27;t a security posture</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Sourcegraph Blog</span>&nbsp;&nbsp;&nbsp;<a href="http://localhost:5174/blog/detection-in-one-repo-isnt-a-security-posture" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Một phát hiện gần đây nhấn mạnh tầm quan trọng của các biện pháp bảo mật toàn diện vượt ra ngoài việc phát hiện riêng lẻ từng kho lưu trữ. Trong khi việc phát hiện ra các điểm yếu trong một kho lưu trữ riêng lẻ là một bước quan trọng, thì nó chỉ là một phần của một tư thế bảo mật rộng lớn hơn. Một tư thế bảo mật bao gồm không chỉ việc xác định các vấn đề mà còn hiểu sự hiện diện của chúng trên tất cả các kho lưu trữ và thực hiện các biện pháp chủ động để giải quyết chúng trước khi chúng lan rộng.
+
+Cách tiếp cận này nhấn mạnh nhu cầu vượt ra ngoài việc phát hiện bị cô lập và thay vào đó tập trung vào việc tạo ra một khuôn khổ bảo mật mạnh mẽ có thể xác định và giảm thiểu các mối đe dọa tiềm năng trên toàn hệ thống. Bằng cách làm như vậy, các tổ chức có thể giảm thiểu rủi ro của các điểm yếu lan truyền và gây ra thiệt hại rộng lớn. Cuối cùng, một tư thế bảo mật không chỉ là về việc phát hiện các vấn đề trong một kho lưu trữ, mà còn về việc duy trì một tư thế cảnh giác và chủ động đối với bảo mật trên tất cả các khía cạnh của hệ thống.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">6</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Meta tắt tính năng Instagram cho phép người dùng tạo AI deepfake từ các tài khoản công khai</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Meta turns off the Instagram feature that let users make AI deepfakes of public accounts</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;The Verge AI</span>&nbsp;&nbsp;&nbsp;<a href="https://www.theverge.com/tech/964416/meta-instagram-ai-muse-image-deepfakes" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Meta đã宣 bố rằng họ sẽ tắt một tính năng trên Instagram cho phép người dùng tạo ra hình ảnh được tạo bởi AI dựa trên nội dung từ các tài khoản công khai bằng cách gắn thẻ chúng. Tính năng này, được giới thiệu vào đầu tuần, đã nhận được sự phản ứng dữ dội từ người dùng và các tổ chức, bao gồm Trung tâm Quốc gia về Khai thác Tình dục và Hội Diễn viên Màn ảnh. Các nhà phê bình cho rằng tính năng này đã xói mòn quyền của người dùng đối với hình ảnh của chính họ và tạo ra rủi ro cho các trò lừa đảo và khai thác. Meta cho biết ý định của họ là cung cấp một công cụ sáng tạo và trao cho người dùng quyền kiểm soát nội dung của họ, nhưng thừa nhận rằng tính năng này &quot;đã bỏ lỡ mục tiêu.&quot; Người dùng muốn chọn không tham gia tính năng này phải đào sâu vào cài đặt, điều này được coi là không thể chấp nhận được bởi một số người. Kết quả là, tính năng này đã bị tắt hoàn toàn.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">7</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">AI Agent tạo investment memo chỉ trong 90 giây, tiết kiệm hàng giờ làm việc cho analyst</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;LangChain Blog</span>&nbsp;&nbsp;&nbsp;<a href="https://www.langchain.com/blog/build-an-auditable-vc-research-agent-with-the-perplexity-agent-api-langgraph-and-langsmith" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Một đội đã phát triển một tác nhân trí tuệ nhân tạo (AI) có thể tạo ra một phiên bản đầu tiên của bản ghi nhớ đầu tư chỉ trong 90 giây, giúp các nhà phân tích tiết kiệm hàng giờ thời gian nghiên cứu và viết. Tác nhân này sử dụng sự kết hợp của các API và công cụ để thu thập thông tin từ các nguồn chính, bao gồm Crunchbase, PitchBook và trang IR. Nó tạo ra một bản ghi nhớ có căn cứ với bảy phần: Tóm tắt, Đội ngũ, Tài chính, Sản phẩm, Thị trường, Rủi ro và Luận điểm, bao gồm một khuyến nghị một dòng. Tác nhân này hoạt động ở hai giai đoạn: các nút nghiên cứu thu thập bằng chứng song song và một nút tổng hợp lắp ráp bản ghi nhớ từ các đầu ra nghiên cứu. Tác nhân này được cung cấp năng lượng bởi Perplexity Agent API và các công cụ web_search và finance_search tích hợp, với LangGraph để điều phối và LangSmith để đánh giá. Đầu ra của tác nhân này có thể được sử dụng làm điểm khởi đầu cho các nhà phân tích để hoàn thiện và tinh chỉnh, thay vì bắt đầu từ đầu. Đội cũng đã phát triển một hệ thống đánh giá để đánh giá hiệu suất của các nhà cung cấp tìm kiếm khác nhau, có thể được tùy chỉnh để phù hợp với các trường hợp sử dụng cụ thể.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">8</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Cách GitHub gán quyền owner bền vững cho mọi repository</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;How GitHub gave every repository a durable owner</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;GitHub Blog</span>&nbsp;&nbsp;&nbsp;<a href="https://github.blog/security/application-security/how-github-gave-every-repository-a-durable-owner/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">GitHub, một nền tảng hàng đầu cho các developer, đã triển khai một giải pháp để giải quyết vấn đề lâu dài về quyền sở hữu repository. Công ty này có hơn 14.000 repository, nhưng ít hơn một nửa trong số đó có quyền sở hữu rõ ràng. Sự thiếu hụt này dẫn đến khó khăn trong việc quản lý và bảo mật repository, đặc biệt là trong nỗ lực khắc phục vấn đề quét bí mật. Để giải quyết vấn đề này, các đội kỹ sư và bảo mật của GitHub đã làm việc cùng nhau để xác thực quyền sở hữu cho mọi repository hoạt động trong thời gian 45 ngày. Kết quả là khoảng 8.000 repository không hoạt động đã được lưu trữ và quyền sở hữu đã được thiết lập cho các repository hoạt động còn lại. Nền tảng mới này về quyền sở hữu đã cho phép GitHub cải thiện trải nghiệm của developer và các biện pháp bảo mật, đặc biệt là trong các lĩnh vực như DevSecOps. Sự thành công của công ty trong việc giải quyết vấn đề này cũng đã được công nhận bởi Gartner, khi họ xếp GitHub vào vị trí Leader lần thứ hai liên tiếp.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+
+  <!-- TIPS SECTION -->
+  
+  <tr>
+    <td bgcolor="#FFFBEB" style="background-color:#FFFBEB;padding:20px 30px;border-top:3px solid #D97706;">
+      <p style="margin:0 0 12px;font-size:11px;color:#D97706;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#9889;&nbsp;Tips &amp; Tricks cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tối ưu hóa multi-agent</strong><br><strong>Vấn đề:</strong> Xử lý task phức tạp đòi hỏi nhiều AI agents.<br><strong>Cách làm:</strong> Sử dụng LangGraph, CrewAI, AutoGen, phối hợp nhiều AI agents. Ví dụ: <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">langgraph --task complex_task --agents 3</code>.<br><strong>Đánh giá:</strong> Hiệu quả cho task lớn, nhưng tăng độ phức tạp.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Cài đặt phiData</strong><br><strong>Vấn đề:</strong> Cần quản lý dữ liệu đầu vào cho nhiều AI agents.<br><strong>Cách làm:</strong> Sử dụng phiData, cấu hình dữ liệu đầu vào cho từng agent. Ví dụ: <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">phidata --input data.csv --agent agent1</code>.<br><strong>Đánh giá:</strong> Giúp quản lý dữ liệu hiệu quả, giảm sai sót.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tích hợp AutoGen</strong><br><strong>Vấn đề:</strong> Cần tự động hóa việc tạo code cho các AI agents.<br><strong>Cách làm:</strong> Sử dụng AutoGen, tích hợp vào pipeline phát triển. Ví dụ: <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">autogen --template template.py --output output.py</code>.<br><strong>Đánh giá:</strong> Tự động hóa hiệu quả, tiết kiệm thời gian phát triển.</p>
+    </td>
+  </tr>
+
+  <!-- LESSON SECTION -->
+  
+  <tr>
+    <td bgcolor="#F0FFF4" style="background-color:#F0FFF4;padding:20px 30px;border-top:3px solid #2E7D32;">
+      <p style="margin:0 0 12px;font-size:11px;color:#2E7D32;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128218;&nbsp;B&#224;i h&#7885;c AI h&#244;m nay cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;">1. <strong>Tích hợp AI API vào ứng dụng</strong><br>Dev cần biết cách tích hợp AI API vào ứng dụng để tận dụng khả năng xử lý tự nhiên ngôn ngữ, hình ảnh và dữ liệu khác. Điều này giúp tăng cường tính tương tác và thông minh cho ứng dụng. </p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;">2. Việc tích hợp AI API giúp dev tạo ra các ứng dụng thông minh hơn, tự động hóa các tác vụ và cải thiện trải nghiệm người dùng.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;">3. Ví dụ, sử dụng AI API để phân tích hình ảnh và nhận diện đối tượng, sau đó đưa ra các gợi ý cho người dùng.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;">4. 💡 Tip hoặc bước tiếp theo: Sử dụng các nền tảng như LangGraph hoặc CrewAI để tích hợp AI vào ứng dụng và khám phá các khả năng của AI API trong việc cải thiện ứng dụng của bạn.</p>
+    </td>
+  </tr>
+
+  <!-- FOOTER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:20px 30px;text-align:center;border-radius:0 0 10px 10px;">
+      <p style="margin:0 0 4px;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        &#128161;&nbsp;Lu&#244;n &#273;i &#273;&#7847;u trong th&#7871; gi&#7899;i AI!&nbsp;&#183;&nbsp;Stay ahead in AI!
+      </p>
+      <p style="margin:6px 0 0;font-size:11px;color:#4A7AAB;font-family:Arial,sans-serif;">
+        Ngu&#7891;n: Google News · Groq AI
+      </p>
+    </td>
+  </tr>
+
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+
+</td></tr>
+</table>
+</body>
+</html>

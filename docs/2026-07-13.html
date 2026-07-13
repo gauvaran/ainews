@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--[if mso]>
+<noscript><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings></xml></noscript>
+<![endif]-->
+<style>
+/* ── Responsive overrides for web (email HTML uses fixed 600px tables) ── */
+@media screen and (max-width:620px) {
+  table[width="600"] { width:100% !important; }
+  td { word-break:break-word; overflow-wrap:break-word; }
+  /* Reduce generous email padding on small screens */
+  td[style*="padding:28px 30px"],
+  td[style*="padding:24px 30px"],
+  td[style*="padding:22px 30px"],
+  td[style*="padding:20px 30px"],
+  td[style*="padding:16px 30px"],
+  td[style*="padding:12px 30px"] { padding-left:14px !important; padding-right:14px !important; }
+  /* Code blocks: scroll horizontally instead of breaking layout */
+  pre { overflow-x:auto !important; max-width:calc(100vw - 32px) !important; box-sizing:border-box; }
+  /* Shrink large heading text slightly */
+  h1[style*="26px"] { font-size:20px !important; }
+}
+/* ── Print: hide nav bar ── */
+@media print {
+  #web-nav { display:none !important; }
+  body { background:#fff !important; }
+}
+</style>
+</head>
+<body style="margin:0;padding:0;background-color:#EEF2F7;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+<div id="web-nav" style="background:#001a4d;padding:8px 16px;font-family:Arial,sans-serif;font-size:13px;position:sticky;top:0;z-index:999;border-bottom:2px solid #0066CC;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
+  <span id="nav-prev" style="color:#4A6A8A;">&#8592;</span>
+  <a href="all.html" style="color:#FFD700;text-decoration:none;font-weight:bold;">&#128240; T&#7845;t c&#7843; b&#7843;n tin</a>
+  <span style="color:#FFFFFF;">13/07/2026</span>
+  <span id="nav-next" style="color:#4A6A8A;">&#8594;</span>
+  <a href="2026-07-13.pdf" download="2026-07-13.pdf" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128196; T&#7843;i PDF</a>
+  <button onclick="sharePage()" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128279; Chia s&#7867;</button>
+</div>
+<script>
+function sharePage(){
+  var title='Bản tin AI BIS-MT – 13/07/2026';
+  if(navigator.share){navigator.share({title:title,url:location.href});}
+  else{navigator.clipboard.writeText(location.href).then(function(){
+    alert('Đã sao chép link!');
+  });}
+}
+(function(){
+  var m=location.pathname.match(/(\d{4}-\d{2}-\d{2})\.html/);
+  if(!m)return;
+  var slug=m[1];
+  function fmt(s){var p=s.split('-');return p[2]+'/'+p[1];}
+  var lnkStyle='color:#90C4F0;text-decoration:none;';
+  fetch('dates.json?_='+Date.now())
+    .then(function(r){return r.json();})
+    .then(function(dates){
+      var idx=dates.indexOf(slug);
+      if(idx>0){
+        var p=dates[idx-1];
+        document.getElementById('nav-prev').innerHTML=
+          '<a href="'+p+'.html" style="'+lnkStyle+'">&#8592; '+fmt(p)+'</a>';
+      }
+      if(idx>=0&&idx<dates.length-1){
+        var n=dates[idx+1];
+        document.getElementById('nav-next').innerHTML=
+          '<a href="'+n+'.html" style="'+lnkStyle+'">'+fmt(n)+' &#8594;</a>';
+      }
+    })
+    .catch(function(){});
+})();
+</script>
+
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#EEF2F7" style="background-color:#EEF2F7;">
+<tr><td align="center" style="padding:24px 12px;">
+
+<!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0"><tr><td><![endif]-->
+<table role="presentation" width="600" cellpadding="0" cellspacing="0"
+       style="max-width:600px;width:100%;background-color:#FFFFFF;border-radius:10px;" bgcolor="#FFFFFF">
+
+  <!-- HEADER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:28px 30px 22px 30px;text-align:center;border-radius:10px 10px 0 0;">
+      <p style="margin:0 0 6px;font-size:11px;color:#7EB1E8;letter-spacing:2px;font-family:Arial,sans-serif;text-transform:uppercase;">
+        BIS &#8209; MT &nbsp;&#183;&nbsp; 13/07/2026
+      </p>
+      <h1 style="margin:0;font-size:26px;font-weight:bold;color:#FFFFFF;font-family:Arial,sans-serif;line-height:1.2;">
+        &#129302; B&#7843;n Tin AI H&#7857;ng Ng&#224;y
+      </h1>
+      <p style="margin:8px 0 0;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        C&#7853;p nh&#7853;t c&#244;ng ngh&#7879; AI m&#7899;i nh&#7845;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- QUOTE -->
+  <tr>
+    <td bgcolor="#EBF4FF" style="background-color:#EBF4FF;padding:16px 30px;border-top:3px solid #0066CC;">
+      <p style="margin:0;font-size:14px;color:#1A3A5C;font-style:italic;line-height:1.6;font-family:Georgia,serif;">
+        &#10024;&nbsp;&ldquo;Bàn tay ta làm nên tất cả, có sức người sỏi đá cũng thành cơm.&rdquo;
+      </p>
+      
+      <p style="margin:8px 0 0;font-size:12px;color:#888888;font-family:Arial,sans-serif;">&mdash;&nbsp;Ca dao Việt Nam</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#5A6A7A;font-style:italic;line-height:1.5;font-family:Arial,sans-serif;">&#128161;&nbsp;Lao động chân chính là nguồn gốc của mọi thành quả — bằng sức mình, con người có thể vượt qua mọi nghịch cảnh.</p>
+    </td>
+  </tr>
+
+  <!-- SECTION LABEL -->
+  <tr>
+    <td bgcolor="#F5F7FA" style="background-color:#F5F7FA;padding:12px 30px;">
+      <p style="margin:0;font-size:11px;color:#999999;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128240;&nbsp;Tin t&#7913;c n&#7893;i b&#7853;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- ARTICLES -->
+  
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">1</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">11 lựa chọn thay thế GitHub Copilot mà developer đã chuyển sang dùng năm 2026</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;11 GitHub Copilot Alternatives Developers Switched To in 2026</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Security Boulevard</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxQd3BkQ01CZExGeTAtOTlKdEVOVDRQNklZLUFOQnBUOUREUGtfYXBTXzRSUVg3TjdWNk5hYmZQLVJUb096ektrVlp3V1YwckRoSDhkN010MExrSDBGY3FjU2Y4bDYxcXRTQk92a0xnS3EzZzdaS2VKM1h2MVQ5VTVYRlFZVUg2NXptZTgzMUxGRXZXV0JtMEdMTW02TndJZTJHenc?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Năm 2026, các developer đã tìm kiếm những lựa chọn thay thế cho GitHub Copilot, một AI coding assistant phổ biến. Kết quả là, một số lựa chọn thay thế đã trở nên phổ biến trong cộng đồng developer.
+
+    Theo các xu hướng gần đây, các developer đã chuyển sang dùng 11 lựa chọn thay thế GitHub Copilot. Các lựa chọn này cung cấp nhiều tính năng và chức năng khác nhau, đáp ứng các nhu cầu và sở thích đa dạng.
+
+    Một số lựa chọn thay thế đáng chú ý bao gồm TabNine, cung cấp các gợi ý và hoàn thành code được hỗ trợ bởi AI, và Kite, một coding assistant cung cấp tính năng hoàn thành và gợi ý code theo thời gian thực.
+
+    Các lựa chọn khác, như CodeWithMe, cung cấp các tính năng collaborative coding, trong khi một số khác, như DeepCode, tập trung vào code analysis và bảo mật.
+
+    Ngoài ra, các lựa chọn thay thế như Code Scanner của chính GitHub và CodeFactor, cung cấp các công cụ code review và analysis.
+
+    Các lựa chọn thay thế đáng chú ý khác bao gồm Codiga, cung cấp tính năng hoàn thành và gợi ý code được hỗ trợ bởi AI, và CodePro, cung cấp tính năng hoàn thành và gợi ý code theo thời gian thực.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">2</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Tình hình các Agent Framework: Chọn Runtime phù hợp để triển khai AI trong doanh nghiệp</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;State of Agent Frameworks: Choosing the Right Runtime for Enterprise AI Execution</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Medium</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxOdXdHT2dlWEx6TUh4VW5nQ0hCZWdqVjN4dEhkWXdhQ3ZhT2lPZUtmUlRVSG5zVTBQOWQ3MUIxZjdPZUl6ZmpsbXFWWTNQN3g4M0xfcWJhUDY1aU0tcEFLeDNZYXFmTDIzZmRLNG5VODcyem16VEFuUXRSWEFUSmE3WmFZTzhDbDFRaW1IcFp5QjBqeHpBb0dJM18wbjl0ZVVSNU8yM1Jwb2E3WkxyenNJNk0tTHRUWC1IRngwbEJycUxPTGc?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Bài viết &quot;State of Agent Frameworks: Choosing the Right Runtime for Enterprise AI Execution&quot; cung cấp cái nhìn tổng quan về tình hình hiện tại của các agent framework trong bối cảnh triển khai AI trong doanh nghiệp. Agent framework là các nền tảng phần mềm cho phép phát triển và triển khai các intelligent agent, vốn là các thực thể phần mềm tự động có khả năng tương tác với môi trường và đưa ra quyết định.
+
+    Bài viết nhấn mạnh tầm quan trọng của việc chọn đúng runtime để triển khai AI trong doanh nghiệp, vì nó có thể ảnh hưởng đáng kể đến performance, scalability và reliability của các ứng dụng AI. Bài viết thảo luận về nhiều agent framework khác nhau, bao gồm Rasa, Microsoft Bot Framework và Google Dialogflow, cùng với những điểm mạnh và điểm yếu tương ứng của chúng.
+
+    Bài viết cũng đề cập đến các yếu tố chính cần cân nhắc khi lựa chọn một agent framework, như ease of use, khả năng customization và integration với các hệ thống hiện có. Nó nhấn mạnh sự cần thiết của một framework có thể xử lý các cuộc hội thoại phức tạp, cung cấp bảo mật mạnh mẽ và hỗ trợ tương tác đa kênh (multi-channel). Bằng cách chọn đúng agent framework, các doanh nghiệp có thể xây dựng các ứng dụng AI hiệu quả hơn, mang lại giá trị kinh doanh và cải thiện trải nghiệm khách hàng.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">3</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Xây dựng workflow được hỗ trợ bởi agent dùng Cortex AI và Managed MCP Servers</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Build Agent-Powered Workflows Using Cortex AI and Managed MCP Servers</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Snowflake</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMigwFBVV95cUxNV0VHLWNuTUpTN0lRd25LVF9tS0pCb0ltcU80SVI5T19BMVJvaXpidmlxRUkzZnFGR1Jac3hfVmdBbmE5emtSaDlBMGF6b3hPbFhTR0NKdnNsSlNyR2VyUURlZTBPMVRSLXg3dTZSU3BJb21hdFptbjRpcmc0Mlk2VGJvMA?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Snowflake đã giới thiệu một khả năng mới cho phép người dùng xây dựng các workflow được hỗ trợ bởi agent sử dụng Cortex AI và Managed MCP servers. Sự tích hợp này cho phép các developer tận dụng sức mạnh của Cortex AI để tự động hóa và tối ưu hóa các workflow phức tạp, đồng thời hưởng lợi từ scalability và reliability của Managed MCP servers của Snowflake.
+
+    Với khả năng mới này, người dùng có thể tạo các custom workflow để tự động hóa các tác vụ, xử lý dữ liệu và analytics, tất cả đều trong nền tảng Snowflake. Sự tích hợp giữa Cortex AI và Managed MCP servers cung cấp một hạ tầng mạnh mẽ và scalable để xây dựng và triển khai các workflow này, đảm bảo performance cao và reliability.
+
+    Khả năng này được thiết kế để giúp các tổ chức tinh gọn các data workflow của họ, cải thiện hiệu quả và giảm chi phí. Bằng cách tự động hóa các tác vụ lặp đi lặp lại và tối ưu hóa việc xử lý dữ liệu, người dùng có thể tập trung vào các tác vụ có giá trị cao hơn và thúc đẩy business insights. Sự tích hợp giữa Cortex AI và Managed MCP servers là một bước tiến đáng kể trong sứ mệnh của Snowflake nhằm cung cấp một data platform linh hoạt và scalable cho các doanh nghiệp hiện đại.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">4</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Đánh giá OneOdio Studio Max 2: Tai nghe độ trễ cực thấp dành cho dân công nghệ</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;OneOdio Studio Max 2 review: Ultra-low latency headphones for tech enthusiasts</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;BD Tech Talks</span>&nbsp;&nbsp;&nbsp;<a href="https://bdtechtalks.com/2026/07/12/oneodio-studio-max-2-review-ultra-low-latency-headphones-for-tech-enthusiasts/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=oneodio-studio-max-2-review-ultra-low-latency-headphones-for-tech-enthusiasts" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">OneOdio Studio Max 2 là tai nghe wireless được thiết kế dành cho tech enthusiast, developer và gamer, những người yêu cầu độ trễ thấp (low latency) và khả năng kết nối linh hoạt. Những chiếc tai nghe closed-back, over-ear này kết hợp nhiều chế độ wireless và wired, loại bỏ độ trễ âm thanh thường thấy ở các tai nghe Bluetooth tiêu chuẩn. Chúng có một transmitter 2.4GHz cho các phiên chơi game tốc độ cao, chỉnh sửa video và coding. Tai nghe có thiết kế thoải mái với earpad bằng memory foam và headband kim loại có đánh số để điều chỉnh kích thước chính xác. Chúng hỗ trợ bốn phương thức kết nối, bao gồm Bluetooth 6.0, một M2 USB transmitter cho âm thanh không độ trễ (</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">5</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Allstate cáo buộc Broadcom kiểm toán vì đã bỏ VMware, CA</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Allstate accuses Broadcom of auditing it because it quit VMware, CA</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Ars Technica</span>&nbsp;&nbsp;&nbsp;<a href="https://arstechnica.com/information-technology/2026/07/allstate-accuses-broadcom-of-auditing-it-because-it-quit-vmware-ca/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Công ty Bảo hiểm Allstate đã cáo buộc Broadcom đã thực hiện các cuộc kiểm toán đối với họ như một hình thức trả thù vì quyết định chấm dứt hợp đồng của công ty bảo hiểm với VMware và CA Technologies. Những cáo buộc này được đưa ra trong một vụ kiện được VMware đệ trình chống lại Allstate vào tháng 12 năm 2025. Allstate tuyên bố rằng Broadcom đã khởi xướng các cuộc kiểm toán sau khi họ quyết định không gia hạn hợp đồng với các công ty này, với lý do họ đã tuân thủ đáng kể các yêu cầu kiểm toán và báo cáo được quy định trong hợp đồng với VMware. Việc Broadcom tiếp quản VMware được cho là đã thúc đẩy các công ty khác, bao gồm T-Mobile, Tesco và Western Union, chuyển khỏi công nghệ ảo hóa. Tranh chấp giữa Allstate và Broadcom vẫn đang diễn ra, với cả hai bên có thời hạn đến ngày 17 tháng 5 năm 2027 để nộp các đơn kiến nghị quyết. Vụ việc này làm nổi bật tính cách sẵn sàng kiện tụng của Broadcom và sự sẵn sàng chiến đấu với các khách hàng VMware không hài lòng.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">6</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Cá nhân chịu trách nhiệm trực tiếp (DRI)</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Directly Responsible Individuals (DRI)</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Simon Willison</span>&nbsp;&nbsp;&nbsp;<a href="https://simonwillison.net/2026/Jul/12/directly-responsible-individuals/#atom-everything" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Khái niệm về Các Cá Nhân Trực Tiếp Chịu Trách Nhiệm (DRI) đã được khám phá trong bối cảnh các tổ chức của con người và trí tuệ nhân tạo. Theo sổ tay của GitLab, thuật ngữ này bắt nguồn từ Apple, nơi nó đề cập đến người cuối cùng chịu trách nhiệm về thành công hoặc thất bại của một dự án, sáng kiến hoặc hoạt động cụ thể. Trách nhiệm này được coi là duy nhất của con người, vì các cá nhân có thể chịu trách nhiệm về hành động của mình, trong khi máy móc không thể. Ý tưởng này được củng cố bởi một trang trình bày đào tạo năm 1979 của IBM, tuyên bố rằng máy tính không nên đưa ra quyết định quản lý do khả năng không thể bị ràng buộc trách nhiệm. Điều này đặt ra câu hỏi về vai trò của các tác nhân được hỗ trợ bởi LLM trong các tổ chức của con người và liệu chúng có nên được coi là DRI cho các dự án.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">7</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">OpenWiki Brains: Bộ nhớ chủ động cho AI Agent</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;OpenWiki Brains: Proactive Memory for AI Agents</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;LangChain Blog</span>&nbsp;&nbsp;&nbsp;<a href="https://www.langchain.com/blog/introducing-openwiki-brains-general-purpose-wiki-memory-for-agents" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">OpenWiki Brains là một framework mới cho phép các tác nhân AI có bộ nhớ chủ động. Không giống như các giải pháp bộ nhớ hiện có dựa trên cập nhật rõ ràng hoặc các mẫu được phát hiện thông qua sử dụng, OpenWiki Brains cho phép các tác nhân xây dựng bộ nhớ bằng cách lấy bối cảnh liên quan từ các công cụ, kênh và tệp tin kết nối. Framework này mở rộng khái niệm OpenWiki, một CLI cho tài liệu mã nguồn, và hiện có thể tạo ra một bộ não đa năng cho các tác nhân. OpenWiki Brains kết nối với các nguồn khác nhau như Gmail, Notion và tìm kiếm web, và chuyển đổi thông tin thành một wiki cục bộ mà các tác nhân có thể sử dụng làm bộ nhớ. Mục tiêu là cung cấp cho các tác nhân quyền truy cập vào bối cảnh mới mà không cần theo dõi hoặc bảo trì thủ công. Điều này đặc biệt hữu ích cho các tác nhân làm việc trên nhiều nhiệm vụ, chẳng hạn như nghiên cứu, lập kế hoạch và công việc khách hàng, nơi bối cảnh hữu ích bị phân tán trên nhiều nơi. OpenWiki Brains nhằm mục đích cung cấp cho các tác nhân một nơi bền vững để tìm kiếm, biến các nguồn kết nối thành một wiki có cấu trúc có thể được làm mới theo thời gian.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">8</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Sau Orthogonality: Agency đạo đức đức hạnh và AI Alignment</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;After Orthogonality: Virtue-Ethical Agency and AI Alignment</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;The Gradient</span>&nbsp;&nbsp;&nbsp;<a href="https://thegradient.pub/virtue-ethics-ai-alignment/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Bài viết &quot;Sau Tính Chính Orthogonal: Cơ quan Đạo đức - Đức hạnh và Sự Liên kết AI&quot; thách thức cách tiếp cận truyền thống đối với sự liên kết trí tuệ nhân tạo (AI) bằng cách lập luận rằng con người hợp lý và AI không nên có mục tiêu. Thay vào đó, hành động của con người được hướng dẫn bởi các thực hành, là mạng lưới các hành động, khuynh hướng, tiêu chí đánh giá và tài nguyên cấu trúc và thúc đẩy chúng. Tác giả đề xuất rằng sự suy xét của các tác nhân AI nên chia sẻ logic dựa trên thực hành này để thực sự hỗ trợ sự hoạt động của con người. Cách tiếp cận này rất quan trọng để liên kết AI với các thuộc tính an toàn như minh bạch, hữu ích và vô hại. Bài viết cũng khám phá khái niệm eudaimonia, hay sự thịnh vượng con người tích cực, hợp lý, và lập luận rằng nó chỉ ra một cấu trúc suy xét khác với tính hợp lý kết quả tiêu chuẩn. Tác giả cho rằng tính hợp lý eudaimonic này là một khuôn khổ hữu ích cho AI được liên kết với con người, vì nó có thể cung cấp lợi thế ổn định và an toàn. Bài viết kết luận rằng nếu tính hợp lý eudaimonic là tự nhiên và hiệu quả, nó có thể là một cách tiếp cận khả thi để liên kết AI với sự thịnh vượng của con người, giải quyết các vấn đề an toàn AI cổ điển và nghịch lý.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+
+  <!-- TIPS SECTION -->
+  
+  <tr>
+    <td bgcolor="#FFFBEB" style="background-color:#FFFBEB;padding:20px 30px;border-top:3px solid #D97706;">
+      <p style="margin:0 0 12px;font-size:11px;color:#D97706;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#9889;&nbsp;Tips &amp; Tricks cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Chain-of-thought Prompting</strong><br><strong>Vấn đề:</strong> Model AI không hiểu được context của câu hỏi phức tạp.<br><strong>Cách làm:</strong> Sử dụng chain-of-thought prompting, ví dụ &quot;Break down the solution into steps: ...&quot;. <br><strong>Đánh giá:</strong> Hiệu quả khi giải quyết bài toán phức tạp, không nên dùng với câu hỏi đơn giản.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Few-shot Learning</strong><br><strong>Vấn đề:</strong> Model AI cần nhiều dữ liệu để học tập.<br><strong>Cách làm:</strong> Cung cấp vài ví dụ liên quan, ví dụ &quot;Given the following examples: ...&quot;. <br><strong>Đánh giá:</strong> Hiệu quả khi có ít dữ liệu, không nên dùng khi có nhiều dữ liệu.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ System Prompt Design</strong><br><strong>Vấn đề:</strong> Model AI không hiểu được yêu cầu cụ thể.<br><strong>Cách làm:</strong> Định nghĩa rõ hệ thống và yêu cầu, ví dụ &quot;You are a chatbot, answer: ...&quot;. <br><strong>Đánh giá:</strong> Hiệu quả khi cần trả lời chính xác, nên dùng với yêu cầu cụ thể.</p>
+    </td>
+  </tr>
+
+  <!-- LESSON SECTION -->
+  
+  <tr>
+    <td bgcolor="#F0FFF4" style="background-color:#F0FFF4;padding:20px 30px;border-top:3px solid #2E7D32;">
+      <p style="margin:0 0 12px;font-size:11px;color:#2E7D32;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128218;&nbsp;B&#224;i h&#7885;c AI h&#244;m nay cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;">1. <strong>Tối ưu chi phí &amp; hiệu năng LLM</strong><br>2. Để phát triển ứng dụng AI hiệu quả, dev cần biết cách tối ưu chi phí và hiệu năng của mô hình ngôn ngữ lớn (LLM). Điều này giúp giảm thiểu chi phí vận hành và cải thiện trải nghiệm người dùng. Việc tối ưu hóa cũng cho phép tích hợp LLM vào các ứng dụng di động và edge devices.<br>3. Ví dụ, sử dụng kỹ thuật fine-tuning và LoRA (Low-Rank Adaptation of Weights) để giảm kích thước mô hình và tăng tốc độ xử lý.<br>4. 💡 Tip hoặc bước tiếp theo: Hãy bắt đầu bằng cách đánh giá nhu cầu và nguồn lực của dự án, sau đó chọn kỹ thuật tối ưu phù hợp để đạt được hiệu suất và chi phí mong muốn. Sử dụng các công cụ như Hugging Face Transformers để triển khai và tối ưu hóa LLM.</p>
+    </td>
+  </tr>
+
+  <!-- FOOTER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:20px 30px;text-align:center;border-radius:0 0 10px 10px;">
+      <p style="margin:0 0 4px;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        &#128161;&nbsp;Lu&#244;n &#273;i &#273;&#7847;u trong th&#7871; gi&#7899;i AI!&nbsp;&#183;&nbsp;Stay ahead in AI!
+      </p>
+      <p style="margin:6px 0 0;font-size:11px;color:#4A7AAB;font-family:Arial,sans-serif;">
+        Ngu&#7891;n: Google News · Groq AI
+      </p>
+    </td>
+  </tr>
+
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+
+</td></tr>
+</table>
+</body>
+</html>

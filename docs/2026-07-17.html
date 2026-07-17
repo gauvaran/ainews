@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--[if mso]>
+<noscript><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings></xml></noscript>
+<![endif]-->
+<style>
+/* ── Responsive overrides for web (email HTML uses fixed 600px tables) ── */
+@media screen and (max-width:620px) {
+  table[width="600"] { width:100% !important; }
+  td { word-break:break-word; overflow-wrap:break-word; }
+  /* Reduce generous email padding on small screens */
+  td[style*="padding:28px 30px"],
+  td[style*="padding:24px 30px"],
+  td[style*="padding:22px 30px"],
+  td[style*="padding:20px 30px"],
+  td[style*="padding:16px 30px"],
+  td[style*="padding:12px 30px"] { padding-left:14px !important; padding-right:14px !important; }
+  /* Code blocks: scroll horizontally instead of breaking layout */
+  pre { overflow-x:auto !important; max-width:calc(100vw - 32px) !important; box-sizing:border-box; }
+  /* Shrink large heading text slightly */
+  h1[style*="26px"] { font-size:20px !important; }
+}
+/* ── Print: hide nav bar ── */
+@media print {
+  #web-nav { display:none !important; }
+  body { background:#fff !important; }
+}
+</style>
+</head>
+<body style="margin:0;padding:0;background-color:#EEF2F7;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+<div id="web-nav" style="background:#001a4d;padding:8px 16px;font-family:Arial,sans-serif;font-size:13px;position:sticky;top:0;z-index:999;border-bottom:2px solid #0066CC;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
+  <span id="nav-prev" style="color:#4A6A8A;">&#8592;</span>
+  <a href="all.html" style="color:#FFD700;text-decoration:none;font-weight:bold;">&#128240; T&#7845;t c&#7843; b&#7843;n tin</a>
+  <span style="color:#FFFFFF;">17/07/2026</span>
+  <span id="nav-next" style="color:#4A6A8A;">&#8594;</span>
+  <a href="2026-07-17.pdf" download="2026-07-17.pdf" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128196; T&#7843;i PDF</a>
+  <button onclick="sharePage()" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128279; Chia s&#7867;</button>
+</div>
+<script>
+function sharePage(){
+  var title='Bản tin AI BIS-MT – 17/07/2026';
+  if(navigator.share){navigator.share({title:title,url:location.href});}
+  else{navigator.clipboard.writeText(location.href).then(function(){
+    alert('Đã sao chép link!');
+  });}
+}
+(function(){
+  var m=location.pathname.match(/(\d{4}-\d{2}-\d{2})\.html/);
+  if(!m)return;
+  var slug=m[1];
+  function fmt(s){var p=s.split('-');return p[2]+'/'+p[1];}
+  var lnkStyle='color:#90C4F0;text-decoration:none;';
+  fetch('dates.json?_='+Date.now())
+    .then(function(r){return r.json();})
+    .then(function(dates){
+      var idx=dates.indexOf(slug);
+      if(idx>0){
+        var p=dates[idx-1];
+        document.getElementById('nav-prev').innerHTML=
+          '<a href="'+p+'.html" style="'+lnkStyle+'">&#8592; '+fmt(p)+'</a>';
+      }
+      if(idx>=0&&idx<dates.length-1){
+        var n=dates[idx+1];
+        document.getElementById('nav-next').innerHTML=
+          '<a href="'+n+'.html" style="'+lnkStyle+'">'+fmt(n)+' &#8594;</a>';
+      }
+    })
+    .catch(function(){});
+})();
+</script>
+
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#EEF2F7" style="background-color:#EEF2F7;">
+<tr><td align="center" style="padding:24px 12px;">
+
+<!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0"><tr><td><![endif]-->
+<table role="presentation" width="600" cellpadding="0" cellspacing="0"
+       style="max-width:600px;width:100%;background-color:#FFFFFF;border-radius:10px;" bgcolor="#FFFFFF">
+
+  <!-- HEADER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:28px 30px 22px 30px;text-align:center;border-radius:10px 10px 0 0;">
+      <p style="margin:0 0 6px;font-size:11px;color:#7EB1E8;letter-spacing:2px;font-family:Arial,sans-serif;text-transform:uppercase;">
+        BIS &#8209; MT &nbsp;&#183;&nbsp; 17/07/2026
+      </p>
+      <h1 style="margin:0;font-size:26px;font-weight:bold;color:#FFFFFF;font-family:Arial,sans-serif;line-height:1.2;">
+        &#129302; B&#7843;n Tin AI H&#7857;ng Ng&#224;y
+      </h1>
+      <p style="margin:8px 0 0;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        C&#7853;p nh&#7853;t c&#244;ng ngh&#7879; AI m&#7899;i nh&#7845;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- QUOTE -->
+  <tr>
+    <td bgcolor="#EBF4FF" style="background-color:#EBF4FF;padding:16px 30px;border-top:3px solid #0066CC;">
+      <p style="margin:0;font-size:14px;color:#1A3A5C;font-style:italic;line-height:1.6;font-family:Georgia,serif;">
+        &#10024;&nbsp;&ldquo;Người ta là hoa đất.&rdquo;
+      </p>
+      
+      <p style="margin:8px 0 0;font-size:12px;color:#888888;font-family:Arial,sans-serif;">&mdash;&nbsp;Tục ngữ Việt Nam</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#5A6A7A;font-style:italic;line-height:1.5;font-family:Arial,sans-serif;">&#128161;&nbsp;Con người là tạo vật quý giá nhất — mỗi người đều mang trong mình giá trị và tiềm năng độc đáo.</p>
+    </td>
+  </tr>
+
+  <!-- SECTION LABEL -->
+  <tr>
+    <td bgcolor="#F5F7FA" style="background-color:#F5F7FA;padding:12px 30px;">
+      <p style="margin:0;font-size:11px;color:#999999;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128240;&nbsp;Tin t&#7913;c n&#7893;i b&#7853;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- ARTICLES -->
+  
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">1</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Developer thử nghiệm cuộc sống sau khi GitHub Copilot thay đổi chính sách tính phí</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Developers are testing life after GitHub Copilot changes its billing</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Startup Fortune</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMinAFBVV95cUxOY3JLS0I5OGdJTTVzVXc4R3ZJeGd6OGkyQ2h5WGc2YUhHbzVrcER6NW13QlJLWmJJSlZuekk4OUIxVDU4bGdIdVo4b0p1ZDlwcFotbDZNZFQtSkc5SWItNHBkbDBuQTZpc1RybkFGMHJ1VjVMOWJzc054T3o3QWJxMXBnMjZiNGR6X2hoRW5hWVpoTGxhRy1mcS10akQ?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Các nhà phát triển hiện đang thử nghiệm cuộc sống mà không có mô hình định giá ban đầu của GitHub Copilot, sau những thay đổi gần đây về cấu trúc hóa đơn của nó. GitHub Copilot là một trợ lý mã hóa được hỗ trợ bởi AI, cung cấp cho các nhà phát triển đề xuất và hoàn thiện mã. Công cụ này đã là một yếu tố thay đổi cuộc chơi cho nhiều lập trình viên, nhưng mô hình định giá trước đó của nó, tính phí người dùng dựa trên số dòng mã họ viết, đã vấp phải sự chỉ trích.
+
+Cấu trúc hóa đơn mới cho GitHub Copilot dựa trên phí đăng ký hàng tháng, với người dùng có tùy chọn trả hàng năm để được giảm giá. Thay đổi này đã gây ra phản ứng lẫn lộn từ các nhà phát triển, với một số chào đón mô hình định giá mới như minh bạch hơn và những người khác bày tỏ lo ngại về chi phí tăng lên.
+
+Khi các nhà phát triển thích nghi với mô hình định giá mới, nhiều người đang khám phá các công cụ mã hóa được hỗ trợ bởi AI thay thế, chẳng hạn như Kite và TabNine. Những công cụ này cung cấp chức năng tương tự như GitHub Copilot nhưng với cấu trúc định giá khác, cho phép các nhà phát triển tìm kiếm lựa chọn tốt nhất cho nhu cầu và ngân sách của họ.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">2</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Tình trạng các Agent Framework: Chọn Runtime phù hợp cho việc triển khai AI trong doanh nghiệp</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;State of Agent Frameworks: Choosing the Right Runtime for Enterprise AI Execution</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Medium</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxOdXdHT2dlWEx6TUh4VW5nQ0hCZWdqVjN4dEhkWXdhQ3ZhT2lPZUtmUlRVSG5zVTBQOWQ3MUIxZjdPZUl6ZmpsbXFWWTNQN3g4M0xfcWJhUDY1aU0tcEFLeDNZYXFmTDIzZmRLNG5VODcyem16VEFuUXRSWEFUSmE3WmFZTzhDbDFRaW1IcFp5QjBqeHpBb0dJM18wbjl0ZVVSNU8yM1Jwb2E3WkxyenNJNk0tTHRUWC1IRngwbEJycUxPTGc?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Bài viết &quot;Trạng thái của các Framework Trợ lý: Chọn Runtime Đúng cho Thực thi AI Doanh nghiệp&quot; khám phá trạng thái hiện tại của các framework trợ lý trong bối cảnh thực thi AI doanh nghiệp. Các framework trợ lý là các nền tảng phần mềm cho phép phát triển và triển khai các model trí tuệ nhân tạo (AI). Bài viết nhấn mạnh tầm quan trọng của việc chọn runtime đúng cho thực thi AI doanh nghiệp, vì nó có thể ảnh hưởng đáng kể đến hiệu suất, khả năng mở rộng và độ tin cậy của các ứng dụng AI.
+
+Bài viết thảo luận về các framework trợ lý khác nhau, bao gồm Rasa, Dialogflow và Botpress, cũng như các điểm mạnh và điểm yếu tương ứng của chúng. Nó cũng đề cập đến tầm quan trọng của việc xem xét các yếu tố như sự dễ sử dụng, tùy chọn tùy chỉnh và tích hợp với các hệ thống hiện có khi chọn một framework trợ lý. Hơn nữa, bài viết nhấn mạnh nhu cầu về một runtime linh hoạt và có khả năng mở rộng có thể đáp ứng nhu cầu不断 phát triển của các ứng dụng AI doanh nghiệp. Bằng cách cung cấp cái nhìn tổng quan về trạng thái hiện tại của các framework trợ lý, bài viết nhằm giúp các nhà phát triển và tổ chức đưa ra quyết định sáng suốt khi chọn một runtime cho các dự án AI của họ.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">3</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Xây dựng Workflow dùng Agent với Cortex AI và Managed MCP Servers</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Build Agent-Powered Workflows Using Cortex AI and Managed MCP Servers</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Snowflake</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMigwFBVV95cUxNV0VHLWNuTUpTN0lRd25LVF9tS0pCb0ltcU80SVI5T19BMVJvaXpidmlxRUkzZnFGR1Jac3hfVmdBbmE5emtSaDlBMGF6b3hPbFhTR0NKdnNsSlNyR2VyUURlZTBPMVRSLXg3dTZSU3BJb21hdFptbjRpcmc0Mlk2VGJvMA?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Snowflake đã giới thiệu một khả năng mới cho phép người dùng xây dựng các quy trình làm việc được hỗ trợ bởi các tác nhân sử dụng Cortex AI và máy chủ Managed MCP. Tích hợp này cho phép các nhà phát triển tạo và tự động hóa các quy trình làm việc phức tạp, đơn giản hóa các nhiệm vụ và nâng cao năng suất.
+
+Với Cortex AI, người dùng có thể tận dụng học máy và trí tuệ nhân tạo để phân tích dữ liệu và đưa ra quyết định thông minh. Bằng cách kết hợp Cortex AI với máy chủ Managed MCP, các nhà phát triển có thể tạo các quy trình làm việc tùy chỉnh tự động hóa các nhiệm vụ lặp đi lặp lại, giải phóng tài nguyên cho các sáng kiến chiến lược hơn.
+
+Tích hợp này cung cấp một số lợi ích, bao gồm hiệu quả cải thiện, khả năng mở rộng tăng cường và tính linh hoạt tăng cao. Người dùng hiện có thể tạo và triển khai các quy trình làm việc thích ứng với nhu cầu kinh doanh thay đổi, đảm bảo rằng dữ liệu và ứng dụng của họ luôn cập nhật và bảo mật.
+
+Các quy trình làm việc được hỗ trợ bởi tác nhân của Snowflake được thiết kế để có thể tùy chỉnh cao, cho phép người dùng điều chỉnh quy trình làm việc của họ cho các yêu cầu kinh doanh cụ thể. Khả năng này dự kiến sẽ nâng cao trải nghiệm người dùng tổng thể và thúc đẩy tăng trưởng kinh doanh bằng cách tự động hóa các nhiệm vụ phức tạp và cải thiện việc ra quyết định dựa trên dữ liệu.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">4</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Firefox trên WebAssembly</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Firefox in WebAssembly</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Simon Willison</span>&nbsp;&nbsp;&nbsp;<a href="https://simonwillison.net/2026/Jul/16/firefox-in-webassembly/#atom-everything" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Firefox đã được biên dịch thành công để chạy trong WebAssembly, cho phép toàn bộ trình duyệt chạy trong một trình duyệt khác. Dự án này, do Puter dẫn đầu, đã sử dụng trình duyệt Firefox/Gecko do nó có hỗ trợ mạnh mẽ cho quá trình đơn. Quá trình biên dịch này được thực hiện thông qua việc sử dụng Claude Opus và token Fable, với chi phí ước tính là 25.000 đô la. Để thực hiện điều này, một máy chủ proxy đã được sử dụng để chuyển tất cả lưu lượng truy cập qua giao thức WebSocket, đảm bảo rằng mã chạy trong trình duyệt không thể tạo kết nối mạng tùy ý. Bản demo展示 trình duyệt Firefox đã được biên dịch chạy trong Chrome, với nhóm tuyên bố rằng nó hỗ trợ mã hóa từ đầu đến cuối. Kho lưu trữ của dự án có sẵn để xem, và một dự án tương tự, theogbob/WebkitWasm, cũng đã được khởi xướng để biên dịch WebKit sang WASM.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">5</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Giám sát kỹ thuật số định hình lại việc thực thi pháp luật thủy sản ở Indonesia</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Digital Surveillance Reshapes Fishery Enforcement in Indonesia</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;IEEE Spectrum</span>&nbsp;&nbsp;&nbsp;<a href="https://spectrum.ieee.org/fishery-satellite-surveillance" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Indonesia đang cách mạng hóa cách tiếp cận thực thi pháp luật về đánh bắt cá với sự giúp đỡ của giám sát kỹ thuật số. Quốc gia này đang sử dụng một loạt các công cụ cảm biến từ xa và phân tích để theo dõi hoạt động đánh bắt cá trong vùng biển rộng lớn của mình. Với sự hỗ trợ của theo dõi vệ tinh và hệ thống giám sát tàu thuyền, các cơ quan chức năng Indonesia hiện có thể xác định các vi phạm tiềm năng trong thời gian thực, thậm chí trước khi tàu tuần tra được triển khai. Sự thay đổi này trong quản lý hàng hải làm cho việc thực thi pháp luật trên một khu vực rộng lớn hơn trở nên khả thi, vì đại dương không còn trong suốt với các nhà quản lý. Việc sử dụng các công cụ giám sát kỹ thuật số, chẳng hạn như Global Fishing Watch, đã làm cho việc theo dõi hàng trăm nghìn tàu thuyền trên toàn thế giới trở nên khả thi, cung cấp một bức tranh gần như thời gian thực về hoạt động đánh bắt cá. Cách tiếp cận đầy tham vọng của Indonesia là một trong những ví dụ đáng chú ý nhất về sự chuyển đổi này, vì quốc gia này quản lý hơn sáu triệu kilômét vuông không gian hàng hải với nguồn lực thực thi hạn chế. Việc tích hợp giám sát kỹ thuật số vào thực thi pháp luật về đánh bắt cá đã làm tăng đáng kể số lượng tàu thuyền được theo dõi, với 9.394 tàu cá Indonesia hiện đang truyền tải tích cực thông qua Hệ thống Giám sát Tàu thuyền Quốc gia.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">6</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">HP bị phạt 1,4 tỷ rupee vì &quot;thỏa thuận độc quyền&quot; hộp mực, toner và PC</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;HP fined 1.4 billion rupees for “cartelization” of ink cartridges, toner, PCs</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Ars Technica</span>&nbsp;&nbsp;&nbsp;<a href="https://arstechnica.com/gadgets/2026/07/hp-fined-1-4-billion-rupees-for-cartelization-of-ink-cartridges-toner-pcs/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Chính phủ Ấn Độ đã phạt HP Ấn Độ và các đối tác của họ với tổng số tiền là 1,4 tỷ rupee (khoảng 14,4 triệu đô la) vì tham gia vào &quot;cartelization&quot; của máy tính, hộp mực và bột mực. Ủy ban Cạnh tranh Ấn Độ (CCI) đã phát hiện ra rằng HP Ấn Độ đã thông đồng với một số đối tác kênh để tăng chi phí đấu thầu cho các hợp đồng chính phủ và để ngăn cản các nhà bán lại bán hộp mực và bột mực giả. Công ty này đã bị phạt 1,3 tỷ rupee vì hành vi này, và thêm 119,8 triệu rupee vì &quot;tham gia vào cartelization&quot; của bột mực, hộp mực và các vật tư in ấn khác. Hai mươi mốt nhà bán lại của HP cũng bị phạt 35,2 triệu rupee. CCI đã ra lệnh cho HP Ấn Độ và các đối tác kênh của họ phải chấm dứt và không được tiếp tục thực hiện các hành vi chống cạnh tranh và phải tổ chức các chương trình đào tạo tuân thủ cạnh tranh trong vòng 60 ngày. Điều tra đã tiết lộ rằng HP Ấn Độ đã đóng vai trò trung tâm trong việc sắp xếp thông đồng, nhằm mục đích cạnh tranh với các OEM khác và duy trì độc quyền trên thị trường.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">7</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">GitHub cho người mới bắt đầu: Lộ trình để nắm vững các kiến thức cơ bản về GitHub</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;GitHub for Beginners: Your roadmap to mastering the GitHub essentials</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;GitHub Blog</span>&nbsp;&nbsp;&nbsp;<a href="https://github.blog/developer-skills/github/github-for-beginners-your-roadmap-to-mastering-the-github-essentials/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">GitHub đã tạo ra một hướng dẫn toàn diện cho người mới bắt đầu để掌握 các yếu tố cơ bản của nền tảng. Hướng dẫn này bao gồm các chủ đề khác nhau, bao gồm trí tuệ nhân tạo và học máy trong hệ sinh thái GitHub và ngành công nghiệp rộng lớn hơn. Nó khám phá các khả năng và lợi ích của việc tạo mã bằng AI và tác động của nó đối với trải nghiệm của nhà phát triển. Ngoài ra, nó cung cấp tài nguyên cho các nhà phát triển để phát triển kỹ năng và sự nghiệp, học cách xây dựng, vận hành và bảo trì phần mềm với GitHub, và khám phá công nghệ đằng sau nền tảng phát triển được hỗ trợ bởi AI hàng đầu thế giới.
+
+Hướng dẫn này cũng đi sâu vào các phương pháp hay nhất để xây dựng phần mềm với quy mô lớn với đội ngũ làm việc từ xa, bảo mật trong chu kỳ phát triển của nhà phát triển, và cách viết, xây dựng và triển khai phần mềm doanh nghiệp với quy mô lớn. Nó giải thích tại sao Gartner đã xếp GitHub vào vị trí Leader trong hai năm liên tiếp và giới thiệu việc tạo ra retrieval-augmented generation (RAG) để thu thập thêm thông tin.
+
+Đối với những người mới đến với GitHub, hướng dẫn này cung cấp một con đường chi tiết từ việc hiểu kiểm soát phiên bản, kho lưu trữ và yêu cầu kéo đến hợp tác trên các dự án thực tế và đóng góp cho mã nguồn mở. Nó nhằm mục đích cung cấp một mô hình hoàn chỉnh về cách phần mềm hiện đại được xây dựng trên GitHub, khiến nó trở thành một tài nguyên quý giá cho các nhà phát triển ở mọi cấp độ.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">8</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Tại sao thanh thiếu niên xứng đáng được tiếp cận AI an toàn</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Why teens deserve access to safe AI</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;OpenAI Blog</span>&nbsp;&nbsp;&nbsp;<a href="https://openai.com/index/why-teens-deserve-access-safe-ai" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">OpenAI đang làm việc để làm cho nền tảng ChatGPT của mình an toàn hơn cho thanh thiếu niên bằng cách triển khai các biện pháp bảo vệ phù hợp với lứa tuổi. Công ty nhằm mục đích cung cấp một môi trường an toàn cho người dùng trẻ tương tác với công nghệ AI. 
+
+Để đạt được điều này, OpenAI đang tích hợp các công cụ học tập và kiểm soát của phụ huynh vào nền tảng ChatGPT. Các tính năng này được thiết kế để giúp thanh thiếu niên học hỏi từ AI trong khi giảm thiểu các rủi ro tiềm năng. Ngoài ra, OpenAI đang hợp tác với các chuyên gia trong lĩnh vực này để进一步 nâng cao sự an toàn và hiệu quả của nền tảng cho người dùng trẻ. 
+
+Bằng cách thực hiện các bước này, OpenAI nhằm mục đích cung cấp cho thanh thiếu niên quyền truy cập vào công nghệ AI trong khi đảm bảo sự an toàn và phúc lợi trực tuyến của họ. Các nỗ lực của công ty nhằm mục đích thúc đẩy một trải nghiệm lành mạnh và giáo dục cho người dùng trẻ, cho phép họ khám phá các khả năng của AI trong khi được bảo vệ khỏi các tác hại tiềm năng.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+
+  <!-- TIPS SECTION -->
+  
+  <tr>
+    <td bgcolor="#FFFBEB" style="background-color:#FFFBEB;padding:20px 30px;border-top:3px solid #D97706;">
+      <p style="margin:0 0 12px;font-size:11px;color:#D97706;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#9889;&nbsp;Tips &amp; Tricks cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tối ưu hóa LangSmith</strong><br><strong>Vấn đề:</strong> Khó kiểm soát chi phí khi sử dụng AI tools.<br><strong>Cách làm:</strong> Sử dụng LangSmith để phân tích và tối ưu hóa chi phí. Ví dụ, prompt &quot;Optimize LangSmith costs&quot; có thể giúp giảm thiểu chi phí.<br><strong>Đánh giá:</strong> Hiệu quả trong việc giảm chi phí, nên dùng khi cần tối ưu hóa ngân sách.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tích hợp Langfuse</strong><br><strong>Vấn đề:</strong> Khó tích hợp AI tools vào hệ thống hiện có.<br><strong>Cách làm:</strong> Sử dụng Langfuse để tích hợp AI tools vào hệ thống. Ví dụ, lệnh <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">langfuse integrate</code> có thể giúp tích hợp nhanh chóng.<br><strong>Đánh giá:</strong> Hiệu quả trong việc tích hợp, nên dùng khi cần kết nối hệ thống.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Giám sát Arize Phoenix</strong><br><strong>Vấn đề:</strong> Khó giám sát hiệu suất của AI models.<br><strong>Cách làm:</strong> Sử dụng Arize Phoenix để giám sát và phân tích hiệu suất. Ví dụ, prompt &quot;Analyze Arize Phoenix metrics&quot; có thể giúp đánh giá hiệu suất.<br><strong>Đánh giá:</strong> Hiệu quả trong việc giám sát, nên dùng khi cần đánh giá hiệu suất của AI models.</p>
+    </td>
+  </tr>
+
+  <!-- LESSON SECTION -->
+  
+  <tr>
+    <td bgcolor="#F0FFF4" style="background-color:#F0FFF4;padding:20px 30px;border-top:3px solid #2E7D32;">
+      <p style="margin:0 0 12px;font-size:11px;color:#2E7D32;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128218;&nbsp;B&#224;i h&#7885;c AI h&#244;m nay cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;">1. <strong>Tối ưu chi phí &amp; hiệu năng LLM</strong><br>2. Để giảm thiểu chi phí và tăng hiệu suất khi sử dụng các mô hình ngôn ngữ lớn (LLM), các nhà phát triển cần biết cách tối ưu hóa chúng. Điều này giúp giảm tải tài nguyên và cải thiện hiệu suất ứng dụng. Việc tối ưu hóa LLM cũng giúp giảm thiểu chi phí vận hành và tăng tốc độ xử lý.<br>3. Ví dụ, việc sử dụng kỹ thuật fine-tuning và LoRA (Low-Rank Adaptation) có thể giúp giảm kích thước mô hình và tăng tốc độ xử lý. Ngoài ra, việc triển khai mô hình trên các nền tảng edge AI hoặc sử dụng các công cụ như Ollama, LM Studio, llama.cpp cũng có thể giúp giảm chi phí và tăng hiệu suất.<br>4. 💡 Tip hoặc bước tiếp theo: Nên bắt đầu bằng việc đánh giá hiệu suất và chi phí hiện tại của mô hình LLM, sau đó áp dụng các kỹ thuật tối ưu hóa như fine-tuning, LoRA và triển khai trên edge AI để đạt được hiệu suất và chi phí tối ưu.</p>
+    </td>
+  </tr>
+
+  <!-- FOOTER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:20px 30px;text-align:center;border-radius:0 0 10px 10px;">
+      <p style="margin:0 0 4px;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        &#128161;&nbsp;Lu&#244;n &#273;i &#273;&#7847;u trong th&#7871; gi&#7899;i AI!&nbsp;&#183;&nbsp;Stay ahead in AI!
+      </p>
+      <p style="margin:6px 0 0;font-size:11px;color:#4A7AAB;font-family:Arial,sans-serif;">
+        Ngu&#7891;n: Google News · Groq AI
+      </p>
+    </td>
+  </tr>
+
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+
+</td></tr>
+</table>
+</body>
+</html>

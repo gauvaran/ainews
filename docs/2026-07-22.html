@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--[if mso]>
+<noscript><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings></xml></noscript>
+<![endif]-->
+<style>
+/* ── Responsive overrides for web (email HTML uses fixed 600px tables) ── */
+@media screen and (max-width:620px) {
+  table[width="600"] { width:100% !important; }
+  td { word-break:break-word; overflow-wrap:break-word; }
+  /* Reduce generous email padding on small screens */
+  td[style*="padding:28px 30px"],
+  td[style*="padding:24px 30px"],
+  td[style*="padding:22px 30px"],
+  td[style*="padding:20px 30px"],
+  td[style*="padding:16px 30px"],
+  td[style*="padding:12px 30px"] { padding-left:14px !important; padding-right:14px !important; }
+  /* Code blocks: scroll horizontally instead of breaking layout */
+  pre { overflow-x:auto !important; max-width:calc(100vw - 32px) !important; box-sizing:border-box; }
+  /* Shrink large heading text slightly */
+  h1[style*="26px"] { font-size:20px !important; }
+}
+/* ── Print: hide nav bar ── */
+@media print {
+  #web-nav { display:none !important; }
+  body { background:#fff !important; }
+}
+</style>
+</head>
+<body style="margin:0;padding:0;background-color:#EEF2F7;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+<div id="web-nav" style="background:#001a4d;padding:8px 16px;font-family:Arial,sans-serif;font-size:13px;position:sticky;top:0;z-index:999;border-bottom:2px solid #0066CC;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
+  <span id="nav-prev" style="color:#4A6A8A;">&#8592;</span>
+  <a href="all.html" style="color:#FFD700;text-decoration:none;font-weight:bold;">&#128240; T&#7845;t c&#7843; b&#7843;n tin</a>
+  <span style="color:#FFFFFF;">22/07/2026</span>
+  <span id="nav-next" style="color:#4A6A8A;">&#8594;</span>
+  <a href="2026-07-22.pdf" download="2026-07-22.pdf" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128196; T&#7843;i PDF</a>
+  <button onclick="sharePage()" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128279; Chia s&#7867;</button>
+</div>
+<script>
+function sharePage(){
+  var title='Bản tin AI BIS-MT – 22/07/2026';
+  if(navigator.share){navigator.share({title:title,url:location.href});}
+  else{navigator.clipboard.writeText(location.href).then(function(){
+    alert('Đã sao chép link!');
+  });}
+}
+(function(){
+  var m=location.pathname.match(/(\d{4}-\d{2}-\d{2})\.html/);
+  if(!m)return;
+  var slug=m[1];
+  function fmt(s){var p=s.split('-');return p[2]+'/'+p[1];}
+  var lnkStyle='color:#90C4F0;text-decoration:none;';
+  fetch('dates.json?_='+Date.now())
+    .then(function(r){return r.json();})
+    .then(function(dates){
+      var idx=dates.indexOf(slug);
+      if(idx>0){
+        var p=dates[idx-1];
+        document.getElementById('nav-prev').innerHTML=
+          '<a href="'+p+'.html" style="'+lnkStyle+'">&#8592; '+fmt(p)+'</a>';
+      }
+      if(idx>=0&&idx<dates.length-1){
+        var n=dates[idx+1];
+        document.getElementById('nav-next').innerHTML=
+          '<a href="'+n+'.html" style="'+lnkStyle+'">'+fmt(n)+' &#8594;</a>';
+      }
+    })
+    .catch(function(){});
+})();
+</script>
+
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#EEF2F7" style="background-color:#EEF2F7;">
+<tr><td align="center" style="padding:24px 12px;">
+
+<!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0"><tr><td><![endif]-->
+<table role="presentation" width="600" cellpadding="0" cellspacing="0"
+       style="max-width:600px;width:100%;background-color:#FFFFFF;border-radius:10px;" bgcolor="#FFFFFF">
+
+  <!-- HEADER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:28px 30px 22px 30px;text-align:center;border-radius:10px 10px 0 0;">
+      <p style="margin:0 0 6px;font-size:11px;color:#7EB1E8;letter-spacing:2px;font-family:Arial,sans-serif;text-transform:uppercase;">
+        BIS &#8209; MT &nbsp;&#183;&nbsp; 22/07/2026
+      </p>
+      <h1 style="margin:0;font-size:26px;font-weight:bold;color:#FFFFFF;font-family:Arial,sans-serif;line-height:1.2;">
+        &#129302; B&#7843;n Tin AI H&#7857;ng Ng&#224;y
+      </h1>
+      <p style="margin:8px 0 0;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        C&#7853;p nh&#7853;t c&#244;ng ngh&#7879; AI m&#7899;i nh&#7845;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- QUOTE -->
+  <tr>
+    <td bgcolor="#EBF4FF" style="background-color:#EBF4FF;padding:16px 30px;border-top:3px solid #0066CC;">
+      <p style="margin:0;font-size:14px;color:#1A3A5C;font-style:italic;line-height:1.6;font-family:Georgia,serif;">
+        &#10024;&nbsp;&ldquo;Khó mà không khổ, khổ mà không khó.&rdquo;
+      </p>
+      
+      <p style="margin:8px 0 0;font-size:12px;color:#888888;font-family:Arial,sans-serif;">&mdash;&nbsp;Tục ngữ Việt Nam</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#5A6A7A;font-style:italic;line-height:1.5;font-family:Arial,sans-serif;">&#128161;&nbsp;Nghèo khó về vật chất không đồng nghĩa với khổ sở tinh thần — thái độ sống tích cực mới quyết định hạnh phúc.</p>
+    </td>
+  </tr>
+
+  <!-- SECTION LABEL -->
+  <tr>
+    <td bgcolor="#F5F7FA" style="background-color:#F5F7FA;padding:12px 30px;">
+      <p style="margin:0;font-size:11px;color:#999999;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128240;&nbsp;Tin t&#7913;c n&#7893;i b&#7853;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- ARTICLES -->
+  
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">1</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Xây dựng agent phân tích tài chính thông minh với LangGraph và Strands Agents</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Build an intelligent financial analysis agent with LangGraph and Strands Agents</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Amazon Web Services (AWS)</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMixAFBVV95cUxQcDBxeXdxZlJjREktdFdBdnJST0xDSzQtYmppeEZQdHZWSXdaWGxSLXNvNlRYUjYwMlQ0LWtzU3RUdVRJWkJzbW1MektRRDNRS2lTZkJXUGJXNUplcHlIQkxQdkhxZEJkZW1Dd0k2R1lPdDlXQXhYdUdUdnJ0NlJDSnFlUXVOY0pYRDdITjFRVXRKMjlqWkNORnp5SXQzdnZIazc5ZURWMU8xQlgzV19DRjIxeTE4RFZXdTBOc1JLOER3NFZl?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Amazon Web Services (AWS) đã giới thiệu một khả năng mới để xây dựng một agent phân tích tài chính thông minh sử dụng LangGraph và Strands Agents. Giải pháp sáng tạo này cho phép người dùng tạo ra một công cụ phân tích tài chính tinh vi có thể xử lý và phân tích lượng lớn dữ liệu tài chính.
+
+LangGraph, một thư viện xử lý ngôn ngữ tự nhiên (NLP), được sử dụng để trích xuất thông tin liên quan từ các tài liệu tài chính, chẳng hạn như báo cáo và bảng kê. Strands Agents, một nền tảng low-code, được sử dụng để xây dựng và triển khai agent phân tích tài chính.
+
+Với agent này, người dùng có thể tự động hóa các tác vụ phân tích tài chính, như trích xuất, xử lý và trực quan hóa dữ liệu. Agent cũng có thể cung cấp các insight và khuyến nghị dựa trên dữ liệu đã phân tích, giúp người dùng đưa ra các quyết định tài chính sáng suốt.
+
+Agent phân tích tài chính thông minh được xây dựng trên AWS, cung cấp khả năng mở rộng, bảo mật và độ tin cậy. Giải pháp này đặc biệt hữu ích cho các tổ chức tài chính, công ty kế toán và các doanh nghiệp yêu cầu khả năng phân tích tài chính nâng cao. Bằng cách tận dụng LangGraph và Strands Agents, người dùng có thể tinh gọn quy trình phân tích tài chính của mình và thu được những insight giá trị về hiệu suất tài chính.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">2</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">LangChain ra mắt công cụ xây dựng agent mã nguồn mở &quot;dễ tiếp cận&quot;</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;LangChain launches &quot;accessible&quot; open source agent builder</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;thestack.technology</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMioAFBVV95cUxNdVNYS0h0WmNuN2FOeWNQNEIweXY3Y3RmN0daRXAxeHdsZU45cVJWTHNzcGsxaGU4UHM4N1Axb1VpWHNMT041R0pTbm1aWEZIbVRpaVlaTnJXcXZiQWkzN1l3VFdpeHZNejRBbkJYRDhsa1Z3UDlLbHdieVQ0ZXc2TWJfQmdaNG43cTd6WW5nOVhkbEwweWpKUDlyRWx3VVc3?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">LangChain đã giới thiệu một công cụ xây dựng agent mã nguồn mở, nhằm mục đích giúp các developer dễ dàng hơn trong việc tạo và tích hợp các agent được hỗ trợ bởi AI vào ứng dụng của họ. Công cụ xây dựng agent được thiết kế để đơn giản hóa quy trình xây dựng và triển khai các model AI đàm thoại, cho phép các developer tập trung vào việc tích hợp các model này vào sản phẩm của họ mà không cần chuyên môn sâu rộng về phát triển AI.
+
+Bản chất mã nguồn mở của công cụ xây dựng agent được kỳ vọng sẽ thúc đẩy sự hợp tác và phát triển dựa vào cộng đồng, cho phép người dùng đóng góp vào dự án và nâng cao khả năng của nó. Mục tiêu của LangChain là làm cho AI dễ tiếp cận hơn với nhiều developer, bất kể nền tảng hay kinh nghiệm của họ trong phát triển AI.
+
+Công cụ xây dựng agent được thiết kế để hoạt động liền mạch với nhiều ngôn ngữ lập trình và framework khác nhau, giúp các developer dễ dàng tích hợp các agent được hỗ trợ bởi AI vào ứng dụng của họ. Bằng cách cung cấp một giải pháp dễ tiếp cận và thân thiện với người dùng hơn, công cụ xây dựng agent của LangChain có tiềm năng đẩy nhanh việc áp dụng AI trong nhiều ngành và ứng dụng khác nhau.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">3</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Các model &quot;open-weight&quot; tốt nhất của Trung Quốc — và những đối thủ mạnh nhất từ Mỹ</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;The best Chinese open-weight models — and the strongest US rivals</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;understandingai.org</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMieEFVX3lxTE5aRUUtRDNyd05CNlRPU1JDN2lPcEU3RkZVOTU0UkN4T1Vzb0hvMjhWTGJLUzlwcW83dWxsY1pVTFlHNjlnLUt1N0JJVnB1dGtqdTQxNjd1R2U4OW14RWhUVVZkVlFUVDExWWx5QjJ2U1ZFSlVKS0s5RA?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Bài viết so sánh các model &quot;open-weight&quot; của Trung Quốc với các đối thủ mạnh nhất từ Mỹ. Các model &quot;open-weight&quot; ở đây đề cập đến các robot được thiết kế để nâng và di chuyển các vật nặng, thường được sử dụng trong môi trường công nghiệp. Các nhà sản xuất Trung Quốc đã đạt được những bước tiến đáng kể trong lĩnh vực này, sản xuất các model chất lượng cao và hiệu quả về chi phí.
+
+Một số model &quot;open-weight&quot; hàng đầu của Trung Quốc bao gồm FANUC CRX, KUKA KR CYBERTEC và Yaskawa Motoman. Các robot này nổi tiếng về độ chính xác, tốc độ và độ tin cậy.
+
+Ngược lại, các công ty có trụ sở tại Mỹ như ABB, KUKA và FANUC cũng cung cấp các model &quot;open-weight&quot; hiệu suất cao. IRB 6700 của ABB và LBR iiwa của KUKA là những ví dụ đáng chú ý, cung cấp các tính năng và khả năng tiên tiến.
+
+Bài viết nhấn mạnh sự cạnh tranh ngày càng tăng giữa các nhà sản xuất Trung Quốc và Mỹ trên thị trường robot &quot;open-weight&quot;. Các công ty Trung Quốc đang dần chiếm ưu thế nhờ giá cả cạnh tranh và thiết kế sáng tạo, trong khi các công ty Mỹ vẫn duy trì thị phần thông qua danh tiếng đã được thiết lập và công nghệ tiên tiến.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">4</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">&quot;Phim&quot; AI zombie mới của Neill Blomkamp chỉ là món cũ xào lại</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Neill Blomkamp’s new zombie AI ‘film’ is just slop warmed over</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;The Verge AI</span>&nbsp;&nbsp;&nbsp;<a href="https://www.theverge.com/entertainment/968703/neill-blomkamps-nightborne-barley-studios-seedance" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Neill Blomkamp, đạo diễn của District 9 và Gran Turismo, đã công bố dự án mới nhất của mình, một phim ngắn khoa học viễn tưởng dài 13 phút mang tên Nightborne. Phim ngắn này dựa trên tiểu thuyết Echopraxia năm 2014 của Peter Watts và có các nhân vật với giọng nói và khuôn mặt được mô phỏng theo diễn viên người thật. Tuy nhiên, mọi cảnh quay trong Nightborne đều được tạo ra bằng trình tạo video từ văn bản Seedance 2.0 của ByteDance. Blomkamp coi Nightborne là một &quot;khởi đầu thử nghiệm&quot; để chứng minh khả năng của generative AI và đặt mục tiêu tạo ra một bộ phim truyện đầy đủ theo định dạng này trong tương lai. Mặc dù được trau chuốt hơn so với các video do AI tạo ra khác, Nightborne vẫn thể hiện rõ những đặc điểm của nội dung do máy móc tạo ra. Bộ phim kể về một cuộc xung đột quân sự và một chương trình của chính phủ biến những người lính chết não thành zombie điều khiển từ xa. Mặc dù một nhóm người thật đã tham gia vào quá trình sản xuất dự án, Nightborne được mô tả là một &quot;trải nghiệm xem tệ hại&quot; và sự phụ thuộc của nó vào nội dung do AI tạo ra thể hiện rõ trong hình ảnh và âm thanh.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">5</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">TreeSize sẽ không gia hạn hỗ trợ giấy phép vĩnh viễn trừ khi người dùng đăng ký gói thuê bao</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;TreeSize won&#x27;t renew perpetual-license support unless users subscribe</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Ars Technica</span>&nbsp;&nbsp;&nbsp;<a href="https://arstechnica.com/gadgets/2026/07/treesize-wont-renew-perpetual-license-support-unless-users-subscribe/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">TreeSize, một công cụ phân tích dung lượng ổ đĩa, đã thay đổi mô hình kinh doanh của mình để đáp ứng &quot;điều kiện kinh tế hiện tại&quot;. Công ty, JAM Software, hiện yêu cầu người dùng có giấy phép vĩnh viễn phải đăng ký gói thuê bao để nhận hỗ trợ và cập nhật sau thời gian bảo trì 12 tháng ban đầu. Thay đổi này đã gây ra sự thất vọng cho người dùng, những người được yêu cầu sao lưu các file cài đặt và license key của họ để tránh mất quyền truy cập vào phần mềm. JAM Software tuyên bố chính sách này đã có hiệu lực từ năm 2025, nhưng người dùng hiện đang phát hiện ra nó khi thời gian bảo trì của họ hết hạn. Công ty lập luận rằng việc cung cấp các file cài đặt sao lưu và license key tiềm ẩn rủi ro do các lỗ hổng bảo mật và chi phí bảo trì. Giám đốc sản phẩm của TreeSize, Hendrik Christ, tuyên bố rằng sự thay đổi là cần thiết để đảm bảo công ty có thể tiếp tục phát triển và hỗ trợ phần mềm về lâu dài. Tuy nhiên, một số người dùng đang đặt câu hỏi về sự cần thiết phải đăng ký gói thuê bao cho một công cụ phân tích dung lượng ổ đĩa, đặc biệt khi có các lựa chọn thay thế miễn phí.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">6</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Tại sao AI cần một &quot;Hệ số Genie&quot;</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Why AI Needs a “Genie Coefficient”</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;IEEE Spectrum</span>&nbsp;&nbsp;&nbsp;<a href="https://spectrum.ieee.org/ai-agent-benchmark" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Một nhóm chuyên gia, bao gồm Barath Raghavan và Bruce Schneier, đề xuất một metric mới gọi là &quot;Hệ số Genie&quot; để đo lường liệu các hệ thống AI có thực sự làm những gì người dùng mong muốn hay không. Các benchmark hiện tại tập trung vào những gì AI có thể làm, chứ không phải liệu nó có đạt được mục tiêu dự định của người dùng hay không. Hệ số Genie nhằm mục đích thu hẹp khoảng cách giữa yêu cầu của người dùng và sự hiểu biết của AI, vốn thường bị ảnh hưởng bởi kiến thức chung và ngữ cảnh. Điều này là do ngôn ngữ con người vốn dĩ không được xác định rõ ràng, khiến việc liệt kê tất cả các cảnh báo và ngoại lệ là không thể. Tuy nhiên, con người có thể đưa ra những phỏng đoán hợp lý dựa trên văn hóa chung, giao tiếp trước đó và hành vi bẩm sinh. Mặt khác, các AI agent có thể hiểu sai yêu cầu do thiếu hiểu biết về ngữ cảnh con người. Với việc sử dụng ngày càng nhiều các &quot;harness&quot; linh hoạt, các AI agent đang trở nên chủ động và tự chủ hơn, điều này có thể dẫn đến hành vi không mong muốn và có khả năng gây ra vấn đề. Các tác giả lập luận rằng cần có một metric mới để đảm bảo các hệ thống AI phù hợp với ý định của người dùng và tránh những hậu quả không mong muốn.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">7</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Apollo sử dụng Deep Agents và LangSmith cho AI GTM như thế nào</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;How Apollo Uses Deep Agents and LangSmith for GTM AI</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;LangChain Blog</span>&nbsp;&nbsp;&nbsp;<a href="https://www.langchain.com/blog/how-apollo-rebuilt-its-ai-assistant-on-deep-agents-to-power-the-full-gtm-loop" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Apollo, một nền tảng go-to-market (GTM), đã cải tiến AI Assistant của mình để cung cấp trải nghiệm người dùng hợp lý hơn. Nền tảng này, bao gồm toàn bộ chu trình bán hàng, đã trở nên quá phức tạp đối với khách hàng do phạm vi tính năng rộng lớn. Apollo đặt mục tiêu đơn giản hóa quy trình bằng cách giới thiệu một giao diện dựa trên chat, nơi người dùng có thể nêu mục tiêu bằng ngôn ngữ tự nhiên và trợ lý sẽ thực hiện các tác vụ cần thiết. Ban đầu, nền tảng sử dụng kiến trúc dựa trên supervisor với LangGraph, nhưng điều này tỏ ra hạn chế. Nhóm sau đó đã đánh giá hai lựa chọn thay thế, chọn Deep Agents vì tính trung lập về model của nó, cho phép Apollo sử dụng nhiều nhà cung cấp Large Language Model (LLM). Kiến trúc mới cho phép trợ lý tự động chọn các skill dựa trên mục tiêu của người dùng, tự tổng hợp kế hoạch và thực hiện các tác vụ mà không yêu cầu chỉ định trước. Điều này đã giúp cải thiện độ trễ, giảm các lời nhắc xác nhận và rút ngắn chu trình phát triển. Ngoài ra, Apollo đã bắt đầu sử dụng LangSmith để quan sát và debug, cho phép các kỹ sư theo dõi các vấn đề và hiểu rõ hoạt động bên trong của hệ thống AI.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">8</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Ba điểm yếu khiến bảo mật doanh nghiệp thất bại ở quy mô codebase (và tại sao các công cụ hiện tại của bạn không giải quyết được)</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Three places enterprise security breaks down at codebase scale (and why your current tools don&#x27;t cover them)</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Sourcegraph Blog</span>&nbsp;&nbsp;&nbsp;<a href="http://localhost:5174/blog/vulnerability-remediation-at-codebase-scale" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Bảo mật doanh nghiệp thường bị xâm phạm ở quy mô codebase do một số lỗ hổng chính. Một vấn đề lớn là sự thất bại trong việc khắc phục lỗ hổng, vốn bị cản trở bởi phân tích code AI thiếu ngữ cảnh. Điều này gây khó khăn cho các nhóm bảo mật trong việc xác định và giải quyết chính xác các mối đe dọa tiềm tàng.
+
+Hơn nữa, tồn tại những khoảng trống trong phạm vi phát hiện, tạo ra các điểm mù trong bức tranh bảo mật. Những khoảng trống này có thể đặc biệt có vấn đề khi xử lý các codebase lớn, chẳng hạn như những codebase được tìm thấy trong 10.000 repository. Ngoài ra, thời gian để triển khai các bản sửa lỗi có thể kéo dài quá mức, thường mất hàng tuần để giải quyết các vấn đề.
+
+Những thách thức này làm nổi bật những hạn chế của các công cụ bảo mật hiện tại và nhu cầu về các giải pháp hiệu quả hơn có thể mở rộng để đáp ứng nhu cầu của các codebase lớn. Bằng cách giải quyết những lỗ hổng này, các tổ chức có thể củng cố tư thế bảo mật của mình và bảo vệ tốt hơn trước các mối đe dọa tiềm tàng.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+
+  <!-- TIPS SECTION -->
+  
+  <tr>
+    <td bgcolor="#FFFBEB" style="background-color:#FFFBEB;padding:20px 30px;border-top:3px solid #D97706;">
+      <p style="margin:0 0 12px;font-size:11px;color:#D97706;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#9889;&nbsp;Tips &amp; Tricks cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tạo Agents Đa Nhiệm</strong><br><strong>Vấn đề:</strong> Xử lý task phức tạp cần nhiều AI agents.<br><strong>Cách làm:</strong> Sử dụng LangGraph, CrewAI để tạo agents, ví dụ <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">langgraph create-agent --name my_agent</code>. <br><strong>Đánh giá:</strong> Hiệu quả cao, nên dùng khi cần phân tích dữ liệu đa chiều.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tích Hợp AutoGen</strong><br><strong>Vấn đề:</strong> Cần tự động hóa quá trình tạo agents.<br><strong>Cách làm:</strong> Sử dụng AutoGen, ví dụ <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">autogen generate --template agent</code>. <br><strong>Đánh giá:</strong> Tiết kiệm thời gian, nên dùng khi cần tạo nhiều agents tương tự.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Quản Lý Agents</strong><br><strong>Vấn đề:</strong> Khó quản lý và phối hợp nhiều AI agents.<br><strong>Cách làm:</strong> Sử dụng phiData để quản lý và theo dõi agents, ví dụ <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">phidata list-agents</code>. <br><strong>Đánh giá:</strong> Dễ dàng quản lý, nên dùng khi cần theo dõi hiệu suất của nhiều agents.</p>
+    </td>
+  </tr>
+
+  <!-- LESSON SECTION -->
+  
+  <tr>
+    <td bgcolor="#F0FFF4" style="background-color:#F0FFF4;padding:20px 30px;border-top:3px solid #2E7D32;">
+      <p style="margin:0 0 12px;font-size:11px;color:#2E7D32;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128218;&nbsp;B&#224;i h&#7885;c AI h&#244;m nay cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;">1. <strong>Tối ưu chi phí &amp; hiệu năng LLM</strong><br>2. Dev cần biết về tối ưu chi phí và hiệu năng LLM để giảm thiểu tài nguyên và tăng tốc độ xử lý trong các ứng dụng AI. Điều này đặc biệt quan trọng khi triển khai mô hình AI trên các thiết bị edge hoặc trong các hệ thống thực thời. <br>3. Ví dụ, sử dụng kỹ thuật model pruning và quantization có thể giảm kích thước mô hình LLM và tăng tốc độ inference.<br>4. 💡 Tip: Sử dụng thư viện như Hugging Face Transformers để thực hiện fine-tuning và tối ưu hóa mô hình LLM cho các use case cụ thể, giúp giảm chi phí và tăng hiệu năng.</p>
+    </td>
+  </tr>
+
+  <!-- FOOTER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:20px 30px;text-align:center;border-radius:0 0 10px 10px;">
+      <p style="margin:0 0 4px;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        &#128161;&nbsp;Lu&#244;n &#273;i &#273;&#7847;u trong th&#7871; gi&#7899;i AI!&nbsp;&#183;&nbsp;Stay ahead in AI!
+      </p>
+      <p style="margin:6px 0 0;font-size:11px;color:#4A7AAB;font-family:Arial,sans-serif;">
+        Ngu&#7891;n: Google News · Groq AI
+      </p>
+    </td>
+  </tr>
+
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+
+</td></tr>
+</table>
+</body>
+</html>

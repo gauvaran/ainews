@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--[if mso]>
+<noscript><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings></xml></noscript>
+<![endif]-->
+<style>
+/* ── Responsive overrides for web (email HTML uses fixed 600px tables) ── */
+@media screen and (max-width:620px) {
+  table[width="600"] { width:100% !important; }
+  td { word-break:break-word; overflow-wrap:break-word; }
+  /* Reduce generous email padding on small screens */
+  td[style*="padding:28px 30px"],
+  td[style*="padding:24px 30px"],
+  td[style*="padding:22px 30px"],
+  td[style*="padding:20px 30px"],
+  td[style*="padding:16px 30px"],
+  td[style*="padding:12px 30px"] { padding-left:14px !important; padding-right:14px !important; }
+  /* Code blocks: scroll horizontally instead of breaking layout */
+  pre { overflow-x:auto !important; max-width:calc(100vw - 32px) !important; box-sizing:border-box; }
+  /* Shrink large heading text slightly */
+  h1[style*="26px"] { font-size:20px !important; }
+}
+/* ── Print: hide nav bar ── */
+@media print {
+  #web-nav { display:none !important; }
+  body { background:#fff !important; }
+}
+</style>
+</head>
+<body style="margin:0;padding:0;background-color:#EEF2F7;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+<div id="web-nav" style="background:#001a4d;padding:8px 16px;font-family:Arial,sans-serif;font-size:13px;position:sticky;top:0;z-index:999;border-bottom:2px solid #0066CC;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
+  <span id="nav-prev" style="color:#4A6A8A;">&#8592;</span>
+  <a href="all.html" style="color:#FFD700;text-decoration:none;font-weight:bold;">&#128240; T&#7845;t c&#7843; b&#7843;n tin</a>
+  <span style="color:#FFFFFF;">24/07/2026</span>
+  <span id="nav-next" style="color:#4A6A8A;">&#8594;</span>
+  <a href="2026-07-24.pdf" download="2026-07-24.pdf" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128196; T&#7843;i PDF</a>
+  <button onclick="sharePage()" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128279; Chia s&#7867;</button>
+</div>
+<script>
+function sharePage(){
+  var title='Bản tin AI BIS-MT – 24/07/2026';
+  if(navigator.share){navigator.share({title:title,url:location.href});}
+  else{navigator.clipboard.writeText(location.href).then(function(){
+    alert('Đã sao chép link!');
+  });}
+}
+(function(){
+  var m=location.pathname.match(/(\d{4}-\d{2}-\d{2})\.html/);
+  if(!m)return;
+  var slug=m[1];
+  function fmt(s){var p=s.split('-');return p[2]+'/'+p[1];}
+  var lnkStyle='color:#90C4F0;text-decoration:none;';
+  fetch('dates.json?_='+Date.now())
+    .then(function(r){return r.json();})
+    .then(function(dates){
+      var idx=dates.indexOf(slug);
+      if(idx>0){
+        var p=dates[idx-1];
+        document.getElementById('nav-prev').innerHTML=
+          '<a href="'+p+'.html" style="'+lnkStyle+'">&#8592; '+fmt(p)+'</a>';
+      }
+      if(idx>=0&&idx<dates.length-1){
+        var n=dates[idx+1];
+        document.getElementById('nav-next').innerHTML=
+          '<a href="'+n+'.html" style="'+lnkStyle+'">'+fmt(n)+' &#8594;</a>';
+      }
+    })
+    .catch(function(){});
+})();
+</script>
+
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#EEF2F7" style="background-color:#EEF2F7;">
+<tr><td align="center" style="padding:24px 12px;">
+
+<!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0"><tr><td><![endif]-->
+<table role="presentation" width="600" cellpadding="0" cellspacing="0"
+       style="max-width:600px;width:100%;background-color:#FFFFFF;border-radius:10px;" bgcolor="#FFFFFF">
+
+  <!-- HEADER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:28px 30px 22px 30px;text-align:center;border-radius:10px 10px 0 0;">
+      <p style="margin:0 0 6px;font-size:11px;color:#7EB1E8;letter-spacing:2px;font-family:Arial,sans-serif;text-transform:uppercase;">
+        BIS &#8209; MT &nbsp;&#183;&nbsp; 24/07/2026
+      </p>
+      <h1 style="margin:0;font-size:26px;font-weight:bold;color:#FFFFFF;font-family:Arial,sans-serif;line-height:1.2;">
+        &#129302; B&#7843;n Tin AI H&#7857;ng Ng&#224;y
+      </h1>
+      <p style="margin:8px 0 0;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        C&#7853;p nh&#7853;t c&#244;ng ngh&#7879; AI m&#7899;i nh&#7845;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- QUOTE -->
+  <tr>
+    <td bgcolor="#EBF4FF" style="background-color:#EBF4FF;padding:16px 30px;border-top:3px solid #0066CC;">
+      <p style="margin:0;font-size:14px;color:#1A3A5C;font-style:italic;line-height:1.6;font-family:Georgia,serif;">
+        &#10024;&nbsp;&ldquo;Lời nói chẳng mất tiền mua, lựa lời mà nói cho vừa lòng nhau.&rdquo;
+      </p>
+      
+      <p style="margin:8px 0 0;font-size:12px;color:#888888;font-family:Arial,sans-serif;">&mdash;&nbsp;Ca dao Việt Nam</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#5A6A7A;font-style:italic;line-height:1.5;font-family:Arial,sans-serif;">&#128161;&nbsp;Ngôn từ có sức mạnh lớn — một lời nói khéo léo, chân thành có thể xây dựng mối quan hệ tốt đẹp mà không tốn gì.</p>
+    </td>
+  </tr>
+
+  <!-- SECTION LABEL -->
+  <tr>
+    <td bgcolor="#F5F7FA" style="background-color:#F5F7FA;padding:12px 30px;">
+      <p style="margin:0;font-size:11px;color:#999999;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128240;&nbsp;Tin t&#7913;c n&#7893;i b&#7853;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- ARTICLES -->
+  
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">1</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Giới thiệu Open Agent Specification (Agent Spec): Một chuẩn biểu diễn thống nhất cho AI Agent</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Introducing the Open Agent Specification (Agent Spec): A Unified Representation for AI Agents</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Oracle Blogs</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMihwFBVV95cUxNQVNvdUZTTVhSdmNqbFhDR3VTVkdFbmpuWTlyeVY5aElhVnc3R1JrcG5yb0NGYW1DNjlFanBaR0l3NkY0QVRQTVB5RTlDSnFabDVZcENETTBNYW1ORVlKWG5SNEpvaXdDdGZlekh0ZWtFeTc4N1lidmdRN05XOUhJTUtoVEZQWXM?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Oracle đã giới thiệu Open Agent Specification (Agent Spec), một biểu diễn thống nhất cho các tác nhân AI. Agent Spec nhằm cung cấp một khuôn khổ chung cho các nhà phát triển để tạo, tích hợp và tương tác với các tác nhân AI khác nhau trên các nền tảng và lĩnh vực khác nhau. Đặc tả này được thiết kế để mở và có thể mở rộng, cho phép các nhà phát triển dễ dàng thêm các tính năng và khả năng mới vào các tác nhân AI.
+
+Agent Spec được xây dựng trên các công nghệ tiêu chuẩn của ngành như JSON và HTTP, giúp nó dễ dàng truy cập và tích hợp với các hệ thống hiện có. Nó cung cấp một cách tiêu chuẩn hóa để mô tả các tác nhân AI, bao gồm khả năng, ý định và tương tác của chúng. Điều này cho phép giao tiếp và cộng tác liền mạch giữa các tác nhân AI khác nhau, cũng như giữa các tác nhân AI và người dùng con người.
+
+Bằng cách áp dụng Agent Spec, các nhà phát triển có thể tạo ra các hệ thống AI phức tạp và tích hợp hơn có thể tương tác với nhau và với con người một cách có ý nghĩa hơn. Agent Spec là một dự án mã nguồn mở, và Oracle mời cộng đồng nhà phát triển đóng góp vào sự phát triển và tiến hóa của nó.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">2</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Agent Factory: Kết nối agent, ứng dụng và dữ liệu với các chuẩn mở mới như MCP và A2A</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Agent Factory: Connecting agents, apps, and data with new open standards like MCP and A2A</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Microsoft Azure</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMixAFBVV95cUxOekoxbVV4Vml2ZG5yVGVhRWl1cVFLM1ZrYUVNbWdFTnI1bV9CTmVFZ3FJNTRCeTctZ3ctTUtVOW9YbFBqVWZPTGpfQnk0WWt4T09OdG00X25yZVV3TE1XbGpJckdHWVBNV2l1bDdKbEZXb1dmc1RjR1JENWNkMVF6WHVrdlZDMThhVDN5WFFiQ01YakVlWUZDR0gtS0NTZGxrOGFUMzN4ZWlNZzF1WlFPMnMwT3BDcUd6TjJDSWJXMkpkMEh5?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Microsoft đã giới thiệu Agent Factory, một nền tảng cho phép kết nối liền mạch giữa các tác nhân, ứng dụng và dữ liệu. Đổi mới này được xây dựng trên các tiêu chuẩn mở mới, bao gồm MCP (Nền tảng Kết nối Microsoft) và A2A (Ứng dụng đến Ứng dụng). Agent Factory nhằm mục đích đơn giản hóa tích hợp và giao tiếp giữa các hệ thống và dịch vụ khác nhau.
+
+Bằng cách tận dụng MCP và A2A, Agent Factory tạo điều kiện cho việc tạo ra các tác nhân thông minh có thể tương tác với các ứng dụng và nguồn dữ liệu khác nhau. Điều này cho phép có các quy trình làm việc hiệu quả và tự động hơn, cũng như trao đổi và phân tích dữ liệu được cải thiện. Các tiêu chuẩn mở của nền tảng đảm bảo rằng nó có thể thích ứng với các môi trường đa dạng và có thể dễ dàng tích hợp với các hệ thống hiện có.
+
+Agent Factory có tiềm năng cách mạng hóa cách các doanh nghiệp và tổ chức tương tác với các ứng dụng và dữ liệu của họ. Bằng cách cung cấp một khuôn khổ tiêu chuẩn hóa cho giao tiếp và tích hợp, nó có thể giúp tối ưu hóa quy trình, cải thiện năng suất và mở khóa những thông tin mới từ dữ liệu. Các chi tiết thêm về Agent Factory và khả năng của nó dự kiến sẽ được Microsoft phát hành trong những ngày tới.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">3</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Tăng tốc phát triển với Amazon Bedrock AgentCore MCP server | Trí tuệ nhân tạo</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Accelerate development with the Amazon Bedrock AgentCore MCP server | Artificial Intelligence</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Amazon Web Services (AWS)</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxOY0dNX2hZRGVzeUZyX01BaEdTaW9aZ3d0TVBnMThmci1LMWpGOGdJaUgzM0t2OGZsRkxrZDRJcUY5RmZOajVqeUpQQVBoOVJSTWZxNFVFOW0tbTRwMUYwNWprdklCNjZncnh6VUNNV3Y3VGVhNElSNDVZdFJqb1ppT2JUc1FhUGpBanhHY0Q0WTdJdUI0RmM5NFpBX19ocVl0aXRqMzdLbEtpakJ3NHVzQXY4bw?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Amazon Web Services (AWS) đã giới thiệu máy chủ Amazon Bedrock AgentCore MCP, được thiết kế để tăng tốc phát triển trong lĩnh vực trí tuệ nhân tạo (AI). Máy chủ AgentCore MCP là một thành phần chính của nền tảng Amazon Bedrock, cung cấp dịch vụ quản lý để xây dựng, triển khai và quản lý các mô hình AI quy mô lớn.
+
+Máy chủ AgentCore MCP là một máy chủ hiệu suất cao cho phép các nhà phát triển đào tạo và triển khai các mô hình AI một cách hiệu quả hơn. Nó cung cấp một môi trường có thể mở rộng và bảo mật cho việc phát triển mô hình, cho phép các nhà phát triển tập trung vào việc xây dựng và tinh chỉnh các mô hình AI của họ mà không cần phải lo lắng về cơ sở hạ tầng cơ bản.
+
+Với máy chủ AgentCore MCP, các nhà phát triển có thể tận dụng các khả năng AI và học máy rộng lớn của AWS, bao gồm hỗ trợ cho các framework phổ biến như TensorFlow và PyTorch. Máy chủ này cũng tích hợp với các dịch vụ AWS khác, như SageMaker và Lake Formation, để cung cấp một nền tảng phát triển AI toàn diện. Bằng cách tận dụng máy chủ Amazon Bedrock AgentCore MCP, các nhà phát triển có thể tăng tốc quá trình phát triển và triển khai AI của họ, cho phép họ đưa ra các giải pháp AI sáng tạo ra thị trường nhanh hơn.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">4</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">LangChain Newsletter tháng 7/2026 — NemoClaw Blueprint, OpenWiki Brains và nhiều hơn nữa</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;July 2026: LangChain Newsletter — NemoClaw Blueprint, OpenWiki Brains, and More</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;LangChain Blog</span>&nbsp;&nbsp;&nbsp;<a href="https://www.langchain.com/blog/july-2026-langchain-newsletter" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Trong Bản tin LangChain tháng 7 năm 2026, Jensen Huang và Harrison thảo luận về tầm quan trọng của các hệ thống tác nhân mở đối với các công ty. NVIDIA đã phát hành một bản thiết kế, NemoClaw, là một phần của Deep Agents của LangChain. Bản thiết kế này nhằm mục đích cho phép các đội xây dựng các hệ thống tác nhân mà họ có thể kiểm soát, điều chỉnh và sở hữu.
+
+Cộng đồng LangChain cũng đang mở rộng với hội nghị Interrupt sắp tới, sẽ được tổ chức tại Thành phố New York và London vào mùa thu này. Các lãnh đạo ngành, bao gồm Harrison Chase, sẽ phát biểu tại sự kiện, và người tham dự có thể tham gia các buổi hội thảo thực hành về xây dựng và gỡ lỗi tác nhân.
+
+Ngoài ra, LangSmith đã giới thiệu một số tính năng mới, bao gồm một phiên bản thử nghiệm miễn phí cho Sandboxes, cung cấp một môi trường an toàn để các tác nhân chạy mã và thử nghiệm thay đổi. LangSmith Fleet cho phép tích hợp tác nhân vào Slack, và việc theo dõi tác nhân giọng nói đã được cải thiện để thu thập các chỉ số âm thanh và độ trễ. OpenWiki Brains là một lớp bộ nhớ mới chuyển đổi các nguồn khác nhau thành một wiki cục bộ cho các tác nhân sử dụng.
+
+Bản tin cũng nhấn mạnh thành công của bộ khung tác nhân mã nguồn mở của LangChain, Deep Agents, trong việc xây dựng các tác nhân chạy dài cho các quy trình công việc phức tạp. Một số sự kiện sắp tới, bao gồm các cuộc gặp gỡ và LangSmith Roadshow, được công bố, và hai công ty, Schneider Electric và Pendo, chia sẻ kinh nghiệm của họ khi sử dụng nền tảng của LangChain, bao gồm việc sử dụng AI, API, LLM, model, token, developer, framework, v.v.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">5</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Microsoft ra mắt các AI model &quot;cây nhà lá vườn&quot; mới, tuyên bố giảm chi phí tới 89% so với OpenAI</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Microsoft launches new in-house AI models it says cut costs up to 89% versus OpenAI</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;VentureBeat</span>&nbsp;&nbsp;&nbsp;<a href="https://venturebeat.com/infrastructure/microsoft-launches-new-in-house-ai-models-it-says-cut-costs-up-to-89-versus-openai" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Microsoft đã ra mắt hai mô hình AI nội bộ mới, MAI-Image-2.5-Pro và MAI-Voice-2-Flash, vào phiên bản xem trước công khai. Những mô hình này được thiết kế để cắt giảm chi phí cho các sản phẩm và dịch vụ của Microsoft, với MAI-Image-2.5-Pro nhắm vào việc tạo hình ảnh cao cấp và MAI-Voice-2-Flash tập trung vào các ứng dụng giọng nói với khối lượng lớn. Công ty cho biết rằng các mô hình nội bộ của họ có thể giảm chi phí GPU lên đến 89% so với các mô hình frontier của OpenAI.
+
+Microsoft cũng đã xuất bản dữ liệu sản xuất cho thấy việc triển khai các mô hình nội bộ của họ trong các sản phẩm khác nhau, bao gồm Bing, PowerPoint, OneDrive, Dynamics 365 và Excel. Công ty báo cáo về việc tiết kiệm chi phí đáng kể và cải thiện hiệu suất, chẳng hạn như tăng 26% tỷ lệ lưu và giảm 25% độ trễ P95 trong OneDrive.
+
+Chiến lược của Microsoft bao gồm xây dựng các họ mô hình được tùy chỉnh cho các trường hợp sử dụng cụ thể, thay vì dựa vào một mô hình hàng đầu duy nhất. CEO của công ty, Satya Nadella, đã định hình cách tiếp cận này là &quot;sự khuếch tán frontier&quot;, nơi các khả năng frontier bão hòa được cung cấp ở quy mô lớn và chi phí thấp hơn thông qua các mô hình được tối ưu hóa cho các sản phẩm sử dụng cao.
+
+Microsoft cũng đang đóng gói cuốn sách hướng dẫn AI nội bộ của mình thành một sản phẩm Azure, gọi là Frontier Tuning, cho phép các doanh nghiệp đào tạo các mô hình chuyên dụng chống lại các đánh giá và môi trường học tăng cường độc quyền của riêng họ. Điều này được xem là một cách để Microsoft kiếm tiền từ chuyên môn AI của mình và thu hút khách hàng doanh nghiệp đến với các dịch vụ đám mây của mình.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">6</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Ghép thận siêu lạnh thành công trên lợn, đánh dấu &quot;thành tựu mang tính bước ngoặt&quot;</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Supercooled kidneys have been transplanted into pigs in a “landmark achievement”</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;MIT Tech Review</span>&nbsp;&nbsp;&nbsp;<a href="https://www.technologyreview.com/2026/07/23/1140765/supercooled-kidneys-have-been-transplanted-into-pigs-in-a-landmark-achievement/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Các nhà khoa học tại Đại học Texas A&amp;M đã đạt được một bước tiến quan trọng trong bảo tồn cơ quan, thành công trong việc cấy ghép thận siêu lạnh vào lợn. Đội ngũ do Matthew Powell Palm dẫn đầu đã phát triển một thiết bị cho phép làm mát các cơ quan xuống -4°C (25°F) mà không hình thành băng, điều mà trước đây đã gây ra thiệt hại. Phương pháp này, được gọi là siêu lạnh, cho phép các cơ quan được lưu trữ trong vài ngày thay vì vài giờ. Thiết bị sử dụng một thùng chứa điều khiển áp suất để duy trì nhiệt độ không đổi, ngăn chặn sự hình thành băng. Trong nghiên cứu, thận lợn được làm mát xuống -4°C và lưu trữ lên đến 72 giờ trước khi được cấy ghép thành công trở lại vào lợn cho ban đầu. Kết quả cho thấy thận siêu lạnh hoạt động tốt hơn những thận được lưu trữ trên băng. Thành tựu này có tiềm năng giúp giảm thiểu khủng hoảng thiếu hụt cơ quan, vì nó có thể cho phép lưu trữ lâu dài hơn các cơ quan người hiến tặng. Hiện tại, hơn 104.000 người ở Mỹ đang chờ đợi một ca cấy ghép thận, và 17 người tử vong mỗi ngày trong khi chờ đợi một ca cấy ghép.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">7</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Doanh nghiệp nhỏ ở California đón nhận ChatGPT: Cách tiếp cận thực tế để tích hợp AI</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;California Small Businesses Embrace ChatGPT: A Hands-On Approach to AI Integration</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Dev.to AI</span>&nbsp;&nbsp;&nbsp;<a href="https://dev.to/startuphubai__c637ac1b0/california-small-businesses-embrace-chatgpt-a-hands-on-approach-to-ai-integration-g21" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Các doanh nghiệp nhỏ tại California đang tận dụng sức mạnh của trí tuệ nhân tạo, đặc biệt là ChatGPT, để tăng cường hiệu quả và đổi mới. OpenAI gần đây đã tổ chức một sự kiện tại Trung tâm Cộng đồng Tula, dành riêng cho các doanh nhân California, để cung cấp trải nghiệm thực tế với ChatGPT. Sự kiện này nhằm mục đích trao quyền cho các chủ doanh nghiệp tích hợp AI vào hoạt động hàng ngày của họ và mở khóa các hiệu quả mới. Traci Lee từ Bộ phận Chính phủ Tiểu bang và Địa phương của OpenAI đã chào đón các khách mời, nhấn mạnh các kết quả thực tế và có thể hành động được từ phiên họp. Thiết kế của sự kiện ưu tiên sự tương tác trực tiếp, cho phép người tham gia thử nghiệm với ChatGPT dưới sự hướng dẫn của chuyên gia và khám phá cách công cụ này có thể giải quyết các nhu cầu kinh doanh cụ thể của họ. Các khách mời ca ngợi cách tiếp cận thực tế, cho rằng nó hiệu quả trong việc培 dưỡng sự hiểu biết sâu sắc hơn và tính ứng dụng ngay lập tức của các khái niệm đã học. Các chuyên gia, bao gồm Rutger Hage và Hilda Soto, đã chia sẻ quan điểm của họ về tác động chuyển đổi của AI, nhấn mạnh lợi ích của nó cho các doanh nghiệp nhỏ và tầm quan trọng của việc đưa giáo dục AI đến cộng đồng rộng lớn hơn. Sự kiện này đã giúp người tham gia có cái nhìn sâu sắc về tiềm năng của ChatGPT trong việc tăng cường năng suất, tạo ra ý tưởng đổi mới và giải quyết các thách thức kinh doanh phức tạp, đảm bảo rằng các tham gia rời đi với những hiểu biết có thể hành động và một bản đồ rõ ràng hơn để triển khai các giải pháp AI trong chính doanh nghiệp của họ.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">8</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Code Finder: Tìm kiếm code nhanh chóng, hiệu quả cho coding agent</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Code Finder: fast, efficient code search for coding agents</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Sourcegraph Blog</span>&nbsp;&nbsp;&nbsp;<a href="http://localhost:5174/blog/code-finder-fast-code-search-for-agents" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Code Finder là một công cụ được thiết kế để tối ưu hóa quá trình tìm kiếm mã cho các tác nhân mã hóa. Nó hoạt động bằng cách chạy vòng lặp tìm kiếm của riêng mình, cho phép nó tìm kiếm mã cần thiết một cách hiệu quả. Cách tiếp cận này cho phép Code Finder cung cấp cho tác nhân mã hóa các tệp và phạm vi dòng chính xác cần thiết, giảm đáng kể thời gian và chi phí liên quan đến quá trình tìm kiếm. Bằng cách tự thực hiện nhiệm vụ tìm kiếm, Code Finder loại bỏ nhu cầu của tác nhân mã hóa phải thực hiện tìm kiếm, dẫn đến một giải pháp nhanh hơn và tiết kiệm chi phí hơn. Chức năng này đặc biệt có lợi cho các tác nhân mã hóa, vì nó cho phép họ tập trung vào nhiệm vụ chính của mình trong khi dựa vào Code Finder để xử lý quá trình tìm kiếm. Tổng thể, Code Finder nhằm mục đích đơn giản hóa và tăng tốc quá trình tìm kiếm mã cho các tác nhân mã hóa, khiến nó trở thành một công cụ hiệu quả và có giá trị trong quy trình làm việc của họ.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+
+  <!-- TIPS SECTION -->
+  
+  <tr>
+    <td bgcolor="#FFFBEB" style="background-color:#FFFBEB;padding:20px 30px;border-top:3px solid #D97706;">
+      <p style="margin:0 0 12px;font-size:11px;color:#D97706;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#9889;&nbsp;Tips &amp; Tricks cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tối ưu hóa RAG</strong><br><strong>Vấn đề:</strong> Dữ liệu không đầy đủ cho mô hình AI.<br><strong>Cách làm:</strong> Sử dụng RAG để thu thập và tăng cường dữ liệu, ví dụ với prompt &quot;Tóm tắt bài viết về AI&quot;.<br><strong>Đánh giá:</strong> Hiệu quả cho dữ liệu hạn chế, nên dùng khi cần thông tin cụ thể.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tìm kiếm семантиc</strong><br><strong>Vấn đề:</strong> Tìm kiếm thông tin không chính xác.<br><strong>Cách làm:</strong> Sử dụng semantic search với embeddings để tìm kiếm ý nghĩa, ví dụ lệnh CLI &quot;pip install sentence-transformers&quot;.<br><strong>Đánh giá:</strong> Hiệu quả cho tìm kiếm phức tạp, nên dùng khi cần thông tin liên quan.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tăng cường embeddings</strong><br><strong>Vấn đề:</strong> Dữ liệu không đủ đa dạng cho mô hình AI.<br><strong>Cách làm:</strong> Sử dụng kỹ thuật tăng cường embeddings để đa dạng hóa dữ liệu, ví dụ với lệnh &quot;python -m transformers.Trainer&quot;.<br><strong>Đánh giá:</strong> Hiệu quả cho dữ liệu hạn chế, nên dùng khi cần cải thiện độ chính xác.</p>
+    </td>
+  </tr>
+
+  <!-- LESSON SECTION -->
+  
+  <tr>
+    <td bgcolor="#F0FFF4" style="background-color:#F0FFF4;padding:20px 30px;border-top:3px solid #2E7D32;">
+      <p style="margin:0 0 12px;font-size:11px;color:#2E7D32;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128218;&nbsp;B&#224;i h&#7885;c AI h&#244;m nay cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;">1. <strong>Tối ưu chi phí &amp; hiệu năng LLM</strong><br>2. Để phát triển ứng dụng AI hiệu quả, dev cần biết cách tối ưu chi phí và hiệu năng của mô hình ngôn ngữ lớn (LLM). Điều này giúp giảm thiểu chi phí tính toán và tăng tốc độ xử lý, từ đó cải thiện trải nghiệm người dùng. Việc tối ưu hóa LLM cũng giúp giảm thiểu tác động môi trường của ứng dụng.<br>3. Ví dụ, có thể sử dụng kỹ thuật fine-tuning để điều chỉnh mô hình cho phù hợp với nhiệm vụ cụ thể, hoặc sử dụng LoRA (Low-Rank Adaptation) để giảm kích thước mô hình mà không ảnh hưởng đến hiệu suất.<br>4. 💡 Tip hoặc bước tiếp theo: Để bắt đầu tối ưu hóa LLM, hãy bắt đầu bằng việc phân tích chi phí tính toán và hiệu năng của mô hình hiện tại, sau đó thử nghiệm các kỹ thuật như fine-tuning, LoRA hoặc quantization để tìm ra giải pháp tối ưu cho ứng dụng của mình.</p>
+    </td>
+  </tr>
+
+  <!-- FOOTER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:20px 30px;text-align:center;border-radius:0 0 10px 10px;">
+      <p style="margin:0 0 4px;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        &#128161;&nbsp;Lu&#244;n &#273;i &#273;&#7847;u trong th&#7871; gi&#7899;i AI!&nbsp;&#183;&nbsp;Stay ahead in AI!
+      </p>
+      <p style="margin:6px 0 0;font-size:11px;color:#4A7AAB;font-family:Arial,sans-serif;">
+        Ngu&#7891;n: Google News · Groq AI
+      </p>
+    </td>
+  </tr>
+
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+
+</td></tr>
+</table>
+</body>
+</html>

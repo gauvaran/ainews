@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--[if mso]>
+<noscript><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings></xml></noscript>
+<![endif]-->
+<style>
+/* ── Responsive overrides for web (email HTML uses fixed 600px tables) ── */
+@media screen and (max-width:620px) {
+  table[width="600"] { width:100% !important; }
+  td { word-break:break-word; overflow-wrap:break-word; }
+  /* Reduce generous email padding on small screens */
+  td[style*="padding:28px 30px"],
+  td[style*="padding:24px 30px"],
+  td[style*="padding:22px 30px"],
+  td[style*="padding:20px 30px"],
+  td[style*="padding:16px 30px"],
+  td[style*="padding:12px 30px"] { padding-left:14px !important; padding-right:14px !important; }
+  /* Code blocks: scroll horizontally instead of breaking layout */
+  pre { overflow-x:auto !important; max-width:calc(100vw - 32px) !important; box-sizing:border-box; }
+  /* Shrink large heading text slightly */
+  h1[style*="26px"] { font-size:20px !important; }
+}
+/* ── Print: hide nav bar ── */
+@media print {
+  #web-nav { display:none !important; }
+  body { background:#fff !important; }
+}
+</style>
+</head>
+<body style="margin:0;padding:0;background-color:#EEF2F7;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+<div id="web-nav" style="background:#001a4d;padding:8px 16px;font-family:Arial,sans-serif;font-size:13px;position:sticky;top:0;z-index:999;border-bottom:2px solid #0066CC;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
+  <span id="nav-prev" style="color:#4A6A8A;">&#8592;</span>
+  <a href="all.html" style="color:#FFD700;text-decoration:none;font-weight:bold;">&#128240; T&#7845;t c&#7843; b&#7843;n tin</a>
+  <span style="color:#FFFFFF;">25/07/2026</span>
+  <span id="nav-next" style="color:#4A6A8A;">&#8594;</span>
+  <a href="2026-07-25.pdf" download="2026-07-25.pdf" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128196; T&#7843;i PDF</a>
+  <button onclick="sharePage()" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128279; Chia s&#7867;</button>
+</div>
+<script>
+function sharePage(){
+  var title='Bản tin AI BIS-MT – 25/07/2026';
+  if(navigator.share){navigator.share({title:title,url:location.href});}
+  else{navigator.clipboard.writeText(location.href).then(function(){
+    alert('Đã sao chép link!');
+  });}
+}
+(function(){
+  var m=location.pathname.match(/(\d{4}-\d{2}-\d{2})\.html/);
+  if(!m)return;
+  var slug=m[1];
+  function fmt(s){var p=s.split('-');return p[2]+'/'+p[1];}
+  var lnkStyle='color:#90C4F0;text-decoration:none;';
+  fetch('dates.json?_='+Date.now())
+    .then(function(r){return r.json();})
+    .then(function(dates){
+      var idx=dates.indexOf(slug);
+      if(idx>0){
+        var p=dates[idx-1];
+        document.getElementById('nav-prev').innerHTML=
+          '<a href="'+p+'.html" style="'+lnkStyle+'">&#8592; '+fmt(p)+'</a>';
+      }
+      if(idx>=0&&idx<dates.length-1){
+        var n=dates[idx+1];
+        document.getElementById('nav-next').innerHTML=
+          '<a href="'+n+'.html" style="'+lnkStyle+'">'+fmt(n)+' &#8594;</a>';
+      }
+    })
+    .catch(function(){});
+})();
+</script>
+
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#EEF2F7" style="background-color:#EEF2F7;">
+<tr><td align="center" style="padding:24px 12px;">
+
+<!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0"><tr><td><![endif]-->
+<table role="presentation" width="600" cellpadding="0" cellspacing="0"
+       style="max-width:600px;width:100%;background-color:#FFFFFF;border-radius:10px;" bgcolor="#FFFFFF">
+
+  <!-- HEADER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:28px 30px 22px 30px;text-align:center;border-radius:10px 10px 0 0;">
+      <p style="margin:0 0 6px;font-size:11px;color:#7EB1E8;letter-spacing:2px;font-family:Arial,sans-serif;text-transform:uppercase;">
+        BIS &#8209; MT &nbsp;&#183;&nbsp; 25/07/2026
+      </p>
+      <h1 style="margin:0;font-size:26px;font-weight:bold;color:#FFFFFF;font-family:Arial,sans-serif;line-height:1.2;">
+        &#129302; B&#7843;n Tin AI H&#7857;ng Ng&#224;y
+      </h1>
+      <p style="margin:8px 0 0;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        C&#7853;p nh&#7853;t c&#244;ng ngh&#7879; AI m&#7899;i nh&#7845;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- QUOTE -->
+  <tr>
+    <td bgcolor="#EBF4FF" style="background-color:#EBF4FF;padding:16px 30px;border-top:3px solid #0066CC;">
+      <p style="margin:0;font-size:14px;color:#1A3A5C;font-style:italic;line-height:1.6;font-family:Georgia,serif;">
+        &#10024;&nbsp;&ldquo;Trong gian khổ mới thấy được người anh hùng.&rdquo;
+      </p>
+      
+      <p style="margin:8px 0 0;font-size:12px;color:#888888;font-family:Arial,sans-serif;">&mdash;&nbsp;Tục ngữ Việt Nam</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#5A6A7A;font-style:italic;line-height:1.5;font-family:Arial,sans-serif;">&#128161;&nbsp;Phẩm chất thật sự của con người chỉ được bộc lộ khi đối mặt với nghịch cảnh và thử thách lớn.</p>
+    </td>
+  </tr>
+
+  <!-- SECTION LABEL -->
+  <tr>
+    <td bgcolor="#F5F7FA" style="background-color:#F5F7FA;padding:12px 30px;">
+      <p style="margin:0;font-size:11px;color:#999999;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128240;&nbsp;Tin t&#7913;c n&#7893;i b&#7853;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- ARTICLES -->
+  
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">1</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Tình hình các Agent Framework: Lựa chọn Runtime phù hợp cho triển khai AI doanh nghiệp</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;State of Agent Frameworks: Choosing the Right Runtime for Enterprise AI Execution</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Medium</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxOdXdHT2dlWEx6TUh4VW5nQ0hCZWdqVjN4dEhkWXdhQ3ZhT2lPZUtmUlRVSG5zVTBQOWQ3MUIxZjdPZUl6ZmpsbXFWWTNQN3g4M0xfcWJhUDY1aU0tcEFLeDNZYXFmTDIzZmRLNG5VODcyem16VEFuUXRSWEFUSmE3WmFZTzhDbDFRaW1IcFp5QjBqeHpBb0dJM18wbjl0ZVVSNU8yM1Jwb2E3WkxyenNJNk0tTHRUWC1IRngwbEJycUxPTGc?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Bài viết &quot;Trạng thái của các Framework Truyền thông: Chọn Thời gian Chạy phù hợp cho Thực thi AI Doanh nghiệp&quot; cung cấp cái nhìn tổng quan về trạng thái hiện tại của các framework truyền thông trong bối cảnh thực thi AI doanh nghiệp. Các framework truyền thông là các nền tảng phần mềm cho phép các tổ chức xây dựng, triển khai và quản lý các tác nhân được hỗ trợ bởi AI có thể tương tác với người dùng và các hệ thống khác.
+
+Bài viết nhấn mạnh tầm quan trọng của việc chọn thời gian chạy phù hợp cho thực thi AI doanh nghiệp, vì nó có thể ảnh hưởng đáng kể đến hiệu suất, khả năng mở rộng và khả năng bảo trì của các tác nhân được hỗ trợ bởi AI. Nó thảo luận về các framework truyền thông khác nhau, bao gồm Rasa, Dialogflow và Botpress, cũng như các điểm mạnh và điểm yếu tương ứng của chúng.
+
+Bài viết cũng đề cập đến các yếu tố quan trọng khi chọn một framework truyền thông, chẳng hạn như dễ sử dụng, tùy chọn tùy chỉnh và tích hợp với các hệ thống hiện có. Nó nhấn mạnh nhu cầu về một framework có thể xử lý các cuộc trò chuyện phức tạp, cung cấp thông tin trực tiếp và hỗ trợ nhiều kênh truyền thông.
+
+Cuối cùng, bài viết nhằm giúp các tổ chức đưa ra quyết định sáng suốt khi chọn một framework truyền thông cho nhu cầu thực thi AI doanh nghiệp của họ.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">2</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Xây dựng Workflow dùng Agent với Cortex AI và Managed MCP Servers</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Build Agent-Powered Workflows Using Cortex AI and Managed MCP Servers</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Snowflake</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMigwFBVV95cUxNV0VHLWNuTUpTN0lRd25LVF9tS0pCb0ltcU80SVI5T19BMVJvaXpidmlxRUkzZnFGR1Jac3hfVmdBbmE5emtSaDlBMGF6b3hPbFhTR0NKdnNsSlNyR2VyUURlZTBPMVRSLXg3dTZSU3BJb21hdFptbjRpcmc0Mlk2VGJvMA?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Snowflake đã giới thiệu một khả năng mới cho phép người dùng xây dựng các quy trình làm việc được hỗ trợ bởi các tác nhân sử dụng Cortex AI và Máy chủ MCP được Quản lý. Sự tích hợp này cho phép các nhà phát triển tạo ra các quy trình làm việc tùy chỉnh tận dụng sức mạnh của Cortex AI, một nền tảng AI dựa trên đám mây, và Máy chủ MCP được Quản lý, một dịch vụ được quản lý để chạy và mở rộng các ứng dụng được chứa.
+
+Với sự tích hợp này, người dùng có thể xây dựng và triển khai các quy trình làm việc tự động hóa các nhiệm vụ phức tạp, chẳng hạn như xử lý dữ liệu, đào tạo mô hình học máy, và nhiều hơn nữa. Các quy trình làm việc có thể được kích hoạt bởi các sự kiện khác nhau, bao gồm cả đầu vào của người dùng, cuộc gọi API, hoặc các nhiệm vụ được lên lịch.
+
+Việc sử dụng Máy chủ MCP được Quản lý cung cấp một môi trường có thể mở rộng và bảo mật để chạy các ứng dụng được chứa, trong khi Cortex AI cung cấp các khả năng AI cần thiết để tự động hóa các nhiệm vụ phức tạp. Sự tích hợp này cho phép các nhà phát triển tập trung vào việc xây dựng các quy trình làm việc tùy chỉnh mà không cần phải lo lắng về cơ sở hạ tầng cơ bản, giúp dễ dàng tự động hóa các quy trình kinh doanh và cải thiện hiệu quả.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">3</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">AWS mã nguồn mở MCP Server cho Bedrock AgentCore để tinh gọn phát triển AI Agent</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;AWS Open-Sources an MCP Server for Bedrock AgentCore to Streamline AI Agent Development</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;MarkTechPost</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMixwFBVV95cUxNZDEzc3dIU3dtSUFCMzJVVU1HeXZSUkdqNmFqMDh5U2d4MEZjRzV6RE14YWdscDYxdWpXelhjUWtPaWZYS19uamp1bUd0Z3dBRWFqOGZ2anAtQ3VvQ0pOUXVvc2tjNHR5cDBGSVJlMkJJQ25CcnRMLWtfWWZVVUwxcXhxMk5qY25BSFJyUk14NGNDWk1BbXp0WUtNeTJqVG1uVDA3NTRHVmF6RWFTeDZ2LVNRTHJ3cTRLWkdtekZ6VjhyNXE3YVFJ?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Amazon Web Services (AWS) đã thực hiện một bước tiến quan trọng trong lĩnh vực phát triển trí tuệ nhân tạo (AI) bằng cách mở mã nguồn một máy chủ MCP (Nền tảng Đa đám mây) cho Bedrock AgentCore. Động thái này nhằm mục đích đơn giản hóa việc phát triển các tác nhân AI bằng cách cung cấp một nền tảng tiêu chuẩn hóa và có thể mở rộng để xây dựng và triển khai các tác nhân AI.
+
+Máy chủ MCP được thiết kế để hoạt động mượt mà với Bedrock AgentCore, một framework để xây dựng các tác nhân AI có thể hoạt động trên nhiều nền tảng đám mây. Bằng cách mở mã nguồn máy chủ MCP, AWS đang cho phép các nhà phát triển xây dựng và triển khai các tác nhân AI một cách hiệu quả hơn, mà không bị ràng buộc vào một nhà cung cấp đám mây cụ thể.
+
+Động thái này dự kiến sẽ đẩy nhanh sự phát triển của các tác nhân AI và ứng dụng, cho phép các nhà phát triển tập trung vào việc xây dựng các giải pháp sáng tạo thay vì lo lắng về cơ sở hạ tầng cơ bản. Việc mở mã nguồn máy chủ MCP cũng thúc đẩy sự hợp tác và tham gia của cộng đồng, điều này có thể dẫn đến sự đổi mới và tiến bộ hơn nữa trong lĩnh vực phát triển AI.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">4</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Hành trình giữ các cơ quan sống bên ngoài cơ thể</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;The quest to keep organs alive outside the body</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;MIT Tech Review</span>&nbsp;&nbsp;&nbsp;<a href="https://www.technologyreview.com/2026/07/24/1140790/the-quest-to-keep-organs-alive-outside-the-body/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Các nhà nghiên cứu đang làm việc để phát triển các phương pháp bảo tồn các cơ quan ngoài cơ thể, giải quyết tình trạng thiếu hụt cơ quan hiến tặng do thời gian tồn tại hạn chế của chúng. Hiện tại, các cơ quan chỉ có thể tồn tại trong vài giờ khi được lưu trữ trên đá. Để vượt qua điều này, các nhà khoa học đang khám phá các kỹ thuật khác nhau, bao gồm làm mát siêu tốc, đông lạnh và truyền dưỡng chất cho các cơ quan. Một đột phá gần đây liên quan đến việc làm mát siêu tốc thận lợn xuống -4°C và bảo tồn chúng trong vài ngày, với việc tái cấy ghép thành công vào lợn. Các nhà nghiên cứu khác đang tập trung vào bảo tồn lạnh, bao gồm làm mát nhanh đến trạng thái giống như thủy tinh, và đã bảo tồn thành công trứng, tinh trùng và phôi. Tuy nhiên, bảo tồn lạnh các cơ quan người để cấy ghép vẫn còn là một thách thức. Ngoài ra, các nhà khoa học đang phát triển các thiết bị truyền máy để duy trì các cơ quan, chẳng hạn như gan và thận, trong tối đa 24 giờ, và đang thích nghi giao thức này cho các cơ quan khác, bao gồm cả mắt và tử cung. Những tiến bộ này nhằm tạo ra các ngân hàng cơ quan có thể lưu trữ các cơ quan trong thời gian dài, cho phép phù hợp và vận chuyển các cơ quan đến người nhận tốt hơn.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">5</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Nghiên cứu của VentureBeat: Quản trị AI Agent doanh nghiệp còn chưa theo kịp</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;VentureBeat Research: Where enterprise AI agent governance hasn&#x27;t caught up</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;VentureBeat</span>&nbsp;&nbsp;&nbsp;<a href="https://venturebeat.com/technology/venturebeat-research-where-enterprise-ai-agent-governance-hasnt-caught-up" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Một nghiên cứu gần đây của VentureBeat Research đã phát hiện ra rằng nhiều doanh nghiệp đã triển khai các tác nhân AI mà không có các biện pháp kiểm soát đầy đủ để quản lý chúng. Đây là một quyết định có chủ ý, với 57-68% công ty dự định chuyển đổi nhà cung cấp hoặc thêm các nhà cung cấp mới trong vòng 12 tháng để bắt kịp với các tiêu chuẩn của riêng họ. Nghiên cứu đã đo lường năm lớp kiểm soát chính: danh tính, đánh giá, đo lường chi phí, lớp ngữ cảnh và điều phối. Hầu hết các &quot;tác nhân&quot; được triển khai là các rô-bốt trò chuyện, nhưng chỉ 10% công ty chạy các tác nhân đa bước thực sự, đòi hỏi phải có tất cả năm biện pháp kiểm soát này.
+
+Nghiên cứu nhấn mạnh một số mối quan ngại, bao gồm sự thiếu tin tưởng vào đánh giá AI, với hai phần ba công ty cho phép các tác nhân đẩy thay đổi mã mà không cần xem xét của con người. Nó cũng phát hiện ra rằng các công ty cho phép các tác nhân chia sẻ thông tin đăng nhập có nhiều khả năng gặp sự cố bảo mật hơn. Hơn nữa, nhiều công ty không sử dụng phần cứng AI của họ một cách hiệu quả, với hơn 80% những công ty chạy GPU của riêng họ báo cáo mức sử dụng dưới 50%.
+
+Nghiên cứu cũng lưu ý rằng các tác nhân thường trả lời một cách tự tin từ dữ liệu không được quản lý, với 57% công ty tìm thấy câu trả lời tự tin nhưng sai lầm do thiếu hoặc không nhất quán ngữ cảnh kinh doanh. Tổng thể, nghiên cứu cho thấy rằng các doanh nghiệp đang gặp khó khăn trong việc theo kịp sự phát triển nhanh chóng của AI và cần có các công cụ quản lý và quản trị tốt hơn, bao gồm cả việc xây dựng các model LLM hiệu quả, quản lý token, và cung cấp API, framework cho các nhà phát triển.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">6</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Ba điểm bảo mật doanh nghiệp gặp vấn đề ở quy mô codebase (và tại sao các công cụ hiện tại không bao quát được)</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Three places enterprise security breaks down at codebase scale (and why your current tools don&#x27;t cover them)</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Sourcegraph Blog</span>&nbsp;&nbsp;&nbsp;<a href="http://localhost:5174/blog/vulnerability-remediation-at-codebase-scale" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Bảo mật doanh nghiệp thường bị tổn thương ở quy mô cơ sở mã do một số vấn đề chính. Một vấn đề lớn là sự cố trong việc khắc phục lỗ hổng. Điều này xảy ra khi phân tích mã được hỗ trợ bởi AI thiếu ngữ cảnh, dẫn đến kết quả không chính xác hoặc không đầy đủ. Hơn nữa, các công cụ phát hiện hiện tại thường có khoảng trống về phạm vi, không thể xác định được lỗ hổng trong một số khu vực của cơ sở mã. Kết quả là, ngay cả khi các bản vá được cố gắng, chúng có thể mất vài tuần để triển khai trên các cơ sở mã lớn, chẳng hạn như những cơ sở có 10.000 kho lưu trữ. Quá trình khắc phục kéo dài này khiến cơ sở mã dễ bị tổn thương bởi các mối đe dọa bảo mật tiềm năng. Tình trạng hiện tại của các công cụ bảo mật doanh nghiệp không được trang bị để xử lý quy mô và độ phức tạp của các cơ sở mã hiện đại, nhấn mạnh nhu cầu về các giải pháp hiệu quả và hiệu suất hơn để giải quyết những vấn đề này.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">7</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Thứ Sáu, ngày 26 tháng 6 năm 2026: Một ngày của sự chuyển đổi và đổi mới</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Friday, June 26, 2026: A Day of Transformation and Renewal</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Dev.to AI</span>&nbsp;&nbsp;&nbsp;<a href="https://dev.to/yagyaraj_sharma_6cd410179/friday-june-26-2026-a-day-of-transformation-and-renewal-1pc2" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Khi chúng ta tiến gần đến cuối tuần, sự sắp xếp của các thiên thể được dự đoán sẽ mang lại một ngày biến đổi và đổi mới sâu sắc vào thứ Sáu, ngày 26 tháng 6 năm 2026. Theo lá số hàng ngày, Mặt Trăng đang ở giai đoạn giảm dần, tượng trưng cho sự kết thúc của một kỷ nguyên, trong khi Mặt Trời ở cung Cự Giải, nhấn mạnh tầm quan trọng của sự chăm sóc và yêu thương bản thân. Các hành tinh cũng ở một sự sắp xếp độc đáo, với Sao Mộc và Sao Thổ tạo thành một khía cạnh căng thẳng, chỉ ra nhu cầu về sự cân bằng và kỷ luật trong việc theo đuổi sự phát triển. Lá số khuyên các cá nhân nên phản ánh con đường hiện tại của mình, buông bỏ cái cũ và tạo không gian cho cái mới. Nó cũng nhấn mạnh tầm quan trọng của việc tin tưởng vào quá trình, ưu tiên chăm sóc bản thân và duy trì sự cân bằng và kỷ luật. Bằng cách lắng nghe sự hướng dẫn của các thiên thể, các cá nhân có thể điều hướng ngày biến đổi và đổi mới này hướng tới một tương lai tươi sáng và đầy hứa hẹn hơn.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">8</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Cách chúng tôi Benchmark Deep Agents</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;How We Benchmark Deep Agents</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;LangChain Blog</span>&nbsp;&nbsp;&nbsp;<a href="https://www.langchain.com/blog/how-we-benchmark-deep-agents" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Phát triển Deep Agents, một bộ khung đại lý không phụ thuộc vào model mã nguồn mở, đặt ra những thách thức đáng kể, đặc biệt là trong việc đánh giá hiệu suất của chúng. Để giải quyết vấn đề này, nhóm đã đổi mới khuôn khổ đánh giá của họ, tập trung vào đánh giá từ đầu đến cuối thay vì các bài kiểm tra nhỏ theo phong cách đơn vị. Sự thay đổi này là cần thiết do sự phức tạp và thời gian thực hiện nhiệm vụ của đại lý ngày càng tăng. Để hỗ trợ đánh giá từ đầu đến đầu, nhóm sử dụng Harbor, một khuôn khổ mã nguồn mở phổ biến để chạy đánh giá đại lý.
+
+Khuôn khổ đánh giá hiện bao gồm ba điểm chuẩn, mỗi điểm chuẩn nhắm vào một loại công việc đại lý riêng biệt. Điều này cho phép nhóm đánh giá bộ khung Deep Agents trên nhiều lĩnh vực, cung cấp một hiểu biết toàn diện hơn về khả năng của nó. Bằng cách tạo điểm chuẩn cho các thay đổi, nhóm có thể đưa ra quyết định thông minh và lặp lại với sự tự tin, như được chứng minh bởi sự chuẩn bị của họ cho phiên bản 0.7 của Deep Agents. Khuôn khổ đánh giá sẽ tiếp tục phát triển và thay đổi, giúp nhóm tinh chỉnh bộ khung và cải thiện hiệu suất của nó.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+
+  <!-- TIPS SECTION -->
+  
+  <tr>
+    <td bgcolor="#FFFBEB" style="background-color:#FFFBEB;padding:20px 30px;border-top:3px solid #D97706;">
+      <p style="margin:0 0 12px;font-size:11px;color:#D97706;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#9889;&nbsp;Tips &amp; Tricks cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tự động hóa kiểm thử đơn vị</strong><br><strong>Vấn đề:</strong> Thiếu thời gian và nguồn lực để viết các thử nghiệm đơn vị.<br><strong>Cách làm:</strong> Sử dụng framework như Pytest hoặc Unittest, tích hợp với CI/CD pipeline. Ví dụ: <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">pytest --cov=src</code> để chạy thử nghiệm và đo độ bao phủ mã.<br><strong>Đánh giá:</strong> Tăng hiệu suất, giảm thiểu sai sót.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Code Review Tự động</strong><br><strong>Vấn đề:</strong> Quá trình xem xét mã nguồn tốn thời gian và dễ xảy ra sai sót.<br><strong>Cách làm:</strong> Sử dụng công cụ như GitHub Code Review, tích hợp với GitHub Actions. Ví dụ: <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">github actions</code> để chạy kiểm tra mã tự động.<br><strong>Đánh giá:</strong> Cải thiện chất lượng mã nguồn, giảm thời gian xem xét.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Kiểm thử UI tự động</strong><br><strong>Vấn đề:</strong> Kiểm thử giao diện người dùng tốn thời gian và dễ bị lỗi.<br><strong>Cách làm:</strong> Sử dụng framework như Selenium, tích hợp với CI/CD pipeline. Ví dụ: <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">selenium webdriver</code> để chạy thử nghiệm UI tự động.<br><strong>Đánh giá:</strong> Tăng tốc độ phát triển, giảm thiểu sai sót.</p>
+    </td>
+  </tr>
+
+  <!-- LESSON SECTION -->
+  
+  <tr>
+    <td bgcolor="#F0FFF4" style="background-color:#F0FFF4;padding:20px 30px;border-top:3px solid #2E7D32;">
+      <p style="margin:0 0 12px;font-size:11px;color:#2E7D32;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128218;&nbsp;B&#224;i h&#7885;c AI h&#244;m nay cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;">1. <strong>Tích hợp AI API vào ứng dụng</strong><br>2. Tích hợp AI API vào ứng dụng giúp tăng cường khả năng thông minh và tự động hóa, cho phép developer tạo ra các ứng dụng có khả năng học hỏi và thích nghi. Điều này giúp cải thiện trải nghiệm người dùng và tăng hiệu suất công việc. Developer cần biết cách tích hợp AI API để tận dụng lợi thế của công nghệ này.<br>3. Ví dụ, một ứng dụng điện thoại có thể sử dụng AI API để nhận dạng giọng nói và thực hiện các tác vụ tương ứng, như đặt lịch hẹn hoặc gửi tin nhắn.<br>4. 💡 Tip hoặc bước tiếp theo: Để bắt đầu tích hợp AI API, developer nên nghiên cứu các thư viện và framework như TensorFlow hoặc PyTorch, và chọn một mô hình AI phù hợp với nhu cầu của ứng dụng.</p>
+    </td>
+  </tr>
+
+  <!-- FOOTER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:20px 30px;text-align:center;border-radius:0 0 10px 10px;">
+      <p style="margin:0 0 4px;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        &#128161;&nbsp;Lu&#244;n &#273;i &#273;&#7847;u trong th&#7871; gi&#7899;i AI!&nbsp;&#183;&nbsp;Stay ahead in AI!
+      </p>
+      <p style="margin:6px 0 0;font-size:11px;color:#4A7AAB;font-family:Arial,sans-serif;">
+        Ngu&#7891;n: Google News · Groq AI
+      </p>
+    </td>
+  </tr>
+
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+
+</td></tr>
+</table>
+</body>
+</html>

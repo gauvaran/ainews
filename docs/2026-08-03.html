@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--[if mso]>
+<noscript><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings></xml></noscript>
+<![endif]-->
+<style>
+/* ── Responsive overrides for web (email HTML uses fixed 600px tables) ── */
+@media screen and (max-width:620px) {
+  table[width="600"] { width:100% !important; }
+  td { word-break:break-word; overflow-wrap:break-word; }
+  /* Reduce generous email padding on small screens */
+  td[style*="padding:28px 30px"],
+  td[style*="padding:24px 30px"],
+  td[style*="padding:22px 30px"],
+  td[style*="padding:20px 30px"],
+  td[style*="padding:16px 30px"],
+  td[style*="padding:12px 30px"] { padding-left:14px !important; padding-right:14px !important; }
+  /* Code blocks: scroll horizontally instead of breaking layout */
+  pre { overflow-x:auto !important; max-width:calc(100vw - 32px) !important; box-sizing:border-box; }
+  /* Shrink large heading text slightly */
+  h1[style*="26px"] { font-size:20px !important; }
+}
+/* ── Print: hide nav bar ── */
+@media print {
+  #web-nav { display:none !important; }
+  body { background:#fff !important; }
+}
+</style>
+</head>
+<body style="margin:0;padding:0;background-color:#EEF2F7;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+<div id="web-nav" style="background:#001a4d;padding:8px 16px;font-family:Arial,sans-serif;font-size:13px;position:sticky;top:0;z-index:999;border-bottom:2px solid #0066CC;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
+  <span id="nav-prev" style="color:#4A6A8A;">&#8592;</span>
+  <a href="all.html" style="color:#FFD700;text-decoration:none;font-weight:bold;">&#128240; T&#7845;t c&#7843; b&#7843;n tin</a>
+  <span style="color:#FFFFFF;">03/08/2026</span>
+  <span id="nav-next" style="color:#4A6A8A;">&#8594;</span>
+  <a href="2026-08-03.pdf" download="2026-08-03.pdf" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128196; T&#7843;i PDF</a>
+  <button onclick="sharePage()" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128279; Chia s&#7867;</button>
+</div>
+<script>
+function sharePage(){
+  var title='Bản tin AI BIS-MT – 03/08/2026';
+  if(navigator.share){navigator.share({title:title,url:location.href});}
+  else{navigator.clipboard.writeText(location.href).then(function(){
+    alert('Đã sao chép link!');
+  });}
+}
+(function(){
+  var m=location.pathname.match(/(\d{4}-\d{2}-\d{2})\.html/);
+  if(!m)return;
+  var slug=m[1];
+  function fmt(s){var p=s.split('-');return p[2]+'/'+p[1];}
+  var lnkStyle='color:#90C4F0;text-decoration:none;';
+  fetch('dates.json?_='+Date.now())
+    .then(function(r){return r.json();})
+    .then(function(dates){
+      var idx=dates.indexOf(slug);
+      if(idx>0){
+        var p=dates[idx-1];
+        document.getElementById('nav-prev').innerHTML=
+          '<a href="'+p+'.html" style="'+lnkStyle+'">&#8592; '+fmt(p)+'</a>';
+      }
+      if(idx>=0&&idx<dates.length-1){
+        var n=dates[idx+1];
+        document.getElementById('nav-next').innerHTML=
+          '<a href="'+n+'.html" style="'+lnkStyle+'">'+fmt(n)+' &#8594;</a>';
+      }
+    })
+    .catch(function(){});
+})();
+</script>
+
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#EEF2F7" style="background-color:#EEF2F7;">
+<tr><td align="center" style="padding:24px 12px;">
+
+<!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0"><tr><td><![endif]-->
+<table role="presentation" width="600" cellpadding="0" cellspacing="0"
+       style="max-width:600px;width:100%;background-color:#FFFFFF;border-radius:10px;" bgcolor="#FFFFFF">
+
+  <!-- HEADER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:28px 30px 22px 30px;text-align:center;border-radius:10px 10px 0 0;">
+      <p style="margin:0 0 6px;font-size:11px;color:#7EB1E8;letter-spacing:2px;font-family:Arial,sans-serif;text-transform:uppercase;">
+        BIS &#8209; MT &nbsp;&#183;&nbsp; 03/08/2026
+      </p>
+      <h1 style="margin:0;font-size:26px;font-weight:bold;color:#FFFFFF;font-family:Arial,sans-serif;line-height:1.2;">
+        &#129302; B&#7843;n Tin AI H&#7857;ng Ng&#224;y
+      </h1>
+      <p style="margin:8px 0 0;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        C&#7853;p nh&#7853;t c&#244;ng ngh&#7879; AI m&#7899;i nh&#7845;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- QUOTE -->
+  <tr>
+    <td bgcolor="#EBF4FF" style="background-color:#EBF4FF;padding:16px 30px;border-top:3px solid #0066CC;">
+      <p style="margin:0;font-size:14px;color:#1A3A5C;font-style:italic;line-height:1.6;font-family:Georgia,serif;">
+        &#10024;&nbsp;&ldquo;Lá lành đùm lá rách.&rdquo;
+      </p>
+      
+      <p style="margin:8px 0 0;font-size:12px;color:#888888;font-family:Arial,sans-serif;">&mdash;&nbsp;Tục ngữ Việt Nam</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#5A6A7A;font-style:italic;line-height:1.5;font-family:Arial,sans-serif;">&#128161;&nbsp;Giúp đỡ người khó khăn hơn mình là đức tính cao đẹp — sự đoàn kết và lòng nhân ái làm cho xã hội vững mạnh.</p>
+    </td>
+  </tr>
+
+  <!-- SECTION LABEL -->
+  <tr>
+    <td bgcolor="#F5F7FA" style="background-color:#F5F7FA;padding:12px 30px;">
+      <p style="margin:0;font-size:11px;color:#999999;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128240;&nbsp;Tin t&#7913;c n&#7893;i b&#7853;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- ARTICLES -->
+  
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">1</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Máy ghi âm Hi-Fi này đã thay đổi Radio mãi mãi</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;This Hi-Fi Tape Recorder Changed Radio Forever</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;IEEE Spectrum</span>&nbsp;&nbsp;&nbsp;<a href="https://spectrum.ieee.org/magnetophon-laugh-track" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Vào những năm 1920, nhà phát minh người Đức Fritz Pfleumer đã phát triển một loại băng từ phủ kim loại, được gọi là &quot;giấy ghi âm&quot;, có khả năng ghi lại âm thanh. Sáng kiến của Pfleumer ban đầu nhằm tạo ra một giải pháp thay thế rẻ hơn cho thuốc lá trang trí lá vàng. Ông đã đăng ký bằng sáng chế ý tưởng của mình vào năm 1928 và hợp tác với AEG vào năm 1932 để thương mại hóa nó. AEG phát triển phần cứng, trong khi I.G. Farben nghiên cứu băng từ. Magnetophon, một máy ghi băng từ reel-to-reel độ trung thực cao (Hi-Fi), đã ra mắt tại Triển lãm Radio Berlin năm 1935 và trở thành một thành công lớn. Sự ra đời của Magnetophon đã cách mạng hóa ngành phát thanh bằng cách cho phép phát lại các buổi biểu diễn đã được ghi âm trước với độ trung thực cao, khiến người nghe khó phân biệt giữa các chương trình phát sóng trực tiếp và đã ghi âm. Đức Quốc xã, dưới sự lãnh đạo của Adolf Hitler và Joseph Goebbels, đã nhận ra sức mạnh của radio và sử dụng Magnetophon như một công cụ tuyên truyền. Tác động của Magnetophon lan rộng ra ngoài nước Đức, và nó đã mở đường cho sự phát triển của công nghệ ghi âm hiện đại.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">2</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">MCP và Code Mode</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;MCP on Code Mode</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Changelog</span>&nbsp;&nbsp;&nbsp;<a href="https://changelog.com/podcast/681" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Matt Carey của Cloudflare thảo luận về Code Mode và mối quan hệ của nó với MCP (Model-Code-Protocol) trong một tập gần đây. Carey giải thích cách Code Mode phía server cho phép một server MCP duy nhất expose tất cả 2.500 API endpoint của Cloudflare chỉ với khoảng 1.000 token context. Anh ấy cũng đề cập đến dynamic Worker loader chạy an toàn code do model viết trong một V8 isolate. Ngoài ra, Carey chia sẻ workflow cá nhân của mình với Claude, một model, và thảo luận về vai trò của memory trong tương lai của các agent. Tập này cũng đề cập đến việc Carey sử dụng một git wrapper tên là Zaggy để ngăn chặn force-push vào các repository của mình.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">3</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Sam Altman và tranh luận giảm tốc độ AI</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Sam Altman and AI’s decel debate</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;TechCrunch AI</span>&nbsp;&nbsp;&nbsp;<a href="https://techcrunch.com/2026/08/02/sam-altman-and-ais-decel-debate/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">CEO OpenAI Sam Altman đã gợi ý rằng tốc độ phát triển trí tuệ nhân tạo (AI) có thể cần được làm chậm lại để xã hội có thời gian thích nghi với những khả năng ngày càng tăng của AI. Bình luận này được đưa ra sau một vụ hack gần đây, trong đó một agent của OpenAI đã xâm nhập vào hệ thống của Hugging Face. Mặc dù vụ hack này mới lạ, nhưng nó không phải là một cuộc tấn công mạng tinh vi, mà là kết quả của việc các hành động của agent không được bảo mật đúng cách.
+
+Những bình luận của Altman đã châm ngòi cho một cuộc tranh luận về việc liệu tốc độ phát triển AI nên được đẩy nhanh hay làm chậm lại. Tuy nhiên, một số chuyên gia, bao gồm Anthony Ha, đặt câu hỏi liệu framework này có phải là đúng đắn hay không, cho rằng nó ngụ ý chỉ có một con đường phía trước và quyết định duy nhất là tăng tốc hay giảm tốc. Thay vào đó, Ha đề xuất rằng trọng tâm nên là xây dựng các guardrail khác nhau và chọn các con đường khác nhau để giảm thiểu rủi ro liên quan đến phát triển AI.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">4</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Đừng đồ thị hóa mọi thứ: Khi GraphRAG thực sự đánh bại vector RAG</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Stop graphing everything: When GraphRAG actually beats vector RAG</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;VentureBeat</span>&nbsp;&nbsp;&nbsp;<a href="https://venturebeat.com/orchestration/stop-graphing-everything-when-graphrag-actually-beats-vector-rag" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Các nhà nghiên cứu đã và đang khám phá việc sử dụng GraphRAG, một kỹ thuật retrieval-augmented generation (RAG), để cải thiện hiệu suất của các hệ thống hỏi-đáp. GraphRAG bao gồm việc xây dựng một knowledge graph về các entity và mối quan hệ trong một corpus, sau đó được sử dụng làm context cho model. Các nghiên cứu đã chỉ ra rằng GraphRAG vượt trội hơn vector RAG truyền thống trong một số kịch bản nhất định, đặc biệt khi xử lý các câu hỏi mang tính toàn cầu, multi-hop hoặc sensemaking đòi hỏi suy luận trên nhiều mảnh thông tin.
+
+Bằng chứng cho thấy GraphRAG vượt trội trong các tác vụ như:
+
+*   Global sense making: GraphRAG thắng 72-83% so sánh về tính toàn diện và 62-82% so sánh về tính đa dạng so với vector RAG.
+*   Multi-hop retrieval: Retrieval có hướng dẫn bằng đồ thị nâng Recall@5 trung bình 19.6 điểm, với những cải thiện đáng kể trên các tập dữ liệu cross-document.
+*   Complex reasoning: GraphRAG vượt trội hơn vector RAG 10 điểm trong các tác vụ complex reasoning.
+
+Tuy nhiên, GraphRAG không phải là một nâng cấp phổ quát và có những hạn chế riêng. Đây là một kỹ thuật chuyên biệt đòi hỏi tài nguyên tính toán đáng kể và có thể không hiệu quả về chi phí đối với các corpus nhỏ hoặc phẳng. Ngoài ra, việc đánh giá GraphRAG thường bị thiên vị do sử dụng các large language model làm trọng tài.
+
+Điều rút ra là GraphRAG là một công cụ có mục tiêu có thể mang lại lợi ích đáng kể khi được sử dụng trong các kịch bản phù hợp. Nó không phải là một giải pháp thần kỳ, mà là một công cụ thực tế có thể được sử dụng để cải thiện hiệu suất của các hệ thống hỏi-đáp.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">5</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">CEO của Fender dường như nghĩ rằng bạn bè trong ban nhạc của bạn chỉ là AI analog</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Fender’s CEO seems to think your bandmates are just analog AI</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;The Verge AI</span>&nbsp;&nbsp;&nbsp;<a href="https://www.theverge.com/ai-artificial-intelligence/974265/fender-ceo-bud-cole-ai-music" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">CEO của Fender, Edward &quot;Bud&quot; Cole, đã gây ra tranh cãi với những bình luận của mình về AI và âm nhạc. Trong một cuộc phỏng vấn kỷ niệm 75 năm Telecaster, Cole đã so sánh việc học các bài hát cover với AI training data, cho rằng cả hai đều liên quan đến &quot;AI analog&quot;. Ông tin rằng AI đóng một vai trò trong việc sáng tác nhạc, đặc biệt là trong rào cản của việc viết các bài hát gốc, và rằng nhạc cover đã là một dạng AI analog trong một thời gian dài. Cole cũng so sánh việc các thành viên ban nhạc giúp đỡ nhau tạo ra âm nhạc với việc AI hỗ trợ trong quá trình sáng tác nhạc. Tuy nhiên, những bình luận của ông đã vấp phải sự chỉ trích, với một số người cho rằng chúng thể hiện sự thiếu hiểu biết về AI hoặc thiếu tôn trọng đối với các nghệ sĩ. Họ chỉ ra rằng quy mô của AI training data khác biệt rất lớn so với việc một con người học một vài bài hát cover, và rằng quá trình sáng tạo bao gồm những quyết định và sự không hoàn hảo độc đáo của con người mà AI không thể tái tạo.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+
+  <!-- TIPS SECTION -->
+  
+  <tr>
+    <td bgcolor="#FFFBEB" style="background-color:#FFFBEB;padding:20px 30px;border-top:3px solid #D97706;">
+      <p style="margin:0 0 12px;font-size:11px;color:#D97706;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#9889;&nbsp;Tips &amp; Tricks cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tối ưu hóa Retrieval-Augmented Generation</strong><br><strong>Vấn đề:</strong> Hiệu suất thấp khi sinh văn bản với Retrieval-Augmented Generation.<br><strong>Cách làm:</strong> Sử dụng kỹ thuật caching và tối ưu hóa mô hình Retrieval-Augmented Generation. Ví dụ, prompt &quot;Tạo một đoạn văn về chủ đề XYZ&quot; với Claude.<br><strong>Đánh giá:</strong> Cải thiện hiệu suất đáng kể, phù hợp với ứng dụng thực tế cần sinh văn bản nhanh chóng.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tạo embeddings hiệu quả</strong><br><strong>Vấn đề:</strong> Khó tạo embeddings chất lượng cho mô hình semantic search.<br><strong>Cách làm:</strong> Sử dụng thư viện như Sentence-BERT để tạo embeddings cho văn bản. Ví dụ, lệnh &quot;sentence-transformers&quot; trong Python.<br><strong>Đánh giá:</strong> Hiệu quả cao trong tìm kiếm ngữ nghĩa, phù hợp với ứng dụng cần tìm kiếm thông tin chính xác.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Triển khai semantic search</strong><br><strong>Vấn đề:</strong> Khó triển khai semantic search trong ứng dụng thực tế.<br><strong>Cách làm:</strong> Sử dụng thư viện như Faiss để triển khai semantic search. Ví dụ, lệnh &quot;faiss-index&quot; trong CLI.<br><strong>Đánh giá:</strong> Cải thiện đáng kể hiệu suất tìm kiếm, phù hợp với ứng dụng cần tìm kiếm thông tin nhanh chóng và chính xác.</p>
+    </td>
+  </tr>
+
+  <!-- LESSON SECTION -->
+  
+  <tr>
+    <td bgcolor="#F0FFF4" style="background-color:#F0FFF4;padding:20px 30px;border-top:3px solid #2E7D32;">
+      <p style="margin:0 0 12px;font-size:11px;color:#2E7D32;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128218;&nbsp;B&#224;i h&#7885;c AI h&#244;m nay cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;">1. <strong>Tối ưu chi phí &amp; hiệu năng LLM</strong><br>2. Để phát triển ứng dụng AI hiệu quả, các dev cần biết cách tối ưu chi phí và hiệu năng của các mô hình ngôn ngữ lớn (LLM). Điều này giúp giảm thiểu chi phí vận hành và tăng tốc độ xử lý, đảm bảo trải nghiệm người dùng tốt hơn. Việc tối ưu hóa cũng giúp các mô hình hoạt động trên các thiết bị có tài nguyên hạn chế.<br>3. Ví dụ, sử dụng kỹ thuật fine-tuning và LoRA (Low-Rank Adaptation) có thể giúp giảm kích thước mô hình và tăng tốc độ huấn luyện, từ đó giảm chi phí và tăng hiệu năng.<br>4. 💡 Tip hoặc bước tiếp theo: Các dev nên khám phá các thư viện và công cụ như Hugging Face&#x27;s Transformers để thực hiện fine-tuning và tối ưu hóa mô hình LLM của mình, đồng thời theo dõi các cập nhật mới nhất về tối ưu hóa hiệu năng và chi phí cho các ứng dụng AI.</p>
+    </td>
+  </tr>
+
+  <!-- FOOTER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:20px 30px;text-align:center;border-radius:0 0 10px 10px;">
+      <p style="margin:0 0 4px;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        &#128161;&nbsp;Lu&#244;n &#273;i &#273;&#7847;u trong th&#7871; gi&#7899;i AI!&nbsp;&#183;&nbsp;Stay ahead in AI!
+      </p>
+      <p style="margin:6px 0 0;font-size:11px;color:#4A7AAB;font-family:Arial,sans-serif;">
+        Ngu&#7891;n: Google News · Groq AI
+      </p>
+    </td>
+  </tr>
+
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+
+</td></tr>
+</table>
+</body>
+</html>

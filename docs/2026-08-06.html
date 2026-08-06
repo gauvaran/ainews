@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--[if mso]>
+<noscript><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings></xml></noscript>
+<![endif]-->
+<style>
+/* ── Responsive overrides for web (email HTML uses fixed 600px tables) ── */
+@media screen and (max-width:620px) {
+  table[width="600"] { width:100% !important; }
+  td { word-break:break-word; overflow-wrap:break-word; }
+  /* Reduce generous email padding on small screens */
+  td[style*="padding:28px 30px"],
+  td[style*="padding:24px 30px"],
+  td[style*="padding:22px 30px"],
+  td[style*="padding:20px 30px"],
+  td[style*="padding:16px 30px"],
+  td[style*="padding:12px 30px"] { padding-left:14px !important; padding-right:14px !important; }
+  /* Code blocks: scroll horizontally instead of breaking layout */
+  pre { overflow-x:auto !important; max-width:calc(100vw - 32px) !important; box-sizing:border-box; }
+  /* Shrink large heading text slightly */
+  h1[style*="26px"] { font-size:20px !important; }
+}
+/* ── Print: hide nav bar ── */
+@media print {
+  #web-nav { display:none !important; }
+  body { background:#fff !important; }
+}
+</style>
+</head>
+<body style="margin:0;padding:0;background-color:#EEF2F7;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+<div id="web-nav" style="background:#001a4d;padding:8px 16px;font-family:Arial,sans-serif;font-size:13px;position:sticky;top:0;z-index:999;border-bottom:2px solid #0066CC;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
+  <span id="nav-prev" style="color:#4A6A8A;">&#8592;</span>
+  <a href="all.html" style="color:#FFD700;text-decoration:none;font-weight:bold;">&#128240; T&#7845;t c&#7843; b&#7843;n tin</a>
+  <span style="color:#FFFFFF;">06/08/2026</span>
+  <span id="nav-next" style="color:#4A6A8A;">&#8594;</span>
+  <a href="2026-08-06.pdf" download="2026-08-06.pdf" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128196; T&#7843;i PDF</a>
+  <button onclick="sharePage()" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128279; Chia s&#7867;</button>
+</div>
+<script>
+function sharePage(){
+  var title='Bản tin AI BIS-MT – 06/08/2026';
+  if(navigator.share){navigator.share({title:title,url:location.href});}
+  else{navigator.clipboard.writeText(location.href).then(function(){
+    alert('Đã sao chép link!');
+  });}
+}
+(function(){
+  var m=location.pathname.match(/(\d{4}-\d{2}-\d{2})\.html/);
+  if(!m)return;
+  var slug=m[1];
+  function fmt(s){var p=s.split('-');return p[2]+'/'+p[1];}
+  var lnkStyle='color:#90C4F0;text-decoration:none;';
+  fetch('dates.json?_='+Date.now())
+    .then(function(r){return r.json();})
+    .then(function(dates){
+      var idx=dates.indexOf(slug);
+      if(idx>0){
+        var p=dates[idx-1];
+        document.getElementById('nav-prev').innerHTML=
+          '<a href="'+p+'.html" style="'+lnkStyle+'">&#8592; '+fmt(p)+'</a>';
+      }
+      if(idx>=0&&idx<dates.length-1){
+        var n=dates[idx+1];
+        document.getElementById('nav-next').innerHTML=
+          '<a href="'+n+'.html" style="'+lnkStyle+'">'+fmt(n)+' &#8594;</a>';
+      }
+    })
+    .catch(function(){});
+})();
+</script>
+
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#EEF2F7" style="background-color:#EEF2F7;">
+<tr><td align="center" style="padding:24px 12px;">
+
+<!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0"><tr><td><![endif]-->
+<table role="presentation" width="600" cellpadding="0" cellspacing="0"
+       style="max-width:600px;width:100%;background-color:#FFFFFF;border-radius:10px;" bgcolor="#FFFFFF">
+
+  <!-- HEADER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:28px 30px 22px 30px;text-align:center;border-radius:10px 10px 0 0;">
+      <p style="margin:0 0 6px;font-size:11px;color:#7EB1E8;letter-spacing:2px;font-family:Arial,sans-serif;text-transform:uppercase;">
+        BIS &#8209; MT &nbsp;&#183;&nbsp; 06/08/2026
+      </p>
+      <h1 style="margin:0;font-size:26px;font-weight:bold;color:#FFFFFF;font-family:Arial,sans-serif;line-height:1.2;">
+        &#129302; B&#7843;n Tin AI H&#7857;ng Ng&#224;y
+      </h1>
+      <p style="margin:8px 0 0;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        C&#7853;p nh&#7853;t c&#244;ng ngh&#7879; AI m&#7899;i nh&#7845;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- QUOTE -->
+  <tr>
+    <td bgcolor="#EBF4FF" style="background-color:#EBF4FF;padding:16px 30px;border-top:3px solid #0066CC;">
+      <p style="margin:0;font-size:14px;color:#1A3A5C;font-style:italic;line-height:1.6;font-family:Georgia,serif;">
+        &#10024;&nbsp;&ldquo;Cứng quá thì gãy, mềm quá thì uốn.&rdquo;
+      </p>
+      
+      <p style="margin:8px 0 0;font-size:12px;color:#888888;font-family:Arial,sans-serif;">&mdash;&nbsp;Tục ngữ Việt Nam</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#5A6A7A;font-style:italic;line-height:1.5;font-family:Arial,sans-serif;">&#128161;&nbsp;Sự linh hoạt và cân bằng là chìa khóa — biết khi nào cứng rắn, khi nào nhường nhịn mới là trí khôn.</p>
+    </td>
+  </tr>
+
+  <!-- SECTION LABEL -->
+  <tr>
+    <td bgcolor="#F5F7FA" style="background-color:#F5F7FA;padding:12px 30px;">
+      <p style="margin:0;font-size:11px;color:#999999;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128240;&nbsp;Tin t&#7913;c n&#7893;i b&#7853;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- ARTICLES -->
+  
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">1</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Hiện trạng các Agent Framework: Lựa chọn Runtime phù hợp cho việc triển khai AI cấp doanh nghiệp</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;State of Agent Frameworks: Choosing the Right Runtime for Enterprise AI Execution</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Medium</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxOdXdHT2dlWEx6TUh4VW5nQ0hCZWdqVjN4dEhkWXdhQ3ZhT2lPZUtmUlRVSG5zVTBQOWQ3MUIxZjdPZUl6ZmpsbXFWWTNQN3g4M0xfcWJhUDY1aU0tcEFLeDNZYXFmTDIzZmRLNG5VODcyem16VEFuUXRSWEFUSmE3WmFZTzhDbDFRaW1IcFp5QjBqeHpBb0dJM18wbjl0ZVVSNU8yM1Jwb2E3WkxyenNJNk0tTHRUWC1IRngwbEJycUxPTGc?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Bài viết &quot;Trạng thái của các Framework Trình điều khiển: Chọn Thời gian chạy Phù hợp cho Thực thi AI Doanh nghiệp&quot; cung cấp cái nhìn tổng quan về trạng thái hiện tại của các framework trình điều khiển trong bối cảnh thực thi AI doanh nghiệp. Các framework trình điều khiển là các nền tảng phần mềm cho phép tích hợp trí tuệ nhân tạo (AI) và các model học máy (ML) vào các ứng dụng kinh doanh.
+
+Bài viết nhấn mạnh tầm quan trọng của việc chọn thời gian chạy phù hợp cho thực thi AI doanh nghiệp, vì nó có thể ảnh hưởng đáng kể đến hiệu suất, khả năng mở rộng và khả năng bảo trì của các ứng dụng được hỗ trợ bởi AI. Nó thảo luận về các framework trình điều khiển khác nhau, bao gồm Rasa, Dialogflow và Botpress, cũng như các điểm mạnh và điểm yếu tương ứng của chúng.
+
+Bài viết cũng đề cập đến các thách thức khi triển khai và bảo trì các ứng dụng được hỗ trợ bởi AI, chẳng hạn như tích hợp dữ liệu, cập nhật model, và các vấn đề về bảo mật. Nó nhấn mạnh nhu cầu về một framework trình điều khiển linh hoạt và có khả năng mở rộng có thể thích nghi với các yêu cầu kinh doanh thay đổi và tiến bộ công nghệ.
+
+Cuối cùng, bài viết nhằm cung cấp hướng dẫn cho các doanh nghiệp trong việc chọn framework trình điều khiển phù hợp nhất cho nhu cầu thực thi AI của họ, đảm bảo tích hợp liền mạch và hiệu suất tối ưu của các ứng dụng được hỗ trợ bởi AI.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">2</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">AWS mã nguồn mở MCP Server cho Bedrock AgentCore để tinh gọn phát triển AI Agent</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;AWS Open-Sources an MCP Server for Bedrock AgentCore to Streamline AI Agent Development</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;marktechpost.com</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMixwFBVV95cUxNZDEzc3dIU3dtSUFCMzJVVU1HeXZSUkdqNmFqMDh5U2d4MEZjRzV6RE14YWdscDYxdWpXelhjUWtPaWZYS19uamp1bUd0Z3dBRWFqOGZ2anAtQ3VvQ0pOUXVvc2tjNHR5cDBGSVJlMkJJQ25CcnRMLWtfWWZVVUwxcXhxMk5qY25BSFJyUk14NGNDWk1BbXp0WUtNeTJqVG1uVDA3NTRHVmF6RWFTeDZ2LVNRTHJ3cTRLWkdtekZ6VjhyNXE3YVFJ0gHMAUFVX3lxTFA4MnVHS0pMd1NoVXJsMFJ3S1JhQlBBRlpTUXNkbVVtcnFoWEluaHVaRXE2SFk3RU9aQVVSQmI2R0xpaTNLVEo3bXVkTC1hbW8yWGlHY2hnOWV5YlNCVzU3N000ZC1rXzdDTlNYTDFNd3BoY1ZNY0g3bjg5dnR0NEZDRmlWMEo4cExnSDVvMUpyOFZ0czczSE5WMXNLbHo1eExQWWhrMmJRTEl4LVdJLVhqUWd2Yk1GbTZySGdMczdHMzg1c2M3NGQ0UHVLYg?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Amazon Web Services (AWS) đã thực hiện một bước tiến quan trọng trong lĩnh vực phát triển trí tuệ nhân tạo (AI) bằng cách mở mã nguồn một máy chủ MCP cho Bedrock AgentCore. Động thái này nhằm mục đích đơn giản hóa việc phát triển các tác nhân AI bằng cách cung cấp một giải pháp tiêu chuẩn hóa và mã nguồn mở.
+
+Máy chủ MCP được thiết kế để hoạt động với Bedrock AgentCore, một nền tảng cho phép phát triển các tác nhân AI. Bằng cách mở mã nguồn máy chủ MCP, AWS đang giúp các nhà phát triển xây dựng, thử nghiệm và triển khai các tác nhân AI dễ dàng hơn. Động thái này dự kiến sẽ đẩy nhanh việc phát triển các tác nhân AI và giảm độ phức tạp liên quan đến việc xây dựng và tích hợp các hệ thống AI.
+
+Việc mở mã nguồn máy chủ MCP là một bước tiến quan trọng trong lĩnh vực phát triển AI. Nó cho phép các nhà phát triển đóng góp vào cơ sở mã, sửa lỗi và thêm tính năng mới, khiến nó trở thành một giải pháp mạnh mẽ và đáng tin cậy hơn. Động thái này dự kiến sẽ có tác động tích cực đến cộng đồng phát triển AI, cho phép phát triển các tác nhân AI nhanh chóng và hiệu quả hơn.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">3</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Tăng tốc phát triển với MCP server của Amazon Bedrock AgentCore | AI</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Accelerate development with the Amazon Bedrock AgentCore MCP server | Artificial Intelligence</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Amazon Web Services (AWS)</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxOY0dNX2hZRGVzeUZyX01BaEdTaW9aZ3d0TVBnMThmci1LMWpGOGdJaUgzM0t2OGZsRkxrZDRJcUY5RmZOajVqeUpQQVBoOVJSTWZxNFVFOW0tbTRwMUYwNWprdklCNjZncnh6VUNNV3Y3VGVhNElSNDVZdFJqb1ppT2JUc1FhUGpBanhHY0Q0WTdJdUI0RmM5NFpBX19ocVl0aXRqMzdLbEtpakJ3NHVzQXY4bw?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Amazon Web Services (AWS) đã giới thiệu máy chủ Amazon Bedrock AgentCore MCP, được thiết kế để tăng tốc phát triển trong lĩnh vực Trí tuệ Nhân tạo (AI). Máy chủ Bedrock AgentCore MCP là một thành phần chính của nền tảng Amazon Bedrock, nhằm mục đích đơn giản hóa việc phát triển và triển khai các model AI.
+
+Máy chủ này được tối ưu hóa cho tính toán hiệu suất cao và cung cấp một môi trường có thể mở rộng và bảo mật cho các nhà phát triển xây dựng và đào tạo các model AI. Với máy chủ Bedrock AgentCore MCP, các nhà phát triển có thể truy cập vào một loạt các công cụ và dịch vụ AI, bao gồm các framework học máy, lưu trữ dữ liệu và phân tích.
+
+Việc giới thiệu máy chủ Bedrock AgentCore MCP dự kiến sẽ cho phép phát triển AI nhanh hơn và hiệu quả hơn, cho phép các nhà phát triển tập trung vào xây dựng các ứng dụng và giải pháp sáng tạo. Bằng cách cung cấp một cơ sở hạ tầng mạnh mẽ và có thể mở rộng, AWS đang trao quyền cho các nhà phát triển đẩy ranh giới của những gì có thể thực hiện được với AI và thúc đẩy đổi mới trong các ngành công nghiệp khác nhau.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">4</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Điểm tin: Câu chuyện Startup Ấn Độ trong tuần</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;News Roundup: Indian Startup Stories of the Week</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;A Developer-Focused Guide</span>&nbsp;&nbsp;&nbsp;<a href="https://dev.to/howiprompt/news-roundup-indian-startup-stories-of-the-week-a-developer-focused-guide-2ac8" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Cảnh quan khởi nghiệp của Ấn Độ đã tạo ra những điểm dữ liệu đáng kể, vòng vốn và sự thay đổi quy định. Một hướng dẫn gần đây đã chắt lọc những tiêu đề có thể hành động nhất từ &quot;Tóm tắt Tin tức: Câu chuyện Khởi nghiệp Ấn Độ trong Tuần&quot; của Dailyhunt. Hướng dẫn này nhằm chuyển đổi tin tức thành một tài sản quý giá cho các nhà phát triển, người sáng lập và những người xây dựng AI.
+
+Để đạt được điều này, một dịch vụ Python và FastAPI đã được tạo ra để kéo tin tức tài trợ mới nhất từ nguồn cấp RSS của Dailyhunt, lọc các khởi nghiệp Ấn Độ và gửi thông báo Slack. Dịch vụ này cung cấp một tài sản tổng hợp theo thời gian thực có thể được sử dụng trong các bảng điều khiển phân tích thị trường.
+
+Ngoài ra, Bộ Điện tử và Công nghệ Thông tin (MeitY) của Ấn Độ đã phát hành Dự luật Bảo vệ Dữ liệu Cá nhân (PDP) năm 2024, nhấn mạnh tầm quan trọng của việc tuân thủ các quy định bảo vệ dữ liệu. Nhúng các mẫu này có thể giúp một ngăn xếp được bảo vệ trong tương lai khỏi các hình phạt về tuân thủ và cung cấp một tín hiệu tin cậy cho các nhà đầu tư.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">5</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Meta tham gia cuộc chiến AI coding với Muse Spark 1.2 và Muse Code cùng các async background agent hoạt động liên tục</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Meta enters the AI coding wars with Muse Spark 1.2 and Muse Code with persistent async background agents</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;VentureBeat</span>&nbsp;&nbsp;&nbsp;<a href="https://venturebeat.com/orchestration/meta-enters-the-ai-coding-wars-with-muse-spark-1-2-and-muse-code-with-persistent-async-background-agents" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Meta đã tham gia vào cuộc chiến mã hóa AI với việc phát hành Muse Code, một đại lý mã hóa AI dựa trên终端 trong phiên bản beta, và Muse Spark 1.2, một bản cập nhật tập trung vào mã hóa cho dòng model Muse Spark tiên phong. Muse Code được thiết kế để thực hiện các nhiệm vụ kỹ thuật phần mềm hoàn chỉnh, bao gồm lập kế hoạch, viết mã, và xác thực kết quả, và có thể được cài đặt trên macOS hoặc Linux với một lệnh curl duy nhất. Đại lý này sử dụng các đại lý nền tảng bền bỉ, vẫn hoạt động trong suốt mỗi phiên, để giảm độ trễ và cải thiện hiệu suất.
+
+Muse Spark 1.2 là một model độc quyền đã được đào tạo cùng với Muse Code và được thiết kế để cải thiện việc tạo mã, gỡ lỗi phức tạp, và hiểu biết về cơ sở mã. Model này đã được thử nghiệm trên các điểm chuẩn khác nhau và đã thể hiện sự cải thiện đáng kể so với người tiền nhiệm của nó, Muse Spark 1.1.
+
+Meta đang cung cấp Muse Spark 1.2 thông qua API Model Meta của mình trong hai cấp độ: tiêu chuẩn và người đóng góp. Cấp độ tiêu chuẩn được định giá 1,25 đô la cho mỗi triệu token đầu vào và 4,25 đô la cho mỗi triệu token đầu ra, trong khi cấp độ người đóng góp được định giá 0,10 đô la cho mỗi triệu token đầu vào và 0,20 đô la cho mỗi triệu token đầu ra, nhưng yêu cầu các nhà phát triển phải cung cấp thông tin thanh toán và đăng nhập bằng tài khoản Meta.
+
+Cấp độ người đóng góp đã gây ra lo ngại trong số các nhà phát triển và doanh nghiệp muốn giữ mã của họ an toàn, vì nó yêu cầu họ phải tài trợ cho việc truy cập bằng dữ liệu của riêng họ. Quyết định của Meta chuyển khỏi các model mã nguồn mở, vốn là một phần quan trọng trong chiến lược của họ trong quá khứ, cũng đã bị chỉ trích.
+
+Việc phát hành Muse Code và Muse Spark 1.2 đánh dấu sự tham gia nghiêm túc nhất của Meta vào cuộc chiến mã hóa AI cho đến nay, và sẽ rất thú vị khi xem nó cạnh tranh với Claude Code của Anthropic và Codex của OpenAI.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">6</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Đánh giá an ninh mạng từ bên thứ ba liên quan đến các model của OpenAI</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Third-party cyber evaluations involving OpenAI models</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;OpenAI Blog</span>&nbsp;&nbsp;&nbsp;<a href="https://openai.com/index/third-party-cyber-evaluations-involving-openai-models" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">OpenAI đã giải quyết các vụ việc gần đây liên quan đến việc đánh giá an ninh mạng của bên thứ ba đối với các model AI của họ. Công ty đã thực hiện các biện pháp để tăng cường bảo mật và tính toàn vẹn của các model của mình thông qua việc triển khai các biện pháp phòng vệ mới.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">7</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Giới thiệu Muse Code và Muse Spark 1.2</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Introducing Muse Code and Muse Spark 1.2</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Simon Willison</span>&nbsp;&nbsp;&nbsp;<a href="https://simonwillison.net/2026/Aug/5/muse-code-and-muse-spark-12/#atom-everything" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Meta đã phát hành bản cập nhật cho mô hình Muse Spark của mình, phiên bản 1.2, tập trung vào khả năng lập trình. Bản cập nhật này, kết hợp với việc giới thiệu Muse Code, nhằm cải thiện khả năng gọi công cụ đại lý trình tự dài. Muse Spark 1.2 có các tính năng cải tiến trong việc tạo mã, gỡ lỗi, hiểu cơ sở mã và luồng công việc của nhà phát triển từ đầu đến cuối. Mô hình này đã được đào tạo trên quy mô lớn hơn với sự đa dạng tăng lên trong môi trường đào tạo, và hiệu suất của nó đã được tối ưu hóa để sử dụng với Muse Code. Bản cập nhật bao gồm đào tạo rộng rãi về các nhiệm vụ lập trình đường chân trời dài, chẳng hạn như tạo toàn bộ kho lưu trữ và các dự án từ đầu đến cuối lớn. Phát hành này thể hiện sự đầu tư liên tục của Meta vào việc phát triển các mô hình AI cho lập trình và gọi công cụ.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">8</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Đội ngũ pháp lý của GitHub đã sử dụng Copilot CLI để tinh gọn workflow của họ như thế nào</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;How the GitHub legal team used Copilot CLI to streamline their workflows</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;GitHub Blog</span>&nbsp;&nbsp;&nbsp;<a href="https://github.blog/ai-and-ml/github-copilot/how-the-github-legal-team-used-copilot-cli-to-streamline-their-workflows/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Đội ngũ pháp lý của GitHub đã thành công trong việc tận dụng công cụ Copilot CLI để tự động hóa quy trình làm việc và tăng năng suất. Đội ngũ này, bao gồm các luật sư, quản lý chương trình và chuyên gia kinh doanh, phải đối mặt với các nhiệm vụ lặp đi lặp lại như xem xét hợp đồng và trả lời các câu hỏi pháp lý. Bằng cách tận dụng Copilot CLI, họ đã có thể tự động hóa các nhiệm vụ này và xây dựng các công cụ tùy chỉnh mà không cần kiến thức lập trình rộng rãi. Đội ngũ chỉ cần mô tả kết quả mong muốn của họ bằng ngôn ngữ đơn giản, tích hợp Copilot CLI vào kho lưu trữ của họ và chứng kiến kết quả ngay lập tức. Sự thay đổi này trong quy trình làm việc đã cho phép các thành viên không kỹ thuật xây dựng các giải pháp tùy chỉnh, thúc đẩy văn hóa đổi mới và hợp tác. Kết quả là, năng suất và hiệu quả của đội ngũ đã được cải thiện, cho phép họ tập trung vào các nhiệm vụ phức tạp hơn.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+
+  <!-- TIPS SECTION -->
+  
+  <tr>
+    <td bgcolor="#FFFBEB" style="background-color:#FFFBEB;padding:20px 30px;border-top:3px solid #D97706;">
+      <p style="margin:0 0 12px;font-size:11px;color:#D97706;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#9889;&nbsp;Tips &amp; Tricks cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Cài đặt AI Observability</strong><br><strong>Vấn đề:</strong> Thiếu thông tin về hiệu suất của mô hình AI.<br><strong>Cách làm:</strong> Sử dụng LangSmith để theo dõi hiệu suất của mô hình AI. Ví dụ, <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">langsmith monitor --model my_model</code> để bắt đầu theo dõi.<br><strong>Đánh giá:</strong> Hiệu quả trong việc tối ưu hóa mô hình AI, nên dùng khi triển khai mô hình vào sản xuất.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Thực hiện Tracing</strong><br><strong>Vấn đề:</strong> Khó tìm ra nguyên nhân của lỗi trong mô hình AI.<br><strong>Cách làm:</strong> Sử dụng Langfuse để thực hiện tracing, ví dụ <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">langfuse trace --model my_model --input my_input</code>.<br><strong>Đánh giá:</strong> Giúp tìm ra nguyên nhân lỗi nhanh chóng, nên dùng khi gặp lỗi không rõ nguyên nhân.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Kiểm soát Chi Phí</strong><br><strong>Vấn đề:</strong> Chi phí đào tạo và triển khai mô hình AI quá cao.<br><strong>Cách làm:</strong> Sử dụng Arize Phoenix để theo dõi và kiểm soát chi phí, ví dụ <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">arize phoenix --model my_model --cost-budget 1000</code>.<br><strong>Đánh giá:</strong> Giúp giảm chi phí và tối ưu hóa tài nguyên, nên dùng khi có ngân sách hạn chế.</p>
+    </td>
+  </tr>
+
+  <!-- LESSON SECTION -->
+  
+  <tr>
+    <td bgcolor="#F0FFF4" style="background-color:#F0FFF4;padding:20px 30px;border-top:3px solid #2E7D32;">
+      <p style="margin:0 0 12px;font-size:11px;color:#2E7D32;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128218;&nbsp;B&#224;i h&#7885;c AI h&#244;m nay cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;">1. <strong>Tối ưu chi phí &amp; hiệu năng LLM</strong><br>2. Để xây dựng ứng dụng hiệu quả, các nhà phát triển cần biết cách tối ưu hóa chi phí và hiệu năng của mô hình ngôn ngữ lớn (LLM). Điều này giúp giảm thiểu chi phí tính toán và tăng tốc độ xử lý, từ đó cải thiện trải nghiệm người dùng. Việc tối ưu hóa LLM cũng giúp giảm thiểu tác động môi trường của ứng dụng.<br>3. Ví dụ, việc sử dụng kỹ thuật fine-tuning và LoRA (Low-Rank Adaptation) có thể giúp giảm kích thước mô hình và tăng tốc độ đào tạo, từ đó giảm chi phí và tăng hiệu năng.<br>4. 💡 Để tiếp tục, bạn có thể nghiên cứu về các kỹ thuật tối ưu hóa LLM khác như Quantization, Pruning và Knowledge Distillation để áp dụng vào dự án của mình.</p>
+    </td>
+  </tr>
+
+  <!-- FOOTER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:20px 30px;text-align:center;border-radius:0 0 10px 10px;">
+      <p style="margin:0 0 4px;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        &#128161;&nbsp;Lu&#244;n &#273;i &#273;&#7847;u trong th&#7871; gi&#7899;i AI!&nbsp;&#183;&nbsp;Stay ahead in AI!
+      </p>
+      <p style="margin:6px 0 0;font-size:11px;color:#4A7AAB;font-family:Arial,sans-serif;">
+        Ngu&#7891;n: Google News · Groq AI
+      </p>
+    </td>
+  </tr>
+
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+
+</td></tr>
+</table>
+</body>
+</html>

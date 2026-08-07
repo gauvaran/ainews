@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--[if mso]>
+<noscript><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings></xml></noscript>
+<![endif]-->
+<style>
+/* ── Responsive overrides for web (email HTML uses fixed 600px tables) ── */
+@media screen and (max-width:620px) {
+  table[width="600"] { width:100% !important; }
+  td { word-break:break-word; overflow-wrap:break-word; }
+  /* Reduce generous email padding on small screens */
+  td[style*="padding:28px 30px"],
+  td[style*="padding:24px 30px"],
+  td[style*="padding:22px 30px"],
+  td[style*="padding:20px 30px"],
+  td[style*="padding:16px 30px"],
+  td[style*="padding:12px 30px"] { padding-left:14px !important; padding-right:14px !important; }
+  /* Code blocks: scroll horizontally instead of breaking layout */
+  pre { overflow-x:auto !important; max-width:calc(100vw - 32px) !important; box-sizing:border-box; }
+  /* Shrink large heading text slightly */
+  h1[style*="26px"] { font-size:20px !important; }
+}
+/* ── Print: hide nav bar ── */
+@media print {
+  #web-nav { display:none !important; }
+  body { background:#fff !important; }
+}
+</style>
+</head>
+<body style="margin:0;padding:0;background-color:#EEF2F7;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+<div id="web-nav" style="background:#001a4d;padding:8px 16px;font-family:Arial,sans-serif;font-size:13px;position:sticky;top:0;z-index:999;border-bottom:2px solid #0066CC;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
+  <span id="nav-prev" style="color:#4A6A8A;">&#8592;</span>
+  <a href="all.html" style="color:#FFD700;text-decoration:none;font-weight:bold;">&#128240; T&#7845;t c&#7843; b&#7843;n tin</a>
+  <span style="color:#FFFFFF;">07/08/2026</span>
+  <span id="nav-next" style="color:#4A6A8A;">&#8594;</span>
+  <a href="2026-08-07.pdf" download="2026-08-07.pdf" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128196; T&#7843;i PDF</a>
+  <button onclick="sharePage()" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128279; Chia s&#7867;</button>
+</div>
+<script>
+function sharePage(){
+  var title='Bản tin AI BIS-MT – 07/08/2026';
+  if(navigator.share){navigator.share({title:title,url:location.href});}
+  else{navigator.clipboard.writeText(location.href).then(function(){
+    alert('Đã sao chép link!');
+  });}
+}
+(function(){
+  var m=location.pathname.match(/(\d{4}-\d{2}-\d{2})\.html/);
+  if(!m)return;
+  var slug=m[1];
+  function fmt(s){var p=s.split('-');return p[2]+'/'+p[1];}
+  var lnkStyle='color:#90C4F0;text-decoration:none;';
+  fetch('dates.json?_='+Date.now())
+    .then(function(r){return r.json();})
+    .then(function(dates){
+      var idx=dates.indexOf(slug);
+      if(idx>0){
+        var p=dates[idx-1];
+        document.getElementById('nav-prev').innerHTML=
+          '<a href="'+p+'.html" style="'+lnkStyle+'">&#8592; '+fmt(p)+'</a>';
+      }
+      if(idx>=0&&idx<dates.length-1){
+        var n=dates[idx+1];
+        document.getElementById('nav-next').innerHTML=
+          '<a href="'+n+'.html" style="'+lnkStyle+'">'+fmt(n)+' &#8594;</a>';
+      }
+    })
+    .catch(function(){});
+})();
+</script>
+
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#EEF2F7" style="background-color:#EEF2F7;">
+<tr><td align="center" style="padding:24px 12px;">
+
+<!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0"><tr><td><![endif]-->
+<table role="presentation" width="600" cellpadding="0" cellspacing="0"
+       style="max-width:600px;width:100%;background-color:#FFFFFF;border-radius:10px;" bgcolor="#FFFFFF">
+
+  <!-- HEADER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:28px 30px 22px 30px;text-align:center;border-radius:10px 10px 0 0;">
+      <p style="margin:0 0 6px;font-size:11px;color:#7EB1E8;letter-spacing:2px;font-family:Arial,sans-serif;text-transform:uppercase;">
+        BIS &#8209; MT &nbsp;&#183;&nbsp; 07/08/2026
+      </p>
+      <h1 style="margin:0;font-size:26px;font-weight:bold;color:#FFFFFF;font-family:Arial,sans-serif;line-height:1.2;">
+        &#129302; B&#7843;n Tin AI H&#7857;ng Ng&#224;y
+      </h1>
+      <p style="margin:8px 0 0;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        C&#7853;p nh&#7853;t c&#244;ng ngh&#7879; AI m&#7899;i nh&#7845;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- QUOTE -->
+  <tr>
+    <td bgcolor="#EBF4FF" style="background-color:#EBF4FF;padding:16px 30px;border-top:3px solid #0066CC;">
+      <p style="margin:0;font-size:14px;color:#1A3A5C;font-style:italic;line-height:1.6;font-family:Georgia,serif;">
+        &#10024;&nbsp;&ldquo;Người đẹp vì lụa, lúa tốt vì phân.&rdquo;
+      </p>
+      
+      <p style="margin:8px 0 0;font-size:12px;color:#888888;font-family:Arial,sans-serif;">&mdash;&nbsp;Tục ngữ Việt Nam</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#5A6A7A;font-style:italic;line-height:1.5;font-family:Arial,sans-serif;">&#128161;&nbsp;Môi trường, điều kiện và sự đầu tư đúng chỗ có thể giúp bất kỳ ai phát huy tối đa tiềm năng của mình.</p>
+    </td>
+  </tr>
+
+  <!-- SECTION LABEL -->
+  <tr>
+    <td bgcolor="#F5F7FA" style="background-color:#F5F7FA;padding:12px 30px;">
+      <p style="margin:0;font-size:11px;color:#999999;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128240;&nbsp;Tin t&#7913;c n&#7893;i b&#7853;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- ARTICLES -->
+  
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">1</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Nhà máy Agent: Từ nguyên mẫu đến sản xuất - công cụ dành cho nhà phát triển và phát triển agent nhanh chóng</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Agent Factory: From prototype to production—developer tools and rapid agent development</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Microsoft Azure</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMixAFBVV95cUxOdndkeDZ5QVBfUkZSNEllamdIOTZoek9icUtocDFTYVJXRlNUbm1GQ0c0WkZLNkdudzB3WGppcTJhMV9fS05aOEsyRnU1S2psSVNleW1YaEZqOE1sZk5IVEhqSWpMU3JpbUNTeWd4MktxQUlkUnJHZllkeWlvTDBzN3YzT3dXRHd3Vi1RRTlMWDBidzQ2aFYtbV9OdTB6TGNHYWxjSFRNSEVTazhSNzE4X1VKUlJBSVlETjVRVHVidFNIb2du?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Microsoft đã giới thiệu Agent Factory, một công cụ dành cho nhà phát triển được thiết kế để tối ưu hóa quá trình tạo và triển khai các tác nhân thông minh. Agent Factory cho phép nhà phát triển xây dựng, thử nghiệm và triển khai tác nhân một cách nhanh chóng, đẩy nhanh chu kỳ phát triển. Công cụ này được xây dựng trên nền tảng Microsoft Azure, tận dụng cơ sở hạ tầng đám mây và khả năng AI của nó.
+
+Agent Factory cung cấp một bộ công cụ và tính năng toàn diện giúp thúc đẩy sự phát triển của các tác nhân thông minh. Nhà phát triển có thể sử dụng các công cụ này để tạo, đào tạo và triển khai tác nhân, giúp dễ dàng tích hợp AI vào ứng dụng của họ. Nền tảng này hỗ trợ tạo mẫu và thử nghiệm nhanh, cho phép nhà phát triển nhanh chóng xác thực ý tưởng và lặp lại thiết kế của họ.
+
+Bằng cách sử dụng Agent Factory, nhà phát triển có thể tận dụng khả năng mở rộng và độ tin cậy của Microsoft Azure, đảm bảo rằng các tác nhân của họ được triển khai và quản lý một cách hiệu quả. Công cụ này được thiết kế để đơn giản hóa quá trình phát triển, cho phép nhà phát triển tập trung vào việc tạo ra các ứng dụng đổi mới tận dụng sức mạnh của AI.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">2</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Xây dựng một agent phân tích tài chính thông minh với LangGraph và Strands Agents</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Build an intelligent financial analysis agent with LangGraph and Strands Agents</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Amazon Web Services (AWS)</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMixAFBVV95cUxQcDBxeXdxZlJjREktdFdBdnJST0xDSzQtYmppeEZQdHZWSXdaWGxSLXNvNlRYUjYwMlQ0LWtzU3RUdVRJWkJzbW1MektRRDNRS2lTZkJXUGJXNUplcHlIQkxQdkhxZEJkZW1Dd0k2R1lPdDlXQXhYdUdUdnJ0NlJDSnFlUXVOY0pYRDdITjFRVXRKMjlqWkNORnp5SXQzdnZIazc5ZURWMU8xQlgzV19DRjIxeTE4RFZXdTBOc1JLOER3NFZl?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Amazon Web Services (AWS) đã giới thiệu một phương pháp để xây dựng một tác nhân phân tích tài chính thông minh bằng cách sử dụng LangGraph và Strands Agents. Cách tiếp cận sáng tạo này cho phép người dùng tạo ra một công cụ phân tích tài chính phức tạp có thể xử lý và phân tích lượng lớn dữ liệu tài chính.
+
+LangGraph là một thư viện xử lý ngôn ngữ tự nhiên (NLP) cho phép người dùng trích xuất thông tin liên quan từ các báo cáo và tuyên bố tài chính. Mặt khác, Strands Agents là một framework để xây dựng các tác nhân thông minh có thể học hỏi và thích nghi với dữ liệu mới.
+
+Bằng cách kết hợp LangGraph và Strands Agents, người dùng có thể tạo ra một tác nhân phân tích tài chính có thể tự động trích xuất các chỉ số tài chính chính, xác định xu hướng và mẫu, và cung cấp thông tin chi tiết có thể hành động. Tác nhân thông minh này có thể được tích hợp với các hệ thống và công cụ tài chính khác nhau, khiến nó trở thành một tài sản quý giá cho các nhà phân tích tài chính, nhà đầu tư và tổ chức.
+
+Việc sử dụng LangGraph và Strands Agents trong phân tích tài chính mang lại một số lợi ích, bao gồm độ chính xác được cải thiện, hiệu quả tăng cao và khả năng ra quyết định được nâng cao.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">3</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Các model không giới hạn trọng lượng tiếng Trung tốt nhất — và các đối thủ mạnh nhất của Mỹ</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;The best Chinese open-weight models — and the strongest US rivals</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;understandingai.org</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMieEFVX3lxTE5aRUUtRDNyd05CNlRPU1JDN2lPcEU3RkZVOTU0UkN4T1Vzb0hvMjhWTGJLUzlwcW83dWxsY1pVTFlHNjlnLUt1N0JJVnB1dGtqdTQxNjd1R2U4OW14RWhUVVZkVlFUVDExWWx5QjJ2U1ZFSlVKS0s5RA?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Bài viết thảo luận về các mô hình mở trọng lượng hàng đầu của Trung Quốc và những đối thủ mạnh nhất của Mỹ. Các mô hình mở trọng lượng đề cập đến robot hoặc máy móc hoạt động mà không có bất kỳ hạn chế trọng lượng nào, cho phép linh hoạt và đa năng hơn. Các mô hình Trung Quốc được nêu bật trong bài viết được coi là một trong những mô hình tốt nhất trong lớp của chúng,展示 công nghệ tiên tiến và thiết kế sáng tạo.
+
+Những mô hình Trung Quốc này được so sánh với những đối thủ mạnh nhất của Mỹ, với bài viết cung cấp một so sánh về khả năng và tính năng của chúng. Các mô hình của Mỹ được biết đến với sự mạnh mẽ và tin cậy, khiến chúng trở thành một đối thủ đáng gờm đối với các đối thủ Trung Quốc.
+
+Bài viết nhằm cung cấp cho người đọc một hiểu biết toàn diện về trạng thái hiện tại của các mô hình mở trọng lượng, nêu bật điểm mạnh và điểm yếu của cả mô hình Trung Quốc và Mỹ. Bằng cách so sánh những mô hình này, người đọc có thể có cái nhìn sâu sắc về những tiến bộ mới nhất trong lĩnh vực robot và trí tuệ nhân tạo (AI), và cập nhật những phát triển mới nhất trong lĩnh vực này, bao gồm cả các công nghệ như LLM, API, và framework, cũng như vai trò của developer trong việc tạo ra các mô hình này, và cách chúng xử lý token để đạt được hiệu suất cao.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">4</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Loa thông minh AI mới của OpenAI sẽ được bán với giá từ 300 đến 400 đô la</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;OpenAI’s new AI smart speaker will reportedly sell for between $300 and $400</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;TechCrunch AI</span>&nbsp;&nbsp;&nbsp;<a href="https://techcrunch.com/2026/08/06/openais-new-ai-smart-speaker-will-reportedly-sell-for-between-300-and-400/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">OpenAI được cho là đang phát triển một loa thông minh được hỗ trợ bởi AI, được mô tả là một thiết bị có hình dạng &quot;donut&quot; với vẻ ngoài &quot;cao cấp&quot; và được chế tạo từ &quot;kim loại chất lượng cao&quot;. Thiết bị này, sẽ là hiện thân vật lý của ChatGPT, được thiết kế để di động và có thể được đặt ở nhiều vị trí khác nhau trong nhà. Các nguồn tin cho biết thiết bị sẽ có các &quot;bộ phận di chuyển&quot; riêng biệt, mặc dù mục đích của các tính năng này vẫn chưa rõ ràng. Loa thông minh này dự kiến sẽ có giá từ 300 đến 400 đô la, cao hơn đáng kể so với hầu hết các loa thông minh trong nhà trên thị trường. OpenAI đang hợp tác với LoveFrom, một studio thiết kế được thành lập bởi Jony Ive, để phát triển thiết bị này, dự kiến sẽ được phát hành vào năm 2027. Tuy nhiên, việc tham gia vào thị trường phần cứng của công ty có thể phải đối mặt với những thách thức, bao gồm cả vụ kiện từ Apple và khó khăn khi xâm nhập vào một thị trường có thể không mang lại lợi nhuận.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">5</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Hướng dẫn về lệnh cắt trong ứng dụng GitHub Copilot</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;A guide to slash commands in the GitHub Copilot app</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;GitHub Blog</span>&nbsp;&nbsp;&nbsp;<a href="https://github.blog/ai-and-ml/github-copilot/a-guide-to-slash-commands-in-the-github-copilot-app/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Người dùng ứng dụng GitHub Copilot có thể nâng cao trải nghiệm phát triển của mình với lệnh slash, một tính năng cung cấp lối tắt để quản lý phiên, điều hướng dự án và tùy chỉnh quy trình làm việc của họ. Những lối tắt văn bản này được nhập trực tiếp vào trình soạn thảo trò chuyện và bắt đầu bằng một dấu gạch chéo (/). Một menu tự động hoàn thành xuất hiện, hiển thị các lệnh có sẵn trong bối cảnh hiện tại. Lệnh slash trong ứng dụng GitHub Copilot mở rộng ý tưởng về các lối tắt nhanh, cung cấp một cách làm việc trực quan hơn với nền tảng phát triển được hỗ trợ bởi AI. Đối với người dùng quen thuộc với GitHub Copilot CLI, sự khác biệt chính nằm ở quy trình làm việc, vì lệnh slash CLI được thiết kế xung quanh cách tiếp cận đầu cuối. Ngược lại, lệnh slash của ứng dụng tập trung vào việc tối ưu hóa các tương tác trong trình soạn thảo trò chuyện. Bằng cách tận dụng những lối tắt này, các developer có thể tăng năng suất và hiệu quả trong quy trình làm việc của họ.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">6</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Từ các dự án nguồn mở nổi tiếng đến OpenAI</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;From open source hits to OpenAI</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Changelog</span>&nbsp;&nbsp;&nbsp;<a href="https://changelog.com/podcast/682" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Trong tập này, Max Stoiber, một developer làm việc trên thư mục plugin và nền tảng ứng dụng của ChatGPT tại OpenAI, chia sẻ những nhận xét của mình về ngành công nghệ. Ông thảo luận về các dự án mã nguồn mở thường bị bỏ qua, chẳng hạn như react-boilerplate và styled-components, những dự án đã có những đóng góp đáng kể cho cảnh quan công nghệ. Stoiber cũng đề cập đến việc GitHub mua lại Spectrum, điều đã đóng vai trò quan trọng trong việc định hình GitHub Discussions. Ngoài ra, ông cũng nói về sự phát triển của Stellate, một bộ nhớ đệm GraphQL đã được cả Shopify và The Guild mua lại. Cuộc trò chuyện cũng khám phá khái niệm về các ứng dụng ChatGPT như một bề mặt mới cho phát triển phần mềm.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">7</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">AGI Không phải Là Đa phương thức</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;AGI Is Not Multimodal</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;The Gradient</span>&nbsp;&nbsp;&nbsp;<a href="https://thegradient.pub/agi-is-not-multimodal/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Những tiến bộ gần đây trong các mô hình AI tạo sinh đã khiến một số người tin rằng Trí tuệ Tổng quát Nhân tạo (AGI) đang sắp xảy ra. Tuy nhiên, quan niệm này dựa trên khả năng của các mô hình có thể mở rộng hiệu quả trên phần cứng hiện có, chứ không phải là một cách tiếp cận có suy nghĩ về trí tuệ. Cách tiếp cận đa phương thức, kết hợp nhiều phương thức để đạt được trí tuệ tổng quát, không thể thành công trong thời gian tới. Thay vào đó, các nhà nghiên cứu nên tập trung vào việc phát triển AGI coi sự thể hiện và tương tác với môi trường là yếu tố chính, với việc xử lý tập trung vào phương thức xuất hiện như một kết quả.
+
+Một AGI thực sự phải là tổng quát trên tất cả các lĩnh vực, bao gồm cả thực tại vật lý, và có khả năng giải quyết các vấn đề bắt nguồn từ thế giới vật lý, chẳng hạn như sửa chữa một chiếc xe hơi hoặc tháo một nút thắt. Điều này đòi hỏi một hình thức trí tuệ cơ bản được đặt trong một mô hình thế giới vật lý. Các mô hình ngôn ngữ lớn (LLM) hiện tại có thể dường như có một sự hiểu biết sâu sắc về thế giới, nhưng điều này có khả năng là do khả năng của chúng trong việc học các túi heuristic để dự đoán token, chứ không phải là một sự hiểu biết thực sự về thực tại.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">8</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">OpenAI cho rằng vụ kiện bí mật thương mại của Apple là &#x27;thối rữa từ lõi&#x27;</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;OpenAI says Apple’s trade secrets lawsuit is ‘rotten to its core’</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;The Verge AI</span>&nbsp;&nbsp;&nbsp;<a href="https://www.theverge.com/tech/976042/openai-apple-trade-secrets-lawsuit-dismissal-request" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">OpenAI đã nộp đơn yêu cầu bác bỏ vụ kiện của Apple, cáo buộc gã khổng lồ công nghệ này đã mô tả sai hành động của các cựu nhân viên Apple đã gia nhập OpenAI. Apple đã cáo buộc những nhân viên này đã đánh cắp bí mật thương mại, nhưng OpenAI cho rằng thông tin đang được tranh cãi là thông tin chung và không phải là bí mật. Công ty khởi nghiệp AI này lập luận rằng Apple đã không duy trì bí mật và rằng vụ kiện là &quot;không có căn cứ&quot;. OpenAI cũng cáo buộc Apple là &quot;cẩn thận, hung hăng và kỳ lạ là cá nhân&quot; trong việc theo đuổi vụ việc này. Công ty cho rằng họ đang xây dựng điều gì đó mới và khác biệt so với sản phẩm của Apple, và họ có quyền thuê những kỹ sư và developer giỏi nhất. OpenAI đang tìm cách bác bỏ vụ kiện, với một phiên tòa dự kiến vào ngày 1 tháng 10. Trong khi đó, Apple đã yêu cầu một lệnh cấm sơ bộ để ngăn chặn OpenAI và các nhân viên tiếp cận hoặc tiết lộ thông tin bí mật cáo buộc.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+
+  <!-- TIPS SECTION -->
+  
+  <tr>
+    <td bgcolor="#FFFBEB" style="background-color:#FFFBEB;padding:20px 30px;border-top:3px solid #D97706;">
+      <p style="margin:0 0 12px;font-size:11px;color:#D97706;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#9889;&nbsp;Tips &amp; Tricks cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Context Window Management</strong><br><strong>Vấn đề:</strong> Quản lý context window hiệu quả để tránh mất thông tin quan trọng.<br><strong>Cách làm:</strong> Sử dụng kỹ thuật <strong>context window management</strong> để điều chỉnh kích thước cửa sổ context. Ví dụ, sử dụng lệnh <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">--max-context-length</code> trong CLI để thiết lập kích thước tối đa.<br><strong>Đánh giá:</strong> Hiệu quả trong việc quản lý thông tin, đặc biệt khi làm việc với dữ liệu dài.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Long-Context Modeling</strong><br><strong>Vấn đề:</strong> Xử lý các mô hình có context dài và phức tạp.<br><strong>Cách làm:</strong> Áp dụng kỹ thuật <strong>long-context modeling</strong> để mô hình hóa các mối quan hệ dài. Ví dụ, sử dụng mô hình <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">Transformer</code> với kỹ thuật <strong>attention mechanism</strong>.<br><strong>Đánh giá:</strong> Hiệu quả trong việc xử lý các mối quan hệ dài và phức tạp.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Memory Optimization</strong><br><strong>Vấn đề:</strong> Tối ưu hóa bộ nhớ để giảm thiểu tiêu thụ tài nguyên.<br><strong>Cách làm:</strong> Sử dụng kỹ thuật <strong>memory optimization</strong> để giảm thiểu sử dụng bộ nhớ. Ví dụ, sử dụng lệnh <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">--memory-optimization</code> trong CLI để bật tính năng tối ưu hóa bộ nhớ.<br><strong>Đánh giá:</strong> Hiệu quả trong việc giảm thiểu tiêu thụ tài nguyên và cải thiện hiệu suất.</p>
+    </td>
+  </tr>
+
+  <!-- LESSON SECTION -->
+  
+  <tr>
+    <td bgcolor="#F0FFF4" style="background-color:#F0FFF4;padding:20px 30px;border-top:3px solid #2E7D32;">
+      <p style="margin:0 0 12px;font-size:11px;color:#2E7D32;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128218;&nbsp;B&#224;i h&#7885;c AI h&#244;m nay cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;">1. <strong>Tích hợp AI API vào ứng dụng</strong><br>2. Tích hợp AI API vào ứng dụng là một chủ đề quan trọng vì nó giúp các nhà phát triển ứng dụng tận dụng khả năng của trí tuệ nhân tạo để cải thiện chức năng và trải nghiệm người dùng. Điều này cho phép các ứng dụng trở nên thông minh hơn và có khả năng xử lý các tác vụ phức tạp. Việc tích hợp AI API cũng giúp giảm thiểu thời gian và công sức phát triển.<br>3. Ví dụ, một ứng dụng có thể sử dụng API của Google Cloud Vision để phân tích hình ảnh và nhận diện đối tượng, hoặc sử dụng API của Dialogflow để tạo ra chatbot thông minh.<br>4. 💡 Tip hoặc bước tiếp theo: Để tích hợp AI API vào ứng dụng, bạn nên bắt đầu bằng việc xác định nhu cầu và mục tiêu của ứng dụng, sau đó lựa chọn AI API phù hợp và thực hiện tích hợp bằng cách sử dụng các thư viện và framework hỗ trợ như TensorFlow hoặc PyTorch.</p>
+    </td>
+  </tr>
+
+  <!-- FOOTER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:20px 30px;text-align:center;border-radius:0 0 10px 10px;">
+      <p style="margin:0 0 4px;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        &#128161;&nbsp;Lu&#244;n &#273;i &#273;&#7847;u trong th&#7871; gi&#7899;i AI!&nbsp;&#183;&nbsp;Stay ahead in AI!
+      </p>
+      <p style="margin:6px 0 0;font-size:11px;color:#4A7AAB;font-family:Arial,sans-serif;">
+        Ngu&#7891;n: Google News · Groq AI
+      </p>
+    </td>
+  </tr>
+
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+
+</td></tr>
+</table>
+</body>
+</html>

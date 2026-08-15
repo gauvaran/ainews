@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--[if mso]>
+<noscript><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings></xml></noscript>
+<![endif]-->
+<style>
+/* ── Responsive overrides for web (email HTML uses fixed 600px tables) ── */
+@media screen and (max-width:620px) {
+  table[width="600"] { width:100% !important; }
+  td { word-break:break-word; overflow-wrap:break-word; }
+  /* Reduce generous email padding on small screens */
+  td[style*="padding:28px 30px"],
+  td[style*="padding:24px 30px"],
+  td[style*="padding:22px 30px"],
+  td[style*="padding:20px 30px"],
+  td[style*="padding:16px 30px"],
+  td[style*="padding:12px 30px"] { padding-left:14px !important; padding-right:14px !important; }
+  /* Code blocks: scroll horizontally instead of breaking layout */
+  pre { overflow-x:auto !important; max-width:calc(100vw - 32px) !important; box-sizing:border-box; }
+  /* Shrink large heading text slightly */
+  h1[style*="26px"] { font-size:20px !important; }
+}
+/* ── Print: hide nav bar ── */
+@media print {
+  #web-nav { display:none !important; }
+  body { background:#fff !important; }
+}
+</style>
+</head>
+<body style="margin:0;padding:0;background-color:#EEF2F7;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+<div id="web-nav" style="background:#001a4d;padding:8px 16px;font-family:Arial,sans-serif;font-size:13px;position:sticky;top:0;z-index:999;border-bottom:2px solid #0066CC;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
+  <span id="nav-prev" style="color:#4A6A8A;">&#8592;</span>
+  <a href="all.html" style="color:#FFD700;text-decoration:none;font-weight:bold;">&#128240; T&#7845;t c&#7843; b&#7843;n tin</a>
+  <span style="color:#FFFFFF;">15/08/2026</span>
+  <span id="nav-next" style="color:#4A6A8A;">&#8594;</span>
+  <a href="2026-08-15.pdf" download="2026-08-15.pdf" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128196; T&#7843;i PDF</a>
+  <button onclick="sharePage()" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;text-decoration:none;display:inline-block;">&#128279; Chia s&#7867;</button>
+</div>
+<script>
+function sharePage(){
+  var title='Bản tin AI BIS-MT – 15/08/2026';
+  if(navigator.share){navigator.share({title:title,url:location.href});}
+  else{navigator.clipboard.writeText(location.href).then(function(){
+    alert('Đã sao chép link!');
+  });}
+}
+(function(){
+  var m=location.pathname.match(/(\d{4}-\d{2}-\d{2})\.html/);
+  if(!m)return;
+  var slug=m[1];
+  function fmt(s){var p=s.split('-');return p[2]+'/'+p[1];}
+  var lnkStyle='color:#90C4F0;text-decoration:none;';
+  fetch('dates.json?_='+Date.now())
+    .then(function(r){return r.json();})
+    .then(function(dates){
+      var idx=dates.indexOf(slug);
+      if(idx>0){
+        var p=dates[idx-1];
+        document.getElementById('nav-prev').innerHTML=
+          '<a href="'+p+'.html" style="'+lnkStyle+'">&#8592; '+fmt(p)+'</a>';
+      }
+      if(idx>=0&&idx<dates.length-1){
+        var n=dates[idx+1];
+        document.getElementById('nav-next').innerHTML=
+          '<a href="'+n+'.html" style="'+lnkStyle+'">'+fmt(n)+' &#8594;</a>';
+      }
+    })
+    .catch(function(){});
+})();
+</script>
+
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#EEF2F7" style="background-color:#EEF2F7;">
+<tr><td align="center" style="padding:24px 12px;">
+
+<!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0"><tr><td><![endif]-->
+<table role="presentation" width="600" cellpadding="0" cellspacing="0"
+       style="max-width:600px;width:100%;background-color:#FFFFFF;border-radius:10px;" bgcolor="#FFFFFF">
+
+  <!-- HEADER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:28px 30px 22px 30px;text-align:center;border-radius:10px 10px 0 0;">
+      <p style="margin:0 0 6px;font-size:11px;color:#7EB1E8;letter-spacing:2px;font-family:Arial,sans-serif;text-transform:uppercase;">
+        BIS &#8209; MT &nbsp;&#183;&nbsp; 15/08/2026
+      </p>
+      <h1 style="margin:0;font-size:26px;font-weight:bold;color:#FFFFFF;font-family:Arial,sans-serif;line-height:1.2;">
+        &#129302; B&#7843;n Tin AI H&#7857;ng Ng&#224;y
+      </h1>
+      <p style="margin:8px 0 0;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        C&#7853;p nh&#7853;t c&#244;ng ngh&#7879; AI m&#7899;i nh&#7845;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- QUOTE -->
+  <tr>
+    <td bgcolor="#EBF4FF" style="background-color:#EBF4FF;padding:16px 30px;border-top:3px solid #0066CC;">
+      <p style="margin:0;font-size:14px;color:#1A3A5C;font-style:italic;line-height:1.6;font-family:Georgia,serif;">
+        &#10024;&nbsp;&ldquo;The future belongs to those who believe in the beauty of their dreams.&rdquo;
+      </p>
+      <p style="margin:6px 0 0;font-size:13px;color:#444444;line-height:1.5;">&nbsp;&nbsp;&nbsp;&#8618;&nbsp;Tương lai thuộc về những người tin vào vẻ đẹp của ước mơ mình.</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#888888;font-family:Arial,sans-serif;">&mdash;&nbsp;Eleanor Roosevelt</p>
+      <p style="margin:8px 0 0;font-size:12px;color:#5A6A7A;font-style:italic;line-height:1.5;font-family:Arial,sans-serif;">&#128161;&nbsp;Niềm tin vào ước mơ là bước đầu tiên để biến nó thành hiện thực — không có giấc mơ nào quá lớn nếu bạn thực sự tin.</p>
+    </td>
+  </tr>
+
+  <!-- SECTION LABEL -->
+  <tr>
+    <td bgcolor="#F5F7FA" style="background-color:#F5F7FA;padding:12px 30px;">
+      <p style="margin:0;font-size:11px;color:#999999;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128240;&nbsp;Tin t&#7913;c n&#7893;i b&#7853;t
+      </p>
+    </td>
+  </tr>
+
+  <!-- ARTICLES -->
+  
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">1</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Tình hình các Agent Framework: Lựa chọn Runtime phù hợp cho việc triển khai AI cấp doanh nghiệp</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;State of Agent Frameworks: Choosing the Right Runtime for Enterprise AI Execution</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Medium</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxOdXdHT2dlWEx6TUh4VW5nQ0hCZWdqVjN4dEhkWXdhQ3ZhT2lPZUtmUlRVSG5zVTBQOWQ3MUIxZjdPZUl6ZmpsbXFWWTNQN3g4M0xfcWJhUDY1aU0tcEFLeDNZYXFmTDIzZmRLNG5VODcyem16VEFuUXRSWEFUSmE3WmFZTzhDbDFRaW1IcFp5QjBqeHpBb0dJM18wbjl0ZVVSNU8yM1Jwb2E3WkxyenNJNk0tTHRUWC1IRngwbEJycUxPTGc?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Bài viết &quot;State of Agent Frameworks: Choosing the Right Runtime for Enterprise AI Execution&quot; cung cấp cái nhìn tổng quan về tình hình hiện tại của các agent framework trong việc triển khai AI cấp doanh nghiệp. Các agent framework là những nền tảng phần mềm cho phép phát triển và triển khai các agent thông minh, vốn là những chương trình phần mềm có khả năng nhận thức, suy luận và hành động trong các môi trường phức tạp.
+
+    Bài viết nhấn mạnh tầm quan trọng của việc lựa chọn runtime phù hợp cho việc triển khai AI cấp doanh nghiệp, vì nó có thể tác động đáng kể đến hiệu năng, khả năng mở rộng và khả năng bảo trì của các hệ thống AI. Bài viết thảo luận về nhiều agent framework khác nhau, bao gồm OpenCog, PyTorch, TensorFlow và Rasa, mỗi framework đều có những điểm mạnh và điểm yếu riêng.
+
+    Bài viết cũng đề cập đến những thách thức trong việc tích hợp các hệ thống AI với hạ tầng doanh nghiệp hiện có, như hệ thống lưu trữ dữ liệu và bảo mật. Nó nhấn mạnh sự cần thiết của một agent framework linh hoạt và dễ thích nghi, có thể tích hợp liền mạch với nhiều hệ thống doanh nghiệp khác nhau.
+
+    Cuối cùng, bài viết kết luận rằng việc lựa chọn đúng agent framework là rất quan trọng để triển khai AI cấp doanh nghiệp thành công, và việc cân nhắc kỹ lưỡng các yếu tố như hiệu năng, khả năng mở rộng và tích hợp là điều cần thiết.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">2</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">AWS mở mã nguồn một MCP Server cho Bedrock AgentCore để tinh gọn quá trình phát triển AI Agent</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;AWS Open-Sources an MCP Server for Bedrock AgentCore to Streamline AI Agent Development</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;MarkTechPost</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMixwFBVV95cUxNZDEzc3dIU3dtSUFCMzJVVU1HeXZSUkdqNmFqMDh5U2d4MEZjRzV6RE14YWdscDYxdWpXelhjUWtPaWZYS19uamp1bUd0Z3dBRWFqOGZ2anAtQ3VvQ0pOUXVvc2tjNHR5cDBGSVJlMkJJQ25CcnRMLWtfWWZVVUwxcXhxMk5qY25BSFJyUk14NGNDWk1BbXp0WUtNeTJqVG1uVDA3NTRHVmF6RWFTeDZ2LVNRTHJ3cTRLWkdtekZ6VjhyNXE3YVFJ0gHMAUFVX3lxTFA4MnVHS0pMd1NoVXJsMFJ3S1JhQlBBRlpTUXNkbVVtcnFoWEluaHVaRXE2SFk3RU9aQVVSQmI2R0xpaTNLVEo3bXVkTC1hbW8yWGlHY2hnOWV5YlNCVzU3N000ZC1rXzdDTlNYTDFNd3BoY1ZNY0g3bjg5dnR0NEZDRmlWMEo4cExnSDVvMUpyOFZ0czczSE5WMXNLbHo1eExQWWhrMmJRTEl4LVdJLVhqUWd2Yk1GbTZySGdMczdHMzg1c2M3NGQ0UHVLYg?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Amazon Web Services (AWS) đã mở mã nguồn một MCP server để hỗ trợ Bedrock AgentCore. Động thái này nhằm mục đích đơn giản hóa việc phát triển các AI agent.
+
+    MCP server là một thành phần cốt lõi của Bedrock AgentCore, một framework để xây dựng và triển khai các AI agent. Bằng cách mở mã nguồn MCP server, AWS đang cung cấp cho cộng đồng developer một nền tảng chuẩn hóa và mở để phát triển AI agent. Điều này có thể dẫn đến tăng cường hợp tác, đổi mới và hiệu quả trong lĩnh vực nghiên cứu và phát triển AI.
+
+    Bedrock AgentCore được thiết kế để cung cấp một interface thống nhất cho việc xây dựng và triển khai các AI agent trên nhiều nền tảng và môi trường khác nhau. Việc mở mã nguồn MCP server được kỳ vọng sẽ đẩy nhanh quá trình phát triển AI agent và cho phép các nhà nghiên cứu, developer tập trung vào việc tạo ra các AI model tinh vi và hiệu quả hơn.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">3</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Agent Factory: Kết nối các agent, ứng dụng và dữ liệu bằng các open standard mới như MCP và A2A</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Agent Factory: Connecting agents, apps, and data with new open standards like MCP and A2A</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Microsoft Azure</span>&nbsp;&nbsp;&nbsp;<a href="https://news.google.com/rss/articles/CBMixAFBVV95cUxOekoxbVV4Vml2ZG5yVGVhRWl1cVFLM1ZrYUVNbWdFTnI1bV9CTmVFZ3FJNTRCeTctZ3ctTUtVOW9YbFBqVWZPTGpfQnk0WWt4T09OdG00X25yZVV3TE1XbGpJckdHWVBNV2l1bDdKbEZXb1dmc1RjR1JENWNkMVF6WHVrdlZDMThhVDN5WFFiQ01YakVlWUZDR0gtS0NTZGxrOGFUMzN4ZWlNZzF1WlFPMnMwT3BDcUd6TjJDSWJXMkpkMEh5?oc=5" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Microsoft đã giới thiệu Agent Factory, một sáng kiến mới nhằm kết nối các agent, ứng dụng và dữ liệu thông qua các open standard. Dự án này sử dụng các protocol Cloud Computing Platform (MCP) và Application-to-Application (A2A) của Microsoft để tạo điều kiện tích hợp và giao tiếp liền mạch giữa các hệ thống khác nhau.
+
+    Agent Factory tìm cách thu hẹp khoảng cách giữa các ứng dụng khác nhau, cho phép chúng hoạt động cùng nhau hiệu quả và năng suất hơn. Bằng cách tận dụng MCP và A2A, các developer có thể tạo ra các giải pháp mạnh mẽ và có khả năng mở rộng hơn, có thể tương tác với nhiều nguồn dữ liệu và service.
+
+    Việc giới thiệu Agent Factory được kỳ vọng sẽ nâng cao trải nghiệm người dùng tổng thể bằng cách cung cấp một môi trường gắn kết và tinh gọn hơn. Bằng cách giảm bớt sự phức tạp và rào cản liên quan đến việc tích hợp các hệ thống khác nhau, Agent Factory có tiềm năng thúc đẩy đổi mới và tăng trưởng trong nhiều ngành công nghiệp. Cam kết của Microsoft đối với các open standard với Agent Factory có khả năng thúc đẩy sự hợp tác và khả năng tương tác lớn hơn giữa các developer và tổ chức.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">4</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">AI ưu tiên tuân thủ: Chứng minh agent provenance cho các đội ngũ engineering chịu quy định</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Compliance-first AI: proving agent provenance for regulated engineering teams</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Sourcegraph Blog</span>&nbsp;&nbsp;&nbsp;<a href="https://sourcegraph.com/blog/compliance-first-ai-proving-agent-provenance" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Các đội ngũ engineering chịu quy định đối mặt với thách thức đáng kể trong việc áp dụng AI agent do lo ngại về trách nhiệm giải trình và tuân thủ. Mặc dù AI agent có thể viết code, vấn đề nằm ở việc chứng minh rằng chúng đã truy cập đúng thông tin trước khi thực hiện thay đổi. Điều này được gọi là agent provenance, đề cập đến bằng chứng về những file mà một AI agent đã đọc và lý do tại sao. Một audit trail rõ ràng là chưa đủ, vì một agent có thể ghi lại lý do của nó mà không thực sự truy cập thông tin cần thiết.
+
+    Để giải quyết vấn đề này, cần có một bản ghi minh bạch về các file mà agent đã đọc và lý do tại sao. Điều này cho phép các auditor xác minh tính chính xác và đầy đủ của logic của agent và xác nhận rằng nó đã hành động dựa trên bộ yêu cầu đầy đủ chỉ sử dụng context code liên quan và được ủy quyền. Ngược lại, các human engineer có thể giải thích hành động và quyết định của họ thông qua các bản ghi Pull Request và phê duyệt.
+
+    Khoảng cách giữa phát triển của con người và AI agent là đáng kể, vì AI agent thiếu khả năng cung cấp context và giải thích cho hành động của</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">5</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">AGI không phải là Multimodal</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;AGI Is Not Multimodal</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;The Gradient</span>&nbsp;&nbsp;&nbsp;<a href="https://thegradient.pub/agi-is-not-multimodal/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Những tiến bộ gần đây trong các mô hình AI tạo sinh đã khiến một số người tin rằng Trí tuệ Tổng quát Nhân tạo (AGI) đang sắp xảy ra. Tuy nhiên, giả định này có thể là sai lầm. Sự thành công của những mô hình này có thể được quy cho khả năng của chúng trong việc mở rộng hiệu quả trên phần cứng hiện có, chứ không phải là một giải pháp sâu sắc cho vấn đề về trí tuệ. Phương pháp đa mô thức, bao gồm việc kết hợp nhiều mô thức khác nhau để đạt được trí tuệ tổng quát, không thể dẫn đến AGI ở mức độ con người trong thời gian gần. Phương pháp này tập trung vào việc vá các mô thức khác nhau lại với nhau, thay vì coi việc thể hiện và tương tác với môi trường là những khía cạnh chính của trí tuệ.
+
+Một AGI thực sự phải có khả năng giải quyết các vấn đề phát sinh từ thực tế vật lý, chẳng hạn như sửa chữa một chiếc xe hơi hoặc tháo một nút thắt. Để đạt được điều này, một hình thức trí tuệ cơ bản nằm trong một mô hình thế giới vật lý là cần thiết. Các Mô hình Ngôn ngữ Lớn (LLM) hiện tại có thể không sở hữu mức độ hiểu biết này, vì chúng có nhiều khả năng học các quy tắc nông để dự đoán token thay vì một sự hiểu biết sâu sắc về thực tế. Điều này đã dẫn đến sự nhầm lẫn về ý nghĩa của việc hiểu ngôn ngữ và thế giới.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">6</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Đừng phân loại. Hãy &quot;hallucinate&quot;!</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;Don&#x27;t classify. Hallucinate!</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Simon Willison</span>&nbsp;&nbsp;&nbsp;<a href="https://simonwillison.net/2026/Aug/14/dont-classify-hallucinate/" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Một chuyên gia công nghệ đã đề xuất một giải pháp sáng tạo cho thách thức phân loại nội dung sử dụng Large Language Models (LLMs). Vấn đề này phát sinh khi nội dung hiện có có số lượng thẻ từ (tag) lớn, khiến cho model khó xác định được các thẻ từ phù hợp. Để vượt qua điều này, chuyên gia đề xuất cho phép model &quot;hoang tưởng&quot; hoặc tạo ra các thẻ từ mới mà không tham khảo từ vựng hiện có. Sau đó, model có thể sử dụng vector embeddings để khớp các thẻ từ được tạo ra với những thẻ từ tương tự nhất trong tập dữ liệu hiện có. Phương pháp này có thể được cải thiện bằng cách cung cấp cho model các ví dụ về cấu trúc thẻ từ mong muốn, chẳng hạn như danh mục và sub-danh mục. Phương pháp này đã được chứng minh là hiệu quả trong việc tạo ra các phân loại mới và chính xác.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">7</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Tình hình các Open Model: Những quan sát mùa hè 2026</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;State of Open Models: Summer 2026 Observations</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Hugging Face Blog</span>&nbsp;&nbsp;&nbsp;<a href="https://huggingface.co/blog/state-of-open-models-summer-2026" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Cảnh quan mô hình AI đã trải qua những thay đổi đáng kể giữa tháng 1 và tháng 8 năm 2026. Theo một báo cáo gần đây, số lượng mô hình công khai trên trung tâm HF đã tăng, với 2,96 triệu mô hình và 1 triệu tập dữ liệu có sẵn. Tuy nhiên, phân phối vẫn bị lệch, với 85,6% mô hình có ít hơn 200 lần tải xuống trong suốt thời gian tồn tại.
+
+Các phòng thí nghiệm Trung Quốc đã tạo ra tác động đáng kể, phát hành các mô hình lớn và hiệu suất cao vượt qua các mô hình từ các phòng thí nghiệm Mỹ. Trên thực tế, các mô hình lớn nhất từ các phòng thí nghiệm Trung Quốc đã có từ 754B đến 2,78 nghìn tỷ tham số, trong khi các phòng thí nghiệm Mỹ thường ở dưới 130B tham số. Sự thay đổi này đã dẫn đến sự thay đổi trong hồ sơ kích thước của mô hình, nơi xây dựng mô hình lớn không còn là yếu tố phân biệt, mà thay vào đó là một tuyên bố về ý định.
+
+Báo cáo cũng lưu ý rằng các nhà cung cấp phần cứng, chẳng hạn như AMD và NVIDIA, hiện là những người chơi chính trong không gian AI mã nguồn mở, phát hành hơn 200 kho mô hình mới mỗi. Sự thay đổi này đã dẫn đến sự giảm số lượng phát hành mô hình mới từ các phòng thí nghiệm AI truyền thống, chẳng hạn như Google và Meta. Báo cáo kết luận rằng trọng tâm của AI mã nguồn mở đã chuyển từ các phòng thí nghiệm mô hình sang các công ty phần cứng và cơ sở hạ tầng.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:20px 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="32" valign="top" style="padding-right:12px;padding-top:2px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td bgcolor="#003087" width="28" height="28" align="center" valign="middle"
+                            style="background-color:#003087;width:28px;height:28px;border-radius:14px;text-align:center;vertical-align:middle;">
+                          <span style="color:#FFFFFF;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;">8</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#003087;line-height:1.35;font-family:Arial,sans-serif;">Chi phí ẩn của HDMI: Giải mã bí ẩn nhãn Ultra96</p>
+                    <p style="margin:0 0 8px;font-size:12px;color:#999999;font-style:italic;font-family:Arial,sans-serif;">&#127468;&#127463;&nbsp;The Hidden Cost of HDMI: Unraveling the Mystery of the Ultra96 Label</p>
+                    <p style="margin:0;font-size:12px;font-family:Arial,sans-serif;"><span style="color:#555555;">&#128240;&nbsp;Dev.to AI</span>&nbsp;&nbsp;&nbsp;<a href="https://dev.to/yagyaraj_sharma_6cd410179/the-hidden-cost-of-hdmi-unraveling-the-mystery-of-the-ultra96-label-53ie" style="color:#0066CC;text-decoration:none;font-size:12px;">&#128279;&nbsp;Đọc bài viết &#8594;</a></p>
+                  </td>
+                </tr>
+                
+            <tr>
+              <td colspan="2" style="padding:10px 0 0 44px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#F0F7FF" style="background-color:#F0F7FF;padding:12px 14px;border-left:3px solid #0066CC;">
+                      <p style="margin:0;font-size:13px;color:#333333;line-height:1.7;">Thế giới công nghệ đầy rẫy những từ viết tắt và thuật ngữ chuyên môn, khiến nhiều người tiêu dùng cảm thấy bối rối. Một thuật ngữ như vậy là nhãn &quot;Ultra96&quot;, một dấu chứng nhận được sử dụng bởi Cơ quan Cấp phép HDMI để chỉ rằng một sản phẩm đáp ứng các tiêu chuẩn nhất định cho việc truyền dữ liệu tốc độ cao. Nhãn này thường được tìm thấy trên cáp HDMI, bộ chuyển đổi và các thiết bị khác hỗ trợ truyền video và âm thanh độ nét cao. Nhãn Ultra96 là một tập con của chương trình chứng nhận HDMI, đảm bảo sản phẩm đáp ứng các tiêu chuẩn cụ thể về hiệu suất, chất lượng và độ tin cậy. Tiền tố &quot;Ultra&quot; chỉ rằng sản phẩm đã được thử nghiệm và chứng nhận để đáp ứng các tiêu chuẩn cao nhất cho việc truyền dữ liệu tốc độ cao, thường trên 10 Gbps. Nhãn này thường được sử dụng như một công cụ tiếp thị để chứng minh giá cao hơn, ngay cả khi sản phẩm không nhất thiết mang lại hiệu suất tốt hơn. Kết quả là, nhiều người tiêu dùng đang trả quá nhiều tiền cho cáp HDMI và bộ chuyển đổi không đáp ứng tiêu chuẩn Ultra96.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 30px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr><td height="1" bgcolor="#E8ECF0" style="background-color:#E8ECF0;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+
+  <!-- TIPS SECTION -->
+  
+  <tr>
+    <td bgcolor="#FFFBEB" style="background-color:#FFFBEB;padding:20px 30px;border-top:3px solid #D97706;">
+      <p style="margin:0 0 12px;font-size:11px;color:#D97706;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#9889;&nbsp;Tips &amp; Tricks cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Cài đặt Ollama</strong><br><strong>Vấn đề:</strong> Phải chạy LLM trên máy cá nhân mà không cần internet.<br><strong>Cách làm:</strong> Sử dụng Ollama, chạy lệnh <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">ollama install</code> để cài đặt, sau đó <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">ollama run</code> để chạy mô hình.<br><strong>Đánh giá:</strong> Hiệu quả cao, phù hợp khi làm việc offline.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Tối ưu LM Studio</strong><br><strong>Vấn đề:</strong> LM Studio chạy chậm trên máy yếu.<br><strong>Cách làm:</strong> Sử dụng lệnh <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">lm-studio --optimize</code> để tối ưu hóa, giảm thiểu tài nguyên.<br><strong>Đánh giá:</strong> Nhanh hơn, tiết kiệm RAM.</p><p style="margin:8px 0;font-size:13px;color:#333;line-height:1.8;"><strong style="font-size:14px;">⚡ Chạy Prompt</strong><br><strong>Vấn đề:</strong> Cần chạy thử prompt trên LLM.<br><strong>Cách làm:</strong> Sử dụng lệnh <code style="background:#F3F4F6;color:#1F2937;border:1px solid #D1D5DB;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,Courier New,monospace;">ollama prompt &quot;Đây là câu hỏi thử nghiệm&quot;</code> để chạy thử.<br><strong>Đánh giá:</strong> Hiệu quả, giúp kiểm tra mô hình nhanh.</p>
+    </td>
+  </tr>
+
+  <!-- LESSON SECTION -->
+  
+  <tr>
+    <td bgcolor="#F0FFF4" style="background-color:#F0FFF4;padding:20px 30px;border-top:3px solid #2E7D32;">
+      <p style="margin:0 0 12px;font-size:11px;color:#2E7D32;letter-spacing:1px;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;">
+        &#128218;&nbsp;B&#224;i h&#7885;c AI h&#244;m nay cho Dev
+      </p>
+      <p style="margin:0;font-size:13px;color:#333;line-height:1.8;">1. <strong>Tối ưu chi phí &amp; hiệu năng LLM</strong><br>2. Dev cần biết cách tối ưu chi phí và hiệu năng LLM để giảm thiểu chi phí vận hành và cải thiện hiệu suất của ứng dụng. Điều này giúp đảm bảo rằng mô hình AI hoạt động hiệu quả và không tiêu tốn quá nhiều tài nguyên. Việc tối ưu hóa cũng giúp cải thiện thời gian phản hồi và tăng trải nghiệm người dùng.<br>3. Ví dụ, có thể sử dụng kỹ thuật <strong>fine-tuning</strong> và <strong>LoRA</strong> để điều chỉnh mô hình LLM cho phù hợp với use case cụ thể, giảm thiểu số lượng tham số và cải thiện hiệu suất.<br>4. 💡 Tip hoặc bước tiếp theo: Nghiên cứu và áp dụng các kỹ thuật tối ưu hóa LLM như <strong>quantization</strong>, <strong>pruning</strong> và <strong>knowledge distillation</strong> để cải thiện hiệu suất và giảm chi phí vận hành.</p>
+    </td>
+  </tr>
+
+  <!-- FOOTER -->
+  <tr>
+    <td bgcolor="#003087" style="background-color:#003087;padding:20px 30px;text-align:center;border-radius:0 0 10px 10px;">
+      <p style="margin:0 0 4px;font-size:13px;color:#90C4F0;font-family:Arial,sans-serif;">
+        &#128161;&nbsp;Lu&#244;n &#273;i &#273;&#7847;u trong th&#7871; gi&#7899;i AI!&nbsp;&#183;&nbsp;Stay ahead in AI!
+      </p>
+      <p style="margin:6px 0 0;font-size:11px;color:#4A7AAB;font-family:Arial,sans-serif;">
+        Ngu&#7891;n: Google News · Groq AI
+      </p>
+    </td>
+  </tr>
+
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+
+</td></tr>
+</table>
+</body>
+</html>
